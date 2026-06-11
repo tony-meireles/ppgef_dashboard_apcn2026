@@ -1712,7 +1712,7 @@
         }
         return b.pontuacao - a.pontuacao || b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR");
       });
-      const items = sortedSummary.slice(0, 12);
+      const items = sortedSummary;
       if (!items.length) {
         chartDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
