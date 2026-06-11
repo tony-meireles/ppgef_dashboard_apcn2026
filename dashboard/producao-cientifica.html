@@ -1375,14 +1375,16 @@
                     <th>Mestrado andamento</th>
                     <th>Mestrado concluintes 2026</th>
                     <th>Mestrado concluídas</th>
-                    <th>Doutorado andamento</th>
-                    <th>Doutorado principal</th>
+                    <th>Doutorado andamento co</th>
+                    <th>Doutorado andamento principal</th>
                     <th>Doutorado concluintes 2026</th>
-                    <th>Doutorado concluídas</th>
+                    <th>Doutorado concluídas co</th>
                     <th>Doutorado concluídas principal</th>
-                    <th>APCN andamento</th>
-                    <th>APCN concluídas</th>
-                    <th>APCN total</th>
+                    <th>Em andamento</th>
+                    <th>Concluídas (Co no D)</th>
+                    <th>Concluídas (D)</th>
+                    <th>Concluintes 2026</th>
+                    <th>Total geral APCN</th>
                   </tr>
                 </thead>
                 <tbody id="orientacoes-stricto-body"></tbody>
@@ -2496,20 +2498,22 @@
     function renderOrientationStrictoTable(data) {
       orientacoesStrictoBody.innerHTML = data
         .slice()
-        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || b.doutorado_andamento - a.doutorado_andamento || a.docente.localeCompare(b.docente, "pt-BR"))
+        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || ((b.doutorado_andamento_co || 0) + (b.doutorado_andamento_principal || 0)) - ((a.doutorado_andamento_co || 0) + (a.doutorado_andamento_principal || 0)) || a.docente.localeCompare(b.docente, "pt-BR"))
         .map((item) => `
         <tr>
           <td>${item.docente}</td>
           <td>${formatOrientationValue(item.mestrado_andamento)}</td>
           <td>${formatOrientationValue(item.mestrado_concluintes_2026)}</td>
           <td>${formatOrientationValue(item.mestrado_concluidas)}</td>
-          <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento_co)}</td>
           <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento_principal)}</td>
           <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluintes_2026)}</td>
-          <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluidas)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluidas_co)}</td>
           <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluidas_principal)}</td>
           <td class="numeric-strong">${formatOrientationValue(item.total_andamento_apcn)}</td>
           <td class="numeric-strong">${formatOrientationValue(item.total_concluidas_apcn)}</td>
+          <td class="numeric-strong">${formatOrientationValue(item.total_concluidas_d)}</td>
+          <td class="numeric-strong">${formatOrientationValue(item.total_concluintes_2026_apcn)}</td>
           <td class="numeric-strong">${formatOrientationValue(item.total_geral_apcn)}</td>
         </tr>
       `).join("");
