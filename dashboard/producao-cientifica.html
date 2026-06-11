@@ -210,12 +210,53 @@
       font-size: 1rem;
     }
 
+    .filter-toolbar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .filter-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid #d7c3ad;
+      border-radius: 10px;
+      background: #fffdf9;
+      color: var(--ufpe-grafite);
+      font-size: 0.84rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .filter-toggle:hover {
+      border-color: var(--ufpe-bordo);
+      color: var(--ufpe-bordo);
+      background: rgba(140, 21, 56, 0.04);
+    }
+
+    .filter-toggle-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #bfae99;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      color: var(--ufpe-bordo);
+      background: white;
+      flex: 0 0 16px;
+    }
+
     .filter-picker {
       display: grid;
-      gap: 12px;
+      gap: 2px;
       max-height: 236px;
       overflow: auto;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border: 1px solid var(--ufpe-linha);
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.88);
@@ -228,10 +269,10 @@
     .filter-option {
       display: grid;
       grid-template-columns: 18px minmax(0, 1fr);
-      gap: 12px;
-      align-items: start;
-      padding: 10px 8px;
-      border-radius: 12px;
+      gap: 10px;
+      align-items: center;
+      padding: 6px 6px;
+      border-radius: 8px;
       transition: background 0.2s ease, color 0.2s ease;
       cursor: pointer;
     }
@@ -241,15 +282,15 @@
     }
 
     .filter-option input {
-      margin: 2px 0 0;
+      margin: 0;
       accent-color: var(--ufpe-bordo);
       cursor: pointer;
     }
 
     .filter-option span {
       color: var(--ufpe-grafite);
-      font-size: 0.94rem;
-      line-height: 1.45;
+      font-size: 0.92rem;
+      line-height: 1.2;
     }
 
     .filter-option:has(input:checked) {
@@ -556,6 +597,60 @@
       background: #fbf1ef;
     }
 
+    .criteria-summary {
+      display: grid;
+      gap: 14px;
+    }
+
+    .criteria-score {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid #e3d7c7;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffdf9, #f7f1e8);
+    }
+
+    .criteria-score strong {
+      font-size: 1.45rem;
+      color: var(--ufpe-bordo);
+      letter-spacing: -0.03em;
+    }
+
+    .criteria-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .criteria-status.ok {
+      background: rgba(77, 124, 104, 0.14);
+      color: var(--ufpe-sucesso);
+      border: 1px solid rgba(77, 124, 104, 0.24);
+    }
+
+    .criteria-status.risk {
+      background: rgba(140, 21, 56, 0.1);
+      color: var(--ufpe-bordo);
+      border: 1px solid rgba(140, 21, 56, 0.18);
+    }
+
+    .criteria-table td small {
+      display: block;
+      margin-top: 4px;
+      color: var(--ufpe-cinza);
+      font-size: 0.8rem;
+    }
+
     .empty {
       padding: 22px 4px 6px;
       color: var(--ufpe-cinza);
@@ -619,7 +714,7 @@
         <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
-        <button class="tab-button" data-tab="tab-apcn">APCN Docente</button>
+        <button class="tab-button" data-tab="tab-apcn">Critérios Produtividade D p/ APCN D</button>
         <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
       </nav>
 
@@ -633,14 +728,44 @@
             <div class="filters-grid">
               <div>
                 <label for="docentes-chip-list">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
                 <div id="docentes-chip-list" class="filter-picker"></div>
               </div>
               <div>
                 <label for="tipos">Tipo de produção</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="tipos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="tipos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
                 <div id="tipos" class="filter-picker compact"></div>
               </div>
               <div>
                 <label for="anos">Ano</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="anos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="anos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
                 <div id="anos" class="filter-picker compact"></div>
               </div>
             </div>
@@ -987,13 +1112,89 @@
       </div>
 
       <div class="tab-panel" id="tab-apcn">
-        <div class="card">
-          <div class="section-head">
-            <h2>APCN Docente</h2>
-            <p>Espaço reservado para a próxima aba com indicadores e critérios APCN por docente.</p>
+        <section class="grid">
+          <div class="card metric">
+            <p class="eyebrow">Docentes considerados</p>
+            <strong id="criterios-docentes-total">0</strong>
+            <span>Total de docentes com produção científica presente na base sincronizada.</span>
           </div>
-          <p class="chart-note">Estrutura de navegação criada para suportar novas camadas de informação sem reescrever a interface principal.</p>
-        </div>
+          <div class="card metric">
+            <p class="eyebrow">Linha de corte 75%</p>
+            <strong id="criterios-docentes-minimo">0</strong>
+            <span>Mínimo absoluto de docentes necessários para atender cada critério.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Critério 1</p>
+            <strong id="criterios-crit1-percentual">0%</strong>
+            <span id="criterios-crit1-resumo">0 de 0 docentes com mais de 330 pontos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Critério 2</p>
+            <strong id="criterios-crit2-percentual">0%</strong>
+            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR ou Categoria A.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Demonstrativo dos Critérios</h2>
+              <p>Comparação entre o mínimo exigido e o atendimento efetivo na base científica.</p>
+            </div>
+            <div id="chart-criterios-prod" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura Executiva</h2>
+              <p>Resultado consolidado e pontos de atenção.</p>
+            </div>
+            <div class="criteria-summary" id="criterios-summary-cards"></div>
+            <div class="chips" id="criterios-insights"></div>
+            <p class="chart-note" id="criterios-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese dos Indicadores</h2>
+              <p>Resumo formal do atendimento aos dois critérios de produtividade docente.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Indicador</th>
+                    <th>Exigência</th>
+                    <th>Resultado atual</th>
+                    <th>Status</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="criterios-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Detalhamento por Docente</h2>
+              <p>Pontuação agregada e evidência usada para demonstrar os critérios na base científica.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Pontuação agregada</th>
+                    <th>Critério 1</th>
+                    <th>JCR</th>
+                    <th>Q1/Q2</th>
+                    <th>Critério 2</th>
+                  </tr>
+                </thead>
+                <tbody id="criterios-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       </div>
 
       <div class="tab-panel" id="tab-indicadores">
@@ -1036,10 +1237,12 @@
     const typeStackTecnica = document.getElementById("type-stack-tecnica");
     const typeChipsTecnica = document.getElementById("type-chips-tecnica");
     const insightChipsTecnica = document.getElementById("insight-chips-tecnica");
+    const scientificFilterToggles = [...document.querySelectorAll('.filter-toggle[data-group]')];
     const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
+    const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
@@ -1177,6 +1380,34 @@
             selectedAnos.delete(ano);
           }
           applyFilters();
+        });
+      });
+    }
+
+    function setFilterSelection(container, selectedSet, values, applyFn) {
+      selectedSet.clear();
+      values.forEach((value) => selectedSet.add(value));
+      [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.checked = selectedSet.has(input.value);
+      });
+      applyFn();
+    }
+
+    function bindScientificFilterToggles() {
+      const groupConfig = {
+        docentes: { container: docenteChipList, selectedSet: selectedDocentes, applyFn: applyFilters },
+        tipos: { container: tiposSelect, selectedSet: selectedTipos, applyFn: applyFilters },
+        anos: { container: anosSelect, selectedSet: selectedAnos, applyFn: applyFilters },
+      };
+
+      scientificFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.group];
+          if (!config) return;
+          const values = button.dataset.action === "all"
+            ? [...config.container.querySelectorAll('input[type="checkbox"]')].map((input) => input.value)
+            : [];
+          setFilterSelection(config.container, config.selectedSet, values, config.applyFn);
         });
       });
     }
@@ -1707,6 +1938,182 @@
       renderOrientationPosdocTable(dataSourceOrientacoes);
     }
 
+    function aggregateProductivityCriteria(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        if (!item.docente) continue;
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            pontuacao: 0,
+            total: 0,
+            hasJcr: false,
+            hasQ1Q2: false,
+          });
+        }
+        const row = grouped.get(item.docente);
+        row.pontuacao += Number(item.pontuacao) || 0;
+        row.total += 1;
+        const indexacao = String(item.indexacao || "");
+        const quartil = String(item.quartil_jcr_2025 || "").toUpperCase().trim();
+        const jif = String(item.jif_jcr_2025 || "").trim();
+        if (indexacao.includes("Web of Science (JCR)") || jif) {
+          row.hasJcr = true;
+        }
+        if (quartil === "Q1" || quartil === "Q2") {
+          row.hasQ1Q2 = true;
+        }
+      }
+
+      const docentes = [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          criterio1: item.pontuacao >= 330,
+          criterio2: item.hasJcr || item.hasQ1Q2,
+        }))
+        .sort((a, b) => b.pontuacao - a.pontuacao || a.docente.localeCompare(b.docente, "pt-BR"));
+
+      const totalDocentes = docentes.length;
+      const minimo = Math.ceil(totalDocentes * 0.75);
+      const criterio1Atendidos = docentes.filter((item) => item.criterio1).length;
+      const criterio2Atendidos = docentes.filter((item) => item.criterio2).length;
+
+      return {
+        totalDocentes,
+        minimo,
+        criterio1Atendidos,
+        criterio2Atendidos,
+        criterio1Percentual: totalDocentes ? Math.round((criterio1Atendidos / totalDocentes) * 100) : 0,
+        criterio2Percentual: totalDocentes ? Math.round((criterio2Atendidos / totalDocentes) * 100) : 0,
+        criterio1Pendentes: docentes.filter((item) => !item.criterio1),
+        criterio2Pendentes: docentes.filter((item) => !item.criterio2),
+        docentes,
+      };
+    }
+
+    function renderProductivityCriteriaChart(summary) {
+      const itens = [
+        {
+          criterio: "Critério 1",
+          label: "75% com mais de 330 pts",
+          atual: summary.criterio1Atendidos,
+          minimo: summary.minimo,
+          color: "#8c1538",
+        },
+        {
+          criterio: "Critério 2",
+          label: "75% com JCR ou Categoria A",
+          atual: summary.criterio2Atendidos,
+          minimo: summary.minimo,
+          color: "#426132",
+        },
+      ];
+      const maxValue = Math.max(summary.totalDocentes, summary.minimo, summary.criterio1Atendidos, summary.criterio2Atendidos, 1);
+      const rowHeight = 82;
+      const height = itens.length * rowHeight + 72;
+      const chartWidth = 860;
+      const labelWidth = 240;
+      const usableWidth = chartWidth - labelWidth - 150;
+      chartCriteriosProd.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Desempenho nos critérios de produtividade docente">
+          ${itens.map((item, index) => {
+            const y = 28 + index * rowHeight;
+            const minimoWidth = Math.max(8, (item.minimo / maxValue) * usableWidth);
+            const atualWidth = Math.max(8, (item.atual / maxValue) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="15" font-weight="700">${item.criterio}</text>
+              <text x="0" y="${y + 36}" fill="#6d727c" font-size="12">${item.label}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${minimoWidth}" height="18" rx="9" fill="#d4a017"></rect>
+              <text x="${labelWidth + minimoWidth + 10}" y="${y + 14}" fill="#6d727c" font-size="12">mínimo ${item.minimo}</text>
+              <rect x="${labelWidth}" y="${y + 28}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
+              <rect x="${labelWidth}" y="${y + 28}" width="${atualWidth}" height="18" rx="9" fill="${item.color}"></rect>
+              <text x="${labelWidth + atualWidth + 10}" y="${y + 42}" fill="#6d727c" font-size="12">atual ${item.atual} docentes</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderProductivityCriteriaPanel() {
+      const summary = aggregateProductivityCriteria(dataSource);
+      document.getElementById("criterios-docentes-total").textContent = String(summary.totalDocentes);
+      document.getElementById("criterios-docentes-minimo").textContent = String(summary.minimo);
+      document.getElementById("criterios-crit1-percentual").textContent = `${summary.criterio1Percentual}%`;
+      document.getElementById("criterios-crit2-percentual").textContent = `${summary.criterio2Percentual}%`;
+      document.getElementById("criterios-crit1-resumo").textContent = `${summary.criterio1Atendidos} de ${summary.totalDocentes} docentes com mais de 330 pontos.`;
+      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR ou proxy Q1/Q2.`;
+
+      renderProductivityCriteriaChart(summary);
+
+      const criterio1Ok = summary.criterio1Atendidos >= summary.minimo;
+      const criterio2Ok = summary.criterio2Atendidos >= summary.minimo;
+      const criterio1Faltantes = Math.max(0, summary.minimo - summary.criterio1Atendidos);
+      const criterio2Faltantes = Math.max(0, summary.minimo - summary.criterio2Atendidos);
+
+      document.getElementById("criterios-summary-cards").innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Critério 1</div>
+              <strong>${summary.criterio1Atendidos}/${summary.totalDocentes}</strong>
+            </div>
+            <span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Critério 2</div>
+              <strong>${summary.criterio2Atendidos}/${summary.totalDocentes}</strong>
+            </div>
+            <span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+      ].join("");
+
+      document.getElementById("criterios-insights").innerHTML = [
+        `<span class="chip">Linha de corte formal: <strong>${summary.minimo}</strong> docentes</span>`,
+        summary.criterio1Pendentes[0] ? `<span class="chip">Fora do critério 1: <strong>${summary.criterio1Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 1 sem pendências individuais.</span>`,
+        summary.criterio2Pendentes[0] ? `<span class="chip">Fora do critério 2: <strong>${summary.criterio2Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 2 sem pendências individuais.</span>`,
+        `<span class="chip">Margem sobre a exigência: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
+      ].join("");
+
+      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
+
+      document.getElementById("criterios-resumo-body").innerHTML = [
+        `
+          <tr>
+            <td>Critério 1<br><small>75% com mais de 330 pontos de produção intelectual</small></td>
+            <td>${summary.minimo} docentes</td>
+            <td>${summary.criterio1Atendidos}/${summary.totalDocentes} docentes (${summary.criterio1Percentual}%)</td>
+            <td><span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atende" : "Não atende"}</span></td>
+            <td>${criterio1Ok ? `Supera a linha de corte em ${summary.criterio1Atendidos - summary.minimo} docente(s).` : `Faltam ${criterio1Faltantes} docente(s) para a linha de corte.`}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Critério 2<br><small>75% dos docentes com JCR ou Categoria A</small></td>
+            <td>${summary.minimo} docentes</td>
+            <td>${summary.criterio2Atendidos}/${summary.totalDocentes} docentes (${summary.criterio2Percentual}%)</td>
+            <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Não atende"}</span></td>
+            <td>${criterio2Ok ? `Supera a linha de corte em ${summary.criterio2Atendidos - summary.minimo} docente(s).` : `Faltam ${criterio2Faltantes} docente(s) para a linha de corte.`}</td>
+          </tr>
+        `,
+      ].join("");
+
+      document.getElementById("criterios-docentes-body").innerHTML = summary.docentes.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.pontuacao}</td>
+          <td><span class="criteria-status ${item.criterio1 ? "ok" : "risk"}">${item.criterio1 ? "Atende" : "Não atende"}</span></td>
+          <td>${item.hasJcr ? "Sim" : "Não"}</td>
+          <td>${item.hasQ1Q2 ? "Sim" : "Não"}</td>
+          <td><span class="criteria-status ${item.criterio2 ? "ok" : "risk"}">${item.criterio2 ? "Atende" : "Não atende"}</span></td>
+        </tr>
+      `).join("");
+    }
+
     function renderTable(data) {
       tabelaBody.innerHTML = data.map((item) => `
         <tr>
@@ -1770,11 +2177,13 @@
     bindDocenteChips();
     bindTypeFilters();
     bindYearFilters();
+    bindScientificFilterToggles();
     bindDocenteChipsTecnica();
     bindTabs();
     applyFilters();
     applyTechnicalFilters();
     renderOrientationPanel();
+    renderProductivityCriteriaPanel();
 
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
   </script>
