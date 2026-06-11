@@ -2429,6 +2429,7 @@
       )[0];
       const doutoradoAtivo = data.filter((item) => (item.doutorado_andamento || 0) > 0).length;
       const doutoradoPrincipalAtivo = data.filter((item) => (item.doutorado_andamento_principal || 0) > 0).length;
+      const doutoradoPrincipalConcluido = data.filter((item) => (item.doutorado_concluidas_principal || 0) > 0).length;
       const diagnostico = totals.concluintes2026 === 0
         ? "Diagnóstico: a planilha recebida não registra concluintes em 2026 nas colunas APCN. Mantive os zeros explicitamente para evitar inferência indevida."
         : `Diagnóstico: há ${totals.concluintes2026} concluintes previstos para 2026 no recorte APCN.`;
@@ -2439,7 +2440,7 @@
         `<span class="chip">Docentes com doutorado em andamento: <strong>${doutoradoAtivo}</strong></span>`,
         `<span class="chip">Doutorado em andamento como principal: <strong>${totals.doutoradoAndamentoPrincipal}</strong></span>`,
         `<span class="chip">Docentes com doutorado principal ativo: <strong>${doutoradoPrincipalAtivo}</strong></span>`,
-        `<span class="chip">Doutorado concluído como principal: <strong>${totals.doutoradoConcluidasPrincipal}</strong></span>`,
+        `<span class="chip">Docentes com doutorado concluído como principal: <strong>${doutoradoPrincipalConcluido}</strong></span>`,
       ].join("");
       document.getElementById("orientacoes-diagnostico").textContent = diagnostico;
     }
