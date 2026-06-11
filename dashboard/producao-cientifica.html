@@ -738,6 +738,13 @@
       justify-content: flex-end;
     }
 
+    .group-card {
+      grid-column: span 12;
+      background:
+        linear-gradient(135deg, rgba(140, 21, 56, 0.08), rgba(212, 160, 23, 0.08)),
+        rgba(255, 253, 249, 0.96);
+    }
+
     .empty {
       padding: 22px 4px 6px;
       color: var(--ufpe-cinza);
@@ -802,7 +809,7 @@
         <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
-        <button class="tab-button" data-tab="tab-apcn">Produtividade Doc para APCN D</button>
+        <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
       </nav>
 
@@ -1219,6 +1226,13 @@
 
       <div class="tab-panel" id="tab-apcn">
         <section class="grid">
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Produtividade</h2>
+              <p>Critérios baseados na produção intelectual da equipe docente.</p>
+            </div>
+          </div>
+
           <div class="card metric">
             <p class="eyebrow">Docentes considerados</p>
             <strong id="criterios-docentes-total">0</strong>
@@ -1310,6 +1324,74 @@
               </table>
             </div>
           </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Orientação</h2>
+              <p>Critérios críticos ligados à experiência de orientação em graduação, mestrado e doutorado.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Base docente</p>
+            <strong id="orient-crit-docentes-total">0</strong>
+            <span>Total de docentes permanentes considerados na base de orientações.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Graduação concluída</p>
+            <strong id="orient-crit-graduacao-percentual">0%</strong>
+            <span id="orient-crit-graduacao-resumo">0 de 0 docentes com orientação de graduação concluída.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com mestrado</p>
+            <strong id="orient-crit-mestrado-total">0</strong>
+            <span id="orient-crit-mestrado-resumo">0 docentes com orientação em mestrado.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com doutorado</p>
+            <strong id="orient-crit-doutorado-total">0</strong>
+            <span id="orient-crit-doutorado-resumo">0 docentes com orientação em doutorado.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Demonstrativo de Orientação</h2>
+              <p>Comparação entre o patamar exigido e o atendimento atual dos critérios de orientação.</p>
+            </div>
+            <div id="chart-criterios-orient" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura de Orientação</h2>
+              <p>Status consolidado dos três critérios atendidos.</p>
+            </div>
+            <div class="criteria-summary" id="orient-crit-summary-cards"></div>
+            <div class="chips" id="orient-crit-insights"></div>
+            <p class="chart-note" id="orient-crit-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese de Orientação</h2>
+              <p>Resumo formal do atendimento aos critérios críticos de orientação.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Indicador</th>
+                    <th>Exigência</th>
+                    <th>Resultado atual</th>
+                    <th>Status</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="orient-crit-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -1360,6 +1442,7 @@
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
+    const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
@@ -2308,6 +2391,166 @@
       updateCriteriaSortButtons();
     }
 
+    function aggregateOrientationCriticalCriteria(data) {
+      const totalDocentes = data.length;
+      const graduacaoAtendidos = data.filter((item) => ((item.tcc_concluidas || 0) + (item.ic_concluidas || 0)) > 0).length;
+      const mestradoAtendidos = data.filter((item) => ((item.mestrado_andamento || 0) + (item.mestrado_concluidas || 0) + (item.mestrado_concluintes_2026 || 0)) > 0).length;
+      const doutoradoAtendidos = data.filter((item) => (
+        (item.doutorado_andamento || 0) +
+        (item.doutorado_concluidas || 0) +
+        (item.doutorado_concluintes_2026 || 0) +
+        (item.doutorado_andamento_principal || 0) +
+        (item.doutorado_concluidas_principal || 0)
+      ) > 0).length;
+
+      return {
+        totalDocentes,
+        graduacaoAtendidos,
+        graduacaoPercentual: totalDocentes ? Math.round((graduacaoAtendidos / totalDocentes) * 100) : 0,
+        mestradoAtendidos,
+        doutoradoAtendidos,
+      };
+    }
+
+    function renderOrientationCriteriaChart(summary) {
+      const itens = [
+        {
+          criterio: "Graduação concluída",
+          label: "100% com orientação de graduação concluída",
+          atual: summary.graduacaoAtendidos,
+          minimo: summary.totalDocentes,
+          color: "#8c1538",
+        },
+        {
+          criterio: "Orientação em mestrado",
+          label: "≥ 9 docentes com orientação em mestrado",
+          atual: summary.mestradoAtendidos,
+          minimo: 9,
+          color: "#426132",
+        },
+        {
+          criterio: "Orientação em doutorado",
+          label: "≥ 3 docentes com orientação em doutorado",
+          atual: summary.doutoradoAtendidos,
+          minimo: 3,
+          color: "#d4a017",
+        },
+      ];
+      const maxValue = Math.max(summary.totalDocentes, summary.graduacaoAtendidos, summary.mestradoAtendidos, summary.doutoradoAtendidos, 9, 3, 1);
+      const rowHeight = 82;
+      const height = itens.length * rowHeight + 72;
+      const chartWidth = 860;
+      const labelWidth = 240;
+      const usableWidth = chartWidth - labelWidth - 150;
+      chartCriteriosOrient.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Desempenho nos critérios de orientação">
+          ${itens.map((item, index) => {
+            const y = 28 + index * rowHeight;
+            const minimoWidth = Math.max(8, (item.minimo / maxValue) * usableWidth);
+            const atualWidth = Math.max(8, (item.atual / maxValue) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="15" font-weight="700">${item.criterio}</text>
+              <text x="0" y="${y + 36}" fill="#6d727c" font-size="12">${item.label}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${minimoWidth}" height="18" rx="9" fill="#d4a017"></rect>
+              <text x="${labelWidth + minimoWidth + 10}" y="${y + 14}" fill="#6d727c" font-size="12">mínimo ${item.minimo}</text>
+              <rect x="${labelWidth}" y="${y + 28}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
+              <rect x="${labelWidth}" y="${y + 28}" width="${atualWidth}" height="18" rx="9" fill="${item.color}"></rect>
+              <text x="${labelWidth + atualWidth + 10}" y="${y + 42}" fill="#6d727c" font-size="12">atual ${item.atual} docentes</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderOrientationCriticalCriteriaPanel() {
+      const summary = aggregateOrientationCriticalCriteria(dataSourceOrientacoes);
+      const graduacaoOk = summary.graduacaoAtendidos === summary.totalDocentes;
+      const mestradoOk = summary.mestradoAtendidos >= 9;
+      const doutoradoOk = summary.doutoradoAtendidos >= 3;
+
+      document.getElementById("orient-crit-docentes-total").textContent = String(summary.totalDocentes);
+      document.getElementById("orient-crit-graduacao-percentual").textContent = `${summary.graduacaoPercentual}%`;
+      document.getElementById("orient-crit-graduacao-resumo").textContent = `${summary.graduacaoAtendidos} de ${summary.totalDocentes} docentes com orientação de graduação concluída.`;
+      document.getElementById("orient-crit-mestrado-total").textContent = String(summary.mestradoAtendidos);
+      document.getElementById("orient-crit-mestrado-resumo").textContent = `${summary.mestradoAtendidos} docentes com orientação em mestrado.`;
+      document.getElementById("orient-crit-doutorado-total").textContent = String(summary.doutoradoAtendidos);
+      document.getElementById("orient-crit-doutorado-resumo").textContent = `${summary.doutoradoAtendidos} docentes com orientação em doutorado.`;
+
+      renderOrientationCriteriaChart(summary);
+
+      document.getElementById("orient-crit-summary-cards").innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Graduação concluída</div>
+              <strong>${summary.graduacaoAtendidos}/${summary.totalDocentes}</strong>
+            </div>
+            <span class="criteria-status ${graduacaoOk ? "ok" : "risk"}">${graduacaoOk ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Mestrado</div>
+              <strong>${summary.mestradoAtendidos}</strong>
+            </div>
+            <span class="criteria-status ${mestradoOk ? "ok" : "risk"}">${mestradoOk ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Doutorado</div>
+              <strong>${summary.doutoradoAtendidos}</strong>
+            </div>
+            <span class="criteria-status ${doutoradoOk ? "ok" : "risk"}">${doutoradoOk ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+      ].join("");
+
+      document.getElementById("orient-crit-insights").innerHTML = [
+        `<span class="chip">Graduação concluída: <strong>${summary.graduacaoAtendidos}/${summary.totalDocentes}</strong></span>`,
+        `<span class="chip">Mestrado: <strong>${summary.mestradoAtendidos}</strong> docentes frente ao mínimo de <strong>9</strong></span>`,
+        `<span class="chip">Doutorado: <strong>${summary.doutoradoAtendidos}</strong> docentes frente ao mínimo de <strong>3</strong></span>`,
+      ].join("");
+
+      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado e doutorado consideram docentes com ao menos um registro de orientação concluída, em andamento ou concluinte em 2026 no respectivo nível.";
+
+      document.getElementById("orient-crit-resumo-body").innerHTML = [
+        `
+          <tr>
+            <td>Orientação</td>
+            <td>Experiência de orientação</td>
+            <td>100% com orientação de graduação concluída</td>
+            <td>${summary.graduacaoAtendidos}/${summary.totalDocentes} docentes (${summary.graduacaoPercentual}%)</td>
+            <td><span class="criteria-status ${graduacaoOk ? "ok" : "risk"}">${graduacaoOk ? "Atende" : "Não atende"}</span></td>
+            <td>${graduacaoOk ? "Todos os docentes possuem orientação de graduação concluída." : `Há ${summary.totalDocentes - summary.graduacaoAtendidos} docente(s) sem registro concluído em graduação.`}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Orientação</td>
+            <td>Doutorado</td>
+            <td>≥ 9 docentes com orientação em mestrado</td>
+            <td>${summary.mestradoAtendidos} docentes</td>
+            <td><span class="criteria-status ${mestradoOk ? "ok" : "risk"}">${mestradoOk ? "Atende" : "Não atende"}</span></td>
+            <td>${mestradoOk ? `Supera o mínimo em ${summary.mestradoAtendidos - 9} docente(s).` : `Faltam ${9 - summary.mestradoAtendidos} docente(s) para o mínimo.`}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Orientação</td>
+            <td>Doutorado</td>
+            <td>≥ 3 com orientação em doutorado</td>
+            <td>${summary.doutoradoAtendidos} docentes</td>
+            <td><span class="criteria-status ${doutoradoOk ? "ok" : "risk"}">${doutoradoOk ? "Atende" : "Não atende"}</span></td>
+            <td>${doutoradoOk ? `Supera o mínimo em ${summary.doutoradoAtendidos - 3} docente(s).` : `Faltam ${3 - summary.doutoradoAtendidos} docente(s) para o mínimo.`}</td>
+          </tr>
+        `,
+      ].join("");
+    }
+
     function renderProductivityCriteriaPanel() {
       const summary = aggregateProductivityCriteria(dataSource);
       document.getElementById("criterios-docentes-total").textContent = String(summary.totalDocentes);
@@ -2456,6 +2699,7 @@
     applyTechnicalFilters();
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
+    renderOrientationCriticalCriteriaPanel();
 
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
   </script>
