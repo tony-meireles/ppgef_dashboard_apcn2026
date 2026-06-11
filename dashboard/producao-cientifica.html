@@ -698,7 +698,8 @@
         <p>
           Visualização da base final sincronizada da produção docente. O foco desta aba é
           permitir leitura rápida da pontuação por docente, por ano e por tipo de produção,
-          com filtros práticos para artigos, livros e capítulos.
+          com filtros práticos para artigos, livros e capítulos. Autores: Santos TM, Campos
+          EZ e Henrique RS.
         </p>
       </div>
       <div class="hero-brand">
@@ -1384,6 +1385,27 @@
       });
     }
 
+    function initializeScientificFilters() {
+      setFilterSelection(
+        docenteChipList,
+        selectedDocentes,
+        [...docenteChipList.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
+        () => {}
+      );
+      setFilterSelection(
+        tiposSelect,
+        selectedTipos,
+        [...tiposSelect.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
+        () => {}
+      );
+      setFilterSelection(
+        anosSelect,
+        selectedAnos,
+        [...anosSelect.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
+        () => {}
+      );
+    }
+
     function setFilterSelection(container, selectedSet, values, applyFn) {
       selectedSet.clear();
       values.forEach((value) => selectedSet.add(value));
@@ -1409,6 +1431,18 @@
             : [];
           setFilterSelection(config.container, config.selectedSet, values, config.applyFn);
         });
+      });
+    }
+
+    function initializeTechnicalFilters() {
+      selectedDocentesTecnica = new Set(
+        [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].map((input) => input.value)
+      );
+      [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.checked = true;
+      });
+      [...tiposTecnicaSelect.options].forEach((option) => {
+        option.selected = true;
       });
     }
 
@@ -2179,6 +2213,8 @@
     bindYearFilters();
     bindScientificFilterToggles();
     bindDocenteChipsTecnica();
+    initializeScientificFilters();
+    initializeTechnicalFilters();
     bindTabs();
     applyFilters();
     applyTechnicalFilters();
