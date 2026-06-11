@@ -698,8 +698,8 @@
         <p>
           Visualização da base final sincronizada da produção docente. O foco desta aba é
           permitir leitura rápida da pontuação por docente, por ano e por tipo de produção,
-          com filtros práticos para artigos, livros e capítulos. Autores: Santos TM, Campos
-          EZ e Henrique RS.
+          com filtros práticos para artigos, livros e capítulos.
+          <br><br><strong>Autores:</strong> Santos TM, Campos EZ e Henrique RS.
         </p>
       </div>
       <div class="hero-brand">
@@ -2188,10 +2188,13 @@
       const docentes = [...selectedDocentes];
       const tipos = [...selectedTipos];
       const anos = [...selectedAnos];
+      const totalDocentesOptions = docenteChipList.querySelectorAll('input[type="checkbox"]').length;
+      const totalTiposOptions = tiposSelect.querySelectorAll('input[type="checkbox"]').length;
+      const totalAnosOptions = anosSelect.querySelectorAll('input[type="checkbox"]').length;
       const filtered = dataSource.filter((item) => {
-        const docenteOk = !docentes.length || docentes.includes(item.docente);
-        const tipoOk = !tipos.length || tipos.includes(item.tipo_producao);
-        const anoOk = !anos.length || anos.includes(item.ano);
+        const docenteOk = totalDocentesOptions === 0 ? true : docentes.includes(item.docente);
+        const tipoOk = totalTiposOptions === 0 ? true : tipos.includes(item.tipo_producao);
+        const anoOk = totalAnosOptions === 0 ? true : anos.includes(item.ano);
         return docenteOk && tipoOk && anoOk;
       });
       const docenteSummary = aggregateByDocente(filtered);
