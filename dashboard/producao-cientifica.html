@@ -884,9 +884,15 @@
           </div>
 
           <div class="card table-card">
-            <div class="section-head">
-              <h2>Síntese por Docente</h2>
-              <p>Pontuação total e decomposição por tipo de produção.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Síntese por Docente</h2>
+                <p>Pontuação total e decomposição por tipo de produção.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação da tabela de síntese">
+                <button type="button" class="sort-toggle active" data-docente-table-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-docente-table-sort="pontuacao">Por pontos</button>
+              </div>
             </div>
             <div class="table-wrap">
               <table>
@@ -1947,7 +1953,7 @@
           total: (item.doutorado_andamento || 0) + (item.doutorado_concluidas || 0),
         }))
         .filter((item) => item.total > 0)
-        .sort((a, b) => b.total - a.total || b.andamento - a.andamento || a.docente.localeCompare(b.docente, "pt-BR"))
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
         .slice(0, 12);
       if (!items.length) {
         chartOrientacoesDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
