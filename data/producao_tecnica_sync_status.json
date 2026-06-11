@@ -1,0 +1,11 @@
+{
+  "source_sqlite": "C:\\Users\\tonym\\Documents\\PPGEF - DashBorad-localdb\\producao_tecnica.sqlite",
+  "synced_at": "2026-06-11T00:04:05",
+  "records": 10,
+  "docentes": 3,
+  "totals_by_docente": {
+    "Carla Meneses Hardman": 6,
+    "Daniel da Rocha Queiroz": 3,
+    "Tony Meireles dos Santos": 1
+  }
+}

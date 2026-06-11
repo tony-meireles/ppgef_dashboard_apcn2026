@@ -1,0 +1,6 @@
+C:\Users\tonym\Documents\PPGEF - DashBorad-localdb\producao_tecnica.sqlite
+
+Observacao:
+- Este arquivo SQLite funcional foi gerado fora da pasta sincronizada pelo OneDrive.
+- O diretorio do projeto dentro do OneDrive apresentou corrupcao/intermitencia de arquivos .sqlite e .sqlite-journal.
+- Fonte usada para gerar o banco: data/producao_tecnica.csv
