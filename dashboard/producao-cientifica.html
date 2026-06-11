@@ -843,11 +843,11 @@
             <div class="section-head section-head-inline">
               <div>
                 <h2>Pontuação por Docente</h2>
-                <p id="docente-chart-caption">Ranking ordenado pela soma de pontos no recorte filtrado.</p>
+                <p id="docente-chart-caption">Ranking ordenado alfabeticamente no recorte filtrado.</p>
               </div>
               <div class="sort-toggle-group" aria-label="Ordenação do ranking">
-                <button type="button" class="sort-toggle active" data-docente-sort="pontuacao">Por pontos</button>
-                <button type="button" class="sort-toggle" data-docente-sort="desempenho">Por desempenho</button>
+                <button type="button" class="sort-toggle active" data-docente-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-docente-sort="pontuacao">Por pontos</button>
               </div>
             </div>
             <div id="chart-docentes" class="chart"></div>
@@ -1314,7 +1314,7 @@
     let selectedTipos = new Set();
     let selectedAnos = new Set();
     let selectedDocentesTecnica = new Set();
-    let docenteSortMode = "pontuacao";
+    let docenteSortMode = "alfabetico";
     let criteriaDocentesSort = "performance";
 
     const typeLabels = {
@@ -1541,7 +1541,7 @@
     function bindDocenteSortToggles() {
       docenteSortButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          docenteSortMode = button.dataset.docenteSort || "pontuacao";
+          docenteSortMode = button.dataset.docenteSort || "alfabetico";
           docenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
           applyFilters();
         });
@@ -1565,7 +1565,6 @@
         row.total += 1;
         row[item.tipo_producao] += 1;
         row.pontuacao += Number(item.pontuacao) || 0;
-        row.desempenho = row.total ? row.pontuacao / row.total : 0;
       }
       return [...grouped.values()].sort((a, b) =>
         b.pontuacao - a.pontuacao || b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR")
@@ -1686,8 +1685,8 @@
 
     function renderDocenteChart(summary) {
       const sortedSummary = [...summary].sort((a, b) => {
-        if (docenteSortMode === "desempenho") {
-          return b.desempenho - a.desempenho || b.pontuacao - a.pontuacao || a.docente.localeCompare(b.docente, "pt-BR");
+        if (docenteSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.pontuacao - a.pontuacao;
         }
         return b.pontuacao - a.pontuacao || b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR");
       });
@@ -1696,13 +1695,10 @@
         chartDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      docenteChartCaption.textContent = docenteSortMode === "desempenho"
-        ? "Ranking ordenado pelo desempenho médio: pontuação dividida pelo número de registros no recorte filtrado."
+      docenteChartCaption.textContent = docenteSortMode === "alfabetico"
+        ? "Ranking ordenado alfabeticamente no recorte filtrado."
         : "Ranking ordenado pela soma de pontos no recorte filtrado.";
-      const maxMetric = Math.max(
-        ...items.map((item) => docenteSortMode === "desempenho" ? item.desempenho : item.pontuacao),
-        1
-      );
+      const maxMetric = Math.max(...items.map((item) => item.pontuacao), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
@@ -1712,16 +1708,12 @@
         <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Pontuação por docente">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const metricValue = docenteSortMode === "desempenho" ? item.desempenho : item.pontuacao;
-            const width = Math.max(8, (metricValue / maxMetric) * usableWidth);
-            const labelValue = docenteSortMode === "desempenho"
-              ? `${item.desempenho.toFixed(1)} p/reg`
-              : `${item.pontuacao}`;
+            const width = Math.max(8, (item.pontuacao / maxMetric) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#docenteGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${labelValue}</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.pontuacao}</text>
             `;
           }).join("")}
           <defs>
