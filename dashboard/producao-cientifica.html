@@ -750,6 +750,209 @@
         rgba(255, 253, 249, 0.96);
     }
 
+    .documents-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .documents-highlight {
+      grid-column: span 12;
+      padding: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(212, 160, 23, 0.18), transparent 26%),
+        linear-gradient(135deg, rgba(255, 253, 249, 0.98), rgba(247, 241, 232, 0.96));
+    }
+
+    .documents-highlight p {
+      margin: 0;
+      max-width: 820px;
+      color: var(--ufpe-cinza);
+      line-height: 1.6;
+    }
+
+    .documents-metric {
+      grid-column: span 4;
+    }
+
+    .documents-group {
+      grid-column: span 6;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      padding: 22px;
+      background:
+        linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(245, 238, 228, 0.96));
+    }
+
+    .documents-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .document-item {
+      position: relative;
+      overflow: hidden;
+      padding: 18px 18px 20px;
+      border: 1px solid #e3d7c7;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.08), transparent 28%),
+        linear-gradient(180deg, #fffdf9, #f7f1e8);
+      box-shadow: 0 10px 24px rgba(38, 41, 48, 0.05);
+    }
+
+    .document-item::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--ufpe-sucesso), #75a58f);
+    }
+
+    .document-item.pending::before {
+      background: linear-gradient(180deg, var(--ufpe-bordo), #cf5a6a);
+    }
+
+    .document-item.pending {
+      border-color: rgba(140, 21, 56, 0.28);
+      background:
+        radial-gradient(circle at top right, rgba(140, 21, 56, 0.12), transparent 30%),
+        linear-gradient(180deg, #fff9fa, #f9ecef);
+    }
+
+    .document-topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .document-topline h3 {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+
+    .document-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .document-meta::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ufpe-destaque);
+    }
+
+    .document-item p {
+      margin: 0;
+      color: var(--ufpe-cinza);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .document-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 102px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid transparent;
+    }
+
+    .document-status.ok {
+      color: var(--ufpe-sucesso);
+      background: rgba(77, 124, 104, 0.14);
+      border-color: rgba(77, 124, 104, 0.24);
+    }
+
+    .document-status.pending {
+      color: white;
+      background: linear-gradient(90deg, #8c1538, #c3394f);
+      border-color: rgba(140, 21, 56, 0.32);
+      box-shadow: 0 8px 18px rgba(140, 21, 56, 0.18);
+    }
+
+    .document-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .document-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .document-link.primary {
+      color: white;
+      background: linear-gradient(90deg, var(--ufpe-bordo), var(--ufpe-bordo-2));
+      box-shadow: 0 10px 20px rgba(140, 21, 56, 0.16);
+    }
+
+    .document-link.secondary {
+      color: var(--ufpe-grafite);
+      background: #f2ebe1;
+      border: 1px solid #e1d5c3;
+    }
+
+    .document-link:hover {
+      transform: translateY(-1px);
+    }
+
+    .document-empty {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(140, 21, 56, 0.1);
+      color: var(--ufpe-bordo);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+    }
+
+    .documents-section-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+      background: linear-gradient(90deg, var(--ufpe-bordo), var(--ufpe-bordo-2));
+    }
+
+    .documents-section-tag.capes {
+      background: linear-gradient(90deg, #426132, #2f5b21);
+    }
+
     .empty {
       padding: 22px 4px 6px;
       color: var(--ufpe-cinza);
@@ -775,12 +978,14 @@
       .chart-wide, .chart-narrow { grid-column: span 12; }
       .orientation-split { grid-column: span 12; }
       .orientation-focus { grid-template-columns: 1fr; }
+      .documents-group { grid-column: span 12; }
     }
 
     @media (max-width: 800px) {
       .wrap { padding: 18px 14px 32px; }
       .filters-grid { grid-template-columns: 1fr; }
       .metric { grid-column: span 12; }
+      .documents-metric { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; }
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
@@ -815,6 +1020,7 @@
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
+        <button class="tab-button" data-tab="tab-documentos">Documentos</button>
         <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
       </nav>
 
@@ -1353,9 +1559,9 @@
             <span id="orient-crit-mestrado-resumo">0 docentes com orientação em mestrado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com doutorado</p>
+            <p class="eyebrow">Doutorado principal</p>
             <strong id="orient-crit-doutorado-total">0</strong>
-            <span id="orient-crit-doutorado-resumo">0 docentes com orientação em doutorado.</span>
+            <span id="orient-crit-doutorado-resumo">0 docentes com orientação concluída em doutorado como principal.</span>
           </div>
 
           <div class="card chart-wide">
@@ -1409,16 +1615,68 @@
           <p class="chart-note">A aba de Produção Científica já foi isolada como primeiro módulo do site estático.</p>
         </div>
       </div>
+
+      <div class="tab-panel" id="tab-documentos">
+        <section class="documents-grid">
+          <div class="card documents-highlight">
+            <div class="section-head">
+              <h2>Central de Documentos</h2>
+              <p>Links diretos para consulta e download dos PDFs de apoio institucional e CAPES.</p>
+            </div>
+            <p>
+              Esta aba foi estruturada para separar documentos internos e documentos CAPES em um ponto único de acesso.
+              Os links utilizam os caminhos atuais dos PDFs. Onde o arquivo ainda não foi vinculado, o card fica marcado
+              como pendente para evitar herança silenciosa de link quebrado ou documento desatualizado.
+            </p>
+          </div>
+
+          <div class="card metric documents-metric">
+            <p class="eyebrow">Documentos cadastrados</p>
+            <strong id="documents-total">0</strong>
+            <span id="documents-total-resumo">0 itens monitorados na aba.</span>
+          </div>
+          <div class="card metric documents-metric">
+            <p class="eyebrow">Disponíveis para download</p>
+            <strong id="documents-ready">0</strong>
+            <span id="documents-ready-resumo">0 PDFs com link ativo.</span>
+          </div>
+          <div class="card metric documents-metric">
+            <p class="eyebrow">Pendentes de vínculo</p>
+            <strong id="documents-pending">0</strong>
+            <span id="documents-pending-resumo">0 documentos aguardando PDF.</span>
+          </div>
+
+          <div class="card documents-group">
+            <div class="section-head">
+              <h2>Internos</h2>
+              <span class="documents-section-tag">Acesso Interno</span>
+              <p>Documentos institucionais do programa.</p>
+            </div>
+            <div id="documents-internos" class="documents-list"></div>
+          </div>
+
+          <div class="card documents-group">
+            <div class="section-head">
+              <h2>CAPES</h2>
+              <span class="documents-section-tag capes">Referência CAPES</span>
+              <p>Documentos norteadores e resultado associado à avaliação.</p>
+            </div>
+            <div id="documents-capes" class="documents-list"></div>
+          </div>
+        </section>
+      </div>
     </section>
   </div>
 
   <script src="./producao-cientifica-data.js"></script>
   <script src="./producao-tecnica-data.js"></script>
   <script src="./orientacoes-data.js"></script>
+  <script src="./documentos-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
     const docenteChipList = document.getElementById("docentes-chip-list");
     const tiposSelect = document.getElementById("tipos");
     const anosSelect = document.getElementById("anos");
@@ -1452,6 +1710,8 @@
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
     const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
+    const documentsInternos = document.getElementById("documents-internos");
+    const documentsCapes = document.getElementById("documents-capes");
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
@@ -1701,6 +1961,71 @@
         [...document.querySelectorAll(".tab-button")].forEach((item) => item.classList.toggle("active", item === button));
         [...document.querySelectorAll(".tab-panel")].forEach((panel) => panel.classList.toggle("active", panel.id === target));
       });
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function toFileUrl(path) {
+      return `file:///${String(path).replaceAll("\\", "/")}`;
+    }
+
+    function renderDocumentList(items, target) {
+      target.innerHTML = items.map((item) => {
+        const hasFile = Boolean(item.caminho);
+        const statusClass = hasFile ? "ok" : "pending";
+        const statusLabel = hasFile ? "Disponível" : "Pendente";
+        const primaryAction = hasFile
+          ? `<a class="document-link primary" href="${encodeURI(toFileUrl(item.caminho))}" download>Abrir documento</a>`
+          : "";
+        const secondaryActions = Array.isArray(item.linksSecundarios)
+          ? item.linksSecundarios.map((link) => `
+              <a class="document-link secondary" href="${encodeURI(toFileUrl(link.caminho))}" download>${escapeHtml(link.rotulo || "Versão adicional")}</a>
+            `).join("")
+          : "";
+        const emptyState = hasFile
+          ? ""
+          : `<div class="document-empty">Documento em PDF pendente de encaminhamento.</div>`;
+
+        return `
+          <article class="document-item ${statusClass}">
+            <div class="document-meta">${escapeHtml(item.categoria)}</div>
+            <div class="document-topline">
+              <h3>${escapeHtml(item.titulo)}</h3>
+              <span class="document-status ${statusClass}">${statusLabel}</span>
+            </div>
+            <p>${escapeHtml(item.descricao)}</p>
+            <div class="document-actions">
+              ${primaryAction}
+              ${secondaryActions}
+            </div>
+            ${emptyState}
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderDocumentsPanel() {
+      const internos = dataSourceDocumentos.filter((item) => item.categoria === "Internos");
+      const capes = dataSourceDocumentos.filter((item) => item.categoria === "CAPES");
+      const available = dataSourceDocumentos.filter((item) => item.caminho).length;
+      const pending = dataSourceDocumentos.length - available;
+
+      document.getElementById("documents-total").textContent = String(dataSourceDocumentos.length);
+      document.getElementById("documents-total-resumo").textContent = `${internos.length} internos e ${capes.length} CAPES.`;
+      document.getElementById("documents-ready").textContent = String(available);
+      document.getElementById("documents-ready-resumo").textContent = `${available} PDFs com link de download ativo.`;
+      document.getElementById("documents-pending").textContent = String(pending);
+      document.getElementById("documents-pending-resumo").textContent = `${pending} itens ainda aguardam arquivo final.`;
+
+      renderDocumentList(internos, documentsInternos);
+      renderDocumentList(capes, documentsCapes);
     }
 
     function bindDocenteSortToggles() {
@@ -2431,8 +2756,8 @@
           color: "#426132",
         },
         {
-          criterio: "Doutorado concluído",
-          label: "≥ 3 docentes com orientação concluída em doutorado",
+          criterio: "Doutorado principal",
+          label: "≥ 3 docentes com orientação concluída em doutorado como principal",
           atual: summary.doutoradoAtendidos,
           minimo: 3,
           color: "#d4a017",
@@ -2477,7 +2802,7 @@
       document.getElementById("orient-crit-mestrado-total").textContent = String(summary.mestradoAtendidos);
       document.getElementById("orient-crit-mestrado-resumo").textContent = `${summary.mestradoAtendidos} docentes com orientação em mestrado.`;
       document.getElementById("orient-crit-doutorado-total").textContent = String(summary.doutoradoAtendidos);
-      document.getElementById("orient-crit-doutorado-resumo").textContent = `${summary.doutoradoAtendidos} docentes com orientação concluída em doutorado.`;
+      document.getElementById("orient-crit-doutorado-resumo").textContent = `${summary.doutoradoAtendidos} docentes com orientação concluída em doutorado como principal.`;
 
       renderOrientationCriteriaChart(summary);
 
@@ -2503,7 +2828,7 @@
         `
           <div class="criteria-score">
             <div>
-              <div>Doutorado concluído</div>
+              <div>Doutorado principal</div>
               <strong>${summary.doutoradoAtendidos}</strong>
             </div>
             <span class="criteria-status ${doutoradoOk ? "ok" : "risk"}">${doutoradoOk ? "Atende" : "Atenção"}</span>
@@ -2514,10 +2839,10 @@
       document.getElementById("orient-crit-insights").innerHTML = [
         `<span class="chip">Graduação concluída: <strong>${summary.graduacaoAtendidos}/${summary.totalDocentes}</strong></span>`,
         `<span class="chip">Mestrado: <strong>${summary.mestradoAtendidos}</strong> docentes frente ao mínimo de <strong>9</strong></span>`,
-        `<span class="chip">Doutorado concluído: <strong>${summary.doutoradoAtendidos}</strong> docentes frente ao mínimo de <strong>3</strong></span>`,
+        `<span class="chip">Doutorado principal: <strong>${summary.doutoradoAtendidos}</strong> docentes frente ao mínimo de <strong>3</strong></span>`,
       ].join("");
 
-      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado considera docentes com ao menos um registro de orientação em andamento, concluída ou concluinte em 2026. Doutorado considera apenas docentes com orientação concluída em doutorado.";
+      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado considera docentes com ao menos um registro de orientação em andamento, concluída ou concluinte em 2026. Doutorado considera apenas docentes com orientação concluída em doutorado como principal.";
 
       document.getElementById("orient-crit-resumo-body").innerHTML = [
         `
@@ -2544,7 +2869,7 @@
           <tr>
             <td>Orientação</td>
             <td>Doutorado</td>
-            <td>≥ 3 com orientação concluída em doutorado</td>
+            <td>≥ 3 com orientação concluída em doutorado como principal</td>
             <td>${summary.doutoradoAtendidos} docentes</td>
             <td><span class="criteria-status ${doutoradoOk ? "ok" : "risk"}">${doutoradoOk ? "Atende" : "Não atende"}</span></td>
             <td>${doutoradoOk ? `Supera o mínimo em ${summary.doutoradoAtendidos - 3} docente(s).` : `Faltam ${3 - summary.doutoradoAtendidos} docente(s) para o mínimo.`}</td>
@@ -2702,6 +3027,7 @@
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
+    renderDocumentsPanel();
 
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
   </script>
