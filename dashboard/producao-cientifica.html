@@ -100,7 +100,7 @@
     }
 
     .hero-brand img {
-      width: min(100%, 320px);
+      width: min(100%, 240px);
       height: auto;
       object-fit: contain;
       filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
@@ -635,6 +635,18 @@
       background: #fbf1ef;
     }
 
+    .orientation-grid-table.stricto-vertical th:not(:first-child) {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      height: 180px;
+      min-width: 44px;
+      padding: 10px 6px;
+      white-space: normal;
+      word-break: normal;
+      line-height: 1.1;
+      vertical-align: bottom;
+    }
+
     .criteria-summary {
       display: grid;
       gap: 14px;
@@ -1103,21 +1115,21 @@
               <p>Mestrado e doutorado por docente, com destaque para o pipeline APCN.</p>
             </div>
             <div class="table-wrap">
-              <table class="orientation-grid-table">
+              <table class="orientation-grid-table stricto-vertical">
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Mest.<br>and.</th>
-                    <th>Mest.<br>conc. 2026</th>
-                    <th>Mest.<br>concl.</th>
-                    <th>Dout.<br>and.</th>
-                    <th>Dout.<br>principal</th>
-                    <th>Dout.<br>conc. 2026</th>
-                    <th>Dout.<br>concl.</th>
-                    <th>Dout. concl.<br>principal</th>
-                    <th>APCN<br>and.</th>
-                    <th>APCN<br>concl.</th>
-                    <th>APCN<br>total</th>
+                    <th>Mestrado andamento</th>
+                    <th>Mestrado concluintes 2026</th>
+                    <th>Mestrado concluídas</th>
+                    <th>Doutorado andamento</th>
+                    <th>Doutorado principal</th>
+                    <th>Doutorado concluintes 2026</th>
+                    <th>Doutorado concluídas</th>
+                    <th>Doutorado concluídas principal</th>
+                    <th>APCN andamento</th>
+                    <th>APCN concluídas</th>
+                    <th>APCN total</th>
                   </tr>
                 </thead>
                 <tbody id="orientacoes-stricto-body"></tbody>
