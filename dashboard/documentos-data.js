@@ -21,13 +21,13 @@ window.DOCUMENTOS_PPGEF = [
     categoria: "Internos",
     titulo: "Planejamento Estratégico",
     descricao: "Diretrizes, metas e prioridades institucionais do programa.",
-    caminho: null,
+    caminho: "G:\\.shortcut-targets-by-id\\18B_rphPE1Flt1tGbECpP70xTWYIcUsfW\\AAA - PPGEF EFI\\Planejamento Estratégico\\2025\\PPGEF - Planejamento Estratégico 2024-2028 v. 2.0.pdf",
   },
   {
     categoria: "Internos",
     titulo: "Relatório de AA",
     descricao: "Síntese das ações acadêmicas e acompanhamento institucional.",
-    caminho: null,
+    caminho: "G:\\.shortcut-targets-by-id\\18B_rphPE1Flt1tGbECpP70xTWYIcUsfW\\AAA - PPGEF EFI\\Autoavaliação PPGEF-CAA-2024\\03 - Relatório da CAA 2025\\Autoavaliação PPGEF 2021-2024.pdf",
   },
   {
     categoria: "Internos",
