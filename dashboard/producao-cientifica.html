@@ -2164,6 +2164,31 @@
       `;
     }
 
+    function updateCriteriaSortButtons() {
+      if (criteriosSortPerformanceButton) {
+        criteriosSortPerformanceButton.classList.toggle("active", criteriaDocentesSort === "performance");
+      }
+      if (criteriosSortAlphaButton) {
+        criteriosSortAlphaButton.classList.toggle("active", criteriaDocentesSort === "alpha");
+      }
+    }
+
+    function bindCriteriaSortButtons() {
+      if (criteriosSortPerformanceButton) {
+        criteriosSortPerformanceButton.addEventListener("click", () => {
+          criteriaDocentesSort = "performance";
+          renderProductivityCriteriaPanel();
+        });
+      }
+      if (criteriosSortAlphaButton) {
+        criteriosSortAlphaButton.addEventListener("click", () => {
+          criteriaDocentesSort = "alpha";
+          renderProductivityCriteriaPanel();
+        });
+      }
+      updateCriteriaSortButtons();
+    }
+
     function renderProductivityCriteriaPanel() {
       const summary = aggregateProductivityCriteria(dataSource);
       document.getElementById("criterios-docentes-total").textContent = String(summary.totalDocentes);
@@ -2231,7 +2256,19 @@
         `,
       ].join("");
 
-      document.getElementById("criterios-docentes-body").innerHTML = summary.docentes.map((item) => `
+      const sortedDocentes = [...summary.docentes].sort((a, b) => {
+        if (criteriaDocentesSort === "alpha") {
+          return a.docente.localeCompare(b.docente, "pt-BR");
+        }
+        return (
+          b.pontuacao - a.pontuacao ||
+          Number(b.criterio2) - Number(a.criterio2) ||
+          Number(b.criterio1) - Number(a.criterio1) ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+      });
+
+      document.getElementById("criterios-docentes-body").innerHTML = sortedDocentes.map((item) => `
         <tr>
           <td>${item.docente}</td>
           <td>${item.pontuacao}</td>
@@ -2241,6 +2278,7 @@
           <td><span class="criteria-status ${item.criterio2 ? "ok" : "risk"}">${item.criterio2 ? "Atende" : "Não atende"}</span></td>
         </tr>
       `).join("");
+      updateCriteriaSortButtons();
     }
 
     function renderTable(data) {
@@ -2311,6 +2349,7 @@
     bindYearFilters();
     bindScientificFilterToggles();
     bindDocenteChipsTecnica();
+    bindCriteriaSortButtons();
     initializeScientificFilters();
     initializeTechnicalFilters();
     bindTabs();
