@@ -15,6 +15,10 @@
       --ufpe-linha: #ddd4c7;
       --ufpe-destaque: #d4a017;
       --ufpe-sucesso: #4d7c68;
+      --orientation-co-andamento: #b7ddb0;
+      --orientation-principal-andamento: #b9d8f2;
+      --orientation-co-concluida: #ffffff;
+      --orientation-principal-concluida: #f3c38b;
       --shadow: 0 18px 45px rgba(38, 41, 48, 0.08);
     }
 
@@ -1144,10 +1148,10 @@
               </div>
             </div>
             <div class="orientation-legend">
-              <span><i style="background:#f0bf43"></i>Em Andamento como Co</span>
-              <span><i style="background:#ffd86f"></i>Em andamento como Principal</span>
-              <span><i style="background:#ffffff"></i>Concluída como Co</span>
-              <span><i style="background:#d4a017"></i>Concluída como Principal</span>
+              <span><i style="background:var(--orientation-co-andamento)"></i>Em Andamento como Co</span>
+              <span><i style="background:var(--orientation-principal-andamento)"></i>Em andamento como Principal</span>
+              <span><i style="background:var(--orientation-co-concluida)"></i>Concluída como Co</span>
+              <span><i style="background:var(--orientation-principal-concluida)"></i>Concluída como Principal</span>
             </div>
           </div>
 
@@ -2150,13 +2154,13 @@
             return `
               <text x="0" y="${y + 18}" fill="rgba(255,250,243,0.96)" font-size="15" font-weight="600">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${andamentoCoWidth}" height="16" rx="8" fill="#f0bf43"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${andamentoCoWidth}" height="16" rx="8" fill="var(--orientation-co-andamento)"></rect>
               <rect x="${labelWidth}" y="${y + 22}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
-              <rect x="${labelWidth}" y="${y + 22}" width="${andamentoPrincipalWidth}" height="16" rx="8" fill="#ffd86f"></rect>
+              <rect x="${labelWidth}" y="${y + 22}" width="${andamentoPrincipalWidth}" height="16" rx="8" fill="var(--orientation-principal-andamento)"></rect>
               <rect x="${labelWidth}" y="${y + 44}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
-              <rect x="${labelWidth}" y="${y + 44}" width="${concluidasCoWidth}" height="16" rx="8" fill="#ffffff"></rect>
+              <rect x="${labelWidth}" y="${y + 44}" width="${concluidasCoWidth}" height="16" rx="8" fill="var(--orientation-co-concluida)"></rect>
               <rect x="${labelWidth}" y="${y + 66}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
-              <rect x="${labelWidth}" y="${y + 66}" width="${concluidasPrincipalWidth}" height="16" rx="8" fill="#d4a017"></rect>
+              <rect x="${labelWidth}" y="${y + 66}" width="${concluidasPrincipalWidth}" height="16" rx="8" fill="var(--orientation-principal-concluida)"></rect>
             `;
           }).join("")}
         </svg>
