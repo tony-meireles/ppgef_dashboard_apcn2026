@@ -1,0 +1,13 @@
+*.sqlite
+*.sqlite-journal
+*.pyc
+__pycache__/
+
+outputs/
+data/*.xlsx
+data/*-agregada.sqlite
+data/*-classificado.sqlite
+data/*-sincronizada-revisao.sqlite
+
+.DS_Store
+Thumbs.db

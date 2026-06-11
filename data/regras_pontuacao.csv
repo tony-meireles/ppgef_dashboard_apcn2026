@@ -1,0 +1,9 @@
+tipo_producao,indexacao,pontuacao,criterio
+artigo,Web of Science (JCR),90,Artigo em periodico indexado no Web of Science com JCR
+artigo,Scopus (SJR),90,Artigo em periodico indexado na Scopus com SJR
+artigo,PubMed,60,Artigo em periodico indexado no PubMed
+artigo,SciELO,60,Artigo em periodico indexado na SciELO
+artigo,Apenas Google Scholar,30,Artigo localizado apenas via Google Scholar
+artigo,Sem indexacao ou revista predatoria,0,Artigo sem indexacao valida ou em revista predatoria
+livro,,90,Livro recebe 90 pontos por regra fixa
+capitulo,,45,Capitulo recebe 45 pontos por regra fixa

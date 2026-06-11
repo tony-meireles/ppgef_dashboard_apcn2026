@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPGEF - Produção Científica</title>
+  <style>
+    :root {
+      --ufpe-bordo: #8c1538;
+      --ufpe-bordo-2: #a61d44;
+      --ufpe-grafite: #262930;
+      --ufpe-cinza: #6d727c;
+      --ufpe-areia: #f4f1eb;
+      --ufpe-painel: #fffdf9;
+      --ufpe-linha: #ddd4c7;
+      --ufpe-destaque: #d4a017;
+      --ufpe-sucesso: #4d7c68;
+      --shadow: 0 18px 45px rgba(38, 41, 48, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ufpe-grafite);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 17px;
+      background:
+        linear-gradient(135deg, rgba(140, 21, 56, 0.08), transparent 26%),
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.14), transparent 22%),
+        linear-gradient(180deg, #f7f4ef 0%, var(--ufpe-areia) 100%);
+    }
+
+    .wrap {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 28px 18px 42px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 22px;
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        linear-gradient(125deg, rgba(140, 21, 56, 0.98) 0%, rgba(102, 15, 41, 0.94) 62%, rgba(56, 18, 28, 0.95) 100%);
+      box-shadow: var(--shadow);
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -70px -110px auto;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      filter: blur(8px);
+    }
+
+    .hero-kicker {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .hero-brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      padding: 16px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-brand img {
+      width: min(100%, 360px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .tabs-shell {
+      margin-top: 22px;
+    }
+
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tab-button {
+      border: 1px solid #d9c7b1;
+      background: rgba(255, 253, 249, 0.9);
+      color: var(--ufpe-grafite);
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--ufpe-bordo);
+    }
+
+    .tab-button.active {
+      background: linear-gradient(90deg, var(--ufpe-bordo), var(--ufpe-bordo-2));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 10px 20px rgba(140, 21, 56, 0.18);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: rgba(255, 253, 249, 0.95);
+      border: 1px solid var(--ufpe-linha);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+      letter-spacing: 0.02em;
+    }
+
+    .filters { grid-column: span 12; }
+    .metric { grid-column: span 3; }
+    .chart-wide { grid-column: span 8; }
+    .chart-narrow { grid-column: span 4; }
+    .table-card { grid-column: span 12; overflow: hidden; }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--ufpe-cinza);
+      font-weight: 600;
+    }
+
+    select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--ufpe-linha);
+      background: white;
+      color: var(--ufpe-grafite);
+      font-size: 1rem;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--ufpe-linha);
+      background: white;
+      color: var(--ufpe-grafite);
+      font-size: 1rem;
+    }
+
+    .docente-picker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-height: 188px;
+      overflow: auto;
+      padding: 4px 2px 0;
+    }
+
+    .docente-chip {
+      border: 1px solid #d7c3ad;
+      background: white;
+      color: var(--ufpe-grafite);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.93rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .docente-chip:hover {
+      border-color: var(--ufpe-bordo);
+      color: var(--ufpe-bordo);
+    }
+
+    .docente-chip.active {
+      background: rgba(140, 21, 56, 0.12);
+      border-color: var(--ufpe-bordo);
+      color: var(--ufpe-bordo);
+      font-weight: 700;
+    }
+
+    .metric {
+      padding: 22px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 246, 241, 0.96));
+    }
+
+    .metric .eyebrow {
+      margin: 0 0 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      color: var(--ufpe-bordo);
+      letter-spacing: -0.05em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 12px;
+      font-size: 0.86rem;
+      color: var(--ufpe-cinza);
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    .chart {
+      width: 100%;
+      min-height: 320px;
+    }
+
+    .chart svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .chart-note {
+      margin-top: 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.9rem;
+    }
+
+    .type-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 64px;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.94rem;
+    }
+
+    .type-row strong { color: var(--ufpe-grafite); }
+
+    .track {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #ede5da;
+    }
+
+    .bar {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--ufpe-bordo), var(--ufpe-bordo-2));
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f2ebe1;
+      color: var(--ufpe-grafite);
+      font-size: 0.9rem;
+      border: 1px solid #e1d5c3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.97rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--ufpe-linha);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ufpe-cinza);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:hover {
+      background: rgba(140, 21, 56, 0.03);
+    }
+
+    .table-wrap {
+      overflow: auto;
+    }
+
+    .orientation-table {
+      min-width: 1700px;
+      font-size: 0.9rem;
+    }
+
+    .orientation-table th,
+    .orientation-table td {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .orientation-table th:first-child,
+    .orientation-table td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      min-width: 270px;
+      text-align: left;
+      background: #fffaf3;
+    }
+
+    .orientation-table thead th {
+      background: #f3ecdf;
+    }
+
+    .orientation-table .group-head {
+      color: white;
+      background: linear-gradient(90deg, #426132, #2f5b21);
+      border-bottom-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .orientation-table .group-head.soft {
+      color: var(--ufpe-grafite);
+      background: #d9e8ca;
+    }
+
+    .orientation-table .sub-head {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      min-width: 42px;
+      height: 140px;
+      padding: 8px 4px;
+      letter-spacing: 0.03em;
+    }
+
+    .orientation-table td.total-cell {
+      font-weight: 700;
+      color: var(--ufpe-bordo);
+      background: #fbf1ef;
+    }
+
+    .empty {
+      padding: 22px 4px 6px;
+      color: var(--ufpe-cinza);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--ufpe-cinza);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; }
+      .metric { grid-column: span 6; }
+      .chart-wide, .chart-narrow { grid-column: span 12; }
+    }
+
+    @media (max-width: 800px) {
+      .wrap { padding: 18px 14px 32px; }
+      .filters-grid { grid-template-columns: 1fr; }
+      .metric { grid-column: span 12; }
+      .type-row { grid-template-columns: 1fr; }
+      .hero { padding: 20px; }
+      .hero-brand { min-height: 160px; }
+      .tabs-nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <p class="hero-kicker">Universidade Federal de Pernambuco · PPGEF</p>
+        <h1>Produção Científica Docente</h1>
+        <p>
+          Visualização da base final sincronizada da produção docente. O foco desta aba é
+          permitir leitura rápida da pontuação por docente, por ano e por tipo de produção,
+          com filtros práticos para artigos, livros e capítulos.
+        </p>
+      </div>
+      <div class="hero-brand">
+        <img
+          src="https://images.seeklogo.com/logo-png/38/1/universidade-federal-de-pernambuco-ufpe-logo-png_seeklogo-384864.png"
+          alt="Logo da Universidade Federal de Pernambuco"
+        >
+      </div>
+    </section>
+
+    <section class="tabs-shell">
+      <nav class="tabs-nav" id="tabs-nav">
+        <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
+        <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
+        <button class="tab-button" data-tab="tab-consulta">Consulta ao Banco</button>
+        <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
+        <button class="tab-button" data-tab="tab-apcn">APCN Docente</button>
+        <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
+      </nav>
+
+      <div class="tab-panel active" id="tab-producao">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Filtros</h2>
+              <p>Selecione quantos docentes desejar e refine também por tipo e ano.</p>
+            </div>
+            <div class="filters-grid">
+              <div>
+                <label for="docentes-chip-list">Docentes</label>
+                <div id="docentes-chip-list" class="docente-picker"></div>
+              </div>
+              <div>
+                <label for="tipos">Tipo de produção</label>
+                <select id="tipos" multiple>
+                  <option value="artigo">Artigo</option>
+                  <option value="livro">Livro</option>
+                  <option value="capitulo">Capítulo</option>
+                </select>
+              </div>
+              <div>
+                <label for="anos">Ano</label>
+                <select id="anos" multiple></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Registros</p>
+            <strong id="total-registros">0</strong>
+            <span>Total de produtos visíveis após aplicação dos filtros.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Pontuação</p>
+            <strong id="pontuacao-total">0</strong>
+            <span>Soma de pontos APCN considerando artigos, livros e capítulos visíveis.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes</p>
+            <strong id="docentes-visiveis">0</strong>
+            <span>Quantidade de docentes alcançados pelos filtros correntes.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Média por Docente</p>
+            <strong id="media-docente">0</strong>
+            <span>Pontuação média no conjunto atualmente exibido.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Pontuação por Docente</h2>
+              <p>Ranking ordenado pela soma de pontos no recorte filtrado.</p>
+            </div>
+            <div id="chart-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Pontuação por Tipo</h2>
+              <p>Distribuição entre artigos, livros e capítulos.</p>
+            </div>
+            <div id="type-stack" class="type-stack"></div>
+            <div class="chips" id="type-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Pontuação por Ano</h2>
+              <p>Evolução anual com base na produção presente no banco final.</p>
+            </div>
+            <div id="chart-anos" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Resumo do Recorte</h2>
+              <p>Leitura rápida da composição visível.</p>
+            </div>
+            <div class="chips" id="insight-chips"></div>
+            <div class="legend">
+              <span><i style="background: var(--ufpe-bordo)"></i> Pontuação APCN</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Livros</span>
+              <span><i style="background: var(--ufpe-sucesso)"></i> Artigos</span>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese por Docente</h2>
+              <p>Pontuação total e decomposição por tipo de produção.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Registros</th>
+                    <th>Artigos</th>
+                    <th>Livros</th>
+                    <th>Capítulos</th>
+                    <th>Pontuação</th>
+                  </tr>
+                </thead>
+                <tbody id="resumo-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Registros Detalhados</h2>
+              <p>Base final sincronizada com classificação e pontuação.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Ano</th>
+                    <th>Tipo</th>
+                    <th>Título</th>
+                    <th>Periódico / Veículo</th>
+                    <th>Indexação</th>
+                    <th>JIF 2025</th>
+                    <th>Quartil</th>
+                    <th>Pontos</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela-body"></tbody>
+              </table>
+            </div>
+            <div id="estado-vazio" class="empty">
+              Nenhum registro atende aos filtros atuais.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-tecnica">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Filtros</h2>
+              <p>Selecione docentes e tipos de produto técnico para refinar a leitura quantitativa.</p>
+            </div>
+            <div class="filters-grid">
+              <div>
+                <label for="docentes-tecnica-chip-list">Docentes</label>
+                <div id="docentes-tecnica-chip-list" class="docente-picker"></div>
+              </div>
+              <div>
+                <label for="tipos-tecnica">Tipo de produto</label>
+                <select id="tipos-tecnica" multiple></select>
+              </div>
+              <div>
+                <label for="recorte-tecnica">Recorte</label>
+                <select id="recorte-tecnica" disabled>
+                  <option value="quantitativo" selected>Quantitativo de produtos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Produtos</p>
+            <strong id="tecnica-total-produtos">0</strong>
+            <span>Soma total de produtos técnicos visíveis após aplicação dos filtros.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes</p>
+            <strong id="tecnica-docentes-visiveis">0</strong>
+            <span>Quantidade de docentes com produção técnica no recorte atual.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Tipos</p>
+            <strong id="tecnica-tipos-visiveis">0</strong>
+            <span>Total de categorias de produtos técnicos presentes no recorte atual.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Média por Docente</p>
+            <strong id="tecnica-media-docente">0</strong>
+            <span>Média de produtos técnicos por docente no conjunto atualmente exibido.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Produtos por Docente</h2>
+              <p>Ranking pela soma de produtos técnicos no recorte filtrado.</p>
+            </div>
+            <div id="chart-tecnica-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Produtos por Tipo</h2>
+              <p>Distribuição quantitativa entre os tipos de produção técnica.</p>
+            </div>
+            <div id="type-stack-tecnica" class="type-stack"></div>
+            <div class="chips" id="type-chips-tecnica"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Síntese por Docente</h2>
+              <p>Consolidação quantitativa por docente e por tipo técnico.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Tipos de Produto</th>
+                    <th>Quantitativo Total</th>
+                  </tr>
+                </thead>
+                <tbody id="resumo-tecnica-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Resumo do Recorte</h2>
+              <p>Leitura rápida da composição visível.</p>
+            </div>
+            <div class="chips" id="insight-chips-tecnica"></div>
+            <div class="legend">
+              <span><i style="background: var(--ufpe-bordo)"></i> Quantitativo por docente</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Distribuição por tipo</span>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Registros Técnicos</h2>
+              <p>Base quantitativa da produção técnica docente.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Tipo de Produto</th>
+                    <th>Quantitativo</th>
+                    <th>Observações</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela-tecnica-body"></tbody>
+              </table>
+            </div>
+            <div id="estado-vazio-tecnica" class="empty">
+              Nenhum registro técnico atende aos filtros atuais.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-consulta">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Consulta Livre</h2>
+              <p>Busca textual sobre a base sincronizada disponível no projeto.</p>
+            </div>
+            <div class="filters-grid">
+              <div>
+                <label for="consulta-termo">Termo de busca</label>
+                <input id="consulta-termo" type="search" placeholder="Ex.: docente, título, DOI, periódico">
+              </div>
+              <div>
+                <label for="consulta-campo">Campo</label>
+                <select id="consulta-campo">
+                  <option value="all">Todos os campos</option>
+                  <option value="docente">Docente</option>
+                  <option value="autor_principal">Autor principal</option>
+                  <option value="titulo">Título</option>
+                  <option value="revista_ou_veiculo">Periódico / Veículo</option>
+                  <option value="doi">DOI</option>
+                  <option value="tipo_producao">Tipo</option>
+                  <option value="ano">Ano</option>
+                </select>
+              </div>
+              <div>
+                <label for="consulta-fonte">Fonte</label>
+                <select id="consulta-fonte">
+                  <option value="cientifica">Produção científica sincronizada</option>
+                  <option value="tecnica">Produção técnica</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Fonte Ativa</p>
+            <strong id="consulta-fonte-label">0</strong>
+            <span id="consulta-fonte-detalhe">Nenhuma fonte selecionada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Registros na Fonte</p>
+            <strong id="consulta-total-fonte">0</strong>
+            <span>Total bruto de registros disponíveis na origem atual.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Resultados</p>
+            <strong id="consulta-total-resultados">0</strong>
+            <span>Quantidade de registros encontrados pela busca atual.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Status do Banco</p>
+            <strong id="consulta-status-banco">OK</strong>
+            <span id="consulta-status-detalhe">Consulta exposta por espelho JSON da base válida.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Arquivos de Origem</h2>
+              <p>Artefatos disponíveis para consulta e auditoria local.</p>
+            </div>
+            <div class="chips">
+              <span class="chip"><a href="../data/producao_cientifica.json">JSON sincronizado</a></span>
+              <span class="chip"><a href="../data/producao_cientifica.csv">CSV sincronizado</a></span>
+              <span class="chip"><a href="../data/producao_cientifica_v2026-06-10-sincronizada-revisao.sqlite">SQLite sincronizado</a></span>
+              <span class="chip"><a href="../data/producao_cientifica_v2026-06-10-agregada.sqlite">SQLite agregado</a></span>
+              <span class="chip"><a href="../data/producao_tecnica.json">JSON técnico</a></span>
+              <span class="chip"><a href="../data/producao_tecnica.csv">CSV técnico</a></span>
+            </div>
+            <p class="chart-note">Diagnóstico atual: <code>data/producao_cientifica.sqlite</code> está inválido e não deve ser usado como fonte principal.</p>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Recorte Atual</h2>
+              <p>Resumo rápido dos resultados.</p>
+            </div>
+            <div class="chips" id="consulta-insights"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Resultados da Consulta</h2>
+              <p>Tabela pesquisável com os campos principais da fonte selecionada.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Fonte</th>
+                    <th>Docente</th>
+                    <th>Ano / Tipo</th>
+                    <th>Título / Produto</th>
+                    <th>Veículo / Observações</th>
+                    <th>DOI / Quantitativo</th>
+                  </tr>
+                </thead>
+                <tbody id="consulta-body"></tbody>
+              </table>
+            </div>
+            <div id="consulta-vazio" class="empty">
+              Nenhum registro encontrado para a consulta atual.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-orientacoes">
+        <section class="grid">
+          <div class="card metric">
+            <p class="eyebrow">Docentes Mapeados</p>
+            <strong id="orientacoes-docentes-total">0</strong>
+            <span>Total de docentes permanentes com registro na análise consolidada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Em Andamento APCN</p>
+            <strong id="orientacoes-andamento-total">0</strong>
+            <span>Soma do pipeline stricto sensu em andamento considerado para APCN.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Concluídas APCN</p>
+            <strong id="orientacoes-concluidas-total">0</strong>
+            <span>Total consolidado de orientações concluídas no recorte APCN.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">TCCs e ICs Concluídos</p>
+            <strong id="orientacoes-base-total">0</strong>
+            <span>Volume acumulado de TCCs e ICs concluídos na base apresentada.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Total Geral APCN por Docente</h2>
+              <p>Ranking pela soma consolidada de orientações válidas para APCN.</p>
+            </div>
+            <div id="chart-orientacoes-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura Crítica</h2>
+              <p>Resumo do retrato atual das orientações.</p>
+            </div>
+            <div class="chips" id="orientacoes-insights"></div>
+            <p class="chart-note" id="orientacoes-diagnostico"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mapa de Orientações</h2>
+              <p>Transcrição estruturada da análise recebida, organizada por nível e total APCN.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="orientation-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Docentes Permanentes</th>
+                    <th colspan="2">TCCs</th>
+                    <th colspan="2">ICs</th>
+                    <th colspan="3">Mestrado</th>
+                    <th colspan="5" class="group-head">Doutorado</th>
+                    <th colspan="3">Pós-Doc</th>
+                    <th colspan="5" class="group-head soft">Total de Orientações</th>
+                  </tr>
+                  <tr>
+                    <th class="sub-head">Em andamento</th>
+                    <th class="sub-head">Concluídas</th>
+                    <th class="sub-head">Em andamento</th>
+                    <th class="sub-head">Concluídas</th>
+                    <th class="sub-head">Em andamento</th>
+                    <th class="sub-head">Concluintes em 2026</th>
+                    <th class="sub-head">Concluídas</th>
+                    <th class="sub-head group-head">Em andamento</th>
+                    <th class="sub-head group-head">Em andamento como principal</th>
+                    <th class="sub-head group-head">Concluintes em 2026</th>
+                    <th class="sub-head group-head">Concluídas</th>
+                    <th class="sub-head group-head">Concluídas como principal</th>
+                    <th class="sub-head">Em andamento</th>
+                    <th class="sub-head">Concluintes em 2026</th>
+                    <th class="sub-head">Concluídas</th>
+                    <th class="sub-head">Em andamento APCN</th>
+                    <th class="sub-head">Concluídas APCN</th>
+                    <th class="sub-head">Mestrado concluído</th>
+                    <th class="sub-head">Concluintes 2026 APCN</th>
+                    <th class="sub-head">Total geral APCN</th>
+                  </tr>
+                </thead>
+                <tbody id="orientacoes-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-apcn">
+        <div class="card">
+          <div class="section-head">
+            <h2>APCN Docente</h2>
+            <p>Espaço reservado para a próxima aba com indicadores e critérios APCN por docente.</p>
+          </div>
+          <p class="chart-note">Estrutura de navegação criada para suportar novas camadas de informação sem reescrever a interface principal.</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-indicadores">
+        <div class="card">
+          <div class="section-head">
+            <h2>Indicadores Complementares</h2>
+            <p>Espaço reservado para métricas futuras, séries históricas adicionais e recortes institucionais.</p>
+          </div>
+          <p class="chart-note">A aba de Produção Científica já foi isolada como primeiro módulo do site estático.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./producao-cientifica-data.js"></script>
+  <script src="./producao-tecnica-data.js"></script>
+  <script src="./orientacoes-data.js"></script>
+  <script>
+    const dataSource = window.PRODUCAO_CIENTIFICA || [];
+    const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
+    const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const docenteChipList = document.getElementById("docentes-chip-list");
+    const tiposSelect = document.getElementById("tipos");
+    const anosSelect = document.getElementById("anos");
+    const tabsNav = document.getElementById("tabs-nav");
+    const tabelaBody = document.getElementById("tabela-body");
+    const resumoDocentesBody = document.getElementById("resumo-docentes-body");
+    const estadoVazio = document.getElementById("estado-vazio");
+    const chartDocentes = document.getElementById("chart-docentes");
+    const chartAnos = document.getElementById("chart-anos");
+    const typeStack = document.getElementById("type-stack");
+    const typeChips = document.getElementById("type-chips");
+    const insightChips = document.getElementById("insight-chips");
+    const docenteTecnicaChipList = document.getElementById("docentes-tecnica-chip-list");
+    const tiposTecnicaSelect = document.getElementById("tipos-tecnica");
+    const tabelaTecnicaBody = document.getElementById("tabela-tecnica-body");
+    const resumoTecnicaDocentesBody = document.getElementById("resumo-tecnica-docentes-body");
+    const estadoVazioTecnica = document.getElementById("estado-vazio-tecnica");
+    const chartTecnicaDocentes = document.getElementById("chart-tecnica-docentes");
+    const typeStackTecnica = document.getElementById("type-stack-tecnica");
+    const typeChipsTecnica = document.getElementById("type-chips-tecnica");
+    const insightChipsTecnica = document.getElementById("insight-chips-tecnica");
+    const consultaTermo = document.getElementById("consulta-termo");
+    const consultaCampo = document.getElementById("consulta-campo");
+    const consultaFonte = document.getElementById("consulta-fonte");
+    const consultaBody = document.getElementById("consulta-body");
+    const consultaVazio = document.getElementById("consulta-vazio");
+    const consultaInsights = document.getElementById("consulta-insights");
+    const orientacoesBody = document.getElementById("orientacoes-body");
+    const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
+    let selectedDocentes = new Set();
+    let selectedDocentesTecnica = new Set();
+
+    const typeLabels = {
+      artigo: "Artigos",
+      livro: "Livros",
+      capitulo: "Capítulos",
+    };
+
+    const technicalTypeLabels = {
+      software: "Software",
+      aplicativo: "Aplicativo",
+      material_didatico: "Material didático",
+      relatorio_tecnico: "Relatório técnico",
+      processo_tecnico: "Processo técnico",
+      patente: "Patente",
+      curso: "Curso",
+      evento: "Evento",
+    };
+
+    function unique(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+    }
+
+    function getSelectedValues(select) {
+      return [...select.selectedOptions].map((option) => option.value);
+    }
+
+    function populateFilters(data) {
+      const docentes = unique(data.map((item) => item.docente));
+      const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
+      docenteChipList.innerHTML = docentes.map((docente) =>
+        `<button class="docente-chip" type="button" data-docente="${docente}">${docente}</button>`
+      ).join("");
+      anosSelect.innerHTML = anos.map((ano) => `<option value="${ano}">${ano}</option>`).join("");
+    }
+
+    function normalizeTechnicalType(value) {
+      return (value || "nao_informado")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "") || "nao_informado";
+    }
+
+    function formatTechnicalType(value) {
+      const normalized = normalizeTechnicalType(value);
+      if (technicalTypeLabels[normalized]) return technicalTypeLabels[normalized];
+      return (value || "Não informado")
+        .split(/[\s_-]+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+        .join(" ");
+    }
+
+    function getTechnicalAmount(item) {
+      return Number(item.total_produtos) || 1;
+    }
+
+    function normalizeText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function populateTechnicalFilters(data) {
+      const docentes = unique(data.map((item) => item.docente));
+      const tipos = unique(data.map((item) => formatTechnicalType(item.tipo_produto)));
+      docenteTecnicaChipList.innerHTML = docentes.map((docente) =>
+        `<button class="docente-chip" type="button" data-docente="${docente}">${docente}</button>`
+      ).join("");
+      tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `<option value="${tipo}">${tipo}</option>`).join("");
+    }
+
+    function bindDocenteChips() {
+      [...docenteChipList.querySelectorAll(".docente-chip")].forEach((button) => {
+        button.addEventListener("click", () => {
+          const docente = button.dataset.docente;
+          if (selectedDocentes.has(docente)) {
+            selectedDocentes.delete(docente);
+            button.classList.remove("active");
+          } else {
+            selectedDocentes.add(docente);
+            button.classList.add("active");
+          }
+          applyFilters();
+        });
+      });
+    }
+
+    function bindDocenteChipsTecnica() {
+      [...docenteTecnicaChipList.querySelectorAll(".docente-chip")].forEach((button) => {
+        button.addEventListener("click", () => {
+          const docente = button.dataset.docente;
+          if (selectedDocentesTecnica.has(docente)) {
+            selectedDocentesTecnica.delete(docente);
+            button.classList.remove("active");
+          } else {
+            selectedDocentesTecnica.add(docente);
+            button.classList.add("active");
+          }
+          applyTechnicalFilters();
+        });
+      });
+    }
+
+    function bindTabs() {
+      tabsNav.addEventListener("click", (event) => {
+        const button = event.target.closest(".tab-button");
+        if (!button) return;
+        const target = button.dataset.tab;
+        [...document.querySelectorAll(".tab-button")].forEach((item) => item.classList.toggle("active", item === button));
+        [...document.querySelectorAll(".tab-panel")].forEach((panel) => panel.classList.toggle("active", panel.id === target));
+      });
+    }
+
+    function aggregateByDocente(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            total: 0,
+            artigo: 0,
+            livro: 0,
+            capitulo: 0,
+            pontuacao: 0,
+          });
+        }
+        const row = grouped.get(item.docente);
+        row.total += 1;
+        row[item.tipo_producao] += 1;
+        row.pontuacao += Number(item.pontuacao) || 0;
+      }
+      return [...grouped.values()].sort((a, b) =>
+        b.pontuacao - a.pontuacao || b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR")
+      );
+    }
+
+    function aggregateByYear(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        const year = item.ano || "Sem ano";
+        if (!grouped.has(year)) {
+          grouped.set(year, { ano: year, total: 0, pontuacao: 0 });
+        }
+        const row = grouped.get(year);
+        row.total += 1;
+        row.pontuacao += Number(item.pontuacao) || 0;
+      }
+      return [...grouped.values()].sort((a, b) => Number(a.ano) - Number(b.ano));
+    }
+
+    function aggregateByType(data) {
+      const base = {
+        artigo: { tipo: "artigo", total: 0, pontuacao: 0 },
+        livro: { tipo: "livro", total: 0, pontuacao: 0 },
+        capitulo: { tipo: "capitulo", total: 0, pontuacao: 0 },
+      };
+      for (const item of data) {
+        const bucket = base[item.tipo_producao];
+        if (!bucket) continue;
+        bucket.total += 1;
+        bucket.pontuacao += Number(item.pontuacao) || 0;
+      }
+      return Object.values(base);
+    }
+
+    function aggregateTechnicalByDocente(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            total: 0,
+            tipos: new Set(),
+          });
+        }
+        const row = grouped.get(item.docente);
+        row.total += getTechnicalAmount(item);
+        row.tipos.add(formatTechnicalType(item.tipo_produto));
+      }
+      return [...grouped.values()]
+        .map((item) => ({
+          docente: item.docente,
+          total: item.total,
+          tipos: [...item.tipos].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        }))
+        .sort((a, b) => b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR"));
+    }
+
+    function aggregateTechnicalByType(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        const tipo = formatTechnicalType(item.tipo_produto);
+        if (!grouped.has(tipo)) {
+          grouped.set(tipo, { tipo, total: 0 });
+        }
+        grouped.get(tipo).total += getTechnicalAmount(item);
+      }
+      return [...grouped.values()].sort((a, b) => b.total - a.total || a.tipo.localeCompare(b.tipo, "pt-BR"));
+    }
+
+    function aggregateTechnicalRows(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        const tipo = formatTechnicalType(item.tipo_produto);
+        const key = `${item.docente}||${tipo}`;
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            docente: item.docente,
+            tipo_produto: tipo,
+            total_produtos: 0,
+            observacoes: [],
+          });
+        }
+        const row = grouped.get(key);
+        row.total_produtos += getTechnicalAmount(item);
+        if (item.titulo) row.observacoes.push(item.titulo);
+      }
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          observacoes: item.observacoes.slice(0, 3).join("; "),
+        }))
+        .sort((a, b) =>
+          b.total_produtos - a.total_produtos ||
+          a.docente.localeCompare(b.docente, "pt-BR") ||
+          a.tipo_produto.localeCompare(b.tipo_produto, "pt-BR")
+        );
+    }
+
+    function renderMetrics(data, docenteSummary, yearSummary, typeSummary) {
+      const totalPoints = data.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
+      const visibleDocentes = docenteSummary.length;
+      const media = visibleDocentes ? Math.round(totalPoints / visibleDocentes) : 0;
+      document.getElementById("total-registros").textContent = String(data.length);
+      document.getElementById("pontuacao-total").textContent = String(totalPoints);
+      document.getElementById("docentes-visiveis").textContent = String(visibleDocentes);
+      document.getElementById("media-docente").textContent = String(media);
+
+      const bestYear = [...yearSummary].sort((a, b) => b.pontuacao - a.pontuacao)[0];
+      const bestType = [...typeSummary].sort((a, b) => b.pontuacao - a.pontuacao)[0];
+      const bestDocente = docenteSummary[0];
+      insightChips.innerHTML = [
+        bestDocente ? `<span class="chip">Maior pontuação: <strong>${bestDocente.docente}</strong> (${bestDocente.pontuacao})</span>` : "",
+        bestYear ? `<span class="chip">Ano mais forte: <strong>${bestYear.ano}</strong> (${bestYear.pontuacao} pontos)</span>` : "",
+        bestType ? `<span class="chip">Tipo dominante: <strong>${typeLabels[bestType.tipo]}</strong> (${bestType.pontuacao} pontos)</span>` : "",
+      ].join("");
+    }
+
+    function renderDocenteChart(summary) {
+      const items = summary.slice(0, 12);
+      if (!items.length) {
+        chartDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxPoints = Math.max(...items.map((item) => item.pontuacao), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 700;
+      const usableWidth = chartWidth - labelWidth - 60;
+      chartDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Pontuação por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = Math.max(8, (item.pontuacao / maxPoints) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#docenteGradient)"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.pontuacao}</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="docenteGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#8c1538"></stop>
+              <stop offset="100%" stop-color="#c13d65"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderYearChart(summary) {
+      if (!summary.length) {
+        chartAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxPoints = Math.max(...summary.map((item) => item.pontuacao), 1);
+      const width = 760;
+      const height = 320;
+      const baseY = 260;
+      const left = 44;
+      const gap = 18;
+      const barWidth = Math.max(28, Math.floor((width - left - 20 - (summary.length - 1) * gap) / summary.length));
+      chartAnos.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Pontuação por ano">
+          <line x1="${left}" y1="${baseY}" x2="${width - 12}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${summary.map((item, index) => {
+            const x = left + 10 + index * (barWidth + gap);
+            const barHeight = Math.max(10, Math.round((item.pontuacao / maxPoints) * 190));
+            const y = baseY - barHeight;
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="${index % 2 === 0 ? "#8c1538" : "#d4a017"}"></rect>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${item.pontuacao}</text>
+              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderTypePanel(summary, totalPoints) {
+      const maxPoints = Math.max(...summary.map((item) => item.pontuacao), 1);
+      typeStack.innerHTML = summary.map((item) => `
+        <div class="type-row">
+          <strong>${typeLabels[item.tipo]}</strong>
+          <div class="track">
+            <div class="bar" style="width:${(item.pontuacao / maxPoints) * 100}%; background:${item.tipo === "livro" ? "linear-gradient(90deg, #d4a017, #e0b948)" : item.tipo === "capitulo" ? "linear-gradient(90deg, #4d7c68, #76a891)" : "linear-gradient(90deg, #8c1538, #c13d65)"}"></div>
+          </div>
+          <span>${item.pontuacao}</span>
+        </div>
+      `).join("");
+      typeChips.innerHTML = summary.map((item) => {
+        const share = totalPoints ? Math.round((item.pontuacao / totalPoints) * 100) : 0;
+        return `<span class="chip">${typeLabels[item.tipo]}: <strong>${item.total}</strong> produtos · ${share}% da pontuação</span>`;
+      }).join("");
+    }
+
+    function renderResumoDocentes(summary) {
+      resumoDocentesBody.innerHTML = summary.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.total}</td>
+          <td>${item.artigo}</td>
+          <td>${item.livro}</td>
+          <td>${item.capitulo}</td>
+          <td>${item.pontuacao}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderTechnicalMetrics(data, docenteSummary, typeSummary) {
+      const totalProdutos = data.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
+      const visibleDocentes = docenteSummary.length;
+      const media = visibleDocentes ? Math.round(totalProdutos / visibleDocentes) : 0;
+      document.getElementById("tecnica-total-produtos").textContent = String(totalProdutos);
+      document.getElementById("tecnica-docentes-visiveis").textContent = String(visibleDocentes);
+      document.getElementById("tecnica-tipos-visiveis").textContent = String(typeSummary.length);
+      document.getElementById("tecnica-media-docente").textContent = String(media);
+
+      const bestDocente = docenteSummary[0];
+      const bestType = typeSummary[0];
+      insightChipsTecnica.innerHTML = [
+        bestDocente ? `<span class="chip">Maior quantitativo: <strong>${bestDocente.docente}</strong> (${bestDocente.total})</span>` : "",
+        bestType ? `<span class="chip">Tipo dominante: <strong>${bestType.tipo}</strong> (${bestType.total} produtos)</span>` : "",
+      ].join("");
+    }
+
+    function renderTechnicalDocenteChart(summary) {
+      const items = summary.slice(0, 12);
+      if (!items.length) {
+        chartTecnicaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxTotal = Math.max(...items.map((item) => item.total), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 700;
+      const usableWidth = chartWidth - labelWidth - 60;
+      chartTecnicaDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Produtos por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = Math.max(8, (item.total / maxTotal) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#tecnicaGradient)"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.total}</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="tecnicaGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#8c1538"></stop>
+              <stop offset="100%" stop-color="#d4a017"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderTechnicalTypePanel(summary, totalProdutos) {
+      const maxTotal = Math.max(...summary.map((item) => item.total), 1);
+      typeStackTecnica.innerHTML = summary.map((item) => `
+        <div class="type-row">
+          <strong>${item.tipo}</strong>
+          <div class="track">
+            <div class="bar" style="width:${(item.total / maxTotal) * 100}%; background:linear-gradient(90deg, #8c1538, #d4a017)"></div>
+          </div>
+          <span>${item.total}</span>
+        </div>
+      `).join("");
+      typeChipsTecnica.innerHTML = summary.map((item) => {
+        const share = totalProdutos ? Math.round((item.total / totalProdutos) * 100) : 0;
+        return `<span class="chip">${item.tipo}: <strong>${item.total}</strong> produtos · ${share}% do total</span>`;
+      }).join("");
+    }
+
+    function renderTechnicalResumoDocentes(summary) {
+      resumoTecnicaDocentesBody.innerHTML = summary.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.tipos.join(", ")}</td>
+          <td>${item.total}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderTechnicalTable(data) {
+      tabelaTecnicaBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${item.docente || ""}</td>
+          <td>${item.tipo_produto || ""}</td>
+          <td>${getTechnicalAmount(item)}</td>
+          <td>${item.observacoes || ""}</td>
+        </tr>
+      `).join("");
+      estadoVazioTecnica.style.display = data.length ? "none" : "block";
+    }
+
+    function getConsultaDataset() {
+      if (consultaFonte.value === "tecnica") {
+        return {
+          kind: "tecnica",
+          label: "Produção técnica",
+          detail: "Espelho local da base técnica em JSON/CSV.",
+          data: dataSourceTecnica,
+        };
+      }
+      return {
+        kind: "cientifica",
+        label: "Produção científica sincronizada",
+        detail: "Espelho local da base sincronizada em JSON e SQLite válidos.",
+        data: dataSource,
+      };
+    }
+
+    function matchesConsulta(item, sourceKind, field, term) {
+      if (!term) return true;
+      if (sourceKind === "tecnica") {
+        const technicalRecord = {
+          docente: item.docente,
+          autor_principal: item.autores,
+          titulo: item.titulo,
+          tipo_produto: formatTechnicalType(item.tipo_produto),
+          ano: item.ano,
+          local: item.local,
+          cidade: item.cidade,
+          finalidade: item.finalidade,
+          observacoes: item.observacoes,
+          total_produtos: String(getTechnicalAmount(item)),
+        };
+        if (field === "all") {
+          return Object.values(technicalRecord).some((value) => normalizeText(value).includes(term));
+        }
+        if (field === "tipo_producao") return normalizeText(technicalRecord.tipo_produto).includes(term);
+        if (field === "doi") return false;
+        if (field === "revista_ou_veiculo") return normalizeText(technicalRecord.finalidade).includes(term);
+        return normalizeText(technicalRecord[field] || "").includes(term);
+      }
+      if (field === "all") {
+        return [
+          item.docente,
+          item.autor_principal,
+          item.ano,
+          item.titulo,
+          item.revista_ou_veiculo,
+          item.doi,
+          item.tipo_producao,
+          item.indexacao,
+          item.observacoes,
+        ].some((value) => normalizeText(value).includes(term));
+      }
+      return normalizeText(item[field] || "").includes(term);
+    }
+
+    function renderConsultaMetrics(dataset, filtered) {
+      document.getElementById("consulta-fonte-label").textContent = dataset.kind === "cientifica" ? "Científica" : "Técnica";
+      document.getElementById("consulta-fonte-detalhe").textContent = dataset.detail;
+      document.getElementById("consulta-total-fonte").textContent = String(dataset.data.length);
+      document.getElementById("consulta-total-resultados").textContent = String(filtered.length);
+      document.getElementById("consulta-status-banco").textContent = dataset.kind === "cientifica" ? "Parcial" : "OK";
+      document.getElementById("consulta-status-detalhe").textContent = dataset.kind === "cientifica"
+        ? "Consulta servida pela base sincronizada válida; o arquivo producao_cientifica.sqlite principal está corrompido."
+        : "Consulta servida pela base técnica local disponível no projeto.";
+    }
+
+    function renderConsultaInsights(dataset, filtered) {
+      if (!filtered.length) {
+        consultaInsights.innerHTML = `<span class="chip">Sem resultados para o filtro atual.</span>`;
+        return;
+      }
+      if (dataset.kind === "tecnica") {
+        const totalProdutos = filtered.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
+        const topDocente = aggregateTechnicalByDocente(filtered)[0];
+        consultaInsights.innerHTML = [
+          `<span class="chip">Produtos somados: <strong>${totalProdutos}</strong></span>`,
+          topDocente ? `<span class="chip">Maior quantitativo: <strong>${topDocente.docente}</strong> (${topDocente.total})</span>` : "",
+        ].join("");
+        return;
+      }
+      const docentes = unique(filtered.map((item) => item.docente));
+      const anos = unique(filtered.map((item) => item.ano));
+      consultaInsights.innerHTML = [
+        `<span class="chip">Docentes encontrados: <strong>${docentes.length}</strong></span>`,
+        `<span class="chip">Anos cobertos: <strong>${anos.join(", ")}</strong></span>`,
+      ].join("");
+    }
+
+    function renderConsultaTable(dataset, filtered) {
+      consultaBody.innerHTML = filtered.slice(0, 200).map((item) => {
+        if (dataset.kind === "tecnica") {
+          return `
+            <tr>
+              <td>Técnica</td>
+              <td>${item.docente || ""}</td>
+              <td>${item.ano || ""} · ${formatTechnicalType(item.tipo_produto)}</td>
+              <td>${item.titulo || ""}</td>
+              <td>${item.finalidade || item.observacoes || ""}</td>
+              <td>${getTechnicalAmount(item)}</td>
+            </tr>
+          `;
+        }
+        return `
+          <tr>
+            <td>Científica</td>
+            <td>${item.docente || ""}</td>
+            <td>${item.ano || ""} · ${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
+            <td>${item.titulo || ""}</td>
+            <td>${item.revista_ou_veiculo || item.observacoes || ""}</td>
+            <td>${item.doi || item.pontuacao || ""}</td>
+          </tr>
+        `;
+      }).join("");
+      consultaVazio.style.display = filtered.length ? "none" : "block";
+    }
+
+    function aggregateOrientationTotals(data) {
+      return data.reduce((acc, item) => {
+        acc.docentes += 1;
+        acc.andamentoApcn += item.total_andamento_apcn || 0;
+        acc.concluidasApcn += item.total_concluidas_apcn || 0;
+        acc.baseConcluida += (item.tcc_concluidas || 0) + (item.ic_concluidas || 0);
+        acc.concluintes2026 += (item.mestrado_concluintes_2026 || 0) + (item.doutorado_concluintes_2026 || 0) + (item.posdoc_concluintes_2026 || 0);
+        acc.posdocConcluidas += item.posdoc_concluidas || 0;
+        return acc;
+      }, {
+        docentes: 0,
+        andamentoApcn: 0,
+        concluidasApcn: 0,
+        baseConcluida: 0,
+        concluintes2026: 0,
+        posdocConcluidas: 0,
+      });
+    }
+
+    function renderOrientationMetrics(data) {
+      const totals = aggregateOrientationTotals(data);
+      document.getElementById("orientacoes-docentes-total").textContent = String(totals.docentes);
+      document.getElementById("orientacoes-andamento-total").textContent = String(totals.andamentoApcn);
+      document.getElementById("orientacoes-concluidas-total").textContent = String(totals.concluidasApcn);
+      document.getElementById("orientacoes-base-total").textContent = String(totals.baseConcluida);
+
+      const topApcn = [...data].sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || a.docente.localeCompare(b.docente, "pt-BR"))[0];
+      const topPipeline = [...data].sort((a, b) => b.total_andamento_apcn - a.total_andamento_apcn || a.docente.localeCompare(b.docente, "pt-BR"))[0];
+      const doutoradoAtivo = data.filter((item) => (item.doutorado_andamento || 0) > 0).length;
+      const diagnostico = totals.concluintes2026 === 0
+        ? "Diagnóstico: a planilha recebida não registra concluintes em 2026 nas colunas APCN. Mantive os zeros explicitamente para evitar inferência indevida."
+        : `Diagnóstico: há ${totals.concluintes2026} concluintes previstos para 2026 no recorte APCN.`;
+
+      document.getElementById("orientacoes-insights").innerHTML = [
+        topApcn ? `<span class="chip">Maior APCN: <strong>${topApcn.docente}</strong> (${topApcn.total_geral_apcn})</span>` : "",
+        topPipeline ? `<span class="chip">Maior pipeline: <strong>${topPipeline.docente}</strong> (${topPipeline.total_andamento_apcn})</span>` : "",
+        `<span class="chip">Docentes com doutorado em andamento: <strong>${doutoradoAtivo}</strong></span>`,
+        `<span class="chip">Pós-doc concluídos: <strong>${totals.posdocConcluidas}</strong></span>`,
+      ].join("");
+      document.getElementById("orientacoes-diagnostico").textContent = diagnostico;
+    }
+
+    function renderOrientationChart(data) {
+      const items = [...data]
+        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || b.total_andamento_apcn - a.total_andamento_apcn || a.docente.localeCompare(b.docente, "pt-BR"))
+        .slice(0, 12);
+      if (!items.length) {
+        chartOrientacoesDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxTotal = Math.max(...items.map((item) => item.total_geral_apcn), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 720;
+      const usableWidth = chartWidth - labelWidth - 72;
+      chartOrientacoesDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Total geral APCN por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = Math.max(8, (item.total_geral_apcn / maxTotal) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#e6ecdd"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#orientacaoGradient)"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.total_geral_apcn}</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="orientacaoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#426132"></stop>
+              <stop offset="100%" stop-color="#8fb06a"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderOrientationTable(data) {
+      orientacoesBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.tcc_andamento || ""}</td>
+          <td>${item.tcc_concluidas || ""}</td>
+          <td>${item.ic_andamento || ""}</td>
+          <td>${item.ic_concluidas || ""}</td>
+          <td>${item.mestrado_andamento || ""}</td>
+          <td>${item.mestrado_concluintes_2026 || ""}</td>
+          <td>${item.mestrado_concluidas || ""}</td>
+          <td>${item.doutorado_andamento || ""}</td>
+          <td>${item.doutorado_andamento_principal || ""}</td>
+          <td>${item.doutorado_concluintes_2026 || ""}</td>
+          <td>${item.doutorado_concluidas || ""}</td>
+          <td>${item.doutorado_concluidas_principal || ""}</td>
+          <td>${item.posdoc_andamento || ""}</td>
+          <td>${item.posdoc_concluintes_2026 || ""}</td>
+          <td>${item.posdoc_concluidas || ""}</td>
+          <td class="total-cell">${item.total_andamento_apcn || ""}</td>
+          <td class="total-cell">${item.total_concluidas_apcn || ""}</td>
+          <td class="total-cell">${item.total_mestrado_concluido || ""}</td>
+          <td class="total-cell">${item.total_concluintes_2026_apcn || ""}</td>
+          <td class="total-cell">${item.total_geral_apcn || ""}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderOrientationPanel() {
+      renderOrientationMetrics(dataSourceOrientacoes);
+      renderOrientationChart(dataSourceOrientacoes);
+      renderOrientationTable(dataSourceOrientacoes);
+    }
+
+    function applyConsultaFilters() {
+      const dataset = getConsultaDataset();
+      const term = normalizeText(consultaTermo.value).trim();
+      const field = consultaCampo.value;
+      const filtered = dataset.data.filter((item) => matchesConsulta(item, dataset.kind, field, term));
+      renderConsultaMetrics(dataset, filtered);
+      renderConsultaInsights(dataset, filtered);
+      renderConsultaTable(dataset, filtered);
+    }
+
+    function renderTable(data) {
+      tabelaBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${item.docente || ""}</td>
+          <td>${item.ano || ""}</td>
+          <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
+          <td>${item.titulo || ""}</td>
+          <td>${item.revista_ou_veiculo || ""}</td>
+          <td>${item.indexacao || ""}</td>
+          <td>${item.jif_jcr_2025 || ""}</td>
+          <td>${item.quartil_jcr_2025 || ""}</td>
+          <td>${item.pontuacao || ""}</td>
+        </tr>
+      `).join("");
+      estadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function applyTechnicalFilters() {
+      const docentes = [...selectedDocentesTecnica];
+      const tipos = getSelectedValues(tiposTecnicaSelect);
+      const filtered = dataSourceTecnica.filter((item) => {
+        const docenteOk = !docentes.length || docentes.includes(item.docente);
+        const tipoOk = !tipos.length || tipos.includes(formatTechnicalType(item.tipo_produto));
+        return docenteOk && tipoOk;
+      });
+      const docenteSummary = aggregateTechnicalByDocente(filtered);
+      const typeSummary = aggregateTechnicalByType(filtered);
+      const rowSummary = aggregateTechnicalRows(filtered);
+      const totalProdutos = filtered.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
+      renderTechnicalMetrics(filtered, docenteSummary, typeSummary);
+      renderTechnicalDocenteChart(docenteSummary);
+      renderTechnicalTypePanel(typeSummary, totalProdutos);
+      renderTechnicalResumoDocentes(docenteSummary);
+      renderTechnicalTable(rowSummary);
+    }
+
+    function applyFilters() {
+      const docentes = [...selectedDocentes];
+      const tipos = getSelectedValues(tiposSelect);
+      const anos = getSelectedValues(anosSelect);
+      const filtered = dataSource.filter((item) => {
+        const docenteOk = !docentes.length || docentes.includes(item.docente);
+        const tipoOk = !tipos.length || tipos.includes(item.tipo_producao);
+        const anoOk = !anos.length || anos.includes(item.ano);
+        return docenteOk && tipoOk && anoOk;
+      });
+      const docenteSummary = aggregateByDocente(filtered);
+      const yearSummary = aggregateByYear(filtered);
+      const typeSummary = aggregateByType(filtered);
+      const totalPoints = filtered.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
+      renderMetrics(filtered, docenteSummary, yearSummary, typeSummary);
+      renderDocenteChart(docenteSummary);
+      renderYearChart(yearSummary);
+      renderTypePanel(typeSummary, totalPoints);
+      renderResumoDocentes(docenteSummary);
+      renderTable(filtered);
+    }
+
+    populateFilters(dataSource);
+    populateTechnicalFilters(dataSourceTecnica);
+    bindDocenteChips();
+    bindDocenteChipsTecnica();
+    bindTabs();
+    applyFilters();
+    applyTechnicalFilters();
+    applyConsultaFilters();
+    renderOrientationPanel();
+
+    tiposSelect.addEventListener("change", applyFilters);
+    anosSelect.addEventListener("change", applyFilters);
+    tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
+    consultaTermo.addEventListener("input", applyConsultaFilters);
+    consultaCampo.addEventListener("change", applyConsultaFilters);
+    consultaFonte.addEventListener("change", applyConsultaFilters);
+  </script>
+</body>
+</html>
