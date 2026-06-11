@@ -211,34 +211,48 @@
     }
 
     .docente-picker {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       gap: 10px;
-      max-height: 188px;
+      max-height: 220px;
       overflow: auto;
-      padding: 4px 2px 0;
+      padding: 8px 10px;
+      border: 1px solid var(--ufpe-linha);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.88);
     }
 
-    .docente-chip {
-      border: 1px solid #d7c3ad;
-      background: white;
-      color: var(--ufpe-grafite);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 0.93rem;
-      line-height: 1;
+    .docente-option {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding: 8px 6px;
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
-    .docente-chip:hover {
-      border-color: var(--ufpe-bordo);
-      color: var(--ufpe-bordo);
+    .docente-option:hover {
+      background: rgba(140, 21, 56, 0.06);
     }
 
-    .docente-chip.active {
+    .docente-option input {
+      margin: 2px 0 0;
+      accent-color: var(--ufpe-bordo);
+      cursor: pointer;
+    }
+
+    .docente-option span {
+      color: var(--ufpe-grafite);
+      font-size: 0.94rem;
+      line-height: 1.3;
+    }
+
+    .docente-option:has(input:checked) {
       background: rgba(140, 21, 56, 0.12);
-      border-color: var(--ufpe-bordo);
+    }
+
+    .docente-option:has(input:checked) span {
       color: var(--ufpe-bordo);
       font-weight: 700;
     }
@@ -433,6 +447,111 @@
       background: #fbf1ef;
     }
 
+    .orientation-highlight {
+      grid-column: span 12;
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.22), transparent 28%),
+        linear-gradient(135deg, rgba(140, 21, 56, 0.98), rgba(111, 19, 47, 0.96) 58%, rgba(38, 41, 48, 0.98) 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .orientation-highlight h2,
+    .orientation-highlight .section-head p,
+    .orientation-highlight .chart-note {
+      color: rgba(255, 250, 243, 0.92);
+    }
+
+    .orientation-highlight .section-head {
+      margin-bottom: 18px;
+    }
+
+    .orientation-highlight .chip {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 250, 243, 0.12);
+      border-color: rgba(255, 250, 243, 0.2);
+      color: white;
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .orientation-highlight .chip strong {
+      color: #f6d36b;
+    }
+
+    .orientation-focus {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .orientation-insight-stack {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .orientation-chart-shell {
+      min-height: 520px;
+    }
+
+    .orientation-split {
+      grid-column: span 12;
+    }
+
+    .orientation-grid-table {
+      width: 100%;
+      min-width: 0;
+      table-layout: fixed;
+      font-size: 0.88rem;
+    }
+
+    .orientation-grid-table th {
+      white-space: normal;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .orientation-grid-table td {
+      white-space: nowrap;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .orientation-grid-table th:first-child,
+    .orientation-grid-table td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      width: 230px;
+      min-width: 230px;
+      text-align: left;
+      background: #fffaf3;
+    }
+
+    .orientation-grid-table thead th {
+      background: #f3ecdf;
+    }
+
+    .orientation-grid-table tbody tr:nth-child(even) {
+      background: rgba(140, 21, 56, 0.02);
+    }
+
+    .orientation-grid-table .numeric-soft {
+      color: #56714f;
+      font-weight: 700;
+    }
+
+    .orientation-grid-table .numeric-strong {
+      color: var(--ufpe-bordo);
+      font-weight: 700;
+      background: #fbf1ef;
+    }
+
     .empty {
       padding: 22px 4px 6px;
       color: var(--ufpe-cinza);
@@ -456,6 +575,8 @@
       .hero { grid-template-columns: 1fr; }
       .metric { grid-column: span 6; }
       .chart-wide, .chart-narrow { grid-column: span 12; }
+      .orientation-split { grid-column: span 12; }
+      .orientation-focus { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 800px) {
@@ -493,7 +614,6 @@
       <nav class="tabs-nav" id="tabs-nav">
         <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
-        <button class="tab-button" data-tab="tab-consulta">Consulta ao Banco</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-apcn">APCN Docente</button>
         <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
@@ -756,194 +876,110 @@
         </section>
       </div>
 
-      <div class="tab-panel" id="tab-consulta">
-        <section class="grid">
-          <div class="card filters">
-            <div class="section-head">
-              <h2>Consulta Livre</h2>
-              <p>Busca textual sobre a base sincronizada disponível no projeto.</p>
-            </div>
-            <div class="filters-grid">
-              <div>
-                <label for="consulta-termo">Termo de busca</label>
-                <input id="consulta-termo" type="search" placeholder="Ex.: docente, título, DOI, periódico">
-              </div>
-              <div>
-                <label for="consulta-campo">Campo</label>
-                <select id="consulta-campo">
-                  <option value="all">Todos os campos</option>
-                  <option value="docente">Docente</option>
-                  <option value="autor_principal">Autor principal</option>
-                  <option value="titulo">Título</option>
-                  <option value="revista_ou_veiculo">Periódico / Veículo</option>
-                  <option value="doi">DOI</option>
-                  <option value="tipo_producao">Tipo</option>
-                  <option value="ano">Ano</option>
-                </select>
-              </div>
-              <div>
-                <label for="consulta-fonte">Fonte</label>
-                <select id="consulta-fonte">
-                  <option value="cientifica">Produção científica sincronizada</option>
-                  <option value="tecnica">Produção técnica</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="card metric">
-            <p class="eyebrow">Fonte Ativa</p>
-            <strong id="consulta-fonte-label">0</strong>
-            <span id="consulta-fonte-detalhe">Nenhuma fonte selecionada.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Registros na Fonte</p>
-            <strong id="consulta-total-fonte">0</strong>
-            <span>Total bruto de registros disponíveis na origem atual.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Resultados</p>
-            <strong id="consulta-total-resultados">0</strong>
-            <span>Quantidade de registros encontrados pela busca atual.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Status do Banco</p>
-            <strong id="consulta-status-banco">OK</strong>
-            <span id="consulta-status-detalhe">Consulta exposta por espelho JSON da base válida.</span>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Arquivos de Origem</h2>
-              <p>Artefatos disponíveis para consulta e auditoria local.</p>
-            </div>
-            <div class="chips">
-              <span class="chip"><a href="../data/producao_cientifica.json">JSON sincronizado</a></span>
-              <span class="chip"><a href="../data/producao_cientifica.csv">CSV sincronizado</a></span>
-              <span class="chip"><a href="../data/producao_cientifica_v2026-06-10-sincronizada-revisao.sqlite">SQLite sincronizado</a></span>
-              <span class="chip"><a href="../data/producao_cientifica_v2026-06-10-agregada.sqlite">SQLite agregado</a></span>
-              <span class="chip"><a href="../data/producao_tecnica.json">JSON técnico</a></span>
-              <span class="chip"><a href="../data/producao_tecnica.csv">CSV técnico</a></span>
-            </div>
-            <p class="chart-note">Diagnóstico atual: <code>data/producao_cientifica.sqlite</code> está inválido e não deve ser usado como fonte principal.</p>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Recorte Atual</h2>
-              <p>Resumo rápido dos resultados.</p>
-            </div>
-            <div class="chips" id="consulta-insights"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Resultados da Consulta</h2>
-              <p>Tabela pesquisável com os campos principais da fonte selecionada.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Fonte</th>
-                    <th>Docente</th>
-                    <th>Ano / Tipo</th>
-                    <th>Título / Produto</th>
-                    <th>Veículo / Observações</th>
-                    <th>DOI / Quantitativo</th>
-                  </tr>
-                </thead>
-                <tbody id="consulta-body"></tbody>
-              </table>
-            </div>
-            <div id="consulta-vazio" class="empty">
-              Nenhum registro encontrado para a consulta atual.
-            </div>
-          </div>
-        </section>
-      </div>
-
       <div class="tab-panel" id="tab-orientacoes">
         <section class="grid">
           <div class="card metric">
-            <p class="eyebrow">Docentes Mapeados</p>
-            <strong id="orientacoes-docentes-total">0</strong>
-            <span>Total de docentes permanentes com registro na análise consolidada.</span>
+            <p class="eyebrow">Mestrado em andamento</p>
+            <strong id="orientacoes-mestrado-andamento-total">0</strong>
+            <span>Total de orientações de mestrado atualmente em andamento.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Em Andamento APCN</p>
-            <strong id="orientacoes-andamento-total">0</strong>
-            <span>Soma do pipeline stricto sensu em andamento considerado para APCN.</span>
+            <p class="eyebrow">Mestrado concluído</p>
+            <strong id="orientacoes-mestrado-concluido-total">0</strong>
+            <span>Total de orientações de mestrado concluídas no recorte consolidado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Concluídas APCN</p>
-            <strong id="orientacoes-concluidas-total">0</strong>
-            <span>Total consolidado de orientações concluídas no recorte APCN.</span>
+            <p class="eyebrow">Doutorado em andamento</p>
+            <strong id="orientacoes-doutorado-andamento-total">0</strong>
+            <span>Total de orientações de doutorado em andamento, incluindo coorientações.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">TCCs e ICs Concluídos</p>
-            <strong id="orientacoes-base-total">0</strong>
-            <span>Volume acumulado de TCCs e ICs concluídos na base apresentada.</span>
+            <p class="eyebrow">Doutorado concluído</p>
+            <strong id="orientacoes-doutorado-concluido-total">0</strong>
+            <span>Total de doutorados concluídos no conjunto informado.</span>
           </div>
 
-          <div class="card chart-wide">
+          <div class="card orientation-highlight">
             <div class="section-head">
-              <h2>Total Geral APCN por Docente</h2>
-              <p>Ranking pela soma consolidada de orientações válidas para APCN.</p>
+              <h2>Destaque de Doutorado</h2>
+              <p>Foco no estoque e histórico de doutorado por docente.</p>
             </div>
-            <div id="chart-orientacoes-docentes" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Leitura Crítica</h2>
-              <p>Resumo do retrato atual das orientações.</p>
+            <div class="orientation-focus">
+              <div id="chart-orientacoes-docentes" class="chart orientation-chart-shell"></div>
+              <div class="orientation-insight-stack">
+                <div class="chips" id="orientacoes-insights"></div>
+                <p class="chart-note" id="orientacoes-diagnostico"></p>
+              </div>
             </div>
-            <div class="chips" id="orientacoes-insights"></div>
-            <p class="chart-note" id="orientacoes-diagnostico"></p>
           </div>
 
-          <div class="card table-card">
+          <div class="card table-card orientation-split">
             <div class="section-head">
-              <h2>Mapa de Orientações</h2>
-              <p>Transcrição estruturada da análise recebida, organizada por nível e total APCN.</p>
+              <h2>Stricto Sensu</h2>
+              <p>Mestrado e doutorado por docente, com destaque para o pipeline APCN.</p>
             </div>
             <div class="table-wrap">
-              <table class="orientation-table">
+              <table class="orientation-grid-table">
                 <thead>
                   <tr>
-                    <th rowspan="2">Docentes Permanentes</th>
-                    <th colspan="2">TCCs</th>
-                    <th colspan="2">ICs</th>
-                    <th colspan="3">Mestrado</th>
-                    <th colspan="5" class="group-head">Doutorado</th>
-                    <th colspan="3">Pós-Doc</th>
-                    <th colspan="5" class="group-head soft">Total de Orientações</th>
-                  </tr>
-                  <tr>
-                    <th class="sub-head">Em andamento</th>
-                    <th class="sub-head">Concluídas</th>
-                    <th class="sub-head">Em andamento</th>
-                    <th class="sub-head">Concluídas</th>
-                    <th class="sub-head">Em andamento</th>
-                    <th class="sub-head">Concluintes em 2026</th>
-                    <th class="sub-head">Concluídas</th>
-                    <th class="sub-head group-head">Em andamento</th>
-                    <th class="sub-head group-head">Em andamento como principal</th>
-                    <th class="sub-head group-head">Concluintes em 2026</th>
-                    <th class="sub-head group-head">Concluídas</th>
-                    <th class="sub-head group-head">Concluídas como principal</th>
-                    <th class="sub-head">Em andamento</th>
-                    <th class="sub-head">Concluintes em 2026</th>
-                    <th class="sub-head">Concluídas</th>
-                    <th class="sub-head">Em andamento APCN</th>
-                    <th class="sub-head">Concluídas APCN</th>
-                    <th class="sub-head">Mestrado concluído</th>
-                    <th class="sub-head">Concluintes 2026 APCN</th>
-                    <th class="sub-head">Total geral APCN</th>
+                    <th>Docente</th>
+                    <th>Mest.<br>and.</th>
+                    <th>Mest.<br>conc. 2026</th>
+                    <th>Mest.<br>concl.</th>
+                    <th>Dout.<br>and.</th>
+                    <th>Dout.<br>principal</th>
+                    <th>Dout.<br>conc. 2026</th>
+                    <th>Dout.<br>concl.</th>
+                    <th>Dout. concl.<br>principal</th>
+                    <th>APCN<br>and.</th>
+                    <th>APCN<br>concl.</th>
+                    <th>APCN<br>total</th>
                   </tr>
                 </thead>
-                <tbody id="orientacoes-body"></tbody>
+                <tbody id="orientacoes-stricto-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card orientation-split">
+            <div class="section-head">
+              <h2>Graduação</h2>
+              <p>TCCs e iniciação científica consolidados separadamente do bloco stricto sensu.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="orientation-grid-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>TCC<br>and.</th>
+                    <th>TCC<br>concl.</th>
+                    <th>IC<br>and.</th>
+                    <th>IC<br>concl.</th>
+                    <th>Total<br>graduação</th>
+                  </tr>
+                </thead>
+                <tbody id="orientacoes-graduacao-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card orientation-split">
+            <div class="section-head">
+              <h2>Pós-Docs</h2>
+              <p>View exclusivo para acompanhamento e histórico de pós-doutorado por docente.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="orientation-grid-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Pós-doc<br>and.</th>
+                    <th>Pós-doc<br>conc. 2026</th>
+                    <th>Pós-doc<br>concl.</th>
+                    <th>Total<br>pós-doc</th>
+                  </tr>
+                </thead>
+                <tbody id="orientacoes-posdoc-body"></tbody>
               </table>
             </div>
           </div>
@@ -1000,13 +1036,9 @@
     const typeStackTecnica = document.getElementById("type-stack-tecnica");
     const typeChipsTecnica = document.getElementById("type-chips-tecnica");
     const insightChipsTecnica = document.getElementById("insight-chips-tecnica");
-    const consultaTermo = document.getElementById("consulta-termo");
-    const consultaCampo = document.getElementById("consulta-campo");
-    const consultaFonte = document.getElementById("consulta-fonte");
-    const consultaBody = document.getElementById("consulta-body");
-    const consultaVazio = document.getElementById("consulta-vazio");
-    const consultaInsights = document.getElementById("consulta-insights");
-    const orientacoesBody = document.getElementById("orientacoes-body");
+    const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
+    const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
+    const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
     let selectedDocentes = new Set();
     let selectedDocentesTecnica = new Set();
@@ -1039,9 +1071,12 @@
     function populateFilters(data) {
       const docentes = unique(data.map((item) => item.docente));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
-      docenteChipList.innerHTML = docentes.map((docente) =>
-        `<button class="docente-chip" type="button" data-docente="${docente}">${docente}</button>`
-      ).join("");
+      docenteChipList.innerHTML = docentes.map((docente) => `
+        <label class="docente-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
       anosSelect.innerHTML = anos.map((ano) => `<option value="${ano}">${ano}</option>`).join("");
     }
 
@@ -1078,22 +1113,23 @@
     function populateTechnicalFilters(data) {
       const docentes = unique(data.map((item) => item.docente));
       const tipos = unique(data.map((item) => formatTechnicalType(item.tipo_produto)));
-      docenteTecnicaChipList.innerHTML = docentes.map((docente) =>
-        `<button class="docente-chip" type="button" data-docente="${docente}">${docente}</button>`
-      ).join("");
+      docenteTecnicaChipList.innerHTML = docentes.map((docente) => `
+        <label class="docente-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
       tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `<option value="${tipo}">${tipo}</option>`).join("");
     }
 
     function bindDocenteChips() {
-      [...docenteChipList.querySelectorAll(".docente-chip")].forEach((button) => {
-        button.addEventListener("click", () => {
-          const docente = button.dataset.docente;
-          if (selectedDocentes.has(docente)) {
-            selectedDocentes.delete(docente);
-            button.classList.remove("active");
-          } else {
+      [...docenteChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          const docente = input.value;
+          if (input.checked) {
             selectedDocentes.add(docente);
-            button.classList.add("active");
+          } else {
+            selectedDocentes.delete(docente);
           }
           applyFilters();
         });
@@ -1101,15 +1137,13 @@
     }
 
     function bindDocenteChipsTecnica() {
-      [...docenteTecnicaChipList.querySelectorAll(".docente-chip")].forEach((button) => {
-        button.addEventListener("click", () => {
-          const docente = button.dataset.docente;
-          if (selectedDocentesTecnica.has(docente)) {
-            selectedDocentesTecnica.delete(docente);
-            button.classList.remove("active");
-          } else {
+      [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          const docente = input.value;
+          if (input.checked) {
             selectedDocentesTecnica.add(docente);
-            button.classList.add("active");
+          } else {
+            selectedDocentesTecnica.delete(docente);
           }
           applyTechnicalFilters();
         });
@@ -1444,129 +1478,18 @@
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
     }
 
-    function getConsultaDataset() {
-      if (consultaFonte.value === "tecnica") {
-        return {
-          kind: "tecnica",
-          label: "Produção técnica",
-          detail: "Espelho local da base técnica em JSON/CSV.",
-          data: dataSourceTecnica,
-        };
-      }
-      return {
-        kind: "cientifica",
-        label: "Produção científica sincronizada",
-        detail: "Espelho local da base sincronizada em JSON e SQLite válidos.",
-        data: dataSource,
-      };
-    }
-
-    function matchesConsulta(item, sourceKind, field, term) {
-      if (!term) return true;
-      if (sourceKind === "tecnica") {
-        const technicalRecord = {
-          docente: item.docente,
-          autor_principal: item.autores,
-          titulo: item.titulo,
-          tipo_produto: formatTechnicalType(item.tipo_produto),
-          ano: item.ano,
-          local: item.local,
-          cidade: item.cidade,
-          finalidade: item.finalidade,
-          observacoes: item.observacoes,
-          total_produtos: String(getTechnicalAmount(item)),
-        };
-        if (field === "all") {
-          return Object.values(technicalRecord).some((value) => normalizeText(value).includes(term));
-        }
-        if (field === "tipo_producao") return normalizeText(technicalRecord.tipo_produto).includes(term);
-        if (field === "doi") return false;
-        if (field === "revista_ou_veiculo") return normalizeText(technicalRecord.finalidade).includes(term);
-        return normalizeText(technicalRecord[field] || "").includes(term);
-      }
-      if (field === "all") {
-        return [
-          item.docente,
-          item.autor_principal,
-          item.ano,
-          item.titulo,
-          item.revista_ou_veiculo,
-          item.doi,
-          item.tipo_producao,
-          item.indexacao,
-          item.observacoes,
-        ].some((value) => normalizeText(value).includes(term));
-      }
-      return normalizeText(item[field] || "").includes(term);
-    }
-
-    function renderConsultaMetrics(dataset, filtered) {
-      document.getElementById("consulta-fonte-label").textContent = dataset.kind === "cientifica" ? "Científica" : "Técnica";
-      document.getElementById("consulta-fonte-detalhe").textContent = dataset.detail;
-      document.getElementById("consulta-total-fonte").textContent = String(dataset.data.length);
-      document.getElementById("consulta-total-resultados").textContent = String(filtered.length);
-      document.getElementById("consulta-status-banco").textContent = dataset.kind === "cientifica" ? "Parcial" : "OK";
-      document.getElementById("consulta-status-detalhe").textContent = dataset.kind === "cientifica"
-        ? "Consulta servida pela base sincronizada válida; o arquivo producao_cientifica.sqlite principal está corrompido."
-        : "Consulta servida pela base técnica local disponível no projeto.";
-    }
-
-    function renderConsultaInsights(dataset, filtered) {
-      if (!filtered.length) {
-        consultaInsights.innerHTML = `<span class="chip">Sem resultados para o filtro atual.</span>`;
-        return;
-      }
-      if (dataset.kind === "tecnica") {
-        const totalProdutos = filtered.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
-        const topDocente = aggregateTechnicalByDocente(filtered)[0];
-        consultaInsights.innerHTML = [
-          `<span class="chip">Produtos somados: <strong>${totalProdutos}</strong></span>`,
-          topDocente ? `<span class="chip">Maior quantitativo: <strong>${topDocente.docente}</strong> (${topDocente.total})</span>` : "",
-        ].join("");
-        return;
-      }
-      const docentes = unique(filtered.map((item) => item.docente));
-      const anos = unique(filtered.map((item) => item.ano));
-      consultaInsights.innerHTML = [
-        `<span class="chip">Docentes encontrados: <strong>${docentes.length}</strong></span>`,
-        `<span class="chip">Anos cobertos: <strong>${anos.join(", ")}</strong></span>`,
-      ].join("");
-    }
-
-    function renderConsultaTable(dataset, filtered) {
-      consultaBody.innerHTML = filtered.slice(0, 200).map((item) => {
-        if (dataset.kind === "tecnica") {
-          return `
-            <tr>
-              <td>Técnica</td>
-              <td>${item.docente || ""}</td>
-              <td>${item.ano || ""} · ${formatTechnicalType(item.tipo_produto)}</td>
-              <td>${item.titulo || ""}</td>
-              <td>${item.finalidade || item.observacoes || ""}</td>
-              <td>${getTechnicalAmount(item)}</td>
-            </tr>
-          `;
-        }
-        return `
-          <tr>
-            <td>Científica</td>
-            <td>${item.docente || ""}</td>
-            <td>${item.ano || ""} · ${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
-            <td>${item.titulo || ""}</td>
-            <td>${item.revista_ou_veiculo || item.observacoes || ""}</td>
-            <td>${item.doi || item.pontuacao || ""}</td>
-          </tr>
-        `;
-      }).join("");
-      consultaVazio.style.display = filtered.length ? "none" : "block";
-    }
-
     function aggregateOrientationTotals(data) {
       return data.reduce((acc, item) => {
         acc.docentes += 1;
         acc.andamentoApcn += item.total_andamento_apcn || 0;
         acc.concluidasApcn += item.total_concluidas_apcn || 0;
         acc.baseConcluida += (item.tcc_concluidas || 0) + (item.ic_concluidas || 0);
+        acc.mestradoAndamento += item.mestrado_andamento || 0;
+        acc.mestradoConcluidas += item.mestrado_concluidas || 0;
+        acc.doutoradoAndamento += item.doutorado_andamento || 0;
+        acc.doutoradoAndamentoPrincipal += item.doutorado_andamento_principal || 0;
+        acc.doutoradoConcluidas += item.doutorado_concluidas || 0;
+        acc.doutoradoConcluidasPrincipal += item.doutorado_concluidas_principal || 0;
         acc.concluintes2026 += (item.mestrado_concluintes_2026 || 0) + (item.doutorado_concluintes_2026 || 0) + (item.posdoc_concluintes_2026 || 0);
         acc.posdocConcluidas += item.posdoc_concluidas || 0;
         return acc;
@@ -1575,6 +1498,12 @@
         andamentoApcn: 0,
         concluidasApcn: 0,
         baseConcluida: 0,
+        mestradoAndamento: 0,
+        mestradoConcluidas: 0,
+        doutoradoAndamento: 0,
+        doutoradoAndamentoPrincipal: 0,
+        doutoradoConcluidas: 0,
+        doutoradoConcluidasPrincipal: 0,
         concluintes2026: 0,
         posdocConcluidas: 0,
       });
@@ -1582,105 +1511,155 @@
 
     function renderOrientationMetrics(data) {
       const totals = aggregateOrientationTotals(data);
-      document.getElementById("orientacoes-docentes-total").textContent = String(totals.docentes);
-      document.getElementById("orientacoes-andamento-total").textContent = String(totals.andamentoApcn);
-      document.getElementById("orientacoes-concluidas-total").textContent = String(totals.concluidasApcn);
-      document.getElementById("orientacoes-base-total").textContent = String(totals.baseConcluida);
+      document.getElementById("orientacoes-mestrado-andamento-total").textContent = String(totals.mestradoAndamento);
+      document.getElementById("orientacoes-mestrado-concluido-total").textContent = String(totals.mestradoConcluidas);
+      document.getElementById("orientacoes-doutorado-andamento-total").textContent = String(totals.doutoradoAndamento);
+      document.getElementById("orientacoes-doutorado-concluido-total").textContent = String(totals.doutoradoConcluidas);
 
       const topApcn = [...data].sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || a.docente.localeCompare(b.docente, "pt-BR"))[0];
-      const topPipeline = [...data].sort((a, b) => b.total_andamento_apcn - a.total_andamento_apcn || a.docente.localeCompare(b.docente, "pt-BR"))[0];
+      const topDoutorado = [...data].sort((a, b) =>
+        ((b.doutorado_andamento || 0) + (b.doutorado_concluidas || 0)) -
+        ((a.doutorado_andamento || 0) + (a.doutorado_concluidas || 0)) ||
+        a.docente.localeCompare(b.docente, "pt-BR")
+      )[0];
       const doutoradoAtivo = data.filter((item) => (item.doutorado_andamento || 0) > 0).length;
+      const doutoradoPrincipalAtivo = data.filter((item) => (item.doutorado_andamento_principal || 0) > 0).length;
       const diagnostico = totals.concluintes2026 === 0
         ? "Diagnóstico: a planilha recebida não registra concluintes em 2026 nas colunas APCN. Mantive os zeros explicitamente para evitar inferência indevida."
         : `Diagnóstico: há ${totals.concluintes2026} concluintes previstos para 2026 no recorte APCN.`;
 
       document.getElementById("orientacoes-insights").innerHTML = [
+        topDoutorado ? `<span class="chip">Maior estoque de doutorado: <strong>${topDoutorado.docente}</strong> (${(topDoutorado.doutorado_andamento || 0) + (topDoutorado.doutorado_concluidas || 0)})</span>` : "",
         topApcn ? `<span class="chip">Maior APCN: <strong>${topApcn.docente}</strong> (${topApcn.total_geral_apcn})</span>` : "",
-        topPipeline ? `<span class="chip">Maior pipeline: <strong>${topPipeline.docente}</strong> (${topPipeline.total_andamento_apcn})</span>` : "",
         `<span class="chip">Docentes com doutorado em andamento: <strong>${doutoradoAtivo}</strong></span>`,
-        `<span class="chip">Pós-doc concluídos: <strong>${totals.posdocConcluidas}</strong></span>`,
+        `<span class="chip">Doutorado em andamento como principal: <strong>${totals.doutoradoAndamentoPrincipal}</strong></span>`,
+        `<span class="chip">Docentes com doutorado principal ativo: <strong>${doutoradoPrincipalAtivo}</strong></span>`,
+        `<span class="chip">Doutorado concluído como principal: <strong>${totals.doutoradoConcluidasPrincipal}</strong></span>`,
       ].join("");
       document.getElementById("orientacoes-diagnostico").textContent = diagnostico;
     }
 
     function renderOrientationChart(data) {
       const items = [...data]
-        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || b.total_andamento_apcn - a.total_andamento_apcn || a.docente.localeCompare(b.docente, "pt-BR"))
+        .map((item) => ({
+          docente: item.docente,
+          andamento: item.doutorado_andamento || 0,
+          andamentoPrincipal: item.doutorado_andamento_principal || 0,
+          concluidas: item.doutorado_concluidas || 0,
+          concluidasPrincipal: item.doutorado_concluidas_principal || 0,
+          total: (item.doutorado_andamento || 0) + (item.doutorado_concluidas || 0),
+        }))
+        .filter((item) => item.total > 0)
+        .sort((a, b) => b.total - a.total || b.andamento - a.andamento || a.docente.localeCompare(b.docente, "pt-BR"))
         .slice(0, 12);
       if (!items.length) {
         chartOrientacoesDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxTotal = Math.max(...items.map((item) => item.total_geral_apcn), 1);
-      const rowHeight = 34;
-      const height = items.length * rowHeight + 48;
-      const labelWidth = 270;
-      const chartWidth = 720;
-      const usableWidth = chartWidth - labelWidth - 72;
+      const maxTotal = Math.max(...items.map((item) => item.total), 1);
+      const rowHeight = 54;
+      const height = items.length * rowHeight + 64;
+      const labelWidth = 320;
+      const chartWidth = 1080;
+      const usableWidth = chartWidth - labelWidth - 170;
       chartOrientacoesDocentes.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Total geral APCN por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Destaque de orientações de doutorado por docente">
           ${items.map((item, index) => {
-            const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.total_geral_apcn / maxTotal) * usableWidth);
+            const y = 28 + index * rowHeight;
+            const andamentoWidth = item.andamento ? Math.max(8, (item.andamento / maxTotal) * usableWidth) : 0;
+            const concluidasWidth = item.concluidas ? Math.max(8, (item.concluidas / maxTotal) * usableWidth) : 0;
             return `
-              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
-              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#e6ecdd"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#orientacaoGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.total_geral_apcn}</text>
+              <text x="0" y="${y + 18}" fill="rgba(255,250,243,0.96)" font-size="15" font-weight="600">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${andamentoWidth}" height="16" rx="8" fill="#f0bf43"></rect>
+              <text x="${labelWidth + usableWidth + 14}" y="${y + 13}" fill="rgba(255,250,243,0.92)" font-size="13">${item.andamento} em andamento</text>
+              <rect x="${labelWidth}" y="${y + 22}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
+              <rect x="${labelWidth}" y="${y + 22}" width="${concluidasWidth}" height="16" rx="8" fill="#ffffff"></rect>
+              <text x="${labelWidth + usableWidth + 14}" y="${y + 35}" fill="rgba(255,250,243,0.92)" font-size="13">${item.concluidas} concluídas</text>
             `;
           }).join("")}
-          <defs>
-            <linearGradient id="orientacaoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stop-color="#426132"></stop>
-              <stop offset="100%" stop-color="#8fb06a"></stop>
-            </linearGradient>
-          </defs>
         </svg>
       `;
     }
 
-    function renderOrientationTable(data) {
-      orientacoesBody.innerHTML = data.map((item) => `
+    function renderOrientationStrictoTable(data) {
+      orientacoesStrictoBody.innerHTML = data
+        .slice()
+        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || b.doutorado_andamento - a.doutorado_andamento || a.docente.localeCompare(b.docente, "pt-BR"))
+        .map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${item.tcc_andamento || ""}</td>
-          <td>${item.tcc_concluidas || ""}</td>
-          <td>${item.ic_andamento || ""}</td>
-          <td>${item.ic_concluidas || ""}</td>
-          <td>${item.mestrado_andamento || ""}</td>
-          <td>${item.mestrado_concluintes_2026 || ""}</td>
-          <td>${item.mestrado_concluidas || ""}</td>
-          <td>${item.doutorado_andamento || ""}</td>
-          <td>${item.doutorado_andamento_principal || ""}</td>
-          <td>${item.doutorado_concluintes_2026 || ""}</td>
-          <td>${item.doutorado_concluidas || ""}</td>
-          <td>${item.doutorado_concluidas_principal || ""}</td>
-          <td>${item.posdoc_andamento || ""}</td>
-          <td>${item.posdoc_concluintes_2026 || ""}</td>
-          <td>${item.posdoc_concluidas || ""}</td>
-          <td class="total-cell">${item.total_andamento_apcn || ""}</td>
-          <td class="total-cell">${item.total_concluidas_apcn || ""}</td>
-          <td class="total-cell">${item.total_mestrado_concluido || ""}</td>
-          <td class="total-cell">${item.total_concluintes_2026_apcn || ""}</td>
-          <td class="total-cell">${item.total_geral_apcn || ""}</td>
+          <td>${item.mestrado_andamento ?? 0}</td>
+          <td>${item.mestrado_concluintes_2026 ?? 0}</td>
+          <td>${item.mestrado_concluidas ?? 0}</td>
+          <td class="numeric-soft">${item.doutorado_andamento ?? 0}</td>
+          <td class="numeric-soft">${item.doutorado_andamento_principal ?? 0}</td>
+          <td class="numeric-soft">${item.doutorado_concluintes_2026 ?? 0}</td>
+          <td class="numeric-soft">${item.doutorado_concluidas ?? 0}</td>
+          <td class="numeric-soft">${item.doutorado_concluidas_principal ?? 0}</td>
+          <td class="numeric-strong">${item.total_andamento_apcn ?? 0}</td>
+          <td class="numeric-strong">${item.total_concluidas_apcn ?? 0}</td>
+          <td class="numeric-strong">${item.total_geral_apcn ?? 0}</td>
         </tr>
       `).join("");
+    }
+
+    function renderOrientationGraduationTable(data) {
+      orientacoesGraduacaoBody.innerHTML = data
+        .slice()
+        .sort((a, b) =>
+          ((b.tcc_concluidas || 0) + (b.ic_concluidas || 0)) -
+          ((a.tcc_concluidas || 0) + (a.ic_concluidas || 0)) ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        )
+        .map((item) => {
+          const totalBase = (item.tcc_concluidas || 0) + (item.ic_concluidas || 0);
+          return `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.tcc_andamento ?? 0}</td>
+          <td>${item.tcc_concluidas ?? 0}</td>
+          <td>${item.ic_andamento ?? 0}</td>
+          <td>${item.ic_concluidas ?? 0}</td>
+          <td class="numeric-strong">${totalBase}</td>
+        </tr>
+      `;
+        }).join("");
+    }
+
+    function renderOrientationPosdocTable(data) {
+      orientacoesPosdocBody.innerHTML = data
+        .slice()
+        .filter((item) =>
+          (item.posdoc_andamento || 0) > 0 ||
+          (item.posdoc_concluintes_2026 || 0) > 0 ||
+          (item.posdoc_concluidas || 0) > 0
+        )
+        .sort((a, b) =>
+          ((b.posdoc_andamento || 0) + (b.posdoc_concluidas || 0)) -
+          ((a.posdoc_andamento || 0) + (a.posdoc_concluidas || 0)) ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        )
+        .map((item) => {
+          const totalPosdoc = (item.posdoc_andamento || 0) + (item.posdoc_concluidas || 0);
+          return `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.posdoc_andamento ?? 0}</td>
+          <td>${item.posdoc_concluintes_2026 ?? 0}</td>
+          <td>${item.posdoc_concluidas ?? 0}</td>
+          <td class="numeric-strong">${totalPosdoc}</td>
+        </tr>
+      `;
+        }).join("");
     }
 
     function renderOrientationPanel() {
       renderOrientationMetrics(dataSourceOrientacoes);
       renderOrientationChart(dataSourceOrientacoes);
-      renderOrientationTable(dataSourceOrientacoes);
-    }
-
-    function applyConsultaFilters() {
-      const dataset = getConsultaDataset();
-      const term = normalizeText(consultaTermo.value).trim();
-      const field = consultaCampo.value;
-      const filtered = dataset.data.filter((item) => matchesConsulta(item, dataset.kind, field, term));
-      renderConsultaMetrics(dataset, filtered);
-      renderConsultaInsights(dataset, filtered);
-      renderConsultaTable(dataset, filtered);
+      renderOrientationStrictoTable(dataSourceOrientacoes);
+      renderOrientationGraduationTable(dataSourceOrientacoes);
+      renderOrientationPosdocTable(dataSourceOrientacoes);
     }
 
     function renderTable(data) {
@@ -1748,15 +1727,11 @@
     bindTabs();
     applyFilters();
     applyTechnicalFilters();
-    applyConsultaFilters();
     renderOrientationPanel();
 
     tiposSelect.addEventListener("change", applyFilters);
     anosSelect.addEventListener("change", applyFilters);
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
-    consultaTermo.addEventListener("input", applyConsultaFilters);
-    consultaCampo.addEventListener("change", applyConsultaFilters);
-    consultaFonte.addEventListener("change", applyConsultaFilters);
   </script>
 </body>
 </html>
