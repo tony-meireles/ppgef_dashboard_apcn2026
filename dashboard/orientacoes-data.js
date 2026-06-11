@@ -1,7 +1,7 @@
 window.ORIENTACOES_PPGEF = [
   {
     docente: "André dos Santos Costa",
-    tcc_andamento: 10,
+    tcc_andamento: 0,
     tcc_concluidas: 121,
     ic_andamento: 10,
     ic_concluidas: 43,
@@ -349,7 +349,7 @@ window.ORIENTACOES_PPGEF = [
     doutorado_andamento_co: 1,
     doutorado_andamento_principal: 4,
     doutorado_andamento: 5,
-    doutorado_concluintes_2026: 0,
+    doutorado_concluintes_2026: 2,
     doutorado_concluidas_co: 1,
     doutorado_concluidas_principal: 0,
     doutorado_concluidas: 1,
@@ -359,8 +359,8 @@ window.ORIENTACOES_PPGEF = [
     total_andamento_apcn: 8,
     total_concluidas_apcn: 12,
     total_concluidas_d: 11,
-    total_concluintes_2026_apcn: 0,
-    total_geral_apcn: 12,
+    total_concluintes_2026_apcn: 2,
+    total_geral_apcn: 14,
     total_mestrado_concluido: 11
   },
   {

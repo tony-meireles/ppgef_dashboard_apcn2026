@@ -1554,9 +1554,9 @@
             <span id="orient-crit-graduacao-resumo">0 de 0 docentes com orientação de graduação concluída.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com mestrado</p>
+            <p class="eyebrow">Mestrado concluído</p>
             <strong id="orient-crit-mestrado-total">0</strong>
-            <span id="orient-crit-mestrado-resumo">0 docentes com orientação em mestrado.</span>
+            <span id="orient-crit-mestrado-resumo">0 docentes com orientação concluída em mestrado.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Doutorado principal</p>
@@ -2724,11 +2724,8 @@
     function aggregateOrientationCriticalCriteria(data) {
       const totalDocentes = data.length;
       const graduacaoAtendidos = data.filter((item) => ((item.tcc_concluidas || 0) + (item.ic_concluidas || 0)) > 0).length;
-      const mestradoAtendidos = data.filter((item) => ((item.mestrado_andamento || 0) + (item.mestrado_concluidas || 0) + (item.mestrado_concluintes_2026 || 0)) > 0).length;
-      const doutoradoAtendidos = data.filter((item) => (
-        (item.doutorado_concluidas || 0) +
-        (item.doutorado_concluidas_principal || 0)
-      ) > 0).length;
+      const mestradoAtendidos = data.filter((item) => (item.mestrado_concluidas || 0) > 0).length;
+      const doutoradoAtendidos = data.filter((item) => (item.doutorado_concluidas_principal || 0) > 0).length;
 
       return {
         totalDocentes,
@@ -2749,8 +2746,8 @@
           color: "#8c1538",
         },
         {
-          criterio: "Orientação em mestrado",
-          label: "≥ 9 docentes com orientação em mestrado",
+          criterio: "Mestrado concluído",
+          label: "≥ 9 docentes com orientação concluída em mestrado",
           atual: summary.mestradoAtendidos,
           minimo: 9,
           color: "#426132",
@@ -2800,7 +2797,7 @@
       document.getElementById("orient-crit-graduacao-percentual").textContent = `${summary.graduacaoPercentual}%`;
       document.getElementById("orient-crit-graduacao-resumo").textContent = `${summary.graduacaoAtendidos} de ${summary.totalDocentes} docentes com orientação de graduação concluída.`;
       document.getElementById("orient-crit-mestrado-total").textContent = String(summary.mestradoAtendidos);
-      document.getElementById("orient-crit-mestrado-resumo").textContent = `${summary.mestradoAtendidos} docentes com orientação em mestrado.`;
+      document.getElementById("orient-crit-mestrado-resumo").textContent = `${summary.mestradoAtendidos} docentes com orientação concluída em mestrado.`;
       document.getElementById("orient-crit-doutorado-total").textContent = String(summary.doutoradoAtendidos);
       document.getElementById("orient-crit-doutorado-resumo").textContent = `${summary.doutoradoAtendidos} docentes com orientação concluída em doutorado como principal.`;
 
@@ -2819,7 +2816,7 @@
         `
           <div class="criteria-score">
             <div>
-              <div>Mestrado</div>
+              <div>Mestrado concluído</div>
               <strong>${summary.mestradoAtendidos}</strong>
             </div>
             <span class="criteria-status ${mestradoOk ? "ok" : "risk"}">${mestradoOk ? "Atende" : "Atenção"}</span>
@@ -2838,11 +2835,11 @@
 
       document.getElementById("orient-crit-insights").innerHTML = [
         `<span class="chip">Graduação concluída: <strong>${summary.graduacaoAtendidos}/${summary.totalDocentes}</strong></span>`,
-        `<span class="chip">Mestrado: <strong>${summary.mestradoAtendidos}</strong> docentes frente ao mínimo de <strong>9</strong></span>`,
+        `<span class="chip">Mestrado concluído: <strong>${summary.mestradoAtendidos}</strong> docentes frente ao mínimo de <strong>9</strong></span>`,
         `<span class="chip">Doutorado principal: <strong>${summary.doutoradoAtendidos}</strong> docentes frente ao mínimo de <strong>3</strong></span>`,
       ].join("");
 
-      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado considera docentes com ao menos um registro de orientação em andamento, concluída ou concluinte em 2026. Doutorado considera apenas docentes com orientação concluída em doutorado como principal.";
+      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado considera apenas docentes com pelo menos uma orientação concluída em mestrado. Doutorado considera apenas docentes com orientação concluída em doutorado como principal.";
 
       document.getElementById("orient-crit-resumo-body").innerHTML = [
         `
@@ -2859,7 +2856,7 @@
           <tr>
             <td>Orientação</td>
             <td>Doutorado</td>
-            <td>≥ 9 docentes com orientação em mestrado</td>
+            <td>≥ 9 docentes com orientação concluída em mestrado</td>
             <td>${summary.mestradoAtendidos} docentes</td>
             <td><span class="criteria-status ${mestradoOk ? "ok" : "risk"}">${mestradoOk ? "Atende" : "Não atende"}</span></td>
             <td>${mestradoOk ? `Supera o mínimo em ${summary.mestradoAtendidos - 9} docente(s).` : `Faltam ${9 - summary.mestradoAtendidos} docente(s) para o mínimo.`}</td>
