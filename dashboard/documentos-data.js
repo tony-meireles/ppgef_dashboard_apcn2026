@@ -55,6 +55,12 @@ window.DOCUMENTOS_PPGEF = [
   },
   {
     categoria: "CAPES",
+    titulo: "Documento Norteador para Abertura de APCN",
+    descricao: "Referência específica para estruturação e submissão de proposta APCN na área de Educação Física.",
+    caminho: "C:\\Users\\tonym\\Downloads\\EDUCACAO_FISICA_APCN_21.pdf",
+  },
+  {
+    categoria: "CAPES",
     titulo: "Resultado da Avaliação Quadrienal 2021-2024",
     descricao: "Ficha de resultado da avaliação. O período no nome do arquivo de origem ainda precisa ser confirmado.",
     caminho: "G:\\.shortcut-targets-by-id\\18B_rphPE1Flt1tGbECpP70xTWYIcUsfW\\AAA - PPGEF EFI\\CAPES - Avaliação Quadrienal\\2025 - 2028\\00 - Documentos Norteadores da Avaliação\\Resultado Quadrienal 2025-2028 - ficha_recomendacao_25001019156P0.pdf",
