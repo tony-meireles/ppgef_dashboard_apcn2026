@@ -1316,12 +1316,14 @@
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
+    const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
     let selectedDocentesTecnica = new Set();
     let docenteSortMode = "alfabetico";
-    let criteriaDocentesSort = "performance";
+    let docenteTableSortMode = "alfabetico";
+    let criteriaDocentesSort = "alpha";
 
     const typeLabels = {
       artigo: "Artigos",
@@ -1342,6 +1344,10 @@
 
     function unique(values) {
       return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+    }
+
+    function formatOrientationValue(value) {
+      return Number(value) === 0 ? "-" : String(value ?? "-");
     }
 
     function getSelectedValues(select) {
@@ -1549,6 +1555,16 @@
         button.addEventListener("click", () => {
           docenteSortMode = button.dataset.docenteSort || "alfabetico";
           docenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyFilters();
+        });
+      });
+    }
+
+    function bindDocenteTableSortToggles() {
+      docenteTableSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          docenteTableSortMode = button.dataset.docenteTableSort || "alfabetico";
+          docenteTableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
           applyFilters();
         });
       });
@@ -1779,7 +1795,13 @@
     }
 
     function renderResumoDocentes(summary) {
-      resumoDocentesBody.innerHTML = summary.map((item) => `
+      const sortedSummary = [...summary].sort((a, b) => {
+        if (docenteTableSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.pontuacao - a.pontuacao;
+        }
+        return b.pontuacao - a.pontuacao || b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR");
+      });
+      resumoDocentesBody.innerHTML = sortedSummary.map((item) => `
         <tr>
           <td>${item.docente}</td>
           <td>${item.total}</td>
@@ -1975,10 +1997,10 @@
               <text x="0" y="${y + 18}" fill="rgba(255,250,243,0.96)" font-size="15" font-weight="600">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
               <rect x="${labelWidth}" y="${y}" width="${andamentoWidth}" height="16" rx="8" fill="#f0bf43"></rect>
-              <text x="${labelWidth + usableWidth + 14}" y="${y + 13}" fill="rgba(255,250,243,0.92)" font-size="13">${item.andamento} em andamento</text>
+              <text x="${labelWidth + usableWidth + 14}" y="${y + 13}" fill="rgba(255,250,243,0.92)" font-size="13">${formatOrientationValue(item.andamento)} em andamento</text>
               <rect x="${labelWidth}" y="${y + 22}" width="${usableWidth}" height="16" rx="8" fill="rgba(255,250,243,0.16)"></rect>
               <rect x="${labelWidth}" y="${y + 22}" width="${concluidasWidth}" height="16" rx="8" fill="#ffffff"></rect>
-              <text x="${labelWidth + usableWidth + 14}" y="${y + 35}" fill="rgba(255,250,243,0.92)" font-size="13">${item.concluidas} concluídas</text>
+              <text x="${labelWidth + usableWidth + 14}" y="${y + 35}" fill="rgba(255,250,243,0.92)" font-size="13">${formatOrientationValue(item.concluidas)} concluídas</text>
             `;
           }).join("")}
         </svg>
@@ -1992,17 +2014,17 @@
         .map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${item.mestrado_andamento ?? 0}</td>
-          <td>${item.mestrado_concluintes_2026 ?? 0}</td>
-          <td>${item.mestrado_concluidas ?? 0}</td>
-          <td class="numeric-soft">${item.doutorado_andamento ?? 0}</td>
-          <td class="numeric-soft">${item.doutorado_andamento_principal ?? 0}</td>
-          <td class="numeric-soft">${item.doutorado_concluintes_2026 ?? 0}</td>
-          <td class="numeric-soft">${item.doutorado_concluidas ?? 0}</td>
-          <td class="numeric-soft">${item.doutorado_concluidas_principal ?? 0}</td>
-          <td class="numeric-strong">${item.total_andamento_apcn ?? 0}</td>
-          <td class="numeric-strong">${item.total_concluidas_apcn ?? 0}</td>
-          <td class="numeric-strong">${item.total_geral_apcn ?? 0}</td>
+          <td>${formatOrientationValue(item.mestrado_andamento)}</td>
+          <td>${formatOrientationValue(item.mestrado_concluintes_2026)}</td>
+          <td>${formatOrientationValue(item.mestrado_concluidas)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento_principal)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluintes_2026)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluidas)}</td>
+          <td class="numeric-soft">${formatOrientationValue(item.doutorado_concluidas_principal)}</td>
+          <td class="numeric-strong">${formatOrientationValue(item.total_andamento_apcn)}</td>
+          <td class="numeric-strong">${formatOrientationValue(item.total_concluidas_apcn)}</td>
+          <td class="numeric-strong">${formatOrientationValue(item.total_geral_apcn)}</td>
         </tr>
       `).join("");
     }
@@ -2020,11 +2042,11 @@
           return `
         <tr>
           <td>${item.docente}</td>
-          <td>${item.tcc_andamento ?? 0}</td>
-          <td>${item.tcc_concluidas ?? 0}</td>
-          <td>${item.ic_andamento ?? 0}</td>
-          <td>${item.ic_concluidas ?? 0}</td>
-          <td class="numeric-strong">${totalBase}</td>
+          <td>${formatOrientationValue(item.tcc_andamento)}</td>
+          <td>${formatOrientationValue(item.tcc_concluidas)}</td>
+          <td>${formatOrientationValue(item.ic_andamento)}</td>
+          <td>${formatOrientationValue(item.ic_concluidas)}</td>
+          <td class="numeric-strong">${formatOrientationValue(totalBase)}</td>
         </tr>
       `;
         }).join("");
@@ -2048,10 +2070,10 @@
           return `
         <tr>
           <td>${item.docente}</td>
-          <td>${item.posdoc_andamento ?? 0}</td>
-          <td>${item.posdoc_concluintes_2026 ?? 0}</td>
-          <td>${item.posdoc_concluidas ?? 0}</td>
-          <td class="numeric-strong">${totalPosdoc}</td>
+          <td>${formatOrientationValue(item.posdoc_andamento)}</td>
+          <td>${formatOrientationValue(item.posdoc_concluintes_2026)}</td>
+          <td>${formatOrientationValue(item.posdoc_concluidas)}</td>
+          <td class="numeric-strong">${formatOrientationValue(totalPosdoc)}</td>
         </tr>
       `;
         }).join("");
@@ -2187,6 +2209,32 @@
       updateCriteriaSortButtons();
     }
 
+    function renderProductivityCriteriaDocentesTable(docentes) {
+      const sortedDocentes = [...docentes].sort((a, b) => {
+        if (criteriaDocentesSort === "alpha") {
+          return a.docente.localeCompare(b.docente, "pt-BR");
+        }
+        return (
+          b.pontuacao - a.pontuacao ||
+          Number(b.criterio2) - Number(a.criterio2) ||
+          Number(b.criterio1) - Number(a.criterio1) ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+      });
+
+      document.getElementById("criterios-docentes-body").innerHTML = sortedDocentes.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.pontuacao}</td>
+          <td><span class="criteria-status ${item.criterio1 ? "ok" : "risk"}">${item.criterio1 ? "Atende" : "Não atende"}</span></td>
+          <td>${item.hasJcr ? "Sim" : "Não"}</td>
+          <td>${item.hasQ1Q2 ? "Sim" : "Não"}</td>
+          <td><span class="criteria-status ${item.criterio2 ? "ok" : "risk"}">${item.criterio2 ? "Atende" : "Não atende"}</span></td>
+        </tr>
+      `).join("");
+      updateCriteriaSortButtons();
+    }
+
     function renderProductivityCriteriaPanel() {
       const summary = aggregateProductivityCriteria(dataSource);
       document.getElementById("criterios-docentes-total").textContent = String(summary.totalDocentes);
@@ -2254,29 +2302,7 @@
         `,
       ].join("");
 
-      const sortedDocentes = [...summary.docentes].sort((a, b) => {
-        if (criteriaDocentesSort === "alpha") {
-          return a.docente.localeCompare(b.docente, "pt-BR");
-        }
-        return (
-          b.pontuacao - a.pontuacao ||
-          Number(b.criterio2) - Number(a.criterio2) ||
-          Number(b.criterio1) - Number(a.criterio1) ||
-          a.docente.localeCompare(b.docente, "pt-BR")
-        );
-      });
-
-      document.getElementById("criterios-docentes-body").innerHTML = sortedDocentes.map((item) => `
-        <tr>
-          <td>${item.docente}</td>
-          <td>${item.pontuacao}</td>
-          <td><span class="criteria-status ${item.criterio1 ? "ok" : "risk"}">${item.criterio1 ? "Atende" : "Não atende"}</span></td>
-          <td>${item.hasJcr ? "Sim" : "Não"}</td>
-          <td>${item.hasQ1Q2 ? "Sim" : "Não"}</td>
-          <td><span class="criteria-status ${item.criterio2 ? "ok" : "risk"}">${item.criterio2 ? "Atende" : "Não atende"}</span></td>
-        </tr>
-      `).join("");
-      updateCriteriaSortButtons();
+      renderProductivityCriteriaDocentesTable(summary.docentes);
     }
 
     function renderTable(data) {
@@ -2352,6 +2378,7 @@
     initializeTechnicalFilters();
     bindTabs();
     bindDocenteSortToggles();
+    bindDocenteTableSortToggles();
     applyFilters();
     applyTechnicalFilters();
     renderOrientationPanel();
