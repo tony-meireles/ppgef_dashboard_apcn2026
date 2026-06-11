@@ -673,11 +673,12 @@
       transform: rotate(180deg);
       height: 180px;
       min-width: 44px;
-      padding: 10px 6px;
+      padding: 10px 4px;
       white-space: normal;
       word-break: normal;
       line-height: 1.1;
-      vertical-align: bottom;
+      text-align: center;
+      vertical-align: middle;
     }
 
     .criteria-summary {
@@ -2307,14 +2308,14 @@
           label: "75% com mais de 330 pts",
           atual: summary.criterio1Atendidos,
           minimo: summary.minimo,
-          color: "#8c1538",
+          color: "var(--orientation-principal-andamento)",
         },
         {
           criterio: "Critério 2",
           label: "75% com JCR ou Categoria A",
           atual: summary.criterio2Atendidos,
           minimo: summary.minimo,
-          color: "#426132",
+          color: "var(--orientation-co-andamento)",
         },
       ];
       const maxValue = Math.max(summary.totalDocentes, summary.minimo, summary.criterio1Atendidos, summary.criterio2Atendidos, 1);
@@ -2333,7 +2334,7 @@
               <text x="0" y="${y + 16}" fill="#262930" font-size="15" font-weight="700">${item.criterio}</text>
               <text x="0" y="${y + 36}" fill="#6d727c" font-size="12">${item.label}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${minimoWidth}" height="18" rx="9" fill="#d4a017"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${minimoWidth}" height="18" rx="9" fill="var(--orientation-principal-concluida)"></rect>
               <text x="${labelWidth + minimoWidth + 10}" y="${y + 14}" fill="#6d727c" font-size="12">mínimo ${item.minimo}</text>
               <rect x="${labelWidth}" y="${y + 28}" width="${usableWidth}" height="18" rx="9" fill="#eee5d8"></rect>
               <rect x="${labelWidth}" y="${y + 28}" width="${atualWidth}" height="18" rx="9" fill="${item.color}"></rect>
