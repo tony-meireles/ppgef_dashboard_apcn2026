@@ -210,49 +210,53 @@
       font-size: 1rem;
     }
 
-    .docente-picker {
+    .filter-picker {
       display: grid;
-      gap: 10px;
-      max-height: 220px;
+      gap: 12px;
+      max-height: 236px;
       overflow: auto;
-      padding: 8px 10px;
+      padding: 10px 12px;
       border: 1px solid var(--ufpe-linha);
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.88);
     }
 
-    .docente-option {
+    .filter-picker.compact {
+      max-height: 236px;
+    }
+
+    .filter-option {
       display: grid;
       grid-template-columns: 18px minmax(0, 1fr);
-      gap: 10px;
+      gap: 12px;
       align-items: start;
-      padding: 8px 6px;
-      border-radius: 10px;
+      padding: 10px 8px;
+      border-radius: 12px;
       transition: background 0.2s ease, color 0.2s ease;
       cursor: pointer;
     }
 
-    .docente-option:hover {
+    .filter-option:hover {
       background: rgba(140, 21, 56, 0.06);
     }
 
-    .docente-option input {
+    .filter-option input {
       margin: 2px 0 0;
       accent-color: var(--ufpe-bordo);
       cursor: pointer;
     }
 
-    .docente-option span {
+    .filter-option span {
       color: var(--ufpe-grafite);
       font-size: 0.94rem;
-      line-height: 1.3;
+      line-height: 1.45;
     }
 
-    .docente-option:has(input:checked) {
+    .filter-option:has(input:checked) {
       background: rgba(140, 21, 56, 0.12);
     }
 
-    .docente-option:has(input:checked) span {
+    .filter-option:has(input:checked) span {
       color: var(--ufpe-bordo);
       font-weight: 700;
     }
@@ -629,19 +633,15 @@
             <div class="filters-grid">
               <div>
                 <label for="docentes-chip-list">Docentes</label>
-                <div id="docentes-chip-list" class="docente-picker"></div>
+                <div id="docentes-chip-list" class="filter-picker"></div>
               </div>
               <div>
                 <label for="tipos">Tipo de produção</label>
-                <select id="tipos" multiple>
-                  <option value="artigo">Artigo</option>
-                  <option value="livro">Livro</option>
-                  <option value="capitulo">Capítulo</option>
-                </select>
+                <div id="tipos" class="filter-picker compact"></div>
               </div>
               <div>
                 <label for="anos">Ano</label>
-                <select id="anos" multiple></select>
+                <div id="anos" class="filter-picker compact"></div>
               </div>
             </div>
           </div>
@@ -767,7 +767,7 @@
             <div class="filters-grid">
               <div>
                 <label for="docentes-tecnica-chip-list">Docentes</label>
-                <div id="docentes-tecnica-chip-list" class="docente-picker"></div>
+                <div id="docentes-tecnica-chip-list" class="filter-picker"></div>
               </div>
               <div>
                 <label for="tipos-tecnica">Tipo de produto</label>
@@ -1041,6 +1041,8 @@
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
     let selectedDocentes = new Set();
+    let selectedTipos = new Set();
+    let selectedAnos = new Set();
     let selectedDocentesTecnica = new Set();
 
     const typeLabels = {
@@ -1072,12 +1074,27 @@
       const docentes = unique(data.map((item) => item.docente));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
       docenteChipList.innerHTML = docentes.map((docente) => `
-        <label class="docente-option">
+        <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
         </label>
       `).join("");
-      anosSelect.innerHTML = anos.map((ano) => `<option value="${ano}">${ano}</option>`).join("");
+      tiposSelect.innerHTML = [
+        ["artigo", "Artigo"],
+        ["livro", "Livro"],
+        ["capitulo", "Capítulo"],
+      ].map(([value, label]) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${value}">
+          <span>${label}</span>
+        </label>
+      `).join("");
+      anosSelect.innerHTML = anos.map((ano) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${ano}">
+          <span>${ano}</span>
+        </label>
+      `).join("");
     }
 
     function normalizeTechnicalType(value) {
@@ -1114,7 +1131,7 @@
       const docentes = unique(data.map((item) => item.docente));
       const tipos = unique(data.map((item) => formatTechnicalType(item.tipo_produto)));
       docenteTecnicaChipList.innerHTML = docentes.map((docente) => `
-        <label class="docente-option">
+        <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
         </label>
@@ -1130,6 +1147,34 @@
             selectedDocentes.add(docente);
           } else {
             selectedDocentes.delete(docente);
+          }
+          applyFilters();
+        });
+      });
+    }
+
+    function bindTypeFilters() {
+      [...tiposSelect.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          const tipo = input.value;
+          if (input.checked) {
+            selectedTipos.add(tipo);
+          } else {
+            selectedTipos.delete(tipo);
+          }
+          applyFilters();
+        });
+      });
+    }
+
+    function bindYearFilters() {
+      [...anosSelect.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          const ano = input.value;
+          if (input.checked) {
+            selectedAnos.add(ano);
+          } else {
+            selectedAnos.delete(ano);
           }
           applyFilters();
         });
@@ -1700,8 +1745,8 @@
 
     function applyFilters() {
       const docentes = [...selectedDocentes];
-      const tipos = getSelectedValues(tiposSelect);
-      const anos = getSelectedValues(anosSelect);
+      const tipos = [...selectedTipos];
+      const anos = [...selectedAnos];
       const filtered = dataSource.filter((item) => {
         const docenteOk = !docentes.length || docentes.includes(item.docente);
         const tipoOk = !tipos.length || tipos.includes(item.tipo_producao);
@@ -1723,14 +1768,14 @@
     populateFilters(dataSource);
     populateTechnicalFilters(dataSourceTecnica);
     bindDocenteChips();
+    bindTypeFilters();
+    bindYearFilters();
     bindDocenteChipsTecnica();
     bindTabs();
     applyFilters();
     applyTechnicalFilters();
     renderOrientationPanel();
 
-    tiposSelect.addEventListener("change", applyFilters);
-    anosSelect.addEventListener("change", applyFilters);
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
   </script>
 </body>
