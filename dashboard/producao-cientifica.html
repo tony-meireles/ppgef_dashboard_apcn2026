@@ -154,58 +154,6 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    .embedded-view-card {
-      grid-column: span 12;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .embedded-view-shell {
-      display: grid;
-      gap: 0;
-    }
-
-    .embedded-view-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px 24px 0;
-    }
-
-    .embedded-view-head p {
-      margin: 6px 0 0;
-      color: var(--ufpe-cinza);
-      line-height: 1.45;
-    }
-
-    .embedded-view-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid #d9c7b1;
-      background: rgba(255, 253, 249, 0.9);
-      color: var(--ufpe-bordo);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .embedded-view-link:hover {
-      border-color: var(--ufpe-bordo);
-      background: rgba(140, 21, 56, 0.05);
-    }
-
-    .embedded-view-frame {
-      width: 100%;
-      min-height: 2400px;
-      border: 0;
-      background: #f7f4ef;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -236,6 +184,12 @@
     .filters-grid {
       display: grid;
       grid-template-columns: 2.2fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .filters-grid-technical {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
       gap: 16px;
     }
 
@@ -574,6 +528,53 @@
       color: var(--ufpe-grafite);
       font-size: 0.9rem;
       border: 1px solid #e1d5c3;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .status-pill.ok {
+      color: var(--ufpe-sucesso);
+      background: rgba(77, 124, 104, 0.14);
+      border-color: rgba(77, 124, 104, 0.22);
+    }
+
+    .status-pill.alert {
+      color: var(--ufpe-bordo);
+      background: rgba(140, 21, 56, 0.1);
+      border-color: rgba(140, 21, 56, 0.18);
+    }
+
+    .sem-producao-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .sem-producao-item {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid #e4d3cf;
+      background: linear-gradient(180deg, #fff7f5, #fdf1ef);
+      color: var(--ufpe-grafite);
+      font-size: 0.94rem;
+    }
+
+    .sem-producao-item strong {
+      color: var(--ufpe-bordo);
+    }
+
+    .table-row-alert {
+      background: rgba(140, 21, 56, 0.04);
     }
 
     table {
@@ -1179,12 +1180,14 @@
       .chart-wide, .chart-narrow { grid-column: span 12; }
       .orientation-split { grid-column: span 12; }
       .orientation-focus { grid-template-columns: 1fr; }
+      .filters-grid-technical { grid-template-columns: 1fr 1fr; }
       .documents-group { grid-column: span 12; }
     }
 
     @media (max-width: 800px) {
       .wrap { padding: 18px 14px 32px; }
       .filters-grid { grid-template-columns: 1fr; }
+      .filters-grid-technical { grid-template-columns: 1fr; }
       .metric { grid-column: span 12; }
       .documents-metric { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; }
@@ -1413,22 +1416,64 @@
           <div class="card filters">
             <div class="section-head">
               <h2>Filtros</h2>
-              <p>Selecione docentes e tipos de produto técnico para refinar a leitura quantitativa.</p>
+              <p>Use a mesma lógica da produção científica para navegar por docente, tipo, ano e situação da produção técnica.</p>
             </div>
-            <div class="filters-grid">
+            <div class="filters-grid-technical">
               <div>
                 <label for="docentes-tecnica-chip-list">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-technical-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-technical-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
                 <div id="docentes-tecnica-chip-list" class="filter-picker"></div>
               </div>
               <div>
                 <label for="tipos-tecnica">Tipo de produto</label>
-                <select id="tipos-tecnica" multiple></select>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-technical-group="tipos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-technical-group="tipos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="tipos-tecnica" class="filter-picker compact"></div>
               </div>
               <div>
-                <label for="recorte-tecnica">Recorte</label>
-                <select id="recorte-tecnica" disabled>
-                  <option value="quantitativo" selected>Quantitativo de produtos</option>
-                </select>
+                <label for="anos-tecnica">Ano</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-technical-group="anos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-technical-group="anos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="anos-tecnica" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="status-tecnica">Situação</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-technical-group="status" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-technical-group="status" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="status-tecnica" class="filter-picker compact"></div>
               </div>
             </div>
           </div>
@@ -1436,51 +1481,64 @@
           <div class="card metric">
             <p class="eyebrow">Produtos</p>
             <strong id="tecnica-total-produtos">0</strong>
-            <span>Soma total de produtos técnicos visíveis após aplicação dos filtros.</span>
+            <span>Total de registros com produção técnica visíveis no recorte atual.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes</p>
-            <strong id="tecnica-docentes-visiveis">0</strong>
-            <span>Quantidade de docentes com produção técnica no recorte atual.</span>
+            <p class="eyebrow">Docentes com Produção</p>
+            <strong id="tecnica-docentes-com-producao">0</strong>
+            <span>Quantidade de docentes com ao menos um registro técnico no recorte visível.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Tipos</p>
+            <p class="eyebrow">Sem Produção</p>
+            <strong id="tecnica-docentes-sem-producao">0</strong>
+            <span>Docentes explicitamente marcados como sem produção técnica na nova base.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Tipos Ativos</p>
             <strong id="tecnica-tipos-visiveis">0</strong>
-            <span>Total de categorias de produtos técnicos presentes no recorte atual.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Média por Docente</p>
-            <strong id="tecnica-media-docente">0</strong>
-            <span>Média de produtos técnicos por docente no conjunto atualmente exibido.</span>
+            <span>Total de tipos de produção técnica desenvolvidos no recorte atual.</span>
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Produtos por Docente</h2>
-              <p>Ranking pela soma de produtos técnicos no recorte filtrado.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Produtos por Docente</h2>
+                <p id="tecnica-docente-chart-caption">Ranking ordenado alfabeticamente no recorte filtrado.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação do ranking técnico">
+                <button type="button" class="sort-toggle active" data-tecnica-docente-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-tecnica-docente-sort="desempenho">Por desempenho</button>
+              </div>
             </div>
             <div id="chart-tecnica-docentes" class="chart"></div>
           </div>
 
           <div class="card chart-narrow">
             <div class="section-head">
-              <h2>Produtos por Tipo</h2>
-              <p>Distribuição quantitativa entre os tipos de produção técnica.</p>
+              <h2>Análise dos Tipos</h2>
+              <p>Distribuição dos tipos e subtipos técnicos efetivamente desenvolvidos.</p>
             </div>
             <div id="type-stack-tecnica" class="type-stack"></div>
             <div class="chips" id="type-chips-tecnica"></div>
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Síntese por Docente</h2>
-              <p>Consolidação quantitativa por docente e por tipo técnico.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Síntese por Docente</h2>
+                <p>Visão consolidada com status, variedade de tipos e total de registros por docente.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação da síntese técnica">
+                <button type="button" class="sort-toggle active" data-tecnica-table-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-tecnica-table-sort="desempenho">Por desempenho</button>
+              </div>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Situação</th>
                     <th>Tipos de Produto</th>
                     <th>Quantitativo Total</th>
                   </tr>
@@ -1492,29 +1550,33 @@
 
           <div class="card chart-narrow">
             <div class="section-head">
-              <h2>Resumo do Recorte</h2>
-              <p>Leitura rápida da composição visível.</p>
+              <h2>Docentes sem Produção</h2>
+              <p>Destaque nominal dos docentes que permanecem sem registro técnico na base atual.</p>
             </div>
+            <strong id="tecnica-sem-producao-total" style="display:block;font-size:2rem;color:var(--ufpe-bordo);letter-spacing:-0.05em;">0</strong>
+            <div class="sem-producao-list" id="tecnica-sem-producao-list"></div>
             <div class="chips" id="insight-chips-tecnica"></div>
             <div class="legend">
-              <span><i style="background: var(--ufpe-bordo)"></i> Quantitativo por docente</span>
-              <span><i style="background: var(--ufpe-destaque)"></i> Distribuição por tipo</span>
+              <span><i style="background: var(--ufpe-bordo)"></i> Docentes sem produção técnica</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Concentração por tipo e subtipo</span>
             </div>
           </div>
 
           <div class="card table-card">
             <div class="section-head">
               <h2>Registros Técnicos</h2>
-              <p>Base quantitativa da produção técnica docente.</p>
+              <p>Base detalhada da produção técnica com situação, subtipo e descrição original da planilha.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Situação</th>
                     <th>Tipo de Produto</th>
-                    <th>Quantitativo</th>
-                    <th>Observações</th>
+                    <th>Ano</th>
+                    <th>Subtipo</th>
+                    <th>Detalhamento</th>
                   </tr>
                 </thead>
                 <tbody id="tabela-tecnica-body"></tbody>
@@ -1824,7 +1886,7 @@
 
       <div class="tab-panel" id="tab-docentes">
         <section class="grid">
-          <div class="card embedded-view-card">
+          <div class="card table-card">
             <div class="section-head">
               <div>
                 <h2>Corpo Docente</h2>
@@ -1851,6 +1913,76 @@
             <div class="document-empty" style="margin-top: 18px;">
               A leitura detalhada do corpo docente foi preservada apenas no ambiente interno de trabalho, para evitar exposição de bases derivadas de planilhas estratégicas.
             </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Demonstração da Atividade Docente Ano a Ano</h2>
+              <p>Leitura cronológica pública do acompanhamento institucional da atuação docente no programa.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Ano</th>
+                    <th>Janela</th>
+                    <th>Leitura da Atividade</th>
+                    <th>Foco Institucional</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2021</td>
+                    <td>Quadriênio 2021-2024</td>
+                    <td>Consolidação da atuação docente do programa no início do ciclo avaliativo.</td>
+                    <td>Estabilização da composição do corpo docente e acompanhamento da inserção institucional.</td>
+                  </tr>
+                  <tr>
+                    <td>2022</td>
+                    <td>Quadriênio 2021-2024</td>
+                    <td>Continuidade da atuação docente com manutenção do quadro de referência.</td>
+                    <td>Monitoramento da permanência, vínculo institucional e capacidade de orientação.</td>
+                  </tr>
+                  <tr>
+                    <td>2023</td>
+                    <td>Quadriênio 2021-2024</td>
+                    <td>Acompanhamento do desempenho docente em perspectiva acumulada do ciclo.</td>
+                    <td>Leitura da consistência do quadro permanente e do protagonismo acadêmico.</td>
+                  </tr>
+                  <tr>
+                    <td>2024</td>
+                    <td>Fechamento 2021-2024</td>
+                    <td>Fechamento do ciclo com leitura consolidada da atividade docente.</td>
+                    <td>Verificação do atendimento aos referenciais críticos para composição docente.</td>
+                  </tr>
+                  <tr>
+                    <td>2025</td>
+                    <td>Transição 2025-2028</td>
+                    <td>Ano de transição e reorganização do quadro docente para o novo ciclo.</td>
+                    <td>Recredenciamento, recomposição do núcleo permanente e ajuste de vínculo institucional.</td>
+                  </tr>
+                  <tr>
+                    <td>2026</td>
+                    <td>Base de Simulação APCN</td>
+                    <td>Ano-base de referência para leitura estratégica da atividade e composição docente.</td>
+                    <td>Checagem de dimensão mínima, vínculo com a IES, exclusividade e limites de composição.</td>
+                  </tr>
+                  <tr>
+                    <td>2027</td>
+                    <td>Projeção 2025-2028</td>
+                    <td>Manutenção planejada da atividade docente ao longo do ciclo projetado.</td>
+                    <td>Sustentação do quadro permanente e acompanhamento da estabilidade institucional.</td>
+                  </tr>
+                  <tr>
+                    <td>2028</td>
+                    <td>Fechamento Projetado</td>
+                    <td>Encerramento projetado do ciclo com leitura de continuidade da atuação docente.</td>
+                    <td>Preparação para nova avaliação do quadro docente e atualização das evidências institucionais.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="chart-note">A versão pública prioriza a leitura cronológica e institucional. O demonstrativo quantitativo e nominal ano a ano permanece reservado ao ambiente interno.</p>
           </div>
         </section>
       </div>
@@ -2601,13 +2733,20 @@
     const closeApcnScoringModalButton = document.getElementById("close-apcn-scoring-modal");
     const docenteTecnicaChipList = document.getElementById("docentes-tecnica-chip-list");
     const tiposTecnicaSelect = document.getElementById("tipos-tecnica");
+    const anosTecnicaSelect = document.getElementById("anos-tecnica");
+    const statusTecnicaSelect = document.getElementById("status-tecnica");
     const tabelaTecnicaBody = document.getElementById("tabela-tecnica-body");
     const resumoTecnicaDocentesBody = document.getElementById("resumo-tecnica-docentes-body");
     const estadoVazioTecnica = document.getElementById("estado-vazio-tecnica");
     const chartTecnicaDocentes = document.getElementById("chart-tecnica-docentes");
+    const tecnicaDocenteChartCaption = document.getElementById("tecnica-docente-chart-caption");
     const typeStackTecnica = document.getElementById("type-stack-tecnica");
     const typeChipsTecnica = document.getElementById("type-chips-tecnica");
     const insightChipsTecnica = document.getElementById("insight-chips-tecnica");
+    const tecnicaSemProducaoList = document.getElementById("tecnica-sem-producao-list");
+    const tecnicaFilterToggles = [...document.querySelectorAll('.filter-toggle[data-technical-group]')];
+    const tecnicaDocenteSortButtons = [...document.querySelectorAll("[data-tecnica-docente-sort]")];
+    const tecnicaTableSortButtons = [...document.querySelectorAll("[data-tecnica-table-sort]")];
     const scientificFilterToggles = [...document.querySelectorAll('.filter-toggle[data-group]')];
     const chartLiderancaDocentes = document.getElementById("chart-lideranca-docentes");
     const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
@@ -2655,18 +2794,29 @@
     let selectedTipos = new Set();
     let selectedAnos = new Set();
     let selectedDocentesTecnica = new Set();
+    let selectedTiposTecnica = new Set();
+    let selectedAnosTecnica = new Set();
+    let selectedStatusTecnica = new Set();
     let selectedDocentesDisciplinas = new Set();
     let selectedAnosDisciplinas = new Set();
     let selectedPeriodosDisciplinas = new Set();
     let docenteSortMode = "alfabetico";
+    let tecnicaDocenteSortMode = "alfabetico";
     let disciplinasDocenteSortMode = "carga";
     let docenteTableSortMode = "alfabetico";
+    let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
     let scientificFilterValues = {
       docentes: [],
       tipos: [],
       anos: [],
+    };
+    let technicalFilterValues = {
+      docentes: [],
+      tipos: [],
+      anos: [],
+      status: [],
     };
     let disciplinasFilterValues = {
       docentes: [],
@@ -2681,14 +2831,15 @@
     };
 
     const technicalTypeLabels = {
-      software: "Software",
-      aplicativo: "Aplicativo",
-      material_didatico: "Material didático",
-      relatorio_tecnico: "Relatório técnico",
-      processo_tecnico: "Processo técnico",
-      patente: "Patente",
-      curso: "Curso",
-      evento: "Evento",
+      produtos_tecnologicos: "Produtos tecnológicos",
+      trabalhos_tecnicos: "Trabalhos técnicos",
+      processos_ou_tecnicas: "Processos ou técnicas",
+      programas_de_computador_sem_registro: "Programas de computador sem registro",
+      assessoria_e_consultoria: "Assessoria e consultoria",
+      entrevistas: "Entrevistas",
+      redes_sociais: "Redes sociais",
+      demais_tipos: "Demais tipos",
+      sem_producao: "Sem produção",
     };
     const personStopwords = new Set(["DA", "DE", "DO", "DOS", "DAS", "DEL", "DELA", "DI", "DU", "E"]);
     const surnameSuffixes = new Set(["FILHO", "JUNIOR", "NETO", "SOBRINHO"]);
@@ -2784,8 +2935,29 @@
         .join(" ");
     }
 
+    function hasTechnicalProduction(item) {
+      if (item.possui_producao != null) return Number(item.possui_producao) === 1;
+      return normalizeTechnicalType(item.tipo_produto) !== "sem_producao";
+    }
+
     function getTechnicalAmount(item) {
-      return Number(item.total_produtos) || 1;
+      return hasTechnicalProduction(item) ? 1 : 0;
+    }
+
+    function getTechnicalStatusKey(item) {
+      return hasTechnicalProduction(item) ? "com_producao" : "sem_producao";
+    }
+
+    function getTechnicalStatusLabel(item) {
+      return getTechnicalStatusKey(item) === "com_producao" ? "Com produção" : "Sem produção";
+    }
+
+    function getTechnicalYearLabel(item) {
+      return item.ano ? String(item.ano) : "Sem ano";
+    }
+
+    function getTechnicalSubtype(item) {
+      return item.subtipo || "Não informado";
     }
 
     function normalizeText(value) {
@@ -2797,14 +2969,50 @@
 
     function populateTechnicalFilters(data) {
       const docentes = unique(data.map((item) => item.docente));
-      const tipos = unique(data.map((item) => formatTechnicalType(item.tipo_produto)));
+      const tipos = unique(
+        data
+          .filter((item) => hasTechnicalProduction(item))
+          .map((item) => formatTechnicalType(item.tipo_produto))
+      );
+      const anos = unique(data.map((item) => getTechnicalYearLabel(item))).sort((a, b) => {
+        if (a === "Sem ano") return 1;
+        if (b === "Sem ano") return -1;
+        return Number(a) - Number(b);
+      });
+      const status = [
+        ["com_producao", "Com produção"],
+        ["sem_producao", "Sem produção"],
+      ];
+      technicalFilterValues = {
+        docentes,
+        tipos,
+        anos,
+        status: status.map(([value]) => value),
+      };
       docenteTecnicaChipList.innerHTML = docentes.map((docente) => `
         <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
         </label>
       `).join("");
-      tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `<option value="${tipo}">${tipo}</option>`).join("");
+      tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${tipo}">
+          <span>${tipo}</span>
+        </label>
+      `).join("");
+      anosTecnicaSelect.innerHTML = anos.map((ano) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${ano}">
+          <span>${ano}</span>
+        </label>
+      `).join("");
+      statusTecnicaSelect.innerHTML = status.map(([value, label]) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${value}">
+          <span>${label}</span>
+        </label>
+      `).join("");
     }
 
     function getDisciplinasBaseData() {
@@ -3240,27 +3448,51 @@
       });
     }
 
-    function initializeTechnicalFilters() {
-      selectedDocentesTecnica = new Set(
-        [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].map((input) => input.value)
-      );
-      [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.checked = true;
-      });
-      [...tiposTecnicaSelect.options].forEach((option) => {
-        option.selected = true;
+    function syncTechnicalFilterViews() {
+      [
+        [docenteTecnicaChipList, selectedDocentesTecnica],
+        [tiposTecnicaSelect, selectedTiposTecnica],
+        [anosTecnicaSelect, selectedAnosTecnica],
+        [statusTecnicaSelect, selectedStatusTecnica],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
       });
     }
 
-    function bindDocenteChipsTecnica() {
-      [...docenteTecnicaChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.addEventListener("change", () => {
-          const docente = input.value;
-          if (input.checked) {
-            selectedDocentesTecnica.add(docente);
-          } else {
-            selectedDocentesTecnica.delete(docente);
-          }
+    function initializeTechnicalFilters() {
+      selectedDocentesTecnica = new Set(technicalFilterValues.docentes);
+      selectedTiposTecnica = new Set(technicalFilterValues.tipos);
+      selectedAnosTecnica = new Set(technicalFilterValues.anos);
+      selectedStatusTecnica = new Set(technicalFilterValues.status);
+      syncTechnicalFilterViews();
+    }
+
+    function bindTechnicalFilters() {
+      bindScientificCheckboxContainer(docenteTecnicaChipList, selectedDocentesTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(tiposTecnicaSelect, selectedTiposTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(anosTecnicaSelect, selectedAnosTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(statusTecnicaSelect, selectedStatusTecnica, applyTechnicalFilters);
+    }
+
+    function bindTechnicalFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesTecnica, getValues: () => technicalFilterValues.docentes },
+        tipos: { selectedSet: selectedTiposTecnica, getValues: () => technicalFilterValues.tipos },
+        anos: { selectedSet: selectedAnosTecnica, getValues: () => technicalFilterValues.anos },
+        status: { selectedSet: selectedStatusTecnica, getValues: () => technicalFilterValues.status },
+      };
+
+      tecnicaFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.technicalGroup];
+          if (!config) return;
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          config.selectedSet.clear();
+          values.forEach((value) => config.selectedSet.add(value));
+          syncTechnicalFilterViews();
           applyTechnicalFilters();
         });
       });
@@ -3428,6 +3660,26 @@
           docenteTableSortMode = button.dataset.docenteTableSort || "alfabetico";
           docenteTableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
           applyFilters();
+        });
+      });
+    }
+
+    function bindTechnicalDocenteSortToggles() {
+      tecnicaDocenteSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          tecnicaDocenteSortMode = button.dataset.tecnicaDocenteSort || "alfabetico";
+          tecnicaDocenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyTechnicalFilters();
+        });
+      });
+    }
+
+    function bindTechnicalTableSortToggles() {
+      tecnicaTableSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          tecnicaTableSortMode = button.dataset.tecnicaTableSort || "alfabetico";
+          tecnicaTableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyTechnicalFilters();
         });
       });
     }
@@ -3625,6 +3877,19 @@
       return Object.values(base);
     }
 
+    function sortTechnicalDocenteSummary(data, mode = tecnicaDocenteSortMode) {
+      return [...data].sort((a, b) => {
+        if (mode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.total - a.total;
+        }
+        return (
+          b.total - a.total ||
+          b.tipos.length - a.tipos.length ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+      });
+    }
+
     function aggregateTechnicalByDocente(data) {
       const grouped = new Map();
       for (const item of data) {
@@ -3633,60 +3898,71 @@
             docente: item.docente,
             total: 0,
             tipos: new Set(),
+            subtipos: new Set(),
+            status: "Sem produção",
           });
         }
         const row = grouped.get(item.docente);
-        row.total += getTechnicalAmount(item);
-        row.tipos.add(formatTechnicalType(item.tipo_produto));
+        if (hasTechnicalProduction(item)) {
+          row.total += 1;
+          row.status = "Com produção";
+          row.tipos.add(formatTechnicalType(item.tipo_produto));
+          if (item.subtipo) row.subtipos.add(item.subtipo);
+        }
       }
-      return [...grouped.values()]
-        .map((item) => ({
+      return sortTechnicalDocenteSummary(
+        [...grouped.values()].map((item) => ({
           docente: item.docente,
           total: item.total,
+          status: item.status,
           tipos: [...item.tipos].sort((a, b) => a.localeCompare(b, "pt-BR")),
+          subtipos: [...item.subtipos].sort((a, b) => a.localeCompare(b, "pt-BR")),
         }))
-        .sort((a, b) => b.total - a.total || a.docente.localeCompare(b.docente, "pt-BR"));
+      );
     }
 
     function aggregateTechnicalByType(data) {
       const grouped = new Map();
       for (const item of data) {
+        if (!hasTechnicalProduction(item)) continue;
         const tipo = formatTechnicalType(item.tipo_produto);
         if (!grouped.has(tipo)) {
           grouped.set(tipo, { tipo, total: 0 });
         }
-        grouped.get(tipo).total += getTechnicalAmount(item);
+        grouped.get(tipo).total += 1;
       }
       return [...grouped.values()].sort((a, b) => b.total - a.total || a.tipo.localeCompare(b.tipo, "pt-BR"));
     }
 
-    function aggregateTechnicalRows(data) {
+    function aggregateTechnicalBySubtype(data) {
       const grouped = new Map();
       for (const item of data) {
-        const tipo = formatTechnicalType(item.tipo_produto);
-        const key = `${item.docente}||${tipo}`;
-        if (!grouped.has(key)) {
-          grouped.set(key, {
-            docente: item.docente,
-            tipo_produto: tipo,
-            total_produtos: 0,
-            observacoes: [],
-          });
-        }
-        const row = grouped.get(key);
-        row.total_produtos += getTechnicalAmount(item);
-        if (item.titulo) row.observacoes.push(item.titulo);
+        if (!hasTechnicalProduction(item)) continue;
+        const subtipo = getTechnicalSubtype(item);
+        if (!grouped.has(subtipo)) grouped.set(subtipo, { subtipo, total: 0 });
+        grouped.get(subtipo).total += 1;
       }
-      return [...grouped.values()]
-        .map((item) => ({
-          ...item,
-          observacoes: item.observacoes.slice(0, 3).join("; "),
-        }))
-        .sort((a, b) =>
-          b.total_produtos - a.total_produtos ||
-          a.docente.localeCompare(b.docente, "pt-BR") ||
-          a.tipo_produto.localeCompare(b.tipo_produto, "pt-BR")
+      return [...grouped.values()].sort((a, b) => b.total - a.total || a.subtipo.localeCompare(b.subtipo, "pt-BR"));
+    }
+
+    function aggregateTechnicalRows(data, docenteSummary) {
+      const ranking = new Map(docenteSummary.map((item, index) => [item.docente, index]));
+      return [...data].sort((a, b) => {
+        if (tecnicaTableSortMode === "alfabetico") {
+          return (
+            a.docente.localeCompare(b.docente, "pt-BR") ||
+            (hasTechnicalProduction(a) === hasTechnicalProduction(b) ? 0 : hasTechnicalProduction(a) ? -1 : 1) ||
+            (Number(b.ano) || 0) - (Number(a.ano) || 0) ||
+            formatTechnicalType(a.tipo_produto).localeCompare(formatTechnicalType(b.tipo_produto), "pt-BR")
+          );
+        }
+        return (
+          (ranking.get(a.docente) ?? 999) - (ranking.get(b.docente) ?? 999) ||
+          (hasTechnicalProduction(a) === hasTechnicalProduction(b) ? 0 : hasTechnicalProduction(a) ? -1 : 1) ||
+          (Number(b.ano) || 0) - (Number(a.ano) || 0) ||
+          formatTechnicalType(a.tipo_produto).localeCompare(formatTechnicalType(b.tipo_produto), "pt-BR")
         );
+      });
     }
 
     function renderMetrics(data, docenteSummary, yearSummary, typeSummary) {
@@ -3816,29 +4092,44 @@
       `).join("");
     }
 
-    function renderTechnicalMetrics(data, docenteSummary, typeSummary) {
+    function renderTechnicalMetrics(data, docenteSummary, typeSummary, subtypeSummary) {
       const totalProdutos = data.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
-      const visibleDocentes = docenteSummary.length;
-      const media = visibleDocentes ? Math.round(totalProdutos / visibleDocentes) : 0;
+      const docentesComProducao = docenteSummary.filter((item) => item.total > 0);
+      const docentesSemProducao = docenteSummary.filter((item) => item.total === 0);
       document.getElementById("tecnica-total-produtos").textContent = String(totalProdutos);
-      document.getElementById("tecnica-docentes-visiveis").textContent = String(visibleDocentes);
+      document.getElementById("tecnica-docentes-com-producao").textContent = String(docentesComProducao.length);
+      document.getElementById("tecnica-docentes-sem-producao").textContent = String(docentesSemProducao.length);
       document.getElementById("tecnica-tipos-visiveis").textContent = String(typeSummary.length);
-      document.getElementById("tecnica-media-docente").textContent = String(media);
+      document.getElementById("tecnica-sem-producao-total").textContent = String(docentesSemProducao.length);
 
-      const bestDocente = docenteSummary[0];
+      const bestDocente = docentesComProducao[0];
       const bestType = typeSummary[0];
+      const bestSubtype = subtypeSummary[0];
       insightChipsTecnica.innerHTML = [
         bestDocente ? `<span class="chip">Maior quantitativo: <strong>${bestDocente.docente}</strong> (${bestDocente.total})</span>` : "",
-        bestType ? `<span class="chip">Tipo dominante: <strong>${bestType.tipo}</strong> (${bestType.total} produtos)</span>` : "",
-      ].join("");
+        bestType ? `<span class="chip">Tipo dominante: <strong>${bestType.tipo}</strong> (${bestType.total} registros)</span>` : "",
+        bestSubtype ? `<span class="chip">Subtipo recorrente: <strong>${bestSubtype.subtipo}</strong> (${bestSubtype.total} ocorrências)</span>` : "",
+      ].filter(Boolean).join("");
+
+      tecnicaSemProducaoList.innerHTML = docentesSemProducao.length
+        ? docentesSemProducao.map((item) => `
+            <div class="sem-producao-item">
+              <strong>${item.docente}</strong><br>
+              Sem registro técnico no recorte atual.
+            </div>
+          `).join("")
+        : `<p class="chart-note">Não há docentes sem produção técnica no recorte atual.</p>`;
     }
 
     function renderTechnicalDocenteChart(summary) {
-      const items = summary.slice(0, 12);
+      const items = sortTechnicalDocenteSummary(summary, tecnicaDocenteSortMode);
       if (!items.length) {
         chartTecnicaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
+      tecnicaDocenteChartCaption.textContent = tecnicaDocenteSortMode === "alfabetico"
+        ? "Ranking ordenado alfabeticamente no recorte filtrado."
+        : "Ranking ordenado pelo quantitativo de produção técnica no recorte filtrado.";
       const maxTotal = Math.max(...items.map((item) => item.total), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
@@ -3849,12 +4140,14 @@
         <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Produtos por docente">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.total / maxTotal) * usableWidth);
+            const width = item.total > 0 ? Math.max(8, (item.total / maxTotal) * usableWidth) : 8;
+            const fill = item.total > 0 ? "url(#tecnicaGradient)" : "#d9c7b1";
+            const suffix = item.total > 0 ? String(item.total) : "Sem produção";
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#tecnicaGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.total}</text>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${fill}"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${suffix}</text>
             `;
           }).join("")}
           <defs>
@@ -3867,8 +4160,13 @@
       `;
     }
 
-    function renderTechnicalTypePanel(summary, totalProdutos) {
+    function renderTechnicalTypePanel(summary, subtypeSummary, totalProdutos) {
       const maxTotal = Math.max(...summary.map((item) => item.total), 1);
+      if (!summary.length) {
+        typeStackTecnica.innerHTML = `<p class="chart-note">Sem produção técnica para analisar no recorte atual.</p>`;
+        typeChipsTecnica.innerHTML = "";
+        return;
+      }
       typeStackTecnica.innerHTML = summary.map((item) => `
         <div class="type-row">
           <strong>${item.tipo}</strong>
@@ -3878,17 +4176,22 @@
           <span>${item.total}</span>
         </div>
       `).join("");
-      typeChipsTecnica.innerHTML = summary.map((item) => {
-        const share = totalProdutos ? Math.round((item.total / totalProdutos) * 100) : 0;
-        return `<span class="chip">${item.tipo}: <strong>${item.total}</strong> produtos · ${share}% do total</span>`;
-      }).join("");
+      typeChipsTecnica.innerHTML = [
+        ...summary.slice(0, 4).map((item) => {
+          const share = totalProdutos ? Math.round((item.total / totalProdutos) * 100) : 0;
+          return `<span class="chip">${item.tipo}: <strong>${item.total}</strong> registros · ${share}% do total</span>`;
+        }),
+        ...subtypeSummary.slice(0, 3).map((item) => `<span class="chip">Subtipo em destaque: <strong>${item.subtipo}</strong> (${item.total})</span>`),
+      ].join("");
     }
 
     function renderTechnicalResumoDocentes(summary) {
-      resumoTecnicaDocentesBody.innerHTML = summary.map((item) => `
+      const sortedSummary = sortTechnicalDocenteSummary(summary, tecnicaTableSortMode);
+      resumoTecnicaDocentesBody.innerHTML = sortedSummary.map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${item.tipos.join(", ")}</td>
+          <td><span class="status-pill ${item.total > 0 ? "ok" : "alert"}">${item.status}</span></td>
+          <td>${item.tipos.length ? item.tipos.join(", ") : "Sem registros técnicos"}</td>
           <td>${item.total}</td>
         </tr>
       `).join("");
@@ -3896,11 +4199,13 @@
 
     function renderTechnicalTable(data) {
       tabelaTecnicaBody.innerHTML = data.map((item) => `
-        <tr>
+        <tr class="${hasTechnicalProduction(item) ? "" : "table-row-alert"}">
           <td>${item.docente || ""}</td>
-          <td>${item.tipo_produto || ""}</td>
-          <td>${getTechnicalAmount(item)}</td>
-          <td>${item.observacoes || ""}</td>
+          <td><span class="status-pill ${hasTechnicalProduction(item) ? "ok" : "alert"}">${getTechnicalStatusLabel(item)}</span></td>
+          <td>${formatTechnicalType(item.tipo_produto) || ""}</td>
+          <td>${item.ano || "-"}</td>
+          <td>${getTechnicalSubtype(item)}</td>
+          <td>${item.detalhamento || ""}</td>
         </tr>
       `).join("");
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
@@ -5023,20 +5328,26 @@
     }
 
     function applyTechnicalFilters() {
+      syncTechnicalFilterViews();
       const docentes = [...selectedDocentesTecnica];
-      const tipos = getSelectedValues(tiposTecnicaSelect);
+      const tipos = [...selectedTiposTecnica];
+      const anos = [...selectedAnosTecnica];
+      const status = [...selectedStatusTecnica];
       const filtered = dataSourceTecnica.filter((item) => {
         const docenteOk = !docentes.length || docentes.includes(item.docente);
-        const tipoOk = !tipos.length || tipos.includes(formatTechnicalType(item.tipo_produto));
-        return docenteOk && tipoOk;
+        const statusOk = !status.length || status.includes(getTechnicalStatusKey(item));
+        const anoOk = !anos.length || anos.includes(getTechnicalYearLabel(item));
+        const tipoOk = !hasTechnicalProduction(item) || !tipos.length || tipos.includes(formatTechnicalType(item.tipo_produto));
+        return docenteOk && statusOk && anoOk && tipoOk;
       });
       const docenteSummary = aggregateTechnicalByDocente(filtered);
       const typeSummary = aggregateTechnicalByType(filtered);
-      const rowSummary = aggregateTechnicalRows(filtered);
+      const subtypeSummary = aggregateTechnicalBySubtype(filtered);
+      const rowSummary = aggregateTechnicalRows(filtered, docenteSummary);
       const totalProdutos = filtered.reduce((acc, item) => acc + getTechnicalAmount(item), 0);
-      renderTechnicalMetrics(filtered, docenteSummary, typeSummary);
+      renderTechnicalMetrics(filtered, docenteSummary, typeSummary, subtypeSummary);
       renderTechnicalDocenteChart(docenteSummary);
-      renderTechnicalTypePanel(typeSummary, totalProdutos);
+      renderTechnicalTypePanel(typeSummary, subtypeSummary, totalProdutos);
       renderTechnicalResumoDocentes(docenteSummary);
       renderTechnicalTable(rowSummary);
     }
@@ -5062,7 +5373,8 @@
     bindTypeFilters();
     bindYearFilters();
     bindScientificFilterToggles();
-    bindDocenteChipsTecnica();
+    bindTechnicalFilters();
+    bindTechnicalFilterToggles();
     bindDisciplinasFilters();
     bindDisciplinasFilterToggles();
     bindCriteriaSortButtons();
@@ -5074,6 +5386,8 @@
     bindApcnScoringModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
+    bindTechnicalDocenteSortToggles();
+    bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
     bindLeadershipDetailSortToggles();
     applyFilters();
@@ -5086,8 +5400,6 @@
     renderDocenciaCriticalCriteriaPanel();
     renderCorpoDocenteCriticalCriteriaPanel();
     renderDocumentsPanel();
-
-    tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
   </script>
 </body>
 </html>
