@@ -1885,16 +1885,16 @@
               <p>
                 O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
                 A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
-                penúltima posição e 0,1 para as demais. A base científica reconstruída passa a preservar
-                a sequência autoral na referência de quase todos os registros, permitindo uma leitura
-                muito mais fiel do protagonismo investigativo por docente e por ano.
+                penúltima posição e 0,1 para as demais. Porém, a base científica atual não preserva a
+                sequência completa de autores na maior parte dos registros, então a aplicação prática do
+                índice depende da evidência autoral efetivamente disponível em cada item.
               </p>
             </div>
             <p class="chart-note">
-              Nesta base científica, o campo estruturado <strong>autores</strong> passou a registrar a ordem autoral extraída
-              da referência completa. Com isso, a régua de <strong>1,0</strong>, <strong>0,5</strong> e <strong>0,1</strong>
-              é aplicada diretamente sobre a posição do docente na lista de autores, com fallback residual apenas para casos
-              em que o nome do docente não seja localizado automaticamente.
+              Nesta base científica, a coluna nativa estruturada é <strong>autor_principal</strong>. Assim, no estado atual,
+              o comportamento dominante do cálculo é: <strong>1,0</strong> quando o docente coincide com o autor principal e
+              <strong>0,1</strong> quando não coincide. A régua intermediária de <strong>0,5</strong> só pode ser aplicada
+              quando houver lista completa de autores, o que hoje praticamente não ocorre na base sincronizada.
             </p>
             <div class="filters-grid">
               <div>
@@ -2054,13 +2054,13 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Docente</th>
-                    <th>Ano</th>
-                    <th>Tipo</th>
-                    <th>Autor principal</th>
-                    <th>Posição lida</th>
-                    <th>Peso</th>
-                    <th>Título</th>
+                    <th><button type="button" class="sort-toggle active" data-lideranca-detail-sort="docente">Docente</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="ano">Ano</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="tipo">Tipo</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="autores">Autores</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="posicao">Posição lida</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="peso">Peso</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="titulo">Título</button></th>
                   </tr>
                 </thead>
                 <tbody id="lideranca-detalhe-body"></tbody>
@@ -2286,12 +2286,21 @@
   <script src="./producao-cientifica-data.js"></script>
   <script src="./producao-tecnica-data.js"></script>
   <script src="./orientacoes-data.js"></script>
-  <script src="./disciplinas-data.js"></script>
+  <script src="./disciplinas-data.js?v=2026-06-12b"></script>
   <script src="./documentos-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const disciplinasExcludedDocentes = new Set([
+      "CARLA MENESES HARDMAN",
+      "BRENO QUINTELLA FARAH",
+      "ANDRE LUIZ TORRES PIRAUA",
+      "FABIANO DE SOUZA FONSECA",
+      "FLAVIO RENATO BARROS DA GUARDA",
+      "LUCIANO MACHADO FERREIRA TENORIO DE OLIVEIRA",
+      "VINICIUS DE OLIVEIRA DAMASCENO",
+    ]);
     const dataSourceDisciplinas = (window.DISCIPLINAS_PPGEF || []).map((item) => ({
       ...item,
       ano: String(item.ano || "").trim(),
@@ -2342,6 +2351,7 @@
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
+    const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
     const liderancaEstadoVazio = document.getElementById("lideranca-estado-vazio");
     const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
@@ -2382,6 +2392,7 @@
     let disciplinasDocenteSortMode = "carga";
     let docenteTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
+    let liderancaDetailSort = { key: "docente", direction: "asc" };
     let scientificFilterValues = {
       docentes: [],
       tipos: [],
@@ -2527,7 +2538,10 @@
     }
 
     function getDisciplinasBaseData() {
-      return dataSourceDisciplinas.filter((item) => item.categoria_responsavel === "Docente");
+      return dataSourceDisciplinas.filter((item) =>
+        item.categoria_responsavel === "Docente" &&
+        !disciplinasExcludedDocentes.has(item.nome_responsavel)
+      );
     }
 
     function formatHours(value) {
@@ -3693,8 +3707,8 @@
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
         `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
-        `<span class="chip">Registros que ainda dependem apenas de <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
-        `<span class="chip">Registros em fallback por nome não localizado automaticamente: <strong>${evidence.fallbackDemais}</strong></span>`,
+        `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
+        `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
         `<span class="chip">Ocorrências reais de 0,5 na base atual: <strong>${evidence.secondOrPenultimate}</strong></span>`,
       ].join("");
     }
@@ -3790,15 +3804,65 @@
       `).join("");
     }
 
+    function updateLeadershipDetailSortButtons() {
+      liderancaDetailSortButtons.forEach((button) => {
+        const isActive = button.dataset.liderancaDetailSort === liderancaDetailSort.key;
+        button.classList.toggle("active", isActive);
+        const baseLabel = button.dataset.liderancaDetailSortLabel || button.textContent.replace(/[↑↓]\s*$/, "").trim();
+        button.dataset.liderancaDetailSortLabel = baseLabel;
+        button.textContent = isActive
+          ? `${baseLabel} ${liderancaDetailSort.direction === "asc" ? "↑" : "↓"}`
+          : baseLabel;
+      });
+    }
+
+    function getLeadershipDetailSortValue(item, score, key) {
+      switch (key) {
+        case "ano":
+          return Number(item.ano) || 0;
+        case "tipo":
+          return typeLabels[item.tipo_producao] || item.tipo_producao || "";
+        case "autores":
+          return item.autores || item.autor_principal || "";
+        case "posicao":
+          return score.label;
+        case "peso":
+          return Number(score.score) || 0;
+        case "titulo":
+          return item.titulo || "";
+        case "docente":
+        default:
+          return item.docente || "";
+      }
+    }
+
+    function compareLeadershipDetailRows(left, right) {
+      const leftValue = getLeadershipDetailSortValue(left.item, left.score, liderancaDetailSort.key);
+      const rightValue = getLeadershipDetailSortValue(right.item, right.score, liderancaDetailSort.key);
+      let comparison = 0;
+      if (typeof leftValue === "number" && typeof rightValue === "number") {
+        comparison = leftValue - rightValue;
+      } else {
+        comparison = String(leftValue).localeCompare(String(rightValue), "pt-BR", { numeric: true, sensitivity: "base" });
+      }
+      if (comparison === 0) comparison = left.index - right.index;
+      return liderancaDetailSort.direction === "asc" ? comparison : -comparison;
+    }
+
     function renderLeadershipDetailTable(data) {
-      liderancaDetalheBody.innerHTML = data.map((item) => {
-        const score = getMostardScore(item);
+      updateLeadershipDetailSortButtons();
+      const rows = data.map((item, index) => ({
+        item,
+        score: getMostardScore(item),
+        index,
+      })).sort(compareLeadershipDetailRows);
+      liderancaDetalheBody.innerHTML = rows.map(({ item, score }) => {
         return `
           <tr>
             <td>${item.docente || ""}</td>
             <td>${item.ano || ""}</td>
             <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
-            <td>${item.autor_principal || ""}</td>
+            <td>${item.autores || item.autor_principal || ""}</td>
             <td>${score.label}</td>
             <td>${formatDecimal(score.score)}</td>
             <td>${item.titulo || ""}</td>
@@ -3806,6 +3870,21 @@
         `;
       }).join("");
       liderancaEstadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function bindLeadershipDetailSortToggles() {
+      liderancaDetailSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.liderancaDetailSort || "docente";
+          if (liderancaDetailSort.key === key) {
+            liderancaDetailSort.direction = liderancaDetailSort.direction === "asc" ? "desc" : "asc";
+          } else {
+            liderancaDetailSort = { key, direction: "asc" };
+          }
+          applyLeadershipFilters();
+        });
+      });
+      updateLeadershipDetailSortButtons();
     }
 
     function applyLeadershipFilters() {
@@ -4456,6 +4535,7 @@
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
     bindDisciplinasDocenteSortToggles();
+    bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
     applyTechnicalFilters();
