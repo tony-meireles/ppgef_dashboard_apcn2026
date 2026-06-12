@@ -33,6 +33,88 @@ def fold_text(value: Any) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+MANUAL_CLASSIFICACAO_OVERRIDES = {
+    fold_text("Applied Neuropsychology: Adult"): {
+        "revista_ou_veiculo": "Applied Neuropsychology: Adult",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "2.317",
+        "quartil_jcr_2025": "Q3",
+    },
+    fold_text("SLEEP SCIENCE (IMPRESSO)"): {
+        "revista_ou_veiculo": "SLEEP SCIENCE (IMPRESSO)",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "2.43",
+        "quartil_jcr_2025": "Q2",
+    },
+    fold_text("SPORT SCIENCES FOR HEALTH (TESTO STAMPATO)"): {
+        "revista_ou_veiculo": "SPORT SCIENCES FOR HEALTH (TESTO STAMPATO)",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.57",
+        "quartil_jcr_2025": "Q3",
+    },
+    fold_text("German Journal Of Exercise And Sport Research"): {
+        "revista_ou_veiculo": "German Journal Of Exercise And Sport Research",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "2.32",
+        "quartil_jcr_2025": "Q2",
+    },
+    fold_text("INTERNATIONAL JOURNAL OF SPORTS MEDICINE"): {
+        "revista_ou_veiculo": "INTERNATIONAL JOURNAL OF SPORTS MEDICINE",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "2.59",
+        "quartil_jcr_2025": "Q1",
+    },
+    fold_text("Applied Physiology Nutrition and Metabolism"): {
+        "revista_ou_veiculo": "Applied Physiology Nutrition and Metabolism",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "2.731",
+        "quartil_jcr_2025": "Q2",
+    },
+    fold_text("JOURNAL OF SPINAL CORD MEDICINE"): {
+        "revista_ou_veiculo": "JOURNAL OF SPINAL CORD MEDICINE",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.995",
+        "quartil_jcr_2025": "Q3",
+    },
+    fold_text("JOURNAL OF SPINAL CORD MEDICINE, p"): {
+        "revista_ou_veiculo": "JOURNAL OF SPINAL CORD MEDICINE",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.995",
+        "quartil_jcr_2025": "Q3",
+    },
+    fold_text("EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY"): {
+        "revista_ou_veiculo": "EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "3.25",
+        "quartil_jcr_2025": "Q1",
+    },
+    fold_text("Eur J Appl Physiol"): {
+        "revista_ou_veiculo": "EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "3.25",
+        "quartil_jcr_2025": "Q1",
+    },
+    fold_text("RETOS"): {
+        "revista_ou_veiculo": "RETOS",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.42",
+        "quartil_jcr_2025": "Q1",
+    },
+    fold_text("Retos: Nuevas Tendencias En Educacion Fisica Deporte Y Recreacion"): {
+        "revista_ou_veiculo": "RETOS",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.42",
+        "quartil_jcr_2025": "Q1",
+    },
+    fold_text("Retos-Nuevas Tendencias En Educacion Fisica Deporte Y Recreacion"): {
+        "revista_ou_veiculo": "RETOS",
+        "indexacao": "Scopus (SJR)",
+        "jif_jcr_2025": "1.42",
+        "quartil_jcr_2025": "Q1",
+    },
+}
+
+
 def clean_metric(value: Any) -> str:
     text = norm_text(value)
     if text in {"---", "-", "0,00", "0.00"}:
@@ -45,32 +127,44 @@ def normalize_journal_name(value: Any) -> str:
     text = re.sub(r"\s*\(on ?line\)\s*", " ", text, flags=re.I)
     text = re.sub(r",?\s*v\.?$", "", text, flags=re.I)
     text = re.sub(r",?\s*v\s*$", "", text, flags=re.I)
+    text = re.sub(r",?\s*p\.?$", "", text, flags=re.I)
+    text = re.sub(r",?\s*p\s*$", "", text, flags=re.I)
+    text = text.replace("-", ": ")
     text = re.sub(r"\s+", " ", text).strip(" ,;:.")
     return text
 
 
+def normalize_produto_referencia_journal(produto_referencia: Any, canonical_journal: str) -> str:
+    text = norm_text(produto_referencia)
+    if not text or not canonical_journal:
+        return text
+    pattern = re.compile(
+        rf"{re.escape(canonical_journal)}\s*,\s*(?:v|p)\.?",
+        flags=re.I,
+    )
+    return pattern.sub(canonical_journal, text)
+
+
 def canonical_indexacao(value: str, existing: str) -> str:
     normalized = fold_text(value)
-    existing_parts = [part.strip() for part in norm_text(existing).split(";") if part.strip()]
+    has_wos = "web of science" in normalized or "jcr" in normalized
+    has_scopus = "scimago" in normalized or "scopus" in normalized or "sjr" in normalized
 
-    def add_unique(label: str) -> None:
-        if label not in existing_parts:
-            existing_parts.append(label)
-
-    if "web of science" in normalized or "jcr" in normalized:
-        add_unique("Web of Science (JCR)")
-    elif "scimago" in normalized or "scopus" in normalized or "sjr" in normalized:
-        add_unique("Scopus (SJR)")
-    elif "pubmed" in normalized:
-        add_unique("PubMed")
-    elif "scielo" in normalized:
-        add_unique("SciELO")
-    elif "google scholar" in normalized:
+    if has_wos and has_scopus:
+        return "Web of Science (JCR); Scopus (SJR)"
+    if has_wos:
+        return "Web of Science (JCR)"
+    if has_scopus:
+        return "Scopus (SJR)"
+    if "pubmed" in normalized:
+        return "PubMed"
+    if "scielo" in normalized:
+        return "SciELO"
+    if "google scholar" in normalized or "google academico" in normalized:
         return "Apenas Google Scholar"
-    elif normalized:
+    if normalized:
         return norm_text(value)
-
-    return "; ".join(existing_parts)
+    return norm_text(existing)
 
 
 def score_artigo(indexacao: str) -> str:
@@ -79,7 +173,7 @@ def score_artigo(indexacao: str) -> str:
         return "90"
     if "pubmed" in normalized or "scielo" in normalized:
         return "60"
-    if "google scholar" in normalized:
+    if "google scholar" in normalized or "google academico" in normalized:
         return "30"
     return "0"
 
@@ -98,6 +192,7 @@ def load_classificacao() -> dict[str, dict[str, str]]:
                 "jif_jcr_2025": clean_metric(row.get("jif_jcr_2025")),
                 "quartil_jcr_2025": clean_metric(row.get("quartil_jcr_2025")),
             }
+        result.update(MANUAL_CLASSIFICACAO_OVERRIDES)
         return result
 
 
@@ -148,18 +243,29 @@ def main() -> None:
 
         matched += 1
         old_tuple = (
+            norm_text(row.get("revista_ou_veiculo")),
+            norm_text(row.get("produto_referencia")),
             norm_text(row.get("indexacao")),
             norm_text(row.get("jif_jcr_2025")),
             norm_text(row.get("quartil_jcr_2025")),
             norm_text(row.get("pontuacao")),
         )
 
+        normalized_vehicle = normalize_journal_name(row.get("revista_ou_veiculo"))
+        if fold_text(normalized_vehicle) == fold_text(classif["revista_ou_veiculo"]):
+            row["revista_ou_veiculo"] = classif["revista_ou_veiculo"]
+            row["produto_referencia"] = normalize_produto_referencia_journal(
+                row.get("produto_referencia"),
+                classif["revista_ou_veiculo"],
+            )
         row["indexacao"] = canonical_indexacao(classif["indexacao"], row.get("indexacao", ""))
         row["jif_jcr_2025"] = classif["jif_jcr_2025"] or norm_text(row.get("jif_jcr_2025"))
         row["quartil_jcr_2025"] = classif["quartil_jcr_2025"] or norm_text(row.get("quartil_jcr_2025"))
         row["pontuacao"] = score_artigo(row["indexacao"])
 
         new_tuple = (
+            norm_text(row.get("revista_ou_veiculo")),
+            norm_text(row.get("produto_referencia")),
             norm_text(row.get("indexacao")),
             norm_text(row.get("jif_jcr_2025")),
             norm_text(row.get("quartil_jcr_2025")),

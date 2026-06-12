@@ -11,3 +11,5 @@ data/*-sincronizada-revisao.sqlite
 
 .DS_Store
 Thumbs.db
+publish_clone/
+tmp_corpo_docente.xlsx

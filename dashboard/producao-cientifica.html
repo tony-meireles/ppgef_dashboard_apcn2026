@@ -1259,7 +1259,7 @@
 
     .docentes-controls-grid {
       display: grid;
-      grid-template-columns: 180px 1fr 1fr;
+      grid-template-columns: 160px 180px 180px 1fr;
       gap: 16px;
     }
 
@@ -1392,6 +1392,22 @@
     .docentes-issue-item span {
       color: var(--ufpe-cinza);
       line-height: 1.45;
+    }
+
+    .docentes-distribution-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .docentes-distribution-item {
+      display: grid;
+      grid-template-columns: 88px 1fr 56px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .docentes-distribution-item strong {
+      font-size: 0.92rem;
     }
 
     .docentes-badge {
@@ -1566,6 +1582,41 @@
       color: var(--ufpe-cinza);
       font-size: 0.84rem;
       line-height: 1.35;
+    }
+
+    .docentes-history-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-width: 520px;
+    }
+
+    .docentes-history-cell {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      padding: 6px 4px;
+      border-radius: 10px;
+      background: rgba(255, 253, 249, 0.92);
+      border: 1px solid var(--ufpe-linha);
+      line-height: 1.05;
+    }
+
+    .docentes-history-cell strong {
+      font-size: 0.72rem;
+      color: var(--ufpe-cinza);
+    }
+
+    .docentes-history-cell span {
+      margin-top: 5px;
+    }
+
+    .docentes-toolbar-note {
+      margin-top: 12px;
+      color: var(--ufpe-cinza);
+      font-size: 0.88rem;
     }
 
     @media (max-width: 1100px) {
@@ -2290,15 +2341,145 @@
 
       <div class="tab-panel" id="tab-docentes">
         <section class="grid">
-          <div class="card table-card">
+          <div class="card docentes-headline-card docentes-hero-card">
+            <div>
+              <p class="docentes-eyebrow">Composição Docente</p>
+              <h2 id="docentes-hero-title">Quadriênio 2025-2028</h2>
+              <p id="docentes-hero-summary">Leitura integrada do núcleo permanente, da estabilidade e das pressões de composição do quadro.</p>
+            </div>
+            <div class="docentes-hero-side">
+              <strong id="docentes-hero-permanentes">0</strong>
+              <span id="docentes-hero-permanentes-caption">Permanentes no ano-base.</span>
+            </div>
+          </div>
+
+          <div class="card docentes-controls-card">
             <div class="section-head">
+              <h2>Recorte de Leitura</h2>
+              <p>O ano atualiza os indicadores executivos. Os demais filtros refinam as tabelas nominais.</p>
+            </div>
+            <div class="docentes-controls-grid">
               <div>
-                <h2>Docentes</h2>
-                <p>A aba foi esvaziada para reinício completo da modelagem.</p>
+                <label for="docentes-year-select">Ano de leitura</label>
+                <select id="docentes-year-select"></select>
+              </div>
+              <div>
+                <label for="docentes-origin-filter">Origem</label>
+                <select id="docentes-origin-filter">
+                  <option value="Todos">Todos</option>
+                  <option value="Interno">Interno</option>
+                  <option value="Externo">Externo</option>
+                </select>
+              </div>
+              <div>
+                <label for="docentes-status-filter">Status do quadriênio</label>
+                <select id="docentes-status-filter">
+                  <option value="Todos">Todos</option>
+                  <option value="A">Ativo</option>
+                  <option value="I">Inativo</option>
+                </select>
+              </div>
+              <div>
+                <label for="docentes-search">Busca nominal</label>
+                <input id="docentes-search" type="search" placeholder="Filtrar docente...">
               </div>
             </div>
-            <div class="document-empty" style="margin-top: 0;">
-              Nenhum conteúdo histórico do quadro docente permanece ativo nesta aba. A reconstrução será feita do zero.
+            <p class="docentes-toolbar-note" id="docentes-filter-note">Os filtros nominais afetam as tabelas abaixo.</p>
+          </div>
+
+          <div id="docentes-criteria-metrics" class="docentes-metrics-grid"></div>
+
+          <div class="card docentes-summary-card">
+            <div class="section-head">
+              <h2>Recorte Operacional</h2>
+              <p>Quadro ativo, cobertura das LPs e escala média do corpo.</p>
+            </div>
+            <div class="docentes-subgrid" id="docentes-summary-tiles"></div>
+            <div class="docentes-structure-meta" id="docentes-summary-meta"></div>
+          </div>
+
+          <div class="card docentes-timeline-card">
+            <div class="section-head">
+              <h2>Proporção de Permanentes por Ano</h2>
+              <p>Leitura do peso do núcleo permanente dentro do corpo classificado.</p>
+            </div>
+            <div id="docentes-timeline"></div>
+          </div>
+
+          <div class="card docentes-issues-card">
+            <div class="section-head">
+              <h2>Pontos Críticos</h2>
+              <p>Alertas derivados apenas da planilha-base atual.</p>
+            </div>
+            <div class="docentes-issue-list" id="docentes-issues-list"></div>
+          </div>
+
+          <div class="card docentes-quad-card">
+            <div class="section-head">
+              <h2>Síntese do Quadriênio 2025-2028</h2>
+              <p>Composição anual, estabilidade e dependência de colaboradores no desenho projetado.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table docentes-quad-table">
+                <thead>
+                  <tr>
+                    <th>Indicador</th>
+                    <th>2025</th>
+                    <th>2026</th>
+                    <th>2027</th>
+                    <th>2028</th>
+                    <th>Média</th>
+                  </tr>
+                </thead>
+                <tbody id="docentes-quad-body"></tbody>
+              </table>
+            </div>
+            <p class="docentes-quad-note" id="docentes-quad-note"></p>
+          </div>
+
+          <div class="card docentes-table-card">
+            <div class="section-head">
+              <h2>Demonstração do Docente no Quadriênio</h2>
+              <p>Matriz nominal para leitura da composição APCN, com foco no período 2025-2028.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table docentes-structure-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>AMS</th>
+                    <th>DFE</th>
+                    <th>Origem</th>
+                    <th># PPGs como P em 2026</th>
+                    <th>COL em outros PPGs</th>
+                    <th>Status Quadri</th>
+                    <th>2025</th>
+                    <th>2026</th>
+                    <th>2027</th>
+                    <th>2028</th>
+                    <th>Leitura crítica</th>
+                  </tr>
+                </thead>
+                <tbody id="docentes-structure-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card docentes-activity-card">
+            <div class="section-head">
+              <h2>Demonstração Histórica 2016-2028</h2>
+              <p>Série nominal completa para acompanhar transições de categoria e permanência ao longo dos anos.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table docentes-structure-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Histórico</th>
+                  </tr>
+                </thead>
+                <tbody id="docentes-history-body"></tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -2655,22 +2836,15 @@
             </div>
           </div>
 
-          <div class="card group-card">
-            <div class="section-head">
-              <h2>Mostard</h2>
-              <p>Leitura do índice invertido, do índice corrigido por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
-            </div>
-          </div>
-
           <div class="card metric">
             <p class="eyebrow">Registros</p>
             <strong id="lideranca-total-registros">0</strong>
             <span>Quantidade de produtos considerados no cálculo do índice.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Pontos APCN</p>
-            <strong id="lideranca-pontos-apcn">0</strong>
-            <span>Soma da pontuação APCN produzida no recorte filtrado.</span>
+            <p class="eyebrow">Pontos Mostard</p>
+            <strong id="lideranca-pontos">0</strong>
+            <span>Soma ponderada das posições autorais no recorte filtrado.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Docentes</p>
@@ -2678,15 +2852,15 @@
             <span>Docentes com produção intelectual no recorte atual.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Índice Mostarda</p>
+            <p class="eyebrow">Índice do Recorte</p>
             <strong id="lideranca-indice-geral">0%</strong>
-            <span>Indicador invertido: quanto maior, menor a liderança autoral média do recorte.</span>
+            <span>Média percentual do Mostard Index considerando todos os registros visíveis.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Índice Mostarda por Docente</h2>
-              <p>Ranking do índice invertido: valores mais altos indicam menor liderança autoral média.</p>
+              <h2>Mostard Index por Docente</h2>
+              <p>Ranking percentual de liderança investigativa no recorte filtrado.</p>
             </div>
             <div id="chart-lideranca-docentes" class="chart"></div>
           </div>
@@ -2694,21 +2868,21 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Leitura do Recorte</h2>
-              <p>Resumo rápido da fragilidade autoral observada no recorte.</p>
+              <p>Resumo rápido do protagonismo autoral observado.</p>
             </div>
             <div class="chips" id="lideranca-insight-chips"></div>
             <div class="legend">
-              <span><i style="background: var(--ufpe-bordo)"></i> Índice Mostarda</span>
-              <span><i style="background: var(--ufpe-destaque)"></i> Índice ponderado por pontos</span>
+              <span><i style="background: var(--ufpe-bordo)"></i> Índice por docente</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Evolução anual</span>
             </div>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Índice Mostarda Corrigido por Pontos</h2>
-              <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
+              <h2>Evolução do Índice por Ano</h2>
+              <p>Série anual do Mostard Index agregado no recorte visível.</p>
             </div>
-            <div id="chart-lideranca-corrigido" class="chart"></div>
+            <div id="chart-lideranca-anos" class="chart"></div>
           </div>
 
           <div class="card chart-narrow">
@@ -2721,34 +2895,17 @@
 
           <div class="card table-card">
             <div class="section-head">
-              <h2>Dispersão Índice x Pontos</h2>
-              <p>Eixo Y com o Índice Mostarda e eixo X com o total de pontos APCN por docente.</p>
-            </div>
-            <div id="chart-lideranca-dispersao" class="chart"></div>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Evolução do Índice por Ano</h2>
-              <p>Série anual do índice invertido agregado no recorte visível.</p>
-            </div>
-            <div id="chart-lideranca-anos" class="chart"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
               <h2>Listagem de Docentes</h2>
-              <p>Índice isolado, índice corrigido por pontos e composição das posições consideradas.</p>
+              <p>Mostard Index, volume de registros e composição das posições consideradas.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Índice Mostarda</th>
-                    <th>Pontos APCN</th>
-                    <th>Índice Corrigido</th>
+                    <th>Mostard Index</th>
                     <th>Registros</th>
+                    <th>Pontos Mostard</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
                     <th>Demais</th>
@@ -2769,100 +2926,15 @@
                 <thead>
                   <tr>
                     <th>Ano</th>
-                    <th>Índice Mostarda</th>
-                    <th>Pontos APCN</th>
-                    <th>Índice Corrigido</th>
+                    <th>Mostard Index</th>
                     <th>Registros</th>
+                    <th>Pontos Mostard</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
                     <th>Demais</th>
                   </tr>
                 </thead>
                 <tbody id="lideranca-anos-body"></tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card group-card">
-            <div class="section-head">
-              <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JCR, média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
-            </div>
-          </div>
-
-          <div class="card metric">
-            <p class="eyebrow">Produtos com JCR</p>
-            <strong id="lideranca-qualidade-produtos-jcr">0</strong>
-            <span>Quantidade de produtos com valor JCR estruturado no recorte filtrado.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Soma JCR</p>
-            <strong id="lideranca-qualidade-jcr-soma">0</strong>
-            <span>Somatório dos valores de JCR atribuídos aos produtos do recorte.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Média JCR</p>
-            <strong id="lideranca-qualidade-jcr-media">0</strong>
-            <span>Valor médio de JCR entre os produtos que possuem essa evidência.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Docentes com JCR</p>
-            <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto com JCR no recorte atual.</span>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Somatório de JCR por Docente</h2>
-              <p>Ranking docente com soma dos JCRs e indicação da média por produto qualificado.</p>
-            </div>
-            <div id="chart-lideranca-qualidade-jcr" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Leitura da Qualidade</h2>
-              <p>Resumo executivo da massa crítica de periódicos qualificados.</p>
-            </div>
-            <div class="chips" id="lideranca-qualidade-insights"></div>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Faixas APCN dos Periódicos</h2>
-              <p>Quantitativo de artigos por faixa de pontuação APCN dos periódicos utilizados na base.</p>
-            </div>
-            <div id="chart-lideranca-qualidade-apcn" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JCR e agrupar faixas APCN dos periódicos.</p>
-            </div>
-            <div class="chips" id="lideranca-qualidade-metodologia"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Qualidade por Docente</h2>
-              <p>Soma JCR, média JCR e composição dos artigos por faixas APCN.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Docente</th>
-                    <th>Soma JCR</th>
-                    <th>Média JCR</th>
-                    <th>Produtos com JCR</th>
-                    <th>Artigos 90</th>
-                    <th>Artigos 70</th>
-                    <th>Artigos 50</th>
-                    <th>Artigos sem ponto</th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-qualidade-body"></tbody>
               </table>
             </div>
           </div>
@@ -3181,18 +3253,11 @@
     const tecnicaTableSortButtons = [...document.querySelectorAll("[data-tecnica-table-sort]")];
     const scientificFilterToggles = [...document.querySelectorAll('.filter-toggle[data-group]')];
     const chartLiderancaDocentes = document.getElementById("chart-lideranca-docentes");
-    const chartLiderancaCorrigido = document.getElementById("chart-lideranca-corrigido");
-    const chartLiderancaDispersao = document.getElementById("chart-lideranca-dispersao");
     const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
-    const chartLiderancaQualidadeJcr = document.getElementById("chart-lideranca-qualidade-jcr");
-    const chartLiderancaQualidadeApcn = document.getElementById("chart-lideranca-qualidade-apcn");
     const liderancaInsightChips = document.getElementById("lideranca-insight-chips");
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
-    const liderancaQualidadeInsights = document.getElementById("lideranca-qualidade-insights");
-    const liderancaQualidadeMetodologia = document.getElementById("lideranca-qualidade-metodologia");
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
-    const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
     const liderancaEstadoVazio = document.getElementById("lideranca-estado-vazio");
@@ -3289,499 +3354,6 @@
 
     function formatOrientationValue(value) {
       return Number(value) === 0 ? "-" : String(value ?? "-");
-    }
-
-    const docentesMetricLabels = {
-      permanentes_no_corpo: "Permanentes no corpo",
-      permanentes_internos: "Permanentes com vínculo com a IES",
-      permanentes_exclusivos: "Permanentes exclusivos ao programa",
-      permanentes_externos: "Permanentes com vínculo externo",
-      permanentes_colaboradores_outros_ppgs: "Permanentes colaboradores em outros PPGs",
-      total_permanentes: "Dimensão do corpo permanente",
-    };
-
-    const docentesMetricDescriptions = {
-      permanentes_no_corpo: "Meta mínima de 70% do corpo docente classificado como permanente.",
-      permanentes_internos: "Meta mínima de 80% dos permanentes vinculados à IES proponente.",
-      permanentes_exclusivos: "Meta mínima de 30% dos permanentes exclusivos ao programa.",
-      permanentes_externos: "Teto de 20% de permanentes externos com cessão formal.",
-      permanentes_colaboradores_outros_ppgs: "Teto de 40% de permanentes atuando como colaboradores em outros programas.",
-      total_permanentes: "Regra principal de ao menos 12 permanentes; 10 ou 11 exigem justificativa regional.",
-    };
-
-    const docentesIssueLabels = {
-      colabora_em_outro_ppg_2026: "Atua como colaborador em outro PPG",
-      lattes_desatualizado: "Lattes com revisão pendente",
-      cadastro_incompleto: "Cadastro com lacunas ou marcadores provisórios",
-      permanente_externo_2026: "Permanente externo em 2026",
-      nao_exclusivo_ao_programa_2026: "Permanente compartilhado com outros PPGs em 2026",
-      nome_divergente_entre_abas: "Nome divergente entre abas",
-      origem_divergente_externo_vs_interno: "Origem diverge: cadastro externo, matriz interna",
-      origem_divergente_interno_vs_externo: "Origem diverge: cadastro interno, matriz externa",
-    };
-
-    function formatDocentesPercent(value) {
-      return `${(value * 100).toFixed(1).replace(".", ",")}%`;
-    }
-
-    function normalizeDocentesText(value) {
-      return String(value || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase()
-        .trim();
-    }
-
-    function formatDocentesMetricValue(metric) {
-      if (metric.value == null) return "-";
-      if (metric.metric === "total_permanentes") return String(metric.value);
-      return formatDocentesPercent(metric.value);
-    }
-
-    function getDocentesBadgeClass(status) {
-      return {
-        Per: "per",
-        Col: "col",
-        Temp: "temp",
-        Vis: "vis",
-      }[status] || "";
-    }
-
-    function renderDocentesTab() {
-      const data = dataSourceCorpoDocente;
-      const yearSelect = document.getElementById("docentes-year-select");
-      const searchInput = document.getElementById("docentes-search-input");
-      const issueSelect = document.getElementById("docentes-issue-select");
-      const headlineChips = document.getElementById("docentes-headline-chips");
-      const metricsGrid = document.getElementById("docentes-metrics-grid");
-      const quadBody = document.getElementById("docentes-quad-body");
-      const quadNote = document.getElementById("docentes-quad-note");
-      const timelineHost = document.getElementById("docentes-timeline-host");
-      const docentesBody = document.getElementById("docentes-body");
-      const issueList = document.getElementById("docentes-issue-list");
-      const issueChips = document.getElementById("docentes-issue-chips");
-      const emptyState = document.getElementById("docentes-empty-state");
-
-      if (!yearSelect || !searchInput || !issueSelect || !headlineChips || !metricsGrid || !quadBody || !quadNote || !timelineHost || !docentesBody || !issueList || !issueChips || !emptyState) {
-        return;
-      }
-
-      if (!data?.default_year || !Object.keys(data.by_year || {}).length) {
-        document.getElementById("docentes-headline-title").textContent = "Quadro síntese indisponível";
-        document.getElementById("docentes-headline-text").textContent = "A base corpo-docente-data.js não foi carregada no ambiente atual.";
-        headlineChips.innerHTML = "";
-        metricsGrid.innerHTML = "";
-        quadBody.innerHTML = "";
-        quadNote.textContent = "";
-        timelineHost.innerHTML = "";
-        docentesBody.innerHTML = "";
-        issueList.innerHTML = '<div class="docentes-issue-item"><strong>Sem base carregada</strong><span>Restaure ou regenere a base do corpo docente para habilitar esta aba.</span></div>';
-        issueChips.innerHTML = "";
-        emptyState.hidden = false;
-        document.getElementById("docentes-hero-pass-count").textContent = "0/6";
-        document.getElementById("docentes-hero-summary").textContent = "A aba foi normalizada, mas a base de dados não está disponível.";
-        return;
-      }
-
-      function fillControls() {
-        yearSelect.innerHTML = Object.keys(data.by_year)
-          .map((year) => `<option value="${year}">${year}</option>`)
-          .join("");
-        yearSelect.value = data.default_year;
-
-        issueSelect.innerHTML = [
-          '<option value="">Todos os alertas</option>',
-          ...Object.entries(data.issue_counts || {})
-            .sort((a, b) => b[1] - a[1])
-            .map(([key, count]) => `<option value="${key}">${docentesIssueLabels[key] || key} (${count})</option>`),
-        ].join("");
-      }
-
-      function isDocenteActiveStatus(status) {
-        return ["Per", "Col", "Temp", "Vis"].includes(status);
-      }
-
-      function formatDocentesAverage(value, mode = "integer") {
-        if (value == null || Number.isNaN(value)) return "-";
-        if (mode === "percent") return `${Math.floor(value * 100)}%`;
-        if (mode === "ratio") return value >= 100 ? value.toFixed(0).replace(".", ",") : value.toFixed(1).replace(".", ",");
-        return value.toFixed(1).replace(".0", "").replace(".", ",");
-      }
-
-      function formatDocentesYearPercent(value) {
-        if (value == null || Number.isNaN(value)) return "-";
-        return `${Math.round(value * 100)}%`;
-      }
-
-      function formatDocentesCount(value) {
-        if (value == null || Number.isNaN(value)) return "-";
-        return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(".", ",");
-      }
-
-      function formatDocentesRatio(permanentes, colaboradores) {
-        if (!colaboradores) return permanentes > 0 ? `${permanentes}:0` : "-";
-        const ratio = permanentes / colaboradores;
-        return `${ratio.toFixed(1).replace(".0", "").replace(".", ",")}:1`;
-      }
-
-      function getQuadYears() {
-        return ["2025", "2026", "2027", "2028"].filter((year) => data.by_year?.[year]);
-      }
-
-      function getDocentesQuadStats(year) {
-        const yearData = data.by_year[year];
-        const statusCounts = yearData?.status_counts || {};
-        const permanentes = statusCounts.Per || 0;
-        const colaboradores = statusCounts.Col || 0;
-        const temporarios = statusCounts.Temp || 0;
-        const visitantes = statusCounts.Vis || 0;
-        const quadroAmpliado = permanentes + colaboradores + temporarios + visitantes;
-        const nucleoDuro = permanentes + colaboradores;
-        const ativosNoAno = data.docentes.filter((doc) => isDocenteActiveStatus(doc.anos?.[year]));
-        const permanentesAtivos = data.docentes.filter((doc) => doc.anos?.[year] === "Per");
-        const internos = permanentesAtivos.filter((doc) => doc.origem_matriz === "Interno").length;
-        const externos = permanentesAtivos.filter((doc) => doc.origem_matriz === "Externo").length;
-        const ams = permanentes ? permanentesAtivos.filter((doc) => doc.ams === true).length / permanentes : null;
-        const dfe = permanentes ? permanentesAtivos.filter((doc) => doc.dfe === true).length / permanentes : null;
-        const estabilidadeAnual = quadroAmpliado
-          ? ativosNoAno.filter((doc) => doc.status_quadri === "A").length / quadroAmpliado
-          : null;
-
-        return {
-          year,
-          colaboradores,
-          permanentes,
-          temporarios,
-          visitantes,
-          nucleoDuro,
-          quadroAmpliado,
-          estabilidadeAnual,
-          dependenciaColaboradores: colaboradores ? permanentes / colaboradores : permanentes ? permanentes : null,
-          percentualPermanentes: nucleoDuro ? permanentes / nucleoDuro : null,
-          percentualColaboradores: nucleoDuro ? colaboradores / nucleoDuro : null,
-          percentualInternos: permanentes ? internos / permanentes : null,
-          percentualExternos: permanentes ? externos / permanentes : null,
-          percentualAms: ams,
-          percentualDfe: dfe,
-        };
-      }
-
-      function buildQuadPanel() {
-        const quadYears = getQuadYears();
-        const statsByYear = quadYears.map(getDocentesQuadStats);
-        const average = (values) => {
-          const valid = values.filter((value) => value != null && Number.isFinite(value));
-          return valid.length ? valid.reduce((total, value) => total + value, 0) / valid.length : null;
-        };
-
-        const rowDefs = [
-          { label: "# Colaboradores", key: "colaboradores", mode: "count" },
-          { label: "# Permanentes", key: "permanentes", mode: "count" },
-          { label: "# Temporários", key: "temporarios", mode: "count" },
-          { label: "# Visitantes", key: "visitantes", mode: "count" },
-          { label: "# Docentes - Núcleo Duro", key: "nucleoDuro", mode: "count" },
-          { label: "# Docentes - Quadro Ampliado", key: "quadroAmpliado", mode: "count" },
-          { label: "Estabilidade Anual", key: "estabilidadeAnual", mode: "percent" },
-          { label: "Índice de Dependência de Colaboradores", key: "dependenciaColaboradores", mode: "ratio" },
-          { label: "% Permanentes", key: "percentualPermanentes", mode: "percent" },
-          { label: "% Colaboradores", key: "percentualColaboradores", mode: "percent" },
-          { label: "% Permanente Interno", key: "percentualInternos", mode: "percent" },
-          { label: "% Permanente Externo", key: "percentualExternos", mode: "percent" },
-          { label: "% AMS entre Permanentes", key: "percentualAms", mode: "percent" },
-          { label: "% DFE entre Permanentes", key: "percentualDfe", mode: "percent" },
-        ];
-
-        quadBody.innerHTML = rowDefs.map((row) => {
-          const values = statsByYear.map((stats) => stats[row.key]);
-          const avg = average(values);
-          const formatValue = (value) => {
-            if (row.mode === "percent") return formatDocentesYearPercent(value);
-            if (row.mode === "ratio") return row.label === "Índice de Dependência de Colaboradores"
-              ? formatDocentesRatio(
-                value == null ? 0 : statsByYear[values.indexOf(value)]?.permanentes || 0,
-                statsByYear[values.indexOf(value)]?.colaboradores || 0
-              )
-              : formatDocentesAverage(value, "ratio");
-            return formatDocentesCount(value);
-          };
-          const averageLabel = row.mode === "percent"
-            ? formatDocentesAverage(avg, "percent")
-            : row.mode === "ratio"
-              ? formatDocentesAverage(avg, "ratio")
-              : formatDocentesAverage(avg);
-          const cells = statsByYear.map((stats) => {
-            if (row.key === "dependenciaColaboradores") {
-              return `<td>${formatDocentesRatio(stats.permanentes, stats.colaboradores)}</td>`;
-            }
-            return `<td>${formatValue(stats[row.key])}</td>`;
-          }).join("");
-          return `
-            <tr>
-              <td class="docentes-quad-label">${row.label}</td>
-              ${cells}
-              <td class="docentes-quad-average">${averageLabel}</td>
-            </tr>
-          `;
-        }).join("");
-
-        const quadAverage = average(statsByYear.map((stats) => stats.estabilidadeAnual));
-        quadNote.textContent = quadAverage == null
-          ? "Estabilidade quadrienal indisponível."
-          : `Estabilidade quadrienal média: ${formatDocentesAverage(quadAverage, "percent")}. O índice representa a proporção de docentes ativos do ano com status quadri A no ciclo 2025-2028.`;
-      }
-
-      function buildMetrics(yearData) {
-        const cards = Object.values(yearData.metrics || {}).map((metric) => {
-          const percent = metric.metric === "total_permanentes"
-            ? Math.max(0, Math.min(1, (metric.value ?? 0) / metric.target))
-            : (metric.value ?? 0);
-          const width = Math.max(0, Math.min(100, percent * 100));
-          const isConditional = metric.metric === "total_permanentes" && metric.condition === "justificavel_regional";
-          const statusClass = metric.passed ? "docentes-status-pass" : "docentes-status-fail";
-          const statusLabel = metric.passed ? "Atende" : isConditional ? "Exige justificativa" : "Crítico";
-          return `
-            <div class="card docentes-metric-card">
-              <div class="docentes-metric-top">
-                <div>
-                  <h2>${docentesMetricLabels[metric.metric]}</h2>
-                  <strong class="docentes-metric-value">${formatDocentesMetricValue(metric)}</strong>
-                  <p class="chart-note">${docentesMetricDescriptions[metric.metric]}</p>
-                </div>
-                <span class="docentes-status-pill ${statusClass}">${statusLabel}</span>
-              </div>
-              <div class="docentes-metric-bar">
-                <div class="docentes-metric-fill" style="width:${width}%"></div>
-              </div>
-              <p class="chart-note">
-                Referência: ${metric.metric === "total_permanentes"
-                  ? `>= ${metric.target} ou >= ${metric.fallback_min} com justificativa regional`
-                  : `${metric.direction === "min" ? ">=" : "<="} ${formatDocentesPercent(metric.target)}`}
-              </p>
-            </div>
-          `;
-        });
-
-        metricsGrid.innerHTML = cards.join("");
-      }
-
-      function buildTimeline(selectedYear) {
-        timelineHost.innerHTML = Object.entries(data.by_year)
-          .map(([year, yearData]) => {
-            const value = yearData.metrics.permanentes_no_corpo.value ?? 0;
-            const isCurrent = year === selectedYear;
-            return `
-              <div class="docentes-timeline-row">
-                <div class="docentes-timeline-year">${isCurrent ? `<strong>${year}</strong>` : year}</div>
-                <div class="docentes-timeline-track">
-                  <div class="docentes-timeline-fill" style="width:${Math.max(0, Math.min(100, value * 100))}%"></div>
-                </div>
-                <div class="docentes-timeline-value">${formatDocentesPercent(value)}</div>
-              </div>
-            `;
-          })
-          .join("");
-      }
-
-      function topIssues(selectedDocs) {
-        const counter = new Map();
-        selectedDocs.forEach((doc) => {
-          (doc.issues || []).forEach((issue) => {
-            counter.set(issue, (counter.get(issue) || 0) + 1);
-          });
-        });
-        return [...counter.entries()].sort((a, b) => b[1] - a[1]);
-      }
-
-      function buildIssuePanel(selectedYear, selectedDocs, passCount) {
-        const metrics = data.by_year[selectedYear].metrics;
-        const criticalMetrics = Object.values(metrics).filter((metric) => !metric.passed);
-        const issues = topIssues(selectedDocs).slice(0, 4);
-        const primary = [];
-
-        if (criticalMetrics.length) {
-          criticalMetrics.forEach((metric) => {
-            primary.push({
-              title: docentesMetricLabels[metric.metric],
-              body: metric.metric === "total_permanentes"
-                ? (metric.condition === "justificavel_regional"
-                  ? `No ano ${selectedYear}, o programa tem ${metric.value} permanentes. A faixa 10-11 e defensavel apenas com justificativa regional.`
-                  : `No ano ${selectedYear}, o programa tem ${metric.value} permanentes, abaixo do minimo principal de ${metric.target}.`)
-                : `No ano ${selectedYear}, o indicador ficou em ${formatDocentesPercent(metric.value)} frente ao limite ${metric.direction === "min" ? "minimo" : "maximo"} de ${formatDocentesPercent(metric.target)}.`
-            });
-          });
-        } else {
-          primary.push({
-            title: `Seis critérios atendidos em ${selectedYear}`,
-            body: "O arranjo proposto atende aos seis critérios, mas dois passam com margem curta: vínculo com a IES e permanentes externos.",
-          });
-        }
-
-        const externalMetric = metrics.permanentes_externos;
-        const internalMetric = metrics.permanentes_internos;
-        if (externalMetric.passed && externalMetric.gap < 0.03) {
-          primary.push({
-            title: "Margem estreita para permanentes externos",
-            body: `A razao de externos esta em ${formatDocentesPercent(externalMetric.value)}. O teto e ${formatDocentesPercent(externalMetric.target)} e a folga e pequena.`,
-          });
-        }
-        if (internalMetric.passed && internalMetric.gap < 0.03) {
-          primary.push({
-            title: "Margem estreita para vínculo interno",
-            body: `Os permanentes internos somam ${formatDocentesPercent(internalMetric.value)}. O minimo e ${formatDocentesPercent(internalMetric.target)} e qualquer perda interna pressiona o indicador.`,
-          });
-        }
-
-        issueList.innerHTML = primary.slice(0, 3).map((item) => `
-          <div class="docentes-issue-item">
-            <strong>${item.title}</strong>
-            <span>${item.body}</span>
-          </div>
-        `).join("");
-
-        issueChips.innerHTML = issues.map(([key, count]) => `
-          <span class="chip">${count} · ${docentesIssueLabels[key] || key}</span>
-        `).join("");
-
-        document.getElementById("docentes-hero-pass-count").textContent = `${passCount}/6`;
-        document.getElementById("docentes-hero-summary").textContent =
-          passCount === 6
-            ? `Todos os critérios passam em ${selectedYear}, com folga curta para dois deles.`
-            : `${6 - passCount} critério(s) permanecem críticos no ano ${selectedYear}.`;
-      }
-
-      function renderTable(selectedDocs, selectedYear) {
-        const quadYears = getQuadYears();
-        const quadUnionDocs = data.docentes
-          .filter((doc) => quadYears.some((year) => isDocenteActiveStatus(doc.anos?.[year])))
-          .filter((doc) => {
-            const haystack = [
-              doc.docente,
-              doc.name_key,
-              doc.origem_matriz,
-              doc.cadastro["Nome do Docente"],
-              doc.cadastro.name_key,
-              doc.cadastro["Origem 1"],
-              ...((doc.issues || []).map((issue) => docentesIssueLabels[issue] || issue)),
-            ].map((value) => normalizeDocentesText(value)).join(" ");
-            const matchesQuery = !normalizeDocentesText(searchInput.value) || haystack.includes(normalizeDocentesText(searchInput.value));
-            const matchesIssue = !issueSelect.value || (doc.issues || []).includes(issueSelect.value);
-            return matchesQuery && matchesIssue;
-          })
-          .sort((left, right) => {
-            const leftActive = isDocenteActiveStatus(left.anos?.[selectedYear]) ? 1 : 0;
-            const rightActive = isDocenteActiveStatus(right.anos?.[selectedYear]) ? 1 : 0;
-            if (rightActive !== leftActive) return rightActive - leftActive;
-            const leftSeverity = (left.issues || []).length + (left.anos?.[selectedYear] === "Per" && left.origem_matriz === "Externo" ? 2 : 0);
-            const rightSeverity = (right.issues || []).length + (right.anos?.[selectedYear] === "Per" && right.origem_matriz === "Externo" ? 2 : 0);
-            if (rightSeverity !== leftSeverity) return rightSeverity - leftSeverity;
-            return (left.cadastro["Nome do Docente"] || left.docente).localeCompare((right.cadastro["Nome do Docente"] || right.docente), "pt-BR");
-          });
-
-        docentesBody.innerHTML = quadUnionDocs.map((doc) => {
-          const lattes = doc.lattes.status_lattes || "Sem dado";
-          const badges = (doc.issues || []).length
-            ? doc.issues.map((issue) => `<span class="docentes-badge issue">${docentesIssueLabels[issue] || issue}</span>`).join("")
-            : '<span class="chart-note">Sem alerta</span>';
-          const cadastroNome = doc.cadastro["Nome do Docente"];
-          const cadastroOrigem = doc.cadastro["Origem 1"] || "Sem origem 1";
-          const primaryName = cadastroNome || doc.docente;
-          const secondaryLine = cadastroNome && cadastroNome !== doc.docente ? `Matriz: ${doc.docente}` : cadastroOrigem;
-          const selectedStatus = doc.anos?.[selectedYear];
-          const rowClass = selectedStatus === "Per" && doc.origem_matriz === "Externo"
-            ? "docentes-row-critical"
-            : (doc.issues || []).length
-              ? "docentes-row-attention"
-              : "";
-          const boolBadge = (value) => {
-            if (value === true) return '<span class="docentes-bool yes">✓</span>';
-            if (value === false) return '<span class="docentes-bool no">×</span>';
-            return '<span class="docentes-bool na">-</span>';
-          };
-          const collaboratorBadge = doc.colabora_outros_ppgs === true
-            ? '<span class="docentes-bool yes">✓</span>'
-            : doc.colabora_outros_ppgs === false
-              ? '<span class="docentes-bool no">×</span>'
-              : '<span class="docentes-bool na">-</span>';
-          const statusCells = quadYears.map((year) => {
-            const status = doc.anos?.[year];
-            return `<td><span class="docentes-badge ${getDocentesBadgeClass(status)}">${status && status !== "---" ? status : "-"}</span></td>`;
-          }).join("");
-          return `
-            <tr class="${rowClass}">
-              <td class="docentes-structure-name">
-                <strong>${primaryName}</strong><br>
-                <span>${secondaryLine}${lattes !== "Sem dado" ? ` · Lattes: ${lattes}` : ""}</span>
-              </td>
-              <td class="docentes-status-cell">${boolBadge(doc.ams)}</td>
-              <td class="docentes-status-cell">${boolBadge(doc.dfe)}</td>
-              <td>${doc.origem_matriz || "-"}</td>
-              <td>${doc.ppgs_como_permanente_2026 ?? "-"}</td>
-              <td class="docentes-status-cell">${collaboratorBadge}</td>
-              <td>${doc.status_quadri || "-"}</td>
-              ${statusCells}
-              <td>${badges}</td>
-            </tr>
-          `;
-        }).join("");
-
-        emptyState.hidden = quadUnionDocs.length > 0;
-      }
-
-      function renderCurrentState() {
-        const selectedYear = yearSelect.value;
-        const query = normalizeDocentesText(searchInput.value);
-        const selectedIssue = issueSelect.value;
-        const yearData = data.by_year[selectedYear];
-        const passCount = Object.values(yearData.metrics).filter((metric) => metric.passed).length;
-        const activeDocs = data.docentes.filter((doc) => ["Per", "Col", "Temp", "Vis"].includes(doc.anos[selectedYear]));
-
-        const filteredDocs = activeDocs.filter((doc) => {
-          const haystack = [
-            doc.docente,
-            doc.name_key,
-            doc.origem_matriz,
-            doc.cadastro["Nome do Docente"],
-            doc.cadastro.name_key,
-            doc.cadastro["Origem 1"],
-            ...((doc.issues || []).map((issue) => docentesIssueLabels[issue] || issue)),
-          ].map((value) => normalizeDocentesText(value)).join(" ");
-          const matchesQuery = !query || haystack.includes(query);
-          const matchesIssue = !selectedIssue || (doc.issues || []).includes(selectedIssue);
-          return matchesQuery && matchesIssue;
-        });
-
-        const currentYearStats = getDocentesQuadStats(selectedYear);
-        const externalPermanents = data.docentes.filter((doc) => doc.anos?.[selectedYear] === "Per" && doc.origem_matriz === "Externo").length;
-        const lattesReviewCount = filteredDocs.filter((doc) => (doc.issues || []).includes("lattes_desatualizado")).length;
-        const riskCount = filteredDocs.filter((doc) => (doc.issues || []).length > 0).length;
-        headlineChips.innerHTML = [
-          `<span class="docentes-mini-chip ok">Núcleo duro ${currentYearStats.nucleoDuro}</span>`,
-          `<span class="docentes-mini-chip ${externalPermanents ? "warn" : "ok"}">Externos P ${externalPermanents}</span>`,
-          `<span class="docentes-mini-chip ${lattesReviewCount ? "warn" : "ok"}">Lattes ${lattesReviewCount}</span>`,
-          `<span class="docentes-mini-chip ${riskCount ? "critical" : "ok"}">Docentes com alerta ${riskCount}</span>`,
-        ].join("");
-
-        document.getElementById("docentes-headline-title").textContent = `Quadro síntese ${selectedYear}`;
-        document.getElementById("docentes-headline-text").textContent =
-          `${yearData.permanent_count} permanentes entre ${yearData.classified_count} docentes classificados. ` +
-          `Núcleo duro ${currentYearStats.nucleoDuro}, quadro ampliado ${currentYearStats.quadroAmpliado}, dependência de colaboradores ${formatDocentesRatio(currentYearStats.permanentes, currentYearStats.colaboradores)}.`;
-
-        document.getElementById("docentes-summary-classified").textContent = String(yearData.classified_count);
-        document.getElementById("docentes-summary-permanent").textContent = String(yearData.permanent_count);
-        document.getElementById("docentes-summary-lattes").textContent = String(lattesReviewCount);
-        document.getElementById("docentes-summary-issues").textContent = String(filteredDocs.reduce((acc, doc) => acc + (doc.issues || []).length, 0));
-
-        buildMetrics(yearData);
-        buildQuadPanel();
-        buildTimeline(selectedYear);
-        buildIssuePanel(selectedYear, filteredDocs, passCount);
-        renderTable(filteredDocs, selectedYear);
-      }
-
-      fillControls();
-      renderCurrentState();
-      [yearSelect, issueSelect].forEach((node) => node.addEventListener("change", renderCurrentState));
-      searchInput.addEventListener("input", renderCurrentState);
     }
 
     function getDoutoradoSeries(item) {
@@ -4176,13 +3748,14 @@
         chartDisciplinasPeriodos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const width = 760;
       const height = 280;
       const paddingX = 44;
       const baseY = 232;
       const maxCarga = Math.max(...data.map((item) => item.carga), 1);
       const barWidth = 56;
       const gap = 22;
+      const rightPadding = 40;
+      const width = Math.max(760, paddingX + data.length * barWidth + Math.max(0, data.length - 1) * gap + rightPadding);
       chartDisciplinasPeriodos.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Carga horária por período">
           <line x1="${paddingX}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
@@ -4467,9 +4040,9 @@
       });
     }
 
-    function bindGroupedCollapsibleSections(root, prefix) {
-      if (!root) return;
-      const groupCards = [...root.querySelectorAll(".group-card")];
+    function bindApcnCollapsibleSections() {
+      if (!tabApcn) return;
+      const groupCards = [...tabApcn.querySelectorAll(".group-card")];
       groupCards.forEach((card, index) => {
         const header = card.querySelector(".section-head");
         if (!header || card.querySelector(".group-card-toggle")) return;
@@ -4486,7 +4059,7 @@
         button.type = "button";
         button.className = "group-card-toggle";
         button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-controls", `${prefix}-group-${index}`);
+        button.setAttribute("aria-controls", `apcn-group-${index}`);
 
         const copy = document.createElement("div");
         copy.className = "group-card-toggle-copy";
@@ -4503,7 +4076,7 @@
         header.replaceChildren(button);
 
         contentCards.forEach((item) => {
-          item.dataset.apcnGroup = `${prefix}-group-${index}`;
+          item.dataset.apcnGroup = `apcn-group-${index}`;
           item.classList.add("apcn-collapsible-hidden");
         });
 
@@ -4513,11 +4086,6 @@
           contentCards.forEach((item) => item.classList.toggle("apcn-collapsible-hidden", isOpen));
         });
       });
-    }
-
-    function bindApcnCollapsibleSections() {
-      bindGroupedCollapsibleSections(tabApcn, "apcn");
-      bindGroupedCollapsibleSections(document.getElementById("tab-lideranca"), "lideranca");
     }
 
     function escapeHtml(value) {
@@ -5160,7 +4728,6 @@
             docente: item.docente,
             total: 0,
             pontosMostard: 0,
-            pontosApcn: 0,
             primeiraUltima: 0,
             segundaPenultima: 0,
             demais: 0,
@@ -5170,7 +4737,6 @@
         const score = getMostardScore(item);
         row.total += 1;
         row.pontosMostard += score.score;
-        row.pontosApcn += Number(item.pontuacao) || 0;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -5182,15 +4748,11 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
-          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
-          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
+          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
         }))
         .sort((a, b) =>
-          b.indiceMostarda - a.indiceMostarda ||
-          b.indiceMostardaCorrigido - a.indiceMostardaCorrigido ||
-          b.pontosApcn - a.pontosApcn ||
+          b.indice - a.indice ||
+          b.pontosMostard - a.pontosMostard ||
           b.total - a.total ||
           a.docente.localeCompare(b.docente, "pt-BR")
         );
@@ -5205,7 +4767,6 @@
             ano: year,
             total: 0,
             pontosMostard: 0,
-            pontosApcn: 0,
             primeiraUltima: 0,
             segundaPenultima: 0,
             demais: 0,
@@ -5215,7 +4776,6 @@
         const score = getMostardScore(item);
         row.total += 1;
         row.pontosMostard += score.score;
-        row.pontosApcn += Number(item.pontuacao) || 0;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -5227,10 +4787,7 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
-          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
-          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
+          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -5266,34 +4823,26 @@
 
     function renderLeadershipMetrics(data, docenteSummary, yearSummary) {
       const pontosMostard = data.reduce((acc, item) => acc + getMostardScore(item).score, 0);
-      const pontosApcn = data.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
-      const liderancaMedia = data.length ? pontosMostard / data.length : 0;
-      const indiceGeral = (1 - liderancaMedia) * 100;
-      const indiceGeralCorrigido = (indiceGeral / 100) * pontosApcn;
+      const indiceGeral = data.length ? (pontosMostard / data.length) * 100 : 0;
       const visibleDocentes = docenteSummary.length;
-      const worstDocente = docenteSummary[0];
-      const bestDocente = [...docenteSummary].sort((a, b) => a.indiceMostarda - b.indiceMostarda || b.pontosApcn - a.pontosApcn)[0];
-      const worstYear = [...yearSummary].sort((a, b) => b.indiceMostarda - a.indiceMostarda || b.total - a.total)[0];
+      const bestDocente = docenteSummary[0];
+      const bestYear = [...yearSummary].sort((a, b) => b.indice - a.indice || b.total - a.total)[0];
       const evidence = summarizeMostardEvidence(data);
 
       document.getElementById("lideranca-total-registros").textContent = String(data.length);
-      document.getElementById("lideranca-pontos-apcn").textContent = formatDecimal(pontosApcn);
+      document.getElementById("lideranca-pontos").textContent = formatDecimal(pontosMostard);
       document.getElementById("lideranca-docentes-visiveis").textContent = String(visibleDocentes);
       document.getElementById("lideranca-indice-geral").textContent = formatPercent(indiceGeral);
 
       liderancaInsightChips.innerHTML = [
-        worstDocente ? `<span class="chip">Maior índice Mostarda: <strong>${worstDocente.docente}</strong> (${formatPercent(worstDocente.indiceMostarda)})</span>` : "",
-        bestDocente ? `<span class="chip">Menor índice Mostarda: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indiceMostarda)})</span>` : "",
-        worstYear ? `<span class="chip">Ano mais crítico: <strong>${worstYear.ano}</strong> (${formatPercent(worstYear.indiceMostarda)})</span>` : "",
-        `<span class="chip">Índice do recorte corrigido por pontos: <strong>${formatDecimal(indiceGeralCorrigido)}</strong></span>`,
+        bestDocente ? `<span class="chip">Liderança mais alta: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indice)})</span>` : "",
+        bestYear ? `<span class="chip">Melhor ano: <strong>${bestYear.ano}</strong> (${formatPercent(bestYear.indice)})</span>` : "",
         `<span class="chip">Registros com sequência explícita de autores: <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
         `<span class="chip">Com docente identificado nessa sequência: <strong>${evidence.parsedRecordsMatchingDocente}</strong></span>`,
       ].join("");
 
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
-        `<span class="chip">Índice Mostarda exibido = <strong>1 - média de liderança</strong>; logo, valores maiores indicam menor liderança</span>`,
-        `<span class="chip">Índice corrigido = <strong>Índice Mostarda decimal x pontos APCN</strong> do docente ou do ano</span>`,
         `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
         `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
         `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
@@ -5307,22 +4856,22 @@
         chartLiderancaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxMetric = Math.max(...items.map((item) => item.indiceMostarda), 1);
+      const maxMetric = Math.max(...items.map((item) => item.indice), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
       const chartWidth = 720;
       const usableWidth = chartWidth - labelWidth - 70;
       chartLiderancaDocentes.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Mostard Index por docente">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.indiceMostarda / maxMetric) * usableWidth);
+            const width = Math.max(8, (item.indice / maxMetric) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostarda)}%</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
             `;
           }).join("")}
           <defs>
@@ -5335,102 +4884,12 @@
       `;
     }
 
-    function renderLeadershipWeightedChart(summary) {
-      const items = [...summary]
-        .sort((a, b) => b.indiceMostardaCorrigido - a.indiceMostardaCorrigido || b.pontosApcn - a.pontosApcn)
-        .slice(0, 18);
-      if (!items.length) {
-        chartLiderancaCorrigido.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
-        return;
-      }
-      const maxMetric = Math.max(...items.map((item) => item.indiceMostardaCorrigido), 1);
-      const rowHeight = 34;
-      const height = items.length * rowHeight + 48;
-      const labelWidth = 270;
-      const chartWidth = 720;
-      const usableWidth = chartWidth - labelWidth - 70;
-      chartLiderancaCorrigido.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda corrigido por pontos APCN">
-          ${items.map((item, index) => {
-            const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.indiceMostardaCorrigido / maxMetric) * usableWidth);
-            return `
-              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
-              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaWeightedGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostardaCorrigido)}</text>
-            `;
-          }).join("")}
-          <defs>
-            <linearGradient id="liderancaWeightedGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stop-color="#d4a017"></stop>
-              <stop offset="100%" stop-color="#8c1538"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-      `;
-    }
-
-    function renderLeadershipScatterChart(summary) {
-      if (!summary.length) {
-        chartLiderancaDispersao.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
-        return;
-      }
-      const width = 940;
-      const height = 440;
-      const left = 82;
-      const right = 24;
-      const top = 24;
-      const bottom = 52;
-      const innerWidth = width - left - right;
-      const innerHeight = height - top - bottom;
-      const maxPoints = Math.max(...summary.map((item) => item.pontosApcn), 1);
-      const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
-      const xTicks = 4;
-      const yTicks = 4;
-      chartLiderancaDispersao.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
-          ${Array.from({ length: yTicks + 1 }, (_, index) => {
-            const ratio = index / yTicks;
-            const y = top + innerHeight - ratio * innerHeight;
-            const value = ratio * maxIndex;
-            return `
-              <line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" stroke="#e5dbcd" stroke-width="1"></line>
-              <text x="${left - 10}" y="${y + 4}" text-anchor="end" fill="#6d727c" font-size="11">${formatDecimal(value)}%</text>
-            `;
-          }).join("")}
-          ${Array.from({ length: xTicks + 1 }, (_, index) => {
-            const ratio = index / xTicks;
-            const x = left + ratio * innerWidth;
-            const value = ratio * maxPoints;
-            return `
-              <line x1="${x}" y1="${top}" x2="${x}" y2="${height - bottom}" stroke="#f0e7da" stroke-width="1"></line>
-              <text x="${x}" y="${height - bottom + 18}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(value)}</text>
-            `;
-          }).join("")}
-          <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          <line x1="${left}" y1="${top}" x2="${left}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${summary.map((item, index) => {
-            const x = left + ((item.pontosApcn || 0) / maxPoints) * innerWidth;
-            const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
-            const fill = index % 2 === 0 ? "#8c1538" : "#d4a017";
-            return `
-              <circle cx="${x}" cy="${y}" r="5.5" fill="${fill}" opacity="0.9"></circle>
-              <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
-            `;
-          }).join("")}
-          <text x="${width / 2}" y="${height - 10}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
-          <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
-        </svg>
-      `;
-    }
-
     function renderLeadershipYearChart(summary) {
       if (!summary.length) {
         chartLiderancaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
+      const maxIndex = Math.max(...summary.map((item) => item.indice), 1);
       const width = 760;
       const height = 320;
       const baseY = 260;
@@ -5438,15 +4897,15 @@
       const gap = 18;
       const barWidth = Math.max(28, Math.floor((width - left - 20 - (summary.length - 1) * gap) / summary.length));
       chartLiderancaAnos.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução anual do Índice Mostarda">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução anual do Mostard Index">
           <line x1="${left}" y1="${baseY}" x2="${width - 12}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
           ${summary.map((item, index) => {
             const x = left + 10 + index * (barWidth + gap);
-            const barHeight = Math.max(10, Math.round((item.indiceMostarda / maxIndex) * 190));
+            const barHeight = Math.max(10, Math.round((item.indice / maxIndex) * 190));
             const y = baseY - barHeight;
             return `
               <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="${index % 2 === 0 ? "#8c1538" : "#d4a017"}"></rect>
-              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostarda)}%</text>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
               <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
             `;
           }).join("")}
@@ -5458,10 +4917,9 @@
       liderancaDocentesBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${formatPercent(item.indiceMostarda)}</td>
-          <td>${formatDecimal(item.pontosApcn)}</td>
-          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
+          <td>${formatPercent(item.indice)}</td>
           <td>${item.total}</td>
+          <td>${formatDecimal(item.pontosMostard)}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
           <td>${item.demais}</td>
@@ -5473,190 +4931,12 @@
       liderancaAnosBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.ano}</td>
-          <td>${formatPercent(item.indiceMostarda)}</td>
-          <td>${formatDecimal(item.pontosApcn)}</td>
-          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
+          <td>${formatPercent(item.indice)}</td>
           <td>${item.total}</td>
+          <td>${formatDecimal(item.pontosMostard)}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
           <td>${item.demais}</td>
-        </tr>
-      `).join("");
-    }
-
-    function getApcnArticleBucket(item) {
-      if (item.tipo_producao !== "artigo") return null;
-      const points = Number(item.pontuacao) || 0;
-      if (points >= 90) return "90";
-      if (points >= 70) return "70";
-      if (points >= 50) return "50";
-      return "0";
-    }
-
-    function aggregateLeadershipQualityByDocente(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        if (!grouped.has(item.docente)) {
-          grouped.set(item.docente, {
-            docente: item.docente,
-            jcrSum: 0,
-            jcrCount: 0,
-            artigos90: 0,
-            artigos70: 0,
-            artigos50: 0,
-            artigos0: 0,
-          });
-        }
-        const row = grouped.get(item.docente);
-        const jcr = Number(item.jif_jcr_2025) || 0;
-        if (jcr > 0) {
-          row.jcrSum += jcr;
-          row.jcrCount += 1;
-        }
-        const bucket = getApcnArticleBucket(item);
-        if (bucket === "90") row.artigos90 += 1;
-        if (bucket === "70") row.artigos70 += 1;
-        if (bucket === "50") row.artigos50 += 1;
-        if (bucket === "0") row.artigos0 += 1;
-      });
-      return [...grouped.values()]
-        .map((item) => ({
-          ...item,
-          jcrAvg: item.jcrCount ? item.jcrSum / item.jcrCount : 0,
-        }))
-        .sort((a, b) =>
-          b.jcrSum - a.jcrSum ||
-          b.jcrAvg - a.jcrAvg ||
-          b.jcrCount - a.jcrCount ||
-          a.docente.localeCompare(b.docente, "pt-BR")
-        );
-    }
-
-    function aggregateLeadershipQualityTotals(data) {
-      return data.reduce((acc, item) => {
-        const jcr = Number(item.jif_jcr_2025) || 0;
-        if (jcr > 0) {
-          acc.jcrSum += jcr;
-          acc.jcrCount += 1;
-        }
-        const bucket = getApcnArticleBucket(item);
-        if (bucket === "90") acc.artigos90 += 1;
-        if (bucket === "70") acc.artigos70 += 1;
-        if (bucket === "50") acc.artigos50 += 1;
-        if (bucket === "0") acc.artigos0 += 1;
-        return acc;
-      }, {
-        jcrSum: 0,
-        jcrCount: 0,
-        artigos90: 0,
-        artigos70: 0,
-        artigos50: 0,
-        artigos0: 0,
-      });
-    }
-
-    function renderLeadershipQualityMetrics(summary, totals) {
-      const docentesComJcr = summary.filter((item) => item.jcrCount > 0);
-      const topJcr = summary[0];
-      const bestAvg = [...summary]
-        .filter((item) => item.jcrCount > 0)
-        .sort((a, b) => b.jcrAvg - a.jcrAvg || b.jcrSum - a.jcrSum)[0];
-
-      document.getElementById("lideranca-qualidade-produtos-jcr").textContent = String(totals.jcrCount);
-      document.getElementById("lideranca-qualidade-jcr-soma").textContent = formatDecimal(totals.jcrSum);
-      document.getElementById("lideranca-qualidade-jcr-media").textContent = formatDecimal(totals.jcrCount ? totals.jcrSum / totals.jcrCount : 0);
-      document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComJcr.length);
-
-      liderancaQualidadeInsights.innerHTML = [
-        topJcr ? `<span class="chip">Maior soma de JCR: <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
-        bestAvg ? `<span class="chip">Maior média JCR: <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
-        `<span class="chip">Artigos em periódicos de 90 pontos: <strong>${totals.artigos90}</strong></span>`,
-        `<span class="chip">Artigos sem pontuação APCN de periódico: <strong>${totals.artigos0}</strong></span>`,
-      ].filter(Boolean).join("");
-
-      liderancaQualidadeMetodologia.innerHTML = [
-        `<span class="chip">Somatório JCR: soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
-        `<span class="chip">Média JCR: somatório dividido apenas pelos produtos com JCR informado</span>`,
-        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "70", "50", "0"].join(" / ")})</span>`,
-      ].join("");
-    }
-
-    function renderLeadershipQualityJcrChart(summary) {
-      const items = summary.filter((item) => item.jcrSum > 0).slice(0, 16);
-      if (!items.length) {
-        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR para o gráfico.</p>`;
-        return;
-      }
-      const maxValue = Math.max(...items.map((item) => item.jcrSum), 1);
-      const rowHeight = 34;
-      const height = items.length * rowHeight + 48;
-      const labelWidth = 270;
-      const chartWidth = 760;
-      const usableWidth = chartWidth - labelWidth - 84;
-      chartLiderancaQualidadeJcr.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Somatório de JCR por docente">
-          ${items.map((item, index) => {
-            const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.jcrSum / maxValue) * usableWidth);
-            return `
-              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
-              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
-              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaJcrGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.jcrSum)} · m=${formatDecimal(item.jcrAvg)}</text>
-            `;
-          }).join("")}
-          <defs>
-            <linearGradient id="liderancaJcrGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stop-color="#4d7c68"></stop>
-              <stop offset="100%" stop-color="#d4a017"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-      `;
-    }
-
-    function renderLeadershipQualityApcnChart(totals) {
-      const items = [
-        { label: "90 pontos", total: totals.artigos90, color: "#8c1538" },
-        { label: "70 pontos", total: totals.artigos70, color: "#b94b5d" },
-        { label: "50 pontos", total: totals.artigos50, color: "#d4a017" },
-        { label: "0 ponto", total: totals.artigos0, color: "#c5b9a8" },
-      ];
-      const maxValue = Math.max(...items.map((item) => item.total), 1);
-      const width = 760;
-      const height = 300;
-      const left = 60;
-      const baseY = 242;
-      const barWidth = 116;
-      const gap = 42;
-      chartLiderancaQualidadeApcn.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Faixas APCN dos periódicos">
-          <line x1="${left}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${items.map((item, index) => {
-            const x = left + 24 + index * (barWidth + gap);
-            const barHeight = Math.max(10, (item.total / maxValue) * 160);
-            const y = baseY - barHeight;
-            return `
-              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="14" fill="${item.color}"></rect>
-              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${item.total}</text>
-              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.label}</text>
-            `;
-          }).join("")}
-        </svg>
-      `;
-    }
-
-    function renderLeadershipQualityTable(summary) {
-      liderancaQualidadeBody.innerHTML = summary.map((item) => `
-        <tr>
-          <td>${item.docente}</td>
-          <td>${formatDecimal(item.jcrSum)}</td>
-          <td>${formatDecimal(item.jcrAvg)}</td>
-          <td>${item.jcrCount}</td>
-          <td>${item.artigos90}</td>
-          <td>${item.artigos70}</td>
-          <td>${item.artigos50}</td>
-          <td>${item.artigos0}</td>
         </tr>
       `).join("");
     }
@@ -5748,19 +5028,11 @@
       const filtered = getFilteredScientificData();
       const docenteSummary = aggregateMostardByDocente(filtered);
       const yearSummary = aggregateMostardByYear(filtered);
-      const qualitySummary = aggregateLeadershipQualityByDocente(filtered);
-      const qualityTotals = aggregateLeadershipQualityTotals(filtered);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
       renderLeadershipDocenteChart(docenteSummary);
-      renderLeadershipWeightedChart(docenteSummary);
-      renderLeadershipScatterChart(docenteSummary);
       renderLeadershipYearChart(yearSummary);
       renderLeadershipDocentesTable(docenteSummary);
       renderLeadershipYearTable(yearSummary);
-      renderLeadershipQualityMetrics(qualitySummary, qualityTotals);
-      renderLeadershipQualityJcrChart(qualitySummary);
-      renderLeadershipQualityApcnChart(qualityTotals);
-      renderLeadershipQualityTable(qualitySummary);
       renderLeadershipDetailTable(filtered);
     }
 
@@ -6310,6 +5582,351 @@
       `;
     }
 
+    const docentesCriteriaLabels = {
+      permanentes_no_corpo: "Permanentes no corpo classificado",
+      permanentes_internos: "Permanentes com vínculo com a IES",
+      permanentes_exclusivos: "Permanentes exclusivos ao programa",
+      permanentes_externos: "Permanentes externos",
+      permanentes_colaboradores_outros_ppgs: "Permanentes colaboradores em outros PPGs",
+      total_permanentes: "Dimensão do corpo permanente",
+    };
+
+    const docentesIssueLabels = {
+      colabora_em_outro_ppg_2026: "Permanente com atuação como colaborador em outro PPG",
+      nao_exclusivo_ao_programa_2026: "Permanente compartilhado com outros PPGs",
+      permanente_externo_2026: "Permanente externo no ano-base",
+      temporario_2026: "Docente temporário no ano-base",
+      visitante_2026: "Docente visitante no ano-base",
+      estabilidade_2025_abaixo_90: "Estabilidade anual de 2025 abaixo de 90%",
+    };
+
+    const docentesDashboardState = {
+      year: dataSourceCorpoDocente.default_year || "2026",
+      origin: "Todos",
+      quadStatus: "Todos",
+      search: "",
+    };
+
+    function formatDocentesShare(value) {
+      if (value === null || value === undefined || value === "") {
+        return "—";
+      }
+      return `${(Number(value) * 100).toFixed(1).replace(".", ",")}%`;
+    }
+
+    function formatDocentesCellValue(value) {
+      if (value === null || value === undefined || value === "") {
+        return "—";
+      }
+      if (typeof value === "number") {
+        return Number.isInteger(value)
+          ? String(value)
+          : Number(value).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      }
+      return String(value);
+    }
+
+    function getDocentesMetricStatus(metric) {
+      if (!metric) {
+        return { text: "Sem leitura", className: "docentes-status-fail" };
+      }
+      if (metric.passed) {
+        return { text: "Atende", className: "docentes-status-pass" };
+      }
+      if (metric.condition === "justificavel_regional") {
+        return { text: "Justificar", className: "docentes-status-fail" };
+      }
+      return { text: "Crítico", className: "docentes-status-fail" };
+    }
+
+    function getDocentesMetricValue(metricKey, metric) {
+      if (!metric) {
+        return "—";
+      }
+      return metricKey === "total_permanentes"
+        ? String(metric.value)
+        : formatDocentesShare(metric.value);
+    }
+
+    function getDocentesMetricTarget(metricKey, metric) {
+      if (!metric) {
+        return "Sem parâmetro";
+      }
+      if (metricKey === "total_permanentes") {
+        return `Referência: ${metric.target} ou ${metric.fallback_min} com justificativa regional`;
+      }
+      return `${metric.direction === "min" ? "Mínimo" : "Máximo"}: ${formatDocentesShare(metric.target)}`;
+    }
+
+    function getDocentesBadge(status) {
+      const normalized = String(status || "---").trim();
+      const classMap = {
+        Per: "per",
+        Col: "col",
+        Temp: "temp",
+        Vis: "vis",
+      };
+      const labelMap = {
+        Per: "Per",
+        Col: "Col",
+        Temp: "Temp",
+        Vis: "Vis",
+        "---": "—",
+      };
+      return `<span class="docentes-badge ${classMap[normalized] || ""}">${labelMap[normalized] || escapeHtml(normalized)}</span>`;
+    }
+
+    function getDocentesBoolBadge(value) {
+      if (value === true) {
+        return '<span class="docentes-bool yes">Sim</span>';
+      }
+      if (value === false) {
+        return '<span class="docentes-bool no">Não</span>';
+      }
+      return '<span class="docentes-bool na">—</span>';
+    }
+
+    function getDocentesFilteredList() {
+      const search = normalizeText(docentesDashboardState.search || "");
+      return (dataSourceCorpoDocente.docentes || []).filter((docente) => {
+        const matchesOrigin = docentesDashboardState.origin === "Todos" || docente.origem_matriz === docentesDashboardState.origin;
+        const matchesQuadStatus = docentesDashboardState.quadStatus === "Todos" || docente.status_quadri === docentesDashboardState.quadStatus;
+        const matchesSearch = !search || normalizeText(docente.docente).includes(search);
+        return matchesOrigin && matchesQuadStatus && matchesSearch;
+      });
+    }
+
+    function renderDocentesMetricCards(yearSummary) {
+      const metrics = yearSummary?.metrics || {};
+      const metricsOrder = [
+        "permanentes_no_corpo",
+        "permanentes_internos",
+        "permanentes_exclusivos",
+        "permanentes_externos",
+        "permanentes_colaboradores_outros_ppgs",
+        "total_permanentes",
+      ];
+      const container = document.getElementById("docentes-criteria-metrics");
+      container.innerHTML = metricsOrder.map((metricKey) => {
+        const metric = metrics[metricKey];
+        const status = getDocentesMetricStatus(metric);
+        const fillBase = metricKey === "total_permanentes"
+          ? Number(metric?.target || 1)
+          : Number(metric?.target || 1);
+        const fill = Math.min((Number(metric?.value || 0) / fillBase) * 100, 100);
+        return `
+          <div class="card docentes-metric-card">
+            <div class="docentes-metric-top">
+              <div>
+                <div class="docentes-badge">${escapeHtml(docentesCriteriaLabels[metricKey])}</div>
+                <div class="docentes-metric-value">${escapeHtml(getDocentesMetricValue(metricKey, metric))}</div>
+              </div>
+              <span class="docentes-status-pill ${status.className}">${status.text}</span>
+            </div>
+            <div class="docentes-metric-bar"><div class="docentes-metric-fill" style="width:${fill}%"></div></div>
+            <p class="docentes-quad-note">${escapeHtml(getDocentesMetricTarget(metricKey, metric))}</p>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderDocentesSummary(yearKey, filteredDocentes) {
+      const yearSummary = dataSourceCorpoDocente.by_year?.[yearKey];
+      const lpSummary = dataSourceCorpoDocente.lp_summary || {};
+      const quadRows = dataSourceCorpoDocente.quad_summary?.rows || [];
+      const permanentesMedia = quadRows.find((row) => row.key === "permanentes")?.average;
+      const nucleoDuroMedia = quadRows.find((row) => row.key === "nucleo_duro")?.average;
+      const quadroAmpliadoMedia = quadRows.find((row) => row.key === "quadro_ampliado")?.average;
+      const basePermanents = yearSummary?.permanent_count || 0;
+      const baseClassified = yearSummary?.classified_count || 0;
+      document.getElementById("docentes-hero-title").textContent = `Quadro docente e leitura APCN ${yearKey}`;
+      document.getElementById("docentes-hero-summary").textContent = `${basePermanents} permanentes entre ${baseClassified} docentes classificados no ano-base, com foco na estabilidade e na composição do núcleo duro.`;
+      document.getElementById("docentes-hero-permanentes").textContent = String(basePermanents);
+      document.getElementById("docentes-hero-permanentes-caption").textContent = `${formatDocentesShare(yearSummary?.metrics?.permanentes_no_corpo?.value || 0)} do corpo classificado em ${yearKey}.`;
+      document.getElementById("docentes-filter-note").textContent = `${filteredDocentes.length} docente(s) após os filtros nominais. Os indicadores executivos permanecem no recorte institucional do ano ${yearKey}.`;
+      document.getElementById("docentes-summary-tiles").innerHTML = [
+        { value: lpSummary.active_docentes, label: "Ativos no quadriênio" },
+        { value: filteredDocentes.length, label: "Docentes na tabela filtrada" },
+        { value: permanentesMedia, label: "Média de permanentes" },
+        { value: quadroAmpliadoMedia, label: "Média do quadro ampliado" },
+      ].map((item) => `
+        <div class="docentes-summary-tile">
+          <strong>${escapeHtml(formatDocentesCellValue(item.value))}</strong>
+          <span>${escapeHtml(item.label)}</span>
+        </div>
+      `).join("");
+      document.getElementById("docentes-summary-meta").innerHTML = [
+        `<span class="docentes-mini-chip">AMS ${formatDocentesShare(lpSummary.ams_share)}</span>`,
+        `<span class="docentes-mini-chip">DFE ${formatDocentesShare(lpSummary.dfe_share)}</span>`,
+        `<span class="docentes-mini-chip ${Number(lpSummary.balance_ratio || 0) >= 1 ? "ok" : "warn"}">Relação LP ${formatDocentesCellValue(lpSummary.balance_ratio)}</span>`,
+        `<span class="docentes-mini-chip">Núcleo duro médio ${formatDocentesCellValue(nucleoDuroMedia)}</span>`,
+      ].join("");
+    }
+
+    function renderDocentesTimeline() {
+      const timelineYears = dataSourceCorpoDocente.quad_years || [];
+      const timelineContainer = document.getElementById("docentes-timeline");
+      timelineContainer.innerHTML = timelineYears.map((year) => {
+        const yearSummary = dataSourceCorpoDocente.by_year?.[year];
+        const share = Number(yearSummary?.metrics?.permanentes_no_corpo?.value || 0);
+        return `
+          <div class="docentes-timeline-row">
+            <div class="docentes-timeline-year">${year}</div>
+            <div class="docentes-timeline-track">
+              <div class="docentes-timeline-fill" style="width:${Math.min(share * 100, 100)}%"></div>
+            </div>
+            <div class="docentes-timeline-value">${formatDocentesShare(share)}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderDocentesIssues() {
+      const topIssues = Object.entries(dataSourceCorpoDocente.issue_counts || {})
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+      document.getElementById("docentes-issues-list").innerHTML = topIssues.map(([issueKey, count]) => `
+        <div class="docentes-issue-item">
+          <strong>${count} ocorrência(s)</strong>
+          <span>${escapeHtml(docentesIssueLabels[issueKey] || issueKey)}</span>
+        </div>
+      `).join("") || `<div class="docentes-empty-state">Nenhum alerta derivado da planilha atual.</div>`;
+    }
+
+    function renderDocentesQuadSummary() {
+      const rows = dataSourceCorpoDocente.quad_summary?.rows || [];
+      const shareKeys = new Set([
+        "estabilidade_anual",
+        "percent_permanentes",
+        "percent_colaboradores",
+        "percent_permanente_interno",
+        "percent_permanente_externo",
+      ]);
+      document.getElementById("docentes-quad-body").innerHTML = rows.map((row) => `
+        <tr>
+          <td class="docentes-quad-label">${escapeHtml(row.label)}</td>
+          ${["2025", "2026", "2027", "2028"].map((year) => `<td>${escapeHtml(shareKeys.has(row.key) ? formatDocentesShare(row.values?.[year]) : formatDocentesCellValue(row.values?.[year]))}</td>`).join("")}
+          <td class="docentes-quad-average">${escapeHtml(shareKeys.has(row.key) ? formatDocentesShare(row.average) : formatDocentesCellValue(row.average))}</td>
+        </tr>
+      `).join("");
+      const estabilidadeQuadri = dataSourceCorpoDocente.quad_summary?.estabilidade_quadri;
+      const ppgDistribution = dataSourceCorpoDocente.ppg_distribution_2026 || [];
+      document.getElementById("docentes-quad-note").innerHTML = [
+        `Estabilidade quadrienal consolidada: <strong>${formatDocentesShare(estabilidadeQuadri)}</strong>.`,
+        ...ppgDistribution.map((item) => `${item.docentes} docente(s) com ${item.ppgs} PPG(s) como permanente em 2026 (${formatDocentesShare(item.share)}).`),
+      ].join(" ");
+    }
+
+    function buildDocentesReading(docente) {
+      const readings = [];
+      if (docente.issues.includes("permanente_externo_2026")) {
+        readings.push("Externo no ano-base");
+      }
+      if (docente.issues.includes("nao_exclusivo_ao_programa_2026")) {
+        readings.push("Compartilha permanência");
+      }
+      if (docente.issues.includes("colabora_em_outro_ppg_2026")) {
+        readings.push("Colabora em outro PPG");
+      }
+      if (docente.issues.includes("temporario_2026")) {
+        readings.push("Temporário em 2026");
+      }
+      if (docente.issues.includes("visitante_2026")) {
+        readings.push("Visitante em 2026");
+      }
+      return readings.length
+        ? readings.map((item) => `<span class="docentes-badge issue">${escapeHtml(item)}</span>`).join("")
+        : `<span class="docentes-badge per">Sem alerta direto</span>`;
+    }
+
+    function renderDocentesStructureTables() {
+      const filtered = getDocentesFilteredList()
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"));
+      const structureBody = document.getElementById("docentes-structure-body");
+      const historyBody = document.getElementById("docentes-history-body");
+      structureBody.innerHTML = filtered.map((docente) => {
+        const issueClass = docente.issues.includes("permanente_externo_2026") || docente.issues.includes("nao_exclusivo_ao_programa_2026")
+          ? "docentes-row-critical"
+          : docente.issues.length
+            ? "docentes-row-attention"
+            : "";
+        return `
+          <tr class="${issueClass}">
+            <td class="docentes-structure-name">
+              <strong>${escapeHtml(docente.docente)}</strong>
+              <span>${escapeHtml(docente.status_quadri === "A" ? "Ativo no desenho 2025-2028" : "Inativo no desenho 2025-2028")}</span>
+            </td>
+            <td>${getDocentesBoolBadge(docente.ams)}</td>
+            <td>${getDocentesBoolBadge(docente.dfe)}</td>
+            <td>${escapeHtml(docente.origem_matriz || "—")}</td>
+            <td>${escapeHtml(formatDocentesCellValue(docente.ppgs_como_permanente_2026))}</td>
+            <td>${getDocentesBoolBadge(docente.colabora_outros_ppgs)}</td>
+            <td><span class="docentes-badge">${escapeHtml(docente.status_quadri || "—")}</span></td>
+            ${["2025", "2026", "2027", "2028"].map((year) => `<td>${getDocentesBadge(docente.anos?.[year])}</td>`).join("")}
+            <td>${buildDocentesReading(docente)}</td>
+          </tr>
+        `;
+      }).join("") || `<tr><td colspan="12" class="docentes-empty-state">Nenhum docente encontrado com os filtros atuais.</td></tr>`;
+      historyBody.innerHTML = filtered.map((docente) => `
+        <tr>
+          <td class="docentes-structure-name">
+            <strong>${escapeHtml(docente.docente)}</strong>
+            <span>${escapeHtml(docente.origem_matriz || "—")} · status quadri ${escapeHtml(docente.status_quadri || "—")}</span>
+          </td>
+          <td>
+            <div class="docentes-history-line">
+              ${(dataSourceCorpoDocente.history_years || []).map((year) => `
+                <div class="docentes-history-cell">
+                  <strong>${year}</strong>
+                  ${getDocentesBadge(docente.anos?.[year])}
+                </div>
+              `).join("")}
+            </div>
+          </td>
+        </tr>
+      `).join("") || `<tr><td colspan="2" class="docentes-empty-state">Nenhum docente encontrado com os filtros atuais.</td></tr>`;
+      renderDocentesSummary(docentesDashboardState.year, filtered);
+    }
+
+    function populateDocentesYearSelect() {
+      const select = document.getElementById("docentes-year-select");
+      select.innerHTML = (dataSourceCorpoDocente.quad_years || []).map((year) => `
+        <option value="${year}" ${String(year) === String(docentesDashboardState.year) ? "selected" : ""}>${year}</option>
+      `).join("");
+    }
+
+    function bindDocentesControls() {
+      const yearSelect = document.getElementById("docentes-year-select");
+      const originFilter = document.getElementById("docentes-origin-filter");
+      const statusFilter = document.getElementById("docentes-status-filter");
+      const searchInput = document.getElementById("docentes-search");
+      yearSelect.addEventListener("change", () => {
+        docentesDashboardState.year = yearSelect.value;
+        renderDocentesTab();
+      });
+      originFilter.addEventListener("change", () => {
+        docentesDashboardState.origin = originFilter.value;
+        renderDocentesStructureTables();
+      });
+      statusFilter.addEventListener("change", () => {
+        docentesDashboardState.quadStatus = statusFilter.value;
+        renderDocentesStructureTables();
+      });
+      searchInput.addEventListener("input", () => {
+        docentesDashboardState.search = searchInput.value;
+        renderDocentesStructureTables();
+      });
+    }
+
+    function renderDocentesTab() {
+      const yearSummary = dataSourceCorpoDocente.by_year?.[docentesDashboardState.year];
+      renderDocentesMetricCards(yearSummary);
+      renderDocentesTimeline();
+      renderDocentesIssues();
+      renderDocentesQuadSummary();
+      renderDocentesStructureTables();
+    }
+
     function renderCorpoDocenteCriticalCriteriaPanel() {
       const summaryYear = dataSourceCorpoDocente.default_year;
       const yearSummary = dataSourceCorpoDocente.by_year?.[summaryYear];
@@ -6376,13 +5993,11 @@
 
       const issueLabels = {
         colabora_em_outro_ppg_2026: "Atua como colaborador em outro PPG",
-        lattes_desatualizado: "Lattes com revisão pendente",
-        cadastro_incompleto: "Cadastro com lacunas ou marcadores provisórios",
         permanente_externo_2026: "Permanente externo no ano-base",
         nao_exclusivo_ao_programa_2026: "Permanente compartilhado com outros PPGs",
-        nome_divergente_entre_abas: "Nome divergente entre abas",
-        origem_divergente_externo_vs_interno: "Origem divergente: cadastro externo x matriz interna",
-        origem_divergente_interno_vs_externo: "Origem divergente: cadastro interno x matriz externa",
+        temporario_2026: "Temporário no ano-base",
+        visitante_2026: "Visitante no ano-base",
+        estabilidade_2025_abaixo_90: "Estabilidade de 2025 abaixo de 90%",
       };
 
       const metrics = Object.values(yearSummary.metrics);
@@ -6632,10 +6247,12 @@
     applyTechnicalFilters();
     applyDisciplinasFilters();
     renderOrientationPanel();
-    renderDocentesTab();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
     renderDocenciaCriticalCriteriaPanel();
+    populateDocentesYearSelect();
+    bindDocentesControls();
+    renderDocentesTab();
     renderCorpoDocenteCriticalCriteriaPanel();
     renderDocumentsPanel();
   </script>
