@@ -340,6 +340,72 @@
       color: var(--ufpe-bordo);
     }
 
+    .info-button {
+      border: 1px solid rgba(140, 21, 56, 0.24);
+      background: rgba(140, 21, 56, 0.06);
+      color: var(--ufpe-bordo);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.84rem;
+      line-height: 1;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .info-button:hover {
+      border-color: var(--ufpe-bordo);
+      background: rgba(140, 21, 56, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(38, 41, 48, 0.46);
+      z-index: 40;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      border-radius: 28px;
+      background: var(--ufpe-painel);
+      border: 1px solid rgba(221, 212, 199, 0.9);
+      box-shadow: 0 30px 70px rgba(38, 41, 48, 0.2);
+      padding: 24px;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.18);
+      background: white;
+      color: var(--ufpe-bordo);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
     .sort-toggle.active {
       background: rgba(140, 21, 56, 0.12);
       border-color: var(--ufpe-bordo);
@@ -1130,9 +1196,12 @@
           </div>
 
           <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Resumo do Recorte</h2>
-              <p>Leitura rápida da composição visível.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Resumo do Recorte</h2>
+                <p>Leitura rápida da composição visível.</p>
+              </div>
+              <button type="button" class="info-button" id="open-apcn-scoring-modal">Ver regra APCN</button>
             </div>
             <div class="chips" id="insight-chips"></div>
             <div class="legend">
@@ -1446,63 +1515,6 @@
             </div>
           </div>
 
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Critério de Pontuação APCN</h2>
-              <p>Para artigos, a pontuação APCN considera a indexação do periódico como evidência principal de qualidade e inserção.</p>
-            </div>
-            <p class="chart-note">
-              A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR)</strong> ou
-              <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
-              <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
-              recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
-              recebem <strong>0 ponto</strong>. Essa régua é a base usada para a leitura da produção intelectual no estudo de viabilidade da APCN.
-            </p>
-            <div class="table-wrap">
-              <table class="criteria-table">
-                <thead>
-                  <tr>
-                    <th>Indexação</th>
-                    <th>Pontuação</th>
-                    <th>Critério</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Web of Science (JCR)</td>
-                    <td>90</td>
-                    <td>Artigo em periódico indexado no Web of Science com JCR</td>
-                  </tr>
-                  <tr>
-                    <td>Scopus (SJR)</td>
-                    <td>90</td>
-                    <td>Artigo em periódico indexado na Scopus com SJR</td>
-                  </tr>
-                  <tr>
-                    <td>PubMed</td>
-                    <td>60</td>
-                    <td>Artigo em periódico indexado no PubMed</td>
-                  </tr>
-                  <tr>
-                    <td>SciELO</td>
-                    <td>60</td>
-                    <td>Artigo em periódico indexado na SciELO</td>
-                  </tr>
-                  <tr>
-                    <td>Apenas Google Scholar</td>
-                    <td>30</td>
-                    <td>Artigo localizado apenas via Google Scholar</td>
-                  </tr>
-                  <tr>
-                    <td>Sem indexação ou revista predatória</td>
-                    <td>0</td>
-                    <td>Artigo sem indexação válida ou em revista predatória</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
           <div class="card metric">
             <p class="eyebrow">Docentes considerados</p>
             <strong id="criterios-docentes-total">0</strong>
@@ -1672,17 +1684,17 @@
               <h2>Liderança Investigativa</h2>
               <p>
                 O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
-                Cada registro recebe 1,0 ponto quando o docente aparece na primeira ou última autoria,
-                0,5 ponto quando aparece na segunda ou penúltima posição, e 0,1 nas demais posições.
-                O índice final é a média ponderada desses pesos em percentual, permitindo comparar docentes
-                e observar a evolução anual do protagonismo investigativo.
+                A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
+                penúltima posição e 0,1 para as demais. Porém, a base científica atual não preserva a
+                sequência completa de autores na maior parte dos registros, então a aplicação prática do
+                índice depende da evidência autoral efetivamente disponível em cada item.
               </p>
             </div>
             <p class="chart-note">
-              Nesta base científica, a coluna nativa disponível é <strong>autor_principal</strong>. Quando a sequência completa
-              de autores não está explícita no registro, o cálculo reconhece a primeira autoria quando o docente coincide
-              com o autor principal e classifica os demais casos como 0,1 ponto. O algoritmo já está preparado para aplicar
-              a régua integral assim que a autoria completa estiver disponível na base.
+              Nesta base científica, a coluna nativa estruturada é <strong>autor_principal</strong>. Assim, no estado atual,
+              o comportamento dominante do cálculo é: <strong>1,0</strong> quando o docente coincide com o autor principal e
+              <strong>0,1</strong> quando não coincide. A régua intermediária de <strong>0,5</strong> só pode ser aplicada
+              quando houver lista completa de autores, o que hoje praticamente não ocorre na base sincronizada.
             </p>
             <div class="filters-grid">
               <div>
@@ -1937,9 +1949,138 @@
             <p><strong>Autores:</strong> Santos TM, Campos EZ e Henrique RS.</p>
             <p><strong>Apoio extração de dados:</strong> Teixeira F, Cavalcanti JS, Prazeres Neto JC.</p>
           </div>
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Critérios de Pontuação</h2>
+              <p>Régua sintética usada para leitura da produção intelectual de artigos e livros.</p>
+            </div>
+            <p>
+              Para <strong>artigos</strong>, a pontuação APCN considera a base de indexação do periódico
+              como evidência principal. Para <strong>livros</strong>, o painel aplica a regra fixa de
+              <strong>90 pontos</strong>.
+            </p>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Tipo</th>
+                    <th>Base / regra</th>
+                    <th>Pontuação</th>
+                    <th>Critério aplicado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>Web of Science (JCR)</td>
+                    <td>90</td>
+                    <td>Artigo em periódico indexado no Web of Science com JCR</td>
+                  </tr>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>Scopus (SJR)</td>
+                    <td>90</td>
+                    <td>Artigo em periódico indexado na Scopus com SJR</td>
+                  </tr>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>PubMed</td>
+                    <td>60</td>
+                    <td>Artigo em periódico indexado no PubMed</td>
+                  </tr>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>SciELO</td>
+                    <td>60</td>
+                    <td>Artigo em periódico indexado na SciELO</td>
+                  </tr>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>Apenas Google Scholar</td>
+                    <td>30</td>
+                    <td>Artigo localizado apenas via Google Scholar</td>
+                  </tr>
+                  <tr>
+                    <td>Artigo</td>
+                    <td>Sem indexação válida ou revista predatória</td>
+                    <td>0</td>
+                    <td>Artigo sem indexação válida ou em revista predatória</td>
+                  </tr>
+                  <tr>
+                    <td>Livro</td>
+                    <td>Regra fixa</td>
+                    <td>90</td>
+                    <td>Livro recebe 90 pontos por regra fixa</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
       </div>
     </section>
+  </div>
+
+  <div class="modal-backdrop" id="apcn-scoring-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="apcn-scoring-title">
+      <div class="modal-head">
+        <div class="section-head">
+          <h2 id="apcn-scoring-title">Critério de Pontuação APCN</h2>
+          <p>Para artigos, a pontuação APCN considera a indexação do periódico como evidência principal de qualidade e inserção.</p>
+        </div>
+        <button type="button" class="modal-close" id="close-apcn-scoring-modal" aria-label="Fechar modal">×</button>
+      </div>
+      <p class="chart-note">
+        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR)</strong> ou
+        <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
+        <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
+        recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
+        recebem <strong>0 ponto</strong>. Essa régua é a base usada para a leitura da produção intelectual no estudo de viabilidade da APCN.
+      </p>
+      <div class="table-wrap">
+        <table class="criteria-table">
+          <thead>
+            <tr>
+              <th>Indexação</th>
+              <th>Pontuação</th>
+              <th>Critério</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Web of Science (JCR)</td>
+              <td>90</td>
+              <td>Artigo em periódico indexado no Web of Science com JCR</td>
+            </tr>
+            <tr>
+              <td>Scopus (SJR)</td>
+              <td>90</td>
+              <td>Artigo em periódico indexado na Scopus com SJR</td>
+            </tr>
+            <tr>
+              <td>PubMed</td>
+              <td>60</td>
+              <td>Artigo em periódico indexado no PubMed</td>
+            </tr>
+            <tr>
+              <td>SciELO</td>
+              <td>60</td>
+              <td>Artigo em periódico indexado na SciELO</td>
+            </tr>
+            <tr>
+              <td>Apenas Google Scholar</td>
+              <td>30</td>
+              <td>Artigo localizado apenas via Google Scholar</td>
+            </tr>
+            <tr>
+              <td>Sem indexação ou revista predatória</td>
+              <td>0</td>
+              <td>Artigo sem indexação válida ou em revista predatória</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <script src="./producao-cientifica-data.js"></script>
@@ -1967,6 +2108,9 @@
     const typeStack = document.getElementById("type-stack");
     const typeChips = document.getElementById("type-chips");
     const insightChips = document.getElementById("insight-chips");
+    const apcnScoringModal = document.getElementById("apcn-scoring-modal");
+    const openApcnScoringModalButton = document.getElementById("open-apcn-scoring-modal");
+    const closeApcnScoringModalButton = document.getElementById("close-apcn-scoring-modal");
     const docenteTecnicaChipList = document.getElementById("docentes-tecnica-chip-list");
     const tiposTecnicaSelect = document.getElementById("tipos-tecnica");
     const tabelaTecnicaBody = document.getElementById("tabela-tecnica-body");
@@ -2267,6 +2411,29 @@
         const target = button.dataset.tab;
         [...document.querySelectorAll(".tab-button")].forEach((item) => item.classList.toggle("active", item === button));
         [...document.querySelectorAll(".tab-panel")].forEach((panel) => panel.classList.toggle("active", panel.id === target));
+      });
+    }
+
+    function setApcnScoringModalState(isOpen) {
+      if (!apcnScoringModal) return;
+      apcnScoringModal.classList.toggle("open", isOpen);
+      apcnScoringModal.setAttribute("aria-hidden", isOpen ? "false" : "true");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    function bindApcnScoringModal() {
+      if (!apcnScoringModal || !openApcnScoringModalButton || !closeApcnScoringModalButton) return;
+      openApcnScoringModalButton.addEventListener("click", () => setApcnScoringModalState(true));
+      closeApcnScoringModalButton.addEventListener("click", () => setApcnScoringModalState(false));
+      apcnScoringModal.addEventListener("click", (event) => {
+        if (event.target === apcnScoringModal) {
+          setApcnScoringModalState(false);
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && apcnScoringModal.classList.contains("open")) {
+          setApcnScoringModalState(false);
+        }
       });
     }
 
@@ -2886,13 +3053,42 @@
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
 
+    function summarizeMostardEvidence(data) {
+      const summary = {
+        records: data.length,
+        parsedRecords: 0,
+        parsedAuthorNames: 0,
+        parsedRecordsMatchingDocente: 0,
+        firstByAutorPrincipal: 0,
+        fallbackDemais: 0,
+        secondOrPenultimate: 0,
+        explicitLastOrFirst: 0,
+      };
+      data.forEach((item) => {
+        const authors = inferScientificAuthors(item);
+        if (authors.length) {
+          summary.parsedRecords += 1;
+          summary.parsedAuthorNames += authors.length;
+          if (authors.some((author) => authorMatchesDocente(author, item.docente))) {
+            summary.parsedRecordsMatchingDocente += 1;
+          }
+        }
+        const score = getMostardScore(item);
+        if (score.source === "autor_principal") summary.firstByAutorPrincipal += 1;
+        if (score.source === "fallback_autor_principal") summary.fallbackDemais += 1;
+        if (score.label === "2ª ou penúltima autoria") summary.secondOrPenultimate += 1;
+        if (score.label === "1ª ou última autoria") summary.explicitLastOrFirst += 1;
+      });
+      return summary;
+    }
+
     function renderLeadershipMetrics(data, docenteSummary, yearSummary) {
       const pontosMostard = data.reduce((acc, item) => acc + getMostardScore(item).score, 0);
       const indiceGeral = data.length ? (pontosMostard / data.length) * 100 : 0;
       const visibleDocentes = docenteSummary.length;
       const bestDocente = docenteSummary[0];
       const bestYear = [...yearSummary].sort((a, b) => b.indice - a.indice || b.total - a.total)[0];
-      const fullEvidence = data.filter((item) => getMostardScore(item).source === "lista_autores").length;
+      const evidence = summarizeMostardEvidence(data);
 
       document.getElementById("lideranca-total-registros").textContent = String(data.length);
       document.getElementById("lideranca-pontos").textContent = formatDecimal(pontosMostard);
@@ -2902,14 +3098,16 @@
       liderancaInsightChips.innerHTML = [
         bestDocente ? `<span class="chip">Liderança mais alta: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indice)})</span>` : "",
         bestYear ? `<span class="chip">Melhor ano: <strong>${bestYear.ano}</strong> (${formatPercent(bestYear.indice)})</span>` : "",
-        `<span class="chip">Registros com autoria completa explícita: <strong>${fullEvidence}</strong> de ${data.length}</span>`,
+        `<span class="chip">Registros com sequência explícita de autores: <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
+        `<span class="chip">Com docente identificado nessa sequência: <strong>${evidence.parsedRecordsMatchingDocente}</strong></span>`,
       ].join("");
 
       liderancaMetodologiaChips.innerHTML = [
-        `<span class="chip">Peso 1,0: primeira ou última autoria</span>`,
-        `<span class="chip">Peso 0,5: segunda ou penúltima autoria</span>`,
-        `<span class="chip">Peso 0,1: demais posições</span>`,
-        `<span class="chip">Fallback atual: sem lista completa de autores, a base reconhece com segurança a primeira autoria via <strong>autor_principal</strong></span>`,
+        `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
+        `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
+        `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
+        `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
+        `<span class="chip">Ocorrências reais de 0,5 na base atual: <strong>${evidence.secondOrPenultimate}</strong></span>`,
       ].join("");
     }
 
@@ -3662,6 +3860,7 @@
     initializeScientificFilters();
     initializeTechnicalFilters();
     bindTabs();
+    bindApcnScoringModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
     applyFilters();
