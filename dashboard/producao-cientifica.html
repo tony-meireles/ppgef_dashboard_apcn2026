@@ -722,6 +722,28 @@
       background: rgba(140, 21, 56, 0.02);
     }
 
+    .discipline-heatmap-table td {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .discipline-heatmap-table td:first-child,
+    .discipline-heatmap-table th:first-child {
+      text-align: left;
+    }
+
+    .discipline-detail-table {
+      min-width: 1220px;
+    }
+
+    .discipline-detail-table td:nth-child(2),
+    .discipline-detail-table td:nth-child(6),
+    .discipline-detail-table td:nth-child(7),
+    .discipline-detail-table td:nth-child(8) {
+      white-space: nowrap;
+    }
+
     .orientation-grid-table .numeric-soft {
       color: #56714f;
       font-weight: 700;
@@ -1084,6 +1106,7 @@
         <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
+        <button class="tab-button" data-tab="tab-disciplinas">Disciplinas</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
         <button class="tab-button" data-tab="tab-lideranca">Liderança Investigativa</button>
@@ -1502,6 +1525,177 @@
                 <tbody id="orientacoes-posdoc-body"></tbody>
               </table>
             </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-disciplinas">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Filtros</h2>
+              <p>Primeira leitura da atividade docente na oferta de disciplinas do quadriênio 2021-2024, focada nos responsáveis categorizados como docentes.</p>
+            </div>
+            <div class="filters-grid" style="grid-template-columns: 1.8fr 0.8fr 0.9fr;">
+              <div>
+                <label for="docentes-disciplinas-chip-list">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-disciplina-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-disciplina-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="docentes-disciplinas-chip-list" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="anos-disciplinas">Ano</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-disciplina-group="anos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-disciplina-group="anos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="anos-disciplinas" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="periodos-disciplinas">Período</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-disciplina-group="periodos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-disciplina-group="periodos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="periodos-disciplinas" class="filter-picker compact"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">CH Docente</p>
+            <strong id="disciplinas-carga-total">0h</strong>
+            <span>Soma da carga horária atribuída aos docentes no recorte filtrado.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes Ativos</p>
+            <strong id="disciplinas-docentes-ativos">0</strong>
+            <span>Quantidade de professores com atuação visível no conjunto corrente.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Ofertas</p>
+            <strong id="disciplinas-ofertas-total">0</strong>
+            <span>Componentes ofertados no quadriênio considerando turma/período distintos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Formação Docente</p>
+            <strong id="disciplinas-formacao-share">0%</strong>
+            <span>Participação da carga horária em componentes marcados como formação docente.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Carga Horária por Docente</h2>
+              <p>Quem concentrou mais atividade didática no quadriênio.</p>
+            </div>
+            <div id="chart-disciplinas-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura Executiva</h2>
+              <p>Resumo rápido do padrão de oferta e da distribuição de responsabilidade.</p>
+            </div>
+            <div class="chips" id="disciplinas-insight-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Ritmo por Período</h2>
+              <p>Série temporal da carga horária docente entre 2021_1 e 2024_2.</p>
+            </div>
+            <div id="chart-disciplinas-periodos" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Oferta por Núcleo</h2>
+              <p>Composição do esforço docente entre os núcleos didáticos.</p>
+            </div>
+            <div id="disciplinas-nucleos-stack" class="type-stack"></div>
+            <div class="chips" id="disciplinas-nucleos-chips"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese por Docente</h2>
+              <p>Carga total, peso como responsável principal e diversidade de componentes assumidos.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>CH total</th>
+                    <th>CH principal</th>
+                    <th>Ofertas</th>
+                    <th>Períodos ativos</th>
+                    <th>Formação docente</th>
+                  </tr>
+                </thead>
+                <tbody id="disciplinas-resumo-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mapa Docente por Período</h2>
+              <p>Heatmap textual com a carga horária assumida por cada docente em cada semestre.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="orientation-grid-table discipline-heatmap-table">
+                <thead>
+                  <tr id="disciplinas-heatmap-head"></tr>
+                </thead>
+                <tbody id="disciplinas-heatmap-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Ofertas Detalhadas</h2>
+              <p>Registro base por turma, período, disciplina e participação docente.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="discipline-detail-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Ano/Período</th>
+                    <th>Disciplina</th>
+                    <th>Núcleo</th>
+                    <th>Tipo</th>
+                    <th>Formação docente</th>
+                    <th>Resp. principal</th>
+                    <th>CH docente</th>
+                  </tr>
+                </thead>
+                <tbody id="disciplinas-detalhe-body"></tbody>
+              </table>
+            </div>
+            <p class="chart-note" id="disciplinas-detalhe-nota"></p>
           </div>
         </section>
       </div>
@@ -2086,11 +2280,25 @@
   <script src="./producao-cientifica-data.js"></script>
   <script src="./producao-tecnica-data.js"></script>
   <script src="./orientacoes-data.js"></script>
+  <script src="./disciplinas-data.js"></script>
   <script src="./documentos-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const dataSourceDisciplinas = (window.DISCIPLINAS_PPGEF || []).map((item) => ({
+      ...item,
+      ano: String(item.ano || "").trim(),
+      ano_periodo: String(item.ano_periodo || "").trim(),
+      nome_responsavel: String(item.nome_responsavel || "").trim(),
+      categoria_responsavel: String(item.categoria_responsavel || "").trim(),
+      indicador_responsavel_principal: String(item.indicador_responsavel_principal || "").trim(),
+      formacao_docente: String(item.formacao_docente || "").trim(),
+      tipo: String(item.tipo || "").trim(),
+      nucleo_didatico: String(item.nucleo_didatico || "").trim(),
+      carga_horaria_docente: Number(item.carga_horaria_docente) || 0,
+      carga_horaria_total: Number(item.carga_horaria_total) || 0,
+    }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
     const docenteChipList = document.getElementById("docentes-chip-list");
     const tiposSelect = document.getElementById("tipos");
@@ -2133,18 +2341,35 @@
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
+    const docenteDisciplinasChipList = document.getElementById("docentes-disciplinas-chip-list");
+    const anosDisciplinasSelect = document.getElementById("anos-disciplinas");
+    const periodosDisciplinasSelect = document.getElementById("periodos-disciplinas");
+    const chartDisciplinasDocentes = document.getElementById("chart-disciplinas-docentes");
+    const chartDisciplinasPeriodos = document.getElementById("chart-disciplinas-periodos");
+    const disciplinasInsightChips = document.getElementById("disciplinas-insight-chips");
+    const disciplinasNucleosStack = document.getElementById("disciplinas-nucleos-stack");
+    const disciplinasNucleosChips = document.getElementById("disciplinas-nucleos-chips");
+    const disciplinasResumoDocentesBody = document.getElementById("disciplinas-resumo-docentes-body");
+    const disciplinasHeatmapHead = document.getElementById("disciplinas-heatmap-head");
+    const disciplinasHeatmapBody = document.getElementById("disciplinas-heatmap-body");
+    const disciplinasDetalheBody = document.getElementById("disciplinas-detalhe-body");
+    const disciplinasDetalheNota = document.getElementById("disciplinas-detalhe-nota");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
     const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
+    const disciplinasFilterToggles = [...document.querySelectorAll('.filter-toggle[data-disciplina-group]')];
     const documentsInternos = document.getElementById("documents-internos");
     const documentsCapes = document.getElementById("documents-capes");
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
     let selectedDocentesTecnica = new Set();
+    let selectedDocentesDisciplinas = new Set();
+    let selectedAnosDisciplinas = new Set();
+    let selectedPeriodosDisciplinas = new Set();
     let docenteSortMode = "alfabetico";
     let docenteTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
@@ -2152,6 +2377,11 @@
       docentes: [],
       tipos: [],
       anos: [],
+    };
+    let disciplinasFilterValues = {
+      docentes: [],
+      anos: [],
+      periodos: [],
     };
 
     const typeLabels = {
@@ -2287,6 +2517,336 @@
       tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `<option value="${tipo}">${tipo}</option>`).join("");
     }
 
+    function getDisciplinasBaseData() {
+      return dataSourceDisciplinas.filter((item) => item.categoria_responsavel === "Docente");
+    }
+
+    function formatHours(value) {
+      return `${Math.round(Number(value) || 0)}h`;
+    }
+
+    function populateDisciplinasFilters(data) {
+      const docentes = unique(data.map((item) => item.nome_responsavel));
+      const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
+      const periodos = unique(data.map((item) => item.ano_periodo)).sort((a, b) => a.localeCompare(b, "pt-BR"));
+      disciplinasFilterValues = { docentes, anos, periodos };
+      docenteDisciplinasChipList.innerHTML = docentes.map((docente) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
+      anosDisciplinasSelect.innerHTML = anos.map((ano) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${ano}">
+          <span>${ano}</span>
+        </label>
+      `).join("");
+      periodosDisciplinasSelect.innerHTML = periodos.map((periodo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${periodo}">
+          <span>${periodo.replace("_", ".")}</span>
+        </label>
+      `).join("");
+    }
+
+    function syncDisciplinasFilterViews() {
+      [
+        [docenteDisciplinasChipList, selectedDocentesDisciplinas],
+        [anosDisciplinasSelect, selectedAnosDisciplinas],
+        [periodosDisciplinasSelect, selectedPeriodosDisciplinas],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
+    }
+
+    function bindDisciplinasFilters() {
+      bindScientificCheckboxContainer(docenteDisciplinasChipList, selectedDocentesDisciplinas, applyDisciplinasFilters);
+      bindScientificCheckboxContainer(anosDisciplinasSelect, selectedAnosDisciplinas, applyDisciplinasFilters);
+      bindScientificCheckboxContainer(periodosDisciplinasSelect, selectedPeriodosDisciplinas, applyDisciplinasFilters);
+    }
+
+    function initializeDisciplinasFilters() {
+      selectedDocentesDisciplinas.clear();
+      selectedAnosDisciplinas.clear();
+      selectedPeriodosDisciplinas.clear();
+      disciplinasFilterValues.docentes.forEach((value) => selectedDocentesDisciplinas.add(value));
+      disciplinasFilterValues.anos.forEach((value) => selectedAnosDisciplinas.add(value));
+      disciplinasFilterValues.periodos.forEach((value) => selectedPeriodosDisciplinas.add(value));
+      syncDisciplinasFilterViews();
+    }
+
+    function bindDisciplinasFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesDisciplinas, getValues: () => disciplinasFilterValues.docentes },
+        anos: { selectedSet: selectedAnosDisciplinas, getValues: () => disciplinasFilterValues.anos },
+        periodos: { selectedSet: selectedPeriodosDisciplinas, getValues: () => disciplinasFilterValues.periodos },
+      };
+
+      disciplinasFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.disciplinaGroup];
+          if (!config) return;
+          config.selectedSet.clear();
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          values.forEach((value) => config.selectedSet.add(value));
+          syncDisciplinasFilterViews();
+          applyDisciplinasFilters();
+        });
+      });
+    }
+
+    function getFilteredDisciplinasData() {
+      const docentes = [...selectedDocentesDisciplinas];
+      const anos = [...selectedAnosDisciplinas];
+      const periodos = [...selectedPeriodosDisciplinas];
+      return getDisciplinasBaseData().filter((item) => {
+        const docenteOk = !docentes.length || docentes.includes(item.nome_responsavel);
+        const anoOk = !anos.length || anos.includes(item.ano);
+        const periodoOk = !periodos.length || periodos.includes(item.ano_periodo);
+        return docenteOk && anoOk && periodoOk;
+      });
+    }
+
+    function aggregateDisciplinasByDocente(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const key = item.nome_responsavel || "Não informado";
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            docente: key,
+            carga: 0,
+            cargaPrincipal: 0,
+            cargaFormacao: 0,
+            ofertas: new Set(),
+            periodos: new Set(),
+          });
+        }
+        const bucket = grouped.get(key);
+        bucket.carga += item.carga_horaria_docente;
+        if (item.indicador_responsavel_principal === "Sim") bucket.cargaPrincipal += item.carga_horaria_docente;
+        if (item.formacao_docente === "Sim") bucket.cargaFormacao += item.carga_horaria_docente;
+        bucket.ofertas.add(`${item.ano_periodo}||${item.nome_disciplina_completo}`);
+        bucket.periodos.add(item.ano_periodo);
+      });
+      return [...grouped.values()]
+        .map((item) => ({
+          docente: item.docente,
+          carga: item.carga,
+          cargaPrincipal: item.cargaPrincipal,
+          ofertas: item.ofertas.size,
+          periodos: item.periodos.size,
+          shareFormacao: item.carga ? item.cargaFormacao / item.carga : 0,
+        }))
+        .sort((a, b) => b.carga - a.carga || a.docente.localeCompare(b.docente, "pt-BR"));
+    }
+
+    function aggregateDisciplinasByPeriodo(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const key = item.ano_periodo || "Sem período";
+        if (!grouped.has(key)) {
+          grouped.set(key, { periodo: key, ano: item.ano, carga: 0, ofertas: new Set() });
+        }
+        const bucket = grouped.get(key);
+        bucket.carga += item.carga_horaria_docente;
+        bucket.ofertas.add(item.nome_disciplina_completo);
+      });
+      return [...grouped.values()]
+        .map((item) => ({ ...item, ofertas: item.ofertas.size }))
+        .sort((a, b) => a.periodo.localeCompare(b.periodo, "pt-BR"));
+    }
+
+    function aggregateDisciplinasByNucleo(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const key = item.nucleo_didatico || "Não informado";
+        if (!grouped.has(key)) grouped.set(key, { nucleo: key, carga: 0, ofertas: new Set() });
+        const bucket = grouped.get(key);
+        bucket.carga += item.carga_horaria_docente;
+        bucket.ofertas.add(item.nome_disciplina_completo);
+      });
+      return [...grouped.values()]
+        .map((item) => ({ ...item, ofertas: item.ofertas.size }))
+        .sort((a, b) => b.carga - a.carga || a.nucleo.localeCompare(b.nucleo, "pt-BR"));
+    }
+
+    function renderDisciplinasMetrics(data, docenteSummary, periodSummary, nucleoSummary) {
+      const totalCarga = data.reduce((acc, item) => acc + item.carga_horaria_docente, 0);
+      const totalOfertas = new Set(data.map((item) => `${item.ano_periodo}||${item.nome_disciplina_completo}`)).size;
+      const cargaFormacao = data.reduce((acc, item) => acc + (item.formacao_docente === "Sim" ? item.carga_horaria_docente : 0), 0);
+      const cargaObrigatoria = data.reduce((acc, item) => acc + (item.tipo === "Obrigatória" ? item.carga_horaria_docente : 0), 0);
+      const topDocente = docenteSummary[0];
+      const topPeriodo = [...periodSummary].sort((a, b) => b.carga - a.carga)[0];
+      const topNucleo = nucleoSummary[0];
+
+      document.getElementById("disciplinas-carga-total").textContent = formatHours(totalCarga);
+      document.getElementById("disciplinas-docentes-ativos").textContent = String(docenteSummary.length);
+      document.getElementById("disciplinas-ofertas-total").textContent = String(totalOfertas);
+      document.getElementById("disciplinas-formacao-share").textContent = formatPercent(totalCarga ? cargaFormacao / totalCarga : 0);
+
+      disciplinasInsightChips.innerHTML = [
+        topDocente ? `<span class="chip">Maior carga: <strong>${topDocente.docente}</strong> (${formatHours(topDocente.carga)})</span>` : "",
+        topPeriodo ? `<span class="chip">Pico temporal: <strong>${topPeriodo.periodo.replace("_", ".")}</strong> (${formatHours(topPeriodo.carga)})</span>` : "",
+        `<span class="chip">Obrigatórias concentram <strong>${formatPercent(totalCarga ? cargaObrigatoria / totalCarga : 0)}</strong> da CH docente filtrada</span>`,
+        topNucleo ? `<span class="chip">Núcleo dominante: <strong>${topNucleo.nucleo}</strong> (${formatHours(topNucleo.carga)})</span>` : "",
+      ].filter(Boolean).join("");
+    }
+
+    function renderDisciplinasDocenteChart(data) {
+      if (!data.length) {
+        chartDisciplinasDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const labelWidth = 250;
+      const rowHeight = 34;
+      const chartWidth = 760;
+      const usableWidth = chartWidth - labelWidth - 80;
+      const maxCarga = Math.max(...data.map((item) => item.carga), 1);
+      const height = Math.max(240, data.length * rowHeight + 30);
+      chartDisciplinasDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Carga horária por docente">
+          ${data.map((item, index) => {
+            const y = 18 + index * rowHeight;
+            const width = (item.carga / maxCarga) * usableWidth;
+            const principalWidth = (item.cargaPrincipal / maxCarga) * usableWidth;
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="#d7c3ad"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${principalWidth}" height="18" rx="9" fill="#d4a017"></rect>
+              <rect x="${labelWidth + principalWidth}" y="${y}" width="${Math.max(0, width - principalWidth)}" height="18" rx="9" fill="#8c1538"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#262930" font-size="12">${formatHours(item.carga)}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderDisciplinasPeriodoChart(data) {
+      if (!data.length) {
+        chartDisciplinasPeriodos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const width = 760;
+      const height = 280;
+      const paddingX = 44;
+      const baseY = 232;
+      const maxCarga = Math.max(...data.map((item) => item.carga), 1);
+      const barWidth = 56;
+      const gap = 22;
+      chartDisciplinasPeriodos.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Carga horária por período">
+          <line x1="${paddingX}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
+          ${data.map((item, index) => {
+            const x = paddingX + index * (barWidth + gap);
+            const barHeight = (item.carga / maxCarga) * 150;
+            const y = baseY - barHeight;
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="16" fill="#8c1538"></rect>
+              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.periodo.replace("_", ".")}</text>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#262930" font-size="12">${Math.round(item.carga)}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderDisciplinasNucleoPanel(data) {
+      const totalCarga = data.reduce((acc, item) => acc + item.carga, 0);
+      if (!data.length || !totalCarga) {
+        disciplinasNucleosStack.innerHTML = `<p class="chart-note">Sem dados para composição.</p>`;
+        disciplinasNucleosChips.innerHTML = "";
+        return;
+      }
+      disciplinasNucleosStack.innerHTML = data.map((item) => `
+        <div class="type-row">
+          <strong>${item.nucleo}</strong>
+          <div class="track"><div class="bar" style="width:${(item.carga / totalCarga) * 100}%"></div></div>
+          <span>${formatHours(item.carga)}</span>
+        </div>
+      `).join("");
+      disciplinasNucleosChips.innerHTML = data.slice(0, 3).map((item) => `
+        <span class="chip">${item.ofertas} oferta(s) em <strong>${item.nucleo}</strong></span>
+      `).join("");
+    }
+
+    function renderDisciplinasResumoDocentes(data) {
+      disciplinasResumoDocentesBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${formatHours(item.carga)}</td>
+          <td>${formatHours(item.cargaPrincipal)}</td>
+          <td>${item.ofertas}</td>
+          <td>${item.periodos}</td>
+          <td>${formatPercent(item.shareFormacao)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderDisciplinasHeatmap(docenteSummary, periodSummary, data) {
+      const periods = periodSummary.map((item) => item.periodo);
+      const maxCarga = Math.max(...data.map((item) => item.carga_horaria_docente), 1);
+      const matrix = new Map();
+      data.forEach((item) => {
+        const key = `${item.nome_responsavel}||${item.ano_periodo}`;
+        matrix.set(key, (matrix.get(key) || 0) + item.carga_horaria_docente);
+      });
+      disciplinasHeatmapHead.innerHTML = [
+        "<th>Docente</th>",
+        ...periods.map((periodo) => `<th>${periodo.replace("_", ".")}</th>`),
+        "<th>Total</th>",
+      ].join("");
+      disciplinasHeatmapBody.innerHTML = docenteSummary.map((docente) => `
+        <tr>
+          <td>${docente.docente}</td>
+          ${periods.map((periodo) => {
+            const carga = matrix.get(`${docente.docente}||${periodo}`) || 0;
+            const alpha = carga ? 0.12 + (carga / maxCarga) * 0.42 : 0;
+            const style = carga ? `background: rgba(140, 21, 56, ${alpha.toFixed(2)}); color: ${carga > maxCarga * 0.45 ? "white" : "#262930"};` : "";
+            return `<td style="${style}">${carga ? Math.round(carga) : "-"}</td>`;
+          }).join("")}
+          <td class="numeric-strong">${Math.round(docente.carga)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderDisciplinasDetalhe(data) {
+      disciplinasDetalheBody.innerHTML = data
+        .slice()
+        .sort((a, b) => b.ano_periodo.localeCompare(a.ano_periodo, "pt-BR") || a.nome_responsavel.localeCompare(b.nome_responsavel, "pt-BR"))
+        .map((item) => `
+          <tr>
+            <td>${item.nome_responsavel}</td>
+            <td>${item.ano_periodo.replace("_", ".")}</td>
+            <td>${item.nome_disciplina}</td>
+            <td>${item.nucleo_didatico}</td>
+            <td>${item.tipo}</td>
+            <td>${item.formacao_docente}</td>
+            <td>${item.indicador_responsavel_principal}</td>
+            <td>${formatHours(item.carga_horaria_docente)}</td>
+          </tr>
+        `).join("");
+      disciplinasDetalheNota.textContent = `${data.length} vínculo(s) docente(s) exibidos no recorte atual. Participações de egressos, pós-docs e externos ficaram fora desta primeira proposição para manter o foco na atividade do corpo docente.`;
+    }
+
+    function applyDisciplinasFilters() {
+      syncDisciplinasFilterViews();
+      const filtered = getFilteredDisciplinasData();
+      const docenteSummary = aggregateDisciplinasByDocente(filtered);
+      const periodSummary = aggregateDisciplinasByPeriodo(filtered);
+      const nucleoSummary = aggregateDisciplinasByNucleo(filtered);
+      renderDisciplinasMetrics(filtered, docenteSummary, periodSummary, nucleoSummary);
+      renderDisciplinasDocenteChart(docenteSummary);
+      renderDisciplinasPeriodoChart(periodSummary);
+      renderDisciplinasNucleoPanel(nucleoSummary);
+      renderDisciplinasResumoDocentes(docenteSummary);
+      renderDisciplinasHeatmap(docenteSummary, periodSummary, filtered);
+      renderDisciplinasDetalhe(filtered);
+    }
+
     function syncScientificFilterViews() {
       [
         [docenteChipList, selectedDocentes],
@@ -2309,7 +2869,7 @@
       applyLeadershipFilters();
     }
 
-    function bindScientificCheckboxContainer(container, selectedSet) {
+    function bindScientificCheckboxContainer(container, selectedSet, applyFn = applyScientificPanels) {
       if (!container) return;
       [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
         input.addEventListener("change", () => {
@@ -2318,7 +2878,7 @@
           } else {
             selectedSet.delete(input.value);
           }
-          applyScientificPanels();
+          applyFn();
         });
       });
     }
@@ -3851,14 +4411,18 @@
 
     populateFilters(dataSource);
     populateTechnicalFilters(dataSourceTecnica);
+    populateDisciplinasFilters(getDisciplinasBaseData());
     bindDocenteChips();
     bindTypeFilters();
     bindYearFilters();
     bindScientificFilterToggles();
     bindDocenteChipsTecnica();
+    bindDisciplinasFilters();
+    bindDisciplinasFilterToggles();
     bindCriteriaSortButtons();
     initializeScientificFilters();
     initializeTechnicalFilters();
+    initializeDisciplinasFilters();
     bindTabs();
     bindApcnScoringModal();
     bindDocenteSortToggles();
@@ -3866,6 +4430,7 @@
     applyFilters();
     applyLeadershipFilters();
     applyTechnicalFilters();
+    applyDisciplinasFilters();
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
