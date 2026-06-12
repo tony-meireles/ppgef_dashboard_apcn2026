@@ -1825,21 +1825,31 @@
       <div class="tab-panel" id="tab-docentes">
         <section class="grid">
           <div class="card embedded-view-card">
-            <div class="embedded-view-shell">
-              <div class="embedded-view-head">
-                <div>
-                  <h2>Corpo Docente</h2>
-                  <p>Painel específico do quadro docente com indicadores de composição, série temporal e alertas de depuração da base.</p>
-                </div>
-                <a class="embedded-view-link" href="./corpo-docente.html" target="_blank" rel="noopener noreferrer">Abrir página dedicada</a>
+            <div class="section-head">
+              <div>
+                <h2>Corpo Docente</h2>
+                <p>Área pública reservada para a leitura institucional das regras de composição docente do programa.</p>
               </div>
-              <iframe
-                id="docentes-embedded-frame"
-                class="embedded-view-frame"
-                src="./corpo-docente.html"
-                title="Painel de corpo docente do PPGEF"
-                loading="lazy"
-              ></iframe>
+              <div class="inline-actions">
+                <span class="documents-section-tag">Versão Pública</span>
+              </div>
+            </div>
+            <p class="chart-note">O detalhamento nominal e os diagnósticos internos do quadro docente permanecem em uso restrito. Nesta versão pública, a aba preserva apenas a moldura institucional do tema.</p>
+            <div class="criteria-summary">
+              <div class="criteria-score">
+                <div>
+                  <div>Escopo público</div>
+                  <strong>Docentes</strong>
+                </div>
+                <span class="criteria-status ok">Publicável</span>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip">Composição docente tratada no âmbito institucional do APCN</span>
+              <span class="chip">Diagnósticos nominais mantidos fora da versão pública</span>
+            </div>
+            <div class="document-empty" style="margin-top: 18px;">
+              A leitura detalhada do corpo docente foi preservada apenas no ambiente interno de trabalho, para evitar exposição de bases derivadas de planilhas estratégicas.
             </div>
           </div>
         </section>
@@ -2542,7 +2552,6 @@
   <script src="./orientacoes-data.js"></script>
   <script src="./disciplinas-data.js?v=2026-06-12b"></script>
   <script src="./documentos-data.js"></script>
-  <script src="./corpo-docente-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
@@ -4763,6 +4772,45 @@
       const summaryYear = dataSourceCorpoDocente.default_year;
       const yearSummary = dataSourceCorpoDocente.by_year?.[summaryYear];
       if (!summaryYear || !yearSummary) {
+        document.getElementById("corpo-docente-crit-ano").textContent = "—";
+        document.getElementById("corpo-docente-crit-permanentes").textContent = "—";
+        document.getElementById("corpo-docente-crit-permanentes-resumo").textContent = "A versão pública não expõe a contagem consolidada do quadro docente.";
+        document.getElementById("corpo-docente-crit-atendidos").textContent = "6/6";
+        document.getElementById("corpo-docente-crit-atendidos-resumo").textContent = "Os seis critérios estão estruturados no painel como referências institucionais.";
+        document.getElementById("corpo-docente-crit-alertas").textContent = "Interno";
+        document.getElementById("corpo-docente-crit-alertas-resumo").textContent = "Alertas de consistência mantidos apenas na versão restrita.";
+        corpoDocenteCritSummaryCards.innerHTML = `
+          <div class="criteria-score">
+            <div>
+              <div>Publicação</div>
+              <strong>Sanitizada</strong>
+            </div>
+            <span class="criteria-status ok">Segura</span>
+          </div>
+        `;
+        corpoDocenteCritInsights.innerHTML = [
+          `<span class="chip">Dimensão mínima do corpo permanente</span>`,
+          `<span class="chip">Vínculo institucional e exclusividade</span>`,
+          `<span class="chip">Faixas de composição para APCN</span>`,
+        ].join("");
+        document.getElementById("corpo-docente-crit-metodologia").textContent = "Metodologia: a versão pública preserva apenas a descrição institucional dos critérios. As leituras derivadas de planilhas estratégicas permanecem em ambiente interno.";
+        document.getElementById("corpo-docente-crit-resumo-body").innerHTML = [
+          ["Corpo Docente", "Permanentes no corpo", "≥ 70% do corpo docente classificado como permanente"],
+          ["Corpo Docente", "Permanentes com vínculo com a IES", "≥ 80% dos permanentes com vínculo com a IES proponente"],
+          ["Corpo Docente", "Permanentes exclusivos ao programa", "≥ 30% dos permanentes exclusivos ao programa"],
+          ["Corpo Docente", "Permanentes com vínculo externo", "≤ 20% dos permanentes com vínculo externo"],
+          ["Corpo Docente", "Permanentes colaboradores em outros PPGs", "≤ 40% dos permanentes como colaboradores em outros PPGs"],
+          ["Corpo Docente", "Dimensão do corpo permanente", "≥ 12 permanentes ou ≥ 10 com justificativa regional"],
+        ].map(([group, indicator, requirement]) => `
+          <tr>
+            <td>${group}</td>
+            <td>${indicator}</td>
+            <td>${requirement}</td>
+            <td>Versão pública sem dado nominal</td>
+            <td><span class="criteria-status ok">Publicável</span></td>
+            <td>O critério permanece descrito no painel, com detalhamento quantitativo restrito ao ambiente interno.</td>
+          </tr>
+        `).join("");
         return;
       }
 
