@@ -2849,9 +2849,9 @@
             <span>Quantidade de produtos considerados no cálculo do índice.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Pontos Mostard</p>
-            <strong id="lideranca-pontos">0</strong>
-            <span>Soma ponderada das posições autorais no recorte filtrado.</span>
+            <p class="eyebrow">Pontos APCN</p>
+            <strong id="lideranca-pontos-apcn">0</strong>
+            <span>Soma da pontuação APCN produzida no recorte filtrado.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Docentes</p>
@@ -2859,15 +2859,15 @@
             <span>Docentes com produção intelectual no recorte atual.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Índice do Recorte</p>
+            <p class="eyebrow">Índice Mostarda</p>
             <strong id="lideranca-indice-geral">0%</strong>
-            <span>Média percentual do Mostard Index considerando todos os registros visíveis.</span>
+            <span>Indicador invertido: quanto maior, menor a liderança autoral média do recorte.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Mostard Index por Docente</h2>
-              <p>Ranking percentual de liderança investigativa no recorte filtrado.</p>
+              <h2>Índice Mostarda por Docente</h2>
+              <p>Ranking do índice invertido: valores mais altos indicam menor liderança autoral média.</p>
             </div>
             <div id="chart-lideranca-docentes" class="chart"></div>
           </div>
@@ -2875,21 +2875,21 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Leitura do Recorte</h2>
-              <p>Resumo rápido do protagonismo autoral observado.</p>
+              <p>Resumo rápido da fragilidade autoral observada no recorte.</p>
             </div>
             <div class="chips" id="lideranca-insight-chips"></div>
             <div class="legend">
-              <span><i style="background: var(--ufpe-bordo)"></i> Índice por docente</span>
-              <span><i style="background: var(--ufpe-destaque)"></i> Evolução anual</span>
+              <span><i style="background: var(--ufpe-bordo)"></i> Índice Mostarda</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Índice ponderado por pontos</span>
             </div>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Evolução do Índice por Ano</h2>
-              <p>Série anual do Mostard Index agregado no recorte visível.</p>
+              <h2>Índice Mostarda Corrigido por Pontos</h2>
+              <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
             </div>
-            <div id="chart-lideranca-anos" class="chart"></div>
+            <div id="chart-lideranca-corrigido" class="chart"></div>
           </div>
 
           <div class="card chart-narrow">
@@ -2902,17 +2902,34 @@
 
           <div class="card table-card">
             <div class="section-head">
+              <h2>Dispersão Índice x Pontos</h2>
+              <p>Eixo Y com o Índice Mostarda e eixo X com o total de pontos APCN por docente.</p>
+            </div>
+            <div id="chart-lideranca-dispersao" class="chart"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Evolução do Índice por Ano</h2>
+              <p>Série anual do índice invertido agregado no recorte visível.</p>
+            </div>
+            <div id="chart-lideranca-anos" class="chart"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
               <h2>Listagem de Docentes</h2>
-              <p>Mostard Index, volume de registros e composição das posições consideradas.</p>
+              <p>Índice isolado, índice corrigido por pontos e composição das posições consideradas.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Mostard Index</th>
+                    <th>Índice Mostarda</th>
+                    <th>Pontos APCN</th>
+                    <th>Índice Corrigido</th>
                     <th>Registros</th>
-                    <th>Pontos Mostard</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
                     <th>Demais</th>
@@ -2933,9 +2950,10 @@
                 <thead>
                   <tr>
                     <th>Ano</th>
-                    <th>Mostard Index</th>
+                    <th>Índice Mostarda</th>
+                    <th>Pontos APCN</th>
+                    <th>Índice Corrigido</th>
                     <th>Registros</th>
-                    <th>Pontos Mostard</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
                     <th>Demais</th>
@@ -3260,6 +3278,8 @@
     const tecnicaTableSortButtons = [...document.querySelectorAll("[data-tecnica-table-sort]")];
     const scientificFilterToggles = [...document.querySelectorAll('.filter-toggle[data-group]')];
     const chartLiderancaDocentes = document.getElementById("chart-lideranca-docentes");
+    const chartLiderancaCorrigido = document.getElementById("chart-lideranca-corrigido");
+    const chartLiderancaDispersao = document.getElementById("chart-lideranca-dispersao");
     const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
     const liderancaInsightChips = document.getElementById("lideranca-insight-chips");
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
@@ -5227,6 +5247,7 @@
             docente: item.docente,
             total: 0,
             pontosMostard: 0,
+            pontosApcn: 0,
             primeiraUltima: 0,
             segundaPenultima: 0,
             demais: 0,
@@ -5236,6 +5257,7 @@
         const score = getMostardScore(item);
         row.total += 1;
         row.pontosMostard += score.score;
+        row.pontosApcn += Number(item.pontuacao) || 0;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -5247,11 +5269,15 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
+          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
+          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
         }))
         .sort((a, b) =>
-          b.indice - a.indice ||
-          b.pontosMostard - a.pontosMostard ||
+          b.indiceMostarda - a.indiceMostarda ||
+          b.indiceMostardaCorrigido - a.indiceMostardaCorrigido ||
+          b.pontosApcn - a.pontosApcn ||
           b.total - a.total ||
           a.docente.localeCompare(b.docente, "pt-BR")
         );
@@ -5266,6 +5292,7 @@
             ano: year,
             total: 0,
             pontosMostard: 0,
+            pontosApcn: 0,
             primeiraUltima: 0,
             segundaPenultima: 0,
             demais: 0,
@@ -5275,6 +5302,7 @@
         const score = getMostardScore(item);
         row.total += 1;
         row.pontosMostard += score.score;
+        row.pontosApcn += Number(item.pontuacao) || 0;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -5286,7 +5314,10 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
+          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
+          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -5322,26 +5353,34 @@
 
     function renderLeadershipMetrics(data, docenteSummary, yearSummary) {
       const pontosMostard = data.reduce((acc, item) => acc + getMostardScore(item).score, 0);
-      const indiceGeral = data.length ? (pontosMostard / data.length) * 100 : 0;
+      const pontosApcn = data.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
+      const liderancaMedia = data.length ? pontosMostard / data.length : 0;
+      const indiceGeral = (1 - liderancaMedia) * 100;
+      const indiceGeralCorrigido = (indiceGeral / 100) * pontosApcn;
       const visibleDocentes = docenteSummary.length;
-      const bestDocente = docenteSummary[0];
-      const bestYear = [...yearSummary].sort((a, b) => b.indice - a.indice || b.total - a.total)[0];
+      const worstDocente = docenteSummary[0];
+      const bestDocente = [...docenteSummary].sort((a, b) => a.indiceMostarda - b.indiceMostarda || b.pontosApcn - a.pontosApcn)[0];
+      const worstYear = [...yearSummary].sort((a, b) => b.indiceMostarda - a.indiceMostarda || b.total - a.total)[0];
       const evidence = summarizeMostardEvidence(data);
 
       document.getElementById("lideranca-total-registros").textContent = String(data.length);
-      document.getElementById("lideranca-pontos").textContent = formatDecimal(pontosMostard);
+      document.getElementById("lideranca-pontos-apcn").textContent = formatDecimal(pontosApcn);
       document.getElementById("lideranca-docentes-visiveis").textContent = String(visibleDocentes);
       document.getElementById("lideranca-indice-geral").textContent = formatPercent(indiceGeral);
 
       liderancaInsightChips.innerHTML = [
-        bestDocente ? `<span class="chip">Liderança mais alta: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indice)})</span>` : "",
-        bestYear ? `<span class="chip">Melhor ano: <strong>${bestYear.ano}</strong> (${formatPercent(bestYear.indice)})</span>` : "",
+        worstDocente ? `<span class="chip">Maior índice Mostarda: <strong>${worstDocente.docente}</strong> (${formatPercent(worstDocente.indiceMostarda)})</span>` : "",
+        bestDocente ? `<span class="chip">Menor índice Mostarda: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indiceMostarda)})</span>` : "",
+        worstYear ? `<span class="chip">Ano mais crítico: <strong>${worstYear.ano}</strong> (${formatPercent(worstYear.indiceMostarda)})</span>` : "",
+        `<span class="chip">Índice do recorte corrigido por pontos: <strong>${formatDecimal(indiceGeralCorrigido)}</strong></span>`,
         `<span class="chip">Registros com sequência explícita de autores: <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
         `<span class="chip">Com docente identificado nessa sequência: <strong>${evidence.parsedRecordsMatchingDocente}</strong></span>`,
       ].join("");
 
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
+        `<span class="chip">Índice Mostarda exibido = <strong>1 - média de liderança</strong>; logo, valores maiores indicam menor liderança</span>`,
+        `<span class="chip">Índice corrigido = <strong>Índice Mostarda decimal x pontos APCN</strong> do docente ou do ano</span>`,
         `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
         `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
         `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
@@ -5355,22 +5394,22 @@
         chartLiderancaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxMetric = Math.max(...items.map((item) => item.indice), 1);
+      const maxMetric = Math.max(...items.map((item) => item.indiceMostarda), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
       const chartWidth = 720;
       const usableWidth = chartWidth - labelWidth - 70;
       chartLiderancaDocentes.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Mostard Index por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda por docente">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.indice / maxMetric) * usableWidth);
+            const width = Math.max(8, (item.indiceMostarda / maxMetric) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostarda)}%</text>
             `;
           }).join("")}
           <defs>
@@ -5383,12 +5422,102 @@
       `;
     }
 
+    function renderLeadershipWeightedChart(summary) {
+      const items = [...summary]
+        .sort((a, b) => b.indiceMostardaCorrigido - a.indiceMostardaCorrigido || b.pontosApcn - a.pontosApcn)
+        .slice(0, 18);
+      if (!items.length) {
+        chartLiderancaCorrigido.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxMetric = Math.max(...items.map((item) => item.indiceMostardaCorrigido), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 720;
+      const usableWidth = chartWidth - labelWidth - 70;
+      chartLiderancaCorrigido.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda corrigido por pontos APCN">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = Math.max(8, (item.indiceMostardaCorrigido / maxMetric) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaWeightedGradient)"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostardaCorrigido)}</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="liderancaWeightedGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#d4a017"></stop>
+              <stop offset="100%" stop-color="#8c1538"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderLeadershipScatterChart(summary) {
+      if (!summary.length) {
+        chartLiderancaDispersao.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const width = 940;
+      const height = 440;
+      const left = 82;
+      const right = 24;
+      const top = 24;
+      const bottom = 52;
+      const innerWidth = width - left - right;
+      const innerHeight = height - top - bottom;
+      const maxPoints = Math.max(...summary.map((item) => item.pontosApcn), 1);
+      const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
+      const xTicks = 4;
+      const yTicks = 4;
+      chartLiderancaDispersao.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
+          ${Array.from({ length: yTicks + 1 }, (_, index) => {
+            const ratio = index / yTicks;
+            const y = top + innerHeight - ratio * innerHeight;
+            const value = ratio * maxIndex;
+            return `
+              <line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" stroke="#e5dbcd" stroke-width="1"></line>
+              <text x="${left - 10}" y="${y + 4}" text-anchor="end" fill="#6d727c" font-size="11">${formatDecimal(value)}%</text>
+            `;
+          }).join("")}
+          ${Array.from({ length: xTicks + 1 }, (_, index) => {
+            const ratio = index / xTicks;
+            const x = left + ratio * innerWidth;
+            const value = ratio * maxPoints;
+            return `
+              <line x1="${x}" y1="${top}" x2="${x}" y2="${height - bottom}" stroke="#f0e7da" stroke-width="1"></line>
+              <text x="${x}" y="${height - bottom + 18}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(value)}</text>
+            `;
+          }).join("")}
+          <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          <line x1="${left}" y1="${top}" x2="${left}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${summary.map((item, index) => {
+            const x = left + ((item.pontosApcn || 0) / maxPoints) * innerWidth;
+            const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
+            const fill = index % 2 === 0 ? "#8c1538" : "#d4a017";
+            return `
+              <circle cx="${x}" cy="${y}" r="5.5" fill="${fill}" opacity="0.9"></circle>
+              <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
+            `;
+          }).join("")}
+          <text x="${width / 2}" y="${height - 10}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
+          <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
+        </svg>
+      `;
+    }
+
     function renderLeadershipYearChart(summary) {
       if (!summary.length) {
         chartLiderancaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxIndex = Math.max(...summary.map((item) => item.indice), 1);
+      const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
       const width = 760;
       const height = 320;
       const baseY = 260;
@@ -5396,15 +5525,15 @@
       const gap = 18;
       const barWidth = Math.max(28, Math.floor((width - left - 20 - (summary.length - 1) * gap) / summary.length));
       chartLiderancaAnos.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução anual do Mostard Index">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução anual do Índice Mostarda">
           <line x1="${left}" y1="${baseY}" x2="${width - 12}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
           ${summary.map((item, index) => {
             const x = left + 10 + index * (barWidth + gap);
-            const barHeight = Math.max(10, Math.round((item.indice / maxIndex) * 190));
+            const barHeight = Math.max(10, Math.round((item.indiceMostarda / maxIndex) * 190));
             const y = baseY - barHeight;
             return `
               <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="${index % 2 === 0 ? "#8c1538" : "#d4a017"}"></rect>
-              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostarda)}%</text>
               <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
             `;
           }).join("")}
@@ -5416,9 +5545,10 @@
       liderancaDocentesBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${formatPercent(item.indice)}</td>
+          <td>${formatPercent(item.indiceMostarda)}</td>
+          <td>${formatDecimal(item.pontosApcn)}</td>
+          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
-          <td>${formatDecimal(item.pontosMostard)}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
           <td>${item.demais}</td>
@@ -5430,9 +5560,10 @@
       liderancaAnosBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.ano}</td>
-          <td>${formatPercent(item.indice)}</td>
+          <td>${formatPercent(item.indiceMostarda)}</td>
+          <td>${formatDecimal(item.pontosApcn)}</td>
+          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
-          <td>${formatDecimal(item.pontosMostard)}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
           <td>${item.demais}</td>
@@ -5529,6 +5660,8 @@
       const yearSummary = aggregateMostardByYear(filtered);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
       renderLeadershipDocenteChart(docenteSummary);
+      renderLeadershipWeightedChart(docenteSummary);
+      renderLeadershipScatterChart(docenteSummary);
       renderLeadershipYearChart(yearSummary);
       renderLeadershipDocentesTable(docenteSummary);
       renderLeadershipYearTable(yearSummary);
