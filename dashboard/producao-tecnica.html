@@ -3,247 +3,852 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPGEF - Producao Tecnica</title>
+  <title>PPGEF - Produção Técnica</title>
   <style>
     :root {
-      --bg: #f3efe5;
-      --panel: #fffaf0;
-      --ink: #1d2a38;
-      --muted: #5c6b73;
-      --accent: #0d6b5c;
-      --accent-2: #c97b2a;
-      --line: #d7cfbf;
+      --bg: #f7f3ec;
+      --panel: rgba(255, 253, 249, 0.95);
+      --ink: #262930;
+      --muted: #6d727c;
+      --line: #ddd4c7;
+      --primary: #8c1538;
+      --accent: #d4a017;
+      --ok: #4d7c68;
+      --shadow: 0 18px 45px rgba(38, 41, 48, 0.08);
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(circle at top left, rgba(201, 123, 42, 0.18), transparent 30%),
-        linear-gradient(180deg, #f8f4ea 0%, var(--bg) 100%);
       color: var(--ink);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        linear-gradient(135deg, rgba(140, 21, 56, 0.08), transparent 26%),
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.14), transparent 22%),
+        linear-gradient(180deg, #f7f4ef 0%, var(--bg) 100%);
     }
+
     .wrap {
-      max-width: 1200px;
+      max-width: 1380px;
       margin: 0 auto;
-      padding: 32px 20px 40px;
+      padding: 28px 18px 42px;
     }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.03em;
+
+    .hero, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
-    .sub {
-      margin: 0 0 24px;
-      color: var(--muted);
+
+    .hero {
+      padding: 28px;
+      margin-bottom: 22px;
+      background:
+        linear-gradient(125deg, rgba(140, 21, 56, 0.98) 0%, rgba(102, 15, 41, 0.94) 62%, rgba(56, 18, 28, 0.95) 100%);
+      color: white;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0;
       max-width: 820px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.9);
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .filters, .table-card { grid-column: span 12; }
+    .metric { grid-column: span 3; }
+    .chart-wide { grid-column: span 8; }
+    .chart-narrow { grid-column: span 4; }
+
+    .card { padding: 20px; }
+
+    .section-head-inline {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
       gap: 16px;
     }
-    .card {
-      background: rgba(255, 250, 240, 0.88);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 10px 30px rgba(29, 42, 56, 0.05);
-    }
-    .filters { grid-column: span 12; }
-    .metric { grid-column: span 4; }
-    .table-card { grid-column: span 12; overflow: hidden; }
+
     label {
       display: block;
+      margin-bottom: 8px;
       font-size: 0.9rem;
-      margin-bottom: 6px;
       color: var(--muted);
+      font-weight: 600;
     }
-    select {
-      width: 100%;
-      min-height: 44px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: white;
+
+    .filter-toolbar, .sort-toggle-group, .chips, .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-toggle, .sort-toggle {
+      border: 1px solid #d7c3ad;
+      background: #fffdf9;
       color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.84rem;
+      line-height: 1;
+      cursor: pointer;
     }
-    .filter-grid {
+
+    .sort-toggle.active {
+      background: rgba(140, 21, 56, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .filter-toggle-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      border: 1px solid #bfae99;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      color: var(--primary);
+      background: white;
+    }
+
+    .filter-picker {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
+      gap: 2px;
+      max-height: 236px;
+      overflow: auto;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.88);
     }
-    .metric h2 {
-      font-size: 0.95rem;
+
+    .filter-option {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 6px 6px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .filter-option input {
+      margin: 0;
+      accent-color: var(--primary);
+    }
+
+    .metric .eyebrow {
       margin: 0 0 10px;
       color: var(--muted);
-      font-weight: normal;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
+      font-weight: 700;
     }
+
     .metric strong {
-      font-size: 2.2rem;
-      color: var(--accent);
+      display: block;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      color: var(--primary);
+      letter-spacing: -0.05em;
     }
+
+    .metric span, .chart-note {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
+    .chart { width: 100%; min-height: 320px; }
+    .chart svg { width: 100%; height: auto; display: block; }
+
+    .type-stack, .sem-producao-list { display: grid; gap: 12px; }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 64px;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.94rem;
+    }
+
+    .track {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #ede5da;
+    }
+
+    .bar {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f2ebe1;
+      color: var(--ink);
+      font-size: 0.9rem;
+      border: 1px solid #e1d5c3;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .status-pill.ok {
+      color: var(--ok);
+      background: rgba(77, 124, 104, 0.14);
+      border-color: rgba(77, 124, 104, 0.22);
+    }
+
+    .status-pill.alert {
+      color: var(--primary);
+      background: rgba(140, 21, 56, 0.1);
+      border-color: rgba(140, 21, 56, 0.18);
+    }
+
+    .sem-producao-item {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid #e4d3cf;
+      background: linear-gradient(180deg, #fff7f5, #fdf1ef);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.95rem;
+      font-size: 0.97rem;
     }
+
     th, td {
       text-align: left;
       padding: 12px 10px;
       border-bottom: 1px solid var(--line);
       vertical-align: top;
     }
+
     th {
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(13, 107, 92, 0.08);
-      color: var(--accent);
-      font-size: 0.82rem;
+
+    .table-wrap { overflow: auto; }
+    .table-row-alert { background: rgba(140, 21, 56, 0.04); }
+    .empty { padding-top: 18px; color: var(--muted); }
+
+    @media (max-width: 1100px) {
+      .metric { grid-column: span 6; }
+      .chart-wide, .chart-narrow { grid-column: span 12; }
+      .filters-grid { grid-template-columns: 1fr 1fr; }
     }
-    .empty {
-      padding: 24px 4px 8px;
-      color: var(--muted);
-    }
-    @media (max-width: 900px) {
+
+    @media (max-width: 800px) {
+      .wrap { padding: 18px 14px 32px; }
+      .filters-grid { grid-template-columns: 1fr; }
       .metric { grid-column: span 12; }
-      .filter-grid { grid-template-columns: 1fr; }
+      .type-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Producao Tecnica</h1>
-    <p class="sub">
-      Aba 2 do dashboard do PPGEF. Esta estrutura replica a aba anterior, mas restringe a
-      visualizacao ao quantitativo de produtos tecnicos por docente e por tipo de produto,
-      sem detalhamento bibliografico. A fonte esperada e o arquivo
-      <code>data/producao_tecnica.csv</code>.
-    </p>
+    <section class="hero">
+      <h1>Produção Técnica</h1>
+      <p>
+        Leitura da nova base técnica docente a partir da planilha estratégica de junho de 2026.
+        A visualização destaca docentes sem produção, distribui os tipos desenvolvidos e permite
+        navegação por filtros e ordenação semelhante à produção científica.
+      </p>
+    </section>
 
     <section class="grid">
       <div class="card filters">
-        <div class="filter-grid">
+        <div class="section-head">
+          <h2>Filtros</h2>
+          <p>Selecione docentes, tipos, anos e situação da produção técnica.</p>
+        </div>
+        <div class="filters-grid">
           <div>
             <label for="docentes">Docentes</label>
-            <select id="docentes" multiple></select>
+            <div class="filter-toolbar">
+              <button type="button" class="filter-toggle" data-group="docentes" data-action="all"><span class="filter-toggle-box">✓</span>Marcar tudo</button>
+              <button type="button" class="filter-toggle" data-group="docentes" data-action="none"><span class="filter-toggle-box"></span>Desmarcar tudo</button>
+            </div>
+            <div id="docentes" class="filter-picker"></div>
           </div>
           <div>
-            <label for="tipos">Tipo de produto</label>
-            <select id="tipos" multiple></select>
+            <label for="tipos">Tipo</label>
+            <div class="filter-toolbar">
+              <button type="button" class="filter-toggle" data-group="tipos" data-action="all"><span class="filter-toggle-box">✓</span>Marcar tudo</button>
+              <button type="button" class="filter-toggle" data-group="tipos" data-action="none"><span class="filter-toggle-box"></span>Desmarcar tudo</button>
+            </div>
+            <div id="tipos" class="filter-picker"></div>
+          </div>
+          <div>
+            <label for="anos">Ano</label>
+            <div class="filter-toolbar">
+              <button type="button" class="filter-toggle" data-group="anos" data-action="all"><span class="filter-toggle-box">✓</span>Marcar tudo</button>
+              <button type="button" class="filter-toggle" data-group="anos" data-action="none"><span class="filter-toggle-box"></span>Desmarcar tudo</button>
+            </div>
+            <div id="anos" class="filter-picker"></div>
+          </div>
+          <div>
+            <label for="status">Situação</label>
+            <div class="filter-toolbar">
+              <button type="button" class="filter-toggle" data-group="status" data-action="all"><span class="filter-toggle-box">✓</span>Marcar tudo</button>
+              <button type="button" class="filter-toggle" data-group="status" data-action="none"><span class="filter-toggle-box"></span>Desmarcar tudo</button>
+            </div>
+            <div id="status" class="filter-picker"></div>
           </div>
         </div>
       </div>
 
       <div class="card metric">
-        <h2>Total de Produtos</h2>
-        <strong id="total-produtos">0</strong>
+        <p class="eyebrow">Produtos</p>
+        <strong id="metric-produtos">0</strong>
+        <span>Total de registros com produção técnica no recorte atual.</span>
       </div>
       <div class="card metric">
-        <h2>Docentes Visiveis</h2>
-        <strong id="docentes-visiveis">0</strong>
+        <p class="eyebrow">Docentes com Produção</p>
+        <strong id="metric-docentes-com">0</strong>
+        <span>Docentes com ao menos um registro técnico no conjunto visível.</span>
       </div>
       <div class="card metric">
-        <h2>Tipos Visiveis</h2>
-        <strong id="tipos-visiveis">0</strong>
+        <p class="eyebrow">Sem Produção</p>
+        <strong id="metric-docentes-sem">0</strong>
+        <span>Docentes explicitamente marcados como sem produção técnica.</span>
+      </div>
+      <div class="card metric">
+        <p class="eyebrow">Tipos Ativos</p>
+        <strong id="metric-tipos">0</strong>
+        <span>Tipos de produção técnica presentes no recorte atual.</span>
+      </div>
+
+      <div class="card chart-wide">
+        <div class="section-head-inline">
+          <div class="section-head">
+            <h2>Produtos por Docente</h2>
+            <p id="chart-caption">Ranking ordenado alfabeticamente no recorte filtrado.</p>
+          </div>
+          <div class="sort-toggle-group">
+            <button type="button" class="sort-toggle active" data-sort-docente="alfabetico">Alfabético</button>
+            <button type="button" class="sort-toggle" data-sort-docente="desempenho">Por desempenho</button>
+          </div>
+        </div>
+        <div id="chart-docentes" class="chart"></div>
+      </div>
+
+      <div class="card chart-narrow">
+        <div class="section-head">
+          <h2>Análise dos Tipos</h2>
+          <p>Distribuição dos tipos e subtipos técnicos efetivamente desenvolvidos.</p>
+        </div>
+        <div id="type-stack" class="type-stack"></div>
+        <div id="type-chips" class="chips"></div>
+      </div>
+
+      <div class="card chart-wide">
+        <div class="section-head-inline">
+          <div class="section-head">
+            <h2>Síntese por Docente</h2>
+            <p>Status, variedade de tipos e total de registros por docente.</p>
+          </div>
+          <div class="sort-toggle-group">
+            <button type="button" class="sort-toggle active" data-sort-table="alfabetico">Alfabético</button>
+            <button type="button" class="sort-toggle" data-sort-table="desempenho">Por desempenho</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Docente</th>
+                <th>Situação</th>
+                <th>Tipos de Produto</th>
+                <th>Quantitativo Total</th>
+              </tr>
+            </thead>
+            <tbody id="resumo-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card chart-narrow">
+        <div class="section-head">
+          <h2>Docentes sem Produção</h2>
+          <p>Destaque nominal dos docentes sem registro técnico na base atual.</p>
+        </div>
+        <strong id="sem-total" style="display:block;font-size:2rem;color:var(--primary);letter-spacing:-0.05em;">0</strong>
+        <div id="sem-list" class="sem-producao-list"></div>
+        <div id="insights" class="chips"></div>
       </div>
 
       <div class="card table-card">
-        <table>
-          <thead>
-            <tr>
-              <th>Docente</th>
-              <th>Tipo de produto</th>
-              <th>Quantitativo</th>
-            </tr>
-          </thead>
-          <tbody id="tabela-body"></tbody>
-        </table>
-        <div id="estado-vazio" class="empty">
-          Carregue os quantitativos reais em <code>data/producao_tecnica.csv</code> para visualizar a producao tecnica.
+        <div class="section-head">
+          <h2>Registros Técnicos</h2>
+          <p>Base detalhada da planilha com situação, subtipo e detalhamento original.</p>
         </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Docente</th>
+                <th>Situação</th>
+                <th>Tipo de Produto</th>
+                <th>Ano</th>
+                <th>Subtipo</th>
+                <th>Detalhamento</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-body"></tbody>
+          </table>
+        </div>
+        <div id="estado-vazio" class="empty">Nenhum registro atende aos filtros atuais.</div>
       </div>
     </section>
   </div>
 
   <script src="./producao-tecnica-data.js"></script>
   <script>
-    const sampleData = Array.isArray(window.PRODUCAO_TECNICA) ? window.PRODUCAO_TECNICA : [];
-    const docentesSelect = document.getElementById("docentes");
-    const tiposSelect = document.getElementById("tipos");
+    const dataSource = Array.isArray(window.PRODUCAO_TECNICA) ? window.PRODUCAO_TECNICA : [];
+    const docenteContainer = document.getElementById("docentes");
+    const tipoContainer = document.getElementById("tipos");
+    const anoContainer = document.getElementById("anos");
+    const statusContainer = document.getElementById("status");
+    const resumoBody = document.getElementById("resumo-body");
     const tabelaBody = document.getElementById("tabela-body");
     const estadoVazio = document.getElementById("estado-vazio");
+    const chartDocentes = document.getElementById("chart-docentes");
+    const chartCaption = document.getElementById("chart-caption");
+    const typeStack = document.getElementById("type-stack");
+    const typeChips = document.getElementById("type-chips");
+    const semList = document.getElementById("sem-list");
+    const insights = document.getElementById("insights");
+    const filterToggles = [...document.querySelectorAll("[data-group]")];
+    const docenteSortButtons = [...document.querySelectorAll("[data-sort-docente]")];
+    const tableSortButtons = [...document.querySelectorAll("[data-sort-table]")];
+
+    let selectedDocentes = new Set();
+    let selectedTipos = new Set();
+    let selectedAnos = new Set();
+    let selectedStatus = new Set();
+    let docenteSortMode = "alfabetico";
+    let tableSortMode = "alfabetico";
+    let filterValues = { docentes: [], tipos: [], anos: [], status: [] };
+
+    const technicalTypeLabels = {
+      produtos_tecnologicos: "Produtos tecnológicos",
+      trabalhos_tecnicos: "Trabalhos técnicos",
+      processos_ou_tecnicas: "Processos ou técnicas",
+      programas_de_computador_sem_registro: "Programas de computador sem registro",
+      assessoria_e_consultoria: "Assessoria e consultoria",
+      entrevistas: "Entrevistas",
+      redes_sociais: "Redes sociais",
+      demais_tipos: "Demais tipos",
+      sem_producao: "Sem produção",
+    };
+
+    function normalizeText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function normalizeTechnicalType(value) {
+      return normalizeText(value).replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "") || "nao_informado";
+    }
+
+    function formatTechnicalType(value) {
+      const normalized = normalizeTechnicalType(value);
+      if (technicalTypeLabels[normalized]) return technicalTypeLabels[normalized];
+      return value || "Não informado";
+    }
 
     function unique(values) {
       return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
     }
 
-    function getSelectedValues(select) {
-      return [...select.selectedOptions].map((option) => option.value);
+    function hasProduction(item) {
+      return Number(item.possui_producao) === 1 || normalizeTechnicalType(item.tipo_produto) !== "sem_producao";
+    }
+
+    function getStatusKey(item) {
+      return hasProduction(item) ? "com_producao" : "sem_producao";
+    }
+
+    function getStatusLabel(item) {
+      return getStatusKey(item) === "com_producao" ? "Com produção" : "Sem produção";
+    }
+
+    function getYearLabel(item) {
+      return item.ano ? String(item.ano) : "Sem ano";
+    }
+
+    function getSubtype(item) {
+      return item.subtipo || "Não informado";
+    }
+
+    function getDetail(item) {
+      return item.observacoes || item.titulo || "";
+    }
+
+    function sortSummary(items, mode = docenteSortMode) {
+      return [...items].sort((a, b) => {
+        if (mode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.total - a.total;
+        }
+        return b.total - a.total || b.tipos.length - a.tipos.length || a.docente.localeCompare(b.docente, "pt-BR");
+      });
     }
 
     function populateFilters(data) {
       const docentes = unique(data.map((item) => item.docente));
-      const tipos = unique(data.map((item) => item.tipo_produto));
-
-      docentesSelect.innerHTML = docentes.map((docente) =>
-        `<option value="${docente}">${docente}</option>`
-      ).join("");
-
-      tiposSelect.innerHTML = tipos.map((tipo) =>
-        `<option value="${tipo}">${tipo}</option>`
-      ).join("");
+      const tipos = unique(data.filter((item) => hasProduction(item)).map((item) => formatTechnicalType(item.tipo_produto)));
+      const anos = unique(data.map((item) => getYearLabel(item))).sort((a, b) => {
+        if (a === "Sem ano") return 1;
+        if (b === "Sem ano") return -1;
+        return Number(a) - Number(b);
+      });
+      const status = [
+        ["com_producao", "Com produção"],
+        ["sem_producao", "Sem produção"],
+      ];
+      filterValues = { docentes, tipos, anos, status: status.map(([value]) => value) };
+      const renderOptions = (values, container) => {
+        container.innerHTML = values.map((value) => `
+          <label class="filter-option">
+            <input type="checkbox" value="${value}">
+            <span>${value}</span>
+          </label>
+        `).join("");
+      };
+      renderOptions(docentes, docenteContainer);
+      renderOptions(tipos, tipoContainer);
+      renderOptions(anos, anoContainer);
+      statusContainer.innerHTML = status.map(([value, label]) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${value}">
+          <span>${label}</span>
+        </label>
+      `).join("");
     }
 
-    function renderMetrics(data) {
-      const docentes = unique(data.map((item) => item.docente));
-      const tipos = unique(data.map((item) => item.tipo_produto));
-      const totalProdutos = data.reduce((acc, item) => acc + (Number(item.total_produtos) || 0), 0);
-
-      document.getElementById("total-produtos").textContent = String(totalProdutos);
-      document.getElementById("docentes-visiveis").textContent = String(docentes.length);
-      document.getElementById("tipos-visiveis").textContent = String(tipos.length);
+    function syncViews() {
+      [
+        [docenteContainer, selectedDocentes],
+        [tipoContainer, selectedTipos],
+        [anoContainer, selectedAnos],
+        [statusContainer, selectedStatus],
+      ].forEach(([container, selectedSet]) => {
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
     }
 
-    function renderTable(data) {
-      tabelaBody.innerHTML = data.map((item) => `
+    function initializeFilters() {
+      selectedDocentes = new Set(filterValues.docentes);
+      selectedTipos = new Set(filterValues.tipos);
+      selectedAnos = new Set(filterValues.anos);
+      selectedStatus = new Set(filterValues.status);
+      syncViews();
+    }
+
+    function bindCheckboxes(container, selectedSet) {
+      [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          if (input.checked) selectedSet.add(input.value);
+          else selectedSet.delete(input.value);
+          applyFilters();
+        });
+      });
+    }
+
+    function bindFilterToggles() {
+      const config = {
+        docentes: { set: selectedDocentes, values: () => filterValues.docentes },
+        tipos: { set: selectedTipos, values: () => filterValues.tipos },
+        anos: { set: selectedAnos, values: () => filterValues.anos },
+        status: { set: selectedStatus, values: () => filterValues.status },
+      };
+      filterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const current = config[button.dataset.group];
+          if (!current) return;
+          current.set.clear();
+          const values = button.dataset.action === "all" ? current.values() : [];
+          values.forEach((value) => current.set.add(value));
+          syncViews();
+          applyFilters();
+        });
+      });
+    }
+
+    function bindSorts() {
+      docenteSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          docenteSortMode = button.dataset.sortDocente || "alfabetico";
+          docenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyFilters();
+        });
+      });
+      tableSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          tableSortMode = button.dataset.sortTable || "alfabetico";
+          tableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyFilters();
+        });
+      });
+    }
+
+    function aggregateByDocente(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, { docente: item.docente, total: 0, tipos: new Set(), status: "Sem produção" });
+        }
+        const row = grouped.get(item.docente);
+        if (hasProduction(item)) {
+          row.total += 1;
+          row.status = "Com produção";
+          row.tipos.add(formatTechnicalType(item.tipo_produto));
+        }
+      });
+      return sortSummary([...grouped.values()].map((item) => ({
+        docente: item.docente,
+        total: item.total,
+        status: item.status,
+        tipos: [...item.tipos].sort((a, b) => a.localeCompare(b, "pt-BR")),
+      })));
+    }
+
+    function aggregateByType(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!hasProduction(item)) return;
+        const tipo = formatTechnicalType(item.tipo_produto);
+        if (!grouped.has(tipo)) grouped.set(tipo, { tipo, total: 0 });
+        grouped.get(tipo).total += 1;
+      });
+      return [...grouped.values()].sort((a, b) => b.total - a.total || a.tipo.localeCompare(b.tipo, "pt-BR"));
+    }
+
+    function aggregateBySubtype(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!hasProduction(item)) return;
+        const subtipo = getSubtype(item);
+        if (!grouped.has(subtipo)) grouped.set(subtipo, { subtipo, total: 0 });
+        grouped.get(subtipo).total += 1;
+      });
+      return [...grouped.values()].sort((a, b) => b.total - a.total || a.subtipo.localeCompare(b.subtipo, "pt-BR"));
+    }
+
+    function sortRows(data, summary) {
+      const ranking = new Map(sortSummary(summary, tableSortMode).map((item, index) => [item.docente, index]));
+      return [...data].sort((a, b) => {
+        if (tableSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || (Number(b.ano) || 0) - (Number(a.ano) || 0);
+        }
+        return (ranking.get(a.docente) ?? 999) - (ranking.get(b.docente) ?? 999) || (Number(b.ano) || 0) - (Number(a.ano) || 0);
+      });
+    }
+
+    function renderMetrics(filtered, docenteSummary, typeSummary, subtypeSummary) {
+      const totalProdutos = filtered.reduce((acc, item) => acc + (hasProduction(item) ? 1 : 0), 0);
+      const docentesCom = docenteSummary.filter((item) => item.total > 0);
+      const docentesSem = docenteSummary.filter((item) => item.total === 0);
+      document.getElementById("metric-produtos").textContent = String(totalProdutos);
+      document.getElementById("metric-docentes-com").textContent = String(docentesCom.length);
+      document.getElementById("metric-docentes-sem").textContent = String(docentesSem.length);
+      document.getElementById("metric-tipos").textContent = String(typeSummary.length);
+      document.getElementById("sem-total").textContent = String(docentesSem.length);
+
+      const bestDocente = docentesCom[0];
+      const bestType = typeSummary[0];
+      const bestSubtype = subtypeSummary[0];
+      insights.innerHTML = [
+        bestDocente ? `<span class="chip">Maior quantitativo: <strong>${bestDocente.docente}</strong> (${bestDocente.total})</span>` : "",
+        bestType ? `<span class="chip">Tipo dominante: <strong>${bestType.tipo}</strong> (${bestType.total})</span>` : "",
+        bestSubtype ? `<span class="chip">Subtipo recorrente: <strong>${bestSubtype.subtipo}</strong> (${bestSubtype.total})</span>` : "",
+      ].filter(Boolean).join("");
+
+      semList.innerHTML = docentesSem.length
+        ? docentesSem.map((item) => `<div class="sem-producao-item"><strong>${item.docente}</strong><br>Sem registro técnico no recorte atual.</div>`).join("")
+        : `<p class="chart-note">Não há docentes sem produção técnica no recorte atual.</p>`;
+    }
+
+    function renderChart(summary) {
+      const items = sortSummary(summary, docenteSortMode);
+      if (!items.length) {
+        chartDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      chartCaption.textContent = docenteSortMode === "alfabetico"
+        ? "Ranking ordenado alfabeticamente no recorte filtrado."
+        : "Ranking ordenado pelo quantitativo de produção técnica no recorte filtrado.";
+      const maxTotal = Math.max(...items.map((item) => item.total), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 700;
+      const usableWidth = chartWidth - labelWidth - 60;
+      chartDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Produtos por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = item.total > 0 ? Math.max(8, (item.total / maxTotal) * usableWidth) : 8;
+            const fill = item.total > 0 ? "url(#tecnicaGradient)" : "#d9c7b1";
+            const suffix = item.total > 0 ? String(item.total) : "Sem produção";
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${fill}"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${suffix}</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="tecnicaGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#8c1538"></stop>
+              <stop offset="100%" stop-color="#d4a017"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderTypes(typeSummary, subtypeSummary, totalProdutos) {
+      if (!typeSummary.length) {
+        typeStack.innerHTML = `<p class="chart-note">Sem produção técnica para analisar no recorte atual.</p>`;
+        typeChips.innerHTML = "";
+        return;
+      }
+      const maxTotal = Math.max(...typeSummary.map((item) => item.total), 1);
+      typeStack.innerHTML = typeSummary.map((item) => `
+        <div class="type-row">
+          <strong>${item.tipo}</strong>
+          <div class="track"><div class="bar" style="width:${(item.total / maxTotal) * 100}%"></div></div>
+          <span>${item.total}</span>
+        </div>
+      `).join("");
+      typeChips.innerHTML = [
+        ...typeSummary.slice(0, 4).map((item) => {
+          const share = totalProdutos ? Math.round((item.total / totalProdutos) * 100) : 0;
+          return `<span class="chip">${item.tipo}: <strong>${item.total}</strong> registros · ${share}% do total</span>`;
+        }),
+        ...subtypeSummary.slice(0, 3).map((item) => `<span class="chip">Subtipo em destaque: <strong>${item.subtipo}</strong> (${item.total})</span>`),
+      ].join("");
+    }
+
+    function renderResumo(summary) {
+      const items = sortSummary(summary, tableSortMode);
+      resumoBody.innerHTML = items.map((item) => `
         <tr>
-          <td>${item.docente || ""}</td>
-          <td><span class="badge">${item.tipo_produto || ""}</span></td>
-          <td>${item.total_produtos || "0"}</td>
+          <td>${item.docente}</td>
+          <td><span class="status-pill ${item.total > 0 ? "ok" : "alert"}">${item.status}</span></td>
+          <td>${item.tipos.length ? item.tipos.join(", ") : "Sem registros técnicos"}</td>
+          <td>${item.total}</td>
         </tr>
       `).join("");
-      estadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function renderTable(rows) {
+      tabelaBody.innerHTML = rows.map((item) => `
+        <tr class="${hasProduction(item) ? "" : "table-row-alert"}">
+          <td>${item.docente}</td>
+          <td><span class="status-pill ${hasProduction(item) ? "ok" : "alert"}">${getStatusLabel(item)}</span></td>
+          <td>${formatTechnicalType(item.tipo_produto)}</td>
+          <td>${item.ano || "-"}</td>
+          <td>${getSubtype(item)}</td>
+          <td>${getDetail(item)}</td>
+        </tr>
+      `).join("");
+      estadoVazio.style.display = rows.length ? "none" : "block";
     }
 
     function applyFilters() {
-      const docentes = getSelectedValues(docentesSelect);
-      const tipos = getSelectedValues(tiposSelect);
-      const filtered = sampleData.filter((item) => {
-        const docenteOk = !docentes.length || docentes.includes(item.docente);
-        const tipoOk = !tipos.length || tipos.includes(item.tipo_produto);
-        return docenteOk && tipoOk;
+      syncViews();
+      const filtered = dataSource.filter((item) => {
+        const docenteOk = !selectedDocentes.size || selectedDocentes.has(item.docente);
+        const statusOk = !selectedStatus.size || selectedStatus.has(getStatusKey(item));
+        const anoOk = !selectedAnos.size || selectedAnos.has(getYearLabel(item));
+        const tipoOk = !hasProduction(item) || !selectedTipos.size || selectedTipos.has(formatTechnicalType(item.tipo_produto));
+        return docenteOk && statusOk && anoOk && tipoOk;
       });
-
-      renderMetrics(filtered);
-      renderTable(filtered);
+      const docenteSummary = aggregateByDocente(filtered);
+      const typeSummary = aggregateByType(filtered);
+      const subtypeSummary = aggregateBySubtype(filtered);
+      const totalProdutos = filtered.reduce((acc, item) => acc + (hasProduction(item) ? 1 : 0), 0);
+      renderMetrics(filtered, docenteSummary, typeSummary, subtypeSummary);
+      renderChart(docenteSummary);
+      renderTypes(typeSummary, subtypeSummary, totalProdutos);
+      renderResumo(docenteSummary);
+      renderTable(sortRows(filtered, docenteSummary));
     }
 
-    populateFilters(sampleData);
-    renderMetrics(sampleData);
-    renderTable(sampleData);
-    docentesSelect.addEventListener("change", applyFilters);
-    tiposSelect.addEventListener("change", applyFilters);
+    populateFilters(dataSource);
+    initializeFilters();
+    bindCheckboxes(docenteContainer, selectedDocentes);
+    bindCheckboxes(tipoContainer, selectedTipos);
+    bindCheckboxes(anoContainer, selectedAnos);
+    bindCheckboxes(statusContainer, selectedStatus);
+    bindFilterToggles();
+    bindSorts();
+    applyFilters();
   </script>
 </body>
 </html>

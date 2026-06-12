@@ -1,11 +1,25 @@
 {
   "source_sqlite": "[configurado_localmente_em_data/producao_tecnica_db_path.txt]",
-  "synced_at": "2026-06-11T00:04:05",
-  "records": 10,
-  "docentes": 3,
+  "synced_at": "2026-06-12T00:00:00",
+  "records": 295,
+  "docentes": 17,
   "totals_by_docente": {
-    "Carla Meneses Hardman": 6,
-    "Daniel da Rocha Queiroz": 3,
-    "Tony Meireles dos Santos": 1
+    "Clarice Maria de Lucena Martins": 0,
+    "Guilherme Assunção Ferreira": 2,
+    "Melissa Leandro Celestino": 0,
+    "Tony Meireles dos Santos": 93,
+    "Paulo Felipe Ribeiro Bandeira": 6,
+    "Bruno Teixeira Barbosa": 31,
+    "Saulo Fernandes Melo de Oliveira": 6,
+    "Eduardo Zapaterra Campos": 6,
+    "Daniela Karina da Silva Ferreira": 7,
+    "Paulo Roberto Cavalcanti Carvalho": 12,
+    "André dos Santos Costa": 3,
+    "Vilde Gomes de Menezes": 11,
+    "Ozeas de Lima Lins Filho": 5,
+    "Daniel da Rocha Queiroz": 19,
+    "Pedro Pinheiro Paes": 81,
+    "Leonardo Gomes de Oliveira Luz": 4,
+    "Lucas Eduardo Rodrigues dos Santos": 6
   }
 }

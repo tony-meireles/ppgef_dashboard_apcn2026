@@ -1435,6 +1435,139 @@
       color: var(--ufpe-cinza);
     }
 
+    .docentes-quad-card {
+      grid-column: span 12;
+    }
+
+    .docentes-quad-note {
+      margin-top: 12px;
+      color: var(--ufpe-cinza);
+      font-size: 0.9rem;
+    }
+
+    .docentes-quad-table th,
+    .docentes-quad-table td,
+    .docentes-structure-table th,
+    .docentes-structure-table td {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .docentes-quad-table th:first-child,
+    .docentes-quad-table td:first-child,
+    .docentes-structure-table th:first-child,
+    .docentes-structure-table td:first-child {
+      white-space: normal;
+    }
+
+    .docentes-quad-table tbody tr:nth-child(odd),
+    .docentes-structure-table tbody tr:nth-child(odd) {
+      background: rgba(242, 235, 225, 0.45);
+    }
+
+    .docentes-quad-table .docentes-quad-label {
+      font-weight: 700;
+      color: var(--ufpe-grafite);
+    }
+
+    .docentes-quad-table .docentes-quad-average {
+      font-weight: 700;
+      color: var(--ufpe-bordo);
+    }
+
+    .docentes-structure-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .docentes-mini-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(140, 21, 56, 0.08);
+      color: var(--ufpe-bordo);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .docentes-mini-chip.ok {
+      background: rgba(77, 124, 104, 0.14);
+      color: var(--ufpe-sucesso);
+    }
+
+    .docentes-mini-chip.warn {
+      background: rgba(199, 146, 45, 0.16);
+      color: #9a5c12;
+    }
+
+    .docentes-mini-chip.critical {
+      background: rgba(162, 42, 42, 0.12);
+      color: #a22a2a;
+    }
+
+    .docentes-structure-table .docentes-row-critical {
+      background: rgba(162, 42, 42, 0.08);
+    }
+
+    .docentes-structure-table .docentes-row-attention {
+      background: rgba(199, 146, 45, 0.1);
+    }
+
+    .docentes-bool {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      border: 1px solid var(--ufpe-linha);
+      background: white;
+      color: var(--ufpe-cinza);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .docentes-bool.yes {
+      border-color: rgba(77, 124, 104, 0.3);
+      background: rgba(77, 124, 104, 0.14);
+      color: var(--ufpe-sucesso);
+    }
+
+    .docentes-bool.no {
+      border-color: rgba(162, 42, 42, 0.22);
+      background: rgba(162, 42, 42, 0.08);
+      color: #a22a2a;
+    }
+
+    .docentes-bool.na {
+      background: rgba(111, 111, 111, 0.08);
+      color: #777;
+    }
+
+    .docentes-status-cell {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+    }
+
+    .docentes-structure-name strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .docentes-structure-name span {
+      color: var(--ufpe-cinza);
+      font-size: 0.84rem;
+      line-height: 1.35;
+    }
+
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
       .metric { grid-column: span 6; }
@@ -2193,9 +2326,35 @@
           <div class="card docentes-headline-card">
             <h2 id="docentes-headline-title">Quadro síntese</h2>
             <p class="chart-note" id="docentes-headline-text"></p>
+            <div class="docentes-structure-meta" id="docentes-headline-chips"></div>
           </div>
 
           <div id="docentes-metrics-grid" class="docentes-metrics-grid"></div>
+
+          <div class="card docentes-quad-card">
+            <div class="section-head">
+              <div>
+                <h2>Estrutura do Quadro 2025-2028</h2>
+                <p>Leitura anual da composição do quadro, estabilidade do núcleo permanente e dependência de colaboradores.</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table docentes-quad-table">
+                <thead>
+                  <tr>
+                    <th>Indicador</th>
+                    <th>2025</th>
+                    <th>2026</th>
+                    <th>2027</th>
+                    <th>2028</th>
+                    <th>Média</th>
+                  </tr>
+                </thead>
+                <tbody id="docentes-quad-body"></tbody>
+              </table>
+            </div>
+            <p class="docentes-quad-note" id="docentes-quad-note"></p>
+          </div>
 
           <div class="card docentes-summary-card">
             <h2>Recorte do Ano</h2>
@@ -2233,19 +2392,25 @@
           <div class="card docentes-table-card">
             <div class="section-head">
               <div>
-                <h2>Base Docente</h2>
-                <p>Leitura nominal para manejo direto no dashboard, sem navegação embutida em outra página.</p>
+                <h2>Matriz Estrutural do Corpo Docente</h2>
+                <p>Quadro nominal com AMS, DFE, origem, posição no quadriênio e composição anual do ciclo 2025-2028.</p>
               </div>
             </div>
             <div class="table-wrap">
-              <table class="criteria-table">
+              <table class="criteria-table docentes-structure-table">
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Situação</th>
+                    <th>AMS</th>
+                    <th>DFE</th>
                     <th>Origem</th>
                     <th># PPGs como P (2026)</th>
-                    <th>Lattes</th>
+                    <th>Col. em outros PPGs</th>
+                    <th>Status Quadri.</th>
+                    <th>2025</th>
+                    <th>2026</th>
+                    <th>2027</th>
+                    <th>2028</th>
                     <th>Alertas</th>
                   </tr>
                 </thead>
@@ -3022,7 +3187,7 @@
   <script src="./producao-cientifica-data.js"></script>
   <script src="./producao-tecnica-data.js"></script>
   <script src="./orientacoes-data.js"></script>
-  <script src="./disciplinas-data.js?v=2026-06-12d"></script>
+  <script src="./disciplinas-data.js?v=2026-06-12f"></script>
   <script src="./documentos-data.js"></script>
   <script src="./corpo-docente-data.js"></script>
   <script>
@@ -3259,21 +3424,27 @@
       const yearSelect = document.getElementById("docentes-year-select");
       const searchInput = document.getElementById("docentes-search-input");
       const issueSelect = document.getElementById("docentes-issue-select");
+      const headlineChips = document.getElementById("docentes-headline-chips");
       const metricsGrid = document.getElementById("docentes-metrics-grid");
+      const quadBody = document.getElementById("docentes-quad-body");
+      const quadNote = document.getElementById("docentes-quad-note");
       const timelineHost = document.getElementById("docentes-timeline-host");
       const docentesBody = document.getElementById("docentes-body");
       const issueList = document.getElementById("docentes-issue-list");
       const issueChips = document.getElementById("docentes-issue-chips");
       const emptyState = document.getElementById("docentes-empty-state");
 
-      if (!yearSelect || !searchInput || !issueSelect || !metricsGrid || !timelineHost || !docentesBody || !issueList || !issueChips || !emptyState) {
+      if (!yearSelect || !searchInput || !issueSelect || !headlineChips || !metricsGrid || !quadBody || !quadNote || !timelineHost || !docentesBody || !issueList || !issueChips || !emptyState) {
         return;
       }
 
       if (!data?.default_year || !Object.keys(data.by_year || {}).length) {
         document.getElementById("docentes-headline-title").textContent = "Quadro síntese indisponível";
         document.getElementById("docentes-headline-text").textContent = "A base corpo-docente-data.js não foi carregada no ambiente atual.";
+        headlineChips.innerHTML = "";
         metricsGrid.innerHTML = "";
+        quadBody.innerHTML = "";
+        quadNote.textContent = "";
         timelineHost.innerHTML = "";
         docentesBody.innerHTML = "";
         issueList.innerHTML = '<div class="docentes-issue-item"><strong>Sem base carregada</strong><span>Restaure ou regenere a base do corpo docente para habilitar esta aba.</span></div>';
@@ -3296,6 +3467,139 @@
             .sort((a, b) => b[1] - a[1])
             .map(([key, count]) => `<option value="${key}">${docentesIssueLabels[key] || key} (${count})</option>`),
         ].join("");
+      }
+
+      function isDocenteActiveStatus(status) {
+        return ["Per", "Col", "Temp", "Vis"].includes(status);
+      }
+
+      function formatDocentesAverage(value, mode = "integer") {
+        if (value == null || Number.isNaN(value)) return "-";
+        if (mode === "percent") return `${Math.floor(value * 100)}%`;
+        if (mode === "ratio") return value >= 100 ? value.toFixed(0).replace(".", ",") : value.toFixed(1).replace(".", ",");
+        return value.toFixed(1).replace(".0", "").replace(".", ",");
+      }
+
+      function formatDocentesYearPercent(value) {
+        if (value == null || Number.isNaN(value)) return "-";
+        return `${Math.round(value * 100)}%`;
+      }
+
+      function formatDocentesCount(value) {
+        if (value == null || Number.isNaN(value)) return "-";
+        return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(".", ",");
+      }
+
+      function formatDocentesRatio(permanentes, colaboradores) {
+        if (!colaboradores) return permanentes > 0 ? `${permanentes}:0` : "-";
+        const ratio = permanentes / colaboradores;
+        return `${ratio.toFixed(1).replace(".0", "").replace(".", ",")}:1`;
+      }
+
+      function getQuadYears() {
+        return ["2025", "2026", "2027", "2028"].filter((year) => data.by_year?.[year]);
+      }
+
+      function getDocentesQuadStats(year) {
+        const yearData = data.by_year[year];
+        const statusCounts = yearData?.status_counts || {};
+        const permanentes = statusCounts.Per || 0;
+        const colaboradores = statusCounts.Col || 0;
+        const temporarios = statusCounts.Temp || 0;
+        const visitantes = statusCounts.Vis || 0;
+        const quadroAmpliado = permanentes + colaboradores + temporarios + visitantes;
+        const nucleoDuro = permanentes + colaboradores;
+        const ativosNoAno = data.docentes.filter((doc) => isDocenteActiveStatus(doc.anos?.[year]));
+        const permanentesAtivos = data.docentes.filter((doc) => doc.anos?.[year] === "Per");
+        const internos = permanentesAtivos.filter((doc) => doc.origem_matriz === "Interno").length;
+        const externos = permanentesAtivos.filter((doc) => doc.origem_matriz === "Externo").length;
+        const ams = permanentes ? permanentesAtivos.filter((doc) => doc.ams === true).length / permanentes : null;
+        const dfe = permanentes ? permanentesAtivos.filter((doc) => doc.dfe === true).length / permanentes : null;
+        const estabilidadeAnual = quadroAmpliado
+          ? ativosNoAno.filter((doc) => doc.status_quadri === "A").length / quadroAmpliado
+          : null;
+
+        return {
+          year,
+          colaboradores,
+          permanentes,
+          temporarios,
+          visitantes,
+          nucleoDuro,
+          quadroAmpliado,
+          estabilidadeAnual,
+          dependenciaColaboradores: colaboradores ? permanentes / colaboradores : permanentes ? permanentes : null,
+          percentualPermanentes: nucleoDuro ? permanentes / nucleoDuro : null,
+          percentualColaboradores: nucleoDuro ? colaboradores / nucleoDuro : null,
+          percentualInternos: permanentes ? internos / permanentes : null,
+          percentualExternos: permanentes ? externos / permanentes : null,
+          percentualAms: ams,
+          percentualDfe: dfe,
+        };
+      }
+
+      function buildQuadPanel() {
+        const quadYears = getQuadYears();
+        const statsByYear = quadYears.map(getDocentesQuadStats);
+        const average = (values) => {
+          const valid = values.filter((value) => value != null && Number.isFinite(value));
+          return valid.length ? valid.reduce((total, value) => total + value, 0) / valid.length : null;
+        };
+
+        const rowDefs = [
+          { label: "# Colaboradores", key: "colaboradores", mode: "count" },
+          { label: "# Permanentes", key: "permanentes", mode: "count" },
+          { label: "# Temporários", key: "temporarios", mode: "count" },
+          { label: "# Visitantes", key: "visitantes", mode: "count" },
+          { label: "# Docentes - Núcleo Duro", key: "nucleoDuro", mode: "count" },
+          { label: "# Docentes - Quadro Ampliado", key: "quadroAmpliado", mode: "count" },
+          { label: "Estabilidade Anual", key: "estabilidadeAnual", mode: "percent" },
+          { label: "Índice de Dependência de Colaboradores", key: "dependenciaColaboradores", mode: "ratio" },
+          { label: "% Permanentes", key: "percentualPermanentes", mode: "percent" },
+          { label: "% Colaboradores", key: "percentualColaboradores", mode: "percent" },
+          { label: "% Permanente Interno", key: "percentualInternos", mode: "percent" },
+          { label: "% Permanente Externo", key: "percentualExternos", mode: "percent" },
+          { label: "% AMS entre Permanentes", key: "percentualAms", mode: "percent" },
+          { label: "% DFE entre Permanentes", key: "percentualDfe", mode: "percent" },
+        ];
+
+        quadBody.innerHTML = rowDefs.map((row) => {
+          const values = statsByYear.map((stats) => stats[row.key]);
+          const avg = average(values);
+          const formatValue = (value) => {
+            if (row.mode === "percent") return formatDocentesYearPercent(value);
+            if (row.mode === "ratio") return row.label === "Índice de Dependência de Colaboradores"
+              ? formatDocentesRatio(
+                value == null ? 0 : statsByYear[values.indexOf(value)]?.permanentes || 0,
+                statsByYear[values.indexOf(value)]?.colaboradores || 0
+              )
+              : formatDocentesAverage(value, "ratio");
+            return formatDocentesCount(value);
+          };
+          const averageLabel = row.mode === "percent"
+            ? formatDocentesAverage(avg, "percent")
+            : row.mode === "ratio"
+              ? formatDocentesAverage(avg, "ratio")
+              : formatDocentesAverage(avg);
+          const cells = statsByYear.map((stats) => {
+            if (row.key === "dependenciaColaboradores") {
+              return `<td>${formatDocentesRatio(stats.permanentes, stats.colaboradores)}</td>`;
+            }
+            return `<td>${formatValue(stats[row.key])}</td>`;
+          }).join("");
+          return `
+            <tr>
+              <td class="docentes-quad-label">${row.label}</td>
+              ${cells}
+              <td class="docentes-quad-average">${averageLabel}</td>
+            </tr>
+          `;
+        }).join("");
+
+        const quadAverage = average(statsByYear.map((stats) => stats.estabilidadeAnual));
+        quadNote.textContent = quadAverage == null
+          ? "Estabilidade quadrienal indisponível."
+          : `Estabilidade quadrienal média: ${formatDocentesAverage(quadAverage, "percent")}. O índice representa a proporção de docentes ativos do ano com status quadri A no ciclo 2025-2028.`;
       }
 
       function buildMetrics(yearData) {
@@ -3418,8 +3722,34 @@
       }
 
       function renderTable(selectedDocs, selectedYear) {
-        docentesBody.innerHTML = selectedDocs.map((doc) => {
-          const status = doc.anos[selectedYear];
+        const quadYears = getQuadYears();
+        const quadUnionDocs = data.docentes
+          .filter((doc) => quadYears.some((year) => isDocenteActiveStatus(doc.anos?.[year])))
+          .filter((doc) => {
+            const haystack = [
+              doc.docente,
+              doc.name_key,
+              doc.origem_matriz,
+              doc.cadastro["Nome do Docente"],
+              doc.cadastro.name_key,
+              doc.cadastro["Origem 1"],
+              ...((doc.issues || []).map((issue) => docentesIssueLabels[issue] || issue)),
+            ].map((value) => normalizeDocentesText(value)).join(" ");
+            const matchesQuery = !normalizeDocentesText(searchInput.value) || haystack.includes(normalizeDocentesText(searchInput.value));
+            const matchesIssue = !issueSelect.value || (doc.issues || []).includes(issueSelect.value);
+            return matchesQuery && matchesIssue;
+          })
+          .sort((left, right) => {
+            const leftActive = isDocenteActiveStatus(left.anos?.[selectedYear]) ? 1 : 0;
+            const rightActive = isDocenteActiveStatus(right.anos?.[selectedYear]) ? 1 : 0;
+            if (rightActive !== leftActive) return rightActive - leftActive;
+            const leftSeverity = (left.issues || []).length + (left.anos?.[selectedYear] === "Per" && left.origem_matriz === "Externo" ? 2 : 0);
+            const rightSeverity = (right.issues || []).length + (right.anos?.[selectedYear] === "Per" && right.origem_matriz === "Externo" ? 2 : 0);
+            if (rightSeverity !== leftSeverity) return rightSeverity - leftSeverity;
+            return (left.cadastro["Nome do Docente"] || left.docente).localeCompare((right.cadastro["Nome do Docente"] || right.docente), "pt-BR");
+          });
+
+        docentesBody.innerHTML = quadUnionDocs.map((doc) => {
           const lattes = doc.lattes.status_lattes || "Sem dado";
           const badges = (doc.issues || []).length
             ? doc.issues.map((issue) => `<span class="docentes-badge issue">${docentesIssueLabels[issue] || issue}</span>`).join("")
@@ -3427,25 +3757,46 @@
           const cadastroNome = doc.cadastro["Nome do Docente"];
           const cadastroOrigem = doc.cadastro["Origem 1"] || "Sem origem 1";
           const primaryName = cadastroNome || doc.docente;
-          const secondaryLine = cadastroNome && cadastroNome !== doc.docente
-            ? `Matriz: ${doc.docente}`
-            : cadastroOrigem;
+          const secondaryLine = cadastroNome && cadastroNome !== doc.docente ? `Matriz: ${doc.docente}` : cadastroOrigem;
+          const selectedStatus = doc.anos?.[selectedYear];
+          const rowClass = selectedStatus === "Per" && doc.origem_matriz === "Externo"
+            ? "docentes-row-critical"
+            : (doc.issues || []).length
+              ? "docentes-row-attention"
+              : "";
+          const boolBadge = (value) => {
+            if (value === true) return '<span class="docentes-bool yes">✓</span>';
+            if (value === false) return '<span class="docentes-bool no">×</span>';
+            return '<span class="docentes-bool na">-</span>';
+          };
+          const collaboratorBadge = doc.colabora_outros_ppgs === true
+            ? '<span class="docentes-bool yes">✓</span>'
+            : doc.colabora_outros_ppgs === false
+              ? '<span class="docentes-bool no">×</span>'
+              : '<span class="docentes-bool na">-</span>';
+          const statusCells = quadYears.map((year) => {
+            const status = doc.anos?.[year];
+            return `<td><span class="docentes-badge ${getDocentesBadgeClass(status)}">${status && status !== "---" ? status : "-"}</span></td>`;
+          }).join("");
           return `
-            <tr>
-              <td>
+            <tr class="${rowClass}">
+              <td class="docentes-structure-name">
                 <strong>${primaryName}</strong><br>
-                <span class="chart-note">${secondaryLine}</span>
+                <span>${secondaryLine}${lattes !== "Sem dado" ? ` · Lattes: ${lattes}` : ""}</span>
               </td>
-              <td><span class="docentes-badge ${getDocentesBadgeClass(status)}">${status || "-"}</span></td>
+              <td class="docentes-status-cell">${boolBadge(doc.ams)}</td>
+              <td class="docentes-status-cell">${boolBadge(doc.dfe)}</td>
               <td>${doc.origem_matriz || "-"}</td>
               <td>${doc.ppgs_como_permanente_2026 ?? "-"}</td>
-              <td>${lattes}${doc.lattes.data_atualizacao ? `<br><span class="chart-note">${doc.lattes.data_atualizacao}</span>` : ""}</td>
+              <td class="docentes-status-cell">${collaboratorBadge}</td>
+              <td>${doc.status_quadri || "-"}</td>
+              ${statusCells}
               <td>${badges}</td>
             </tr>
           `;
         }).join("");
 
-        emptyState.hidden = selectedDocs.length > 0;
+        emptyState.hidden = quadUnionDocs.length > 0;
       }
 
       function renderCurrentState() {
@@ -3471,17 +3822,29 @@
           return matchesQuery && matchesIssue;
         });
 
+        const currentYearStats = getDocentesQuadStats(selectedYear);
+        const externalPermanents = data.docentes.filter((doc) => doc.anos?.[selectedYear] === "Per" && doc.origem_matriz === "Externo").length;
+        const lattesReviewCount = filteredDocs.filter((doc) => (doc.issues || []).includes("lattes_desatualizado")).length;
+        const riskCount = filteredDocs.filter((doc) => (doc.issues || []).length > 0).length;
+        headlineChips.innerHTML = [
+          `<span class="docentes-mini-chip ok">Núcleo duro ${currentYearStats.nucleoDuro}</span>`,
+          `<span class="docentes-mini-chip ${externalPermanents ? "warn" : "ok"}">Externos P ${externalPermanents}</span>`,
+          `<span class="docentes-mini-chip ${lattesReviewCount ? "warn" : "ok"}">Lattes ${lattesReviewCount}</span>`,
+          `<span class="docentes-mini-chip ${riskCount ? "critical" : "ok"}">Docentes com alerta ${riskCount}</span>`,
+        ].join("");
+
         document.getElementById("docentes-headline-title").textContent = `Quadro síntese ${selectedYear}`;
         document.getElementById("docentes-headline-text").textContent =
           `${yearData.permanent_count} permanentes entre ${yearData.classified_count} docentes classificados. ` +
-          `Distribuição no ano: ${Object.entries(yearData.status_counts).map(([key, value]) => `${key}=${value}`).join(" · ")}.`;
+          `Núcleo duro ${currentYearStats.nucleoDuro}, quadro ampliado ${currentYearStats.quadroAmpliado}, dependência de colaboradores ${formatDocentesRatio(currentYearStats.permanentes, currentYearStats.colaboradores)}.`;
 
         document.getElementById("docentes-summary-classified").textContent = String(yearData.classified_count);
         document.getElementById("docentes-summary-permanent").textContent = String(yearData.permanent_count);
-        document.getElementById("docentes-summary-lattes").textContent = String(filteredDocs.filter((doc) => (doc.issues || []).includes("lattes_desatualizado")).length);
+        document.getElementById("docentes-summary-lattes").textContent = String(lattesReviewCount);
         document.getElementById("docentes-summary-issues").textContent = String(filteredDocs.reduce((acc, doc) => acc + (doc.issues || []).length, 0));
 
         buildMetrics(yearData);
+        buildQuadPanel();
         buildTimeline(selectedYear);
         buildIssuePanel(selectedYear, filteredDocs, passCount);
         renderTable(filteredDocs, selectedYear);
@@ -3599,6 +3962,10 @@
 
     function getTechnicalSubtype(item) {
       return item.subtipo || "Não informado";
+    }
+
+    function getTechnicalDetail(item) {
+      return item.observacoes || item.titulo || "";
     }
 
     function normalizeText(value) {
@@ -4846,7 +5213,7 @@
           <td>${formatTechnicalType(item.tipo_produto) || ""}</td>
           <td>${item.ano || "-"}</td>
           <td>${getTechnicalSubtype(item)}</td>
-          <td>${item.detalhamento || ""}</td>
+          <td>${getTechnicalDetail(item)}</td>
         </tr>
       `).join("");
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
