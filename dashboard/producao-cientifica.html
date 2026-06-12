@@ -3329,6 +3329,12 @@
       anos: [],
       status: [],
     };
+    let technicalFilterValues = {
+      docentes: [],
+      tipos: [],
+      anos: [],
+      status: [],
+    };
     let disciplinasFilterValues = {
       docentes: [],
       anos: [],
@@ -4452,6 +4458,106 @@
           config.selectedSet.clear();
           values.forEach((value) => config.selectedSet.add(value));
           applyScientificPanels();
+        });
+      });
+    }
+
+    function syncTechnicalFilterViews() {
+      [
+        [docenteTecnicaChipList, selectedDocentesTecnica],
+        [tiposTecnicaSelect, selectedTiposTecnica],
+        [anosTecnicaSelect, selectedAnosTecnica],
+        [statusTecnicaSelect, selectedStatusTecnica],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
+    }
+
+    function initializeTechnicalFilters() {
+      selectedDocentesTecnica = new Set(technicalFilterValues.docentes);
+      selectedTiposTecnica = new Set(technicalFilterValues.tipos);
+      selectedAnosTecnica = new Set(technicalFilterValues.anos);
+      selectedStatusTecnica = new Set(technicalFilterValues.status);
+      syncTechnicalFilterViews();
+    }
+
+    function bindTechnicalFilters() {
+      bindScientificCheckboxContainer(docenteTecnicaChipList, selectedDocentesTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(tiposTecnicaSelect, selectedTiposTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(anosTecnicaSelect, selectedAnosTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(statusTecnicaSelect, selectedStatusTecnica, applyTechnicalFilters);
+    }
+
+    function bindTechnicalFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesTecnica, getValues: () => technicalFilterValues.docentes },
+        tipos: { selectedSet: selectedTiposTecnica, getValues: () => technicalFilterValues.tipos },
+        anos: { selectedSet: selectedAnosTecnica, getValues: () => technicalFilterValues.anos },
+        status: { selectedSet: selectedStatusTecnica, getValues: () => technicalFilterValues.status },
+      };
+
+      tecnicaFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.technicalGroup];
+          if (!config) return;
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          config.selectedSet.clear();
+          values.forEach((value) => config.selectedSet.add(value));
+          syncTechnicalFilterViews();
+          applyTechnicalFilters();
+        });
+      });
+    }
+
+    function syncTechnicalFilterViews() {
+      [
+        [docenteTecnicaChipList, selectedDocentesTecnica],
+        [tiposTecnicaSelect, selectedTiposTecnica],
+        [anosTecnicaSelect, selectedAnosTecnica],
+        [statusTecnicaSelect, selectedStatusTecnica],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
+    }
+
+    function initializeTechnicalFilters() {
+      selectedDocentesTecnica = new Set(technicalFilterValues.docentes);
+      selectedTiposTecnica = new Set(technicalFilterValues.tipos);
+      selectedAnosTecnica = new Set(technicalFilterValues.anos);
+      selectedStatusTecnica = new Set(technicalFilterValues.status);
+      syncTechnicalFilterViews();
+    }
+
+    function bindTechnicalFilters() {
+      bindScientificCheckboxContainer(docenteTecnicaChipList, selectedDocentesTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(tiposTecnicaSelect, selectedTiposTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(anosTecnicaSelect, selectedAnosTecnica, applyTechnicalFilters);
+      bindScientificCheckboxContainer(statusTecnicaSelect, selectedStatusTecnica, applyTechnicalFilters);
+    }
+
+    function bindTechnicalFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesTecnica, getValues: () => technicalFilterValues.docentes },
+        tipos: { selectedSet: selectedTiposTecnica, getValues: () => technicalFilterValues.tipos },
+        anos: { selectedSet: selectedAnosTecnica, getValues: () => technicalFilterValues.anos },
+        status: { selectedSet: selectedStatusTecnica, getValues: () => technicalFilterValues.status },
+      };
+
+      tecnicaFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.technicalGroup];
+          if (!config) return;
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          config.selectedSet.clear();
+          values.forEach((value) => config.selectedSet.add(value));
+          syncTechnicalFilterViews();
+          applyTechnicalFilters();
         });
       });
     }

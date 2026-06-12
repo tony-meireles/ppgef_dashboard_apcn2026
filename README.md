@@ -20,5 +20,5 @@ Ao abrir a raiz do site, `index.html` redireciona para `dashboard/producao-cient
 
 ## Observacoes
 
-- Os arquivos SQLite locais nao sao a fonte oficial de publicacao e alguns artefatos antigos estavam invalidos; por isso ficam fora do versionamento.
+- A producao tecnica continua vinculada ao fluxo original em SQLite; os artefatos publicados podem ser atualizados a partir da nova base sem trocar o tipo de banco.
 - O dashboard publicado consome os dados embarcados em `dashboard/*.js` e mantem links para downloads em `data/`.
