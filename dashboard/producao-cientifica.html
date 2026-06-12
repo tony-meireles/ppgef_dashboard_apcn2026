@@ -552,6 +552,28 @@
       overflow: auto;
     }
 
+    .lideranca-detail-table {
+      min-width: 1680px;
+    }
+
+    .lideranca-detail-table th:nth-child(4),
+    .lideranca-detail-table td:nth-child(4) {
+      min-width: 440px;
+    }
+
+    .lideranca-detail-table td:nth-child(4) {
+      font-size: 0.68rem;
+      line-height: 1.35;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      padding-left: 14px;
+    }
+
+    .lideranca-authors-text {
+      display: block;
+      min-width: 100%;
+    }
+
     .orientation-table {
       min-width: 1700px;
       font-size: 0.9rem;
@@ -1246,7 +1268,7 @@
               </div>
             </div>
             <div class="table-wrap">
-              <table>
+              <table class="lideranca-detail-table">
                 <thead>
                   <tr>
                     <th>Docente</th>
@@ -1874,6 +1896,121 @@
               </table>
             </div>
           </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Docência</h2>
+              <p>Critério crítico ligado à participação dos docentes em disciplinas, considerando mínimo de uma oferta por docente na base disponível.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Base docente</p>
+            <strong id="docencia-crit-docentes-total">0</strong>
+            <span>Total de docentes considerados na base de disciplinas.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com docência</p>
+            <strong id="docencia-crit-atendidos-total">0</strong>
+            <span id="docencia-crit-atendidos-resumo">0 docentes com pelo menos uma disciplina.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Atendimento</p>
+            <strong id="docencia-crit-percentual">0%</strong>
+            <span id="docencia-crit-percentual-resumo">0 de 0 docentes atendem ao marcador.</span>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura de Docência</h2>
+              <p>Status consolidado do marcador de participação em disciplinas.</p>
+            </div>
+            <div class="criteria-summary" id="docencia-crit-summary-cards"></div>
+            <div class="chips" id="docencia-crit-insights"></div>
+            <p class="chart-note" id="docencia-crit-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese de Docência</h2>
+              <p>Resumo formal do atendimento ao marcador crítico de docência.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Indicador</th>
+                    <th>Exigência</th>
+                    <th>Resultado atual</th>
+                    <th>Status</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="docencia-crit-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Corpo Docente</h2>
+              <p>Regras críticas de composição do quadro permanente, vínculo institucional, exclusividade e dimensão mínima do programa.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Ano-base</p>
+            <strong id="corpo-docente-crit-ano">0</strong>
+            <span>Recorte padrão consolidado para leitura do quadro docente.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Permanentes</p>
+            <strong id="corpo-docente-crit-permanentes">0</strong>
+            <span id="corpo-docente-crit-permanentes-resumo">0 permanentes no ano-base.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Critérios atendidos</p>
+            <strong id="corpo-docente-crit-atendidos">0/0</strong>
+            <span id="corpo-docente-crit-atendidos-resumo">0 critérios atendidos no ano-base.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Alertas estruturais</p>
+            <strong id="corpo-docente-crit-alertas">0</strong>
+            <span id="corpo-docente-crit-alertas-resumo">0 alertas de consistência identificados.</span>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura de Corpo Docente</h2>
+              <p>Status consolidado dos critérios da composição docente.</p>
+            </div>
+            <div class="criteria-summary" id="corpo-docente-crit-summary-cards"></div>
+            <div class="chips" id="corpo-docente-crit-insights"></div>
+            <p class="chart-note" id="corpo-docente-crit-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese do Corpo Docente</h2>
+              <p>Resumo formal das regras críticas e dos principais pontos de depuração da base docente.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Indicador</th>
+                    <th>Exigência</th>
+                    <th>Resultado atual</th>
+                    <th>Status</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="corpo-docente-crit-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -1885,16 +2022,16 @@
               <p>
                 O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
                 A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
-                penúltima posição e 0,1 para as demais. Porém, a base científica atual não preserva a
-                sequência completa de autores na maior parte dos registros, então a aplicação prática do
-                índice depende da evidência autoral efetivamente disponível em cada item.
+                penúltima posição e 0,1 para as demais. A base científica reconstruída passa a preservar
+                a sequência autoral na referência de quase todos os registros, permitindo uma leitura
+                muito mais fiel do protagonismo investigativo por docente e por ano.
               </p>
             </div>
             <p class="chart-note">
-              Nesta base científica, a coluna nativa estruturada é <strong>autor_principal</strong>. Assim, no estado atual,
-              o comportamento dominante do cálculo é: <strong>1,0</strong> quando o docente coincide com o autor principal e
-              <strong>0,1</strong> quando não coincide. A régua intermediária de <strong>0,5</strong> só pode ser aplicada
-              quando houver lista completa de autores, o que hoje praticamente não ocorre na base sincronizada.
+              Nesta base científica, o campo estruturado <strong>autores</strong> passou a registrar a ordem autoral extraída
+              da referência completa. Com isso, a régua de <strong>1,0</strong>, <strong>0,5</strong> e <strong>0,1</strong>
+              é aplicada diretamente sobre a posição do docente na lista de autores, com fallback residual apenas para casos
+              em que o nome do docente não seja localizado automaticamente.
             </p>
             <div class="filters-grid">
               <div>
@@ -2288,10 +2425,12 @@
   <script src="./orientacoes-data.js"></script>
   <script src="./disciplinas-data.js?v=2026-06-12b"></script>
   <script src="./documentos-data.js"></script>
+  <script src="./corpo-docente-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
     const disciplinasExcludedDocentes = new Set([
       "CARLA MENESES HARDMAN",
       "BRENO QUINTELLA FARAH",
@@ -2373,6 +2512,10 @@
     const disciplinasDetalheNota = document.getElementById("disciplinas-detalhe-nota");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
+    const docenciaCritSummaryCards = document.getElementById("docencia-crit-summary-cards");
+    const docenciaCritInsights = document.getElementById("docencia-crit-insights");
+    const corpoDocenteCritSummaryCards = document.getElementById("corpo-docente-crit-summary-cards");
+    const corpoDocenteCritInsights = document.getElementById("corpo-docente-crit-insights");
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
@@ -3145,10 +3288,12 @@
       const surnameTokens = surnameSuffixes.has(tokens[tokens.length - 1]) && tokens.length > 1
         ? tokens.slice(-2)
         : tokens.slice(-1);
+      const primarySurname = surnameTokens[0] || "";
       const givenTokens = tokens.slice(0, Math.max(tokens.length - surnameTokens.length, 0));
       return {
         full: tokens.join(" "),
         surname: surnameTokens.join(" "),
+        primarySurname,
         shortSurname: tokens[tokens.length - 1] || "",
         givenTokens,
         initials: givenTokens.map((token) => token[0]).join(""),
@@ -3169,9 +3314,12 @@
       const surnameMatches = surnamePart
         ? (
           surnamePart === docenteProfile.surname ||
+          surnamePart === docenteProfile.primarySurname ||
           surnamePart === docenteProfile.shortSurname ||
+          surnamePart.startsWith(`${docenteProfile.primarySurname} `) ||
           surnamePart.endsWith(` ${docenteProfile.shortSurname}`) ||
-          docenteProfile.surname.endsWith(` ${surnamePart}`)
+          docenteProfile.surname.endsWith(` ${surnamePart}`) ||
+          docenteProfile.surname.startsWith(`${surnamePart} `)
         )
         : authorNormalized.includes(docenteProfile.shortSurname);
       if (!surnameMatches) return false;
@@ -3862,7 +4010,7 @@
             <td>${item.docente || ""}</td>
             <td>${item.ano || ""}</td>
             <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
-            <td>${item.autores || item.autor_principal || ""}</td>
+            <td><span class="lideranca-authors-text">${item.autores || item.autor_principal || ""}</span></td>
             <td>${score.label}</td>
             <td>${formatDecimal(score.score)}</td>
             <td>${item.titulo || ""}</td>
@@ -4257,6 +4405,17 @@
       };
     }
 
+    function aggregateDocenciaCriticalCriteria(data) {
+      const docenteSummary = aggregateDisciplinasByDocente(data);
+      const totalDocentes = docenteSummary.length;
+      const atendidos = docenteSummary.filter((item) => item.ofertas >= 1).length;
+      return {
+        totalDocentes,
+        atendidos,
+        percentual: totalDocentes ? Math.round((atendidos / totalDocentes) * 100) : 0,
+      };
+    }
+
     function renderOrientationCriteriaChart(summary) {
       const itens = [
         {
@@ -4394,6 +4553,172 @@
           </tr>
         `,
       ].join("");
+    }
+
+    function renderDocenciaCriticalCriteriaPanel() {
+      const summary = aggregateDocenciaCriticalCriteria(getDisciplinasBaseData());
+      const docenciaOk = summary.totalDocentes > 0 && summary.atendidos === summary.totalDocentes;
+
+      document.getElementById("docencia-crit-docentes-total").textContent = String(summary.totalDocentes);
+      document.getElementById("docencia-crit-atendidos-total").textContent = String(summary.atendidos);
+      document.getElementById("docencia-crit-percentual").textContent = `${summary.percentual}%`;
+      document.getElementById("docencia-crit-atendidos-resumo").textContent = `${summary.atendidos} docentes com pelo menos uma disciplina na base.`;
+      document.getElementById("docencia-crit-percentual-resumo").textContent = `${summary.atendidos} de ${summary.totalDocentes} docentes atendem ao marcador.`;
+
+      docenciaCritSummaryCards.innerHTML = `
+        <div class="criteria-score">
+          <div>
+            <div>Participação em disciplinas</div>
+            <strong>${summary.atendidos}/${summary.totalDocentes}</strong>
+          </div>
+          <span class="criteria-status ${docenciaOk ? "ok" : "risk"}">${docenciaOk ? "Atende" : "Atenção"}</span>
+        </div>
+      `;
+
+      docenciaCritInsights.innerHTML = [
+        `<span class="chip">Docência: <strong>${summary.atendidos}/${summary.totalDocentes}</strong> docentes com pelo menos uma disciplina</span>`,
+      ].join("");
+
+      document.getElementById("docencia-crit-metodologia").textContent = "Metodologia: o marcador considera a base de disciplinas do dashboard e contabiliza atendimento quando o docente possui pelo menos uma oferta de disciplina registrada no recorte disponível.";
+
+      document.getElementById("docencia-crit-resumo-body").innerHTML = `
+        <tr>
+          <td>Docência</td>
+          <td>Participação dos docentes em disciplinas</td>
+          <td>Mínimo 1 por docente</td>
+          <td>${summary.atendidos}/${summary.totalDocentes} docentes (${summary.percentual}%)</td>
+          <td><span class="criteria-status ${docenciaOk ? "ok" : "risk"}">${docenciaOk ? "Atende" : "Não atende"}</span></td>
+          <td>${docenciaOk ? "Todos os docentes da base de disciplinas possuem pelo menos uma oferta registrada." : `Há ${summary.totalDocentes - summary.atendidos} docente(s) sem oferta registrada na base de disciplinas.`}</td>
+        </tr>
+      `;
+    }
+
+    function renderCorpoDocenteCriticalCriteriaPanel() {
+      const summaryYear = dataSourceCorpoDocente.default_year;
+      const yearSummary = dataSourceCorpoDocente.by_year?.[summaryYear];
+      if (!summaryYear || !yearSummary) {
+        return;
+      }
+
+      const metricLabels = {
+        permanentes_no_corpo: "Permanentes no corpo",
+        permanentes_internos: "Permanentes com vínculo com a IES",
+        permanentes_exclusivos: "Permanentes exclusivos ao programa",
+        permanentes_externos: "Permanentes com vínculo externo",
+        permanentes_colaboradores_outros_ppgs: "Permanentes colaboradores em outros PPGs",
+        total_permanentes: "Dimensão do corpo permanente",
+      };
+
+      const metricRequirements = {
+        permanentes_no_corpo: "≥ 70% do corpo docente classificado como permanente",
+        permanentes_internos: "≥ 80% dos permanentes com vínculo com a IES proponente",
+        permanentes_exclusivos: "≥ 30% dos permanentes exclusivos ao programa",
+        permanentes_externos: "≤ 20% dos permanentes com vínculo externo",
+        permanentes_colaboradores_outros_ppgs: "≤ 40% dos permanentes como colaboradores em outros PPGs",
+        total_permanentes: "≥ 12 permanentes ou ≥ 10 com justificativa regional",
+      };
+
+      const issueLabels = {
+        colabora_em_outro_ppg_2026: "Atua como colaborador em outro PPG",
+        lattes_desatualizado: "Lattes com revisão pendente",
+        cadastro_incompleto: "Cadastro com lacunas ou marcadores provisórios",
+        permanente_externo_2026: "Permanente externo no ano-base",
+        nao_exclusivo_ao_programa_2026: "Permanente compartilhado com outros PPGs",
+        nome_divergente_entre_abas: "Nome divergente entre abas",
+        origem_divergente_externo_vs_interno: "Origem divergente: cadastro externo x matriz interna",
+        origem_divergente_interno_vs_externo: "Origem divergente: cadastro interno x matriz externa",
+      };
+
+      const metrics = Object.values(yearSummary.metrics);
+      const passedCount = metrics.filter((metric) => metric.passed).length;
+      const totalCount = metrics.length;
+      const permanentCount = yearSummary.permanent_count || 0;
+      const topIssues = Object.entries(dataSourceCorpoDocente.issue_counts || {})
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4);
+
+      document.getElementById("corpo-docente-crit-ano").textContent = String(summaryYear);
+      document.getElementById("corpo-docente-crit-permanentes").textContent = String(permanentCount);
+      document.getElementById("corpo-docente-crit-permanentes-resumo").textContent = `${permanentCount} permanentes entre ${yearSummary.classified_count} docentes classificados.`;
+      document.getElementById("corpo-docente-crit-atendidos").textContent = `${passedCount}/${totalCount}`;
+      document.getElementById("corpo-docente-crit-atendidos-resumo").textContent = `${passedCount} dos ${totalCount} critérios atendidos no recorte ${summaryYear}.`;
+      document.getElementById("corpo-docente-crit-alertas").textContent = String(Object.values(dataSourceCorpoDocente.issue_counts || {}).reduce((acc, value) => acc + value, 0));
+      document.getElementById("corpo-docente-crit-alertas-resumo").textContent = `${topIssues.length} famílias principais de alerta na consolidação do quadro docente.`;
+
+      const internalMetric = yearSummary.metrics.permanentes_internos;
+      const externalMetric = yearSummary.metrics.permanentes_externos;
+      const dimensionMetric = yearSummary.metrics.total_permanentes;
+
+      corpoDocenteCritSummaryCards.innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Critérios atendidos</div>
+              <strong>${passedCount}/${totalCount}</strong>
+            </div>
+            <span class="criteria-status ${passedCount === totalCount ? "ok" : "risk"}">${passedCount === totalCount ? "Atende" : "Atenção"}</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Dimensão permanente</div>
+              <strong>${dimensionMetric.value}</strong>
+            </div>
+            <span class="criteria-status ${dimensionMetric.passed ? "ok" : "risk"}">${dimensionMetric.passed ? "Ok" : dimensionMetric.condition === "justificavel_regional" ? "Justificar" : "Crítico"}</span>
+          </div>
+        `,
+      ].join("");
+
+      corpoDocenteCritInsights.innerHTML = [
+        `<span class="chip">Internos: <strong>${(internalMetric.value * 100).toFixed(1).replace(".", ",")}%</strong> frente ao mínimo de <strong>80%</strong></span>`,
+        `<span class="chip">Externos: <strong>${(externalMetric.value * 100).toFixed(1).replace(".", ",")}%</strong> frente ao teto de <strong>20%</strong></span>`,
+        ...topIssues.map(([key, count]) => `<span class="chip">${count} · ${issueLabels[key] || key}</span>`),
+      ].join("");
+
+      document.getElementById("corpo-docente-crit-metodologia").textContent = "Metodologia: o painel usa o dataset consolidado da planilha de corpo docente, tomando o ano padrão da simulação atual como base para verificar dimensão, vínculo institucional, exclusividade e limites de composição.";
+
+      document.getElementById("corpo-docente-crit-resumo-body").innerHTML = metrics.map((metric) => {
+        const isCount = metric.metric === "total_permanentes";
+        const resultText = isCount
+          ? `${metric.value} permanentes`
+          : `${(metric.value * 100).toFixed(1).replace(".", ",")}%`;
+        const statusText = metric.passed
+          ? "Atende"
+          : metric.condition === "justificavel_regional"
+            ? "Justificar"
+            : "Não atende";
+        const statusClass = metric.passed ? "ok" : "risk";
+        const reading = isCount
+          ? (metric.passed
+            ? `O programa supera a linha principal em ${metric.value - metric.target} docente(s).`
+            : metric.condition === "justificavel_regional"
+              ? `O programa fica na faixa de ${metric.fallback_min}-${metric.target - 1}, dependente de justificativa regional.`
+              : `O programa está abaixo da referência mínima de ${metric.target} permanentes.`)
+          : (metric.passed
+            ? "O indicador atende ao parâmetro definido para APCN."
+            : "O indicador permanece abaixo da exigência crítica para APCN.");
+
+        return `
+          <tr>
+            <td>Corpo Docente</td>
+            <td>${metricLabels[metric.metric] || metric.metric}</td>
+            <td>${metricRequirements[metric.metric] || ""}</td>
+            <td>${resultText}</td>
+            <td><span class="criteria-status ${statusClass}">${statusText}</span></td>
+            <td>${reading}</td>
+          </tr>
+        `;
+      }).join("") + topIssues.map(([key, count]) => `
+        <tr>
+          <td>Depuração</td>
+          <td>${issueLabels[key] || key}</td>
+          <td>Consistência interna da base</td>
+          <td>${count} ocorrência(s)</td>
+          <td><span class="criteria-status risk">Revisar</span></td>
+          <td>Alerta estrutural identificado na consolidação entre abas da planilha docente.</td>
+        </tr>
+      `).join("");
     }
 
     function renderProductivityCriteriaPanel() {
@@ -4543,6 +4868,8 @@
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
+    renderDocenciaCriticalCriteriaPanel();
+    renderCorpoDocenteCriticalCriteriaPanel();
     renderDocumentsPanel();
 
     tiposTecnicaSelect.addEventListener("change", applyTechnicalFilters);
