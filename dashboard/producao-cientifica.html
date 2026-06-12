@@ -2975,9 +2975,9 @@
             <span>Valor médio de JCR entre os produtos que possuem essa evidência.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com JCR</p>
+            <p class="eyebrow">Docentes com publicação Scopus</p>
             <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto com JCR no recorte atual.</span>
+            <span>Docentes que possuem ao menos um produto indexado na Scopus no recorte atual.</span>
           </div>
 
           <div class="card chart-wide">
@@ -5130,10 +5130,6 @@
       const redPolygon = buildBoundaryArea(p30Score, "top");
       const amberPolygon = buildBandPolygon(p30Score, p55Score);
       const greenPolygon = buildBoundaryArea(p55Score, "bottom");
-      const redLineStartY = clamp(bandLineY(p30Score, left), top, plotBottom);
-      const redLineEndY = clamp(bandLineY(p30Score, plotRight), top, plotBottom);
-      const greenLineStartY = clamp(bandLineY(p55Score, left), top, plotBottom);
-      const greenLineEndY = clamp(bandLineY(p55Score, plotRight), top, plotBottom);
       chartLiderancaDispersao.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
           <rect x="${left}" y="${top}" width="${innerWidth}" height="${innerHeight}" rx="18" fill="#fbf7f1" stroke="#d7cdbc" stroke-width="1.5"></rect>
@@ -5160,8 +5156,6 @@
           }).join("")}
           <line x1="${left}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
           <line x1="${left}" y1="${top}" x2="${left}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          <line x1="${left}" y1="${redLineStartY}" x2="${plotRight}" y2="${redLineEndY}" stroke="#9b2b44" stroke-width="2.5" stroke-opacity="0.72"></line>
-          <line x1="${left}" y1="${greenLineStartY}" x2="${plotRight}" y2="${greenLineEndY}" stroke="#557a5f" stroke-width="2.5" stroke-opacity="0.78"></line>
           ${items.map((item) => {
             const x = left + item.xRatio * innerWidth;
             const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
@@ -5170,25 +5164,14 @@
               <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
             `;
           }).join("")}
-          <g font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="14">
-            <rect x="118" y="78" width="108" height="26" rx="10" fill="white" fill-opacity="0.93" stroke="#b2344a" stroke-width="1.5"></rect>
-            <text x="172" y="95" text-anchor="middle" fill="#b2344a">Indesejado</text>
-            <rect x="808" y="80" width="90" height="26" rx="10" fill="white" fill-opacity="0.93" stroke="#c49014" stroke-width="1.5"></rect>
-            <text x="853" y="97" text-anchor="middle" fill="#c49014">Esperado</text>
-            <rect x="830" y="404" width="86" height="26" rx="10" fill="white" fill-opacity="0.93" stroke="#376c57" stroke-width="1.5"></rect>
-            <text x="873" y="421" text-anchor="middle" fill="#376c57">Desejado</text>
-          </g>
-          <g font-family="Segoe UI, Arial, sans-serif">
-            <rect x="600" y="18" width="374" height="44" rx="10" fill="white" fill-opacity="0.95" stroke="#d8cebf"></rect>
-            <text x="613" y="35" font-size="12.5" fill="#555">Faixas diagonais de perfil docente a partir da combinação entre produtividade APCN (X)</text>
-            <text x="613" y="50" font-size="12.5" fill="#555">e Índice Mostarda invertido. Cortes percentílicos usados neste recorte: p30,0 e p55,0.</text>
-            <rect x="112" y="399" width="748" height="38" rx="10" fill="white" fill-opacity="0.92" stroke="#d8cebf"></rect>
-            <text x="125" y="415" font-size="12.5" fill="#555">Leitura: Indesejado ≤ p30,0; Esperado entre p30,0 e p55,0; Desejado &gt; p55,0 na escala diagonal combinada.</text>
-            <text x="125" y="429" font-size="12.5" fill="#555">Cada bolota usa cor única para evitar sugerir uma classificação paralela diferente da tipologia diagonal.</text>
-          </g>
           <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
+        <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
+          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Indesejado</strong>, a faixa amarela representa o perfil <strong>Esperado</strong> e a faixa verde representa o perfil <strong>Desejado</strong>.
+          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade APCN e inverso do Índice Mostarda.
+          Leitura: <strong>Indesejado</strong> ≤ p30,0; <strong>Esperado</strong> entre p30,0 e p55,0; <strong>Desejado</strong> &gt; p55,0.
+        </div>
       `;
     }
 
@@ -5268,6 +5251,7 @@
             docente: item.docente,
             jcrSum: 0,
             jcrCount: 0,
+            hasScopus: false,
             artigos90: 0,
             artigos70: 0,
             artigos50: 0,
@@ -5276,9 +5260,13 @@
         }
         const row = grouped.get(item.docente);
         const jcr = Number(item.jif_jcr_2025) || 0;
+        const indexacao = String(item.indexacao || "");
         if (jcr > 0) {
           row.jcrSum += jcr;
           row.jcrCount += 1;
+        }
+        if (indexacao.includes("Scopus")) {
+          row.hasScopus = true;
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") row.artigos90 += 1;
@@ -5323,7 +5311,7 @@
     }
 
     function renderLeadershipQualityMetrics(summary, totals) {
-      const docentesComJcr = summary.filter((item) => item.jcrCount > 0);
+      const docentesComScopus = summary.filter((item) => item.hasScopus);
       const topJcr = summary[0];
       const bestAvg = [...summary]
         .filter((item) => item.jcrCount > 0)
@@ -5332,7 +5320,7 @@
       document.getElementById("lideranca-qualidade-produtos-jcr").textContent = String(totals.jcrCount);
       document.getElementById("lideranca-qualidade-jcr-soma").textContent = formatDecimal(totals.jcrSum);
       document.getElementById("lideranca-qualidade-jcr-media").textContent = formatDecimal(totals.jcrCount ? totals.jcrSum / totals.jcrCount : 0);
-      document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComJcr.length);
+      document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComScopus.length);
 
       liderancaQualidadeInsights.innerHTML = [
         topJcr ? `<span class="chip">Maior soma de JCR: <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
