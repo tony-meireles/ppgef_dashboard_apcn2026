@@ -1174,6 +1174,267 @@
       font-size: 0.9rem;
     }
 
+    .docentes-hero-card {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: 1.65fr 0.95fr;
+      gap: 18px;
+      padding: 28px;
+      color: white;
+      background: linear-gradient(135deg, rgba(140, 21, 56, 0.98) 0%, rgba(84, 14, 34, 0.96) 100%);
+    }
+
+    .docentes-eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.84rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .docentes-hero-card h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+
+    .docentes-hero-card p {
+      margin: 16px 0 0;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .docentes-hero-side {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .docentes-hero-side strong {
+      display: block;
+      font-size: 2.8rem;
+      letter-spacing: -0.04em;
+    }
+
+    .docentes-hero-side span {
+      display: block;
+      margin-top: 8px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .docentes-controls-card,
+    .docentes-headline-card,
+    .docentes-table-card,
+    .docentes-activity-card {
+      grid-column: span 12;
+    }
+
+    .docentes-metrics-grid {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 0;
+    }
+
+    .docentes-metric-card {
+      grid-column: span 4;
+    }
+
+    .docentes-summary-card {
+      grid-column: span 4;
+    }
+
+    .docentes-timeline-card {
+      grid-column: span 5;
+    }
+
+    .docentes-issues-card {
+      grid-column: span 3;
+    }
+
+    .docentes-controls-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      gap: 16px;
+    }
+
+    .docentes-metric-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .docentes-metric-value {
+      font-size: 2.15rem;
+      letter-spacing: -0.04em;
+    }
+
+    .docentes-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .docentes-status-pass {
+      background: rgba(31, 122, 87, 0.12);
+      color: var(--ufpe-sucesso);
+    }
+
+    .docentes-status-fail {
+      background: rgba(162, 42, 42, 0.12);
+      color: #a22a2a;
+    }
+
+    .docentes-metric-bar {
+      height: 12px;
+      border-radius: 999px;
+      background: #efe6d8;
+      overflow: hidden;
+    }
+
+    .docentes-metric-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--ufpe-dourado), var(--ufpe-bordo));
+    }
+
+    .docentes-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .docentes-summary-tile {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 253, 249, 0.92);
+      border: 1px solid var(--ufpe-linha);
+    }
+
+    .docentes-summary-tile strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .docentes-summary-tile span {
+      display: block;
+      margin-top: 6px;
+      line-height: 1.4;
+      color: var(--ufpe-cinza);
+    }
+
+    .docentes-timeline-row {
+      display: grid;
+      grid-template-columns: 64px 1fr 64px;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .docentes-timeline-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .docentes-timeline-track {
+      height: 14px;
+      border-radius: 999px;
+      background: #eee4d7;
+      overflow: hidden;
+    }
+
+    .docentes-timeline-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #d7b475, var(--ufpe-bordo));
+    }
+
+    .docentes-timeline-year {
+      font-weight: 700;
+    }
+
+    .docentes-timeline-value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--ufpe-cinza);
+    }
+
+    .docentes-issue-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .docentes-issue-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 253, 249, 0.92);
+      border: 1px solid var(--ufpe-linha);
+    }
+
+    .docentes-issue-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+    }
+
+    .docentes-issue-item span {
+      color: var(--ufpe-cinza);
+      line-height: 1.45;
+    }
+
+    .docentes-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #f0e6da;
+      color: var(--ufpe-grafite);
+    }
+
+    .docentes-badge.per {
+      background: rgba(31, 122, 87, 0.12);
+      color: var(--ufpe-sucesso);
+    }
+
+    .docentes-badge.col {
+      background: rgba(199, 146, 45, 0.15);
+      color: #a55b17;
+    }
+
+    .docentes-badge.temp {
+      background: rgba(45, 94, 140, 0.12);
+      color: #275f8b;
+    }
+
+    .docentes-badge.vis {
+      background: rgba(111, 111, 111, 0.14);
+      color: #555;
+    }
+
+    .docentes-badge.issue {
+      margin: 0 6px 6px 0;
+      background: rgba(162, 42, 42, 0.12);
+      color: #a22a2a;
+    }
+
+    .docentes-empty-state {
+      padding: 24px 0 6px;
+      color: var(--ufpe-cinza);
+    }
+
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
       .metric { grid-column: span 6; }
@@ -1182,6 +1443,11 @@
       .orientation-focus { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr 1fr; }
       .documents-group { grid-column: span 12; }
+      .docentes-hero-card { grid-template-columns: 1fr; }
+      .docentes-metric-card,
+      .docentes-summary-card,
+      .docentes-timeline-card,
+      .docentes-issues-card { grid-column: span 12; }
     }
 
     @media (max-width: 800px) {
@@ -1194,6 +1460,11 @@
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
       .tabs-nav { flex-direction: column; }
+      .docentes-hero-card { padding: 20px; }
+      .docentes-controls-grid,
+      .docentes-subgrid,
+      .docentes-metrics-grid { grid-template-columns: 1fr; }
+      .docentes-timeline-row { grid-template-columns: 56px 1fr 56px; }
     }
   </style>
 </head>
@@ -1886,39 +2157,108 @@
 
       <div class="tab-panel" id="tab-docentes">
         <section class="grid">
-          <div class="card table-card">
-            <div class="section-head">
-              <div>
-                <h2>Corpo Docente</h2>
-                <p>Área pública reservada para a leitura institucional das regras de composição docente do programa.</p>
-              </div>
-              <div class="inline-actions">
-                <span class="documents-section-tag">Versão Pública</span>
-              </div>
+          <div class="card docentes-hero-card">
+            <div>
+              <p class="docentes-eyebrow">PPGEF · Atuação Docente</p>
+              <h2>Corpo Docente</h2>
+              <p>
+                Leitura operacional do quadro docente com foco nos seis critérios críticos de composição
+                do programa, série temporal de 2021 a 2028 e alertas de depuração para inconsistências
+                entre origem institucional, classificação anual e cadastro derivado.
+              </p>
             </div>
-            <p class="chart-note">O detalhamento nominal e os diagnósticos internos do quadro docente permanecem em uso restrito. Nesta versão pública, a aba preserva apenas a moldura institucional do tema.</p>
-            <div class="criteria-summary">
-              <div class="criteria-score">
-                <div>
-                  <div>Escopo público</div>
-                  <strong>Docentes</strong>
-                </div>
-                <span class="criteria-status ok">Publicável</span>
-              </div>
-            </div>
-            <div class="chips">
-              <span class="chip">Composição docente tratada no âmbito institucional do APCN</span>
-              <span class="chip">Diagnósticos nominais mantidos fora da versão pública</span>
-            </div>
-            <div class="document-empty" style="margin-top: 18px;">
-              A leitura detalhada do corpo docente foi preservada apenas no ambiente interno de trabalho, para evitar exposição de bases derivadas de planilhas estratégicas.
+            <div class="docentes-hero-side">
+              <strong id="docentes-hero-pass-count">0/6</strong>
+              <span id="docentes-hero-summary">Critérios atendidos no ano selecionado.</span>
             </div>
           </div>
 
-          <div class="card table-card">
+          <div class="card docentes-controls-card">
+            <div class="docentes-controls-grid">
+              <div>
+                <label for="docentes-year-select">Ano de referência</label>
+                <select id="docentes-year-select"></select>
+              </div>
+              <div>
+                <label for="docentes-search-input">Buscar docente</label>
+                <input id="docentes-search-input" type="search" placeholder="Nome, origem ou alerta">
+              </div>
+              <div>
+                <label for="docentes-issue-select">Filtro de alerta</label>
+                <select id="docentes-issue-select"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card docentes-headline-card">
+            <h2 id="docentes-headline-title">Quadro síntese</h2>
+            <p class="chart-note" id="docentes-headline-text"></p>
+          </div>
+
+          <div id="docentes-metrics-grid" class="docentes-metrics-grid"></div>
+
+          <div class="card docentes-summary-card">
+            <h2>Recorte do Ano</h2>
+            <div class="docentes-subgrid">
+              <div class="docentes-summary-tile">
+                <strong id="docentes-summary-classified">0</strong>
+                <span>Docentes classificados no ano.</span>
+              </div>
+              <div class="docentes-summary-tile">
+                <strong id="docentes-summary-permanent">0</strong>
+                <span>Docentes permanentes.</span>
+              </div>
+              <div class="docentes-summary-tile">
+                <strong id="docentes-summary-lattes">0</strong>
+                <span>Lattes com revisão pendente.</span>
+              </div>
+              <div class="docentes-summary-tile">
+                <strong id="docentes-summary-issues">0</strong>
+                <span>Alertas no recorte visível.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card docentes-timeline-card">
+            <h2>Proporção de Permanentes por Ano</h2>
+            <div id="docentes-timeline-host"></div>
+          </div>
+
+          <div class="card docentes-issues-card">
+            <h2>Depuração Prioritária</h2>
+            <div class="docentes-issue-list" id="docentes-issue-list"></div>
+            <div class="chips" id="docentes-issue-chips"></div>
+          </div>
+
+          <div class="card docentes-table-card">
+            <div class="section-head">
+              <div>
+                <h2>Base Docente</h2>
+                <p>Leitura nominal para manejo direto no dashboard, sem navegação embutida em outra página.</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Situação</th>
+                    <th>Origem</th>
+                    <th># PPGs como P (2026)</th>
+                    <th>Lattes</th>
+                    <th>Alertas</th>
+                  </tr>
+                </thead>
+                <tbody id="docentes-body"></tbody>
+              </table>
+            </div>
+            <p class="docentes-empty-state" id="docentes-empty-state" hidden>Nenhum docente encontrado para os filtros aplicados.</p>
+          </div>
+
+          <div class="card docentes-activity-card">
             <div class="section-head">
               <h2>Demonstração da Atividade Docente Ano a Ano</h2>
-              <p>Leitura cronológica pública do acompanhamento institucional da atuação docente no programa.</p>
+              <p>Leitura cronológica institucional para manter a comparação do ciclo dentro da mesma aba de dashboard.</p>
             </div>
             <div class="table-wrap">
               <table class="criteria-table">
@@ -1982,7 +2322,7 @@
                 </tbody>
               </table>
             </div>
-            <p class="chart-note">A versão pública prioriza a leitura cronológica e institucional. O demonstrativo quantitativo e nominal ano a ano permanece reservado ao ambiente interno.</p>
+            <p class="chart-note">A tabela cronológica foi mantida na própria aba para evitar a quebra de navegação e preservar a leitura ano a ano junto dos indicadores operacionais.</p>
           </div>
         </section>
       </div>
@@ -2682,13 +3022,19 @@
   <script src="./producao-cientifica-data.js"></script>
   <script src="./producao-tecnica-data.js"></script>
   <script src="./orientacoes-data.js"></script>
-  <script src="./disciplinas-data.js?v=2026-06-12c"></script>
+  <script src="./disciplinas-data.js?v=2026-06-12d"></script>
   <script src="./documentos-data.js"></script>
+  <script src="./corpo-docente-data.js"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
+    const normalizeDisciplinasName = (value) => String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim()
+      .toUpperCase();
     const disciplinasExcludedDocentes = new Set([
       "CARLA MENESES HARDMAN",
       "BRENO QUINTELLA FARAH",
@@ -2697,7 +3043,7 @@
       "FLAVIO RENATO BARROS DA GUARDA",
       "LUCIANO MACHADO FERREIRA TENORIO DE OLIVEIRA",
       "VINICIUS DE OLIVEIRA DAMASCENO",
-    ]);
+    ].map(normalizeDisciplinasName));
     const dataSourceDisciplinas = (window.DISCIPLINAS_PPGEF || []).map((item) => ({
       ...item,
       ano: String(item.ano || "").trim(),
@@ -2850,6 +3196,301 @@
 
     function formatOrientationValue(value) {
       return Number(value) === 0 ? "-" : String(value ?? "-");
+    }
+
+    const docentesMetricLabels = {
+      permanentes_no_corpo: "Permanentes no corpo",
+      permanentes_internos: "Permanentes com vínculo com a IES",
+      permanentes_exclusivos: "Permanentes exclusivos ao programa",
+      permanentes_externos: "Permanentes com vínculo externo",
+      permanentes_colaboradores_outros_ppgs: "Permanentes colaboradores em outros PPGs",
+      total_permanentes: "Dimensão do corpo permanente",
+    };
+
+    const docentesMetricDescriptions = {
+      permanentes_no_corpo: "Meta mínima de 70% do corpo docente classificado como permanente.",
+      permanentes_internos: "Meta mínima de 80% dos permanentes vinculados à IES proponente.",
+      permanentes_exclusivos: "Meta mínima de 30% dos permanentes exclusivos ao programa.",
+      permanentes_externos: "Teto de 20% de permanentes externos com cessão formal.",
+      permanentes_colaboradores_outros_ppgs: "Teto de 40% de permanentes atuando como colaboradores em outros programas.",
+      total_permanentes: "Regra principal de ao menos 12 permanentes; 10 ou 11 exigem justificativa regional.",
+    };
+
+    const docentesIssueLabels = {
+      colabora_em_outro_ppg_2026: "Atua como colaborador em outro PPG",
+      lattes_desatualizado: "Lattes com revisão pendente",
+      cadastro_incompleto: "Cadastro com lacunas ou marcadores provisórios",
+      permanente_externo_2026: "Permanente externo em 2026",
+      nao_exclusivo_ao_programa_2026: "Permanente compartilhado com outros PPGs em 2026",
+      nome_divergente_entre_abas: "Nome divergente entre abas",
+      origem_divergente_externo_vs_interno: "Origem diverge: cadastro externo, matriz interna",
+      origem_divergente_interno_vs_externo: "Origem diverge: cadastro interno, matriz externa",
+    };
+
+    function formatDocentesPercent(value) {
+      return `${(value * 100).toFixed(1).replace(".", ",")}%`;
+    }
+
+    function normalizeDocentesText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
+    function formatDocentesMetricValue(metric) {
+      if (metric.value == null) return "-";
+      if (metric.metric === "total_permanentes") return String(metric.value);
+      return formatDocentesPercent(metric.value);
+    }
+
+    function getDocentesBadgeClass(status) {
+      return {
+        Per: "per",
+        Col: "col",
+        Temp: "temp",
+        Vis: "vis",
+      }[status] || "";
+    }
+
+    function renderDocentesTab() {
+      const data = dataSourceCorpoDocente;
+      const yearSelect = document.getElementById("docentes-year-select");
+      const searchInput = document.getElementById("docentes-search-input");
+      const issueSelect = document.getElementById("docentes-issue-select");
+      const metricsGrid = document.getElementById("docentes-metrics-grid");
+      const timelineHost = document.getElementById("docentes-timeline-host");
+      const docentesBody = document.getElementById("docentes-body");
+      const issueList = document.getElementById("docentes-issue-list");
+      const issueChips = document.getElementById("docentes-issue-chips");
+      const emptyState = document.getElementById("docentes-empty-state");
+
+      if (!yearSelect || !searchInput || !issueSelect || !metricsGrid || !timelineHost || !docentesBody || !issueList || !issueChips || !emptyState) {
+        return;
+      }
+
+      if (!data?.default_year || !Object.keys(data.by_year || {}).length) {
+        document.getElementById("docentes-headline-title").textContent = "Quadro síntese indisponível";
+        document.getElementById("docentes-headline-text").textContent = "A base corpo-docente-data.js não foi carregada no ambiente atual.";
+        metricsGrid.innerHTML = "";
+        timelineHost.innerHTML = "";
+        docentesBody.innerHTML = "";
+        issueList.innerHTML = '<div class="docentes-issue-item"><strong>Sem base carregada</strong><span>Restaure ou regenere a base do corpo docente para habilitar esta aba.</span></div>';
+        issueChips.innerHTML = "";
+        emptyState.hidden = false;
+        document.getElementById("docentes-hero-pass-count").textContent = "0/6";
+        document.getElementById("docentes-hero-summary").textContent = "A aba foi normalizada, mas a base de dados não está disponível.";
+        return;
+      }
+
+      function fillControls() {
+        yearSelect.innerHTML = Object.keys(data.by_year)
+          .map((year) => `<option value="${year}">${year}</option>`)
+          .join("");
+        yearSelect.value = data.default_year;
+
+        issueSelect.innerHTML = [
+          '<option value="">Todos os alertas</option>',
+          ...Object.entries(data.issue_counts || {})
+            .sort((a, b) => b[1] - a[1])
+            .map(([key, count]) => `<option value="${key}">${docentesIssueLabels[key] || key} (${count})</option>`),
+        ].join("");
+      }
+
+      function buildMetrics(yearData) {
+        const cards = Object.values(yearData.metrics || {}).map((metric) => {
+          const percent = metric.metric === "total_permanentes"
+            ? Math.max(0, Math.min(1, (metric.value ?? 0) / metric.target))
+            : (metric.value ?? 0);
+          const width = Math.max(0, Math.min(100, percent * 100));
+          const isConditional = metric.metric === "total_permanentes" && metric.condition === "justificavel_regional";
+          const statusClass = metric.passed ? "docentes-status-pass" : "docentes-status-fail";
+          const statusLabel = metric.passed ? "Atende" : isConditional ? "Exige justificativa" : "Crítico";
+          return `
+            <div class="card docentes-metric-card">
+              <div class="docentes-metric-top">
+                <div>
+                  <h2>${docentesMetricLabels[metric.metric]}</h2>
+                  <strong class="docentes-metric-value">${formatDocentesMetricValue(metric)}</strong>
+                  <p class="chart-note">${docentesMetricDescriptions[metric.metric]}</p>
+                </div>
+                <span class="docentes-status-pill ${statusClass}">${statusLabel}</span>
+              </div>
+              <div class="docentes-metric-bar">
+                <div class="docentes-metric-fill" style="width:${width}%"></div>
+              </div>
+              <p class="chart-note">
+                Referência: ${metric.metric === "total_permanentes"
+                  ? `>= ${metric.target} ou >= ${metric.fallback_min} com justificativa regional`
+                  : `${metric.direction === "min" ? ">=" : "<="} ${formatDocentesPercent(metric.target)}`}
+              </p>
+            </div>
+          `;
+        });
+
+        metricsGrid.innerHTML = cards.join("");
+      }
+
+      function buildTimeline(selectedYear) {
+        timelineHost.innerHTML = Object.entries(data.by_year)
+          .map(([year, yearData]) => {
+            const value = yearData.metrics.permanentes_no_corpo.value ?? 0;
+            const isCurrent = year === selectedYear;
+            return `
+              <div class="docentes-timeline-row">
+                <div class="docentes-timeline-year">${isCurrent ? `<strong>${year}</strong>` : year}</div>
+                <div class="docentes-timeline-track">
+                  <div class="docentes-timeline-fill" style="width:${Math.max(0, Math.min(100, value * 100))}%"></div>
+                </div>
+                <div class="docentes-timeline-value">${formatDocentesPercent(value)}</div>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      function topIssues(selectedDocs) {
+        const counter = new Map();
+        selectedDocs.forEach((doc) => {
+          (doc.issues || []).forEach((issue) => {
+            counter.set(issue, (counter.get(issue) || 0) + 1);
+          });
+        });
+        return [...counter.entries()].sort((a, b) => b[1] - a[1]);
+      }
+
+      function buildIssuePanel(selectedYear, selectedDocs, passCount) {
+        const metrics = data.by_year[selectedYear].metrics;
+        const criticalMetrics = Object.values(metrics).filter((metric) => !metric.passed);
+        const issues = topIssues(selectedDocs).slice(0, 4);
+        const primary = [];
+
+        if (criticalMetrics.length) {
+          criticalMetrics.forEach((metric) => {
+            primary.push({
+              title: docentesMetricLabels[metric.metric],
+              body: metric.metric === "total_permanentes"
+                ? (metric.condition === "justificavel_regional"
+                  ? `No ano ${selectedYear}, o programa tem ${metric.value} permanentes. A faixa 10-11 e defensavel apenas com justificativa regional.`
+                  : `No ano ${selectedYear}, o programa tem ${metric.value} permanentes, abaixo do minimo principal de ${metric.target}.`)
+                : `No ano ${selectedYear}, o indicador ficou em ${formatDocentesPercent(metric.value)} frente ao limite ${metric.direction === "min" ? "minimo" : "maximo"} de ${formatDocentesPercent(metric.target)}.`
+            });
+          });
+        } else {
+          primary.push({
+            title: `Seis critérios atendidos em ${selectedYear}`,
+            body: "O arranjo proposto atende aos seis critérios, mas dois passam com margem curta: vínculo com a IES e permanentes externos.",
+          });
+        }
+
+        const externalMetric = metrics.permanentes_externos;
+        const internalMetric = metrics.permanentes_internos;
+        if (externalMetric.passed && externalMetric.gap < 0.03) {
+          primary.push({
+            title: "Margem estreita para permanentes externos",
+            body: `A razao de externos esta em ${formatDocentesPercent(externalMetric.value)}. O teto e ${formatDocentesPercent(externalMetric.target)} e a folga e pequena.`,
+          });
+        }
+        if (internalMetric.passed && internalMetric.gap < 0.03) {
+          primary.push({
+            title: "Margem estreita para vínculo interno",
+            body: `Os permanentes internos somam ${formatDocentesPercent(internalMetric.value)}. O minimo e ${formatDocentesPercent(internalMetric.target)} e qualquer perda interna pressiona o indicador.`,
+          });
+        }
+
+        issueList.innerHTML = primary.slice(0, 3).map((item) => `
+          <div class="docentes-issue-item">
+            <strong>${item.title}</strong>
+            <span>${item.body}</span>
+          </div>
+        `).join("");
+
+        issueChips.innerHTML = issues.map(([key, count]) => `
+          <span class="chip">${count} · ${docentesIssueLabels[key] || key}</span>
+        `).join("");
+
+        document.getElementById("docentes-hero-pass-count").textContent = `${passCount}/6`;
+        document.getElementById("docentes-hero-summary").textContent =
+          passCount === 6
+            ? `Todos os critérios passam em ${selectedYear}, com folga curta para dois deles.`
+            : `${6 - passCount} critério(s) permanecem críticos no ano ${selectedYear}.`;
+      }
+
+      function renderTable(selectedDocs, selectedYear) {
+        docentesBody.innerHTML = selectedDocs.map((doc) => {
+          const status = doc.anos[selectedYear];
+          const lattes = doc.lattes.status_lattes || "Sem dado";
+          const badges = (doc.issues || []).length
+            ? doc.issues.map((issue) => `<span class="docentes-badge issue">${docentesIssueLabels[issue] || issue}</span>`).join("")
+            : '<span class="chart-note">Sem alerta</span>';
+          const cadastroNome = doc.cadastro["Nome do Docente"];
+          const cadastroOrigem = doc.cadastro["Origem 1"] || "Sem origem 1";
+          const primaryName = cadastroNome || doc.docente;
+          const secondaryLine = cadastroNome && cadastroNome !== doc.docente
+            ? `Matriz: ${doc.docente}`
+            : cadastroOrigem;
+          return `
+            <tr>
+              <td>
+                <strong>${primaryName}</strong><br>
+                <span class="chart-note">${secondaryLine}</span>
+              </td>
+              <td><span class="docentes-badge ${getDocentesBadgeClass(status)}">${status || "-"}</span></td>
+              <td>${doc.origem_matriz || "-"}</td>
+              <td>${doc.ppgs_como_permanente_2026 ?? "-"}</td>
+              <td>${lattes}${doc.lattes.data_atualizacao ? `<br><span class="chart-note">${doc.lattes.data_atualizacao}</span>` : ""}</td>
+              <td>${badges}</td>
+            </tr>
+          `;
+        }).join("");
+
+        emptyState.hidden = selectedDocs.length > 0;
+      }
+
+      function renderCurrentState() {
+        const selectedYear = yearSelect.value;
+        const query = normalizeDocentesText(searchInput.value);
+        const selectedIssue = issueSelect.value;
+        const yearData = data.by_year[selectedYear];
+        const passCount = Object.values(yearData.metrics).filter((metric) => metric.passed).length;
+        const activeDocs = data.docentes.filter((doc) => ["Per", "Col", "Temp", "Vis"].includes(doc.anos[selectedYear]));
+
+        const filteredDocs = activeDocs.filter((doc) => {
+          const haystack = [
+            doc.docente,
+            doc.name_key,
+            doc.origem_matriz,
+            doc.cadastro["Nome do Docente"],
+            doc.cadastro.name_key,
+            doc.cadastro["Origem 1"],
+            ...((doc.issues || []).map((issue) => docentesIssueLabels[issue] || issue)),
+          ].map((value) => normalizeDocentesText(value)).join(" ");
+          const matchesQuery = !query || haystack.includes(query);
+          const matchesIssue = !selectedIssue || (doc.issues || []).includes(selectedIssue);
+          return matchesQuery && matchesIssue;
+        });
+
+        document.getElementById("docentes-headline-title").textContent = `Quadro síntese ${selectedYear}`;
+        document.getElementById("docentes-headline-text").textContent =
+          `${yearData.permanent_count} permanentes entre ${yearData.classified_count} docentes classificados. ` +
+          `Distribuição no ano: ${Object.entries(yearData.status_counts).map(([key, value]) => `${key}=${value}`).join(" · ")}.`;
+
+        document.getElementById("docentes-summary-classified").textContent = String(yearData.classified_count);
+        document.getElementById("docentes-summary-permanent").textContent = String(yearData.permanent_count);
+        document.getElementById("docentes-summary-lattes").textContent = String(filteredDocs.filter((doc) => (doc.issues || []).includes("lattes_desatualizado")).length);
+        document.getElementById("docentes-summary-issues").textContent = String(filteredDocs.reduce((acc, doc) => acc + (doc.issues || []).length, 0));
+
+        buildMetrics(yearData);
+        buildTimeline(selectedYear);
+        buildIssuePanel(selectedYear, filteredDocs, passCount);
+        renderTable(filteredDocs, selectedYear);
+      }
+
+      fillControls();
+      renderCurrentState();
+      [yearSelect, issueSelect].forEach((node) => node.addEventListener("change", renderCurrentState));
+      searchInput.addEventListener("input", renderCurrentState);
     }
 
     function getDoutoradoSeries(item) {
@@ -3018,7 +3659,7 @@
     function getDisciplinasBaseData() {
       return dataSourceDisciplinas.filter((item) =>
         item.categoria_responsavel === "Docente" &&
-        !disciplinasExcludedDocentes.has(item.nome_responsavel)
+        !disciplinasExcludedDocentes.has(normalizeDisciplinasName(item.nome_responsavel))
       );
     }
 
@@ -5395,6 +6036,7 @@
     applyTechnicalFilters();
     applyDisciplinasFilters();
     renderOrientationPanel();
+    renderDocentesTab();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
     renderDocenciaCriticalCriteriaPanel();
