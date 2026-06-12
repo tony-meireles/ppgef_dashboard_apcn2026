@@ -10,7 +10,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Vilde Gomes de Menezes",
+    "nome_responsavel": "VILDE GOMES DE MENEZES",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -90,7 +90,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Gustavo Pascoal Paipe",
+    "nome_responsavel": "GUSTAVO PASCOAL PAIPE",
     "categoria_responsavel": "Participante Externo",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "3"
@@ -170,7 +170,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Saulo Fernandes Melo de Oliveira",
+    "nome_responsavel": "SAULO FERNANDES MELO DE OLIVEIRA",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
@@ -186,7 +186,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Daniel da Rocha Queiroz",
+    "nome_responsavel": "DANIEL DA ROCHA QUEIROZ",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
@@ -202,7 +202,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Carla Meneses Hardman",
+    "nome_responsavel": "CARLA MENESES HARDMAN",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
@@ -346,7 +346,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Tony Meireles dos Santos",
+    "nome_responsavel": "TONY MEIRELES DOS SANTOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "25"
@@ -362,7 +362,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Lucas Eduardo Rodrigues dos Santos",
+    "nome_responsavel": "LUCAS EDUARDO RODRIGUES DOS SANTOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
@@ -618,7 +618,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Fabio Yuzo Nakamura",
+    "nome_responsavel": "FABIO YUZO NAKAMURA",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
@@ -634,7 +634,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Rafael dos Santos Henrique",
+    "nome_responsavel": "RAFAEL DOS SANTOS HENRIQUE",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
@@ -650,7 +650,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
-    "nome_responsavel": "Paulo Roberto Cavalcanti Carvalho",
+    "nome_responsavel": "PAULO ROBERTO CAVALCANTI CARVALHO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "60"
@@ -666,7 +666,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
-    "nome_responsavel": "Paulo Roberto Cavalcanti Carvalho",
+    "nome_responsavel": "PAULO ROBERTO CAVALCANTI CARVALHO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "60"
@@ -842,7 +842,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
-    "nome_responsavel": "Tony Meireles dos Santos",
+    "nome_responsavel": "TONY MEIRELES DOS SANTOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
@@ -858,7 +858,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
-    "nome_responsavel": "Lucas Eduardo Rodrigues dos Santos",
+    "nome_responsavel": "LUCAS EDUARDO RODRIGUES DOS SANTOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
@@ -874,7 +874,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
-    "nome_responsavel": "Rafael dos Santos Henrique",
+    "nome_responsavel": "RAFAEL DOS SANTOS HENRIQUE",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "20"
@@ -1050,7 +1050,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "João Carlos Bouzas Marins",
+    "nome_responsavel": "JOÃO CARLOS BOUZAS MARINS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
@@ -1066,7 +1066,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Rafael dos Santos Henrique",
+    "nome_responsavel": "RAFAEL DOS SANTOS HENRIQUE",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
@@ -1146,7 +1146,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Melissa Leandro Celestino",
+    "nome_responsavel": "MELISSA LEANDRO CELESTINO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "10"
@@ -1162,7 +1162,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Bruno Teixeira Barbosa",
+    "nome_responsavel": "BRUNO TEIXEIRA BARBOSA",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "10"
@@ -1178,7 +1178,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Andre dos Santos Costa",
+    "nome_responsavel": "ANDRE DOS SANTOS COSTA",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "10"
@@ -1194,7 +1194,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Melissa Leandro Celestino",
+    "nome_responsavel": "MELISSA LEANDRO CELESTINO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
@@ -1210,7 +1210,7 @@
     "tipo": "Obrigatória",
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
-    "nome_responsavel": "Andre dos Santos Costa",
+    "nome_responsavel": "ANDRE DOS SANTOS COSTA",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
@@ -1546,7 +1546,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Leonardo Luz",
+    "nome_responsavel": "LEONARDO LUZ",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1562,7 +1562,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Leonardo Luz",
+    "nome_responsavel": "LEONARDO LUZ",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
@@ -1578,7 +1578,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Rafael dos Santos Henrique",
+    "nome_responsavel": "RAFAEL DOS SANTOS HENRIQUE",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "30"
@@ -1594,7 +1594,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Ozeas de Lima Lins Filho",
+    "nome_responsavel": "OZEAS DE LIMA LINS FILHO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1610,7 +1610,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Ozeas de Lima Lins Filho",
+    "nome_responsavel": "OZEAS DE LIMA LINS FILHO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1706,7 +1706,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Tony Meireles dos Santos",
+    "nome_responsavel": "TONY MEIRELES DOS SANTOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "25"
@@ -1722,7 +1722,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Marilia Lacerda Barbosa Fragoso",
+    "nome_responsavel": "MARILIA LACERDA BARBOSA FRAGOSO",
     "categoria_responsavel": "Participante Externo",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "10"
@@ -1738,7 +1738,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Louisi de Mello Tomasi Dalazen",
+    "nome_responsavel": "LOUISI DE MELLO TOMASI DALAZEN",
     "categoria_responsavel": "Participante Externo",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "10"
@@ -1754,7 +1754,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Pedro Pinheiro Paes Neto",
+    "nome_responsavel": "PEDRO PINHEIRO PAES NETO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1770,7 +1770,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Eduardo Zapaterra Campos",
+    "nome_responsavel": "EDUARDO ZAPATERRA CAMPOS",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1786,7 +1786,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Daniel da Rocha Queiroz",
+    "nome_responsavel": "DANIEL DA ROCHA QUEIROZ",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "22"
@@ -1802,7 +1802,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Carla Meneses Hardman",
+    "nome_responsavel": "CARLA MENESES HARDMAN",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "23"
@@ -1882,7 +1882,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Melissa Leandro Celestino",
+    "nome_responsavel": "MELISSA LEANDRO CELESTINO",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "25"
@@ -1898,7 +1898,7 @@
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Conrado Torres Laett",
+    "nome_responsavel": "CONRADO TORRES LAETT",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
