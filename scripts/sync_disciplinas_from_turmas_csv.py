@@ -12,6 +12,7 @@ SOURCE_CSV = Path(
 )
 OUTPUT_JSON = ROOT / "data" / "disciplinas_turmas_quadrenio.json"
 OUTPUT_JS = ROOT / "dashboard" / "disciplinas-data.js"
+PRODUCAO_CIENTIFICA_JS = ROOT / "dashboard" / "producao-cientifica-data.js"
 
 HEADER_PREFIX = "Nome da Turma;"
 FIELD_MAP = {
@@ -84,8 +85,27 @@ def choose_canonical_name(variants: set[str]) -> str:
     cleaned = sorted({re.sub(r"\s+", " ", item.strip()) for item in variants if item and item.strip()})
     preferred = [item for item in cleaned if not is_all_upper(item)]
     if preferred:
-        return preferred[0].upper()
-    return smart_title_name(cleaned[0]).upper()
+        return preferred[0]
+    return smart_title_name(cleaned[0])
+
+
+def load_producao_cientifica_name_map() -> dict[str, str]:
+    if not PRODUCAO_CIENTIFICA_JS.exists():
+        return {}
+
+    text = PRODUCAO_CIENTIFICA_JS.read_text(encoding="utf-8")
+    match = re.search(r"=\s*(\[.*\])\s*;?\s*$", text, re.S)
+    if not match:
+        return {}
+
+    items = json.loads(match.group(1))
+    name_map: dict[str, str] = {}
+    for item in items:
+        docente = re.sub(r"\s+", " ", str(item.get("docente") or "").strip())
+        if not docente:
+            continue
+        name_map[fold_text(docente)] = docente
+    return name_map
 
 
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
@@ -107,6 +127,7 @@ def load_csv_rows(path: Path) -> list[dict[str, str]]:
 
 
 def build_canonical_name_map(rows: list[dict[str, str]]) -> dict[str, str]:
+    producao_cientifica_name_map = load_producao_cientifica_name_map()
     variants_by_key: dict[str, set[str]] = {}
     for row in rows:
         nome = row["nome_responsavel"]
@@ -114,7 +135,10 @@ def build_canonical_name_map(rows: list[dict[str, str]]) -> dict[str, str]:
         if not folded:
             continue
         variants_by_key.setdefault(folded, set()).add(nome)
-    return {folded: choose_canonical_name(variants) for folded, variants in variants_by_key.items()}
+    canonical_map = {}
+    for folded, variants in variants_by_key.items():
+        canonical_map[folded] = producao_cientifica_name_map.get(folded) or choose_canonical_name(variants)
+    return canonical_map
 
 
 def normalize_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
