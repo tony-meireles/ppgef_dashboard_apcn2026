@@ -1000,9 +1000,19 @@
         <p class="hero-kicker">PPGEF</p>
         <h1>Estudo de Viabilidade para APCN D</h1>
         <p>
-          Visualização da base final sincronizada da produção docente. O foco desta aba é
-          permitir leitura rápida da pontuação por docente, por ano e por tipo de produção,
-          com filtros práticos para artigos, livros e capítulos.
+          Este dashboard foi desenvolvido para apoiar a análise crítica da viabilidade de
+          implantação do curso de Doutorado do PPGEF, no contexto da construção de uma
+          proposta sustentável de APCN para o edital CAPES 2026. O ambiente reúne, de forma
+          integrada, dados sobre produção científica, produção técnica, orientações,
+          documentos institucionais e indicadores estratégicos, permitindo uma leitura
+          qualificada da trajetória, da capacidade instalada e das perspectivas de
+          consolidação do programa.
+          <br><br>
+          Seu uso busca assessorar docentes, discentes, técnicos, instâncias superiores da
+          universidade e entes externos colaboradores, favorecendo análises compartilhadas,
+          identificação de fragilidades, reconhecimento de potencialidades e construção
+          coletiva de uma proposta academicamente consistente, institucionalmente viável e
+          comprometida com a sustentabilidade do futuro curso de Doutorado.
           <br><br><strong>Autores:</strong> Santos TM, Campos EZ e Henrique RS.
           <br><strong>Apoio extração de dados:</strong> Teixeira F, Cavalcanti JS, Prazeres Neto JC.
         </p>
@@ -1022,7 +1032,7 @@
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
-        <button class="tab-button" data-tab="tab-indicadores">Indicadores</button>
+        <button class="tab-button" data-tab="tab-lideranca">Liderança Investigativa</button>
       </nav>
 
       <div class="tab-panel active" id="tab-producao">
@@ -1447,6 +1457,63 @@
             </div>
           </div>
 
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Critério de Pontuação APCN</h2>
+              <p>Para artigos, a pontuação APCN considera a indexação do periódico como evidência principal de qualidade e inserção.</p>
+            </div>
+            <p class="chart-note">
+              A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR)</strong> ou
+              <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
+              <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
+              recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
+              recebem <strong>0 ponto</strong>. Essa régua é a base usada para a leitura da produção intelectual no estudo de viabilidade da APCN.
+            </p>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Indexação</th>
+                    <th>Pontuação</th>
+                    <th>Critério</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Web of Science (JCR)</td>
+                    <td>90</td>
+                    <td>Artigo em periódico indexado no Web of Science com JCR</td>
+                  </tr>
+                  <tr>
+                    <td>Scopus (SJR)</td>
+                    <td>90</td>
+                    <td>Artigo em periódico indexado na Scopus com SJR</td>
+                  </tr>
+                  <tr>
+                    <td>PubMed</td>
+                    <td>60</td>
+                    <td>Artigo em periódico indexado no PubMed</td>
+                  </tr>
+                  <tr>
+                    <td>SciELO</td>
+                    <td>60</td>
+                    <td>Artigo em periódico indexado na SciELO</td>
+                  </tr>
+                  <tr>
+                    <td>Apenas Google Scholar</td>
+                    <td>30</td>
+                    <td>Artigo localizado apenas via Google Scholar</td>
+                  </tr>
+                  <tr>
+                    <td>Sem indexação ou revista predatória</td>
+                    <td>0</td>
+                    <td>Artigo sem indexação válida ou em revista predatória</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <div class="card metric">
             <p class="eyebrow">Docentes considerados</p>
             <strong id="criterios-docentes-total">0</strong>
@@ -1609,14 +1676,200 @@
         </section>
       </div>
 
-      <div class="tab-panel" id="tab-indicadores">
-        <div class="card">
-          <div class="section-head">
-            <h2>Indicadores Complementares</h2>
-            <p>Espaço reservado para métricas futuras, séries históricas adicionais e recortes institucionais.</p>
+      <div class="tab-panel" id="tab-lideranca">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Liderança Investigativa</h2>
+              <p>
+                O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
+                Cada registro recebe 1,0 ponto quando o docente aparece na primeira ou última autoria,
+                0,5 ponto quando aparece na segunda ou penúltima posição, e 0,1 nas demais posições.
+                O índice final é a média ponderada desses pesos em percentual, permitindo comparar docentes
+                e observar a evolução anual do protagonismo investigativo.
+              </p>
+            </div>
+            <p class="chart-note">
+              Nesta base científica, a coluna nativa disponível é <strong>autor_principal</strong>. Quando a sequência completa
+              de autores não está explícita no registro, o cálculo reconhece a primeira autoria quando o docente coincide
+              com o autor principal e classifica os demais casos como 0,1 ponto. O algoritmo já está preparado para aplicar
+              a régua integral assim que a autoria completa estiver disponível na base.
+            </p>
+            <div class="filters-grid">
+              <div>
+                <label for="docentes-lideranca-chip-list">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="docentes-lideranca-chip-list" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="tipos-lideranca">Tipo de produção</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="tipos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="tipos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="tipos-lideranca" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="anos-lideranca">Ano</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-group="anos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-group="anos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="anos-lideranca" class="filter-picker compact"></div>
+              </div>
+            </div>
           </div>
-          <p class="chart-note">A aba de Produção Científica já foi isolada como primeiro módulo do site estático.</p>
-        </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Registros</p>
+            <strong id="lideranca-total-registros">0</strong>
+            <span>Quantidade de produtos considerados no cálculo do índice.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Pontos Mostard</p>
+            <strong id="lideranca-pontos">0</strong>
+            <span>Soma ponderada das posições autorais no recorte filtrado.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes</p>
+            <strong id="lideranca-docentes-visiveis">0</strong>
+            <span>Docentes com produção intelectual no recorte atual.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Índice do Recorte</p>
+            <strong id="lideranca-indice-geral">0%</strong>
+            <span>Média percentual do Mostard Index considerando todos os registros visíveis.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Mostard Index por Docente</h2>
+              <p>Ranking percentual de liderança investigativa no recorte filtrado.</p>
+            </div>
+            <div id="chart-lideranca-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura do Recorte</h2>
+              <p>Resumo rápido do protagonismo autoral observado.</p>
+            </div>
+            <div class="chips" id="lideranca-insight-chips"></div>
+            <div class="legend">
+              <span><i style="background: var(--ufpe-bordo)"></i> Índice por docente</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Evolução anual</span>
+            </div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Evolução do Índice por Ano</h2>
+              <p>Série anual do Mostard Index agregado no recorte visível.</p>
+            </div>
+            <div id="chart-lideranca-anos" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Metodologia Aplicada</h2>
+              <p>Transparência sobre o cálculo e a evidência autoral disponível.</p>
+            </div>
+            <div class="chips" id="lideranca-metodologia-chips"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Listagem de Docentes</h2>
+              <p>Mostard Index, volume de registros e composição das posições consideradas.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Mostard Index</th>
+                    <th>Registros</th>
+                    <th>Pontos Mostard</th>
+                    <th>1ª / última</th>
+                    <th>2ª / penúltima</th>
+                    <th>Demais</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Evolução Anual</h2>
+              <p>Leitura anual agregada do índice para exploração temporal.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ano</th>
+                    <th>Mostard Index</th>
+                    <th>Registros</th>
+                    <th>Pontos Mostard</th>
+                    <th>1ª / última</th>
+                    <th>2ª / penúltima</th>
+                    <th>Demais</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-anos-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Registros Avaliados</h2>
+              <p>Detalhamento por produto para auditoria do cálculo aplicado.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Ano</th>
+                    <th>Tipo</th>
+                    <th>Autor principal</th>
+                    <th>Posição lida</th>
+                    <th>Peso</th>
+                    <th>Título</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-detalhe-body"></tbody>
+              </table>
+            </div>
+            <div id="lideranca-estado-vazio" class="empty">
+              Nenhum registro atende aos filtros atuais.
+            </div>
+          </div>
+        </section>
       </div>
 
       <div class="tab-panel" id="tab-documentos">
@@ -1683,6 +1936,9 @@
     const docenteChipList = document.getElementById("docentes-chip-list");
     const tiposSelect = document.getElementById("tipos");
     const anosSelect = document.getElementById("anos");
+    const docenteLiderancaChipList = document.getElementById("docentes-lideranca-chip-list");
+    const tiposLiderancaSelect = document.getElementById("tipos-lideranca");
+    const anosLiderancaSelect = document.getElementById("anos-lideranca");
     const tabsNav = document.getElementById("tabs-nav");
     const tabelaBody = document.getElementById("tabela-body");
     const resumoDocentesBody = document.getElementById("resumo-docentes-body");
@@ -1703,6 +1959,14 @@
     const typeChipsTecnica = document.getElementById("type-chips-tecnica");
     const insightChipsTecnica = document.getElementById("insight-chips-tecnica");
     const scientificFilterToggles = [...document.querySelectorAll('.filter-toggle[data-group]')];
+    const chartLiderancaDocentes = document.getElementById("chart-lideranca-docentes");
+    const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
+    const liderancaInsightChips = document.getElementById("lideranca-insight-chips");
+    const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
+    const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
+    const liderancaAnosBody = document.getElementById("lideranca-anos-body");
+    const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
+    const liderancaEstadoVazio = document.getElementById("lideranca-estado-vazio");
     const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
@@ -1722,6 +1986,11 @@
     let docenteSortMode = "alfabetico";
     let docenteTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
+    let scientificFilterValues = {
+      docentes: [],
+      tipos: [],
+      anos: [],
+    };
 
     const typeLabels = {
       artigo: "Artigos",
@@ -1739,6 +2008,8 @@
       curso: "Curso",
       evento: "Evento",
     };
+    const personStopwords = new Set(["DA", "DE", "DO", "DOS", "DAS", "DEL", "DELA", "DI", "DU", "E"]);
+    const surnameSuffixes = new Set(["FILHO", "JUNIOR", "NETO", "SOBRINHO"]);
 
     function unique(values) {
       return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -1773,28 +2044,43 @@
     function populateFilters(data) {
       const docentes = unique(data.map((item) => item.docente));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
-      docenteChipList.innerHTML = docentes.map((docente) => `
+      const tipos = [
+        ["artigo", "Artigo"],
+        ["livro", "Livro"],
+        ["capitulo", "Capítulo"],
+      ];
+      scientificFilterValues = {
+        docentes,
+        tipos: tipos.map(([value]) => value),
+        anos,
+      };
+      const docentesHtml = docentes.map((docente) => `
         <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
         </label>
       `).join("");
-      tiposSelect.innerHTML = [
-        ["artigo", "Artigo"],
-        ["livro", "Livro"],
-        ["capitulo", "Capítulo"],
-      ].map(([value, label]) => `
+      const tiposHtml = tipos.map(([value, label]) => `
         <label class="filter-option">
           <input type="checkbox" value="${value}">
           <span>${label}</span>
         </label>
       `).join("");
-      anosSelect.innerHTML = anos.map((ano) => `
+      const anosHtml = anos.map((ano) => `
         <label class="filter-option">
           <input type="checkbox" value="${ano}">
           <span>${ano}</span>
         </label>
       `).join("");
+      [docenteChipList, docenteLiderancaChipList].forEach((container) => {
+        if (container) container.innerHTML = docentesHtml;
+      });
+      [tiposSelect, tiposLiderancaSelect].forEach((container) => {
+        if (container) container.innerHTML = tiposHtml;
+      });
+      [anosSelect, anosLiderancaSelect].forEach((container) => {
+        if (container) container.innerHTML = anosHtml;
+      });
     }
 
     function normalizeTechnicalType(value) {
@@ -1839,93 +2125,90 @@
       tiposTecnicaSelect.innerHTML = tipos.map((tipo) => `<option value="${tipo}">${tipo}</option>`).join("");
     }
 
-    function bindDocenteChips() {
-      [...docenteChipList.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.addEventListener("change", () => {
-          const docente = input.value;
-          if (input.checked) {
-            selectedDocentes.add(docente);
-          } else {
-            selectedDocentes.delete(docente);
-          }
-          applyFilters();
+    function syncScientificFilterViews() {
+      [
+        [docenteChipList, selectedDocentes],
+        [docenteLiderancaChipList, selectedDocentes],
+        [tiposSelect, selectedTipos],
+        [tiposLiderancaSelect, selectedTipos],
+        [anosSelect, selectedAnos],
+        [anosLiderancaSelect, selectedAnos],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
         });
       });
+    }
+
+    function applyScientificPanels() {
+      syncScientificFilterViews();
+      applyFilters();
+      applyLeadershipFilters();
+    }
+
+    function bindScientificCheckboxContainer(container, selectedSet) {
+      if (!container) return;
+      [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+        input.addEventListener("change", () => {
+          if (input.checked) {
+            selectedSet.add(input.value);
+          } else {
+            selectedSet.delete(input.value);
+          }
+          applyScientificPanels();
+        });
+      });
+    }
+
+    function bindDocenteChips() {
+      bindScientificCheckboxContainer(docenteChipList, selectedDocentes);
+      bindScientificCheckboxContainer(docenteLiderancaChipList, selectedDocentes);
     }
 
     function bindTypeFilters() {
-      [...tiposSelect.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.addEventListener("change", () => {
-          const tipo = input.value;
-          if (input.checked) {
-            selectedTipos.add(tipo);
-          } else {
-            selectedTipos.delete(tipo);
-          }
-          applyFilters();
-        });
-      });
+      bindScientificCheckboxContainer(tiposSelect, selectedTipos);
+      bindScientificCheckboxContainer(tiposLiderancaSelect, selectedTipos);
     }
 
     function bindYearFilters() {
-      [...anosSelect.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.addEventListener("change", () => {
-          const ano = input.value;
-          if (input.checked) {
-            selectedAnos.add(ano);
-          } else {
-            selectedAnos.delete(ano);
-          }
-          applyFilters();
-        });
-      });
+      bindScientificCheckboxContainer(anosSelect, selectedAnos);
+      bindScientificCheckboxContainer(anosLiderancaSelect, selectedAnos);
     }
 
     function initializeScientificFilters() {
-      setFilterSelection(
-        docenteChipList,
-        selectedDocentes,
-        [...docenteChipList.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
-        () => {}
-      );
-      setFilterSelection(
-        tiposSelect,
-        selectedTipos,
-        [...tiposSelect.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
-        () => {}
-      );
-      setFilterSelection(
-        anosSelect,
-        selectedAnos,
-        [...anosSelect.querySelectorAll('input[type="checkbox"]')].map((input) => input.value),
-        () => {}
-      );
+      selectedDocentes = new Set(scientificFilterValues.docentes);
+      selectedTipos = new Set(scientificFilterValues.tipos);
+      selectedAnos = new Set(scientificFilterValues.anos);
+      syncScientificFilterViews();
     }
 
     function setFilterSelection(container, selectedSet, values, applyFn) {
       selectedSet.clear();
       values.forEach((value) => selectedSet.add(value));
-      [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
-        input.checked = selectedSet.has(input.value);
-      });
+      if (container) {
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      }
       applyFn();
     }
 
     function bindScientificFilterToggles() {
       const groupConfig = {
-        docentes: { container: docenteChipList, selectedSet: selectedDocentes, applyFn: applyFilters },
-        tipos: { container: tiposSelect, selectedSet: selectedTipos, applyFn: applyFilters },
-        anos: { container: anosSelect, selectedSet: selectedAnos, applyFn: applyFilters },
+        docentes: { selectedSet: selectedDocentes, getValues: () => scientificFilterValues.docentes },
+        tipos: { selectedSet: selectedTipos, getValues: () => scientificFilterValues.tipos },
+        anos: { selectedSet: selectedAnos, getValues: () => scientificFilterValues.anos },
       };
 
       scientificFilterToggles.forEach((button) => {
         button.addEventListener("click", () => {
           const config = groupConfig[button.dataset.group];
           if (!config) return;
-          const values = button.dataset.action === "all"
-            ? [...config.container.querySelectorAll('input[type="checkbox"]')].map((input) => input.value)
-            : [];
-          setFilterSelection(config.container, config.selectedSet, values, config.applyFn);
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          config.selectedSet.clear();
+          values.forEach((value) => config.selectedSet.add(value));
+          applyScientificPanels();
         });
       });
     }
