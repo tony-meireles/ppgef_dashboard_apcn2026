@@ -1604,9 +1604,15 @@
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Carga Horária por Docente</h2>
-              <p>Quem concentrou mais atividade didática no quadriênio.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Carga Horária por Docente</h2>
+                <p id="disciplinas-docente-chart-caption">Quem concentrou mais atividade didática no quadriênio.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação do ranking de carga horária docente">
+                <button type="button" class="sort-toggle active" data-disciplinas-docente-sort="carga">Por CH</button>
+                <button type="button" class="sort-toggle" data-disciplinas-docente-sort="alfabetico">Alfabético</button>
+              </div>
             </div>
             <div id="chart-disciplinas-docentes" class="chart"></div>
           </div>
@@ -1879,16 +1885,16 @@
               <p>
                 O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
                 A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
-                penúltima posição e 0,1 para as demais. Porém, a base científica atual não preserva a
-                sequência completa de autores na maior parte dos registros, então a aplicação prática do
-                índice depende da evidência autoral efetivamente disponível em cada item.
+                penúltima posição e 0,1 para as demais. A base científica reconstruída passa a preservar
+                a sequência autoral na referência de quase todos os registros, permitindo uma leitura
+                muito mais fiel do protagonismo investigativo por docente e por ano.
               </p>
             </div>
             <p class="chart-note">
-              Nesta base científica, a coluna nativa estruturada é <strong>autor_principal</strong>. Assim, no estado atual,
-              o comportamento dominante do cálculo é: <strong>1,0</strong> quando o docente coincide com o autor principal e
-              <strong>0,1</strong> quando não coincide. A régua intermediária de <strong>0,5</strong> só pode ser aplicada
-              quando houver lista completa de autores, o que hoje praticamente não ocorre na base sincronizada.
+              Nesta base científica, o campo estruturado <strong>autores</strong> passou a registrar a ordem autoral extraída
+              da referência completa. Com isso, a régua de <strong>1,0</strong>, <strong>0,5</strong> e <strong>0,1</strong>
+              é aplicada diretamente sobre a posição do docente na lista de autores, com fallback residual apenas para casos
+              em que o nome do docente não seja localizado automaticamente.
             </p>
             <div class="filters-grid">
               <div>
@@ -2345,6 +2351,7 @@
     const anosDisciplinasSelect = document.getElementById("anos-disciplinas");
     const periodosDisciplinasSelect = document.getElementById("periodos-disciplinas");
     const chartDisciplinasDocentes = document.getElementById("chart-disciplinas-docentes");
+    const disciplinasDocenteChartCaption = document.getElementById("disciplinas-docente-chart-caption");
     const chartDisciplinasPeriodos = document.getElementById("chart-disciplinas-periodos");
     const disciplinasInsightChips = document.getElementById("disciplinas-insight-chips");
     const disciplinasNucleosStack = document.getElementById("disciplinas-nucleos-stack");
@@ -2360,6 +2367,7 @@
     const criteriosSortAlphaButton = document.getElementById("criterios-sort-alpha");
     const docenteSortButtons = [...document.querySelectorAll("[data-docente-sort]")];
     const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
+    const disciplinasDocenteSortButtons = [...document.querySelectorAll("[data-disciplinas-docente-sort]")];
     const disciplinasFilterToggles = [...document.querySelectorAll('.filter-toggle[data-disciplina-group]')];
     const documentsInternos = document.getElementById("documents-internos");
     const documentsCapes = document.getElementById("documents-capes");
@@ -2371,6 +2379,7 @@
     let selectedAnosDisciplinas = new Set();
     let selectedPeriodosDisciplinas = new Set();
     let docenteSortMode = "alfabetico";
+    let disciplinasDocenteSortMode = "carga";
     let docenteTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
     let scientificFilterValues = {
@@ -2697,19 +2706,28 @@
     }
 
     function renderDisciplinasDocenteChart(data) {
+      const items = [...data].sort((a, b) => {
+        if (disciplinasDocenteSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.carga - a.carga;
+        }
+        return b.carga - a.carga || b.cargaPrincipal - a.cargaPrincipal || a.docente.localeCompare(b.docente, "pt-BR");
+      });
       if (!data.length) {
         chartDisciplinasDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
+      disciplinasDocenteChartCaption.textContent = disciplinasDocenteSortMode === "alfabetico"
+        ? "Ranking ordenado alfabeticamente no recorte filtrado."
+        : "Ranking ordenado pela carga horária docente no recorte filtrado.";
       const labelWidth = 250;
       const rowHeight = 34;
       const chartWidth = 760;
       const usableWidth = chartWidth - labelWidth - 80;
-      const maxCarga = Math.max(...data.map((item) => item.carga), 1);
-      const height = Math.max(240, data.length * rowHeight + 30);
+      const maxCarga = Math.max(...items.map((item) => item.carga), 1);
+      const height = Math.max(240, items.length * rowHeight + 30);
       chartDisciplinasDocentes.innerHTML = `
         <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Carga horária por docente">
-          ${data.map((item, index) => {
+          ${items.map((item, index) => {
             const y = 18 + index * rowHeight;
             const width = (item.carga / maxCarga) * usableWidth;
             const principalWidth = (item.cargaPrincipal / maxCarga) * usableWidth;
@@ -3078,6 +3096,16 @@
           docenteTableSortMode = button.dataset.docenteTableSort || "alfabetico";
           docenteTableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
           applyFilters();
+        });
+      });
+    }
+
+    function bindDisciplinasDocenteSortToggles() {
+      disciplinasDocenteSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          disciplinasDocenteSortMode = button.dataset.disciplinasDocenteSort || "carga";
+          disciplinasDocenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyDisciplinasFilters();
         });
       });
     }
@@ -3665,8 +3693,8 @@
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
         `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
-        `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
-        `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
+        `<span class="chip">Registros que ainda dependem apenas de <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
+        `<span class="chip">Registros em fallback por nome não localizado automaticamente: <strong>${evidence.fallbackDemais}</strong></span>`,
         `<span class="chip">Ocorrências reais de 0,5 na base atual: <strong>${evidence.secondOrPenultimate}</strong></span>`,
       ].join("");
     }
@@ -4427,6 +4455,7 @@
     bindApcnScoringModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
+    bindDisciplinasDocenteSortToggles();
     applyFilters();
     applyLeadershipFilters();
     applyTechnicalFilters();

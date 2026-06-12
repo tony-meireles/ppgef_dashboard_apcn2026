@@ -27,7 +27,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -43,7 +43,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "LUCIANO MACHADO FERREIRA TENORIO DE OLIVEIRA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
   },
@@ -75,7 +75,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -107,7 +107,7 @@
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
   },
@@ -139,7 +139,7 @@
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
     "nome_responsavel": "VINICIUS DE OLIVEIRA DAMASCENO",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "20"
   },
@@ -187,7 +187,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
   },
@@ -219,7 +219,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "FLAVIO RENATO BARROS DA GUARDA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "25"
   },
@@ -267,7 +267,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -315,7 +315,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "FABIANO DE SOUZA FONSECA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -363,7 +363,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "23"
   },
@@ -395,7 +395,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -411,7 +411,7 @@
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "30"
   },
@@ -443,7 +443,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -459,7 +459,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
   },
@@ -475,7 +475,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "FABIANO DE SOUZA FONSECA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
   },
@@ -491,7 +491,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "FLAVIO RENATO BARROS DA GUARDA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -587,7 +587,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
   },
@@ -603,7 +603,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "FABIANO DE SOUZA FONSECA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
   },
@@ -651,7 +651,7 @@
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "56"
   },
@@ -699,7 +699,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "BRENO QUINTELLA FARAH",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -715,7 +715,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "FABIANO DE SOUZA FONSECA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -731,7 +731,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -747,7 +747,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
   },
@@ -763,7 +763,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -907,7 +907,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "FABIANO DE SOUZA FONSECA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -923,7 +923,7 @@
     "quantidade_creditos": "2",
     "carga_horaria_total": "30",
     "nome_responsavel": "ANDRE LUIZ TORRES PIRAUA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -971,7 +971,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "15"
   },
@@ -1083,7 +1083,7 @@
     "quantidade_creditos": "4",
     "carga_horaria_total": "60",
     "nome_responsavel": "FLAVIO RENATO BARROS DA GUARDA",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "30"
   },
@@ -1195,7 +1195,7 @@
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
     "nome_responsavel": "CARLA MENESES HARDMAN",
-    "categoria_responsavel": "Docente",
+    "categoria_responsavel": "Docente(s) Descredenciado(s)",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "25"
   },
