@@ -154,6 +154,58 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
+    .embedded-view-card {
+      grid-column: span 12;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .embedded-view-shell {
+      display: grid;
+      gap: 0;
+    }
+
+    .embedded-view-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px 0;
+    }
+
+    .embedded-view-head p {
+      margin: 6px 0 0;
+      color: var(--ufpe-cinza);
+      line-height: 1.45;
+    }
+
+    .embedded-view-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #d9c7b1;
+      background: rgba(255, 253, 249, 0.9);
+      color: var(--ufpe-bordo);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .embedded-view-link:hover {
+      border-color: var(--ufpe-bordo);
+      background: rgba(140, 21, 56, 0.05);
+    }
+
+    .embedded-view-frame {
+      width: 100%;
+      min-height: 2400px;
+      border: 0;
+      background: #f7f4ef;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -860,6 +912,45 @@
         rgba(255, 253, 249, 0.96);
     }
 
+    .group-card-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .group-card-toggle-copy {
+      min-width: 0;
+    }
+
+    .group-card-toggle-copy p {
+      margin: 6px 0 0;
+    }
+
+    .group-card-arrow {
+      flex: 0 0 auto;
+      color: var(--ufpe-bordo);
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .group-card-toggle[aria-expanded="true"] .group-card-arrow {
+      transform: rotate(90deg);
+    }
+
+    .apcn-collapsible-hidden {
+      display: none !important;
+    }
+
     .documents-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -1129,6 +1220,7 @@
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-disciplinas">Disciplinas</button>
+        <button class="tab-button" data-tab="tab-docentes">Docentes</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
         <button class="tab-button" data-tab="tab-lideranca">Liderança Investigativa</button>
@@ -1724,6 +1816,29 @@
               </table>
             </div>
             <p class="chart-note" id="disciplinas-detalhe-nota"></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-docentes">
+        <section class="grid">
+          <div class="card embedded-view-card">
+            <div class="embedded-view-shell">
+              <div class="embedded-view-head">
+                <div>
+                  <h2>Corpo Docente</h2>
+                  <p>Painel específico do quadro docente com indicadores de composição, série temporal e alertas de depuração da base.</p>
+                </div>
+                <a class="embedded-view-link" href="./corpo-docente.html" target="_blank" rel="noopener noreferrer">Abrir página dedicada</a>
+              </div>
+              <iframe
+                id="docentes-embedded-frame"
+                class="embedded-view-frame"
+                src="./corpo-docente.html"
+                title="Painel de corpo docente do PPGEF"
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </section>
       </div>
@@ -2512,6 +2627,7 @@
     const disciplinasDetalheNota = document.getElementById("disciplinas-detalhe-nota");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
+    const tabApcn = document.getElementById("tab-apcn");
     const docenciaCritSummaryCards = document.getElementById("docencia-crit-summary-cards");
     const docenciaCritInsights = document.getElementById("docencia-crit-insights");
     const corpoDocenteCritSummaryCards = document.getElementById("corpo-docente-crit-summary-cards");
@@ -3169,6 +3285,54 @@
         if (event.key === "Escape" && apcnScoringModal.classList.contains("open")) {
           setApcnScoringModalState(false);
         }
+      });
+    }
+
+    function bindApcnCollapsibleSections() {
+      if (!tabApcn) return;
+      const groupCards = [...tabApcn.querySelectorAll(".group-card")];
+      groupCards.forEach((card, index) => {
+        const header = card.querySelector(".section-head");
+        if (!header || card.querySelector(".group-card-toggle")) return;
+        const title = header.querySelector("h2");
+        const description = header.querySelector("p");
+        const contentCards = [];
+        let sibling = card.nextElementSibling;
+        while (sibling && !sibling.classList.contains("group-card")) {
+          contentCards.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "group-card-toggle";
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-controls", `apcn-group-${index}`);
+
+        const copy = document.createElement("div");
+        copy.className = "group-card-toggle-copy";
+        if (title) copy.appendChild(title);
+        if (description) copy.appendChild(description);
+
+        const arrow = document.createElement("span");
+        arrow.className = "group-card-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "▸";
+
+        button.appendChild(copy);
+        button.appendChild(arrow);
+        header.replaceChildren(button);
+
+        contentCards.forEach((item) => {
+          item.dataset.apcnGroup = `apcn-group-${index}`;
+          item.classList.add("apcn-collapsible-hidden");
+        });
+
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", isOpen ? "false" : "true");
+          contentCards.forEach((item) => item.classList.toggle("apcn-collapsible-hidden", isOpen));
+        });
       });
     }
 
@@ -4856,6 +5020,7 @@
     initializeTechnicalFilters();
     initializeDisciplinasFilters();
     bindTabs();
+    bindApcnCollapsibleSections();
     bindApcnScoringModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
