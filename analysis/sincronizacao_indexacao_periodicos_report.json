@@ -1,26 +1,11 @@
 {
   "source_classificacao": "G:\\.shortcut-targets-by-id\\18B_rphPE1Flt1tGbECpP70xTWYIcUsfW\\AAA - PPGEF EFI\\Sucupira\\014 - Pj APCN 03 - 2026\\BDs Estratégicos\\CSVs\\Indexação Periódicos.csv",
-  "matched_artigos": 456,
-  "updated_rows": 456,
-  "unmatched_artigos": 28,
+  "matched_artigos": 472,
+  "updated_rows": 4,
+  "unmatched_artigos": 12,
   "docentes_atualizados": {
-    "André dos Santos Costa": 29,
-    "Bruno Teixeira Barbosa": 13,
-    "Clarice Maria de Lucena Martins": 28,
-    "Daniel da Rocha Queiroz": 25,
-    "Daniela Karina da Silva Ferreira": 4,
-    "Eduardo Zapaterra Campos": 16,
-    "Guilherme Assunção Ferreira": 9,
-    "Leonardo Gomes de Oliveira Luz": 23,
-    "Lucas Eduardo Rodrigues dos Santos": 15,
-    "Melissa Leandro Celestino": 7,
-    "Ozeas de Lima Lins Filho": 22,
-    "Paulo Felipe Ribeiro Bandeira": 80,
-    "Paulo Roberto Cavalcanti Carvalho": 22,
-    "Pedro Pinheiro Paes Neto": 30,
-    "Rafael dos Santos Henrique": 47,
-    "Saulo Fernandes Melo de Oliveira": 34,
-    "Tony Meireles dos Santos": 31,
-    "Vilde Gomes de Menezes": 21
+    "Lucas Eduardo Rodrigues dos Santos": 1,
+    "Pedro Pinheiro Paes Neto": 1,
+    "Tony Meireles dos Santos": 2
   }
 }
