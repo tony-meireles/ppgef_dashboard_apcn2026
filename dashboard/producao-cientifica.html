@@ -2177,9 +2177,12 @@
     }
 
     function initializeScientificFilters() {
-      selectedDocentes = new Set(scientificFilterValues.docentes);
-      selectedTipos = new Set(scientificFilterValues.tipos);
-      selectedAnos = new Set(scientificFilterValues.anos);
+      selectedDocentes.clear();
+      selectedTipos.clear();
+      selectedAnos.clear();
+      scientificFilterValues.docentes.forEach((value) => selectedDocentes.add(value));
+      scientificFilterValues.tipos.forEach((value) => selectedTipos.add(value));
+      scientificFilterValues.anos.forEach((value) => selectedAnos.add(value));
       syncScientificFilterViews();
     }
 
@@ -2331,6 +2334,132 @@
           docenteTableSortButtons.forEach((item) => item.classList.toggle("active", item === button));
           applyFilters();
         });
+      });
+    }
+
+    function normalizePersonText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^A-Za-z0-9]+/g, " ")
+        .toUpperCase()
+        .trim();
+    }
+
+    function getNameTokens(value) {
+      return normalizePersonText(value)
+        .split(/\s+/)
+        .filter(Boolean)
+        .filter((token) => !personStopwords.has(token));
+    }
+
+    function buildDocenteNameProfile(docente) {
+      const tokens = getNameTokens(docente);
+      const surnameTokens = surnameSuffixes.has(tokens[tokens.length - 1]) && tokens.length > 1
+        ? tokens.slice(-2)
+        : tokens.slice(-1);
+      const givenTokens = tokens.slice(0, Math.max(tokens.length - surnameTokens.length, 0));
+      return {
+        full: tokens.join(" "),
+        surname: surnameTokens.join(" "),
+        shortSurname: tokens[tokens.length - 1] || "",
+        givenTokens,
+        initials: givenTokens.map((token) => token[0]).join(""),
+      };
+    }
+
+    function authorMatchesDocente(authorName, docente) {
+      const rawAuthorName = String(authorName || "");
+      const authorNormalized = normalizePersonText(rawAuthorName);
+      if (!authorNormalized) return false;
+      const docenteProfile = buildDocenteNameProfile(docente);
+      if (!docenteProfile.full) return false;
+      if (authorNormalized.includes(docenteProfile.full)) return true;
+
+      const [surnamePartRaw, ...remainingPartsRaw] = rawAuthorName.split(",");
+      const surnamePart = normalizePersonText(surnamePartRaw || "");
+      const remainingText = normalizePersonText(remainingPartsRaw.join(" "));
+      const surnameMatches = surnamePart
+        ? (
+          surnamePart === docenteProfile.surname ||
+          surnamePart === docenteProfile.shortSurname ||
+          surnamePart.endsWith(` ${docenteProfile.shortSurname}`) ||
+          docenteProfile.surname.endsWith(` ${surnamePart}`)
+        )
+        : authorNormalized.includes(docenteProfile.shortSurname);
+      if (!surnameMatches) return false;
+
+      if (!remainingText) return true;
+      const authorInitials = remainingText
+        .split(/[^A-Z0-9]+/)
+        .filter(Boolean)
+        .map((token) => token[0])
+        .join("");
+      return (
+        !docenteProfile.initials ||
+        !authorInitials ||
+        docenteProfile.initials.startsWith(authorInitials) ||
+        authorInitials.startsWith(docenteProfile.initials) ||
+        docenteProfile.givenTokens.some((token) => remainingText.includes(token))
+      );
+    }
+
+    function inferScientificAuthors(item) {
+      const explicitAuthors = String(item.autores || "").trim();
+      if (explicitAuthors.includes(";")) {
+        return explicitAuthors.split(";").map((author) => author.trim()).filter(Boolean);
+      }
+      const titleCandidate = String(item.titulo || "").trim();
+      if (titleCandidate.includes(";") && !/[a-z]/.test(titleCandidate.replace(/[A-ZÀ-Ý]/g, ""))) {
+        return titleCandidate.split(";").map((author) => author.trim()).filter(Boolean);
+      }
+      return [];
+    }
+
+    function getMostardScore(item) {
+      const authors = inferScientificAuthors(item);
+      const matchedIndex = authors.findIndex((author) => authorMatchesDocente(author, item.docente));
+      if (matchedIndex >= 0) {
+        const lastIndex = authors.length - 1;
+        if (matchedIndex === 0 || matchedIndex === lastIndex) {
+          return { score: 1, label: "1ª ou última autoria", source: "lista_autores" };
+        }
+        if (matchedIndex === 1 || matchedIndex === lastIndex - 1) {
+          return { score: 0.5, label: "2ª ou penúltima autoria", source: "lista_autores" };
+        }
+        return { score: 0.1, label: "Demais posições", source: "lista_autores" };
+      }
+
+      if (authorMatchesDocente(item.autor_principal, item.docente)) {
+        return { score: 1, label: "1ª autoria", source: "autor_principal" };
+      }
+
+      return { score: 0.1, label: "Demais posições", source: "fallback_autor_principal" };
+    }
+
+    function formatDecimal(value) {
+      return Number(value || 0).toLocaleString("pt-BR", {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+      });
+    }
+
+    function formatPercent(value) {
+      return `${formatDecimal(value)}%`;
+    }
+
+    function getFilteredScientificData() {
+      const docentes = [...selectedDocentes];
+      const tipos = [...selectedTipos];
+      const anos = [...selectedAnos];
+      const hasDocentes = scientificFilterValues.docentes.length > 0;
+      const hasTipos = scientificFilterValues.tipos.length > 0;
+      const hasAnos = scientificFilterValues.anos.length > 0;
+      return dataSource.filter((item) => {
+        const docenteOk = hasDocentes ? docentes.includes(item.docente) : true;
+        const tipoOk = hasTipos ? tipos.includes(item.tipo_producao) : true;
+        const anoOk = hasAnos ? anos.includes(item.ano) : true;
+        return docenteOk && tipoOk && anoOk;
       });
     }
 
@@ -2665,6 +2794,226 @@
         </tr>
       `).join("");
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
+    }
+
+    function aggregateMostardByDocente(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            total: 0,
+            pontosMostard: 0,
+            primeiraUltima: 0,
+            segundaPenultima: 0,
+            demais: 0,
+          });
+        }
+        const row = grouped.get(item.docente);
+        const score = getMostardScore(item);
+        row.total += 1;
+        row.pontosMostard += score.score;
+        if (score.score === 1) {
+          row.primeiraUltima += 1;
+        } else if (score.score === 0.5) {
+          row.segundaPenultima += 1;
+        } else {
+          row.demais += 1;
+        }
+      }
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+        }))
+        .sort((a, b) =>
+          b.indice - a.indice ||
+          b.pontosMostard - a.pontosMostard ||
+          b.total - a.total ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+    }
+
+    function aggregateMostardByYear(data) {
+      const grouped = new Map();
+      for (const item of data) {
+        const year = item.ano || "Sem ano";
+        if (!grouped.has(year)) {
+          grouped.set(year, {
+            ano: year,
+            total: 0,
+            pontosMostard: 0,
+            primeiraUltima: 0,
+            segundaPenultima: 0,
+            demais: 0,
+          });
+        }
+        const row = grouped.get(year);
+        const score = getMostardScore(item);
+        row.total += 1;
+        row.pontosMostard += score.score;
+        if (score.score === 1) {
+          row.primeiraUltima += 1;
+        } else if (score.score === 0.5) {
+          row.segundaPenultima += 1;
+        } else {
+          row.demais += 1;
+        }
+      }
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          indice: item.total ? (item.pontosMostard / item.total) * 100 : 0,
+        }))
+        .sort((a, b) => Number(a.ano) - Number(b.ano));
+    }
+
+    function renderLeadershipMetrics(data, docenteSummary, yearSummary) {
+      const pontosMostard = data.reduce((acc, item) => acc + getMostardScore(item).score, 0);
+      const indiceGeral = data.length ? (pontosMostard / data.length) * 100 : 0;
+      const visibleDocentes = docenteSummary.length;
+      const bestDocente = docenteSummary[0];
+      const bestYear = [...yearSummary].sort((a, b) => b.indice - a.indice || b.total - a.total)[0];
+      const fullEvidence = data.filter((item) => getMostardScore(item).source === "lista_autores").length;
+
+      document.getElementById("lideranca-total-registros").textContent = String(data.length);
+      document.getElementById("lideranca-pontos").textContent = formatDecimal(pontosMostard);
+      document.getElementById("lideranca-docentes-visiveis").textContent = String(visibleDocentes);
+      document.getElementById("lideranca-indice-geral").textContent = formatPercent(indiceGeral);
+
+      liderancaInsightChips.innerHTML = [
+        bestDocente ? `<span class="chip">Liderança mais alta: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indice)})</span>` : "",
+        bestYear ? `<span class="chip">Melhor ano: <strong>${bestYear.ano}</strong> (${formatPercent(bestYear.indice)})</span>` : "",
+        `<span class="chip">Registros com autoria completa explícita: <strong>${fullEvidence}</strong> de ${data.length}</span>`,
+      ].join("");
+
+      liderancaMetodologiaChips.innerHTML = [
+        `<span class="chip">Peso 1,0: primeira ou última autoria</span>`,
+        `<span class="chip">Peso 0,5: segunda ou penúltima autoria</span>`,
+        `<span class="chip">Peso 0,1: demais posições</span>`,
+        `<span class="chip">Fallback atual: sem lista completa de autores, a base reconhece com segurança a primeira autoria via <strong>autor_principal</strong></span>`,
+      ].join("");
+    }
+
+    function renderLeadershipDocenteChart(summary) {
+      const items = summary.slice(0, 18);
+      if (!items.length) {
+        chartLiderancaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxMetric = Math.max(...items.map((item) => item.indice), 1);
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 48;
+      const labelWidth = 270;
+      const chartWidth = 720;
+      const usableWidth = chartWidth - labelWidth - 70;
+      chartLiderancaDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Mostard Index por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const width = Math.max(8, (item.indice / maxMetric) * usableWidth);
+            return `
+              <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaGradient)"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
+            `;
+          }).join("")}
+          <defs>
+            <linearGradient id="liderancaGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#8c1538"></stop>
+              <stop offset="100%" stop-color="#d4a017"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+    }
+
+    function renderLeadershipYearChart(summary) {
+      if (!summary.length) {
+        chartLiderancaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxIndex = Math.max(...summary.map((item) => item.indice), 1);
+      const width = 760;
+      const height = 320;
+      const baseY = 260;
+      const left = 44;
+      const gap = 18;
+      const barWidth = Math.max(28, Math.floor((width - left - 20 - (summary.length - 1) * gap) / summary.length));
+      chartLiderancaAnos.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução anual do Mostard Index">
+          <line x1="${left}" y1="${baseY}" x2="${width - 12}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${summary.map((item, index) => {
+            const x = left + 10 + index * (barWidth + gap);
+            const barHeight = Math.max(10, Math.round((item.indice / maxIndex) * 190));
+            const y = baseY - barHeight;
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="${index % 2 === 0 ? "#8c1538" : "#d4a017"}"></rect>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="12">${formatDecimal(item.indice)}%</text>
+              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderLeadershipDocentesTable(summary) {
+      liderancaDocentesBody.innerHTML = summary.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${formatPercent(item.indice)}</td>
+          <td>${item.total}</td>
+          <td>${formatDecimal(item.pontosMostard)}</td>
+          <td>${item.primeiraUltima}</td>
+          <td>${item.segundaPenultima}</td>
+          <td>${item.demais}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderLeadershipYearTable(summary) {
+      liderancaAnosBody.innerHTML = summary.map((item) => `
+        <tr>
+          <td>${item.ano}</td>
+          <td>${formatPercent(item.indice)}</td>
+          <td>${item.total}</td>
+          <td>${formatDecimal(item.pontosMostard)}</td>
+          <td>${item.primeiraUltima}</td>
+          <td>${item.segundaPenultima}</td>
+          <td>${item.demais}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderLeadershipDetailTable(data) {
+      liderancaDetalheBody.innerHTML = data.map((item) => {
+        const score = getMostardScore(item);
+        return `
+          <tr>
+            <td>${item.docente || ""}</td>
+            <td>${item.ano || ""}</td>
+            <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
+            <td>${item.autor_principal || ""}</td>
+            <td>${score.label}</td>
+            <td>${formatDecimal(score.score)}</td>
+            <td>${item.titulo || ""}</td>
+          </tr>
+        `;
+      }).join("");
+      liderancaEstadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function applyLeadershipFilters() {
+      const filtered = getFilteredScientificData();
+      const docenteSummary = aggregateMostardByDocente(filtered);
+      const yearSummary = aggregateMostardByYear(filtered);
+      renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
+      renderLeadershipDocenteChart(docenteSummary);
+      renderLeadershipYearChart(yearSummary);
+      renderLeadershipDocentesTable(docenteSummary);
+      renderLeadershipYearTable(yearSummary);
+      renderLeadershipDetailTable(filtered);
     }
 
     function aggregateOrientationTotals(data) {
@@ -3271,18 +3620,7 @@
     }
 
     function applyFilters() {
-      const docentes = [...selectedDocentes];
-      const tipos = [...selectedTipos];
-      const anos = [...selectedAnos];
-      const totalDocentesOptions = docenteChipList.querySelectorAll('input[type="checkbox"]').length;
-      const totalTiposOptions = tiposSelect.querySelectorAll('input[type="checkbox"]').length;
-      const totalAnosOptions = anosSelect.querySelectorAll('input[type="checkbox"]').length;
-      const filtered = dataSource.filter((item) => {
-        const docenteOk = totalDocentesOptions === 0 ? true : docentes.includes(item.docente);
-        const tipoOk = totalTiposOptions === 0 ? true : tipos.includes(item.tipo_producao);
-        const anoOk = totalAnosOptions === 0 ? true : anos.includes(item.ano);
-        return docenteOk && tipoOk && anoOk;
-      });
+      const filtered = getFilteredScientificData();
       const docenteSummary = aggregateByDocente(filtered);
       const yearSummary = aggregateByYear(filtered);
       const typeSummary = aggregateByType(filtered);
@@ -3309,6 +3647,7 @@
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
     applyFilters();
+    applyLeadershipFilters();
     applyTechnicalFilters();
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
