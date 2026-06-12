@@ -11,10 +11,45 @@ Dashboard estatico para publicacao da producao cientifica, producao tecnica e or
 
 ## Publicacao no GitHub Pages
 
-1. Criar um repositorio no GitHub.
-2. Adicionar o remoto `origin`.
-3. Fazer `push` da branch principal.
-4. No GitHub, habilitar Pages a partir de `Deploy from a branch`, usando a branch `master` e a pasta `/ (root)`.
+### Fluxo recomendado
+
+O fluxo antigo de publicar a branch `master` manualmente gerou divergencia entre:
+
+- branch de desenvolvimento
+- branch realmente publicada
+- worktrees e clones auxiliares usados para promocao
+
+Para eliminar esse problema, o repositório agora inclui o workflow:
+
+- `.github/workflows/deploy-pages.yml`
+
+Esse workflow publica o site automaticamente quando houver push na branch:
+
+- `codex/publish-turmas`
+
+### Migracao necessaria no GitHub
+
+Uma unica vez, no repositório do GitHub:
+
+1. Abrir `Settings > Pages`
+2. Em `Build and deployment`, trocar `Source` para `GitHub Actions`
+3. Manter `codex/publish-turmas` como a unica branch operacional de publicacao
+
+### Resultado esperado
+
+Depois dessa migracao:
+
+- alteracao commitada e enviada para `codex/publish-turmas` vira deploy
+- deixa de existir promocao manual obrigatoria para `master`
+- o site publicado passa a refletir diretamente a branch de trabalho escolhida
+
+### Fluxo que deve parar de ser usado
+
+Evitar daqui em diante:
+
+- publicar manualmente pela `master`
+- usar clones ou worktrees paralelos para “fechar” publicacao
+- tratar `master` como branch intermediaria de deploy
 
 Ao abrir a raiz do site, `index.html` redireciona para `dashboard/producao-cientifica.html`.
 
