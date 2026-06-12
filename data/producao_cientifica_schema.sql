@@ -1,6 +1,7 @@
 CREATE TABLE producao_cientifica (
     id INTEGER PRIMARY KEY,
     docente TEXT NOT NULL,
+    autores TEXT,
     autor_principal TEXT NOT NULL,
     ano INTEGER NOT NULL,
     titulo TEXT,
@@ -15,5 +16,7 @@ CREATE TABLE producao_cientifica (
     jif_jcr_2025 REAL,
     quartil_jcr_2025 TEXT,
     pontuacao INTEGER,
-    observacoes TEXT
+    observacoes TEXT,
+    produto_referencia TEXT,
+    source_row INTEGER
 );

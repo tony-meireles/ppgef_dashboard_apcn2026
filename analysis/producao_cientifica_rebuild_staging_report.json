@@ -1,0 +1,35 @@
+{
+  "input_xlsx": "G:\\.shortcut-targets-by-id\\18B_rphPE1Flt1tGbECpP70xTWYIcUsfW\\AAA - PPGEF EFI\\Sucupira\\014 - Pj APCN 03 - 2026\\BDs Estratégicos\\Produção Docente 2026_06.xlsx",
+  "prior_rows": 470,
+  "source_rows": 549,
+  "rebuilt_rows": 548,
+  "dedupe_ignored_rows": 1,
+  "types": {
+    "artigo": 484,
+    "capitulo": 56,
+    "livro": 9
+  },
+  "prior_match_sources": {
+    "none": 452,
+    "doi": 3,
+    "title_docente": 83,
+    "title": 10
+  },
+  "rows_with_authors": 548,
+  "rows_with_doi": 68,
+  "rows_with_indexacao_reused": 67,
+  "rows_with_pontuacao_reused": 93,
+  "sample_deduped_out": [
+    {
+      "docente": "Bruno Teixeira Barbosa",
+      "ano": "2025",
+      "titulo": "Sono em Foco: Educação sobre Sono para Profissionais de Saúde",
+      "source_row": "74"
+    }
+  ],
+  "outputs": {
+    "csv": "C:\\Users\\tonym\\OneDrive\\Documentos\\PPGEF - DashBorad\\outputs\\producao_cientifica_rebuild_staging.csv",
+    "json": "C:\\Users\\tonym\\OneDrive\\Documentos\\PPGEF - DashBorad\\outputs\\producao_cientifica_rebuild_staging.json",
+    "js": "C:\\Users\\tonym\\OneDrive\\Documentos\\PPGEF - DashBorad\\outputs\\producao-cientifica-data.staging.js"
+  }
+}
