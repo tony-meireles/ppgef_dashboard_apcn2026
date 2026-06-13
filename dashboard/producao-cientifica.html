@@ -3254,8 +3254,8 @@
                     <th>Média JCR</th>
                     <th>Produtos com JCR</th>
                     <th>Artigos 90</th>
-                    <th>Artigos 70</th>
-                    <th>Artigos 50</th>
+                    <th>Artigos 60</th>
+                    <th>Artigos 30</th>
                     <th>Artigos sem ponto</th>
                   </tr>
                 </thead>
@@ -5685,8 +5685,8 @@
       if (item.tipo_producao !== "artigo") return null;
       const points = Number(item.pontuacao) || 0;
       if (points >= 90) return "90";
-      if (points >= 70) return "70";
-      if (points >= 50) return "50";
+      if (points >= 60) return "60";
+      if (points >= 30) return "30";
       return "0";
     }
 
@@ -5700,8 +5700,8 @@
             jcrCount: 0,
             hasScopus: false,
             artigos90: 0,
-            artigos70: 0,
-            artigos50: 0,
+            artigos60: 0,
+            artigos30: 0,
             artigos0: 0,
           });
         }
@@ -5717,8 +5717,8 @@
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") row.artigos90 += 1;
-        if (bucket === "70") row.artigos70 += 1;
-        if (bucket === "50") row.artigos50 += 1;
+        if (bucket === "60") row.artigos60 += 1;
+        if (bucket === "30") row.artigos30 += 1;
         if (bucket === "0") row.artigos0 += 1;
       });
       return [...grouped.values()]
@@ -5743,16 +5743,16 @@
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") acc.artigos90 += 1;
-        if (bucket === "70") acc.artigos70 += 1;
-        if (bucket === "50") acc.artigos50 += 1;
+        if (bucket === "60") acc.artigos60 += 1;
+        if (bucket === "30") acc.artigos30 += 1;
         if (bucket === "0") acc.artigos0 += 1;
         return acc;
       }, {
         jcrSum: 0,
         jcrCount: 0,
         artigos90: 0,
-        artigos70: 0,
-        artigos50: 0,
+        artigos60: 0,
+        artigos30: 0,
         artigos0: 0,
       });
     }
@@ -5779,7 +5779,7 @@
       liderancaQualidadeMetodologia.innerHTML = [
         `<span class="chip">Somatório JCR: soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
         `<span class="chip">Média JCR: somatório dividido apenas pelos produtos com JCR informado</span>`,
-        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "70", "50", "0"].join(" / ")})</span>`,
+        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "60", "30", "0"].join(" / ")})</span>`,
       ].join("");
     }
 
@@ -5845,8 +5845,8 @@
     function renderLeadershipQualityApcnChart(totals) {
       const items = [
         { label: "90 pontos", total: totals.artigos90, color: "#8c1538" },
-        { label: "70 pontos", total: totals.artigos70, color: "#b94b5d" },
-        { label: "50 pontos", total: totals.artigos50, color: "#d4a017" },
+        { label: "60 pontos", total: totals.artigos60, color: "#b94b5d" },
+        { label: "30 pontos", total: totals.artigos30, color: "#d4a017" },
         { label: "0 ponto", total: totals.artigos0, color: "#c5b9a8" },
       ];
       const maxValue = Math.max(...items.map((item) => item.total), 1);
@@ -5881,8 +5881,8 @@
           <td>${formatDecimal(item.jcrAvg)}</td>
           <td>${item.jcrCount}</td>
           <td>${item.artigos90}</td>
-          <td>${item.artigos70}</td>
-          <td>${item.artigos50}</td>
+          <td>${item.artigos60}</td>
+          <td>${item.artigos30}</td>
           <td>${item.artigos0}</td>
         </tr>
       `).join("");
