@@ -412,6 +412,64 @@
       flex: 0 0 auto;
     }
 
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    .modal-grid-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .audit-product-card {
+      border: 1px solid #e4d8c9;
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 16px 18px;
+    }
+
+    .audit-product-card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: var(--ufpe-grafite);
+    }
+
+    .audit-product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .audit-product-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(140, 21, 56, 0.07);
+      color: var(--ufpe-bordo);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .audit-product-card p {
+      margin: 8px 0;
+      color: #555b65;
+      line-height: 1.45;
+      font-size: 0.94rem;
+    }
+
+    .audit-product-card strong {
+      color: var(--ufpe-grafite);
+    }
+
+    .network-edge-link {
+      cursor: pointer;
+    }
+
     .sort-toggle.active {
       background: rgba(140, 21, 56, 0.12);
       border-color: var(--ufpe-bordo);
@@ -3125,6 +3183,9 @@
             <p class="eyebrow">Produtos integrados</p>
             <strong id="lideranca-parceria-internos">0</strong>
             <span>Produtos que reúnem mais de um docente do PPGEF no mesmo registro consolidado.</span>
+            <div style="margin-top: 12px;">
+              <button type="button" class="info-button" id="open-lideranca-parceria-modal">Ver obras integradas</button>
+            </div>
           </div>
           <div class="card metric">
             <p class="eyebrow">Docentes integrados</p>
@@ -3133,9 +3194,15 @@
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Parceiros por Docente</h2>
-              <p>Ranking do volume relacional por docente, combinando parceiros médios e parceiros distintos identificados.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Parceiros Internos por Docente</h2>
+                <p>Quantidade de docentes do PPGEF com quem cada docente compartilha obras no recorte atual.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação do gráfico de parceiros internos">
+                <button type="button" class="sort-toggle active" data-lideranca-parceria-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-lideranca-parceria-sort="desempenho">Por desempenho</button>
+              </div>
             </div>
             <div id="chart-lideranca-parceria-docentes" class="chart"></div>
           </div>
@@ -3412,6 +3479,23 @@
     </div>
   </div>
 
+  <div class="modal-backdrop" id="lideranca-parceria-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="lideranca-parceria-modal-title">
+      <div class="modal-head">
+        <div class="section-head">
+          <h2 id="lideranca-parceria-modal-title">Obras Integradas</h2>
+          <p id="lideranca-parceria-modal-subtitle">Detalhamento das obras que sustentam a integração interna entre docentes do PPGEF.</p>
+        </div>
+        <button type="button" class="modal-close" id="close-lideranca-parceria-modal" aria-label="Fechar modal">×</button>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="info-button" id="lideranca-parceria-modal-show-all">Todas as obras integradas</button>
+      </div>
+      <div id="lideranca-parceria-modal-summary" class="chart-note" style="margin-bottom: 14px;"></div>
+      <div id="lideranca-parceria-modal-body" class="modal-grid-cards"></div>
+    </div>
+  </div>
+
   <script src="./producao-cientifica-data.js?v=2026-06-13a"></script>
   <script src="./producao-tecnica-data.js?v=2026-06-12g"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
@@ -3519,6 +3603,14 @@
     const apcnScoringModal = document.getElementById("apcn-scoring-modal");
     const openApcnScoringModalButton = document.getElementById("open-apcn-scoring-modal");
     const closeApcnScoringModalButton = document.getElementById("close-apcn-scoring-modal");
+    const liderancaParceriaModal = document.getElementById("lideranca-parceria-modal");
+    const openLiderancaParceriaModalButton = document.getElementById("open-lideranca-parceria-modal");
+    const closeLiderancaParceriaModalButton = document.getElementById("close-lideranca-parceria-modal");
+    const liderancaParceriaModalTitle = document.getElementById("lideranca-parceria-modal-title");
+    const liderancaParceriaModalSubtitle = document.getElementById("lideranca-parceria-modal-subtitle");
+    const liderancaParceriaModalSummary = document.getElementById("lideranca-parceria-modal-summary");
+    const liderancaParceriaModalBody = document.getElementById("lideranca-parceria-modal-body");
+    const liderancaParceriaModalShowAllButton = document.getElementById("lideranca-parceria-modal-show-all");
     const docenteTecnicaChipList = document.getElementById("docentes-tecnica-chip-list");
     const tiposTecnicaSelect = document.getElementById("tipos-tecnica");
     const anosTecnicaSelect = document.getElementById("anos-tecnica");
@@ -3556,6 +3648,7 @@
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
+    const liderancaParceriaSortButtons = [...document.querySelectorAll("[data-lideranca-parceria-sort]")];
     const liderancaEstadoVazio = document.getElementById("lideranca-estado-vazio");
     const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
@@ -3607,6 +3700,8 @@
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
+    let liderancaParceriaSortMode = "alfabetico";
+    let liderancaParceriaAuditState = { integratedWorks: [], pairMap: new Map() };
     let scientificFilterValues = {
       docentes: [],
       tipos: [],
@@ -4333,6 +4428,80 @@
         if (event.key === "Escape" && apcnScoringModal.classList.contains("open")) {
           setApcnScoringModalState(false);
         }
+      });
+    }
+
+    function setLiderancaParceriaModalState(isOpen) {
+      if (!liderancaParceriaModal) return;
+      liderancaParceriaModal.classList.toggle("open", isOpen);
+      liderancaParceriaModal.setAttribute("aria-hidden", isOpen ? "false" : "true");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    function renderLiderancaParceriaAuditCards(items) {
+      if (!liderancaParceriaModalBody) return;
+      if (!items.length) {
+        liderancaParceriaModalBody.innerHTML = `<p class="chart-note">Nenhuma obra integrada encontrada para este recorte.</p>`;
+        return;
+      }
+      liderancaParceriaModalBody.innerHTML = items.map((item) => `
+        <article class="audit-product-card">
+          <h3>${escapeHtml(item.titulo || "Sem título")}</h3>
+          <div class="audit-product-meta">
+            <span>${escapeHtml(item.ano || "Sem ano")}</span>
+            <span>${escapeHtml(typeLabels[item.tipo_producao] || item.tipo_producao || "Sem tipo")}</span>
+            <span>${escapeHtml(`${item.docentes.length} docente(s) PPGEF`)}</span>
+            <span>${escapeHtml(`${item.totalRegistros} registro(s)`)}</span>
+          </div>
+          <p><strong>Docentes parceiros:</strong> ${escapeHtml(item.docentes.join("; "))}</p>
+          <p><strong>Referência completa:</strong> ${escapeHtml(item.referencia)}</p>
+        </article>
+      `).join("");
+    }
+
+    function openLiderancaParceriaModal(mode = "all", payload = {}) {
+      if (!liderancaParceriaModal) return;
+      if (mode === "pair") {
+        const source = payload.source || "";
+        const target = payload.target || "";
+        const key = [source, target].sort((a, b) => a.localeCompare(b, "pt-BR")).join("|||");
+        const items = liderancaParceriaAuditState.pairMap.get(key) || [];
+        liderancaParceriaModalTitle.textContent = "Obras do Vínculo Interno";
+        liderancaParceriaModalSubtitle.textContent = `${source} × ${target}`;
+        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) compartilhada(s) entre <strong>${escapeHtml(source)}</strong> e <strong>${escapeHtml(target)}</strong>.`;
+        renderLiderancaParceriaAuditCards(items);
+      } else {
+        const items = liderancaParceriaAuditState.integratedWorks || [];
+        liderancaParceriaModalTitle.textContent = "Obras Integradas";
+        liderancaParceriaModalSubtitle.textContent = "Detalhamento das obras que sustentam a integração interna entre docentes do PPGEF.";
+        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) integrada(s) identificada(s) no recorte filtrado atual.`;
+        renderLiderancaParceriaAuditCards(items);
+      }
+      setLiderancaParceriaModalState(true);
+    }
+
+    function bindLiderancaParceriaModal() {
+      if (!liderancaParceriaModal || !closeLiderancaParceriaModalButton || !openLiderancaParceriaModalButton) return;
+      openLiderancaParceriaModalButton.addEventListener("click", () => openLiderancaParceriaModal("all"));
+      closeLiderancaParceriaModalButton.addEventListener("click", () => setLiderancaParceriaModalState(false));
+      liderancaParceriaModal.addEventListener("click", (event) => {
+        if (event.target === liderancaParceriaModal) {
+          setLiderancaParceriaModalState(false);
+        }
+      });
+      liderancaParceriaModalShowAllButton?.addEventListener("click", () => openLiderancaParceriaModal("all"));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && liderancaParceriaModal.classList.contains("open")) {
+          setLiderancaParceriaModalState(false);
+        }
+      });
+      chartLiderancaParceriaRede?.addEventListener("click", (event) => {
+        const edge = event.target.closest(".network-edge-link");
+        if (!edge) return;
+        openLiderancaParceriaModal("pair", {
+          source: edge.getAttribute("data-source") || "",
+          target: edge.getAttribute("data-target") || "",
+        });
       });
     }
 
@@ -5610,14 +5779,18 @@
     }
 
     function getLeadershipProductKey(item) {
+      const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
       const baseKey = [
-        normalizeSeedText(item.titulo),
+        titleKey,
         normalizeSeedText(item.ano),
         normalizeSeedText(item.tipo_producao),
+      ].join("|");
+      return baseKey || [
+        normalizeSeedText(item.titulo),
+        normalizeSeedText(item.ano),
         normalizeSeedText(item.revista_ou_veiculo),
         normalizeSeedText(item.produto_referencia),
-      ].join("|");
-      return baseKey.replace(/\|+/g, "|") || `ROW|${item.id || item.source_row || ""}`;
+      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
     }
 
     function getCoauthorNames(item) {
@@ -5778,6 +5951,38 @@
       };
     }
 
+    function buildLeadershipIntegratedWorksAudit(productGroups) {
+      const works = [];
+      const pairMap = new Map();
+      [...productGroups.values()].forEach((group) => {
+        const docentes = [...group.docentes].sort((a, b) => a.localeCompare(b, "pt-BR"));
+        if (docentes.length < 2) return;
+        const baseItem = group.items[0] || {};
+        const work = {
+          key: group.key,
+          titulo: baseItem.titulo || "",
+          ano: baseItem.ano || "",
+          tipo_producao: baseItem.tipo_producao || "",
+          docentes,
+          referencia: baseItem.produto_referencia || baseItem.autores || baseItem.autor_principal || "",
+          totalRegistros: group.items.length,
+        };
+        works.push(work);
+        for (let index = 0; index < docentes.length; index += 1) {
+          for (let innerIndex = index + 1; innerIndex < docentes.length; innerIndex += 1) {
+            const source = docentes[index];
+            const target = docentes[innerIndex];
+            const pairKey = [source, target].sort((a, b) => a.localeCompare(b, "pt-BR")).join("|||");
+            if (!pairMap.has(pairKey)) pairMap.set(pairKey, []);
+            pairMap.get(pairKey).push(work);
+          }
+        }
+      });
+      works.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR"));
+      pairMap.forEach((items) => items.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR")));
+      return { works, pairMap };
+    }
+
     function renderLeadershipPartnershipMetrics(summary, totals, yearSummary, network) {
       const topPartners = summary[0];
       const mostIntegrated = [...summary].sort((a, b) => b.docentesInternos - a.docentesInternos || b.forcaInterna - a.forcaInterna || a.docente.localeCompare(b.docente, "pt-BR"))[0];
@@ -5793,39 +5998,63 @@
         topPartners ? `<span class="chip">Maior volume relacional: <strong>${topPartners.docente}</strong> (${topPartners.parceirosOcorrencias} parceiros acumulados)</span>` : "",
         mostIntegrated ? `<span class="chip">Maior integração interna: <strong>${mostIntegrated.docente}</strong> (${mostIntegrated.docentesInternos} docentes conectados)</span>` : "",
         topYear ? `<span class="chip">Ano mais colaborativo: <strong>${topYear.ano}</strong> (média ${formatDecimal(topYear.parceirosMedios)} parceiros)</span>` : "",
-        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado no recorte atual.</span>`,
+        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados na chave título + ano + tipo)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado no recorte atual.</span>`,
       ].filter(Boolean).join("");
 
       liderancaParceriaMetodologia.innerHTML = [
         `<span class="chip">Parceiros por produto = <strong>numero_autores - 1</strong>, usando os campos estruturados do novo modelo</span>`,
         `<span class="chip">Parceiros distintos usam os nomes explícitos do campo <strong>autores</strong> quando a lista está disponível</span>`,
-        `<span class="chip">Produtos internos são consolidados por título, ano, tipo e veículo para identificar quando mais de um docente aparece no mesmo produto</span>`,
+        `<span class="chip">Produtos internos são consolidados principalmente por <strong>título</strong>, com apoio de <strong>ano</strong> e <strong>tipo</strong></span>`,
         `<span class="chip">Força do vínculo na rede = quantidade de produtos compartilhados entre o mesmo par de docentes</span>`,
       ].join("");
     }
 
+    function bindLeadershipPartnershipSortToggles() {
+      liderancaParceriaSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaParceriaSortMode = button.dataset.liderancaParceriaSort || "alfabetico";
+          liderancaParceriaSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyLeadershipFilters();
+        });
+      });
+    }
+
     function renderLeadershipPartnershipDocenteChart(summary) {
-      const items = summary.slice(0, 16);
+      liderancaParceriaSortButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.liderancaParceriaSort === liderancaParceriaSortMode);
+      });
+      const sorted = [...summary].sort((a, b) => {
+        if (liderancaParceriaSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.parceirosInternos - a.parceirosInternos;
+        }
+        return (
+          b.parceirosInternos - a.parceirosInternos ||
+          b.forcaInterna - a.forcaInterna ||
+          b.produtosInternos - a.produtosInternos ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+      });
+      const items = sorted.slice(0, 18);
       if (!items.length) {
         chartLiderancaParceriaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxMetric = Math.max(...items.map((item) => item.parceirosOcorrencias), 1);
+      const maxMetric = Math.max(...items.map((item) => item.parceirosInternos), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
-      const labelWidth = 270;
-      const chartWidth = 760;
-      const usableWidth = chartWidth - labelWidth - 96;
+      const labelWidth = 288;
+      const chartWidth = 790;
+      const usableWidth = chartWidth - labelWidth - 112;
       chartLiderancaParceriaDocentes.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Parceiros autores por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Parceiros internos por docente">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(10, (item.parceirosOcorrencias / maxMetric) * usableWidth);
+            const width = Math.max(10, (item.parceirosInternos / maxMetric) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaParceriaGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.parceirosOcorrencias} · ${item.parceirosDistintos} distintos</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${item.parceirosInternos} parceiro(s) · força ${item.forcaInterna}</text>
             `;
           }).join("")}
           <defs>
@@ -5903,7 +6132,7 @@
             const target = positionMap.get(edge.target);
             if (!source || !target) return "";
             const stroke = 2 + ((edge.weight / maxEdge) * 6);
-            return `<line x1="${source.x}" y1="${source.y}" x2="${target.x}" y2="${target.y}" stroke="#9b2b44" stroke-opacity="0.42" stroke-width="${stroke}" stroke-linecap="round"></line>`;
+            return `<line class="network-edge-link" data-source="${escapeHtml(edge.source)}" data-target="${escapeHtml(edge.target)}" x1="${source.x}" y1="${source.y}" x2="${target.x}" y2="${target.y}" stroke="#9b2b44" stroke-opacity="0.42" stroke-width="${stroke}" stroke-linecap="round"></line>`;
           }).join("")}
           ${positionedNodes.map((node) => `
             <circle cx="${node.x}" cy="${node.y}" r="${node.r}" fill="${node.value > 0 ? "#8c1538" : "#d4a017"}" stroke="#fff8f2" stroke-width="3"></circle>
@@ -5913,7 +6142,7 @@
           <text x="${width - 238}" y="60" fill="#2e3138" font-size="14" font-weight="700">Leitura da rede</text>
           <text x="${width - 238}" y="84" fill="#666b73" font-size="12.5">Tamanho do nó = nº de docentes internos</text>
           <text x="${width - 238}" y="102" fill="#666b73" font-size="12.5">Espessura da aresta = produtos compartilhados</text>
-          <text x="${width - 238}" y="120" fill="#666b73" font-size="12.5">Cor intensa = maior integração interna</text>
+          <text x="${width - 238}" y="120" fill="#666b73" font-size="12.5">Clique na aresta para ver as obras do vínculo</text>
         </svg>
       `;
     }
@@ -6018,6 +6247,7 @@
       const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
       const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
       const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
+      liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
       renderLeadershipDocenteChart(docenteSummary);
       renderLeadershipWeightedChart(docenteSummary);
@@ -7230,11 +7460,13 @@
     bindTabs();
     bindApcnCollapsibleSections();
     bindApcnScoringModal();
+    bindLiderancaParceriaModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
+    bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
