@@ -2522,7 +2522,7 @@
           <div class="card metric">
             <p class="eyebrow">Critério 2</p>
             <strong id="criterios-crit2-percentual">0%</strong>
-            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR ou Categoria A.</span>
+            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR (SCimago | 2y cites per doc) ou Categoria A.</span>
           </div>
 
           <div class="card chart-wide">
@@ -2586,7 +2586,7 @@
                     <th>Docente</th>
                     <th>Pontuação agregada</th>
                     <th>Critério 1</th>
-                    <th>JCR</th>
+                    <th>JCR (SCimago | 2y cites per doc)</th>
                     <th>Q1/Q2</th>
                     <th>Critério 2</th>
                   </tr>
@@ -2786,20 +2786,8 @@
           <div class="card filters">
             <div class="section-head">
               <h2>Liderança e Impacto</h2>
-              <p>
-                O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
-                A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
-                penúltima posição e 0,1 para as demais. A base científica reconstruída passa a preservar
-                a sequência autoral na referência de quase todos os registros, permitindo uma leitura
-                muito mais fiel do protagonismo investigativo por docente e por ano.
-              </p>
+              <p>Esta aba reúne leituras complementares sobre liderança autoral, impacto qualificado da produção e consistência do protagonismo investigativo docente no recorte filtrado.</p>
             </div>
-            <p class="chart-note">
-              Nesta base científica, o campo estruturado <strong>autores</strong> passou a registrar a ordem autoral extraída
-              da referência completa. Com isso, a régua de <strong>1,0</strong>, <strong>0,5</strong> e <strong>0,1</strong>
-              é aplicada diretamente sobre a posição do docente na lista de autores, com fallback residual apenas para casos
-              em que o nome do docente não seja localizado automaticamente.
-            </p>
             <div class="filters-grid">
               <div>
                 <label for="docentes-lideranca-chip-list">Docentes</label>
@@ -2853,6 +2841,20 @@
             </div>
           </div>
 
+          <div class="card table-card">
+            <p>
+              O <strong>Mostard Index</strong> foi estruturado para qualificar a liderança autoral da produção intelectual.
+              A régua considera <strong>1,0 ponto</strong> para primeira ou última autoria, <strong>0,5</strong> para segunda
+              ou penúltima posição e <strong>0,1</strong> para as demais. Com a base autoral estruturada, essa leitura passa
+              a capturar com mais fidelidade o protagonismo investigativo por docente e por ano.
+            </p>
+            <p>
+              Nesta base científica, a posição autoral é aplicada diretamente sobre os campos estruturados de
+              <strong> número de autores </strong> e <strong> posição do docente </strong>. Assim, a leitura de liderança
+              deixa de depender de inferência textual residual e passa a operar sobre um registro autoral explicitamente revisado.
+            </p>
+          </div>
+
           <div class="card metric">
             <p class="eyebrow">Registros</p>
             <strong id="lideranca-total-registros">0</strong>
@@ -2896,7 +2898,7 @@
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Índice Mostarda Corrigido por Pontos</h2>
+              <h2>Produção em Pontos APCN corrigidos pelo Mustard Index</h2>
               <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
             </div>
             <div id="chart-lideranca-corrigido" class="chart"></div>
@@ -2977,35 +2979,53 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JCR, média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
+              <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
             </div>
           </div>
 
+          <div class="card table-card">
+            <p>
+              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JCR (SCimago | 2y cites per doc)</strong>,
+              tanto no somatório acumulado quanto na média por produto qualificado. Isso permite distinguir docentes
+              com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
+            </p>
+            <p>
+              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas APCN dos periódicos</strong>,
+              permitindo relacionar impacto bibliométrico, qualidade editorial e contribuição efetiva para a pontuação do programa.
+            </p>
+          </div>
+
           <div class="card metric">
-            <p class="eyebrow">Produtos com JCR</p>
+            <p class="eyebrow">Produtos com JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-produtos-jcr">0</strong>
-            <span>Quantidade de produtos com valor JCR estruturado no recorte filtrado.</span>
+            <span>Quantidade de produtos com valor JCR (SCimago | 2y cites per doc) estruturado no recorte filtrado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Soma JCR</p>
+            <p class="eyebrow">Soma JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-jcr-soma">0</strong>
-            <span>Somatório dos valores de JCR atribuídos aos produtos do recorte.</span>
+            <span>Somatório dos valores de JCR (SCimago | 2y cites per doc) atribuídos aos produtos do recorte.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Média JCR</p>
+            <p class="eyebrow">Média JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-jcr-media">0</strong>
-            <span>Valor médio de JCR entre os produtos que possuem essa evidência.</span>
+            <span>Valor médio de JCR (SCimago | 2y cites per doc) entre os produtos que possuem essa evidência.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com JCR</p>
+            <p class="eyebrow">Docentes com JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto com JCR no recorte atual.</span>
+            <span>Docentes que possuem ao menos um produto com JCR (SCimago | 2y cites per doc) no recorte atual.</span>
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Somatório de JCR por Docente</h2>
-              <p>Ranking docente com soma dos JCRs e indicação da média por produto qualificado.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Somatório de JCR (SCimago | 2y cites per doc) por Docente</h2>
+                <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR (SCimago | 2y cites per doc)">
+                <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
+                <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
+              </div>
             </div>
             <div id="chart-lideranca-qualidade-jcr" class="chart"></div>
           </div>
@@ -3029,7 +3049,7 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JCR e agrupar faixas APCN dos periódicos.</p>
+              <p>Critérios usados para somar JCR (SCimago | 2y cites per doc) e agrupar faixas APCN dos periódicos.</p>
             </div>
             <div class="chips" id="lideranca-qualidade-metodologia"></div>
           </div>
@@ -3037,19 +3057,19 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Qualidade por Docente</h2>
-              <p>Soma JCR, média JCR e composição dos artigos por faixas APCN.</p>
+              <p>Soma JCR (SCimago | 2y cites per doc), média JCR (SCimago | 2y cites per doc) e composição dos artigos por faixas APCN.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Soma JCR</th>
-                    <th>Média JCR</th>
-                    <th>Produtos com JCR</th>
+                    <th>Soma JCR (SCimago | 2y cites per doc)</th>
+                    <th>Média JCR (SCimago | 2y cites per doc)</th>
+                    <th>Produtos com JCR (SCimago | 2y cites per doc)</th>
                     <th>Artigos 90</th>
-                    <th>Artigos 70</th>
-                    <th>Artigos 50</th>
+                    <th>Artigos 60</th>
+                    <th>Artigos 30</th>
                     <th>Artigos sem ponto</th>
                   </tr>
                 </thead>
@@ -3185,9 +3205,9 @@
                 <tbody>
                   <tr>
                     <td>Artigo</td>
-                    <td>Web of Science (JCR)</td>
+                    <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
                     <td>90</td>
-                    <td>Artigo em periódico indexado no Web of Science com JCR</td>
+                    <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
                   </tr>
                   <tr>
                     <td>Artigo</td>
@@ -3229,6 +3249,49 @@
               </table>
             </div>
           </div>
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mostard Index</h2>
+              <p>Lógica de cálculo, relevância estratégica e leitura da produção corrigida por liderança autoral.</p>
+            </div>
+            <p>
+              O <strong>Mostard Index</strong> foi incorporado ao painel para qualificar um aspecto
+              decisivo na análise de viabilidade do doutorado: a <strong>capacidade de liderança
+              científica</strong> do corpo docente. Não basta apenas acumular produtos e pontos APCN.
+              Para sustentar a proposta de doutorado, também importa demonstrar que o grupo ocupa,
+              com frequência, posições de protagonismo intelectual nas publicações.
+            </p>
+            <p>
+              A régua usada no dashboard atribui <strong>1,0 ponto</strong> quando o docente aparece
+              na <strong>primeira</strong> ou <strong>última autoria</strong>, <strong>0,5 ponto</strong>
+              quando aparece na <strong>segunda</strong> ou <strong>penúltima</strong> posição, e
+              <strong>0,1 ponto</strong> nas demais posições. A média desses pesos produz a medida
+              de liderança autoral do recorte. Em seguida, o painel exibe o índice de forma
+              <strong>invertida</strong>, pela fórmula
+              <strong>Índice Mostarda = (1 - média de liderança) x 100</strong>. Portanto,
+              <strong>quanto maior o índice Mostarda, menor a liderança autoral média</strong>.
+            </p>
+            <p>
+              Esse ponto é estratégico para o curso de doutorado porque a proposta depende de um
+              núcleo docente capaz de liderar agendas, orientar redes de pesquisa e sustentar
+              produção qualificada com centralidade intelectual própria. Nesse contexto, um grupo
+              com <strong>grande quantitativo de pesquisadores com índice Mostarda alto</strong>
+              passa a sinalizar uma <strong>ameaça</strong> à narrativa de maturidade acadêmica do
+              programa: existe produção, mas com menor evidência de comando autoral recorrente.
+              Em uma leitura institucional, isso pode enfraquecer a demonstração de autonomia,
+              densidade investigativa e capacidade de condução de teses em nível de doutorado.
+            </p>
+            <p>
+              Para ampliar essa leitura, o painel também calcula a <strong>produção em pontos
+              corrigida pelo Mostard Index</strong>. A fórmula aplicada é
+              <strong>Índice Mostarda corrigido = índice Mostarda decimal x pontos APCN</strong>.
+              Na prática, esse indicador mostra onde há simultaneamente <strong>muito ponto
+              acumulado</strong> e <strong>menor protagonismo autoral médio</strong>. Assim, ele ajuda
+              a distinguir dois cenários: produção volumosa com liderança consistente, que fortalece
+              a APCN, e produção volumosa porém mais dependente de posições periféricas de autoria,
+              que exige leitura crítica e eventual correção estratégica do portfólio docente.
+            </p>
+          </div>
         </section>
       </div>
     </section>
@@ -3244,7 +3307,7 @@
         <button type="button" class="modal-close" id="close-apcn-scoring-modal" aria-label="Fechar modal">×</button>
       </div>
       <p class="chart-note">
-        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR)</strong> ou
+        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR (SCimago | 2y cites per doc))</strong> ou
         <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
         <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
         recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
@@ -3261,9 +3324,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>Web of Science (JCR)</td>
+              <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
               <td>90</td>
-              <td>Artigo em periódico indexado no Web of Science com JCR</td>
+              <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
             </tr>
             <tr>
               <td>Scopus (SJR)</td>
@@ -3381,6 +3444,7 @@
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
     const liderancaQualidadeInsights = document.getElementById("lideranca-qualidade-insights");
     const liderancaQualidadeMetodologia = document.getElementById("lideranca-qualidade-metodologia");
+    const liderancaQualidadeJcrModeButtons = [...document.querySelectorAll("[data-lideranca-qualidade-jcr-mode]")];
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
@@ -3436,6 +3500,7 @@
     let docenteTableSortMode = "alfabetico";
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
+    let liderancaQualidadeJcrMode = "total";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
     let scientificFilterValues = {
       docentes: [],
@@ -5186,8 +5251,8 @@
       if (item.tipo_producao !== "artigo") return null;
       const points = Number(item.pontuacao) || 0;
       if (points >= 90) return "90";
-      if (points >= 70) return "70";
-      if (points >= 50) return "50";
+      if (points >= 60) return "60";
+      if (points >= 30) return "30";
       return "0";
     }
 
@@ -5200,8 +5265,8 @@
             jcrSum: 0,
             jcrCount: 0,
             artigos90: 0,
-            artigos70: 0,
-            artigos50: 0,
+            artigos60: 0,
+            artigos30: 0,
             artigos0: 0,
           });
         }
@@ -5213,8 +5278,8 @@
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") row.artigos90 += 1;
-        if (bucket === "70") row.artigos70 += 1;
-        if (bucket === "50") row.artigos50 += 1;
+        if (bucket === "60") row.artigos60 += 1;
+        if (bucket === "30") row.artigos30 += 1;
         if (bucket === "0") row.artigos0 += 1;
       });
       return [...grouped.values()]
@@ -5239,16 +5304,16 @@
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") acc.artigos90 += 1;
-        if (bucket === "70") acc.artigos70 += 1;
-        if (bucket === "50") acc.artigos50 += 1;
+        if (bucket === "60") acc.artigos60 += 1;
+        if (bucket === "30") acc.artigos30 += 1;
         if (bucket === "0") acc.artigos0 += 1;
         return acc;
       }, {
         jcrSum: 0,
         jcrCount: 0,
         artigos90: 0,
-        artigos70: 0,
-        artigos50: 0,
+        artigos60: 0,
+        artigos30: 0,
         artigos0: 0,
       });
     }
@@ -5266,41 +5331,66 @@
       document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComJcr.length);
 
       liderancaQualidadeInsights.innerHTML = [
-        topJcr ? `<span class="chip">Maior soma de JCR: <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
-        bestAvg ? `<span class="chip">Maior média JCR: <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
+        topJcr ? `<span class="chip">Maior soma de JCR (SCimago | 2y cites per doc): <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
+        bestAvg ? `<span class="chip">Maior média JCR (SCimago | 2y cites per doc): <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
         `<span class="chip">Artigos em periódicos de 90 pontos: <strong>${totals.artigos90}</strong></span>`,
         `<span class="chip">Artigos sem pontuação APCN de periódico: <strong>${totals.artigos0}</strong></span>`,
       ].filter(Boolean).join("");
 
       liderancaQualidadeMetodologia.innerHTML = [
-        `<span class="chip">Somatório JCR: soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
-        `<span class="chip">Média JCR: somatório dividido apenas pelos produtos com JCR informado</span>`,
-        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "70", "50", "0"].join(" / ")})</span>`,
+        `<span class="chip">Somatório JCR (SCimago | 2y cites per doc): soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
+        `<span class="chip">Média JCR (SCimago | 2y cites per doc): somatório dividido apenas pelos produtos com JCR informado</span>`,
+        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "60", "30", "0"].join(" / ")})</span>`,
       ].join("");
     }
 
+    function bindLeadershipQualityJcrModeButtons() {
+      liderancaQualidadeJcrModeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaQualidadeJcrMode = button.dataset.liderancaQualidadeJcrMode || "total";
+          liderancaQualidadeJcrModeButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+          renderLeadershipQualityJcrChart(aggregateLeadershipQualityByDocente(getFilteredScientificData()));
+        });
+      });
+    }
+
     function renderLeadershipQualityJcrChart(summary) {
-      const items = summary.filter((item) => item.jcrSum > 0).slice(0, 16);
+      liderancaQualidadeJcrModeButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.liderancaQualidadeJcrMode === liderancaQualidadeJcrMode);
+      });
+      const valueKey = liderancaQualidadeJcrMode === "media" ? "jcrAvg" : "jcrSum";
+      const items = summary
+        .filter((item) => item.jcrCount > 0 && item[valueKey] > 0)
+        .sort((a, b) =>
+          b[valueKey] - a[valueKey] ||
+          b.jcrSum - a.jcrSum ||
+          b.jcrCount - a.jcrCount ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        )
+        .slice(0, 16);
       if (!items.length) {
-        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR para o gráfico.</p>`;
+        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR (SCimago | 2y cites per doc) para o gráfico.</p>`;
         return;
       }
-      const maxValue = Math.max(...items.map((item) => item.jcrSum), 1);
+      const maxValue = Math.max(...items.map((item) => item[valueKey]), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
       const chartWidth = 760;
       const usableWidth = chartWidth - labelWidth - 84;
       chartLiderancaQualidadeJcr.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Somatório de JCR por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JCR (SCimago | 2y cites per doc) por docente" : "Somatório de JCR (SCimago | 2y cites per doc) por docente"}">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.jcrSum / maxValue) * usableWidth);
+            const primaryValue = item[valueKey];
+            const width = Math.max(8, (primaryValue / maxValue) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaJcrGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.jcrSum)} · m=${formatDecimal(item.jcrAvg)}</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${liderancaQualidadeJcrMode === "media" ? `m=${formatDecimal(item.jcrAvg)} · Σ=${formatDecimal(item.jcrSum)}` : `${formatDecimal(item.jcrSum)} · m=${formatDecimal(item.jcrAvg)}`}</text>
             `;
           }).join("")}
           <defs>
@@ -5316,8 +5406,8 @@
     function renderLeadershipQualityApcnChart(totals) {
       const items = [
         { label: "90 pontos", total: totals.artigos90, color: "#8c1538" },
-        { label: "70 pontos", total: totals.artigos70, color: "#b94b5d" },
-        { label: "50 pontos", total: totals.artigos50, color: "#d4a017" },
+        { label: "60 pontos", total: totals.artigos60, color: "#b94b5d" },
+        { label: "30 pontos", total: totals.artigos30, color: "#d4a017" },
         { label: "0 ponto", total: totals.artigos0, color: "#c5b9a8" },
       ];
       const maxValue = Math.max(...items.map((item) => item.total), 1);
@@ -5352,8 +5442,8 @@
           <td>${formatDecimal(item.jcrAvg)}</td>
           <td>${item.jcrCount}</td>
           <td>${item.artigos90}</td>
-          <td>${item.artigos70}</td>
-          <td>${item.artigos50}</td>
+          <td>${item.artigos60}</td>
+          <td>${item.artigos30}</td>
           <td>${item.artigos0}</td>
         </tr>
       `).join("");
@@ -5721,7 +5811,7 @@
         },
         {
           criterio: "Critério 2",
-          label: "75% com JCR ou Categoria A",
+          label: "75% com JCR (SCimago | 2y cites per doc) ou Categoria A",
           atual: summary.criterio2Atendidos,
           minimo: summary.minimo,
           color: "var(--orientation-co-andamento)",
@@ -6519,7 +6609,7 @@
       document.getElementById("criterios-crit1-percentual").textContent = `${summary.criterio1Percentual}%`;
       document.getElementById("criterios-crit2-percentual").textContent = `${summary.criterio2Percentual}%`;
       document.getElementById("criterios-crit1-resumo").textContent = `${summary.criterio1Atendidos} de ${summary.totalDocentes} docentes com mais de 330 pontos.`;
-      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR ou proxy Q1/Q2.`;
+      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR (SCimago | 2y cites per doc) ou proxy Q1/Q2.`;
 
       renderProductivityCriteriaChart(summary);
 
@@ -6556,7 +6646,7 @@
         `<span class="chip">Margem sobre a exigência: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
       ].join("");
 
-      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
+      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR (SCimago | 2y cites per doc) na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
 
       document.getElementById("criterios-resumo-body").innerHTML = [
         `
@@ -6570,7 +6660,7 @@
         `,
         `
           <tr>
-            <td>Critério 2<br><small>75% dos docentes com JCR ou Categoria A</small></td>
+            <td>Critério 2<br><small>75% dos docentes com JCR (SCimago | 2y cites per doc) ou Categoria A</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio2Atendidos}/${summary.totalDocentes} docentes (${summary.criterio2Percentual}%)</td>
             <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Não atende"}</span></td>
@@ -6661,6 +6751,7 @@
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
+    bindLeadershipQualityJcrModeButtons();
     bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
