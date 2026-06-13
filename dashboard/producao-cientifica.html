@@ -3284,6 +3284,29 @@
 
           <div class="card table-card">
             <div class="section-head">
+              <h2>Posição Autoral por Docente</h2>
+              <p>Proporção das obras em que cada docente aparece na 1ª, 2ª, meio, penúltima e última posição autoral.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Obras válidas</th>
+                    <th>1ª</th>
+                    <th>2ª</th>
+                    <th>Meio</th>
+                    <th>Penúltima</th>
+                    <th>Última</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-parceria-posicoes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
               <h2>Rede de Integração Docente</h2>
               <p>Nó por docente e arestas proporcionais à força da coautoria interna entre docentes do programa.</p>
             </div>
@@ -3697,6 +3720,7 @@
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
+    const liderancaParceriaPosicoesBody = document.getElementById("lideranca-parceria-posicoes-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
     const liderancaParceriaSortButtons = [...document.querySelectorAll("[data-lideranca-parceria-sort]")];
@@ -4835,6 +4859,17 @@
       return { score: 0.1, label: "Demais posições", source: "campos_estruturados" };
     }
 
+    function getStructuredAuthorshipBucket(item) {
+      const structured = getStructuredMostardPosition(item);
+      if (!structured.valid) return "invalido";
+      const { total, position } = structured;
+      if (position === 1) return "primeira";
+      if (position === total) return "ultima";
+      if (position === 2) return "segunda";
+      if (position === total - 1) return "penultima";
+      return "meio";
+    }
+
     function formatDecimal(value) {
       return Number(value || 0).toLocaleString("pt-BR", {
         minimumFractionDigits: 1,
@@ -5967,6 +6002,43 @@
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
 
+    function aggregateLeadershipAuthorshipPositionsByDocente(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!item.docente) return;
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            validos: 0,
+            primeira: 0,
+            segunda: 0,
+            meio: 0,
+            penultima: 0,
+            ultima: 0,
+          });
+        }
+        const row = grouped.get(item.docente);
+        const bucket = getStructuredAuthorshipBucket(item);
+        if (bucket === "invalido") return;
+        row.validos += 1;
+        row[bucket] += 1;
+      });
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          primeiraPct: item.validos ? (item.primeira / item.validos) * 100 : 0,
+          segundaPct: item.validos ? (item.segunda / item.validos) * 100 : 0,
+          meioPct: item.validos ? (item.meio / item.validos) * 100 : 0,
+          penultimaPct: item.validos ? (item.penultima / item.validos) * 100 : 0,
+          ultimaPct: item.validos ? (item.ultima / item.validos) * 100 : 0,
+        }))
+        .filter((item) => item.validos > 0)
+        .sort((a, b) =>
+          a.docente.localeCompare(b.docente, "pt-BR") ||
+          b.validos - a.validos
+        );
+    }
+
     function buildLeadershipPartnershipNetwork(summary, productGroups) {
       const edgeMap = new Map();
       [...productGroups.values()].forEach((group) => {
@@ -6076,10 +6148,10 @@
       });
       const sorted = [...summary].sort((a, b) => {
         if (liderancaParceriaSortMode === "alfabetico") {
-          return a.docente.localeCompare(b.docente, "pt-BR") || b.parceirosInternos - a.parceirosInternos;
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.docentesInternos - a.docentesInternos;
         }
         return (
-          b.parceirosInternos - a.parceirosInternos ||
+          b.docentesInternos - a.docentesInternos ||
           b.forcaInterna - a.forcaInterna ||
           b.produtosInternos - a.produtosInternos ||
           a.docente.localeCompare(b.docente, "pt-BR")
@@ -6090,18 +6162,20 @@
         chartLiderancaParceriaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxMetric = Math.max(...items.map((item) => item.parceirosInternos), 1);
+      const maxMetric = Math.max(...items.map((item) => item.docentesInternos), 1);
       chartLiderancaParceriaDocentes.innerHTML = `
         <div class="lideranca-parceria-bars" role="img" aria-label="Parceiros internos por docente">
           ${items.map((item) => {
-            const width = Math.max(10, (item.parceirosInternos / maxMetric) * 100);
+            const width = item.docentesInternos > 0
+              ? Math.max(10, (item.docentesInternos / maxMetric) * 100)
+              : 0;
             return `
               <div class="lideranca-parceria-bar-row">
                 <div class="lideranca-parceria-bar-label">${escapeHtml(item.docente)}</div>
                 <div class="lideranca-parceria-bar-track" aria-hidden="true">
                   <div class="lideranca-parceria-bar-fill" style="width:${width}%;"></div>
                 </div>
-                <div class="lideranca-parceria-bar-meta">${item.parceirosInternos} parceiro(s) · força ${item.forcaInterna}</div>
+                <div class="lideranca-parceria-bar-meta">${item.docentesInternos} parceiro(s) · força ${item.forcaInterna}</div>
               </div>
             `;
           }).join("")}
@@ -6225,6 +6299,25 @@
       `;
     }
 
+    function renderLeadershipAuthorshipPositionsTable(summary) {
+      if (!liderancaParceriaPosicoesBody) return;
+      liderancaParceriaPosicoesBody.innerHTML = summary.map((item) => `
+        <tr>
+          <td>${escapeHtml(item.docente)}</td>
+          <td>${item.validos}</td>
+          <td>${formatPercent(item.primeiraPct)}</td>
+          <td>${formatPercent(item.segundaPct)}</td>
+          <td>${formatPercent(item.meioPct)}</td>
+          <td>${formatPercent(item.penultimaPct)}</td>
+          <td>${formatPercent(item.ultimaPct)}</td>
+        </tr>
+      `).join("") || `
+        <tr>
+          <td colspan="7" class="docentes-empty-state">Nenhum registro com autoria estruturada válida no recorte atual.</td>
+        </tr>
+      `;
+    }
+
     function updateLeadershipDetailSortButtons() {
       liderancaDetailSortButtons.forEach((button) => {
         const isActive = button.dataset.liderancaDetailSort === liderancaDetailSort.key;
@@ -6324,6 +6417,7 @@
       const partnershipSummary = aggregateLeadershipPartnershipByDocente(filtered, partnershipProductGroups);
       const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
       const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
+      const authorshipPositionSummary = aggregateLeadershipAuthorshipPositionsByDocente(filtered);
       const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
       liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
@@ -6340,6 +6434,7 @@
       renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
       renderLeadershipPartnershipDocenteChart(partnershipSummary);
       renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipAuthorshipPositionsTable(authorshipPositionSummary);
       renderLeadershipPartnershipNetwork(partnershipNetwork);
       renderLeadershipDetailTable(filtered);
     }
