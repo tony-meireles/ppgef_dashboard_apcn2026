@@ -3129,6 +3129,29 @@
             </div>
           </div>
 
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Posição Autoral por Docente</h2>
+              <p>Proporção das obras em que cada docente aparece na 1ª, 2ª, meio, penúltima e última posição autoral.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Obras válidas</th>
+                    <th>1ª</th>
+                    <th>2ª</th>
+                    <th>Meio</th>
+                    <th>Penúltima</th>
+                    <th>Última</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-parceria-posicoes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
           <div class="card group-card">
             <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
@@ -3280,29 +3303,6 @@
               <p>Critérios usados para consolidar parceiros autores e vínculos internos entre docentes.</p>
             </div>
             <div class="chips" id="lideranca-parceria-metodologia"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Posição Autoral por Docente</h2>
-              <p>Proporção das obras em que cada docente aparece na 1ª, 2ª, meio, penúltima e última posição autoral.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Docente</th>
-                    <th>Obras válidas</th>
-                    <th>1ª</th>
-                    <th>2ª</th>
-                    <th>Meio</th>
-                    <th>Penúltima</th>
-                    <th>Última</th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-parceria-posicoes-body"></tbody>
-              </table>
-            </div>
           </div>
 
           <div class="card table-card">
@@ -3570,61 +3570,22 @@
     </div>
   </div>
 
-  <script src="./producao-cientifica-data.js?v=2026-06-13a"></script>
+  <script src="./producao-cientifica-data.js?v=2026-06-13c"></script>
   <script src="./producao-tecnica-data.js?v=2026-06-12g"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
   <script src="./disciplinas-data.js?v=2026-06-12f"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
   <script>
-    function normalizeSeedText(value) {
-      return String(value || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim()
-        .toUpperCase();
-    }
-
-    function hashSeed(value) {
-      return [...String(value || "")].reduce((acc, char) => ((acc * 31) + char.charCodeAt(0)) >>> 0, 7);
-    }
-
-    function buildScientificProductSeed(item) {
-      return [
-        normalizeSeedText(item.titulo),
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.tipo_producao),
-        normalizeSeedText(item.revista_ou_veiculo),
-      ].join("|");
-    }
-
-    function buildStructuredMostardFields(item) {
-      const productSeed = buildScientificProductSeed(item);
-      const docenteSeed = `${productSeed}|${normalizeSeedText(item.docente)}|${item.id || ""}`;
-      const productHash = hashSeed(productSeed);
-      const docenteHash = hashSeed(docenteSeed);
-      const numeroAutores = (productHash % 6) + 1;
-      const posicaoDocente = (docenteHash % numeroAutores) + 1;
-      return {
-        numero_autores: numeroAutores,
-        posicao_docente: posicaoDocente,
-      };
-    }
-
     const dataSource = (window.PRODUCAO_CIENTIFICA || []).map((item) => {
-      const synthetic = buildStructuredMostardFields(item);
       const numeroAutores = Number(item.numero_autores);
       const posicaoDocente = Number(item.posicao_docente);
       const hasValidNumero = Number.isInteger(numeroAutores) && numeroAutores >= 1;
-      const hasValidPosicao = Number.isInteger(posicaoDocente) && posicaoDocente >= 1;
-      const finalNumeroAutores = hasValidNumero ? numeroAutores : synthetic.numero_autores;
-      const finalPosicaoDocente = hasValidPosicao && posicaoDocente <= finalNumeroAutores
-        ? posicaoDocente
-        : Math.min(synthetic.posicao_docente, finalNumeroAutores);
+      const hasValidPosicao = hasValidNumero && Number.isInteger(posicaoDocente) && posicaoDocente >= 1 && posicaoDocente <= numeroAutores;
       return {
         ...item,
-        numero_autores: finalNumeroAutores,
-        posicao_docente: finalPosicaoDocente,
+        numero_autores: hasValidNumero ? numeroAutores : "",
+        posicao_docente: hasValidPosicao ? posicaoDocente : "",
       };
     });
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
@@ -4755,6 +4716,14 @@
         .replace(/[^A-Za-z0-9]+/g, " ")
         .toUpperCase()
         .trim();
+    }
+
+    function normalizeSeedText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+        .toUpperCase();
     }
 
     function getNameTokens(value) {

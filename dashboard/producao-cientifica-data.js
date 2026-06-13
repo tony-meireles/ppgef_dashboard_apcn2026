@@ -21,7 +21,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "MATIAS, G. H. L. ; COSTA, A. S. ; LIMA, V. F. ; FONSECA, R. M. C. . Efeito de 12 Semanas do Futebol Recreativo nas Funções Executivas e na Funcionalidade em Idosos.. Revista Brasileira de Educação Física e Esporte 35, p. 155-162, 2021.",
     "source_row": "332",
     "numero_autores": 4,
-    "posicao_docente": 3
+    "posicao_docente": 2
   },
   {
     "id": "2",
@@ -45,7 +45,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "DA SILVA, RAYSSA LAÍS FERREIRA ; DA SILVA, REYANNE MARIA ; COSTA, ANDRÉ DOS SANTOS . Efeitos da atividade física e Índice de Massa Corporal sob o ciclo menstrual em adolescentes: uma revisão da literatura. PRAXIA - REVISTA ON LINE DE EDUCAÇÃO FÍSICA DA UEG, v. 3, p. e2021009, 2021.",
     "source_row": "153",
     "numero_autores": 3,
-    "posicao_docente": 1
+    "posicao_docente": 3
   },
   {
     "id": "3",
@@ -68,8 +68,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MATIAS, G. H. L. ; COSTA, A. S. ; FONSECA, R. M. C. . Effect of 12 weeks of recreational soccer on bone mineral density and sarcopenia in the elderly: a randomized clinical trial Changes the Mineral. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 32, p. e3257, 2021. Citações:2",
     "source_row": "331",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "4",
@@ -92,7 +92,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, L. E. R. ; COSTA, A. S. ; COSTA, E. C. ; DAMASCENO, V. O. ; CHEN, Z. ; OLIVEIRA, I. A. ; SILVA, K. K. D. ; PIRES, F. O. ; SANTOS, T. M. . Effects of Self-Selected Passive Recovery Time in Interval Exercise on Perceptual and Heart Rate Responses in Older Women: A Promissory Approach. JOURNAL OF AGING AND PHYSICAL ACTIVITY 1, p. 1-11, 2021. Citações:2",
     "source_row": "455",
-    "numero_autores": 6,
+    "numero_autores": 9,
     "posicao_docente": 2
   },
   {
@@ -117,7 +117,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "do Nascimento, Higor Vinicius Alves ; COSTA, ANDRÉ DOS SANTOS ; Maia, Maria de Mascena Diniz ; da Silva, Paulo Daywson Lopes ; Prazeres, Luiz Paulo de Souza ; de Souza, Paulo Roberto Eleutério . ESTUDO DE POLIMORFISMOS NO GENE RECEPTOR DA VITAMINA D EM PACIENTES COM A DOENÇA DE ALZHEIMER. In: Edilson Antonio Catapan. (Org.). ESTUDO DE POLIMORFISMOS NO GENE RECEPTOR DA VITAMINA D EM PACIENTES COM A DOENÇA DE ALZHEIMER. 12ed.: Brazilian Journals Editora, 2021, v. 1, p. 10-19.",
     "source_row": "195",
     "numero_autores": 6,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "6",
@@ -140,8 +140,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, J. C. L. ; SANTANA, M. L. C. ; CAMPOS, S. E. D. ; COSTA, A. S. ; FRANCELINO, J. O. . Licopeno e marcadores metabólicos: uma revisão narrativa. REVISTA BRASILEIRA DE OBESIDADE, NUTRIÇÃO E EMAGRECIMENTO 15, p. 1373-1385, 2021.",
     "source_row": "486",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "7",
@@ -164,8 +164,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, V. O. ; COSTA, A. S. ; GONCALVES, R. ; CAMPOS, E. Z. ; SANTOS, T. M. . Criterion validity and accuracy of a heart rate monitor. Human Movement 23, p. 60-68, 2022. Citações:5",
     "source_row": "162",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 2
   },
   {
     "id": "8",
@@ -188,8 +188,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, C. O. M. F. ; LINS, N. C. M. ; MELO, L. M. ; OLIVEIRA, S. G. ; ARAUJO, M. L. D. ; COSTA, A. S. . Efeitos de duas estratégias nutricionais associadas ao treinamento de força sobre parâmetros antropométricos, composição corporal e consumo alimentar em idosas: estudo randomizado controlado.. REVISTA BRASILEIRA DE PRESCRIÇÃO E FISIOLOGIA DO EXERCÍCIO 15, p. 399-407, 2022.",
     "source_row": "278",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "9",
@@ -212,8 +212,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, J. C. L. ; CAMPOS, S. E. D. ; SANTANA, M. L. C. ; COSTA, A. S. ; FRANCELINO, J. O. . Microbiota Intestinal e Sistema Nervoso Central: explorando o eixo cérebro e intestino. Revista de Neurociências 30, p. 1-29, 2022.",
     "source_row": "483",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "10",
@@ -237,7 +237,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "VILAR, L. H. S. ; DAMASCENO, V. O. ; COSTA, A. S. . Síndrome de burnout e atividade física em adolescentes no contexto da pandemia da Covid-19.. Arquivos de Ciências da Saúde da UNIPAR 26, p. 1453-14666, 2022.",
     "source_row": "540",
     "numero_autores": 3,
-    "posicao_docente": 2
+    "posicao_docente": 3
   },
   {
     "id": "11",
@@ -260,8 +260,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DIAS, T. E. M. ; CAVALCANTI, F. F. L. ; MACHADO-PINHEIRO, W. ; COSTA, A. S. ; CONDE, E. F. Q. . Spatial incompatibility training can prevent the ocurrence of the enhanced Simon effect in elderly. ESTUDOS DE PSICOLOGIA 39, p. 1-13, 2022. Citações:1",
     "source_row": "191",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "12",
@@ -284,8 +284,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, J. C. L. ; LINS, N. C. M. ; GOMES, W. S. ; CAMPOS, E. Z. ; COSTA, A. S. . Suplementação de Nitrato no Desempenho durante Exercício Intermitente de Alta Intensidade: uma revisão de literatura.. RBNE - Revista Brasileira de Nutrição Esportiva, v. 16, p. 53-62, 2022.",
     "source_row": "484",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "13",
@@ -308,8 +308,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, V. F. ; CONDE, E. F. Q. ; MELO, G. F. ; COSTA, A. S. ; FONSECA, R. M. C. . Ansiedade-Estado Competitiva em Atletas Profissionais e Amadoras de Futebol Feminino.. Revista Brasileira de Educação Física e Esporte 37, p. 1-10, 2023.",
     "source_row": "291",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "14",
@@ -332,8 +332,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, S. F. ; OLIVEIRA, O. I. V. ; WINCKLER, C. ; Costa, A.S. ; PAES NETO, P. P. ; SIMIM, M. A. M. ; OLIVEIRA, S. F. M. . Can home-based training influence mood states and quality of life in Paralympic boccia athletes?. RETOS 50, p. 943-949, 2023. Citações:3",
     "source_row": "64",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "15",
@@ -356,8 +356,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FLORENCIO JUNIOR, P. G. ; NASCIMENTO, T. A. ; SILVA, H. V. A. ; COSTA, A. S. . Efeito agudo da prática esportiva com engajamento cognitivo nas funções executivas em crianças. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 27, p. 1-8, 2023. Citações:2",
     "source_row": "223",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "16",
@@ -380,8 +380,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, J. D. A. ; MARANHAO, D. C. M. ; SILVA, R. V. C. ; SOUZA, G. K. B. ; SILVA, J. C. L. ; COSTA, A. S. ; PIRAUA, A. L. T. . Efeitos de programas de exercícios físicos domiciliares na cognição de idosos: uma revisão integrativa.. GERIATRICS, GERONTOLOGY AND AGING 17, p. 1-10, 2023.",
     "source_row": "487",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "17",
@@ -404,8 +404,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NASCIMENTO, T. A. ; SILVA, H. V. A. ; RIBAS, J. C. O. ; FLORENCIO JUNIOR, P. G. ; ALEXANDRE, I. G. ; MEREGE-FILHO, C. A. A. ; COSTA, A. S. . Efeitos dos jogos e brincadeiras na cognição e desempenho escolar de crianças. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 28, p. 1-9, 2023. Citações:1",
     "source_row": "358",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "18",
@@ -428,8 +428,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, V. O. ; GOMES, D. ; MELO, M. ; SOUZA, D. E. ; GONCALVES, R. ; SANTOS, L. ; COSTA, B. ; Santos, André ; DOLEZAL, B. ; CAMPOS, E. ; SANTOS, T. . Influence of the exercise intensity during EA Sport Active 2 on physiology and psychology variables. Human Movement 24, p. 52-61, 2023. Citações:5|4",
     "source_row": "160",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 11,
+    "posicao_docente": 8
   },
   {
     "id": "19",
@@ -452,8 +452,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "COSTA, A. S.. Pense e Brinque APP. In: SECTI. (Org.). 1o E-BOOK DO PROGRAMA DE EXTENSÃO TECNOLÓGICA. 1ed.Recife: Secretaria de Ciência, Tecnologia e Inovação, 2023, v. 1, p. 143-145.",
     "source_row": "139",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 1,
+    "posicao_docente": 1
   },
   {
     "id": "20",
@@ -476,8 +476,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOURA, T. C. B. ; MARANHAO, D. C. M. ; COSTA, A. S. ; DAMASCENO, V. O. . Percepção de Professores e Alunos sobre o uso de Tecnologias Interativas nas aulas de Educação Física.. EDUCACIÓN FÍSICA Y CIENCIA 25, p. 1-11, 2023. Citações:1",
     "source_row": "352",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "21",
@@ -500,8 +500,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, B. A. B. ; SANTOS, J. C. F. ; CAVALCANTI, T. V. O. ; COSTA, A. S. ; CARVALHO, P. R. C. . The influence of overweight on postural balance and mobility of candidates for bariatric surgery. Revista Brasileira de Cineantropometria e Desempenho Humano 25, p. 1-8, 2023. Citações:1",
     "source_row": "472",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "22",
@@ -524,8 +524,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, RAYSSA LAÍS FERREIRA ; DA SILVA, REYANNE MARIA ; DAMASCENO, V. O. ; COSTA, A. S. . Distúrbios no ciclo menstrual, estado nutricional e nível de atividade física de adolescentes: Um estudo transversal observacional. REVISTA CEREUS 16, p. 184-194, 2024.",
     "source_row": "154",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "23",
@@ -548,8 +548,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, REYANNE MARIA ; DA SILVA, RAYSSA LAÍS FERREIRA ; COSTA, A. S. . Influência da atividade física na prevalência da Síndrome pré-menstrual em adolescentes. REVISTA CEREUS 16, p. 415-426, 2024.",
     "source_row": "156",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "24",
@@ -573,7 +573,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "NASCIMENTO, T. A. ; RIBAS, J. C. O. ; RAMOS, I. A. ; DAMASCENO, V. O. ; COSTA, A. S. . Influência dos jogos e brincadeiras ativos na cognição de crianças: uma revisão sistemática. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 34, p. '-14, 2024.",
     "source_row": "357",
     "numero_autores": 5,
-    "posicao_docente": 1
+    "posicao_docente": 5
   },
   {
     "id": "25",
@@ -620,8 +620,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SACRAMENTO, H. S. ; SILVA, L. C. ; PAPOTI, M. ; ROSSI, F. E. ; GOMES, W. S. ; COSTA, A. S. ; CAMPOS, E. Z. . Sodium Nitrate Improves Oxidative Energy Contribution and Reduces Phosphocreatine Contribution During High-Intensity Intermitent Exercise. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 1, p. 1-6, 2024. Citações:1|1",
     "source_row": "430",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "27",
@@ -644,8 +644,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, V. O. ; VIANA, J. M. ; BOMFIM, A. B. C. ; SOUZA, D. E. ; SILVA, J. F. ; LETIERI, R. V. ; COSTA, A. S. ; LIMA, J. P. . What is the best predictor of body fat percentage for older brazilian women?. RETOS 59, p. 401-410, 2024.",
     "source_row": "161",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "28",
@@ -668,8 +668,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LEAO, M. M. ; LEAO, G. J. M. ; DAMASCENO, V. O. ; COSTA, A. S. . ASSOCIAÇÃO ENTRE OS NÍVEIS DE ATIVIDADE FÍSICA E ANSIEDADE, ESTRESSE E DEPRESSÃO EM PACIENTES COM TRANSTORNO OBSESSIVO COMPULSIVOASSOCIATION BETWEEN LEVELS OF PHYSICAL ACTIVITY AND ANXIETY, STRESS, AND DEPRESSION IN PATIENTS WITH OBSESSIVE-COMPULSIVE DISORDER. Acta Biologica Brasiliensia 8, p. 399-416, 2025.",
     "source_row": "270",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "29",
@@ -692,8 +692,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "TAVARES, HENRIQUE ; Roschel, Hamilton ; FELÍCIO, VITÓRIA ; NOBREGA, ÁLVARO ; HEVIA-LARRAÍN, VICTORIA ; GONÇALVES, LÍVIA S. ; BARROS, TÉRCIO A.R. ; COSTA, André S. ; NASCIMENTO, ELIZABETH . Effects of daily protein intake frequency during 8 weeks of resistance training on lean mass and strength adaptations: a randomized non-controlled clinical trial. THE JOURNAL OF SPORTS MEDICINE AND PHYSICAL FITNESS 65, p. 1, 2025.",
     "source_row": "522",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "30",
@@ -716,8 +716,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FRADIQUE, BRUNA NOLASCO SIQUEIRA SILVA ; Costa, André Santos ; ANTUNES, MARGARIDA CASTRO ; RODRIGUES, ANATÁLIA TEIXEIRA DA SILVA ; SANTA-CRUZ, FERNANDO ; FERRAZ, ÁLVARO ANTONIO BANDEIRA . Repercussions of bariatric surgery on bone mineral density: a comparative analysis between Roux-en-Y gastric bypass and sleeve gastrectomy. Abcd-Arquivos Brasileiros De Cirurgia Digestiva-Brazilian Archives Of Digestive Surgery, v. 38, p. 1, 2025. Citações:3",
     "source_row": "227",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "31",
@@ -740,8 +740,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, DIEGO FRANCISCO DA ; COSTA, ANDRÉ DOS SANTOS ; FORTES, LEONARDO DE SOUSA ; OLIVEIRA, SAULO FERNANDES DE MELO . Does mental fatigue influence the accuracy of paralympic boccia players?. Frontiers In Sports And Active Living 7, p. 1-11, 2026.",
     "source_row": "477",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "32",
@@ -764,8 +764,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALBUQUERQUE, D. F. ; SALES NETO, D. S. ; MONTEIRO, E. ; OLIVEIRA, M. R. ; OLIVEIRA, L. C. N. ; DANTES, D. C. A. ; LACERDA, R. P. ; RODRIGUES, A. L. ; BARBOSA, E. L. ; BARBOSA, B. T. ; SILVA, T. F. ; MARQUES, A. C. O. ; SUASSUNA, J. A. S. . Efeito de um programa de treinamento funcional na melhoria das capacidades funcionais de idosos. REVISTA BRASILEIRA DE PRESCRIÇÃO E FISIOLOGIA DO EXERCÍCIO 15, p. 769-776, 2021.",
     "source_row": "28",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 13,
+    "posicao_docente": 10
   },
   {
     "id": "33",
@@ -788,8 +788,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SUASSUNA, J. A. S. ; NASCIMENTO, K. M. ; SALES NETO, D. S. ; BARBOSA, B. T. ; SILVA, C. A. N. ; REZENDE-NETO, A. G. ; ARAGAO-SANTOS, J. C. ; SILVA-GRIGOLETTO, M. E. . Efeitos da preparação para o movimento no desempenho funcional de idosos. REVISTA INTERDISCIPLINAR DE PESQUISA E INOVAÇÃO 10, p. 1-10, 2021.",
     "source_row": "521",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "34",
@@ -812,8 +812,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FORTES, LEONARDO S. ; FONSECA, FABIANO S. ; NAKAMURA, FABIO Y. ; BARBOSA, BRUNO TEIXEIRA ; GANTOIS, PETRUS ; DE LIMA-JÚNIOR, DALTON ; FERREIRA, MARIA E. C. . Effects of Mental Fatigue Induced by Social Media Use on Volleyball Decision-Making, Endurance, and Countermovement Jump Performance. PERCEPTUAL AND MOTOR SKILLS 128, p. 2745-2766, 2021. Citações:34|27",
     "source_row": "225",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "35",
@@ -836,7 +836,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FORTES, L. S. ; GANTOIS, P. ; LIMA-JUNIOR, D. ; BARBOSA, B. T. ; FERREIRA, M. E. C. ; NAKAMURA, F. Y. ; ALBUQUERQUE, M. R. ; FONSECA, F. S. . Playing videogames or using social media applications on smartphones causes mental fatigue and impairs decision-making performance in amateur boxers. Applied Neuropsychology-Adult, p. 1-12, 2021. Citações:32|42",
     "source_row": "224",
-    "numero_autores": 5,
+    "numero_autores": 8,
     "posicao_docente": 4
   },
   {
@@ -860,8 +860,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOLON JUNIOR, L. J. F. ; RIBEIRO, C. H. T. ; FORTES, L. S. ; BARBOSA, B. T. ; SILVA NETO, L. V. . Smartphone addiction is associated with symptoms of anxiety, depression, stress, tension, confusion, and insomnia: A cross-sectional and comparative study with physically and non-physically active adults in self-isolation during the COVID-19 pandemic. SALUD MENTAL 44, p. 193-200, 2021. Citações:12|9",
     "source_row": "507",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "37",
@@ -884,8 +884,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FORTES, L. S. ; ALMEIDA, S. S. ; PRACA, G. ; NASCIMENTO JUNIOR, J. R. A. ; LIMA-JUNIOR, D. ; BARBOSA, B. T. ; FERREIRA, M. E. C. . Virtual reality promotes greater improvements than video-stimulation screen on perceptual-cognitive skills in young soccer athletes. HUMAN MOVEMENT SCIENCE 79, p. 102856, 2021. Citações:54|51",
     "source_row": "12",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "38",
@@ -908,8 +908,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "ASSIS, H. M. ; BARBOSA, B. T. . Correlação entre a força de preensão manual e os fatores da aptidão funcional em idosos. In: Arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). Tccendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 56-65.",
     "source_row": "67",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "39",
@@ -932,8 +932,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "AZEVEDO, A. L. U. ; BARBOSA, B. T. . Efeito de 12 semanas de treinamento aquático na aptidão funcional de idosos. In: Arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). TCCendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 9-19.",
     "source_row": "70",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "40",
@@ -957,7 +957,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "ALVES FILHO, S. R. ; BARBOSA, B. T. . Efeito de 12 semanas de treinamento aquático na qualidade de vida de idosos. In: arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). tccendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 78-86.",
     "source_row": "42",
     "numero_autores": 2,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "41",
@@ -980,7 +980,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "SOUSA, C. B. ; BARBOSA, B. T. . Efeitos de um programa de treinamento aquático de 12 semanas na aptidão funcional de idosos. In: Arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). TcCendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 44-55.",
     "source_row": "508",
-    "numero_autores": 3,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -1005,7 +1005,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "MENESES, A. B. C. ; BARBOSA, B. T. . O efeito de diferentes intensidades de caminhada na hipotensão pós exercício em idosas hipertensas. In: Arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). TCCendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 20-29.",
     "source_row": "342",
     "numero_autores": 2,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "43",
@@ -1028,8 +1028,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "PONTES, Y. H. G. ; BARBOSA, B. T. . Os efeitos de diferentes intensidades e tipos de exercícios aeróbios sobre a hipotensão pós-exercício em idosos hipertensos - uma revisão de literatura. In: arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). tccendo Saberes: série saúde. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 87-99.",
     "source_row": "405",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "44",
@@ -1052,7 +1052,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "FRANCA, M. M. G. ; BARBOSA, B. T. . Os efeitos do exercício físico na qualidade do sono de adultos e idosos: uma revisão de literatura. In: arthur Vieira de Lima; Cinthya Araújo Gomes. (Org.). Os efeitos do exercício físico na qualidade do sono de adultos e idosos: uma revisão de literatura. 19ed.João Pessoa: Núcleo de Publicações Institucionais (NPI), 2022, v. , p. 66-77.",
     "source_row": "230",
-    "numero_autores": 3,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -1076,7 +1076,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FARO, HELOIANA ; FORTES, LEONARDO DE SOUSA ; LIMA-JUNIOR, DALTON DE ; BARBOSA, BRUNO TEIXEIRA ; FERREIRA, MARIA ELISA CAPUTO ; ALMEIDA, SEBASTIÃO SOUSA . Sport-based video game causes mental fatigue and impairs visuomotor skill in male basketball players. INTERNATIONAL JOURNAL OF SPORT AND EXERCISE PSYCHOLOGY 21, p. 1-15, 2022. Citações:23|11",
     "source_row": "206",
-    "numero_autores": 4,
+    "numero_autores": 6,
     "posicao_docente": 4
   },
   {
@@ -1100,7 +1100,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FARO, HELOIANA ; CAVALCANTE SILVA, DOUGLAS ; BARBOSA, BRUNO TEIXEIRA ; COSTA, YAGO PESSOA DA ; FREITAS-JUNIOR, CARLOS GILBERTO ; DE LIMA-JUNIOR, DALTON ; FAUBERT, JOCELYN ; FORTES, LEONARDO DE SOUSA . Young Basketball Players? Multiple Object Tracking Skills Were Unaffected by Stroop-Induced Mental Fatigue. PERCEPTUAL AND MOTOR SKILLS 130, p. 2161-2176, 2023. Citações:3|2",
     "source_row": "205",
-    "numero_autores": 5,
+    "numero_autores": 8,
     "posicao_docente": 3
   },
   {
@@ -1124,7 +1124,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUSA FORTES, LEONARDO ; BARBOSA, BRUNO T. ; MORTATTI, ARNALDO L. ; MOREIRA, ALEXANDRE ; FERREIRA, MARIA E. C. . Effect of mental fatigue on decision-making skill during simulated congested match schedule in professional soccer athletes. CURRENT PSYCHOLOGY 43, p. 1785-1793, 2024. Citações:13|14",
     "source_row": "179",
-    "numero_autores": 4,
+    "numero_autores": 5,
     "posicao_docente": 2
   },
   {
@@ -1148,8 +1148,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA-JUNIOR, DALTON DE ; FORTES, LEONARDO S. ; FERREIRA, MARIA E. C. ; GANTOIS, PETRUS ; BARBOSA, BRUNO TEIXEIRA ; ALBUQUERQUE, MAICON R. ; FONSECA, FABIANO S. . Effects of smartphone use before resistance exercise on inhibitory control, heart rate variability, and countermovement jump. Applied Neuropsychology-Adult, v. 31, p. 48-55, 2024. Citações:7|6",
     "source_row": "292",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "49",
@@ -1172,8 +1172,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOLON JUNIOR, L. J. F. ; MELO, T. A. ; OLIVEIRA, J. K. ; SILVA NETO, L. V. ; BARBOSA, BRUNO T. ; CASTRO, H. O. ; FORTES, L. S. . The Relative Age Effect on YoungAthletes of Para-Athletics: Birth quartile analysis and performance in individual athletic events. CUADERNOS DE PSICOLOGIA DEL DEPORTE 24, p. 216-227, 2024.",
     "source_row": "506",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "50",
@@ -1196,8 +1196,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FARO, HELOIANA ; FRANCHINI, E. ; SILVA, D. C. ; SILVA, R. D. M. ; BARBOSA, B. T. ; MACHADO, D. G. S. ; FORTES, L. S. . Do prolonged social media use or cognitive tasks impair neuroelectric and visuomotor performance in taekwondo athletes? A randomized and controlled trial. PSYCHOLOGY OF SPORT AND EXERCISE 76, p. 102768, 2025. Citações:5|5",
     "source_row": "207",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "51",
@@ -1221,7 +1221,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "FORTES, LEONARDO S. ; LIMA-JUNIOR, DALTON ; BARBOSA, BRUNO T. ; FARO, HELOIANA K. C. ; FERREIRA, MARIA E. C. ; ALMEIDA, SEBASTIÃO S. . Effect of mental fatigue on decision-making skill and visual search behaviour in basketball players: an experimental and randomised study. INTERNATIONAL JOURNAL OF SPORT AND EXERCISE PSYCHOLOGY 23, p. 1-20, 2025. Citações:35|30",
     "source_row": "226",
     "numero_autores": 6,
-    "posicao_docente": 5
+    "posicao_docente": 3
   },
   {
     "id": "52",
@@ -1244,7 +1244,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARBOSA, B. T.; LIMA-JUNIOR, D. ; MOREIRA, A. ; NAKAMURA, F. Y. ; BATISTA, G. R. ; FARO, HELOIANA ; FORTES, L. S. . Mental fatigue and sleep restriction effects on perceptual-cognitive performance in trained beach volleyball athletes. Frontiers in Psychology 16, p. 1-11, 2025.",
     "source_row": "7",
-    "numero_autores": 3,
+    "numero_autores": 7,
     "posicao_docente": 1
   },
   {
@@ -1268,7 +1268,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "BARBOSA, B. T.; PEREIRA, D. C. ; SILVA, R. D. M. ; FARO, HELOIANA . Mente em Jogo: Repercussões do Cansaço Mental no Desempenho de Jogadores de Futebol. In: Carlos Eduardo Rafael de Andrade Ferrari; Jani Cleria Pereira Bezerra; João Rafael Valentim-Silva; Rafael Carvalho da Silva Mocarzel. (Org.). Universo do Futebol: Aspectos Biológicos no Futebol. 1ed.Vassouras: Universidade de Vassouras, 2025, v. 2, p. 47-63.",
     "source_row": "75",
-    "numero_autores": 2,
+    "numero_autores": 4,
     "posicao_docente": 1
   },
   {
@@ -1292,8 +1292,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "SILVA, A. M. S. ; SILVA, A. K. V. ; CRUZ, B. X. ; BARBOSA, B. T. ; FERREIRA, E. S. ; SILVA, E. V. F. ; FRANCA, L. L. O. ; MACIEL, L. P. B. A. ; SOUZA, M. C. P. ; ALMEIDA, R. C. ; SILVA, S. G. . Sono em Foco: Educação sobre Sono para Profissionais de Saúde . 1. ed. Recife: , 2025. v. 1. 25p .",
     "source_row": "470",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 4
   },
   {
     "id": "55",
@@ -1316,8 +1316,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LEMOS, LUÍS ; CLARK, CAIN ; BRAND, CAROLINE ; FÉLIX, MARIA LUÍSA ; GAYA, ANELISE ; MOTA, JORGE ; DUNCAN, MICHAEL ; MARTINS, CLARICE . 24-hour movement behaviours and fitness in preschoolers: a compositional and isotemporal reallocation analysis. SCANDINAVIAN JOURNAL OF MEDICINE & SCIENCE IN SPORTS 3, p. 30, 2021. Citações:40|38",
     "source_row": "272",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "56",
@@ -1340,8 +1340,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, T. ; BANDEIRA, P. ; NECO FILHO, A. ; CLARK, C. ; DUNCAN, MICHAEL J. ; MARTINS, C. . A Network Perspective on the Relationship Between Moderate to Vigorous Physical Activity and Fundamental Motor Skills in Early Childhood. Journal of Physical Activity & Health 1-8, 2021. Citações:6|8",
     "source_row": "96",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "57",
@@ -1364,8 +1364,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, ARILENE MARIA DA SILVA ; RIBEIRO, SÉRGIO LUIZ GALAN ; SOUSA JUNIOR, ANTÔNIO VALDECI MARREIRO DE ; MACHADO, DIONIS DE CASTRO DUTRA ; MONTEIRO, PAULA ALVES ; MOURA, PEDRO ; MARTINS, CLARICE MARIA DE LUCENA ; FREITAS JUNIOR, ISMAEL FORTE ; SANTOS, MARCOS ANTÔNIO PEREIRA DOS ; ROSSI, FABRÍCIO EDUARDO . ARE THERE DIFFERENCES BETWEEN MALE AND FEMALE BADMINTON ATHLETES IN SLEEP, PHYSICAL ACTIVITY AND SEDENTARY TIME?. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 27, p. 174-178, 2021. Citações:2|2",
     "source_row": "445",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 10,
+    "posicao_docente": 7
   },
   {
     "id": "58",
@@ -1388,8 +1388,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA-SANTOS, S. ; SANTOS, A. ; LAGOA, M. J. ; MARTINS, C. ; DUNCAN, M. ; MOTA, JORGE ; Suzana Vale . Associations Between Motor Competence, Moderate-to-Vigorous Physical Activity, and Body Mass Index Among Preschoolers Over 1 Year. Journal of Physical Activity & Health 1-6, 2021. Citações:4|3",
     "source_row": "502",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "59",
@@ -1412,8 +1412,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, LARISSA ROSA DA ; HARDMAN, CARLA MENÊSES ; MARTINS, CLARICE LUCENA ; GUERRA, PAULO HENRIQUE ; SOUZA FILHO, ANASTACIO NECO DE ; QUEIROZ, DANIEL DA ROCHA ; UMPIERRE, DANIEL ; WANDERLEY JUNIOR, RILDO DE SOUZA ; CAVALCANTE, FABIANA VIEIRA SANTOS AZEVEDO ; SANDRESCHI, PAULA FABRICIO ; HALLAL, PEDRO CURI ; BARROS, MAURO VIRGILIO GOMES DE . Atividade física para crianças até 5 anos: Guia de Atividade Física para a População Brasileira. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-12, 2021. Citações:3",
     "source_row": "494",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 3
   },
   {
     "id": "60",
@@ -1436,8 +1436,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LARSEN, M. N. ; ERMIDIS, G. ; BRITO, J. ; ORNER, C. ; MARTINS, C. ; LEMOS, L. ; KRUSTRUP, P. ; RAGO, V. . Fitness and performance testing of male and female beach soccer players ? a preliminary investigation. Frontiers In Sports And Active Living 3, p. 1-6, 2021. Citações:8",
     "source_row": "266",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "61",
@@ -1460,8 +1460,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Árias Tellez ; COSTA, F. A. ; HIDALGO-MIGUELES, J. ; PASCOAL, J. M. ; MERCHAN-RAMIREZ, E. ; MARTINS, C. ; RUIZ, J. R. . Higher Physical Activity Is Related to Lower Neck Adiposity in Young Men, but to Higher Neck Adiposity in Young Women. An Exploratory Study. INTERNATIONAL JOURNAL OF SPORT NUTRITION AND EXERCISE METABOLISM, v. 32, p. 250-258, 2021. Citações:2|3",
     "source_row": "59",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "62",
@@ -1484,8 +1484,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE; WEBSTER, E. KIPLING ; BANDEIRA, PAULO FELIPE RIBEIRO ; STAIANO, AMANDA E. . Identifying Fundamental Motor Skills Building Blocks in Preschool Children From Brazil and the United States: A Network Analysis. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 10, p. 1-20, 2021. Citações:4|3",
     "source_row": "329",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 4,
+    "posicao_docente": 1
   },
   {
     "id": "63",
@@ -1508,8 +1508,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUERRA, PAULO HENRIQUE ; SOUZA FILHO, ANASTÁCIO NECO ; HARDMAN, CARLA MENÊSES ; MARTINS, CLARICE LUCENA ; QUEIROZ, DANIEL DA ROCHA ; SILVA, LARISSA ROSA ; SANDRESCHI, PAULA FABRICIO ; WANDERLEY JUNIOR, RILDO DE SOUZA ; UMPIERRE, DANIEL ; BARROS, MAURO VIRGILIO GOMES . National guidelines for physical activity in early childhood in American countries: a scoping review. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-9, 2021. Citações:3",
     "source_row": "251",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 4
   },
   {
     "id": "64",
@@ -1532,8 +1532,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "BATISTA-LEMES, V. ; GAYA, A. R. ; SADARANGANI, K. P. ; AGUILAR-FARIAS, N. ; RODRIGUEZ-RODRIGUEZ, F. ; MARTINS, C. ; FOCHESATTO, C. ; CRISTI-MONTERO, C. . Physical fitness plays a crucial mediator role in the relationship among personal, social, and lifestyle factors and children?s cognitive performance in a structural equation model. The Cogni-Action project. Frontiers in Pediatrics, v. 9, p. 1-12, 2021. Citações:28|35",
     "source_row": "90",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "65",
@@ -1556,7 +1556,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, C.; CLARK, C. ; TASSITANO, R. ; NECO FILHO, A. ; Anelise Gaya ; DUNCAN, M. . School-Time Movement Behaviors and Fundamental Movement Skills in Preschoolers: An Isotemporal Reallocation Analysis. PERCEPTUAL AND MOTOR SKILLS 003151252110131-33, 2021. Citações:13|14",
     "source_row": "318",
-    "numero_autores": 2,
+    "numero_autores": 6,
     "posicao_docente": 1
   },
   {
@@ -1580,8 +1580,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, C.; BANDEIRA, P. ; NECO FILHO, A. ; CLARK, C. ; WEBSTER, E. ; BEZERRA, T. ; Jorge Mota ; DUNCAN, M. . The combination of three movement behaviours is associated with object control skills, but not locomotor skills, in preschoolers. EUROPEAN JOURNAL OF PEDIATRICS 1, 2021. Citações:17|19",
     "source_row": "317",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 1
   },
   {
     "id": "67",
@@ -1604,7 +1604,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SCARABOTTOLO, CATARINA COVOLO ; TEBAR, WILLIAM RODRIGUES ; ARAÚJO GUERRA, PAULO HENRIQUE ; MARTINS, CLARICE MARIA DE LUCENA ; FERRARI, GERSON ; BERETTA, VICTOR SPIANDOR ; CHRISTOFARO, DIEGO GIULLIANO DESTRO . Association between Different Domains of Sedentary Behavior and Health-Related Quality of Life in Adults: A Longitudinal Study. International Journal of Environmental Research and Public Health 19, p. 16389, 2022. Citações:6|5",
     "source_row": "466",
-    "numero_autores": 5,
+    "numero_autores": 7,
     "posicao_docente": 4
   },
   {
@@ -1628,8 +1628,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ; CRISTI-MONTERO, CARLOS ; BANDEIRA, PAULO FELIPE ; SOUZA FILHO, ANASTÁCIO ; DUNCAN, JOSEPH ; MARTINS, CLARICE . Biological, behavioral, and social correlates of executive function in low-income preschoolers: Insights from the perspective of the networks. Applied Neuropsychology-Child, v. 10, p. 1-9, 2022. Citações:2|4",
     "source_row": "98",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "69",
@@ -1652,8 +1652,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "WANDERLEY JÚNIOR, RILDO DE SOUZA ; QUEIROZ, DANIEL DA ROCHA ; GUERRA, PAULO HENRIQUE ; MARTINS, CLARICE LUCENA ; HARDMAN, CARLA MENÊSES ; UMPIERRE, DANIEL ; DA SILVA, LARISSA ROSA ; SOUZA FILHO, ANASTÁCIO NECO DE ; AZEVEDO CAVALCANTE, FABIANA VIEIRA SANTOS ; SANDRESCHI, PAULA FABRICIO ; BARROS, MAURO VIRGÍLIO GOMES DE . Correlatos de atividade física e comportamento sedentário em crianças pré-escolares sul-americanas: revisão de escopo. REVISTA PANAMERICANA DE SALUD PUBLICA-PAN AMERICAN JOURNAL OF PUBLIC HEALTH, v. 46, p. 1, 2022. Citações:1|2",
     "source_row": "543",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 4
   },
   {
     "id": "70",
@@ -1676,8 +1676,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "REYES-AMIGO, TOMÁS ; PALMEIRA, ANTONIO ; MARTINS, CLARICE ; CARRASCO-BELTRÁN, HERNALDO ; GOMEZ-MAZORRA, MABEL ; SOTO-SANCHEZ, JOHANA ; IBARRA-MORA, JESSICA ; MOTA, JORGE . Effectiveness of High-Intensity Games versus Moderate-Intensity Games on Cardiorespiratory Fitness and Anthropometric Variables in Children. ADVANCES IN PHYSICAL EDUCATION 12, p. 60-74, 2022.",
     "source_row": "418",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 3
   },
   {
     "id": "71",
@@ -1700,8 +1700,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, T. ; NECO FILHO, A. ; FELIX, M. L. ; BANDEIRA, P. ; GATTO, L. ; MORAES, J. F. ; MARTINS, C. ; CARVALHO, F. . Effects of a multicomponent intervention on cardiovascular risk factors in overweight children: a randomized clinical trial in light of complex systems. INTERNATIONAL JOURNAL OF ENVIRONMENTAL HEALTH RESEARCH 14, p. 1-11, 2022. Citações:2|2",
     "source_row": "97",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "72",
@@ -1724,8 +1724,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "REYES-AMIGO, TOMÁS ; BEZERRA, ANDREA ; GOMEZ-MAZORRA, MABEL ; BOPPRE, GIORJINES ; MARTINS, CLARICE ; CARRASCO-BELTRAN, HERNALDO ; CORDERO-ROLDAN, EVELYN ; MOTA, JORGE . Effects of high-intensity interval training on executive functions in children and adolescents: A Systematic Review and Meta-analysis. Physical Activity Review 10, p. 77-87, 2022. Citações:11|6",
     "source_row": "417",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "73",
@@ -1748,8 +1748,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, RENNÊ H. ; NOBRE, GLAUBER C. ; PESSOA, MARIA LUIZA F. ; SOARES, ÍVINA A. A. ; BEZERRA, JORGE ; GAYA, ANELISE R. ; MOTA, JORGE A. P. S. ; DUNCAN, MICHAEL J. ; MARTINS, CLARICE M. L. . Physical activity during school-time and fundamental movement skills: a study among preschoolers with and without physical education classes. Physical Education and Sport Pedagogy 14, p. 1-13, 2022. Citações:8|8",
     "source_row": "155",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "74",
@@ -1772,8 +1772,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARAUJO, RAPHAEL H. O. ; WERNECK, ANDRÉ O. ; BARBOZA, LUCIANA L. ; RAMÍREZ-VÉLEZ, ROBINSON ; MARTINS, CLARICE M. L. ; TASSITANO, RAFAEL M. ; SILVA, ELLEN C. M. ; DE JESUS, GILMAR M. ; MATIAS, THIAGO S. ; DE LIMA, LUIZ R. A. ; BRAZO-SAYAVERA, JAVIER ; SILVA, DANILO R. . Prevalence and sociodemographic correlates of physical activity and sitting time among South American adolescents: a harmonized analysis of nationally representative cross-sectional surveys. International Journal of Behavioral Nutrition and Physical Activity 19, p. 8, 2022. Citações:13|18",
     "source_row": "57",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 5
   },
   {
     "id": "75",
@@ -1796,8 +1796,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DUNCAN, MICHAEL J. ; MARTINS, CLARICE ; RIBEIRO BANDEIRA, PAULO FELIPE ; ISSARTEL, JOHANN ; PEERS, CAMERON ; BELTON, SARAHJANE ; O?CONNOR, NOEL E. ; BEHAN, STEPHEN . TGMD-3 short version: Evidence of validity and associations with sex in Irish children. JOURNAL OF SPORTS SCIENCES 40, p. 138-145, 2022. Citações:19|21",
     "source_row": "200",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "76",
@@ -1821,7 +1821,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "LEMOS, N. ; SOBRAL, N. ; DUNCAN, M. ; MOTA, J. ; DOS SANTOS, R. ; MARTINS, C. . A bibliometric analysis of physical activity interventions and cognition in children and adolescents. SCIENCE & SPORTS 38, p. 582-592, 2023. Citações:2|2",
     "source_row": "273",
     "numero_autores": 6,
-    "posicao_docente": 1
+    "posicao_docente": 6
   },
   {
     "id": "77",
@@ -1844,7 +1844,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SATO, JOÃO RICARDO ; PEREIRA, TIAGO DUARTE ; MARTINS, CLARICE MARIA DE LUCENA ; BEZERRA, THAYNÃ ALVES ; QUEIROZ, MARIA EDUARDA ; COSTA, LARISSA PEREIRA ; ANDRADE, SUELLEN MARINHO ; BIAZOLI, CLAUDINEI EDUARDO . A Novel Exploratory Graph-Based Analytical Tool for Functional Near-Infrared Spectroscopy in Naturalistic Experiments: An Illustrative Application in Typically Developing Children. BRAIN SCIENCES 13, p. 905, 2023. Citações:2|2",
     "source_row": "464",
-    "numero_autores": 3,
+    "numero_autores": 8,
     "posicao_docente": 3
   },
   {
@@ -1868,8 +1868,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PESSOA, M.L.F. ; BANDEIRA, P.F.R. ; SILVA, E.F.L. ; MACÊDO, D.S. ; Martins, C.M.L. . A six-month multicomponent intervention improves Down syndrome adolescents? physical fitness. SCIENCE & SPORTS 38, p. 96-101, 2023. Citações:2|4",
     "source_row": "402",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "79",
@@ -1892,8 +1892,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BOHN, LUCIMERE ; ABDALLA, PEDRO PUGLIESI ; CHEN, SITONG ; DE QUEIROZ NETO, ELZIER SAMPAIO ; LOPES MACHADO, DALMO ROBERTO ; MOTA, JORGE ; Martins Lucena, Clarice . Behavioral, Sociodemographic, and Sleep Correlates of Symptoms ofDepression amongst Older Brazilian Females According to Age: A Cross-Sectional Network Analysis. Current Aging Science 16, p. 143-152, 2023. Citações:1",
     "source_row": "106",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "80",
@@ -1916,7 +1916,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GÓMEZ-CARMONA, CARLOS D. ; ROJAS-VALVERDE, DANIEL ; RICO-GONZÁLEZ, MARKEL ; DE OLIVEIRA, VINICIUS ; LEMOS, LUIS ; MARTINS, CLARICE ; NAKAMURA, FÁBIO ; PINO-ORTEGA, JOSÉ . Crucial workload variables in female-male elite Brazilian Beach Handball: An exploratory factor analysis. BIOLOGY OF SPORT 40, p. 345-352, 2023. Citações:6|5",
     "source_row": "245",
-    "numero_autores": 6,
+    "numero_autores": 8,
     "posicao_docente": 6
   },
   {
@@ -1940,8 +1940,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARAUJO, RAPHAEL H.O. ; WERNECK, ANDRÉ O. ; Martins, Clarice L. ; BARBOZA, LUCIANA L. ; TASSITANO, RAFAEL M. ; AGUILAR-FARIAS, NICOLAS ; JESUS, GILMAR M. ; RAMÍREZ-VÉLEZ, ROBINSON ; TESLER, RIKI ; OYEYEMI, ADEWALE L. ; SILVA, ELLEN C.M. ; WEAVER, ROBERT G. ; TREMBLAY, MARK S. ; BRAZO-SAYAVERA, JAVIER ; MIELKE, GRÉGORE I. ; SILVA, DANILO R.P. . Global prevalence and gender inequalities in at least 60 min of self-reported moderate-to-vigorous physical activity 1 or more days per week: An analysis with 707,616 adolescents. Journal of Sport and Health Science 1, p. 1, 2023. Citações:21|6",
     "source_row": "58",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 16,
+    "posicao_docente": 3
   },
   {
     "id": "82",
@@ -1964,8 +1964,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, SEDIGHEH ; RIBEIRO BANDEIRA, PAULO FELIPE ; DEHKORDI, PARVANEH SHAMSIPOUR ; SOHRABI, FATEMEH ; MARTINS, CLARICE ; DUNCAN, MICHAEL J. ; HARDY, LOUISE L. ; SHAMS, AMIR . Investigating the Construct Validity and Reliability of the Test of Motor Competence Across Iranians? Lifespan. PERCEPTUAL AND MOTOR SKILLS 1, p. 003151252311526, 2023. Citações:1|1",
     "source_row": "436",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "83",
@@ -1988,8 +1988,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE; ROMO-PEREZ, VICENTE ; WEBSTER, E. KIPLING ; DUNCAN, MICHAEL ; LEMOS, LUÍS FILIPE ; STAIANO, AMANDA E. ; OKELY, ANTHONY ; MAGISTRO, DANIELE ; CARLEVARO, FABIO ; BARDID, FARID ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; ESTEVAN, ISAAC ; MOTA, JORGE ; NING, KE ; ROBINSON, LEAH E. ; LENOIR, MATTHIEU ; QUAN, MINGHUI ; VALENTINI, NADIA C. ; CROSS, PENNY . Motor Competence and Body Mass Index in the Preschool Years: A Pooled Cross-Sectional Analysis of 5545 Children from Eight Countries. SPORTS MEDICINE 1, p. 1, 2023. Citações:25|25",
     "source_row": "328",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 20,
+    "posicao_docente": 1
   },
   {
     "id": "84",
@@ -2012,8 +2012,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA, ALESANDRA ARAÚJO ; BANDEIRA, PAULO FELIPE RIBEIRO ; VALE, SUSANA MARIA COELHO GUIMARÃES ; DA CUNHA, GLACITHANE LINS ; MOTA, JORGE AUGUSTO PINTO SILVA ; DE LUCENA MARTINS, CLARICE MARIA . Paths towards a healthier BMI among short and adequate sleepers: A pathway network analysis considering movement behaviors in low-income preschoolers. AMERICAN JOURNAL OF HUMAN BIOLOGY 35, p. 12, 2023.",
     "source_row": "182",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "85",
@@ -2036,8 +2036,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOARES, ANTONIO HENRIQUE GERMANO ; WENDT, ANDREA ; CROCHEMORE-SILVA, INÁCIO ; MARTINS, CLARICE ; BARBOSA, ARTHUR OLIVEIRA ; DE BARROS, MAURO VIRGÍLIO GOMES ; TASSITANO, RAFAEL M. . Prevalence and Sociodemographic Correlates of Meeting the 24-Hour Movement Guidelines Among Low-Income Brazilian Older Adults With Chronic Diseases. JOURNAL OF AGING AND PHYSICAL ACTIVITY 31, p. 756-764, 2023. Citações:10|7",
     "source_row": "504",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "86",
@@ -2060,8 +2060,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, SEDIGHEH ; RIBEIRO BANDEIRA, PAULO FELIPE ; MARTINS, CLARICE ; HARDY, LOUISE L. ; SHAMS, AMIR ; DEHKORDI, PARVANEH SHAMSIPOUR . The Körperkoordinations Test Für Kinder for Iranian Youth: Factor Structure, Measurement Invariance, and Covariates. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 11, p. 165-187, 2023. Citações:1|1",
     "source_row": "437",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "87",
@@ -2084,8 +2084,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LI, KAI ; CHEN, SITONG ; MA, JIANI ; MARTINS, CLARICE ; DUNCAN, MICHAEL ; SHENG, XINXIN ; LIU, SHIJIE ; CAI, YUJUN . The relative age effect on fundamental movement skills in Chinese children aged 3-5 years. BMC Pediatrics 23, p. 150, 2023. Citações:6|8",
     "source_row": "275",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "88",
@@ -2108,8 +2108,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE; MOTA, JÉSSICA ; GOULART, NATÁLIA ; SILVA, MORGANA ; SILVA, TAMIRES ; CARVALHO, FERDINANDO ; MOTA, JORGE ; BANDEIRA, PAULO FELIPE ; LEMOS, LUÍS . Compliance with the 24-h movement behaviors guidelines among urban and rural Brazilian preschoolers. AMERICAN JOURNAL OF HUMAN BIOLOGY 1, p. 29e:24045, 2024. Citações:8|7",
     "source_row": "327",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 1
   },
   {
     "id": "89",
@@ -2132,8 +2132,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, MARIANA ; HENRIQUE, RAFAEL S. ; QUEIROZ, DANIEL R. ; SALVINA, MARLENE ; MELO, WILSON V. ; MOURA DOS SANTOS, MARCOS ANDRÉ . Anthropometric variables, propulsive force and biological maturation: A mediation analysis in young swimmers. European Journal of Sport Science 21, p. 507-514, 2021. Citações:38|38",
     "source_row": "380",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "90",
@@ -2156,8 +2156,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, L. R. ; HARDMAN, C. M. ; MARTINS, C. M. L. ; GUERRA, P. H. A. ; SOUZA FILHO, A. N. ; QUEIROZ, D. R. ; MORAES, D. U. ; WANDERLEY JUNIOR, R. S. ; CAVALCANTE, F. V. S. A. ; SANDRESCHI, P. F. ; HALLAL, P. R. C. ; BARROS, M. V. G. . Atividade física para crianças até 5 anos: Guia de Atividade Física para a População Brasileira. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-12, 2021. Citações:3",
     "source_row": "493",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 6
   },
   {
     "id": "91",
@@ -2180,7 +2180,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "QUEIROZ, D. R.; BARROS, M. V. G. ; AGUILAR, J. A. ; SOARES, F. ; TASSITANO, R. M. ; BEZERRA, J. ; SILVA, L. M. P. . Consumo de álcool e drogas ilícitas e envolvimento de adolescentes em violência física em Pernambuco, Brasil. CADERNOS DE SAÚDE PÚBLICA 37, p. e00050820, 2021. Citações:2|1",
     "source_row": "413",
-    "numero_autores": 1,
+    "numero_autores": 7,
     "posicao_docente": 1
   },
   {
@@ -2204,8 +2204,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUERRA, P. H. A. ; SOUZA FILHO, A. N. ; HARDMAN, C. M. ; MARTINS, C. M. L. ; QUEIROZ, D. R. ; SILVA, L. R. ; SANDRESCHI, P. F. ; WANDERLEY JUNIOR, R. S. ; MORAES, D. U. ; BARROS, M. V. G. . National guidelines for physical activity in early childhood in American countries: a scoping review. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-9, 2021. Citações:3",
     "source_row": "250",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "93",
@@ -2228,8 +2228,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALMEIDA, MARCELUS BRITO DE ; LEANDRO, CAROL GÓIS ; QUEIROZ, DANIEL DA ROCHA ; JOSÉ-DA-SILVA, MARIVÂNIO ; PESSÔA DOS PRAZERES, THALIANE MAYARA ; PEREIRA, GLEYBSON MACIEL ; DAS-NEVES, GABRIELA SILVA ; CARNEIRO, RENATA CECÍLIA ; FIGUEREDO-ALVES, AMANDA DAYANNE ; NAKAMURA, FÁBIO YUZO ; HENRIQUE, RAFAEL DOS SANTOS ; MOURA-DOS-SANTOS, MARCOS ANDRÉ . Plyometric training increases gross motor coordination and associated components of physical fitness in children. European Journal of Sport Science 21, p. 1263-1272, 2021. Citações:27|25",
     "source_row": "36",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 3
   },
   {
     "id": "94",
@@ -2252,7 +2252,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, R. A. ; SOARES, F. ; QUEIROZ, D. R. ; AGUILAR, J. A. ; BEZERRA, J. ; BARROS, M. V. G. . The importance of body weight status on motor competence development: From preschool to middle childhood. SCANDINAVIAN JOURNAL OF MEDICINE & SCIENCE IN SPORTS 31, p. 15-22, 2021. Citações:22|17",
     "source_row": "13",
-    "numero_autores": 3,
+    "numero_autores": 6,
     "posicao_docente": 3
   },
   {
@@ -2276,8 +2276,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOURA-DOS-SANTOS, M. A. ; HENRIQUE, RAFAEL S. ; COSTA, M. S. F. ; SILVA, A. H. O. ; CORREIA JUNIOR, M. A. V. ; QUEIROZ, D. R. ; DUNCAN, M. ; MAIA, J. A. R. ; NEVILL, A. M. . The influence of anthropometric variables, body composition, propulsive force and maturation on 50m freestyle swimming performance in junior swimmers: An allometric approach. JOURNAL OF SPORTS SCIENCES 39, p. 1-6, 2021. Citações:15|19",
     "source_row": "353",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 9,
+    "posicao_docente": 6
   },
   {
     "id": "96",
@@ -2300,8 +2300,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; CARRILLO-LARCO, RODRIGO M ; DANAEI, GOODARZ ; RILEY, LEANNE M ; PACIOREK, CHRISTOPHER J ; STEVENS, GRETCHEN A ; GREGG, EDWARD W ; BENNETT, JAMES E ; SOLOMON, BETHLEHEM ; SINGLETON, ROSIE K ; SOPHIEA, MARISA K ; IURILLI, MARIA LC ; LHOSTE, VICTOR PF ; COWAN, MELANIE J ; SAVIN, STEFAN ; WOODWARD, MARK ; BALANOVA, YULIA ; CIFKOVA, RENATA ; DAMASCENO, ALBERTINO ; QUEIROZ, D. R. ; et.al . Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019: a pooled analysis of 1201 population-representative studies with 104 million participants. LANCET X, p. 2, 2021. Citações:2614|2187",
     "source_row": "548",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "97",
@@ -2324,8 +2324,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "WANDERLEY JUNIOR, R. S. ; QUEIROZ, D. R. ; GUERRA, P. H. A. ; MARTINS, C. M. L. ; HARDMAN, C. M. ; MORAES, D. U. ; SILVA, L. R. ; SOUZA FILHO, A. N. ; AZEVEDO, F. V. S. ; SANDRESCHI, P. F. ; BARROS, M. V. G. . Correlatos da atividade física e do comportamento sedentário em crianças pré-escolares sul-americanas: Revisão de escopo. REVISTA PANAMERICANA DE SALUD PUBLICA-PAN AMERICAN JOURNAL OF PUBLIC HEALTH, v. 46, p. e64, 2022. Citações:1|2",
     "source_row": "542",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 11,
+    "posicao_docente": 2
   },
   {
     "id": "98",
@@ -2348,8 +2348,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTIAGO, LADYODEYSE C.S. ; LYRA, MARIA J. ; GERMANO-SOARES, ANTÔNIO H. ; LINS-FILHO, OZEAS L. ; QUEIROZ, DANIEL R. ; PRAZERES, THALIANE M.P. ; MELLO, MARCO T. ; PEDROSA, RODRIGO P. ; FALCÃO, ANA P.S.T. ; SANTOS, MARCOS A.M. . Effects of Strength Training on Sleep Parameters of Adolescents: A Randomized Controlled Trial. JOURNAL OF STRENGTH AND CONDITIONING RESEARCH 36, p. 1222-1227, 2022. Citações:14|13",
     "source_row": "440",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "99",
@@ -2372,8 +2372,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "JESUS SOUSA LIMA, TERESINHA ; PRAZERES, THALIANE MAYARA PESSÔA ; SANTOS HENRIQUE, RAFAEL ; ROCHA QUEIROZ, DANIEL ; BEZERRA, JORGE ; BARROS, MAURO VIRGÍLIO GOMES ; SANTOS, MARCOS ANDRÉ MOURA . Inter-individual variability in children's physical growth and body composition: Findings of longitudinal ELOS-Pré study. AMERICAN JOURNAL OF HUMAN BIOLOGY 34, p. e23697, 2022. Citações:2|1",
     "source_row": "264",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "100",
@@ -2396,8 +2396,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "TENORIO, M. C. M. ; RAVAGNANI, C. F. C. ; MORAES, D. U. ; ANDRADE, D. R. ; AUTRAN, R. G. ; BARROS, M. V. G. ; BENEDETTI, T. R. B. ; AZEVEDO, F. V. S. ; CYRINO, E. S. ; DUMITH, S. C. ; FLORINDO, A. A. ; GARCIA, L. ; MIELKE, G. I. ; DIAS, R. M. R. ; MAGALHAES, L. L. ; SANDRESCHI, P. F. ; MANTA, S. W. ; SILVA, J. R. M. ; SILVA, K. S. ; QUEIROZ, D. R. ; et.al . Physical Activity Guidelines for the Brazilian Population: Development and Methods. Journal of Physical Activity & Health 19, p. 1-7, 2022. Citações:2|2",
     "source_row": "524",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "101",
@@ -2420,8 +2420,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MORAES, D. U. ; RAVAGNANI, C. F. C. ; TENORIO, M. C. M. ; ANDRADE, D. R. ; AUTRAN, R. G. ; BARROS, M. V. G. ; BENEDETTI, T. R. B. ; AZEVEDO, F. V. S. ; CYRINO, E. S. ; DUMITH, S. C. ; FLORINDO, A. A. ; GARCIA, L. ; MANTA, S. W. ; MIELKE, G. I. ; DIAS, R. M. R. ; MAGALHAES, L. L. ; SANDRESCHI, P. F. ; SILVA, J. R. M. ; SILVA, K. S. ; QUEIROZ, D. R. ; et.al . Physical Activity Guidelines for the Brazilian Population: Recommendations Report. Journal of Physical Activity & Health 19, p. 1-8, 2022. Citações:35|20",
     "source_row": "347",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "102",
@@ -2444,8 +2444,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, I. N. L. ; OLIVEIRA, R. R. L. ; FEITOSA, S. B. ; WANDERLEY JUNIOR, R. S. ; QUEIROZ, D. R. ; MENEZES, V. G. ; HARDMAN, C. M. . Associação entre o nível de atividade física e os domínios da síndrome de burnout em servidores da Polícia Federal do Brasil. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e9139, 2025.",
     "source_row": "481",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "103",
@@ -2468,8 +2468,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARDOSO, D. S. ; NASCIMENTO, E. F. ; SILVA, T. M. ; FEITOSA, S. B. ; ROCHA, K. B. S. ; MIJARRA-MURILLO, J. ; SOARES, A. H. G. ; MORENA, J. M. D. L. ; WANDERLEY JUNIOR, R. S. ; BARROS, M. V. G. ; HARDMAN, C. M. ; QUEIROZ, D. R. . Association of physical activity, screen time, and sleep recommendations with excess weight in adolescents. RETOS 72, p. 990-998, 2025.",
     "source_row": "118",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "104",
@@ -2492,8 +2492,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ROCHA, K. B. S. ; WANDERLEY JÚNIOR, RILDO DE SOUZA ; FEITOSA, S. B. ; SILVA, T. M. ; BARROS, M. V. G. ; BARBOSA FILHO, V. C. ; HARDMAN, C. M. ; QUEIROZ, D. R. . Comportamentos de Movimento de 24 horas em Crianças e Adolescentes: Protocolo de Revisão de Escopo. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e8190, 2025.",
     "source_row": "425",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "105",
@@ -2516,8 +2516,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FEITOSA, S. B. ; BRAGA, M. C. A. ; ROCHA, K. B. S. ; FREITAS, E. C. V. ; ALMEIDA, M. D. S. S. ; LINS-FILHO, O. L. ; WANDERLEY JUNIOR, R. S. ; BARROS, M. V. G. ; HARDMAN, C. M. ; QUEIROZ, D. R. . Does meeting recommendations for physical activity, screen time, and sleep increase the chance of better health perception in adolescents?. Motriz 31, p. e10229089, 2025.",
     "source_row": "209",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "106",
@@ -2540,8 +2540,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARDOSO, D. S. ; ALMEIDA, R. S. ; SILVA, T. M. ; FREITAS, E. C. V. ; FEITOSA, S. B. ; MIJARRA-MURILLO, J. ; LIMA, M. M. A. ; WANDERLEY JUNIOR, R. S. ; MORENA, J. M. D. L. ; BARROS, M. V. G. ; HARDMAN, C. M. ; QUEIROZ, D. R. . Latent class analysis between physical activity, screen time and sleep: Association with obesity in youth. JOURNAL OF PHYSICAL EDUCATION AND SPORT 25, p. 884-893, 2025.",
     "source_row": "117",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "107",
@@ -2564,8 +2564,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, T. J. S. ; PRAZERES, T. M. P. ; RIBEIRO, M. D. ; OLIVEIRA, M. C. C. V. N. ; Henrique, R.S. ; BEZERRA, J. ; RANGEL JUNIOR, J. F. L. B. ; BARROS, M. V. G. ; QUEIROZ, D. R. ; SANTOS, M. A. M. . Physical growth, school environment, and birth information in the physical activity of children: a multilevel analysisCrecimiento físico, entorno escolar e información del nacimiento en la actividad física de los niños: un análisis multinivelCrescimento físico, ambiente escolar e informação sobre a atividade física infantil à nascença: uma análise multinível. RETOS 68, p. 803-812, 2025.",
     "source_row": "290",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 9
   },
   {
     "id": "108",
@@ -2588,8 +2588,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FREIRE, J. C. ; OLIVEIRA, R. R. L. ; FEITOSA, S. B. ; GOMES, P. P. ; QUEIROZ, D. R. ; BEZERRA, J. ; HARDMAN, C. M. . Relação dos indicadores de atividade física com o estresse ocupacional e a Síndrome de Burnout em policiais: um protocolo de revisão sistemática. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e9137, 2025.",
     "source_row": "232",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "109",
@@ -2612,8 +2612,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SATURNINO, L. R. L. ; SILVA, T. M. ; FEITOSA, S. B. ; OLIVEIRA, R. R. L. ; QUEIROZ, D. R. ; WANDERLEY JUNIOR, R. S. ; HARDMAN, C. M. . Relação dos indicadores de atividade física e comportamento sedentário com as dimensões do isolamento social em adolescentes. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e9188, 2025.",
     "source_row": "465",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "110",
@@ -2636,8 +2636,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, L. B. ; LIMA, A. A. ; WANDERLEY JÚNIOR, R. S ; FEITOSA, S. B. ; OLIVEIRA, R. R. L. ; QUEIROZ, D. R. ; TENORIO, M. C. M. ; HARDMAN, C. M. . Relação longitudinal da atividade física e do comportamento sedentário com a ansiedade e o estresse psicológico em adolescentes durante a pandemia de COVID-19. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e9193, 2025.",
     "source_row": "491",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "111",
@@ -2660,8 +2660,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "QUEIROZ, D. R.; AGUILAR, J. A. ; GUIMARAES, T. G. M. ; LIMA, M. M. A. ; ROCHA, K. B. S. ; SOARES, A. H. G. ; HARDMAN, C. M. ; TASSITANO, R. M. ; LIMA, R. A. ; SANTOS, M. A. M. ; BARROS, M. V. G. . The importance of the moderate-to-vigorous physical activity and sedentary behavior combined pattern on the association between body mass index and motor competence in children. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 30, p. 1-9, 2025. Citações:1",
     "source_row": "412",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 11,
+    "posicao_docente": 1
   },
   {
     "id": "112",
@@ -2684,7 +2684,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "AGUILAR, J. A. ; QUEIROZ, D. R. ; SOARES, F. C. ; LIMA, M. M. A. ; HARDMAN, C. M. ; WANDERLEY JÚNIOR, R. S ; MOTA, J. ; CRISTI-MONTERO, C. ; BARROS, M. V. G. ; MOURA-DOS-SANTOS, M. A. . Can Motor Competence be a Better Predictor than Physical Activity on Adiposity Indicators in Children? A Longitudinal Study. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 31, p. e0423, 2026.",
     "source_row": "27",
-    "numero_autores": 3,
+    "numero_autores": 10,
     "posicao_docente": 2
   },
   {
@@ -2708,8 +2708,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ROCHA, K. B. S. ; FEITOSA, S. B. ; WANDERLEY JUNIOR, R. S. ; COSTA, A. S. ; BARBOSA FILHO, V. C. ; BARROS, M. V. G. ; HARDMAN, C. M. ; QUEIROZ, D. R. . Factors associated with meeting the recommendations for physical activity, sedentary behavior, and sleep in adolescents: a cross-sectional study. REVISTA PAULISTA DE PEDIATRIA (ONLINE), v. 44, p. e2025027, 2026.",
     "source_row": "424",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "114",
@@ -2732,8 +2732,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARVALHO, I. C. ; FERREIRA, Daniela Karina da Silva . Exercí­cios Fí­sicos para Mulheres com Varizes: Treinar condicionamento geral ou membros inferiores?. EDUCACIÓN FÍSICA Y CIENCIA 23, p. 190, 2021.",
     "source_row": "120",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "115",
@@ -2756,8 +2756,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARVALHO, ÍCARO DO CARMO ; FERREIRA, Daniela Karina da Silva . Aplicabilidade do teste do degrau na avaliação da aptidão física de mulheres com sintomas de doença venosa crônica: estudo transversal. JORNAL VASCULAR BRASILEIRO (IMPRESSO) 21, p. 1-6, 2022.",
     "source_row": "121",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "116",
@@ -2780,8 +2780,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "RODRIGUES, J.D. ; FERREIRA, DANIELA ; LOCH, MATHIAS ; FARIAS JÚNIOR, J. C. ; FLORINDO, ALEX ANTÔNIO ; CAMINHA, IRAQUITAN DE OLIVEIRA . Atuação do Profissional de Educação Física nos Núcleos Ampliados de Saúde da Família e Atenção Básica: um estudo na região metropolitana de João Pessoa-PB. In: iege Coutinho Goulart Dornellas; Fernanda Rezende; Clara Mockdece Neves. (Org.). Educação física e suas interfaces: lazer, aventura e meio ambiente.. 1ed.Guarujá: Científica Digital, 2022, v. 1, p. 139-154.",
     "source_row": "428",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "117",
@@ -2804,7 +2804,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, I. M. B. ; FERREIRA, DANIELA . Atividade física e níveis de ansiedade em escolares da rede privada e pública de Recife-PE-Brasil. Revista Saúde e Pesquisa 17, p. 123-133, 2024.",
     "source_row": "480",
-    "numero_autores": 5,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -2828,8 +2828,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=doi",
     "produto_referencia": "ALMEIDA, J. R. V. ; FARAH, B. Q. ; SANTOS, E. C. F. ; LIMA, V. . D. A. ; SANTOS, E. N. N. . ; SILVA, N. S. S. O. ; GERMANO-SOARES, A. ?. H. ; SAAVEDRA, J. M. ; PEDROSA, R. P. ; FERREIRA, D.K.S. ; LINS-FILHO, O. L. . Effects of resistance training on obstructive sleep apnea severity: a randomized controlled trial. https://doi.org/10.1016/j.sleep.2026.108879, v. 142, p. 1-7, 2026.",
     "source_row": "5",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 10
   },
   {
     "id": "119",
@@ -2852,8 +2852,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DINZ, I. M. ; FERREIRA, D.K.S. ; CAMAROTTI JUNIOR, F. . TREINAMENTO DE FORÇA PARA INDIVÍDUOS ACIMA DE 45 ANOS COM DIAGNÓSTICO DE OSTEOPOROSE: UM ESTUDO DE REVISÃO. Revista Interfaces: Saúde, Humanas e Tecnologia 14, p. 6574-6588, 2026.",
     "source_row": "193",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "120",
@@ -2876,8 +2876,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GOMES, W. S. ; FREITAS, M. C. ; DUTRA, YAGO MEDEIROS ; ROSSI, F. E. ; ESTANISLAU, T. B. ; GONCALVES, D. C. ; CAMPOS, E.Z. . Effects of Capsiate Supplementation on Maximal Voluntary Contraction in Healthy Men. INTERNATIONAL JOURNAL OF SPORTS MEDICINE 43, p. 466-472, 2021. Citações:5|6",
     "source_row": "244",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "121",
@@ -2900,8 +2900,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DUTRA, YAGO MEDEIROS ; CLAUS, GABRIEL MACHADO ; MALTA, ELVIS DE SOUZA ; SEDA, DANIELA MORAES DE FRANCO ; ZAGO, ANDERSON SARANZ ; CAMPOS, EDUARDO ZAPATERRA ; FERRARESI, CLEBER ; ZAGATTO, ALESSANDRO MOURA . Photobiomodulation 30 min or 6 h Prior to Cycling Does Not Alter Resting Blood Flow Velocity, Exercise-Induced Physiological Responses or Time to Exhaustion in Healthy Men. Frontiers in Physiology 11, p. 607302, 2021. Citações:4|6",
     "source_row": "201",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "122",
@@ -2924,8 +2924,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FILGUEIRA, TAYRINE ORDONIO ; CASTOLDI, ANGELA ; SANTOS, LUCAS EDUARDO R. ; DE AMORIM, GERALDO JOSÉ ; DE SOUSA FERNANDES, MATHEUS SANTOS ; ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; CAMPOS, EDUARDO ZAPATERRA ; SANTOS, TONY MEIRELES ; SOUTO, FABRÍCIO OLIVEIRA . The Relevance of a Physical Active Lifestyle and Physical Fitness on Immune Defense: Mitigating Disease Burden, With Focus on COVID-19 Consequences. Frontiers in Immunology 12, p. 587146, 2021. Citações:87|101",
     "source_row": "219",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 7
   },
   {
     "id": "123",
@@ -2948,8 +2948,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOURA, H. P. S. N. ; CHOLEWA, J. M. ; JAGER, R. ; CAMPOS, E.Z. ; ROSA, B. V. ; NUNES, F. A. S. ; BARROS, C. A. A. ; ROSSI, P. A. Q. ; GEROSA-NETO, J. ; ZANCHI, N. E. ; ROSSI, F. E. . Acute Low-Dose Capsiate Supplementation Improves Upper Body Resistance Exercise Performance in Trained Men: A Randomized, Crossover and Double-Blind Study. INTERNATIONAL JOURNAL OF EXERCISE SCIENCE 15, p. 1007-1018, 2022. Citações:7",
     "source_row": "350",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 4
   },
   {
     "id": "124",
@@ -2972,8 +2972,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAMPOS, E.Z.; KALVA FILHO, C. ; SILVA, M. S. ; ARRUDA, T. B. ; GOBBI, RONALDO B. ; MANCHADO-GOBATTO, F. B. ; PAPOTI, M. . Anaerobic Contribution Determined in Free-Swimming: Sensitivity to Maturation Stages and Validity. Frontiers In Sports And Active Living 4, p. eCollection 202, 2022. Citações:6|4",
     "source_row": "116",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 1
   },
   {
     "id": "125",
@@ -2996,8 +2996,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, VINICIUS ; COSTA, ANDRÉ ; CAMPELLO, MARIA ; SOUZA, DANILO ; GONÇALVES, REGINALDO ; CAMPOS, EDUARDO ; SANTOS, TONY . Criterion validity and accuracy of a heart rate monitor. Human Movement 23, p. 60-68, 2022. Citações:5|11",
     "source_row": "165",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "126",
@@ -3020,8 +3020,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, J. C. L. ; LINS, N. C. M. ; GOMES, W. S. ; CAMPOS, E.Z. ; COSTA, A. S. . SUPLEMENTAÇÃO DE NITRATO NO DESEMPENHO DURANTE EXERCÍCIO INTERMITENTE DE ALTA INTENSIDADE: UMA REVISÃO DE LITERATURA. RBNE - Revista Brasileira de Nutrição Esportiva, v. 16, p. 53-62, 2022.",
     "source_row": "485",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "127",
@@ -3044,8 +3044,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUTO, FABRÍCIO OLIVEIRA ; CASTOLDI, ANGELA ; CAMPOS, EDUARDO ZAPATERRA ; KOSTKA, TOMASZ . Editorial: The role of different physical exercise protocols on immunological and immunometabolic profile in physiological and chronic diseases. Frontiers in Immunology 14, p. 1327967, 2023.",
     "source_row": "510",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "128",
@@ -3068,8 +3068,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, V. O. ; GOMES, D. ; MELO, M. L. L. S. ; DE SOUZA, DANILO ; GONCALVES, R. ; SANTOS, LUCAS EDUARDO R. ; COSTA, B. D. ; COSTA, A. S. ; DOLEZAL, B. ; CAMPOS, E.Z. ; SANTOS, T. M. . Influence of the exercise intensity during EA Sport Active 2 on physiology and psychology variables. Human Movement 24, p. 1-10, 2023.",
     "source_row": "159",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 10
   },
   {
     "id": "129",
@@ -3092,8 +3092,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "GEROSA NETO, J. ; CAMPOS, E.Z. . METABOLISMO ENERGÉTICO DURANTE O EXERCÍCIO FÍSICO: PAPEL DA INTERLEUCINA 6. In: LANCHA JR, ANTONIO HERBERT | ANTUNES, BÁRBARA DE MOURA MELLO | LIRA, FABIO SANTOS | ROSA NETO, JOSÉ CESAR | SANTOS, RONALDO VAGNER THOMATIELI DOS. (Org.). SUPLEMENTAÇÃO NUTRICIONAL EXERCÍCIO E SISTEMA IMUNOLÓGICO. 1ed.São Paulo: Editora dos Editores, 2023, v. 1, p. 15-26.",
     "source_row": "238",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "130",
@@ -3116,8 +3116,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NORBERTO, M. S. ; KALVA-FILHO, CARLOS AUGUSTO ; Schneider, G N ; Eduardo Zapaterra Campos ; PAPOTI, MARCELO . Two Different Approaches to Dry-land Training Do Not Improve the Water Performance of Swimmers. INTERNATIONAL JOURNAL OF EXERCISE SCIENCE 16, p. 770-790, 2023. Citações:2",
     "source_row": "367",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "131",
@@ -3140,8 +3140,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA, DANILO ; CAMPOS, EDUARDO ; GONÇALVES, REGINALDO ; VIANA, JEFERSON ; DE LIMA, JORGE ; SANTOS, TONY ; DAMASCENO, VINICIUS . Validity of the Borg 6-20 categories obtegories obtained in incremental testing for prescribing aerobic exercise intensity: a systematic review. Human Movement 24, p. 1, 2023. Citações:9|8",
     "source_row": "185",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "132",
@@ -3164,8 +3164,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAMAROTTI JUNIOR, F. ; SANTOS, W. R. ; DAMASCENO, V. O. ; COSTA, M. S. F. ; FEITOSA, R. C. ; SACRAMENTO, H. S. ; CAMPOS, EDUARDO Z. ; PAES, P. P. . Evaluation of the effects of acute taurine supplementation on aerobic physical performance in active young adults. JOURNAL OF PHYSICAL EDUCATION AND SPORT 24, p. 1177-1185, 2024.",
     "source_row": "112",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "133",
@@ -3188,8 +3188,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SACRAMENTO, HENRIQUE SILVA ; DA SILVA, LUCAS CHALEGRE ; PAPOTI, MARCELO ; ROSSI, FABRÍCIO EDUARDO ; DOS SANTOS GOMES, WILLEMAX ; DOS SANTOS COSTA, ANDRÉ ; CAMPOS, EDUARDO ZAPATERRA . Sodium Nitrate Improves Oxidative Energy Contribution and Reduces Phosphocreatine Contribution During High-Intensity Intermittent Exercise. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 96, p. 1-6, 2024. Citações:1|1",
     "source_row": "431",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "134",
@@ -3212,8 +3212,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEJDER, JACOB ; GRAAE, JONATHAN ; ANDERSEN, JAKOB BOYE ; BARBIERI, RICARDO AUGUSTO ; CAMPOS, EDUARDO ZAPATERRA ; BANGSBO, JENS ; NYBO, LARS ; NORDSBORG, NIKOLAI BAASTRUP . Time-course of muscle fatigue development during intense exercise in hypoxia and normoxia. Scientific Reports 15, p. 14065, 2025. Citações:2",
     "source_row": "91",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "135",
@@ -3236,8 +3236,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE ALENCAR MATOS, MARCUS ; DO REGO BARROS, TÉRCIO ARAÚJO ; LIMA, VICTOR FERREIRA ; DA COSTA, MARLENE SALVINA FERNANDES ; DE OLIVEIRA LUZ, LEONARDO GOMES ; DOS PRAZERES, THALIANE MAYARA PESSÔA ; GUIMARÃES DA SILVA, NOADIA MARIA ; CAMPOS, EDUARDO ZAPATERRA ; NAKAMURA, FÁBIO YUZO ; MOURA DOS SANTOS, MARCOS ANDRÉ ; DOS SANTOS HENRIQUE, RAFAEL . Understanding the mediating role of anthropometry and body composition in the relationship between biological maturation and sport-specific performance in young swimmers. JOURNAL OF SPORTS SCIENCES 7, p. 1-11, 2025. Citações:1|2",
     "source_row": "169",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 8
   },
   {
     "id": "136",
@@ -3260,8 +3260,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, VINICIUS ; BARBOSA LIMA, THIAGO ; MEIRELES SANTOS, TONY ; DOS SANTOS GOMES, WILLEMAX ; Zapaterra Campos, Eduardo . Validade e fiabilidade de dois testes submáximos para estimar o consumo máximo de oxigénio em adultos. RETOS 69, p. 1330-1338, 2025.",
     "source_row": "163",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "137",
@@ -3284,7 +3284,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FERREIRA, GUILHERME A; WAGNER, L. ; MAZIERO, R. ; SILVA, T. A. E. ; SILVA, N. ; BERTUZZI, R. ; LIMA-SILVA, A.E. . Caffeine intake reduces sedentary time and increases physical activity predisposition in obese police officers. Brazilian Journal of Medical and Biological Research 54, p. e11556, 2021.",
     "source_row": "216",
-    "numero_autores": 1,
+    "numero_autores": 7,
     "posicao_docente": 1
   },
   {
@@ -3308,8 +3308,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FERREIRA, GUILHERME A; FELIPPE, LEANDRO C ; SILVA-CAVALCANTE, MARCOS D ; DE-MELLO, ANA PAULA A. ; COELHO, DANIEL B ; MARANHÃO, RENATO ; BERTUZZI, RÔMULO ; DOLINSKY, MANUELA ; DE-OLIVEIRA, FERNANDO R ; LIMA-SILVA, ADRIANO E ; DA-SILVA, KLEBER J. . Extract Increases Oxygen Uptake without Changes in Neuromuscular Fatigue Development during a High-Intensity Interval Exercise. JOURNAL OF THE AMERICAN COLLEGE OF NUTRITION 40, p. 419-428, 2021. Citações:2|2",
     "source_row": "215",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 11,
+    "posicao_docente": 1
   },
   {
     "id": "139",
@@ -3332,8 +3332,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, KLEBER J. ; DA SILVA, LUCAS C. ; FELIPPE, LEANDRO C. ; SILVA'CAVALCANTE, MARCOS D. ; FRANCO'ALVARENGA, PAULO E. ; LEARSI, SARA ; ATAIDE'SILVA, THAYS ; BERTUZZI, ROMULO ; LIMA'SILVA, ADRIANO E. ; FERREIRA, GUILHERME A. . Airflow restriction mask induces greater central fatigue after a non-exhaustive high-intensity interval exercise. SCANDINAVIAN JOURNAL OF MEDICINE & SCIENCE IN SPORTS 32, p. 487-497, 2022. Citações:6|6",
     "source_row": "149",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "140",
@@ -3356,8 +3356,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALVARENGA, P. E. F. ; CECHETTI, M. S. ; BARCELOS, D. ; CANESTRI, R. ; BRIETZKE, C. ; VINICIUS, I. ; GOETHEL, M. F. ; FERREIRA, G. A. ; PIRES, F. O. . Ice Massage on the Calf Improves 4-km Running Time Trial Performance in a Normothermic Environment. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 94, p. 1126-1132, 2022.",
     "source_row": "41",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "141",
@@ -3380,8 +3380,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, WIDEMAR FERRAZ ; LOPES-SILVA, JOÃO PAULO ; CAMATI FELIPPE, LEANDRO JOSÉ ; FERREIRA, GUILHERME ASSUNÇÃO ; LIMA- SILVA, ADRIANO EDUARDO ; SILVA-CAVALCANTE, MARCOS DAVID . Is caffeine mouth rinsing an effective strategy to improve physical and cognitive performance? A systematic review. CRITICAL REVIEWS IN FOOD SCIENCE AND NUTRITION 63, p. 438-446, 2023. Citações:18|16",
     "source_row": "158",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 4
   },
   {
     "id": "142",
@@ -3404,8 +3404,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARROS, T. A. R. ; FERREIRA, G.A. ; HENRIQUE, R. S. . Anaerobic speed or power reserve as a key determinant of repeatability in high-intensity efforts. JOURNAL OF APPLIED PHYSIOLOGY 139, p. 1722-1723, 2025. Citações:1|1",
     "source_row": "88",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "143",
@@ -3428,8 +3428,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CHALEGRE DA SILVA, LUCAS ; DA SILVA, KLEBER JOHNY ; FELIPPE, LEANDRO CAMATI ; SILVA-CAVALCANTE, MARCOS DAVID ; HENRIQUE, RAFAEL DOS SANTOS ; LIMA-SILVA, ADRIANO EDUARDO ; LEANDRO, CAROL GÓIS ; FERREIRA, GUILHERME ASSUNÇÃO . Neural and Muscular Determinants of Performance Fatigability Are Independent of Work and Recovery Durations During High-Intensity Interval Exercise in Males. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 96, p. 338-348, 2025.",
     "source_row": "130",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "144",
@@ -3452,8 +3452,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MENDES, M. ; MARINHO, A. ; MOURA, F. ; BADUE, G. ; FERREIRA, G. A. ; ARAUJO, G. ; Lima Silva A. E. ; SILVA, T. A. E. . Self-reported carbohydrate supercompensation and supplementation strategies adopted by Olympic triathlon athletes. Brazilian Journal of Medical and Biological Research (on line), v. 58, p. e14189, 2025. Citações:1|1",
     "source_row": "339",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "145",
@@ -3476,8 +3476,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALES, AMANDA J. ; DA SILVA, KLEBER J. ; FELIPPE, LEANDRO C. ; CAVALCANTE, MARCOS D. ; UMEMURA, GUILHERME S. ; MAZIEIRO, RENATO S. ; BERTUZZI, ROMULO ; LEANDRO, CAROL G. ; BISHOP, DAVID J. ; SANER, NICHOLAS ; LIMA-SILVA, ADRIANO E. ; FERREIRA, GUILHERME A. . Caffeine intake reverses the impairment of sleep restriction on high-intensity exercise performance. EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY 126, p. 269-284, 2026.",
     "source_row": "21",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "146",
@@ -3500,8 +3500,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Giudicelli, B. B. ; LUZ, L. G. O. ; SANTOS, D. H. B. ; SARMENTO, H. ; MASSART, ALAIN G. ; Cunha Júnior, A. T. ; FIELD, A. ; FIGUEIREDO, A. . Age and maturity effects on morphological and physical performance measures of adolescent judo athletes. Journal of Human Kinetics 80, p. 131-141, 2021. Citações:9|10",
     "source_row": "241",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "147",
@@ -3524,7 +3524,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GIUDICELLI, BRUNO B. ; LUZ, LEONARDO G. O. ; SOGUT, MUSTAFA ; SARMENTO, HUGO ; MASSART, ALAIN G. ; JÚNIOR, ARNALDO C. ; FIELD, ADAM ; FIGUEIREDO, ANTÓNIO J. . Chronological Age, Somatic Maturation and Anthropometric Measures: Association with Physical Performance of Young Male Judo Athletes. International Journal of Environmental Research and Public Health 18, p. 6410, 2021. Citações:12|17",
     "source_row": "242",
-    "numero_autores": 2,
+    "numero_autores": 8,
     "posicao_docente": 2
   },
   {
@@ -3548,7 +3548,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, L. G. O.; FORTES, M. ; MARANHAO NETO, GERALDO A. . How to be physically active undersocial distancing? You need to exercise!. Revista de Educação Física 90, p. 157-162, 2021.",
     "source_row": "302",
-    "numero_autores": 1,
+    "numero_autores": 3,
     "posicao_docente": 1
   },
   {
@@ -3572,8 +3572,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "Giudicelli, B. B. ; Assis, V. O. ; HENRIQUE, R. S. ; LUZ, L. G. O. . Letramento corporal na educação física: debate, contribuição e intervenção. In: BENTO, Jorge Olímpio; MOREIRA, Wagner Wey ; BOTELHO, Rafael Guimarães; SARANGA, Sílvio Pedro José (org.).. (Org.). Desporto e educação física: identidade e missão. 1ed.Maputu: EDUCAR, 2021, v. 1, p. 205-219.",
     "source_row": "239",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "150",
@@ -3596,8 +3596,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MAGALHAES, K. C. S. ; MATIAS, T. S. ; ARAUJO, R. H. ; WERNECK, A. O. ; FERRARI, G. ; LUZ, L. G. O. ; FERNANDES, R. A. ; BARBOSA, D. S. ; RONQUE, E. R. V. ; CYRINO, E. S. ; SILVA, D. R. . Clusters of obesogenic behaviors and metabolic risk according to somatic maturity status among adolescents. AMERICAN JOURNAL OF HUMAN BIOLOGY e, p. 1, 2022. Citações:4|4",
     "source_row": "311",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 11,
+    "posicao_docente": 6
   },
   {
     "id": "151",
@@ -3620,7 +3620,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOGUT, MUSTAFA ; YAPICI, H. ; LUZ, L. G. O. ; GIUDICELLI, BRUNO B. ; CLEMENTE, F. M. ; DOĞ . Maturity-associated variations in anthropometry, physical fitness, and sport-specific skills among young male and female futsal players. Human Movement 23, p. 1-7, 2022. Citações:3|3",
     "source_row": "505",
-    "numero_autores": 5,
+    "numero_autores": 6,
     "posicao_docente": 3
   },
   {
@@ -3644,8 +3644,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LIMA, L. M. P. ; NASCIMENTO, J. Y. V. ; LIMA, C. V. P. ; Giudicelli, B. B. ; BANDEIRA, P. F. R. ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; Cunha Júnior, A. T. ; LUZ, L. G. O. . ASSOCIAÇÃO DO COMPORTAMENTO SEDENTÁRIO COM O SEXO E O TIPO DE ESCOLA EM ADOLESCENTES BRASILEIROS. In: Leonardo Gomes de Oliveira Luz e Arnaldo Tenório da Cunha Júnior. (Org.). Escola e promoção da saúde. Evidências e possibilidades para democratizar a participação em atividades físicas na infância a na adolescência. 1ed.Arapiraca: Performance, 2023, v. , p. 48-65.",
     "source_row": "286",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "153",
@@ -3668,8 +3668,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LIMA, C. V. P. ; NASCIMENTO, J. Y. V. ; LIMA, L. M. P. ; Giudicelli, B. B. ; BANDEIRA, P. F. R. ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; Cunha Júnior, A. T. ; LUZ, L. G. O. . ASSOCIAÇÃO DO NÍVEL DE ATIVIDADE FÍSICA COM O SEXO E O TIPO DE ESCOLA EM 71.902 ADOLESCENTES BRASILEIROS. In: Leonardo Gomes de Oliveira Luz e Arnaldo Tenório da Cunha Júnior. (Org.). Escola e promoção da saúde. Evidências e possibilidades para democratizar a participação em atividades físicas na infância a na adolescência. 1ed.Arapiraca: Performance, 2023, v. , p. 25-47.",
     "source_row": "279",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "154",
@@ -3693,7 +3693,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "LUZ, L. G. O.; Cunha Júnior, A. T. (Org.) . Escola e promoção da saúde. Evidências e possibilidades para democratizar a participação em atividades físicas na infância a na adolescência. 1. ed. Arapiraca: Performance, 2023. 189p .",
     "source_row": "301",
     "numero_autores": 2,
-    "posicao_docente": 2
+    "posicao_docente": 1
   },
   {
     "id": "155",
@@ -3716,8 +3716,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NASCIMENTO, J. Y. V. ; LIMA, C. V. P. ; LIMA, L. M. P. ; Giudicelli, B. B. ; BANDEIRA, P. F. R. ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; SILVA, D. R. ; MARTINS, C. M. L. ; HENRIQUE, R. S. ; Cunha Júnior, A. T. ; LUZ, L. G. O. . Fatores associados aos comportamentos ativo e sedentário em adolescentes brasileiros: uma análise de redes. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 28, p. 1-10, 2023. Citações:5",
     "source_row": "18",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "156",
@@ -3740,8 +3740,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, D. H. B. ; LIMA, B. P. S. ; MEDEIROS, H. J. ; KNACKFUSS, M. ; PINHEIRO, I. K. A. S. ; GIUDICELLI, B. B. ; Cunha Júnior, A. T. ; HENRIQUE, R. S. ; LUZ, L. G. O. . Gross motor coordination in schoolboys of pubertal age contrasting in futsal practice level groups. RETOS 50, p. 234-238, 2023. Citações:4",
     "source_row": "446",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "157",
@@ -3764,8 +3764,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, C. V. P. ; LUZ, L. G. O. ; SILVA, D. R. . What are the correlates of intention to be physically active in Brazilian adolescents? A network analysis. BMC PUBLIC HEALTH 23, p. 2460, 2023. Citações:2|3",
     "source_row": "281",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "158",
@@ -3788,8 +3788,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "YWGNE, JOSÉ ; LUZ, LEONARDO G. O. ; THUANY, MABLINY ; LIMA, CAYO ; ARAUJO, RAPHAEL ; SILVA, ELLEN ; MAGALHÃES, KLEBERTON ; BANDEIRA, PAULO ; SILVA, DANILO R. . An ecological view on the correlates of sedentary behavior in Brazilian adolescents: a cross-sectional study with network analysis. Journal of Activity, Sedentary and Sleep Behaviors 3, p. 1, 2024.",
     "source_row": "545",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 9,
+    "posicao_docente": 2
   },
   {
     "id": "159",
@@ -3812,8 +3812,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, S. ; BANDEIRA, P. F. R. ; MASHHADI, M. R. ; DEHKORDI, P. S. ; LUZ, L. G. O. ; MARTINS, C. M. L. ; HARDY, L. L. ; DUNCAN, M. J. . Associations between biological maturation, chronological age, body mass index, sex, and motor competence in prepubertal children: a network analysis. Children-Basel, v. 11, p. 1-14, 2024.",
     "source_row": "432",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "160",
@@ -3836,8 +3836,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PORTO, BRUNO DE ALBUQUERQUE ; NASCIMENTO, JOSÉ YWGNE VIEIRA DO NASCIMENTO ; GIUDICELLI, BRUNO BARBOSA ; PINHEIRO, INGRID KELLY ALVES DOS SANTOS ; ASSIS, VANNINA OLIVEIRA ; BANDEIRA, PAULO FELIPE RIBEIRO ; SILVA, DANILO RODRIGUES PEREIRA DA ; Luz, Leonardo gomes de Oliveira . Atividade física e comportamento sedentário de adolescentes da rede pública: uma análise de redesPhysical activity and sedentary behavior of adolescents in public schools: a network analysis. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 29, p. 1-13, 2024. Citações:1",
     "source_row": "406",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "161",
@@ -3860,8 +3860,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA LIMA, BRAULIO PATRICK ; GIUDICELLI, BRUNO BARBOSA ; DOS SANTOS PINHEIRO, INGRID KELLY ALVES ; SANTOS, DOUGLAS HENRIQUE BEZERRA ; MAGALHÃES, KLEBERTON CARLOS SILVA ; DOS SANTOS HENRIQUE, RAFAEL ; DA SILVA, DANILO RODRIGUES PEREIRA ; SILVA, MANUEL JOÃO COELHO E ; de Oliveira Luz, Leonardo Gomes . Biocultural correlates of gross motor coordination in prepubescent children: A cross-sectional study. AMERICAN JOURNAL OF HUMAN BIOLOGY 36, p. 1, 2024.",
     "source_row": "10",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "162",
@@ -3884,8 +3884,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Luz, Leonardo gomes de Oliveira; DA SILVA, DANILO RODRIGUES PEREIRA ; HENRIQUE, RAFAEL DOS SANTOS ; GIUDICELLI, BRUNO BARBOSA ; COELHO E SILVA, MANUEL JOÃO . Biological maturation, fat mass and cardiorespiratory fitness in prepubescent girls: A mediation analysis. AMERICAN JOURNAL OF HUMAN BIOLOGY 37, p. 1, 2024. Citações:1",
     "source_row": "304",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 5,
+    "posicao_docente": 1
   },
   {
     "id": "163",
@@ -3908,8 +3908,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARINHO, BLENA ; DO AMARAL, FABRÍCIO VASCONCELLOS VIEIRA ; Luz, Leonardo gomes de Oliveira ; GUIMARÃES, GUILHERME LOCKS ; BATISTA, LUIZ ALBERTO ; CHAGAS, DANIEL DAS VIRGENS . Generic motor tests as tools to identify sports talent: a systematic review. Human Movement 25, p. 53-63, 2024. Citações:4|4",
     "source_row": "313",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "164",
@@ -3932,8 +3932,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GONCALVES, J. G. ; LUZ, L. G. O. ; BANDEIRA, P. F. R. ; PRAZERES, T. ; LIMA, V. ; MAIA, D. ; SANTOS, T. ; GAYA, A. ; SANTOS, M. A. ; HENRIQUE, R. S. . Propiedades psicométricas del Cuestionario de Conocimiento y Comprensión de la Evaluación Canadiense de Alfabetización Física-2 en niños brasileños de baja renta. RETOS 58, p. 291-298, 2024. Citações:2",
     "source_row": "247",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 10,
+    "posicao_docente": 2
   },
   {
     "id": "165",
@@ -3956,8 +3956,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, L. G. O.; SILVA, D. R. ; HENRIQUE, R. S. ; Seabra, AF ; COELHO-E-SILVA, M. J. . Correlates of Moderate‐to‐Vigorous Physical Activity Among Prepubertal Girls: A Bioecological Approach. AMERICAN JOURNAL OF HUMAN BIOLOGY 37, p. 1-5, 2025. Citações:1",
     "source_row": "303",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 5,
+    "posicao_docente": 1
   },
   {
     "id": "166",
@@ -3980,8 +3980,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PRAZERES, T. M. P. ; HENRIQUE, R. S. ; LUZ, L. G. O. ; CORREIA JUNIOR, M. G. A. ; OLIVEIRA, M. N. S. ; RIBEIRO, M. D. ; BARROS, T. A. R. ; LIMA, V. F. ; MAIA, D. E. F. ; BANDEIRA, P. F. R. ; LEANDRO, C. V. G. ; MOURA-DOS-SANTOS, M. A. . Sibling's resemblance in health- and performance-related fitness among Brazilian youth. RETOS 66, p. 491-504, 2025.",
     "source_row": "409",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 12,
+    "posicao_docente": 3
   },
   {
     "id": "167",
@@ -4004,8 +4004,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE ALENCAR MATOS, MARCUS ; DO REGO BARROS, TÉRCIO ARAÚJO ; LIMA, VICTOR FERREIRA ; DA COSTA, MARLENE SALVINA FERNANDES ; de Oliveira Luz, Leonardo Gomes ; DOS PRAZERES, THALIANE MAYARA PESSÔA ; GUIMARÃES DA SILVA, NOADIA MARIA ; CAMPOS, EDUARDO ZAPATERRA ; NAKAMURA, FÁBIO YUZO ; MOURA DOS SANTOS, MARCOS ANDRÉ ; DOS SANTOS HENRIQUE, RAFAEL . Understanding the mediating role of anthropometry and body composition in the relationship between biological maturation and sport-specific performance in young swimmers. JOURNAL OF SPORTS SCIENCES 1, p. 1-11, 2025. Citações:1|2",
     "source_row": "170",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 5
   },
   {
     "id": "168",
@@ -4028,8 +4028,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, VINÍCIUS TENÓRIO MORAES ; HENRIQUE, RAFAEL DOS SANTOS ; YWGNE, JOSÉ ; NOBRE, FRANCISCO SALVIANO SALES ; GUERRA, PAULO HENRIQUE ; Luz, Leonardo gomes de Oliveira . Analysis of Factors Associated with Active and Sedentary Behaviors of Children and Adolescents Considering Bronfenbrenner's Bioecological Theory: A Scoping Review Protocol. Adolescents 6, p. 9, 2026.",
     "source_row": "157",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "169",
@@ -4052,8 +4052,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, TATIANA D.D. ; LUZ, L. G. O. ; Giudicelli, B. B. ; Cunha Júnior, A. T. ; CARMO, B. C. M. ; OLIVEIRA, E. ; MARANHAO NETO, G. A. ; BAPTISTA, L. ; MARTINS, R. . Associations Between Physical Activity and Quality of Life in University Students during the COVID-19 Pandemic. Health and Quality of Life Outcomes 1, p. 1, 2026.",
     "source_row": "305",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 9,
+    "posicao_docente": 2
   },
   {
     "id": "170",
@@ -4076,8 +4076,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PRAZERES, THALIANE MAYARA PESSÔA DOS ; HENRIQUE, RAFAEL DOS SANTOS ; Luz, Leonardo gomes de Oliveira ; MARTINS, CLARICE MARIA DE LUCENA ; ALBUQUERQUE, MAICON RODRIGUES ; RIBEIRO, MARCELLA DANTAS ; SOBRAL, IGOR RODRIGUES ; OLVEIRA, NAYARA DE SOUZA ; LIRA-FILHO, ROSTAND DE SOUZA ; MOURA-DOS-SANTOS, MARCOS ANDRÉ . Do Individual and School Characteristics Influence the Siblings' Resemblance of Gross Motor Coordination Among Brazilian Youth?. PERCEPTUAL AND MOTOR SKILLS 6, p. 1, 2026.",
     "source_row": "411",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 3
   },
   {
     "id": "171",
@@ -4100,8 +4100,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "HENRIQUE, RAFAEL DOS SANTOS ; DA SILVA, DANIELLE DOS SANTOS SOUZA ; DOS PRAZERES, THALIANE MAYARA PESSOA ; OLIVEIRA, NAYARA DE SOUZA ; LIRA FILHO, ROSTAND DE SOUZA ; DE OLIVEIRA, GABRIELA ; Luz, Leonardo gomes de Oliveira ; MARTINS, CLARICE MARIA DE LUCENA ; ALBUQUERQUE, MAICON RODRIGUES ; MOURA DOS SANTOS, MARCOS ANDRÉ ; BANDEIRA, PAULO FELIPE RIBEIRO ; MAIA PACHECO, MATHEUS . Motor Competence Assessment in Low-Income Brazilian Children: Factorial Structure and Concurrent Validity. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 14, p. 1-14, 2026. Citações:1",
     "source_row": "261",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 7
   },
   {
     "id": "172",
@@ -4124,8 +4124,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, TATIANA D.D. ; LUZ, L. G. O. ; Giudicelli, B. B. ; MARANHAO NETO, G. A. ; BAPTISTA, L. ; MARTINS, R. . Physical Activity prevalence and Sex-associated factors among university students during the first year of the Covid-19 pandemic: a cross-sectional study. SPORTS 14, p. 1-17, 2026.",
     "source_row": "306",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "173",
@@ -4148,8 +4148,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, LUCAS EDUARDO RODRIGUES; COSTA, ANDRÉ DOS SANTOS ; COSTA, EDUARDO CALDAS ; DAMASCENO, VINICIUS OLIVEIRA ; CHEN, ZHAOJING ; DE OLIVEIRA, IZAILDO ALVES ; DAMES, KARLA KRISTINE ; PIRES, FLÁVIO OLIVEIRA ; SANTOS, TONY MEIRELES . Effects of Self-Selected Passive Recovery Time in Interval Exercise on Perceptual and Heart Rate Responses in Older Women: A Promissory Approach. JOURNAL OF AGING AND PHYSICAL ACTIVITY 00, p. 1-11, 2021. Citações:2",
     "source_row": "23",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 9,
+    "posicao_docente": 1
   },
   {
     "id": "174",
@@ -4172,8 +4172,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BRIETZKE, CAYQUE ; VINÍCIUS, ÍTALO ; FRANCO-ALVARENGA, PAULO ESTEVÃO ; CANESTRI, RAUL ; GOETHEL, MÁRCIO FAGUNDES ; SANTOS, LUCAS EDUARDO RODRIGUES ; VIANA, BRUNO ; SANTOS, TONY MEIRELES ; PIRES, FLÁVIO OLIVEIRA . Proof-of-Concept and Test-Retest Reliability Study of Psychological and Physiological Variables of the Mental Fatigue Paradigm. International Journal of Environmental Research and Public Health 18, p. 9532, 2021. Citações:11|11",
     "source_row": "108",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 6
   },
   {
     "id": "175",
@@ -4196,8 +4196,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ORDÔNIO, TAYRINE FIGUEIRA ; CASTOLDI, A. ; SANTOS, LUCAS EDUARDO R. ; AMORIM, G. J. ; DE SOUSA FERNANDES, MATHEUS SANTOS ; ANASTACIO, W. L. N. ; CAMPOS, E. Z. ; SANTOS, TONY MEIRELES ; SOUTO, F. O. . The Relevance of a Physical Active Lifestyle and Physical Fitness on Immune Defense: Mitigating Disease Burden, With Focus on COVID-19 Consequences. Frontiers in Immunology 12, p. 1, 2021. Citações:87|101",
     "source_row": "387",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 3
   },
   {
     "id": "176",
@@ -4220,8 +4220,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARBOSA, M. A. A. ; MOURA, H. M. ; SANTOS, L. E. R. ; DE SOUSA FERNANDES, MATHEUS SANTOS ; HENRIQUE, R. S. ; DAMASCENO, V. O. ; SANTOS, T. M. . COMPARISON OF AFFECTIVE RESPONSES DURING SCHOOL PHYSICAL EDUCATION CLASSES WITH DIFFERENT RECOVERY TIMES. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 33, p. e3332-9, 2022.",
     "source_row": "77",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 3
   },
   {
     "id": "177",
@@ -4244,7 +4244,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, LUCAS EDUARDO RODRIGUES; ELSANGEDY, HASSAN MOHAMED ; DE SOUZA, CATARINA FERNANDA COSTA XAVIER MONT ; DA SILVA MESQUITA, BRUNA MILENE ; BRIETZKE, CAYQUE ; VINÍCIUS, ÍTALO ; PEREIRA, DANIEL CARVALHO ; PIRES, FLÁVIO OLIVEIRA ; SANTOS, TONY MEIRELES . Reliability of the Heartbeat Tracking Task to Assess Interoception. APPLIED PSYCHOPHYSIOLOGY AND BIOFEEDBACK 47, p. 1-8, 2022. Citações:11|7",
     "source_row": "24",
-    "numero_autores": 2,
+    "numero_autores": 9,
     "posicao_docente": 1
   },
   {
@@ -4268,7 +4268,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LATTARI, EDUARDO ; VIEIRA, LUCAS ANTUNES FARIA ; SANTOS, LUCAS EDUARDO RODRIGUES ; JESUS ABREU, MARCO ANTONIO ; RODRIGUES, GUILHERME MORAES ; DE OLIVEIRA, BRUNO RIBEIRO RAMALHO ; MACHADO, SÉRGIO ; MARANHÃO NETO, GERALDO ALBUQUERQUE ; SANTOS, TONY MEIRELES . Transcranial Direct Current Stimulation Combined With or Without Caffeine: Effects on Training Volume and Pain Perception. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 00, p. 1-10, 2022. Citações:5|4",
     "source_row": "267",
-    "numero_autores": 5,
+    "numero_autores": 9,
     "posicao_docente": 3
   },
   {
@@ -4292,8 +4292,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "CHAVES, S. ; PEREIRA, A. ; HENRIQUE, R. ; SANTOS, L. E. R. ; SILVA, N. M. G. ; LIMA, V. F. ; BARROS, T. A. R. ; SANTOS, T. M. ; CLAUDINO, J. G. . A importância do desenvolvimento do senso de comunidade e cooperação entre startups, empresas, clubes esportivos e universidades brasileiras. In: João Gustavo Claudino. (Org.). Ecossistema de inovação na área da educação física e esporte: Desafios e Perspectivas. 1ed.São Paulo: Dialética, 2023, v. 1, p. 1-184.",
     "source_row": "132",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 4
   },
   {
     "id": "180",
@@ -4316,8 +4316,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "SANTOS, TONY MEIRELES ; TINOCO, G. ; ELSANGEDY, HASSAN MOHAMED ; SANTOS, L. E. R. . DEPENDÊNCIA COMPORTAMENTAL E ADESÃO À PRÁTICA DE ATIVIDADES FÍSICAS EM AMBIENTES NATURAIS: UMA REFLEXÃO A PARTIR DO SURFE. In: ERICK F. Q. CONDE; JULIANA A. DE O. CAMILO; LEO NEPOMUCENO. (Org.). Psicologia, Esporte e Natureza - Aspectos Subjetivos, Comportamentais e Socioculturais. 1ed.Curitiba - Paraná: Juruá Editora, 2023, v. , p. 1-170.",
     "source_row": "460",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "181",
@@ -4340,7 +4340,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, L. E. R.; DAMES, KARLA KRISTINE ; OLIVEIRA, E. S. D. ; FERNANDES, M. S. S. ; FILGUEIRA, T. O. ; MESQUITA, B. M. S. ; SOUZA, C. F. C. X. M. ; LATTARI, E. ; SANTOS, T. M. . Entropy of Heart Rate on Self-Selected Interval Exercises in Older Women. INTERNATIONAL JOURNAL OF EXERCISE SCIENCE 16, p. 525-537, 2023.",
     "source_row": "22",
-    "numero_autores": 1,
+    "numero_autores": 9,
     "posicao_docente": 1
   },
   {
@@ -4364,8 +4364,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, VINICIUS ; GOMES, DAVID ; MELO, MARIA ; DE SOUZA, DANILO ; GONÇALVES, REGINALDO ; SANTOS, LUCAS ; COSTA, BRUNA ; SANTOS, ANDRÉ ; DOLEZAL, BRETT ; CAMPOS, EDUARDO ; SANTOS, TONY . Influence of the exercise intensity during EA Sport Active 2 on physiology and psychology variables. Human Movement 24, p. 1-10, 2023.",
     "source_row": "167",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 11,
+    "posicao_docente": 6
   },
   {
     "id": "183",
@@ -4388,8 +4388,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, MICHEL OLIVEIRA ; SANTOS, TONY MEIRELES ; INOUE, ALLAN ; SANTOS, LUCAS EDUARDO RODRIGUES ; DE LIMA DO NASCIMENTO ANASTÁCIO, WEYDYSON ; LATTARI, EDUARDO ; OLIVEIRA, BRUNO RIBEIRO RAMALHO . Is There a Dose-Response Relationship between High-Intensity Interval Exercise (HIIE) Intensity and Affective Valence? Analysis of Three HIIE Sessions Performed with Different Amplitudes. International Journal of Environmental Research and Public Health 20, p. 2698, 2023. Citações:5",
     "source_row": "496",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 4
   },
   {
     "id": "184",
@@ -4412,8 +4412,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "VIEIRA, C. B. ; PIRES, L. T. M. ; SILVA JUNIOR, A. A. ; ARAUJO, A. C. C. ; MAIA, D. E. F. ; FRANCA, E. O. ; SANTOS JUNIOR, E. S. ; PAIVA, G. M. ; SILVA, I. M. B. ; ALMEIDA, J. E. V. ; MACIEL, S. M. B. ; ALBUQUERQUE, V. P. ; NASCIMENTO, A. J. ; SANTOS, LUCAS EDUARDO RODRIGUES ; ANASTACIO, W. L. N. ; MAIOR, E. M. S. ; BARRETO NETO, A. C. S. ; SANTOS, T. M. . UTILIZAÇÃO DA INTELIGÊNCIA ARTIFICIAL ATRAVÉS DE UM SISTEMA ESPECIALISTA PARA A TOMADA DE DECISÃO NO ENFRENTAMENTO AO SEDENTARISMO. In: SECRETARIA DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO - SECTI. (Org.). 1º E-BOOK DO PROGRAMA DE EXTENSÃO TECNOLÓGICA. 1ed.Recife: , 2023, v. ', p. 1-223.",
     "source_row": "538",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 18,
+    "posicao_docente": 14
   },
   {
     "id": "185",
@@ -4436,8 +4436,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VIANA, BRUNO ; OLIVEIRA, BRUNO R. R. ; INOUE, ALLAN ; SANTOS, LUCAS E. R. ; SANTOS, TONY M. ; PIRES, FLÁVIO OLIVEIRA . Exercise expectation changes psychophysiological responses to sprint exercise regardless of changes in pacing and performance. INTERNATIONAL JOURNAL OF SPORT AND EXERCISE PSYCHOLOGY 1, p. 1-14, 2025. Citações:1|1",
     "source_row": "534",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 4
   },
   {
     "id": "186",
@@ -4460,8 +4460,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NHABOMBA, H. M. ; PAIPE, G. P. ; ALMEIDA, C. H. D. C. ; NASCIMENTO, J. H. A. ; SANTOS, L. E. R. ; COSTA, M. A. N. ; KOHL, H. G. ; MENEZES, V. G. . Impact of financial fair play regulation on the economic and financial sustainability of football clubs ? a systematic review of the literature and meta-analyses. CONTRIBUCIONES A LAS CIENCIAS SOCIALES 18, p. 1-29, 2025.",
     "source_row": "362",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "187",
@@ -4484,7 +4484,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NHABOMBA, HUMBERTO MATEUS ; PAIPE, GUSTAVO PASCOAL ; SANTOS, CARLOS HENRIQUE ; NASCIMENTO, JOSÉ HENRIQUE ; SANTOS, LUCAS EDUARDO ; MEIRELES, TONY SANTOS ; MENEZES, VILDE GOMES . INDICADORES DA SAÚDE FINANCEIRA DOS CLUBES DE FUTEBOL PROFISSIONAIS - UMA REVISÃO DE ESCOPO. REVISTA INTERCONTINENTAL DE GESTÃO DESPORTIVA 15, p. e110015-16, 2025.",
     "source_row": "366",
-    "numero_autores": 5,
+    "numero_autores": 7,
     "posicao_docente": 5
   },
   {
@@ -4508,8 +4508,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, E. L. ; WANDERLEY JUNIOR, R. S. ; SOARES, A. J. G. ; SANTOS, L. E. R. ; NASCIMENTO, J. H. A. ; DAMASCENA, C. R. ; SANTOS, T. M. ; MENEZES, V. G. . INTEGRATION OF CYBERCULTURE IN PHYSICAL EDUCATION COURSES AT FEDERAL UNIVERSITIES IN NORTHEASTERN BRAZIL. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 36, p. 1-16, 2025.",
     "source_row": "448",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "189",
@@ -4532,8 +4532,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, T. M. ; SANTOS, L. E. R. ; VINÍCIUS, ÍTALO ; BRIETZKE, CAYQUE ; PEREIRA, L. C. ; MELO, P. H. ; MOURA, T. C. B. ; NEGRI, T. ; ELSANGEDY, HASSAN MOHAMED ; PIRES, FLÁVIO OLIVEIRA . Intrinsic judgment error in men?s championship world surf league: WSL 2021. RETOS 64, p. 311-321, 2025.",
     "source_row": "458",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 10,
+    "posicao_docente": 2
   },
   {
     "id": "190",
@@ -4556,8 +4556,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RODRIGUES SANTOS, LUCAS EDUARDO; ELSANGEDY, HASSAN MOHAMED ; ACEVEDO, EDMUND O. ; RAMALHO OLIVEIRA, BRUNO RIBEIRO ; LEÃO, HIGO FARADAY PARAISO ; ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; GOETHEL, MÁRCIO FAGUNDES ; SANTOS, TONY MEIRELES . Acute Effects of Binaural Beats on Interoception in Individuals WITH Symptoms of Depression. PSYCHOLOGICAL REPORTS 130, p. 1-0, 2026.",
     "source_row": "20",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 8,
+    "posicao_docente": 1
   },
   {
     "id": "191",
@@ -4580,8 +4580,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "ANASTACIO, W. L. N. ; SANTOS, L. E. R. ; SANTOS, T. M. . Supervisão e estratégias de engajamento. In: Weydyson de Lima do Nascimento Anastácio; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Dialética, 2026, v. 1, p. 1-160.",
     "source_row": "53",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "192",
@@ -4604,8 +4604,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CELESTINO, MELISSA L.; VAN EMMERIK, RICHARD ; ANGELO BARELA, JOSÉ ; BACCA, ODAIR ; M. F. BARELA, ANA . Effects of limited knee flexion movement in intra-limb gait coordination. JOURNAL OF BIOMECHANICS 128, p. 110712, 2021. Citações:10|8",
     "source_row": "9",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 1
   },
   {
     "id": "193",
@@ -4629,7 +4629,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "Barela, A. M. F. ; CELESTINO, M. L. ; GAMA, G. L. ; RUSSO, D. V. ; SANTANA, D. S. ; BARELA, J. A. . Gait alterations induced by unloaded body weight in individuals with stroke while walking on moveable and fixed surfaces. MEDICAL ENGINEERING & PHYSICS 95, p. 9-14, 2021. Citações:1|2",
     "source_row": "80",
     "numero_autores": 6,
-    "posicao_docente": 4
+    "posicao_docente": 2
   },
   {
     "id": "194",
@@ -4652,8 +4652,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BACCA, ODAIR ; CELESTINO, M. L. ; YAKOVENKO, SERGIY ; DE LIMA, ANA JÚLIA SILVA ; Barela, A. M. F. . Compensatory Strategies Due to Knee Flexion Constraint during Gait of Non-Disabled Adults. JOURNAL OF MOTOR BEHAVIOR 54, p. 281-290, 2022.",
     "source_row": "71",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 2
   },
   {
     "id": "195",
@@ -4676,8 +4676,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Barela, A. M. F. ; BACCA, ODAIR ; CELESTINO, M. L. . Use of force plates to investigate human motor performance. Brazilian Journal of Motor Behavior 17, p. 175-181, 2023.",
     "source_row": "79",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "196",
@@ -4700,8 +4700,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, N. S. ; LIRA FILHO, R. S. ; BARROS, T. A. R. ; SOBRAL, I. R. ; PRAZERES, T. M. P. ; CELESTINO, M. L. ; SANTOS, M. A. M. ; HENRIQUE, R. S. . Gender Gap in Gross Motor Coordination among Low-Income Brazilian Children. Vulnerable Children and Youth Studies (Print) 1, p. 15, 2025. Citações:1",
     "source_row": "381",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "197",
@@ -4724,8 +4724,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BACCA, ODAIR ; CELESTINO, MELISSA LEANDRO ; CELESTINO, M. L. ; Barela, A. M. F. . Identification of stiff-knee gait in stroke survivors. BMC Biomedical Engineering 7, p. 11, 2025.",
     "source_row": "72",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "198",
@@ -4748,8 +4748,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARELA, ANA M. F. ; CELESTINO, MELISSA L. . INFOGRAPHIC: exploring gait coordination using the vector coding technique. Brazilian Journal of Motor Behavior 18, p. e456, 2025.",
     "source_row": "81",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "199",
@@ -4772,8 +4772,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GERMANO-SOARES, ANTONIO HENRIQUE ; LINS-FILHO, OZEAS LIMA ; SILVA, CAROLINE RAMOS DE MOURA ; SILVA, JOSÉ FRANCISCO ; HARDMAN, CARLA MENÊSES ; BARBOSA FILHO, VALTER CORDEIRO ; BARROS, MAURO VIRGILIO GOMES DE ; TASSITANO, RAFAEL MIRANDA . Combinations of physical activity, sedentary behavior, and sleep and health outcomes in older adults: a systematic review protocol. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-12, 2021. Citações:3",
     "source_row": "237",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "200",
@@ -4796,8 +4796,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SCHMITZ, E. P. C. R. ; SILVA, E. C. ; LINS FILHO, O. L. ; ANTUNES, M. M. C. ; BRANDT, K. G. . DIETA ENTERAL ARTESANAL PARA CRIANÇAS: UMA REVISÃO INTEGRATIVA. REVISTA PAULISTA DE PEDIATRIA (ONLINE), v. 40, p. 1, 2021. Citações:17|13",
     "source_row": "467",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "201",
@@ -4820,7 +4820,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINS-FILHO, OZEAS; PORTO AGUIAR, JOSÉ LUCAS ; VIEIRA DE ALMEIDA, JOSÉ RICARDO ; SOARES, ANTÔNIO HENRIQUE ; RITTI-DIAS, RAPHAEL ; JULIA DA SILVA, MARIA ; PEDROSA, RODRIGO PINTO . Effect of exercise training on body composition in patients with obstructive sleep apnea: A systematic review and meta-analysis. SLEEP MEDICINE 87, p. 105-113, 2021. Citações:20|12",
     "source_row": "17",
-    "numero_autores": 4,
+    "numero_autores": 7,
     "posicao_docente": 1
   },
   {
@@ -4844,8 +4844,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LINS-FILHO, ODL.; LYRA, M. J. ; KLINE, C. E. . Exercise and Sleep. In: Cristina Frange; Fernando Morgadinho Santos Coelho. (Org.). Sleep Medicine and Physical Therapy. 1ed.Cham,: Springer, 2021, v. 0, p. 1-429.",
     "source_row": "15",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 3,
+    "posicao_docente": 1
   },
   {
     "id": "203",
@@ -4868,8 +4868,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MAGALHAES, J. A. ; LINS-FILHO, OZEAS ; PATRIOTA, T. L. G. C. S. ; SILVA, M. V. F. P. ; MATTOS, T. C. L. ; BARROSO, W. K. S. ; BRANDAO, A. A. ; MIRANDA, R. D. ; BARBOSA, E. C. D. ; GOMES, M. A. M. ; NADRUZ, W. ; FEITOSA, A. D. M. ; PEDROSA, RODRIGO P. ; FEITOSA, C. . Prevalence of masked hypertension evaluated by home blood pressure monitoring in a large sample of patients with office blood pressure <140/90 mmHg. BLOOD PRESSURE MONITORING Publish Ahead of Print, p. 1-6, 2021. Citações:1|3",
     "source_row": "310",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 14,
+    "posicao_docente": 2
   },
   {
     "id": "204",
@@ -4892,8 +4892,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, JÉSSIKA KARLA TAVARES DO NASCIMENTO FAUSTINO DA ; LINS FILHO, OZEAS DE LIMA ; GERMANO-SOARES, ANTONIO HENRIQUE ; RITTI-DIAS, RAPHAEL MENDES ; FARAH, BRENO QUINTELLA . Association between frequency of physical education classes and heart rate variability in adolescents boys: a cross-sectional study. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 33, p. 1-7, 2022. Citações:1",
     "source_row": "489",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 2
   },
   {
     "id": "205",
@@ -4916,8 +4916,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CLÍMACO, DANIELLE CRISTINA SILVA ; LUSTOSA, THAIS C. ; DE F.P., MARCUS VINÍCIUS ; LINS-FILHO, OZEAS L. ; RODRIGUES, VALESCA KEHRLE ; DE OLIVEIRA NETO, LUIZ DE ALBUQUERQUE P. ; FEITOSA, AUDES DIÓGENES MAGALHÃES ; QUEIROGA JÚNIOR, FERNANDO JOSÉ PINHO ; CABRAL, MARÍLIA MONTENEGRO ; PEDROSA, RODRIGO P. . Is obstructive sleep apnea associated with increased arterial stiffness in patients with COPD?. Sleep and Breathing 1, p. 0-0, 2022. Citações:4|4",
     "source_row": "137",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 4
   },
   {
     "id": "206",
@@ -4940,7 +4940,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LINS-FILHO, OZEAS; Pedrosa, R.P. . Sleep and circadian rhythm. Impact of COVID-19.. Jornal Brasileiro de Pneumologia (Online), v. 48, p. 3-4, 2022. Citações:1",
     "source_row": "296",
-    "numero_autores": 1,
+    "numero_autores": 2,
     "posicao_docente": 1
   },
   {
@@ -4964,8 +4964,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CLIMACO, D. C. S. ; LUSTOSA, THAIS C. ; SILVA, M. V. F. P. ; LINS-FILHO, ODL. ; RODRIGUES, V. K. ; OLIVEIRA-NETO, L. A. P. ; FEITOSA, A. D. M. ; QUEIROGA JR, F. J. P. ; CABRAL, M. M. ; Pedrosa, R.P. . Sleep quality in COPD patients: correlation with disease severity and health status. Jornal Brasileiro de Pneumologia (Online), v. 48, p. 1-6, 2022. Citações:24|28",
     "source_row": "136",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 4
   },
   {
     "id": "208",
@@ -4988,8 +4988,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINS-FILHO, ODL.; HENRIQUE, A. ; TORRES, A. ; OLIVEIRA, L. M. F. T. ; PRADO, W. L. ; RITTI-DIAS, R. M. ; CHRISTOFARO, D. G. D. ; FARAH, B. Q. . ASSOCIATION BETWEEN SLEEP QUALITY AND CARDIAC AUTONOMIC MODULATION IN ADOLESCENTS: A CROSS SECTIONAL STUDY.. Sleep Science (Online), v. 16, p. 462-467, 2023. Citações:8|7",
     "source_row": "294",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 1
   },
   {
     "id": "209",
@@ -5012,7 +5012,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINS-FILHO, ODL.; GERMANO-SOARES, ANTÔNIO H. ; PORTO, J. L. ; ALMEIDA, J. R. V. ; SANTOS, E. C. F. ; LEITE, D. B. ; SANTOS, M. A. M. ; KLINE, C. E. ; PEDROSA, RODRIGO P. . Effect of high-intensity interval training on obstructive sleep apnea severity: a randomized controlled trial. SLEEP MEDICINE 112, p. 316-321, 2023. Citações:18|16",
     "source_row": "14",
-    "numero_autores": 1,
+    "numero_autores": 9,
     "posicao_docente": 1
   },
   {
@@ -5036,8 +5036,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LELLYS, L. T. ; LINS FILHO, O. L. ; FREIRE, G. L. M. ; COSTA, N. ; FIORESE, L. F. ; NASCIMENTO JUNIOR, J. R. A. . RESILIÊNCIA EM ATLETAS PARALÍMPICOS DE ATLETISMO: UM ESTUDO COMPARATIVO. Revista da Associação Brasileira de Atividade Motora Adaptada 24, p. 29-38, 2023.",
     "source_row": "271",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "211",
@@ -5060,8 +5060,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, M. V. F. P. ; MATTOS, T. C. L. ; LINS-FILHO, ODL. ; CLIMACO, D. C. S. ; PATRIOTA, T. L. G. C. S. ; DRAGER, L. F. ; MAGALHAES, J. A. ; QUEIROGA JR, F. J. P. ; CABRAL, M. M. ; MEDEIROS, A. K. L. ; OLIVEIRA-NETO, L. A. P. ; RODRIGUES, V. K. ; PEDROSA, RODRIGO P. . VALIDATION OF A PORTABLE RESPIRATORY MONITORING SYSTEM FOR THE DIAGNOSIS OF OBSTRUCTIVE SLEEP APNEA IN PATIENTS WITH CHRONIC OBSTRUCTIVE PULMONARY DISEASE: A CROSS-SECTIONAL STUDY. Sleep Science (Online), v. 00, p. 1-6, 2023.",
     "source_row": "495",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 13,
+    "posicao_docente": 3
   },
   {
     "id": "212",
@@ -5084,8 +5084,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINS-FILHO, OZEAS; GERMANO-SOARES, ANTONIO H. ; AGUIAR, JOSÉ LUCAS PORTO ; DE ALMEDIA, JOSÉ RICARDO VIEIRA ; FELINTO, ELTON CARLOS ; LYRA, MARIA JULIA ; LEITE, DANIELLE BATISTA ; DRAGER, LUCIANO FERREIRA ; FARAH, BRENO QUINTELLA ; PEDROSA, RODRIGO PINTO . Effect of 12-week high-intensity interval training on hemodynamic variables at rest and during exercise in patients with obstructive sleep apnoea. JOURNAL OF HYPERTENSION 00, p. 1, 2024. Citações:7|4",
     "source_row": "295",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 10,
+    "posicao_docente": 1
   },
   {
     "id": "213",
@@ -5108,8 +5108,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINS-FILHO, OZEAS; AGUIAR, JOSÉ LUCAS PORTO ; SOARES GERMANO, ANTONIO H. ; VIEIRA DE ALMEIDA, JOSÉ RICARDO ; FELINTO DOS SANTOS, ELTON CARLOS ; LYRA, MARIA JULIA ; FARAH, BRENO QUINTELLA ; PEDROSA, RODRIGO PINTO . Effects of high-intensity interval training on subjective sleep quality and daytime sleepiness in patients with obstructive sleep apnea: A secondary analysis from randomized controlled trial.. SLEEP MEDICINE 121, p. 184-188, 2024. Citações:5|7",
     "source_row": "16",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 1
   },
   {
     "id": "214",
@@ -5132,8 +5132,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FEITOSA, S. B. ; BRAGA, M. C. A. ; ROCHA, K. B. S. ; FREITAS, E. C. V. ; ALMEIDA, M. D. S. S. ; LINS-FILHO, OZEAS ; WANDERLEY JUNIOR, R. S. ; BARROS, M. V. G. ; Hardman, C.M. ; QUEIROZ, D. R. . Does meeting recommendations for physical activity, screen time, and sleep increase the chance of better health perception in adolescents?. Motriz 31, p. 1-8, 2025.",
     "source_row": "210",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 10,
+    "posicao_docente": 6
   },
   {
     "id": "215",
@@ -5156,8 +5156,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE ALMEDIA, JOSÉ RICARDO VIEIRA ; BARROS, G. V. S. ; VALENTE, V. J. M. B. S. ; SANTANA, W. L. ; SANTOS, E. C. F. ; Aguiar, José Lucas ; FARAH, B. Q. ; LINS-FILHO, OZEAS . Effect of Physical Exercise on Sleep Quality and Depressive Symptoms in Adults: A Systematic Review and Meta-Analysis. SLEEP SCIENCE (IMPRESSO) 1, p. 1-12, 2025. Citações:2|3",
     "source_row": "171",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "216",
@@ -5180,8 +5180,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Aguiar, José Lucas ; LINS-FILHO, ODL. ; DE ALMEDIA, JOSÉ RICARDO VIEIRA ; SANTOS, E. C. F. ; KLINE, C. E. ; PEDROSA, RODRIGO P. ; FARAH, B. Q. . Effects of acute exercise performed at different times of day on respiratory, blood pressure, and cardiac autonomic modulation outcomes in patients with obstructive sleep apnea: a randomized crossover trial. JOURNAL OF HUMAN HYPERTENSION 1, p. 1-9, 2025. Citações:2|3",
     "source_row": "4",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "217",
@@ -5205,7 +5205,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "SAAVEDRA, J. M. ; LINS-FILHO, ODL. ; MENDELSON, M. ; ESCALANTE, Y. . Exercise Interventions in Obstructive Sleep Apnea: Program Features and Clinical Benefits. Current Pulmonology Reports 14, p. 14-31, 2025.",
     "source_row": "429",
     "numero_autores": 4,
-    "posicao_docente": 4
+    "posicao_docente": 2
   },
   {
     "id": "218",
@@ -5228,7 +5228,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, A. B. ; SANTOS, E. C. F. ; LINS-FILHO, ODL. ; Pedrosa, R.P. . Minimal changes in sleep parameters during overnight ambulatory blood pressure monitoring do not affect outcomes. Sleep and Breathing 29, p. 00-6, 2025. Citações:1",
     "source_row": "94",
-    "numero_autores": 3,
+    "numero_autores": 4,
     "posicao_docente": 3
   },
   {
@@ -5252,8 +5252,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "FASIHI, L. (Org.) ; AMARO-GAHETE, F. J. (Org.) ; LINS-FILHO, O. (Org.) ; FERNANDEZ-ESCABIAS, M. (Org.) . Aging and the Role of Exercise, Training, and Physical Activity. 1. ed. Tehran,: Teheranum: Universitas Allameh Tabataba'i, 2026.",
     "source_row": "208",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "220",
@@ -5276,8 +5276,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Aguiar, José Lucas ; ALMEIDA, J. R. V. ; FARAH, B. Q. ; LINS FILHO, OZEAS DE LIMA . Are physical activity recommendations suitable for patients with obstructive sleep apnea? A systematic review with meta-analysis.. Sleep Science (Online), v. 19, p. 1-16, 2026.",
     "source_row": "26",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "221",
@@ -5300,8 +5300,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FANK, F. ; ARTISMO, R. S. ; ROCHA, A. R. ; SANTANA, M. G. ; ESTEVES, A. M. ; LINS-FILHO, O. ; MATTE, D. L. ; MAZO, G. Z. . Effects of combined exercise and sleep hygiene on obstructive sleep apnea severity in older adults: a randomized controlled trial. SLEEP MEDICINE 144, p. 1-9, 2026.",
     "source_row": "204",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "222",
@@ -5324,8 +5324,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE ALMEIDA, JOSÉ RICARDO VIEIRA ; FARAH, BRENO QUINTELLA ; AGUIAR, JOSÉ LUCAS PORTO ; DOS SANTOS, ELTON CARLOS FELINTO ; DE ARANTES LIMA, VICTÓRIA DUARTE ; DOS SANTOS, ENRIQUE NASCIMENTO NAZÁRIO ; DOS SANTOS DE OLIVEIRA SILVA, NADJA SYLMARA ; GERMANO-SOARES, ANTÔNIO HENRIQUE ; SAAVEDRA, JOSE MIGUEL ; PEDROSA, RODRIGO PINTO ; DA SILVA FERREIRA, DANIELA KARINA ; LINS-FILHO, OZEAS . Effects of resistance training on obstructive sleep apnea severity: a randomized controlled trial. SLEEP MEDICINE 142, p. 1-7, 2026.",
     "source_row": "11",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "223",
@@ -5348,8 +5348,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALMEIDA, A. H. ; SILVA, C. E. L. E. ; ALMEIDA, P. S. ; SILVA, F. E. S. ; RITTI-DIAS, R. M. ; LINS-FILHO, ODL. ; FARAH, B. Q. . Factors associated with sleep quality and duration in mothers of children with autism spectrum disorder: a cross-sectional study. EINSTEIN (SÃO PAULO) 24, p. 1-9, 2026.",
     "source_row": "32",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "224",
@@ -5396,8 +5396,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUIMARAES, E. S. ; GABRIEL, RONALDO ; SÁ, ARTUR ; SOARES, RAFAEL ; P.F.R BANDEIRA ; TORQUATO, I. H. S. ; MOREIRA, H. ; MARQUES, M. M. ; GUIMARÃES, JAQUELINY . A Network Perspective of the Ecosystem?s Health Provision Spectrum in the Tourist Trails of UNESCO Global Geoparks: Santo Sepulcro and Riacho do Meio Trails, Araripe UGG (NE of Brazil). Geosciences 11, p. 1-29, 2021.",
     "source_row": "254",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 5
   },
   {
     "id": "226",
@@ -5420,8 +5420,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ALVES ; BANDEIRA, PAULO FELIPE RIBEIRO ; DE SOUZA FILHO, ANASTÁCIO NECO ; CLARK, CAIN CRAIG TRUMAN ; MOTA, JORGE AUGUSTO PINTO SILVA ; DUNCAN, MICHAEL JOSEPH ; DE LUCENA MARTINS, CLARICE MARIA . A Network Perspective on the Relationship Between Moderate to Vigorous Physical Activity and Fundamental Motor Skills in Early Childhood. Journal of Physical Activity & Health 18, p. 1-8, 2021. Citações:6|8",
     "source_row": "103",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "227",
@@ -5444,8 +5444,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, LUANNA GOMES ; DE BELTRÃO, IZABEL CRISTINA SANTIAGO LEMOS ; DE ARAUJO DELMONDES, GYLLYANDESON ; DE ALENCAR, CÍCERO DAMON CARVALHO ; DAMASCENO, SIMONE SOARES ; SILVA, NAILDO SANTOS ; MARTINS, ÁLISSAN KARINE LIMA ; BERTOLDI, RAFAELA ; KERNTOPF, MARTA REGINA ; BANDEIRA, PAULO FELIPE RIBEIRO . Beliefs and attitudes towards child epilepsy: A structural equation model. SEIZURE-EUROPEAN JOURNAL OF EPILEPSY, v. 84, p. 53-59, 2021. Citações:6|6",
     "source_row": "150",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "228",
@@ -5469,7 +5469,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "BERTOLDI, RAFAELA ; DA SILVA, MÔNIA APARECIDA ; RIBEIRO BANDEIRA, PAULO FELIPE ; BANDEIRA, DENISE RUSCHEL ; MAZO, JANICE ZARPELLON . Construction and Content Validity Evidences of Coping Inventory for Brazilian Paralympic Athletes in Competition Situations. International Journal of Disability Development and Education 68, p. 1-14, 2021. Citações:1|2",
     "source_row": "93",
     "numero_autores": 5,
-    "posicao_docente": 4
+    "posicao_docente": 3
   },
   {
     "id": "229",
@@ -5492,8 +5492,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, K. V. L. G. ; BANDEIRA, PAULO FELIPE RIBEIRO ; GUEUDEVILLE, R. S. ; LIMA, M. G. P. ; LIMA, A. K. A. . CUIDADO INTERDISICPLINAR NO CAPSi: SAÚDE MENTAL EM FOCO Autores. Revista de Extensão da Urca 1, p. 1-10, 2021.",
     "source_row": "490",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 2
   },
   {
     "id": "230",
@@ -5516,8 +5516,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "Veira, Nélio Barreto ; Nascimento, Yuri Mota do ; Figueiredo, Arian Santos ; Marques, Conceição Soraya Morais ; Vasconcelos, Felipe Coutinho ; Lima, Cinthia Oliveira ; Pereira, Maria Eveline do Nascimento ; Araújo, Crystianne Samara Barbosa ; Delmondes, Gyllyandeson de Araújo ; Gonçalves Júnior, Jucier ; BANDEIRA, PAULO FELIPE RIBEIRO . DEFICIÊNCIAS NUTRICIONAIS EM PACIENTES OBESOS MÓRBIDOS NO PRÉOPERATÓRIO DE GASTROPLASTIA. A Medicina imersa em um Mundo Globalizado em Rápida Evolução 2. 2ed.: Atena Editora, 2021, v. , p. 108-118.",
     "source_row": "533",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 11
   },
   {
     "id": "231",
@@ -5540,8 +5540,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA FILHO, A. N. ; BEZERRA, T. A. ; P.F.R BANDEIRA ; CABRAL, L. G. A. ; MORAES, J. F. V. N. ; MARTINS, C. M. L. ; CARVALHO, F. O. . Effects of a randomized controlled study on the behaviors of overweight schoolchildren. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-8, 2021. Citações:1",
     "source_row": "513",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 3
   },
   {
     "id": "232",
@@ -5564,8 +5564,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, C. M. L. ; WEBSTER, ELIZABETH KIPLING ; BANDEIRA, P. F. R. ; STAIANO, A. . Identifying Fundamental Motor Skills Building Blocks in Preschool Children From Brazil and the United States: A Network Analysis. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 1-20, 2021. Citações:4|3",
     "source_row": "315",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "233",
@@ -5588,8 +5588,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "RIBEIRO, PRICILA CRISTINA CORREA ; ALVARENGA, MARCO ANTÔNIO SILVA ; AZEVEDO, TIAGO GERALDO DE ; BANDEIRA, PAULO FELIPE RIBEIRO ; PEREIRA, ELDER GOMES ; MANSUR-ALVES, MARCELA ; ALVARES-TEODORO, JULIANA ; PEIXOTO, CAMILA BATISTA ; DINIZ, MARINA LUIZA NUNES ; FREITAS, SABRINA KELLY PESSOA DE ; TEODORO, MAYCOLN LEÔNI MARTINS . Impactos do avanço da pandemia de COVID-19 na saúde mental de profissionais de saúde. PSICO (PUCRS. ONLINE), v. 52, p. e41302-15, 2021.",
     "source_row": "419",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 11,
+    "posicao_docente": 4
   },
   {
     "id": "234",
@@ -5613,7 +5613,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "SAMPAIO, J. R. F. ; VIDAL, S. A. ; GOES, P. S. A. ; BANDEIRA, P. F. R. ; CABRAL FILHO, J. E. . Sociodemographic, Behavioral and Oral Health Factors in Maternal and Child Health: An Interventional and Associative Study from the Network Perspective. International Journal of Environmental Research and Public Health 18, p. 1-14, 2021. Citações:4",
     "source_row": "439",
     "numero_autores": 5,
-    "posicao_docente": 5
+    "posicao_docente": 4
   },
   {
     "id": "235",
@@ -5636,8 +5636,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; RIBEIRO BANDEIRA, PAULO FELIPE ; FILHO, ANASTÁCIO SOUZA ; BEZERRA, THAYNÃ ; CLARK, CAIN ; WEBSTER, ELIZABETH KIPLING ; MOTA, JORGE ; DUNCAN, MICHAEL . The combination of three movement behaviours is associated with object control skills, but not locomotor skills, in preschoolers. EUROPEAN JOURNAL OF PEDIATRICS 1, p. 1, 2021. Citações:17|19",
     "source_row": "326",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "236",
@@ -5660,8 +5660,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, S. ; P.F.R BANDEIRA ; GOMES, C. M. A. ; DEHKORDI, P. S. . The Test of Gross Motor Development-Third Edition: A Bifactor Model, Dimensionality, and Measurement Invariance. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 1-16, 2021. Citações:7|5",
     "source_row": "434",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "237",
@@ -5684,8 +5684,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PESSOA, MARIA LUIZA FELIX ; P.F.R BANDEIRA ; FELIX, E. ; SOUTO, D. ; MARTINS, C. M. L. . A six-month multicomponent intervention improves Down syndrome adolescents? physical fitness. SCIENCE & SPORTS 38, p. 1, 2022.",
     "source_row": "403",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 2
   },
   {
     "id": "238",
@@ -5708,8 +5708,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "SILVA, J. L. P. ; PASSOS, J. G. V. ; SOUSA, M. M. ; CORRADI, M. H. C. ; BANDEIRA, PAULO FELIPE RIBEIRO ; GUILHERMINO, C. S. ; AZEVEDO, T. G. ; ALVARENGA, M. A. S. . As Empresas Juniores Contribuem para Mudanças Pessoais em Universitários?Submissão: 23/10/2022 (fast track)Primeira Decisão Editorial: 28/12/2022Versão Final: 30/12/2022Aceito em: 30/12/2022Do Junior Enterprises Provide Personal Changes in University Students?¿Contribuyen las Empresas Junior a Cambios Personales en Estudiantes Universitarios?Como citar esse artigo: Silva, J. L. P., Passos, J. G. V. REVISTA PSICOLOGIA: ORGANIZAÇÕES E TRABALHO, v. 22, p. 2269-2280, 2022.",
     "source_row": "488",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "239",
@@ -5732,8 +5732,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "MENDONCA, G. C. ; SILVA ; P.F.R BANDEIRA ; FERNANDES, G. P. . AUTISMO: SUJEITO DO BULLIYNG. AUTISMO: SUJEITO DO BULLIYNG. 1ed.: , 2022, v. 1, p. 675-686.",
     "source_row": "340",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "240",
@@ -5756,8 +5756,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ALVES ; MONTERO, C. C. ; BANDEIRA, P. F. R. ; SOUZA FILHO, A. N. ; DUNCAN, M. J. ; MARTINS, C. M. L. . Biological, behavioral, and social correlates of executive function in low-income preschoolers: Insights from the perspective of the networks. APPLIED NEUROPSYCHOLOGY: CHILD 11, p. 1-9, 2022. Citações:2|4",
     "source_row": "101",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "241",
@@ -5780,8 +5780,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUIMARÃES, EDUARDO S. ; SÁ, ARTUR A. ; SOARES, RAFAEL C. ; BANDEIRA, PAULO FELIPE R. ; MOREIRA, HELENA ; GUIMARÃES, JAQUELINY R. S. ; DE LIMA JÚNIOR, FRANCISCO DO Ó ; GABRIEL, RONALDO C. D. . Classification of the Effort Index and Biomechanical Overload in Natural Trails of UNESCO Global Geoparks-A Network Perspective of Trails of the Araripe UGG (NE Brazil). International Journal of Environmental Research and Public Health 19, p. 14297, 2022. Citações:1|1",
     "source_row": "255",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "242",
@@ -5804,7 +5804,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ALVES ; SOUZA FILHO, ANASTÁCIO NECO DE ; PESSOA, MARIA LUIZA FELIX ; RIBEIRO BANDEIRA, PAULO FELIPE ; CABRAL, LUCIANA GATTO AZEVEDO ; MORAES, JOSÉ FERNANDO VILA NOVA DE ; MARTINS, CLARICE MARIA DE LUCENA ; CARVALHO, FERDINANDO OLIVEIRA . Effects of a multicomponent intervention on cardiovascular risk factors in overweight children: a randomized clinical trial in light of complex systems. INTERNATIONAL JOURNAL OF ENVIRONMENTAL HEALTH RESEARCH 33, p. 1-11, 2022. Citações:2|2",
     "source_row": "102",
-    "numero_autores": 6,
+    "numero_autores": 8,
     "posicao_docente": 4
   },
   {
@@ -5828,7 +5828,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "VANALI, R. C. ; BANDEIRA, P. F. R. ; BRITO-JUNIOR, F. E. ; BEZERRA, M. A. A. ; PINTO, F. J. M. . ESTILO DE VIDA E SAÚDE CORPORAL DE ADOLESCENTES ESCOLARES: UMA MODELAGEM DE EQUAÇÕES ESTRUTURAIS. Pesquisas e abordagens educativas em ciências da saúde. 3ed.Campina Grande: Amplla, 2022, v. 3, p. 96-108.",
     "source_row": "529",
-    "numero_autores": 3,
+    "numero_autores": 5,
     "posicao_docente": 2
   },
   {
@@ -5852,7 +5852,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "BERTOLDI, R. ; P.F.R BANDEIRA ; DA SILVA, MÔNIA APARECIDA ; MACHADO, W. L. ; MAZO, JANICE ZARPELLON ; BANDEIRA, DENISE RUSCHEL . Psychometric Evidence of the Coping Inventory for Brazilian Paralympic Athletes in Competition Situations. PAIDÉIA (USP. ONLINE), v. 32, p. 1-8, 2022. Citações:1",
     "source_row": "92",
-    "numero_autores": 4,
+    "numero_autores": 6,
     "posicao_docente": 2
   },
   {
@@ -5876,8 +5876,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MACHADO, S. T. S. ; LIMA, C. N. F. ; MACHADO, C. R. S. ; P.F.R BANDEIRA ; BATISTA, P. R. ; ALENCAR, C. D. C. ; NASCIMENTO, J. B. ; DELMONDES, G. A. ; BARROS, L. M. ; KERNTOPF, M. R. . RECURSOS NATURAIS COMO ALTERNATIVA TERAPÊUTICA EM UMA PERSPECTIVA DE GÊNEROS E URBANIZAÇÃO. ETHNOSCIENTIA 07, p. 27-50, 2022.",
     "source_row": "307",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 4
   },
   {
     "id": "246",
@@ -5900,8 +5900,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DUNCAN, MICHAEL J. ; MARTINS, CLARICE ; RIBEIRO BANDEIRA, PAULO FELIPE ; ISSARTEL, JOHANN ; PEERS, CAMERON ; BELTON, SARAHJANE ; O?CONNOR, NOEL E. ; BEHAN, STEPHEN . TGMD-3 short version: Evidence of validity and associations with sex in Irish children. JOURNAL OF SPORTS SCIENCES 40, p. 138-145, 2022. Citações:19|21",
     "source_row": "199",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 3
   },
   {
     "id": "247",
@@ -5925,7 +5925,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "FIORI, J. M. ; P.F.R BANDEIRA ; ZACCA, R. . The Impact of a Swimming Training Season on Anthropometrics, Maturation, and Kinematics in 12-Year-Old and Under Age-Group Swimmers: A Network Analysis. Frontiers In Sports And Active Living 4, p. 1, 2022. Citações:7|10",
     "source_row": "222",
     "numero_autores": 3,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "248",
@@ -5948,7 +5948,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "MENDONCA, G. C. ; BANDEIRA, P. F. R. ; SILVA, H. M. ; DUARTE, M. O. ; SILVA, I. O. M. ; FERNANDES, G. P. . TRANSTORNO DO ESPECTRO AUTISTA, HABILIDADES MOTORAS E COMPORTAMENTO DE MOVIMENTO ? 24 HORAS. REFLEXÕES E INOVAÇÕES NACIONAIS DO SÉCULO XXI EM PEDAGOGIA DA EDUCAÇÃO. 1ed.: , 2022, v. , p. 122-132.",
     "source_row": "341",
-    "numero_autores": 3,
+    "numero_autores": 6,
     "posicao_docente": 2
   },
   {
@@ -5972,7 +5972,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FELIN FOCHESATTO, CAMILA ; CRISTI-MONTERO, CARLOS ; BANDEIRA, PAULO FELIPE ; BRAND, CAROLINE ; F. DIAS, ARIELI ; R. BANDEIRA, DENISE ; MOTA, JORGE ; ARAUJO GAYA, ADROALDO CEZAR ; REIS GAYA, ANELISE . A network analysis involving mental difficulties, cognition, physical fitness, 24-hour movement components, fatness, and sociodemographic factors in children. Journal of Exercise Science & Fitness 24, p. 1-12, 2023. Citações:6|7",
     "source_row": "211",
-    "numero_autores": 4,
+    "numero_autores": 9,
     "posicao_docente": 3
   },
   {
@@ -5996,8 +5996,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VASQUES, D. M. ; TUCHER, G. ; CASTRO, C. D. ; PAIXAO, D. A. ; BANDEIRA, P. F. R. ; CASTRO, F. A. S. . Anthropometry, Tactical Position, Performance Parameters and Experience in Water Polo: Network Analysis. Apunts Educacion Fisica Y Deportes 152, p. 62-69, 2023.",
     "source_row": "532",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "251",
@@ -6020,8 +6020,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LIMA, L. M. P. ; NASCIMENTO, J. Y. V. ; LIMA, C. V. P. ; GIUDICELLI, B. B. ; BANDEIRA, P. F. R. ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; CUNHA JUNIOR, A. T. ; LUZ, L. G. O. . ASSOCIAÇÃO DO COMPORTAMENTO SEDENTÁRIO COM O SEXO E O TIPO DE ESCOLA EM ADOLESCENTES BRASILEIROS. In: luzLUZ, Leonardo Gomes de Oliveira JÚNIOR; Arnaldo Tenório da Cunha. (Org.). Escola e promoção da saúde. Evidências e possibilidades para demo- cratizar a participação em atividades físicas na infância a na adolescên- cia.. 65ed.Arapiraca: Editora Performance, 2023, v. 1, p. 1-48.",
     "source_row": "287",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 5
   },
   {
     "id": "252",
@@ -6044,8 +6044,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "LIMA, C. V. P. ; NASCIMENTO, J. Y. V. ; LIMA, L. M. P. ; GIUDICELLI, B. B. ; BANDEIRA, PAULO FELIPE RIBEIRO ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; CUNHA JUNIOR, A. T. ; LUZ, L. G. O. . ASSOCIAÇÃO DO NÍVEL DE ATIVIDADE FÍSICA COM O SEXO E O TIPO DE ESCOLA EM 71.902 ADOLESCENTES BRASILEIROS. In: LUZ, Leonardo Gomes de Oliveira JÚNIOR,; Arnaldo Tenório da Cunha (organizadores).. (Org.). Escola e promoção da saúde. Evidências e possibilidades para demo- cratizar a participação em atividades físicas na infância a na adolescên- cia.. 1ed.Arapiraca: Editora Performance, 2023, v. 1, p. 1-190.",
     "source_row": "280",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 5
   },
   {
     "id": "253",
@@ -6068,8 +6068,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA FILHO, A. N. ; BEZERRA, T. A. ; BANDEIRA, P. F. R. ; CABRAL, L. G. ; BRITO, A. ; GUERRA, P. H. ; MARTINS, C. M. L. ; CARVALHO, F. . Association between the environment for physical activity in public schools and childhood obesity: a view in the light of complex systems. Ciência & Saúde Coletiva 28, p. 1-14, 2023. Citações:3",
     "source_row": "512",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 3
   },
   {
     "id": "254",
@@ -6092,7 +6092,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALVARENGA, MARCO ANTÔNIO SILVA ; BANDEIRA, PAULO FELIPE RIBEIRO ; GUILHERMINO, CAROLLINA SOUZA ; DE AZEVEDO, TIAGO GERALDO ; OLÍMPIO, KELLY FERNANDES ; MANSUR-ALVES, MARCELA ; BUCHANAN, TOM . Cross-cultural adaptation of the web-based executive functioning questionnaire for Brazilian sample (Webexec-BR). Applied Neuropsychology-Adult, v. 30, p. 1-11, 2023. Citações:3",
     "source_row": "40",
-    "numero_autores": 5,
+    "numero_autores": 7,
     "posicao_docente": 2
   },
   {
@@ -6116,8 +6116,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALVARENGA, M. A. S. ; GUILHERMINO, CAROLLINA SOUZA ; AZEVEDO, T. G. ; MANSUR-ALVES, MARCELA ; ALVARES-TEODORO, JULIANA ; RIBEIRO, P. C. C. ; TEODORO, M. L. M. ; BANDEIRA, PAULO FELIPE RIBEIRO . Estudo Longitudinal sobre Saúde Mental de Estudantes Universitários e a Pandemia de COVID-19: Comparações e Perspectivas. Revista Interamericana de Psicología/Interamerican Journal of Psychology 57, p. 1-24, 2023.",
     "source_row": "38",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "256",
@@ -6140,8 +6140,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NASCIMENTO, J. Y. V. ; LIMA, C. V. P. ; GIUDICELLI, B. B. ; LIMA, L. M. P. ; BANDEIRA, P. F. R. ; PINHEIRO, I. K. A. S. ; MAGALHAES, K. C. S. ; SILVA, D. R. P. ; MARTINS, C. M. L. ; HENRIQUE, R. S. ; CUNHA JUNIOR, A. T. ; LUZ, L. G. O. . Factors associated with active and sedentary behaviors in Brazilian adolescents: a network analysis. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 28, p. 1-10, 2023. Citações:5",
     "source_row": "355",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 5
   },
   {
     "id": "257",
@@ -6164,8 +6164,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PEREIRA, ELENICE DE SOUSA ; THUANY, MABLINY ; BANDEIRA, PAULO FELIPE RIBEIRO ; GOMES, THAYSE NATACHA Q. F. ; DOS SANTOS, FERNANDA KARINA . How Do Health, Biological, Behavioral, and Cognitive Variables Interact over Time in Children of Both Sexes? A Complex Systems Approach. International Journal of Environmental Research and Public Health 20, p. 2728-19, 2023. Citações:3",
     "source_row": "397",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "258",
@@ -6188,8 +6188,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, SEDIGHEH ; RIBEIRO BANDEIRA, PAULO FELIPE ; DEHKORDI, PARVANEH SHAMSIPOUR ; SOHRABI, FATEMEH ; MARTINS, CLARICE ; DUNCAN, MICHAEL J. ; HARDY, LOUISE L. ; SHAMS, AMIR . Investigating the Construct Validity and Reliability of the Test of Motor Competence Across Iranians? Lifespan. PERCEPTUAL AND MOTOR SKILLS 1, p. 003151252311526-22, 2023. Citações:1|1",
     "source_row": "438",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "259",
@@ -6212,8 +6212,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; ROMO-PEREZ, VICENTE ; WEBSTER, E. KIPLING ; DUNCAN, MICHAEL ; LEMOS, LUÍS FILIPE ; STAIANO, AMANDA E. ; OKELY, ANTHONY ; MAGISTRO, DANIELE ; CARLEVARO, FABIO ; BARDID, FARID ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; ESTEVAN, ISAAC ; MOTA, JORGE ; NING, KE ; ROBINSON, LEAH E. ; LENOIR, MATTHIEU ; QUAN, MINGHUI ; VALENTINI, NADIA C. ; BANDEIRA, P. F. R. ; et.al . Motor Competence and Body Mass Index in the Preschool Years: A Pooled Cross-Sectional Analysis of 5545 Children from Eight Countries. SPORTS MEDICINE 10, p. 1-12, 2023. Citações:25|25",
     "source_row": "321",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "260",
@@ -6237,7 +6237,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "SILVA, H. M. ; SOUSA, D. Q. O. ; MENDONCA, G. C. ; BANDEIRA, P. F. R. ; DIAS, M. A. . NCLUSIVE PHYSICAL EDUCATION IN THE PERSPECTIVE OF COMPLEXITY: A NARRATIVE REVIEW STUDY. MACABÉA- REVISTA ELETRONICA DO NETLLI, v. 12, p. 55-68, 2023.",
     "source_row": "479",
     "numero_autores": 5,
-    "posicao_docente": 2
+    "posicao_docente": 4
   },
   {
     "id": "261",
@@ -6260,8 +6260,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA, ALESANDRA ARAÚJO ; BANDEIRA, PAULO FELIPE RIBEIRO ; VALE, SUSANA MARIA COELHO GUIMARÃES ; DA CUNHA, GLACITHANE LINS ; MOTA, JORGE AUGUSTO PINTO SILVA ; DE LUCENA MARTINS, CLARICE MARIA . Paths towards a healthier among short and adequate sleepers: A pathway network analysis considering movement behaviors in low-income preschoolers. AMERICAN JOURNAL OF HUMAN BIOLOGY 1, p. 1-11, 2023. Citações:1",
     "source_row": "183",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "262",
@@ -6284,8 +6284,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, M. A. A. ; PINHEIRO, J. K. ; BARBALHO, E. V. ; VASCONCELOS, A. A. ; BANDEIRA, P. F. R. ; PINTO, F. J. M. . PERCEIVED BARRIERS TO THE PRACTICE OF PHYSICAL ACTIVITY BY SCHOOL TEENAGERS: A NETWORK ANALYSIS. Revista Interfaces: Saúde, Humanas e Tecnologia 11, p. 1798-1807, 2023.",
     "source_row": "95",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "263",
@@ -6308,8 +6308,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ; SOUZA FILHO, ANASTÁCIO ; QUIRINO, NATÁLIA ; BANDEIRA, PAULO ; CABRAL, LUCIANA ; REUTER, CÉZANE ; MARTINS, CLARICE ; CARVALHO, FERDINANDO . Physical Activity, Sedentary Behaviour and Cardiovascular Risk Factors in Overweight Low-Income Schoolchildren: A Complex System Perspective. Obesities 3, p. 86-96, 2023. Citações:3|4",
     "source_row": "100",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "264",
@@ -6332,8 +6332,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "AVILA, F. M. ; BANDEIRA, P. F. R. ; FURCIN, H. C. ; ZANON, R. B. . Psicologia no Brasil: questões formativas, históricas, profissionais e sociais. O PECS® NA INCLUSÃO DE ESTUDANTES COM AUTISMO: AVALIAÇÃO DE UMA FORMAÇÃO DE PROFESSORES. 1ed.Jundiaí: Paco Editora, 2023, v. 1, p. 209-228.",
     "source_row": "69",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "265",
@@ -6356,8 +6356,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, NAILDO SANTOS ; MELLO, JÚLIO BRUGNARA ; BANDEIRA, PAULO FELIPE RIBEIRO ; MOTA, JORGE ; GAYA, ADROALDO CEZAR ARAÚJO ; GAYA, ANELISE REIS . Related-factors of social support for students? physical activity in a network perspective. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 28, p. 1-8, 2023. Citações:1",
     "source_row": "499",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "266",
@@ -6380,8 +6380,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARAUJO, A. G. R. ; DA SILVA, MÔNIA APARECIDA ; BANDEIRA, P. F. R. ; GILLESPIE-LYNCH, K. ; ZANON, R. B. . Stigma and knowledge about autism in Brazil: A psychometric and intervention study. Autism 1, p. 1-14, 2023. Citações:6|9",
     "source_row": "56",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "267",
@@ -6404,8 +6404,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, S. ; P.F.R BANDEIRA ; MARTINS, CLARICE ; HARDY, LOUISE L. ; SHAMS, AMIR ; DEHKORDI, P. S. . The Körperkoordinations Test Für Kinder for Iranian Youth: Factor Structure, Measurement Invariance, and Covariates. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 11, p. 1-23, 2023.",
     "source_row": "435",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "268",
@@ -6429,7 +6429,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "THUANY, MABLINY ; BANDEIRA, PAULO FELIPE R. ; VIEIRA, D. ; WEISS, K. ; KNECHTLE, B. ; GOMES, T. N. . The subject-environment interplay between runners from different Brazilian macro-regions. Frontiers in Psychology 14, p. 1-7, 2023. Citações:1|2",
     "source_row": "525",
     "numero_autores": 6,
-    "posicao_docente": 4
+    "posicao_docente": 2
   },
   {
     "id": "269",
@@ -6452,8 +6452,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, A. R. ; Paulo F R Bandeira ; SILVA, M. A. C. ; CUNHA, G. L. ; PEREIRA, D. F. ; MARTINS, C. M. L. . Twenty-Four-Hour Movement Behaviors, Fitness, and Adiposity in Preschoolers: A Network Analysis. Obesities 3, p. 36-45, 2023. Citações:3|3",
     "source_row": "515",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "270",
@@ -6476,8 +6476,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "SILVA, L. G. ; OLIVEIRA, C. J. ; MATOS, J. H. F. ; RIBEIRO BANDEIRA , PAULO FELIPE ; GOMES, E. B. ; OLIVEIRA, J. D. ; BELTRAO, I. C. S. L. ; SILVA, A. C. ; MARTINS, A. K. L. . USO DO BRINQUEDO TERAPÊUTICO NA ASSISTÊNCIA DE ENFERMAGEM À CRIANÇA EM IDADE ESCOLAR: REVISÃO DE ESCOPO. In: Caroline Taiane Santos da Silva, Luis Filipe Oliveira Duran, Nathalia Dantas Carvalho Costa. (Org.). Vida e Saúde da Criança e do Adolescente: aspectos multidisciplinares. 1ed.SALVADOR: Editora Humanize, 2023, v. 1, p. 57-72.",
     "source_row": "492",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 4
   },
   {
     "id": "271",
@@ -6500,8 +6500,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, CAYO VINNYCIUS PEREIRA ; YWGNE, JOSÉ ; THUANY, MABLINY ; ARAUJO, RAPHAEL H. O. ; SILVA, ELLEN C. M. ; MELO, JOÃO C. N. ; BANDEIRA, PAULO FELIPE R ; LUZ, LEONARDO G. O. ; SILVA, DANILO R. . What are the correlates of intention to be physically active in Brazilian adolescents? A network analysis. BMC PUBLIC HEALTH 23, p. 1-10, 2023. Citações:2|3",
     "source_row": "282",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 7
   },
   {
     "id": "272",
@@ -6524,8 +6524,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "REIS, LUIZA NAUJORKS ; REUTER, CEZANE PRISCILA ; BERGMANN, GABRIEL GUSTAVO ; MOTA, JORGE ; GAYA, ADROALDO CEZAR ARAUJO ; BANDEIRA, PAULO FELIPE ; DE BORBA SCHNEIDERS, LETÍCIA ; FELIN FOCHESATTO, CAMILA ; BRAND, CAROLINE ; GAYA, ANELISE REIS . 24-hour movement components, cardiorespiratory fitness and cardiometabolic risk in children: a network perspective. INTERNATIONAL JOURNAL OF ENVIRONMENTAL HEALTH RESEARCH 34, p. 1-10, 2024.",
     "source_row": "415",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 6
   },
   {
     "id": "273",
@@ -6548,8 +6548,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALVARENGA, MARCO ANTÔNIO SILVA ; ALI, AMIRA MOHAMMED ; GUILHERMINO, CAROLLINA SOUZA ; DE AZEVEDO, TIAGO GERALDO ; OLÍMPIO, KELLY FERNANDES ; KERSUL, CAMILA ; DA CUNHA, GLACITHANE LINS ; ALVARES-TEODORO, JULIANA ; RIBEIRO, PRICILA CRISTINA CORREA ; MANSUR-ALVES, MARCELA ; TEODORO, MAYCOLN LÊONI MARTINS ; BANDEIRA, PAULO FELIPE RIBEIRO . A Cross-Sectional Network Analysis Study Applied to the Depression Anxiety Stress Scale-21 (DASS-21): A New Factor Revealed. Mental Illness 2024, p. 1-13, 2024. Citações:7|1",
     "source_row": "39",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "274",
@@ -6572,8 +6572,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SCHNEIDERS, LETÍCIA BORBA ; BANDEIRA, PAULO FELIPE RIBEIRO ; GAYA, ANELISE REIS ; ÀLVAREZ, CRISTIAN ; BRAZO-SAYAVERA, JAVIER ; CRISTI-MONTERO, CARLOS ; BORFE, LETICIA ; FOCHESSATO, CAMILA FELIN ; BRAND, CAROLINE ; CORBELLINI, VALERIANO ANTONIO ; RENNER, JANE DAGMAR POLLO ; REUTER, CÉZANE PRISCILA . A multicomponent intervention program modifies the cluster of insulin biomarkers, body composition, physical fitness, and behaviors in adolescents with overweight and obesity: a network perspective. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) 24, p. 1-12, 2024.",
     "source_row": "468",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 2
   },
   {
     "id": "275",
@@ -6596,8 +6596,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "YWGNE, JOSÉ ; LUZ, LEONARDO G. O. ; THUANY, MABLINY ; LIMA, CAYO ; ARAUJO, RAPHAEL ; SILVA, ELLEN ; MAGALHÃES, KLEBERTON ; BANDEIRA, PAULO ; SILVA, DANILO R. . An ecological view on the correlates of sedentary behavior in Brazilian adolescents: a cross-sectional study with network analysis. Journal of Activity, Sedentary and Sleep Behaviors 3, p. 1-10, 2024.",
     "source_row": "544",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "276",
@@ -6620,8 +6620,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA, THAYNÃ ; ESTEBAN-CORNEJO, IRENE ; GOULART, NATALIA ; MOTA, JORGE ; SOUZA FILHO, ANASTÁCIO ; CLARK, CAIN C. T. ; BANDEIRA, PAULO ; DE LUCENA MARTINS, CLARICE MARIA . Are there associations between sedentary time inside and outside preschools with preschoolers? executive function?. CHILD NEUROPSYCHOLOGY 31, p. 1-12, 2024. Citações:4|4",
     "source_row": "99",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "277",
@@ -6644,7 +6644,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BANDEIRA, PAULO FELIPE RIBEIRO; LEMOS, LUÍS FILIPE ; ESTEVAN, ISAAC ; WEBSTER, ELISABETH KIPLING ; CLARK, CAIN TRUMAN ; DUNCAN, MICHAEL JOSEPH ; MOTA, JORGE AUGUSTO ; MARTINS, CLARICE LUCENA . Are we assessing motor competence? Evidence-informed constructs for motor competence in preschoolers through an Exploratory Graph Analysis. JOURNAL OF SPORTS SCIENCES 42, p. 1-8, 2024. Citações:5|5",
     "source_row": "6",
-    "numero_autores": 1,
+    "numero_autores": 8,
     "posicao_docente": 1
   },
   {
@@ -6668,8 +6668,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FERREIRA DA SILVA, LARA SUELE ; ARRUDA ALENCAR, MICHELLY ; CORREIA DA SILVA, MORGANA ALVES ; RIBEIRO BANDEIRA, PAULO FELIPE . Associação entre comportamentos de movimento 24 horas e ansiedade em crianças após o isolamento social. REVISTA DE CIENCIAS DE LA ACTIVIDAD FÍSICA 25, p. 1-17, 2024.",
     "source_row": "214",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "279",
@@ -6692,7 +6692,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA FILHO, ANASTÁCIO NECO DE ; BEZERRA, THAYNÃ ALVES ; BANDEIRA, PAULO FELIPE RIBEIRO ; CABRAL, LUCIANA GATTO ; BRITO, ANDRÉ ; GUERRA, PAULO HENRIQUE ; MARTINS, CLARICE MARIA DE LUCENA ; CARVALHO, FERDINANDO OLIVEIRA . Association between the environment for physical activity in public schools and childhood obesity: a view in the light of complex systems. Ciência & Saúde Coletiva 29, p. 1-8, 2024. Citações:1",
     "source_row": "514",
-    "numero_autores": 5,
+    "numero_autores": 8,
     "posicao_docente": 3
   },
   {
@@ -6716,7 +6716,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SALAMI, S. ; BANDEIRA, P. F. R. ; MASHHADI, M. R. ; DEHKORDI, P. S. ; LUZ, L. G. O. ; MARTINS, C. M. L. ; HARDY, LOUISE L. ; DUNCAN, M. . Associations between Biological Maturation, Chronological Age, Body Mass Index, Sex, and Motor Competence in Prepubertal Children: A Network Analysis. Children-Basel, v. 11, p. 1-14, 2024. Citações:9|5",
     "source_row": "433",
-    "numero_autores": 2,
+    "numero_autores": 8,
     "posicao_docente": 2
   },
   {
@@ -6740,8 +6740,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RITER, H. ; VESCOVI, G. ; ALMEIDA, M. L. ; BANDEIRA, P. F. R. ; DA SILVA, MÔNIA APARECIDA ; FRIZZO, G. B. . Changes in children’s pattern of digital media use and parental variables during the COVID-19 pandemic. Escritos de Psicología - Psychological Writings, v. 17, p. 84-95, 2024.",
     "source_row": "421",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 4
   },
   {
     "id": "282",
@@ -6764,8 +6764,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; J.G,Mota ; LEMOS, N. B. A. G. ; SILVA, M. A. C. ; SILVA, T. M. ; CARVALHO, F. O. ; BANDEIRA, P. F. R. ; LEMOS, LUÍS FILIPE . Compliance with the 24-h movement behaviors guidelines among urban and rural Brazilian preschoolers. AMERICAN JOURNAL OF HUMAN BIOLOGY 36, p. 1-12, 2024.",
     "source_row": "319",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "283",
@@ -6788,8 +6788,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUSA, F. C. ; SAMPAIO, L. R. L. ; GADELHA, N. A. S. ; BANDEIRA, PAULO FELIPE RIBEIRO ; DANTAS, T. P. ; VIDAL, E. C. F. ; MACEDO, L. F. R. ; ABREU, R. N. D. C. . CUSTOS DIRETOS COM FERIDAS CRÔNICAS EM SERVIÇO AMBULATORIAL DE UMA UNIVERSIDADE PÚBLICA NO NORDESTE BRASILEIRO. REVISTA ENFERMAGEM ATUAL IN DERME 98, p. 1-11, 2024.",
     "source_row": "509",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 4
   },
   {
     "id": "284",
@@ -6812,8 +6812,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LEMOS, NATÁLIA BATISTA ALBUQUERQUE GOULART ; CARSON, VALERIE ; HOWARD, STEVEN ; CRISTI'MONTERO, CARLOS ; DA CUNHA, GLACITHANE LINS ; MOTA, JÉSSICA GOMES ; OKELY, ANTONY ; BANDEIRA, PAULO FELIPE RIBEIRO ; DE LUCENA MARTINS, CLARICE MARIA . Evidence of the validity of the child self-regulation & behaviour questionnaire for the Brazilian context. Infant and Child Development (Print) 33, p. 1-16, 2024.",
     "source_row": "274",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "285",
@@ -6837,7 +6837,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "DA SILVA, MORGANA ALVES CORREIA ; MOTA, JÉSSICA GOMES ; LEMOS, NATÁLIA BATISTA ALBUQUERQUE GOULART ; MARTINS, CLARICE MARIA DE LUCENA ; BANDEIRA, PAULO FELIPE RIBEIRO . Evidence of validity of the Head-Toes-Knees-Shoulders Revised (HTKS-R) for Brazilian children. CHILD NEUROPSYCHOLOGY 30, p. 1-12, 2024. Citações:2|2",
     "source_row": "152",
     "numero_autores": 5,
-    "posicao_docente": 4
+    "posicao_docente": 5
   },
   {
     "id": "286",
@@ -6860,8 +6860,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALENCAR, MICHELLY ARRUDA ; SILVA, MORGANA ALVES CORREIA DA ; NUNES, ANA CLARA CASSIMIRO ; SILVA, LARA SUELE FERREIRA DA ; SILVA, MARIA JANAINE CORREIA DA ; SILVA, NATALI PEREIRA DA ; BANDEIRA, PAULO FELIPE RIBEIRO . INVESTIGANDO VIAS DE INTERVENÇÕES ENTRE COMPORTAMENTO DE MOVIMENTO 24 HORAS E FATORES SOCIODEMOGRÁFICOS: APLICAÇÃO DO ALGORITMO DIJKSTRA. Revista Interfaces: Saúde, Humanas e Tecnologia 12, p. 1-10, 2024.",
     "source_row": "31",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "287",
@@ -6884,8 +6884,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; VALENTINI, NADIA C. ; SÄÄKSLAHTI, ARJA ; AFRICA, EILEEN K. ; WEBSTER, E. KIPLING ; NOBRE, GLAUBER ; ROBINSON, LEAH E. ; DUNCAN, MICHAEL ; TORTELLA, PATRIZIA ; BANDEIRA, PAULO F. ; BARNETT, LISA M. . Motor Competence as Key to Support Healthy Development of 3- to 5-Year-Old Children: An Expert Statement on Behalf of the International Motor Development Research Consortium. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 12, p. 1-18, 2024. Citações:11|1",
     "source_row": "322",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 10
   },
   {
     "id": "288",
@@ -6908,8 +6908,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUARIGLIA, DÉBORA ALVES ; FRANCISQUINHO, MARIANE LAMIN ; DOMINGUES, WAGNER JORGE RIBEIRO ; CARVALHO, FERDINANDO OLIVEIRA ; BANDEIRA, PAULO FELIPE RIBEIRO . O USO DE PRESERVATIVO EM UNIVERSITÁRIOS(AS) BRASILEIROS(AS). REVISTA BRASILEIRA DE SEXUALIDADE HUMANA 35, p. 1161, 2024.",
     "source_row": "249",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "289",
@@ -6932,8 +6932,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, C. L. ; SANTOS, T. A. ; BANDEIRA, P. F. R. ; MUSSI, F. C. ; SANTOS, H. S. ; MOURA, L. P. ; OLIVIERA, J. S. B. ; ALMEIDA, B. G. . Occupational violence in the nursing field during the pandemic: a network analysis. Ciência & Saúde Coletiva 29, p. 1-12, 2024. Citações:8|3",
     "source_row": "474",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 8,
+    "posicao_docente": 3
   },
   {
     "id": "290",
@@ -6956,8 +6956,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PORTO, BRUNO DE ALBUQUERQUE ; NASCIMENTO, JOSÉ YWGNE VIEIRA DO NASCIMENTO ; GIUDICELLI, BRUNO BARBOSA ; PINHEIRO, INGRID KELLY ALVES DOS SANTOS ; ASSIS, VANNINA OLIVEIRA ; BANDEIRA, PAULO FELIPE RIBEIRO ; SILVA, DANILO RODRIGUES PEREIRA DA ; LUZ, LEONARDO GOMES DE OLIVEIRA . Physical activity and sedentary behavior of adolescents in public schools: a network analysis. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 29, p. 1-13, 2024. Citações:1",
     "source_row": "407",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "291",
@@ -6980,8 +6980,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GOMES GONÇALVES, JÉSSICA ; LUZ, LEONARDO ; BANDEIRA, PAULO FELIPE ; DOS PRAZERES, THALIANE ; LIMA, VICTOR ; MAIA, DOUGLAS ; DOS SANTOS, TONY ; GAYA, ANELISE ; DOS SANTOS, MARCOS ANDRÉ ; HENRIQUE, RAFAEL . Psychometric properties of the knowledge and understanding questionnaire of the canadian assessment of physical literacy-2 in low-income brazilian children. RETOS 58, p. 291-298, 2024. Citações:2",
     "source_row": "243",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 3
   },
   {
     "id": "292",
@@ -7004,8 +7004,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; WEBSTER, ELIZABETH K. ; ROMO'PEREZ, VICENTE ; DUNCAN, MICHAEL ; LEMOS, LUÍS FILIPE ; STAIANO, AMANDA ; OKELY, ANTHONY ; MAGISTRO, DANIELE ; CARLEVARO, FABIO ; BARDID, FARID ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; ESTEVAN, ISAAC ; MOTA, JORGE ; NING, KE ; ROBINSON, LEAH E. ; LENOIR, MATTHIEU ; QUAN, MINGHUI ; VALENTINI, NADIA ; BANDEIRA, P. F. R. ; et.al . Sex differences in 3- to 5-year-old children's motor competence: A pooled cross-sectional analysis of 6241 children. SCANDINAVIAN JOURNAL OF MEDICINE & SCIENCE IN SPORTS 34, p. 1-14, 2024. Citações:18|6",
     "source_row": "324",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "293",
@@ -7028,8 +7028,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LEAL, MARINA GONÇALVES ; LUZ, JOSÉ EDUARDO DOS MARTÍRIOS ; SANTOS, ANA KARIELE DA SILVA ; COSTA, CICERO LUCIANO ALVES ; BANDEIRA, PAULO FELIPE RIBEIRO ; MEIRA, CASSIO DE MIRANDA ; BONUZZI, GIORDANO MARCIO GATINHO . Spaced Use of Social Media Apps Among Motor Practice Trials Impacts Performance Without Influencing Mental Fatigue and Motor Learning. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 13, p. 1-14, 2024. Citações:2",
     "source_row": "269",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "294",
@@ -7053,7 +7053,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "BORFE, LETICIA ; REUTER, CÉZANE PRISCILA ; BANDEIRA, PAULO FELIPE RIBEIRO ; MARTINS, CLARICE ; BRAND, CAROLINE ; GAYA, ANELISE REIS . WEB OF TRANSFORMATIONS: impact of multicomponent intervention on the relationship between sociodemographic indicators, changes in body composition, cardiorespiratory fitness and biochemical markers in adolescents with overweight and obesity. INTERNATIONAL JOURNAL OF ENVIRONMENTAL HEALTH RESEARCH 34, p. 1-10, 2024. Citações:1|1",
     "source_row": "107",
     "numero_autores": 6,
-    "posicao_docente": 5
+    "posicao_docente": 3
   },
   {
     "id": "295",
@@ -7076,8 +7076,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "P.F.R BANDEIRA; ESTEVAN, ISAAC ; DUNCAN, MICHAEL ; LENOIR, MATTHIEU ; LEMOS, L. ; ROMO'PEREZ, VICENTE ; VALENTINI, NADIA ; MARTINS, CLARICE . A Multilayer Network Model for Motor Competence from the View of the Science of Complexity. SPORTS MEDICINE 2, p. 245-254, 2025. Citações:8",
     "source_row": "19",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 1
   },
   {
     "id": "296",
@@ -7100,8 +7100,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DOS CRUZ, RAFAEL SANTOS ; NUNES, ANA CLARA CASSIMIRO ; RODRIGUES DOS SANTOS, JOÃO PAULO ; TAVARES, VAGNER DEUEL DE O. ; RAMOS, ISABELA ALMEIDA ; FONTELES, ANDRÉ IGOR ; BANDEIRA, PAULO FELIPE RIBEIRO ; DE MARTINS, CLARICE MARIA LUCENA ; BROWNE, RODRIGO ALBERTO VIEIRA . Association Between 24-h Movement Behavior, Physical Fitness, and Inhibitory Control in School Adolescents: A Complex Network Analysis. AMERICAN JOURNAL OF HUMAN BIOLOGY 37, p. 1-12, 2025.",
     "source_row": "196",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 9,
+    "posicao_docente": 7
   },
   {
     "id": "297",
@@ -7124,8 +7124,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA SILVA, MORGANA ALVES CORREIA ; DE LUCENA MARTINS, CLARICE MARIA ; ALENCAR, MICHELLY ALENCAR ; FIRMINO, PAULO RENATO ALVES ; BANDEIRA, PAULO FELIPE RIBEIRO . Association Between Motor Competence, Executive Functions, and Self-Regulation: A Complex Systems Approach. AMERICAN JOURNAL OF HUMAN BIOLOGY 37, p. 1-8, 2025.",
     "source_row": "151",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "298",
@@ -7148,8 +7148,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUTO, GABRIEL COSTA ; NUNES, ANA CLARA CASSIMIRO ; BROWNE, RODRIGO ALBERTO VIEIRA ; FREIRE, YURI ALBERTO ; BANDEIRA, PAULO FELIPE RIBEIRO ; COSTA, EDUARDO CALDAS . Associations between fitness, movement behaviors, and immediate post-exercise blood pressure in older adults: A network perspective. PLoS One 20, p. e0329280-15, 2025.",
     "source_row": "511",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "299",
@@ -7172,8 +7172,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CLEMENTE, M. P. ; PINTO, A. G. A. ; BANDEIRA, P. F. R. . Autism Spectrum Disorder and Assistive Technologies in Primary Care: An Integrative Review. Saúde Coletiva 16, p. 1-7, 2025.",
     "source_row": "135",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "300",
@@ -7196,8 +7196,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CALIXTO, M. N. ; NUNES, A. C. C. ; BANDEIRA, P. F. R. ; ALENCAR, M. A. ; SILVA, H. M. . CLIMA DE MOTIVAÇÃO PARA MAESTRIA EM UMA INTERVENÇÃO MOTORA PRÉ-ESCOLAR: UM RELATO DE EXPERIÊNCIA SOBRE AS IMPLICAÇÕES DESSA ABORDAGEM METODOLÓGICA. Revista de Extensão da Urca 1, p. 1-9, 2025.",
     "source_row": "111",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "301",
@@ -7220,8 +7220,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUILHERMINO, C. S. ; A-ARAUJO, B. B. ; AZEVEDO, T. G. ; SILVA, J. L. P. ; HAUCK FILHO, N. ; BANDEIRA, P. F. R. ; TONDIN, C. F. ; ALVARENGA, M. A. S. . Cross-Cultural Adaptation of the Short Dark Tetrad (SD4) in the Brazilian Context. Psychological Test Adaptation and Development 6, p. 77, 2025. Citações:3",
     "source_row": "252",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 6
   },
   {
     "id": "302",
@@ -7244,8 +7244,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, NAILDO SANTOS ; GUERRA, PAULO HENRIQUE ; BANDEIRA, PAULO FELIPE RIBEIRO ; MELLO, JÚLIO BRUGNARA ; GAYA, ADROALDO . Instruments for evaluating parental support for the practice of physical activity in children and adolescents: A scoping review. REVISTA PAULISTA DE PEDIATRIA (ONLINE), v. 43, p. 1-9, 2025.",
     "source_row": "498",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "303",
@@ -7268,7 +7268,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALMEIDA, MAÍRA LOPES ; MALLMANN, MANOELA YUSTAS ; VESCOVI, GABRIELA ; DA SILVEIRA RITER, HELENA ; BANDEIRA, PAULO FELIPE RIBEIRO ; FITZPATRICK, CAROLINE ; BANDEIRA, DENISE RUSCHEL ; FRIZZO, GIANA BITENCOURT . Patterns in Children's Digital Media Use in Early Childhood and Family Factors: A Network Perspective. International Journal Of Systemic Therapy 1, p. 1-30, 2025. Citações:1|2",
     "source_row": "35",
-    "numero_autores": 5,
+    "numero_autores": 8,
     "posicao_docente": 5
   },
   {
@@ -7292,8 +7292,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARNEIRO, MARIA LARYSSA BARROS ; BONUZZI, GIORDANO MÁRCIO GATINHO ; SIQUEIRA, RÔMMULO CELLY LIMA ; SILVA, HUDDAY MENDES DA ; BANDEIRA, PAULO FELIPE RIBEIRO ; COSTA, CICERO LUCIANO ALVES . RELAÇÕES ENTRE PRÁTICA DE ATIVIDADE FÍSICA NA INFÂNCIA/ADOLESCÊNCIA COM A COMPETÊNCIA FÍSICA PERCEBIDA E NÍVEL DE ATIVIDADE FÍSICA NA VIDA ADULTA: UMA ANÁLISE DE REDES. Revista Interfaces: Saúde, Humanas e Tecnologia 13, p. 6050-6061, 2025.",
     "source_row": "119",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "305",
@@ -7316,8 +7316,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "COSTA, CICERO L. A. ; BONUZZI, GIORDANO M. G. ; SILVA, MORGANA A. C. ; NUNES, ANA C. C. ; ALENCAR, MICHELLY A. ; SILVA, NATALI P. ; BANDEIRA, PAULO F. R. . Relationships among motor competence, self-perceived competence and aggressive behavior differ between boys and girls aged 7 to 10: a network perspective. Brazilian Journal of Motor Behavior 19, p. e530-9, 2025.",
     "source_row": "140",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "306",
@@ -7340,8 +7340,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PRAZERES, T. M. P. ; HENRIQUE, R. S. ; LUZ, L. G. O. ; CORREIA JUNIOR, M. G. A. ; OLIVEIRA, M. N. S. ; RIBEIRO, M. D. ; BARROS, T. A. R. ; LIMA, V. F. ; MAIA, D. E. F. ; P.F.R BANDEIRA ; LEANDRO, C. V. G. ; MOURA-DOS-SANTOS, M. A. . Sibling's resemblance in health- and performance-related fitness among Brazilian youth. RETOS 66, p. 491-504, 2025.",
     "source_row": "408",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 12,
+    "posicao_docente": 10
   },
   {
     "id": "307",
@@ -7364,8 +7364,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VIEIRA, NÉLIO BARRETO ; BANDEIRA, PAULO FELIPE RIBEIRO ; DE SOUSA, DANILO FERREIRA ; Delmondes, Gyllyandeson de Araújo ; JÚNIOR, JUCIER GONÇALVES ; ZAIA, VICTOR . Statistical and Machine Learning Modeling of Psychological, Sociodemographic, and Physical Activity Factors Associated with Weight Regain After Bariatric Surgery. International Journal of Environmental Research and Public Health 22, p. 904, 2025. Citações:2",
     "source_row": "539",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "308",
@@ -7388,8 +7388,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, A. K. S. ; ROIG-HIERRO, E. ; BASTOS, F. H. ; BANDEIRA, P. F. R. ; BONUZZI, G. M. G. . The Acute Effects of Walking With Blood Flow Restriction on Learning of a Visuomotor Tracking Task. PERCEPTUAL AND MOTOR SKILLS 132, p. 1-19, 2025. Citações:1|1",
     "source_row": "444",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "309",
@@ -7412,8 +7412,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LACERDA, LUANNA ALVES SILVA ; SANTOS, MARIA HELENA DA CONCEIÇÃO ; BANDEIRA, PAULO FELIPE RIBEIRO ; BELTRÃO, IZABEL CRISTINA SANTIAGO LEMOS DE ; CRUZ, RACHEL DE SÁ BARRETO LUNA CALLOU ; OLIVEIRA, DAYANNE RAKELLY DE . Tradução, adaptação transcultural e validação de um inquérito de saúde bucal para gestantesTranslation, cross-cultural adaptation, and validation of an oral health survey for pregnant women. Rev Rene 26, p. e94319, 2025.",
     "source_row": "265",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "310",
@@ -7436,8 +7436,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "EDUARDO FERREIRA MAIA, DOUGLAS ; DE SOUZA LIRA FILHO, ROSTAND ; ARAÚJO DO REGO BARROS, TÉRCIO ; RODRIGUES DE SOUZA SOBRAL, IGOR ; FELIX LOURENÇO, ANA BEATRIZ ; SOUZA DE OLIVEIRA, NAYARA ; RIBEIRO BANDEIRA, PAULO FELIPE ; MOURA DOS SANTOS, MARCOS ANDRÉ ; PESSÔA DOS PRAZERES, THALIANE MAYARA ; DOS SANTOS HENRIQUE, RAFAEL . What school environment characteristics influence the physical fitness of low-income schoolchildren?-Qué características del entorno escolar influyen en la aptitud física de los escolares de bajos ingresos?Que características do ambiente escolar influenciam a aptidão física das crianças em idade escolar de baixos rendimentos?. RETOS 66, p. 679-689, 2025.",
     "source_row": "203",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 7
   },
   {
     "id": "311",
@@ -7460,8 +7460,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; WEBSTER, ELIZABETH K. ; ROMO-PEREZ, VICENTE ; SALAMI, SEDIGHEH ; LEMOS, LUIS ; DUNCAN, MICHAEL ; BARDID, FARID ; STAIANO, AMANDA E. ; OKELY, ANTHONY ; KAMBAS, ANTONIS ; SÄÄKSLAHTI, ARJA ; PESCE, CATERINA ; HONRUBIA-MONTESINOS, CRISTINA ; MAGISTRO, DANIELE ; NIEMISTÖ, DONNA ; CARLEVARO, FABIO ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; AIRES, ÍVINA ; BANDEIRA, P. F. R. ; et.al . Age- and Sex-Specific Percentile Curves for the Test of Gross Motor Development From 7,263 Children Aged 3-5 Years From 13 Countries. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 14, p. 1-14, 2026. Citações:1",
     "source_row": "325",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "312",
@@ -7484,8 +7484,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "REGO-BARROS, TÉRCIO ARAÚJO DO ; MAIA, DOUGLAS EDUARDO FERREIRA ; FRAGA, JOÃO VICTOR CAVALCANTI ; SOUTO-MAIOR, EDUARDO MAGALHÃES ; ARAÚJO-SILVA, JOÃO VITOR DE ; BONUZZI, GIORDANO MÁRCIO GATINHO ; BANDEIRA, PAULO FELIPE RIBEIRO ; NAKAMURA, FÁBIO YUZO ; HENRIQUE, RAFAEL DOS SANTOS . Altersabhängige Unterschiede bei der Leistung in Bezug auf die winkelspezifische Richtungsänderung im Basketball: eine Netzwerkanalyse. German Journal Of Exercise And Sport Research 56, p. 1-9, 2026.",
     "source_row": "414",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 7
   },
   {
     "id": "313",
@@ -7508,8 +7508,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE CASTRO SILVEIRA, JOÃO FRANCISCO ; BANDEIRA, PAULO FELIPE RIBEIRO ; MELLO, JÚLIO BRUGNARA ; FAIGENBAUM, AVERY D. ; PFEIFFER, KARIN ALLOR ; REUTER, CÉZANE PRISCILA ; GAYA, ANELISE REIS . Are health- and skill-related truly separate components of physical fitness in youth?. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) 22, p. 1-12, 2026.",
     "source_row": "173",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "314",
@@ -7532,8 +7532,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA FILHO, ANASTÁCIO NECO ; FERMINO, ROGÉRIO CÉSAR ; BEZERRA, THAYNÃ ALVES ; FLORINDO, ALEX ANTONIO ; PIZARRO, ANDREIA ISABEL NOGUEIRA ; BANDEIRA, PAULO FELIPE RIBEIRO ; MARTINS, CLARICE MARIA DE LUCENA . Inequities in Access: Public Open Spaces and Physical Activity Disparities Among Brazilian Preschoolers in Vulnerable Communities. Journal of Physical Activity & Health 23, p. 1-8, 2026.",
     "source_row": "180",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "315",
@@ -7556,8 +7556,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "HENRIQUE, RAFAEL DOS SANTOS ; DA SILVA, DANIELLE DOS SANTOS SOUZA ; DOS PRAZERES, THALIANE MAYARA PESSOA ; OLIVEIRA, NAYARA DE SOUZA ; LIRA FILHO, ROSTAND DE SOUZA ; DE OLIVEIRA, GABRIELA ; LUZ, LEONARDO GOMES DE OLIVEIRA ; MARTINS, CLARICE MARIA DE LUCENA ; ALBUQUERQUE, MAICON RODRIGUES ; MOURA DOS SANTOS, MARCOS ANDRÉ ; BANDEIRA, PAULO FELIPE RIBEIRO ; MAIA PACHECO, MATHEUS . Motor Competence Assessment in Low-Income Brazilian Children: Factorial Structure and Concurrent Validity. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 14, p. 1-12, 2026. Citações:1",
     "source_row": "260",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 11
   },
   {
     "id": "316",
@@ -7580,8 +7580,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUILHERMINO, CAROLLINA SOUZA ; ALVARENGA, MARCO ANTÔNIO SILVA ; DE AZEVEDO, TIAGO GERALDO ; BANDEIRA, PAULO FELIPE RIBEIRO ; TONDIN, CELSO FRANCISCO . Revisiting the Short Dark Tetrad in Brazil: Evidence for a five-factor model using network psychometrics. PERSONALITY AND INDIVIDUAL DIFFERENCES 257, p. 113789, 2026.",
     "source_row": "253",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 4
   },
   {
     "id": "317",
@@ -7604,8 +7604,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, CAMILA LIMA ; BANDEIRA, PAULO FELIPE RIBEIRO ; MUSSI, FERNANDA CARNEIRO ; SANTOS, HANDERSON SILVA ; MOURA, LUCIANO DE PAULA ; OLIVEIRA, JONES SIDNEI BARBOSA DE ; ALMEIDA, BRUNO GUIMARÃES DE ; SANTOS, TATIANE ARAÚJO DOS . Workplace violence in the field of nursing during the pandemic: a network analysis. Ciência & Saúde Coletiva 31, p. 1-9, 2026.",
     "source_row": "475",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "318",
@@ -7628,7 +7628,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, G. S. M. ; CARVALHO, P. R. C. ; SANTOS, J. C. F. ; BARRETO, E. M. F. ; MELO, E. H. R. ; FREIRE, J. C. ; Barros, G. W. P. . Efeitos de um programa de intervenção de atividade física, educação e promoção de saúde com idosos hipertensos usuários do Sistema Único de Saúde. REVISTA ELETRÔNICA ACERVO EM SAÚDE 13, p. e6926, 2021.",
     "source_row": "478",
-    "numero_autores": 2,
+    "numero_autores": 7,
     "posicao_docente": 2
   },
   {
@@ -7653,7 +7653,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "Barros, G. W. P. ; CARVALHO, P. R. C. ; SILVA, J. M. B. ; OLIVEIRA, D. C. R. ; SANTOS, A. C. O. . Nível de atividade física e qualidade de vida de idosos participantes e não participantes de grupos em uma USF em Recife.. In: In: Cinthia Lopes da Silva. (Org.). (Org.). Nível de atividade física e qualidade de vida de idosos participantes e não participantes de grupos em uma USF em Recife.. 1eded.Atena Editora,: Ponta Grossa, 2021, v. V., p. 26-44.",
     "source_row": "84",
     "numero_autores": 5,
-    "posicao_docente": 4
+    "posicao_docente": 2
   },
   {
     "id": "320",
@@ -7676,8 +7676,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, T. V. O. ; SILVA, A. V. C. ; CARVALHO, P. R. C. . Nível de atividade física, sintomas depressivos e qualidade de vida de pessoas vivendo com HIV/AIDS durante a COVID-19-19. Revista Brasileira de Qualidade de Vida (RBQV) 13, p. 01-22, 2021.",
     "source_row": "127",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "321",
@@ -7701,7 +7701,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "ALVES, G. R. ; HARDMAN, C. M. ; SILVA, C. G. B. ; CARVALHO, P. R. C. ; LEMOS, E. C. . Promoção de atividades físicas para idosos em tempos de COVID-19 na atenção primária à saúde: relato de experiência. Health Residences Journal, v. 2, p. 196 - 209-209, 2021.",
     "source_row": "43",
     "numero_autores": 5,
-    "posicao_docente": 1
+    "posicao_docente": 4
   },
   {
     "id": "322",
@@ -7724,8 +7724,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, T. V. O. ; DINIZ, L. F. A. ; SILVA, B. A. ; SANTOS, J. C. F. ; DINIZ, M. V. ; LORENA, V. M. B. ; CARVALHO, P. R. C. . Acute efects of diferent intensites resistance traning on inflammatory markers of women with severe obesity. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 32, p. 22-34, 2022.",
     "source_row": "124",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "323",
@@ -7748,8 +7748,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "GUIMARAES, M. B. (Org.) ; MONTEIRO, J. S. (Org.) ; BARRETTO, E. M. F. (Org.) ; ANDRADE, L. A. S. S. (Org.) ; TAVARES, F. C. L. P. (Org.) ; MELO, M. M. D. C. (Org.) ; FITTIPALDI, E. O. S. (Org.) ; LIMA, J. G. (Org.) ; SILVA, R. M. F. (Org.) ; HARDMAN, C. M. (Org.) ; CARVALHO, P. R. C. (Org.) . Educação em Saúde na residência multiprofissional. 1'. ed. , 2022.",
     "source_row": "256",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 11
   },
   {
     "id": "324",
@@ -7772,8 +7772,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, J. C. F. ; BARRETO, E. M. F. ; CARVALHO, A. L. M. ; DINIZ, L. F. A. ; CARVALHO, P. R. C. . Efeitos do treinamento de força muscular e da alimentação sobre indicados antropométricos em idosos de ambos os sexos. REVISTA BRASILEIRA DE OBESIDADE, NUTRIÇÃO E EMAGRECIMENTO 16, p. 344-352, 2022.",
     "source_row": "451",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "325",
@@ -7796,8 +7796,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GUIMARAES, T. G. M. ; MONTEIRO, P. I. D. ; HARDEMAN, C. M. ; CARVALHO, P. R. C. . Estratégias e ações de cuidado no programa Academia da Cidade durante a pandemia de covid-19: relato de experiência. REVISTA BAIANA DE SAÚDE PÚBLICA (ONLINE), v. 46, p. 302-312, 2022.",
     "source_row": "258",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "326",
@@ -7820,8 +7820,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "GUIMARAES, M. B. ; MONTEIRO, J. S. ; BARRETTO, E. M. F. ; ANDRADE, L. A. S. S. ; TAVARES, F. C. L. P. ; MELO, M. M. D. C. ; FITTIPALDI, E. O. S. ; LIMA NETO, J. S. ; LIMA, J. G. ; SILVA, R. M. F. ; HARDMAN, C. M. ; CARVALHO, P. R. C. . Residência Multiprofissional em Saúde da Família: 10 anos de formação comprometida com o SUS. 1'. ed. Recife: Editora UFPE, 2022. v. 1. 247p .",
     "source_row": "257",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "327",
@@ -7844,8 +7844,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE AMORIM, GERALDO JOSÉ ; CALADO, CINTHIA KATIANE MARTINS ; SOUZA DE OLIVEIRA, BRUNO CARLOS ; ARAUJO, RENATA PATRICIA OLIVEIRA ; FILGUEIRA, TAYRINE ORDONIO ; DE SOUSA FERNANDES, MATHEUS SANTOS ; CASTOLDI, ANGELA ; VAJGEL, GISELE ; VALENTE, LUCILA MARIA ; DE LIMA-FILHO, JOSÉ LUIZ ; CARVALHO, PAULO ROBERTO CAVALCANTI ; SOUTO, FABRICIO OLIVEIRA . Sarcopenia in Non-Dialysis Chronic Kidney Disease Patients: Prevalence and Associated Factors. FRONTIERS IN MEDICINE 9, p. 01-10, 2022. Citações:13|12",
     "source_row": "172",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 11
   },
   {
     "id": "328",
@@ -7868,8 +7868,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, J. C. F. ; ALBUQUERQUE, J. J. ; CARVALHO, P. R. C. . Efeitos de um treinamento de força e combinado em idosos com hipertensão arterial. REVISTA BRASILEIRA DE PRESCRIÇÃO E FISIOLOGIA DO EXERCÍCIO 17, p. 55-61, 2023.",
     "source_row": "450",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "329",
@@ -7892,8 +7892,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALMEIDA, T. D. R. ; CARVALHO, P. R. C. ; CAVALCANTI, B. S. ; CORDEIRO, G. G. ; SIQUEIRA, C. C. B. ; AIRES, V. G. B. ; ROLIM FILHO, E. L. . Evaluation of tenotomy in the hip subluxation treatment of children with zika syndrome. Acta Ortopédica Brasileira 03, p. 1-4, 2023.",
     "source_row": "37",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "330",
@@ -7916,8 +7916,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, T. V. O. ; DINIZ, L. F. A. ; SILVA, B. A. ; SANTOS, J. C. F. ; CARVALHO, P. R. C. . Impact of short-term circuit resistance training on women with severe obesity awaiting bariatric surgery : A non-randomized controlled trial. JOURNAL OF PHYSICAL EDUCATION AND SPORT 23, p. 2993-3002, 2023. Citações:1",
     "source_row": "125",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "331",
@@ -7940,8 +7940,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, J. C. F. ; BESSONI, J. O. M. ; Barros, G. W. P. ; CAVALCANTI, T. V. O. ; BISPO, G. ; CARVALHO, P. R. C. . Perfil epidemiológico, nível de atividade física durante a pandemia de Covid-19 de indivíduos de uma Universidade Pública de Recife/PE. REVISTA BAIANA DE SAÚDE PÚBLICA (ONLINE), v. 47, p. 01-13, 2023.",
     "source_row": "452",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "332",
@@ -7964,8 +7964,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, T. V. O. ; OLIVEIRA, A. S. ; OLIVEIRA, B. C. S. ; CARVALHO, P. R. C. . Prevalence of perceived barriers to physical activity among Pre- and Post-metabolic and Bariatric Surgery patients: A cross-sectional. OBESITY SURGERY 33, p. 1-9, 2023.",
     "source_row": "126",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "333",
@@ -7988,8 +7988,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FILGUEIRA, TAYRINE ORDONIO ; CARVALHO, PAULO ROBERTO CAVALCANTI ; DE SOUSA FERNANDES, MATHEUS SANTOS ; CASTOLDI, ANGELA ; TEIXEIRA, ANA MARIA ; DE ALBUQUERQUE, RENATA BEZERRA ; DE LIMA-FILHO, JOSÉ LUIZ ; SOUTO, FABRÍCIO OLIVEIRA . The impact of supervised physical exercise on chemokines and cytokines in recovered COVID-19 patients. Frontiers in Immunology 13, p. 01-12, 2023. Citações:4|7",
     "source_row": "220",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "334",
@@ -8012,8 +8012,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, B. A. ; SANTOS, J. C. F. ; CAVALCANTI, T. V. O. ; CONSTA, A. S. ; CARVALHO, P. R. C. . The influence of overweight on postural balance and mobility of candidates for bariatric surgery. Revista Brasileira de Cineantropometria e Desempenho Humano 25, p. 1-8, 2023. Citações:1",
     "source_row": "471",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "335",
@@ -8036,8 +8036,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, HELIZÂNIO JOSÉ DE FARIAS ; HARDMAN, CARLA MENÊSES ; LIMA, FERNANDO DE ; LIMA, ANDRESA AMORIM DE ; CARVALHO, PAULO ROBERTO CAVALCANTI . Análise dos espaços públicos para prática de atividade física no Distrito Sanitário II do RECIFE/PE. REVISTA ELETRÔNICA ACERVO EM SAÚDE 24, p. e14390, 2024.",
     "source_row": "284",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "336",
@@ -8060,8 +8060,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DINIZ, L. F. A. ; SILVA, B. A. ; SANTOS, J. C. F. ; CARVALHO, P. R. C. . Quality of life, physical activity, and socieconomic status of candidates to Bariatric Surgery: Cross-sectional study. MOTRICIDADE (SANTA MARIA DA FEIRA) 19, p. 1-10, 2024. Citações:2",
     "source_row": "192",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "337",
@@ -8084,8 +8084,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BITENCOURT, R. C. L. ; OLIVEIRA, L. M. F. T. ; CAVALCANTI, T. V. O. ; SANTOS, J. C. F. ; CARVALHO, P. R. C. . The influence of neoadjuvant chemotherapy on weicht gain in women survivors from breast cancer. REVISTA FISIO&TERAPIA 28, p. 01 e 20, 2024.",
     "source_row": "105",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "338",
@@ -8108,8 +8108,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CRUZ, S. T. ; CARVALHO, E. J. A. ; CARVALHO, P. R. C. . The oretical advances on ameloblastoma in aspects related to diagnosis, treatment and clinical variants. Brazilian Journal of Surgery and Clinical Research 48, p. 87-94, 2024.",
     "source_row": "145",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "339",
@@ -8132,8 +8132,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Barros, G. W. P. ; CARVALHO, P. R. C. ; SANTOS, H. H. ; LORENA, V. M. B. ; OLIVEIRA, B. F. A. ; S. JUNIOR, V. R. ; LEANDRO, M. P. G. ; ARAUJO, P. S. R. . Treinamento de força e resistência em citocinas e composição corporal de pessoas com HIV/AIDS. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 30, p. 1-6, 2024.",
     "source_row": "83",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "340",
@@ -8156,8 +8156,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, JOSÉ CRISTIANO FAUSTINO DOS ; DINIZ, LUIS FELIPE ALMEIDA ; HOLANDA, ALESSANDRO SPENCER DE SOUZA ; SILVA, BÁRBARA AMARAL BRUNO ; CAVALCANTI, THAURUS VINÍCIUS DE OLIVEIRA ; SILVA, DOUGLAS ALEXANDRE PEREIRA DA ; CARVALHO, PAULO ROBERTO CAVALCANTI . Análise da composição corporal de mulheres com obesidade na fila de bariátrica após 1 ano da prática regular de exercício físico. REVISTA ELETRÔNICA ACERVO EM SAÚDE 25, p. e21090, 2025.",
     "source_row": "453",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "341",
@@ -8205,7 +8205,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "AQUINO, H. H. F. ; CARVALHO, P. R. C. . Correlação da aptidão física e micronutrientes em obesos pré cirurgia bariátrica. REVISTA FISIO&TERAPIA 29, p. 1, 2025.",
     "source_row": "55",
     "numero_autores": 2,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "343",
@@ -8228,7 +8228,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, T. V. O. ; OLIVEIRA, A. S. ; MARCON, E. R. ; CARVALHO, P. R. C. ; CAVALCANTE, T. C. F. . Leisure-Time Physical Activity Patterns and Predictors in Patients Before and After Metabolic and Bariatric Surgery: A Cross-sectional Study. OBESITY SURGERY 35, p. 08088-w, 2025. Citações:3|2",
     "source_row": "8",
-    "numero_autores": 4,
+    "numero_autores": 5,
     "posicao_docente": 4
   },
   {
@@ -8252,8 +8252,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA, GUSTAVO ; DOS SANTOS, WALMIR ; PAES, PEDRO ; FIDELIX, YARA ; DE PAULA OLIVEIRA, LUCAS ; DA COSTA, MARLENE ; DOS SANTOS, WLALDEMIR . CONSEQUENCES OF COVID-19 PREVENTIVE MEASURES ON ANXIETY, STRESS AND DEPRESSION IN FOOTBALL ATHLETES. SOCCER AND SOCIETY 1, p. 1-9, 2021. Citações:4|3",
     "source_row": "186",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 7,
+    "posicao_docente": 3
   },
   {
     "id": "345",
@@ -8276,8 +8276,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RICARTE, OZIMIKAELE SILVA ; COSTA, MARLENE SALVINA FERNANDES ; PAES, PEDRO PINHEIRO ; SANTOS, WALMIR ROMÁRIO ; SANTOS, WLALDEMIR ROBERTO . COVID-19 E SUAS CONSEQUÊNCIAS NA RETOMADA DA PRÁTICA DO EXERCÍCIO FÍSICO. EDUCACIÓN FÍSICA Y CIENCIA 23, p. e199, 2021.",
     "source_row": "420",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "346",
@@ -8300,8 +8300,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DOS SANTOS, WR ; PINHEIRO PAES, P ; TENÓRIO RAMOS, KE ; DANTAS BOTELHO, EH ; FERREIRA-SILVA, IA ; DE QUEIROZ BALBINO, V ; MORAIS FERNANDES, AP . Effect of strength training on people with HIV and immunometabolic disorders. ARCHIVOS DE MEDICINA DEL DEPORTE 38, p. 163-167, 2021.",
     "source_row": "198",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "347",
@@ -8324,8 +8324,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FREITAS JÚNIOR, C. G. ; FORTES, L. S. ; SANTOS, T. M. ; BATISTA, G. R. ; GANTOIS, P. ; PAES, P. P. . Effects of different training strategies with a weight vest on countermovement vertical jump and change-of-direction ability in male volleyball athletes. THE JOURNAL OF SPORTS MEDICINE AND PHYSICAL FITNESS 61, p. 1, 2021. Citações:7|5",
     "source_row": "234",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "348",
@@ -8348,8 +8348,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, C. K. F. B. ; FORTES, L. S. ; CHAVES, D. S. ; LIRA, H. A. A. S. ; SOUSA, M. P. S. ; CORREIA, G. A. ; SANTOS, W. R. ; COSTA, M. S. F. ; PINHEIRO PAES, PEDRO . Impacto de lá ansiedade competitiva en lá variabilidade de la frecuencia cardiaca y el rendimiento de los nadadores jóvenes. Revista Peruana de Ciencias de La Actividad Física y del Deporte 1, p. 1234-1245, 2021.",
     "source_row": "473",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "349",
@@ -8372,7 +8372,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PINHEIRO PAES, PEDRO; COSTA, M. S. F. ; FREITAS JÚNIOR, C. G. ; FIGUEIREDO, T. J. B. ; SANTOS, W. R. ; ARAUJO, J. C. S. ; ARRUDA, S. F. ; MENEZES, V. G. ; GUARDA, F. R. B. ; SANTOS, W. R. . Plan de estudios de los cursos de educación física en Brasil y la formación de profesionales en el perfil de los gestores deportivos. Revista Peruana de la Actividad Fisica y del Deporte 1, p. 1297, 2021.",
     "source_row": "404",
-    "numero_autores": 2,
+    "numero_autores": 10,
     "posicao_docente": 1
   },
   {
@@ -8396,8 +8396,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FREITAS JÚNIOR, C. G. ; PAES, P. P. ; FORTES, L. S. ; SILVA, A. J. ; COSTA, M. C. ; DE LIMA-JÚNIOR, DALTON ROBERTO ALVES ARAÚJO ; SANTOS, T. M. . Reliability of the high-speed camera-based system (HSC-KINOVEA) for lower-limb explosive strength endurance assessment in athletes. Journal of Physical Education 32, p. 1-8, 2021.",
     "source_row": "235",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "351",
@@ -8420,8 +8420,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, WLALDEMIR ROBERTO DOS ; SANTOS, WALMIR ROMÁRIO DOS ; PAES, PEDRO PINHEIRO ; FERNANDES, TALITA MORAIS ; TENÓRIO, KLAUDIA EMANUELA RAMOS ; FERNANDES, ANA PAULA MORAIS . Impact of strength training on bone mineral density in HIV-positive patients. FISIOTERAPIA EM MOVIMENTO 35, p. 1-7, 2022. Citações:1",
     "source_row": "463",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "352",
@@ -8444,8 +8444,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, SIDCLEY FELIX ; VASCONCELOS DE OLIVEIRA, JOSÉ IGOR ; WINCKLER, CIRO ; COSTA, ANDRÉ SANTOS ; PAES NETO, PEDRO PINHEIRO ; MOURA SIMIM, MÁRIO ANTÔNIO ; MELO OLIVEIRA, SAULO FERNANDES . Can home-based training influence mood states and quality of life in Paralympic boccia athletes?. RETOS 50, p. 943-949, 2023. Citações:3",
     "source_row": "66",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "353",
@@ -8468,8 +8468,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VASCONCELOS DE OLIVEIRA, JOSÉ IGOR ; GORLA, J. I. ; NASCIMENTO, S. M. ; OLIVEIRA, J. M. M. ; PAES, P. P. ; OLIVEIRA, S. F. M . Content validation and inter-rater reliability of a protocol for the precision assessment of boccia players. JOURNAL OF HUMAN SPORT AND EXERCISE 18, p. 964-973, 2023. Citações:3|2",
     "source_row": "530",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "354",
@@ -8492,8 +8492,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTO, RUDÁ GONÇALVES ; OLIVEIRA, JOSÉ ; MACHADO-OLIVEIRA, LUCIANO ; FERREIRA, ANA PAULA ; PAES, PEDRO ; OLIVEIRA, SAULO FERNANDES . Pain, discomfort and psychobiological factors in wheelchair tennis athletes following COVID-19 lockdowns. Advances in Rehabilitation 37, p. 12-19, 2023. Citações:1",
     "source_row": "442",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "355",
@@ -8516,8 +8516,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "COSTA, M. S. F. ; CAMAROTTI JUNIOR, F. ; SILVA, L. R. ; SANTOS, W. R. ; SANTOS, W. R. ; PINHEIRO PAES, PEDRO . Relationship between sleep quality and recovery levels in young swimmers. JOURNAL OF PHYSICAL EDUCATION AND SPORT 23, p. 3054-3080, 2023. Citações:1",
     "source_row": "142",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "356",
@@ -8540,8 +8540,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VASCONCELOS, TAISY DE ARAUJO ; PAES, PEDRO PINHEIRO ; COSTA, MARLENE SALVINA FERNANDES ; OLIVEIRA, BYANKA SANTOS CAVALCANTE ; XAVIER, HIUANYELLEN DA SILVA ; SANTOS, WALMIR ROMÁRIO ; SANTOS, WLALDEMIR ROBERTO . Avaliação da satisfação dos usuários de uma academia ao ar livre como ferramenta para melhoria e aumento de adesão. RETOS 52, p. 333-337, 2024. Citações:6",
     "source_row": "531",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "357",
@@ -8564,8 +8564,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ROCHA, A. L. F. ; PAES, P. P. ; DAMASCENO, V. D. ; COSTA, M. S. F. ; LIRA, R. R. ; OLIVEIRA, D. P. L. ; SANTOS, W. R. ; SANTOS, W. R. . Correlation between school material transportation and postural changes in elementary school students. CUADERNOS DE EDUCACIÓN Y DESARROLLO 16, p. 01-13, 2024.",
     "source_row": "423",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "358",
@@ -8588,8 +8588,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PEREIRA, MARIA VITÓRIA DO NASCIMENTO ; PAES, PEDRO PINHEIRO ; COSTA, MARLENE SALVINA FERNANDES ; FREITAS, IGOR LIMA TAVARES ; FEITOSA, RUBEM CORDEIRO ; MORENA, JOSÉ MANUEL DELFA DE LA ; SANTOS, WALMIR ROMÁRIO ; SANTOS, WLALDEMIR ROBERTO . Cross sectional analysis of muscular strength and flexibility during the menstrual cycle in women engaged in strength training. RETOS 55, p. 704-709, 2024. Citações:6",
     "source_row": "399",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "359",
@@ -8612,7 +8612,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTE FÉLIX, MARIA EDUARDA ; PINHEIRO PAES, PEDRO ; FERNANDES COSTA, MARLENE SALVINA ; ROMÁRIO SANTOS, WALMIR ; ROBERTO SANTOS, WLALDEMIR . Effects of physical activity on levels of anxiety, depression, and stress during the social isolation caused by COVID-19. Scientific Journal of Sport and Performance 3, p. 261-269, 2024.",
     "source_row": "123",
-    "numero_autores": 6,
+    "numero_autores": 5,
     "posicao_docente": 2
   },
   {
@@ -8636,8 +8636,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAMAROTTI JUNIOR, F. ; SANTOS, Wlaldemir R. ; DAMASCENO, V. D. ; COSTA, M. S. F. ; FEITOSA, R. C. ; SACRAMENTO, H. S. ; CAMPOS, E. Z. ; PAES, P. P. . Evaluation of the effects of acute taurine supplementation on aerobic physical performance in active young adults. JOURNAL OF PHYSICAL EDUCATION AND SPORT 24, p. 1177-1185, 2024.",
     "source_row": "113",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "361",
@@ -8660,8 +8660,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PEREIRA, EMANUEL SILVA ; PAES, PEDRO PINHEIRO ; VIDAL, TAINÁ MARIA DE SOUZA ; COSTA, KEYLA BRANDÃO ; COSTA, MANOEL DA CUNHA ; COSTA, MARLENE SALVINA FERNANDES DA ; SANTOS, WALMIR ROMÁRIO DOS ; SANTOS, WLALDEMIR ROBERTO DOS . Osteomuscular health of physical educativo teacher working in gyms. CUADERNOS DE EDUCACIÓN Y DESARROLLO 16, p. e4741-15, 2024.",
     "source_row": "398",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "362",
@@ -8684,7 +8684,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DELFA‐ ; PAES, P. P. ; OLIVEIRA, D. P. L. ; CAMAROTTI JUNIOR, F. ; LIMA, B. D. M. ; GARCIA‐ ; MIJARRA‐ ; RIQUELME‐ . Single-Leg Balance and Lower Limb Strength: Quantitative Analysis with the Balance Master System. Journal Of Functional Morphology And Kinesiology 9, p. 01-10, 2024. Citações:2",
     "source_row": "187",
-    "numero_autores": 2,
+    "numero_autores": 8,
     "posicao_docente": 2
   },
   {
@@ -8708,8 +8708,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "COSTA, M. S. F. ; SANTOS, W. R. ; FACUNDO, L. A. ; SANTOS, W. R. ; SANTOS, M. A. M. ; MELLO, M. T. ; PAES, P. P. . The impact of sleep during the tapering period on young swimmers: A scientific investigation. JOURNAL OF PHYSICAL EDUCATION AND SPORT 24, p. 1555-1563, 2024.",
     "source_row": "143",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "364",
@@ -8732,8 +8732,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PAES, PEDRO PINHEIRO; VIEIRA, GILBERTO RAMOS ; DELFA-DE-LA-MORENA, JOSE MANUEL ; LIMA, BRUNA DANIELE MONTEIRO ; CAMAROTTI JÚNIOR, FREDERICO ; SILVA, VITÓRIA HELOÍZA ALVES DA ; RODRIGUES, MARIA FERNANDA MELO ; SANTOS, RAYSSA FRANCIELY TEMUDO DOS ; SANTOS, WLADELMIR ROBERTO DOS . A influência da atividade física na saúde mental de escolares de 08 a 12 anos de idade: um estudo transversal. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e8392, 2025.",
     "source_row": "395",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 1
   },
   {
     "id": "365",
@@ -8756,7 +8756,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "PAES, P. P.; CAMAROTTI JUNIOR, F. . Efecto inducido por placebo de la ingesta aguda de taurina sobre la capacidade aeróbica em mujeres jóvenes activas. In: José Manuel Delfa de la Morena. (Org.). Ejercicio salud y sociedad: una mirada mutidisciplinar. 1ed.Madrid: Dykinson, 2025, v. 1, p. 602-619.",
     "source_row": "390",
-    "numero_autores": 1,
+    "numero_autores": 2,
     "posicao_docente": 1
   },
   {
@@ -8780,7 +8780,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DELFA-DE-LA-MORENA, JOSÉ MANUEL ; PAES, PEDRO PINHEIRO ; DOS SANTOS, WLALDEMIR ROBERTO ; LILLO, JUAN PABLO ; MIJARRA-MURILLO, JUAN-JOSÉ ; RODRÍGUEZ-NÚÑEZ, IVÁN . Efectos de la sincronización musical y de las preferencias musicales en la respuesta fisiológica durante una sesión de ejercicio físico: un estudio cuasi experimental. RETOS 65, p. 559-568, 2025.",
     "source_row": "189",
-    "numero_autores": 2,
+    "numero_autores": 6,
     "posicao_docente": 2
   },
   {
@@ -8804,8 +8804,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DELFA-DE-LA-MORENA, JOSÉ MANUEL ; PAES, PEDRO PINHEIRO ; CAMAROTTI JÚNIOR, FREDERICO ; DE OLIVEIRA, DÉBORA PRISCILA LIMA ; CORDEIRO FEITOSA, RUBEM ; DE OLIVEIRA, BYANKA SANTOS CAVALCANTE ; MIJARRA-MURILLO, JUAN-JOSÉ ; MARTÍNEZ MOYA, ARANZAZU ; GARCÍA-GONZÁLEZ, MIRIAM ; DE ASÍS-FERNÁNDEZ, FRANCISCO . Effects of Physical Activity Level, Strength, Balance, and Body Composition on Perceived Health in Healthy Adults. SPORTS 13, p. 19, 2025. Citações:1",
     "source_row": "188",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 10,
+    "posicao_docente": 2
   },
   {
     "id": "368",
@@ -8828,7 +8828,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "CAMAROTTI JUNIOR, F. ; PINHEIRO PAES, P . ¿Es capaz la actividad física de modular positivamente la ansiedad y él estrés en adolescentes escolarizados??. In: José Manuel Delfa de la Morena. (Org.). Ejercicio salud y sociedad: una mirada mutidisciplinar. 1ed.Madrid: Dykinson, 2025, v. 1, p. 40-58.",
     "source_row": "115",
-    "numero_autores": 6,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -8852,8 +8852,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ROBERTO DOS SANTOS, WLALDEMIR ; ROMÁRIO DOS SANTOS, WALMIR ; PAES, PEDRO PINHEIRO ; FERNANDES, TALITA MORAIS ; MORAIS FERNADES, ANA PAULA . Impact of strength training on reducing risk of fractures in people living with Human Immunodeficiency virus. JOURNAL OF BODYWORK AND MOVEMENT THERAPIES 41, p. 13-20, 2025. Citações:3",
     "source_row": "422",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "370",
@@ -8876,8 +8876,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MORENA, J. M. D. L. ; PAES, PEDRO P. ; OLIVEIRA, D. P. L. ; MURILLO, J. J. M. ; CAMAROTTI JUNIOR, F. ; AGUADO, V. R. . Influence of physical activity on balance in children: a cross sectional study. RETOS 63, p. 420-432, 2025. Citações:1",
     "source_row": "349",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "371",
@@ -8900,8 +8900,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, WLALDEMIR ROBERTO ; JÚNIOR, FREDERICO CAMAROTTI ; BARBOSA, DANILO ; GINNARI, KAUÃ VIEIRA ; GOMES DOS SANTOS, ARYELLE KARLA SAMUEL ; DE OLIVEIRA TIMOTEO, BENEUAN ; DA CUNHA COSTA, MANOEL ; FERNANDES DA COSTA, MARLENE SALVINA ; PAES, PEDRO PINHEIRO . Injuries in Female Soccer Athletes: Risk of Injury Across Different Phases of the Menstrual Cycle. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 1, p. 1-8, 2025.",
     "source_row": "462",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "372",
@@ -8924,7 +8924,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PAES, PEDRO PINHEIRO; COSTA, MARLENE SALVINA FERNANDES DA ; XAVIER, HIUANYELLEN DA SILVA ; SILVA, LAÍS RAMOS ; VIEIRA, GILBERTO RAMOS ; CAVALCANTE, BYANKA ; SANTOS, WALMIR ROMÁRIO DOS ; JÚNIOR, FREDERICO CAMAROTTI ; DOS SANTOS, WLALDEMIR ROBERTO . Is there an association between physical activity level, nutritional status, biological maturation, and body satisfaction in adolescents?. RETOS 65, p. 762-772, 2025.",
     "source_row": "394",
-    "numero_autores": 6,
+    "numero_autores": 9,
     "posicao_docente": 1
   },
   {
@@ -8948,8 +8948,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DELFA-DE-LA-MORENA, JOSÉ MANUEL ; PINHEIRO PAES, PEDRO ; JÚNIOR, FREDERICO CAMAROTTI ; FEITOSA, RUBEM CORDEIRO ; LIMA DE OLIVEIRA, DÉBORA PRISCILA ; MIJARRA-MURILLO, JUAN-JOSÉ ; GARCÍA-GONZÁLEZ, MIRIAM ; RIQUELME-AGUADO, VÍCTOR . Relationship of Physical Activity Levels and Body Composition with Psychomotor Performance and Strength in Men. Healthcare 13, p. 1789, 2025. Citações:4",
     "source_row": "190",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 2
   },
   {
     "id": "374",
@@ -8972,8 +8972,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "CAMAROTTI JUNIOR, F. ; PAES, PEDRO P. ; MORENA, J. M. D. L. . Repercusiones del género y la práctica deportiva en los parámetros del sueño en deportistas universitários. In: José Manuel Delfa de la Morena. (Org.). Ejercicio salud y sociedad: una mirada mutidisciplinar. 1ed.Madrid: Dykinson, 2025, v. 1, p. 919-937.",
     "source_row": "114",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "375",
@@ -8996,8 +8996,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DOS SANTOS, WLALDEMIR ROBERTO ; DOS SANTOS, WALMIR ROMÁRIO ; PAES, PEDRO PINHEIRO ; TENÓRIO, KLAUDIA EMANUELA RAMOS ; FERNANDES, TALITA MORAIS ; FERNANDES, ANA PAULA MORAIS . Effects of strength training on morphological changes of lipodystrophy in people living with HIV: A quasi-experimental non-randomized controlled trial. JOURNAL OF BODYWORK AND MOVEMENT THERAPIES 46, p. 611-619, 2026.",
     "source_row": "197",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "376",
@@ -9020,8 +9020,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "PAES, PEDRO P.. Prefácio: Um olhar de irmão e cientista. In: Maurício Sérgio de Araújo Bittencourt. (Org.). Alzheimer: o manual da sobrevivência. 1ed.Belém: Ed. do Autor, 2026, v. 1, p. XI-XIII.",
     "source_row": "392",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 1,
+    "posicao_docente": 1
   },
   {
     "id": "377",
@@ -9044,8 +9044,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PAES, P. P.; CAMAROTTI JUNIOR, F. ; SANTOS, W. R. ; FEITOSA, R. C. ; LIMA, B. D. M. ; OLIVEIRA, B. S. C. ; COSTA, M. S. F. . University sports practice and its influence on sleep pattern. Sport Mont 24, p. 11-18, 2026.",
     "source_row": "391",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 1
   },
   {
     "id": "378",
@@ -9068,8 +9068,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, M. N. S. ; HENRIQUE, R. S. ; QUEIROZ, D. R. ; COSTA, M. S. ; MELO, W. V. C. ; MOURA-DOS-SANTOS, M. A. . Anthropometric variables, propulsive force and biological maturation: A mediation analysis in young swimmers. European Journal of Sport Science 21, p. 507-514, 2021. Citações:38|38",
     "source_row": "379",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "379",
@@ -9092,8 +9092,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA JUNIOR, E. V. ; CAVALCANTI, I. F. ; SANTOS, C. F. ; PRAZERES, T. M. P. ; GOMES, W. S. ; FERNANDES, M. S. S. ; SILVA, J. F. ; GONCALVES, J. G. ; MOURA-DOS-SANTOS, M. A. ; HENRIQUE, R. S. . Anthropometry and body composition of elite Brazilian soccer players according to the playing position. HEALTH SCIENCE JOURNAL 15, p. 1-6, 2021.",
     "source_row": "469",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "380",
@@ -9116,8 +9116,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=doi | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "IURILLI, MARIA LC ; ZHOU, BIN ; BENNETT, JAMES E ; CARRILLO-LARCO, RODRIGO M ; SOPHIEA, MARISA K ; RODRIGUEZ-MARTINEZ, ANDREA ; BIXBY, HONOR ; SOLOMON, BETHLEHEM D ; TADDEI, CRISTINA ; DANAEI, GOODARZ ; DI CESARE, MARIACHIARA ; STEVENS, GRETCHEN A ; RILEY, LEANNE M ; SAVIN, STEFAN ; COWAN, MELANIE J ; BOVET, PASCAL ; DAMASCENO, ALBERTINO ; CHIRITA-EMANDI, ADELA ; HAYES, ALISON J ; HENRIQUE, R. S. ; et.al . Heterogeneous contributions of change in population distribution of body mass index to change in obesity and underweight. eLife 10, p. 10.7554/eLife.6, 2021. Citações:18|82",
     "source_row": "263",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "381",
@@ -9140,8 +9140,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "GIUDICELLI, B. B. ; ASSIS, V. O. ; HENRIQUE, R. S. ; LUZ, L. G. O. . Letramento corporal na educação física: debate, contribuição e intervenção. In: Jorge Olímpio Bento, Wagner Wey Moreira, Rafael Guimarães Botelho, Sílvio Pedro José Saranga. (Org.). Desporto e educação física: identidade e missão. 1ed.Moçambique: EDUCAR: UP-Maputo, 2021, v. , p. 205-220.",
     "source_row": "240",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "382",
@@ -9164,8 +9164,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALMEIDA, M. B. ; LEANDRO, C. G. ; QUEIROZ, D. R. ; SILVA, M. J. ; PRAZERES, T. M. P. ; PEREIRA, G. M. ; NEVES, G. S. ; CARNEIRO, R. C. ; ALVES, A. D. F. ; NAKAMURA, F. Y. ; HENRIQUE, R. S. ; MOURA-DOS-SANTOS, M. A. . Plyometric training increases gross motor coordination and associated components of physical fitness in children. European Journal of Sport Science 21, p. 1263-1272, 2021. Citações:27|25",
     "source_row": "34",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 11
   },
   {
     "id": "383",
@@ -9188,7 +9188,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOURA-DOS-SANTOS, M. A. ; HENRIQUE, R. S. ; COSTA, M. S. ; SILVA, A. H. O. ; CORREIA JUNIOR, M. A. V. ; QUEIROZ, D. R. ; DUNCAN, M. ; MAIA, J. A. R. ; NEVILL, A. . The influence of anthropometric variables, body composition, propulsive force and maturation on 50m freestyle swimming performance in junior swimmers: An allometric approach. JOURNAL OF SPORTS SCIENCES 39, p. 1615-1620, 2021. Citações:15|19",
     "source_row": "354",
-    "numero_autores": 4,
+    "numero_autores": 9,
     "posicao_docente": 2
   },
   {
@@ -9212,8 +9212,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; CARRILLO-LARCO, RODRIGO M ; DANAEI, GOODARZ ; RILEY, LEANNE M ; PACIOREK, CHRISTOPHER J ; STEVENS, GRETCHEN A ; GREGG, EDWARD W ; BENNETT, JAMES E ; SOLOMON, BETHLEHEM ; SINGLETON, ROSIE K ; SOPHIEA, MARISA K ; IURILLI, MARIA LC ; LHOSTE, VICTOR PF ; COWAN, MELANIE J ; SAVIN, STEFAN ; WOODWARD, MARK ; BALANOVA, YULIA ; CIFKOVA, RENATA ; DAMASCENO, ALBERTINO ; HENRIQUE, R. S. ; et.al . Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019: a pooled analysis of 1201 population-representative studies with 104 million participants. LANCET X, p. 1-24, 2021. Citações:2614|2187",
     "source_row": "549",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "385",
@@ -9236,7 +9236,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VICENTE, CYNTHIA DANTAS ; RESENDE, CRISTINA MARIA MENDES ; HENRIQUE, RAFAEL DOS SANTOS ; CORREIA JUNIOR, MARCO AURÉLIO VALOIS ; BARROS, MAURO VIRGÍLIO GOMES DE ; SILVA, LYGIA MARIA PEREIRA DA ; MUNIZ, MARIA TEREZA CARTAXO ; VERÍSSIMO, ANA VIRGINIA RODRIGUES ; SANTOS, MARCOS ANDRÉ MOURA DOS . Association between sleep indicators and eating habits in adolescents. RESEARCH, SOCIETY AND DEVELOPMENT 11, p. e42911528403, 2022.",
     "source_row": "536",
-    "numero_autores": 3,
+    "numero_autores": 9,
     "posicao_docente": 3
   },
   {
@@ -9260,8 +9260,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE OLIVEIRA, ILANA SANTOS ; DA SILVA FIDELIS, DÉBORA EDUARDA ; RAMOS, TIAGO LACERDA ; DOS SANTOS HENRIQUE, RAFAEL ; JUREMA SANTOS, GABRIELA CARVALHO ; SANTOS DE SOUSA FERNANDES, MATHEUS . Comment on ¿A high periconceptional maternal ultra-processed food consumption impairs embryonic growth: The Rotterdam periconceptional cohort¿ clinical nutrition 2022. CLINICAL NUTRITION 41, p. 2410-2411, 2022.",
     "source_row": "174",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 4
   },
   {
     "id": "387",
@@ -9284,8 +9284,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARBOSA, M. A. A. ; MOURA, H. M. ; SANTOS, L. E. R. ; FERNANDES, M. S. S. ; HENRIQUE, R. S. ; DAMASCENO, V. O. ; SANTOS, T. M. . Comparison of affective responses during school physical education classes with different recovery times. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 33, p. e3332, 2022.",
     "source_row": "76",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "388",
@@ -9308,8 +9308,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUSA FERNANDES, MATHEUS SANTOS ; AIDAR, FELIPE J. ; DA SILVA PEDROZA, ANDERSON APOLÔNIO ; DE ANDRADE SILVA, SEVERINA CÁSSIA ; SANTOS, GABRIELA CARVALHO JUREMA ; DOS SANTOS HENRIQUE, RAFAEL ; CLEMENTE, FILIPE MANUEL ; SILVA, ANA FILIPA ; DE SOUZA, RAPHAEL FABRÍCIO ; FERREIRA, DIORGINIS JOSÉ ; BADICU, GEORGIAN ; LAGRANHA, CLAUDIA ; NOBARI, HADI . Effects of aerobic exercise training in oxidative metabolism and mitochondrial biogenesis markers on prefrontal cortex in obese mice. BMC SPORTS SCIENCE, MEDICINE AND REHABILITATION 14, p. 213, 2022. Citações:12|8",
     "source_row": "175",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 13,
+    "posicao_docente": 6
   },
   {
     "id": "389",
@@ -9332,8 +9332,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FILTER-RUGER, A. ; GANTOIS, P. ; HENRIQUE, R. S. ; OLIVARES-JABALERA, J. ; ROBLES-RODRIGUEZ, J. ; SANTALLA, A. ; REQUENA, B. ; NAKAMURA, F. Y. . How does curve sprint evolve across different age-categories in soccer players?. BIOLOGY OF SPORT 39, p. 53-58, 2022. Citações:10|9",
     "source_row": "221",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 8,
+    "posicao_docente": 3
   },
   {
     "id": "390",
@@ -9356,8 +9356,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, T. J. S. ; PRAZERES, T. M. P. ; HENRIQUE, R. S. ; QUEIROZ, D. R. ; BEZERRA, JORGE ; BARROS, M. V. G. ; MOURA-DOS-SANTOS, M. A. . Inter-individual variability in children's physical growth and body composition: Findings of longitudinal ELOS-Pré study. AMERICAN JOURNAL OF HUMAN BIOLOGY 34, p. e23697, 2022. Citações:2|1",
     "source_row": "289",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 3
   },
   {
     "id": "391",
@@ -9380,7 +9380,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "CHAVES, S. ; PEREIRA, A. ; HENRIQUE, R. S. ; SANTOS, L. E. R. ; SILVA, N. M. G. ; LIMA, V. F. ; BARROS, T. A. R. ; SANTOS, T. M. ; CLAUDINO, J. G. . A importância do desenvolvimento do senso de comunidade e cooperação entre startups, empresas, clubes esportivos e universidades brasileiras.. In: João Gustavo Claudino. (Org.). Ecossistema de Inovação na área da Educação Física e Esporte: desafios e perspectivas. 1ed.Teresina: Editora Dialética - EDUFPI, 2023, v. 1, p. 54-.",
     "source_row": "134",
-    "numero_autores": 4,
+    "numero_autores": 9,
     "posicao_docente": 3
   },
   {
@@ -9404,8 +9404,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NCD Risk Factor Collaboration ; HENRIQUE, R. S. . Diminishing benefits of urban living for children and adolescents? growth and development. NATURE 615, p. 874-883, 2023. Citações:59|43",
     "source_row": "360",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "393",
@@ -9428,8 +9428,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NASCIMENTO., J. Y. V. ; LIMA, C. V. P. ; LIMA, L. M. P. ; GIUDICELLI, B. B. ; BANDEIRA, P. F. R. ; PINHEIRO, I. ; MAGALHAES, K. ; SILVA, D. R. P. ; MARTINS, C. M. L. ; HENRIQUE, R. S. ; CUNHA JUNIOR, A. ; LUZ, L. G. O. . Fatores associados aos comportamentos ativo e sedentário em adolescentes brasileiros: uma análise de redes. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 28, p. 1-10, 2023. Citações:5",
     "source_row": "359",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 10
   },
   {
     "id": "394",
@@ -9452,8 +9452,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; SHEFFER, KATE E. ; BENNETT, JAMES E. ; GREGG, EDWARD W. ; DANAEI, GOODARZ ; SINGLETON, ROSIE K. ; SHAW, JONATHAN E. ; MISHRA, ANU ; LHOSTE, VICTOR P. F. ; CARRILLO-LARCO, RODRIGO M. ; KENGNE, ANDRE P. ; PHELPS, NOWELL H. ; HEAP, RACHEL A. ; RAYNER, ARCHIE W. ; STEVENS, GRETCHEN A. ; PACIOREK, CHRIS J. ; RILEY, LEANNE M. ; COWAN, MELANIE J. ; SAVIN, STEFAN ; HENRIQUE, R. S. ; et.al . Global variation in diabetes diagnosis and prevalence based on fasting glucose and hemoglobin A1c. NATURE MEDICINE 29, p. 2885-2901, 2023. Citações:72|30",
     "source_row": "552",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "395",
@@ -9476,8 +9476,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BEZERRA-SANTOS, D. ; LIMA, B. ; MEDEIROS, H. ; KNACKFUSS, M. ; PINHEIRO, I. ; GIUDICELLI, B. ; CUNHA JUNIOR, A. ; HENRIQUE, R. S. ; LUZ, L. G. O. . Gross motor coordination in schoolboys of pubertal age contrasting in futsal practice level groups. RETOS 50, p. 234-238, 2023. Citações:4",
     "source_row": "104",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "396",
@@ -9500,8 +9500,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUSA FERNANDES, MATHEUS SANTOS ; BADICU, GEORGIAN ; SANTOS, GABRIELA CARVALHO JUREMA ; FILGUEIRA, TAYRINE ORDONIO ; HENRIQUE, RAFAEL DOS SANTOS ; DE SOUZA, RAPHAEL FABRÍCIO ; AIDAR, FELIPE J. ; SOUTO, FABRÍCIO OLIVEIRA ; BRUM, PATRÍCIA CHAKUR ; LAGRANHA, CLAUDIA JACQUES . Physical Exercise Decreases Endoplasmic Reticulum Stress in Central and Peripheral Tissues of Rodents: A Systematic Review. European Journal Of Investigation In Health Psychology And Education 13, p. 1082-1096, 2023. Citações:6|4",
     "source_row": "176",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "397",
@@ -9524,8 +9524,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, B. ; GIUDICELLI, B. B. ; PINHEIRO, I. ; BEZERRA-SANTOS, D. ; MAGALHAES, K. ; HENRIQUE, R. S. ; SILVA, D. R. P. ; COELHO-E-SILVA, M. J. ; LUZ, L. G. O. . Biocultural correlates of gross motor coordination in prepubescent children: A cross-sectional study. AMERICAN JOURNAL OF HUMAN BIOLOGY 36, p. e24002, 2024.",
     "source_row": "277",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 6
   },
   {
     "id": "398",
@@ -9548,8 +9548,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, L. G. O. ; SILVA, D. R. P. ; HENRIQUE, R. S. ; GIUDICELLI, B. B. ; COELHO-E-SILVA, M. J. . Biological maturation, fat mass and cardiorespiratory fitness in prepubescent girls: A mediation analysis. AMERICAN JOURNAL OF HUMAN BIOLOGY 36, p. e24120, 2024. Citações:1",
     "source_row": "299",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "399",
@@ -9572,8 +9572,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MALINGA, EULÁLIO ; LEANDRO, CAROL GÓIS ; DE ALMEIDA ARAUJO, FERNANDA TRIGUEIRO ; DOS SANTOS HENRIQUE, RAFAEL ; TCHAMO, MARIO EUGÉNIO ; E SILVA, WYLLA TATIANA FERREIRA . Birth weight and nutritional status in school-age children from Boane city, Mozambique. AMERICAN JOURNAL OF HUMAN BIOLOGY 36, p. e24072, 2024. Citações:1|1",
     "source_row": "312",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 4
   },
   {
     "id": "400",
@@ -9596,8 +9596,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CORREIA JUNIOR, M. G. A. ; PRAZERES, T. M. P. ; HENRIQUE, R. S. ; AGUILAR, J. A. ; NOBRE, I. G. ; PINTO, B. C. P. ; ARRUDA, G. A. ; MAIA, D. E. F. ; SA, L. A. C. M. ; MOURA-DOS-SANTOS, M. A. . Built environment and physical activity of adolescents: an approach with artificial neural networks. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 29, p. 1-12, 2024. Citações:2",
     "source_row": "138",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 3
   },
   {
     "id": "401",
@@ -9620,7 +9620,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIRA, C. T. C. ; SANTIAGO, L. C. S. ; HENRIQUE, R. S. ; RANGEL JUNIOR, J. L. B. ; CAMPELLO, C. P. ; MOURA-DOS-SANTOS, M. A. . Examining the Effects of Strength Training with Load Progression on Sleep Parameters and Mental Health in College Students. SLEEP SCIENCE (IMPRESSO) e134, 2024. Citações:2",
     "source_row": "298",
-    "numero_autores": 4,
+    "numero_autores": 6,
     "posicao_docente": 3
   },
   {
@@ -9644,8 +9644,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RESENDE, C. M. M. ; FERRAZ, L. A. A. ; VERISSIMO, A. V. R. ; CHAGAS, C. M. S. ; HENRIQUE, R. S. ; MOURA-DOS-SANTOS, M. A. ; CARTAXO-MUNIZ, M. T. ; SILVA, L. M. P. . Food consumption among adolescents and biological and adiposity outcomes. REVISTA CIÊNCIAS EM SAÚDE 14, p. e1496, 2024.",
     "source_row": "416",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "403",
@@ -9668,8 +9668,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; BENNETT, JAMES E ; WICKHAM, AIDAN P ; SINGLETON, ROSIE K ; MISHRA, ANU ; CARRILLO-LARCO, RODRIGO M ; IKEDA, NAYU ; JAIN, LAKSHYA ; BARRADAS-PIRES, ANA ; HEAP, RACHEL A ; LHOSTE, VICTOR PF ; SHEFFER, KATE E ; PHELPS, NOWELL H ; RAYNER, ARCHIE W ; GREGG, EDWARD W ; WOODWARD, MARK ; STEVENS, GRETCHEN A ; IURILLI, MARIA LC ; DANAEI, GOODARZ ; HENRIQUE, R. S. ; et.al . General and abdominal adiposity and hypertension in eight world regions: a pooled analysis of 837 population-based studies with 7·5 million participants. LANCET 404, p. 851-863, 2024. Citações:42|54",
     "source_row": "547",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "404",
@@ -9692,8 +9692,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOURA, RAONY ESPÍNDOLA ; BEZERRA DA SILVA, RODRIGO FABIO ; GOMES, LUCAS MORAIS DE SOUZA ; RAMOS DA SILVA, JOSÉ LEONARDO ; HENRIQUE, RAFAEL DOS SANTOS ; SOUSA, FILIPE ANTÔNIO DE BARROS ; FONSECA, FABIANO DE SOUZA . Monitoring Bar Velocity to Quantify Fatigue in Resistance Training. INTERNATIONAL JOURNAL OF SPORTS MEDICINE 45, p. 624-632, 2024. Citações:4|1",
     "source_row": "351",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "405",
@@ -9716,8 +9716,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; ROMO-PEREZ, VICENTE ; WEBSTER, E. KIPLING ; DUNCAN, MICHAEL ; LEMOS, LUÍS FILIPE ; STAIANO, AMANDA E. ; OKELY, ANTHONY ; MAGISTRO, DANIELE ; CARLEVARO, FABIO ; BARDID, FARID ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; ESTEVAN, ISAAC ; MOTA, JORGE ; NING, KE ; ROBINSON, LEAH E. ; LENOIR, MATTHIEU ; QUAN, MINGHUI ; VALENTINI, NADIA C. ; HENRIQUE, R. S. ; et.al . Motor Competence and Body Mass Index in the Preschool Years: A Pooled Cross-Sectional Analysis of 5545 Children from Eight Countries. SPORTS MEDICINE 54, p. 505-516, 2024. Citações:25|25",
     "source_row": "320",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "406",
@@ -9740,8 +9740,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "GONCALVES, J. G. ; LUZ, L. G. O. ; BANDEIRA, P. F. R. ; PRAZERES, T. M. P. ; LIMA, V. F. ; MAIA, D. E. F. ; SANTOS, T. M. ; GAYA, A. ; SANTOS, M. A. M. ; HENRIQUE, R. S. . Psychometric properties of the knowledge and understanding questionnaire of the canadian assessment of physical literacy-2 in low-income brazilian children. RETOS 58, p. 291-298, 2024. Citações:2",
     "source_row": "248",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "407",
@@ -9764,8 +9764,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, CLARICE ; WEBSTER, ELIZABETH K. ; ROMO'PEREZ, VICENTE ; DUNCAN, MICHAEL ; LEMOS, LUÍS FILIPE ; STAIANO, AMANDA ; OKELY, ANTHONY ; MAGISTRO, DANIELE ; CARLEVARO, FABIO ; BARDID, FARID ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; ESTEVAN, ISAAC ; MOTA, JORGE ; NING, KE ; ROBINSON, LEAH E. ; LENOIR, MATTHIEU ; QUAN, MINGHUI ; VALENTINI, NADIA ; HENRIQUE, R. S. ; et.al . Sex differences in 3¿ to 5¿year¿old children's motor competence: A pooled cross¿sectional analysis of 6241 children. SCANDINAVIAN JOURNAL OF MEDICINE & SCIENCE IN SPORTS 34, p. e14651, 2024. Citações:18|6",
     "source_row": "323",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "408",
@@ -9788,8 +9788,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PACHECO, A. L. G. ; BOCCANERA, W. M. ; FERREIRA, E. K. L. ; SANTOS, R. T. ; SIMOES, P. M. ; MALINGA, E. ; GUILICHE, E. C. ; ISAIAS, A. F. J. ; NOBRE, I. G. ; SILVA, J. H. C. ; SILVA, W. T. F. E. ; PADRON, E. ; PIROLA, L. ; HENRIQUE, R. S. ; LEANDRO, C. G. . The Similarity degree of the anthropometric and body compo-sition variables of Brazilian and Mozambican schoolchildren: a new approach using Smoothed Jaccard Index Surface. Children-Basel, v. 11, p. 804, 2024. Citações:1",
     "source_row": "388",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 15,
+    "posicao_docente": 14
   },
   {
     "id": "409",
@@ -9812,8 +9812,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; RAYNER, ARCHIE W ; GREGG, EDWARD W ; SHEFFER, KATE E ; CARRILLO-LARCO, RODRIGO M ; BENNETT, JAMES E ; SHAW, JONATHAN E ; PACIOREK, CHRISTOPHER J ; SINGLETON, ROSIE K ; BARRADAS PIRES, ANA ; STEVENS, GRETCHEN A ; DANAEI, GOODARZ ; LHOSTE, VICTOR PF ; PHELPS, NOWELL H ; HEAP, RACHEL A ; JAIN, LAKSHYA ; D'AILHAUD DE BRISIS, YSE ; GALEAZZI, AGNESE ; KENGNE, ANDRE P ; HENRIQUE, R. S. ; et.al . Worldwide trends in diabetes prevalence and treatment from 1990 to 2022: a pooled analysis of 1108 population-representative studies with 141 million participants. LANCET efirst, p. 1-17, 2024. Citações:562|765",
     "source_row": "551",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "410",
@@ -9837,7 +9837,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "NCD Risk Factor Collaboration ; HENRIQUE, R. S. . Worldwide trends in underweight and obesity from 1990 to 2022: a pooled analysis of 3663 population- representative studies with 222 million children, adolescents, and adults. LANCET 1, p. 1-46, 2024. Citações:10",
     "source_row": "361",
     "numero_autores": 2,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "411",
@@ -9860,8 +9860,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARROS, T. A. R. ; FERREIRA, G. A. ; HENRIQUE, R. S. . Anaerobic speed or power reserve as a key determinant of repeatability in high-intensity efforts. JOURNAL OF APPLIED PHYSIOLOGY 139, p. 1722-1723, 2025. Citações:1|1",
     "source_row": "85",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "412",
@@ -9884,8 +9884,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LUZ, L. G. O. ; SILVA, D. R. P. ; HENRIQUE, R. S. ; SEABRA, A. ; COELHO-E-SILVA, M. J. . Correlates of moderate-to-vigorous physical activity among prepubertal girls: a bioecological approach. AMERICAN JOURNAL OF HUMAN BIOLOGY 37, p. e70024, 2025. Citações:1",
     "source_row": "300",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "413",
@@ -9908,8 +9908,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VALLE-MUNOZ, V. M. ; SAUCEDO-ARAUJO, R. ; BRAND, C. ; MARTINS, C. M. L. ; HENRIQUE, R. S. ; GAYA, ANELISE REIS ; LOPEZ-GIL, J. F. ; FAIGENBAUM, A. ; BARRANCO-RUIZ, Y. ; VILLA-GONZALEZ, E. . Effects of resistance training interventions on physical literacy components in children and adolescents: A systematic review with meta-analysis. Journal Of Public Health-Heidelberg, v. efirst, p. 1-28, 2025. Citações:3",
     "source_row": "528",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "414",
@@ -9932,8 +9932,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIRA FILHO, R. S. ; OLIVEIRA, G. ; OLIVEIRA, N. S. ; LOURENCO, A. B. F. ; SOBRAL, I. R. S. ; BARROS, T. A. R. ; PACHECO, A. L. G. ; BANDEIRA, P. F. R. ; MOURA-DOS-SANTOS, M. A. ; PRAZERES, T. M. P. ; HENRIQUE, R. S. . Gender differences in children?s physical literacy and physical activity: a network analysis. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 30, p. 1-18, 2025. Citações:2",
     "source_row": "297",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 11,
+    "posicao_docente": 11
   },
   {
     "id": "415",
@@ -9956,8 +9956,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA OLIVEIRA, NAYARA ; DE SOUZA LIRA FILHO, ROSTAND ; DE ARAÚJO REGO BARROS, TÉRCIO ; RODRIGUES SOBRAL, IGOR ; MAYARA PESSOA DOS PRAZERES, THALIANE ; LEANDRO CELESTINO, MELISSA ; MOURA DOS SANTOS, MARCOS ANDRÉ ; DOS SANTOS HENRIQUE, RAFAEL . Gender gap in gross motor coordination among low-income Brazilian children. Vulnerable Children and Youth Studies (Print) efirst, p. 1-15, 2025. Citações:1",
     "source_row": "181",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "416",
@@ -9980,8 +9980,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARROS, T. A. R. ; NAKAMURA, F. Y. ; LIRA FILHO, R. S. ; SILVA, N. M. G. ; LIMA, V. F. ; FONSECA, F. S. ; BIBROWICZ, B. ; HENRIQUE, R. S. . Is curve sprint performance in soccer related to other speed and power abilities across age categories?. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) 1-10, 2025.",
     "source_row": "87",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "417",
@@ -10004,8 +10004,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FRAGA, JOÃO VICTOR CAVALCANTI ; DO REGO BARROS, TÉRCIO ARAÚJO ; LIMA, VICTOR FERREIRA ; LIRA FILHO, ROSTAND DE SOUZA ; DA SILVA, NOADIA MARIA GUIMARÃES ; DA SILVA, MARIVÂNIO JOSÉ ; DOS ANJOS PEREIRA, TIAGO ; DE ALMEIDA, MARCELUS BRITO ; DE SOUZA FONSECA, FABIANO ; DOS SANTOS, TONY MEIRELES ; NAKAMURA, FÁBIO YUZO ; HENRIQUE, RAFAEL DOS SANTOS . Locomotor profile of a new soccer modality played in 1v1 format. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) 21, p. 629-636, 2025. Citações:1|1",
     "source_row": "228",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "418",
@@ -10028,8 +10028,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CHALEGRE DA SILVA, LUCAS ; DA SILVA, KLEBER JOHNY ; FELIPPE, LEANDRO CAMATI ; SILVA-CAVALCANTE, MARCOS DAVID ; HENRIQUE, RAFAEL DOS SANTOS ; LIMA-SILVA, ADRIANO EDUARDO ; LEANDRO, CAROL GÓIS ; FERREIRA, GUILHERME ASSUNÇÃO . Neural and Muscular Determinants of Performance Fatigability Are Independent of Work and Recovery Durations During High-Intensity Interval Exercise in Males. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 96, p. 338-348, 2025.",
     "source_row": "131",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "419",
@@ -10052,8 +10052,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, T. J. S. ; PRAZERES, T. M. P. ; RIBEIRO, M. D. ; OLIVEIRA, M. C. C. V. N. ; HENRIQUE, R. S. ; BEZERRA, JORGE ; RANGEL JUNIOR, J. F. L. B. ; BARROS, M. V. G. ; QUEIROZ, D. R. ; MOURA-DOS-SANTOS, M. A. . Physical growth, school environment, and birth information in the physical activity of children: A multilevel analysis of ELOS-Pré study. RETOS 68, p. 803-812, 2025.",
     "source_row": "288",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "420",
@@ -10076,8 +10076,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PESSÔA DOS PRAZERES, THALIANE MAYARA ; DOS SANTOS HENRIQUE, RAFAEL ; GOMES DE OLIVEIRA LUZ, LEONARDO ; GOMINHO ANTUNES CORREIA JUNIOR, MURILO ; DO NASCIMENTO SENA OLIVEIRA, MARIANA ; DANTAS RIBEIRO, MARCELLA ; DE ARAÚJO DO REGO BARROS, TÉRCIO ; FERREIRA LIMA, VICTOR ; EDUARDO FERREIRA MAIA, DOUGLAS ; RIBEIRO BANDEIRA, PAULO FELIPE ; VIRGÍNIA GÓIS LEANDRO, CAROL ; MOURA-DOS-SANTOS, MARCOS ANDRÉ . Sibling's resemblance in health- and performance-related fitness among Brazilian youth. RETOS 66, p. 491-504, 2025.",
     "source_row": "401",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 12,
+    "posicao_docente": 2
   },
   {
     "id": "421",
@@ -10100,8 +10100,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MATOS, M. A. ; BARROS, T. A. R. ; LIMA, V. F. ; COSTA, M. S. ; LUZ, L. G. O. ; PRAZERES, T. M. P. ; SILVA, N. M. G. ; CAMPOS, E. Z. ; NAKAMURA, F. Y. ; MOURA-DOS-SANTOS, M. A. ; HENRIQUE, R. S. . Understanding the mediating role of anthropometry and body composition in the relationship between biological maturation and sport-specific performance in young swimmers. JOURNAL OF SPORTS SCIENCES 43, p. 2517-2527, 2025. Citações:1|2",
     "source_row": "333",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 11,
+    "posicao_docente": 11
   },
   {
     "id": "422",
@@ -10124,8 +10124,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "EDUARDO FERREIRA MAIA, DOUGLAS ; DE SOUZA LIRA FILHO, ROSTAND ; ARAÚJO DO REGO BARROS, TÉRCIO ; RODRIGUES DE SOUZA SOBRAL, IGOR ; FELIX LOURENÇO, ANA BEATRIZ ; SOUZA DE OLIVEIRA, NAYARA ; RIBEIRO BANDEIRA, PAULO FELIPE ; MOURA DOS SANTOS, MARCOS ANDRÉ ; PESSÔA DOS PRAZERES, THALIANE MAYARA ; DOS SANTOS HENRIQUE, RAFAEL . What school environment characteristics influence the physical fitness of low-income schoolchildren?. RETOS 66, p. 679-689, 2025.",
     "source_row": "202",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "423",
@@ -10148,8 +10148,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MARTINS, C. M. L. ; WEBSTER, E. K. ; ROMO-PEREZ, VICENTE ; SALAMI, SEDIGHEH ; LEMOS, LUÍS FILIPE ; DUNCAN, MICHAEL ; BARDID, FARID ; STAIANO, AMANDA ; OKELY, ANTHONY ; KAMBAS, A. ; SAAKSLAHTI, A. ; PESCE, C. ; HONRUBIA, C. ; MAGISTRO, DANIELE ; NIEMISTO, D. ; CARLEVARO, FABIO ; MAGNO, FRANCESCA ; NOBRE, GLAUBER ; SOARES, I. A. A. ; HENRIQUE, R. S. ; et.al . Age- and Sex-Specific Percentile Curves for the Test of Gross Motor Development From 7,263 Children Aged 3-5 Years From 13 Countries. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 14, p. 1, 2026. Citações:1",
     "source_row": "314",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "424",
@@ -10172,8 +10172,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARROS, T. A. R. ; MAIA, D. E. F. ; FRAGA, JOÃO VICTOR CAVALCANTI ; SOUTO-MAIOR, E. M. ; SILVA, J. V. A. ; BONUZZI, G. M. G. ; BANDEIRA, P. F. R. ; NAKAMURA, F. Y. ; HENRIQUE, R. S. . Age-related differences in angle-specific change-of-direction performance in basketball: a network analysisAltersabhängige Unterschiede bei der Leistung in Bezug auf die winkelspezifische Richtungsänderung im Basketball: eine Netzwerkanalyse. German Journal Of Exercise And Sport Research 1, 2026.",
     "source_row": "86",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "425",
@@ -10196,8 +10196,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, V. T. M. ; HENRIQUE, R. S. ; NASCIMENTO., J. Y. V. ; NOBRE, F. S. S. ; GUERRA, P. H. ; LUZ, L. G. O. . Analysis of Factors Associated with Active and Sedentary Behaviors of Children and Adolescents Considering Bronfenbrenner?s Bioecological Theory: A Scoping Review Protocol. Adolescents 6, p. 9, 2026.",
     "source_row": "500",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "426",
@@ -10220,7 +10220,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PRAZERES, T. M. P. ; HENRIQUE, R. S. ; LUZ, L. G. O. ; MARTINS, C. M. L. ; ALBUQUERQUE, M. R. ; RIBEIRO, M. D. ; SOBRAL, I. R. S. ; OLIVEIRA, N. S. ; LIRA FILHO, R. S. ; MOURA-DOS-SANTOS, M. A. . Do individual and school characteristics influence the siblings´ resemblance of gross motor coordination among Brazilian youth?. PERCEPTUAL AND MOTOR SKILLS 133, p. e-first, 2026.",
     "source_row": "410",
-    "numero_autores": 3,
+    "numero_autores": 10,
     "posicao_docente": 2
   },
   {
@@ -10244,8 +10244,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PACHECO, A. L. G. ; SANTOS, G. C. J. ; COSTA, D. M. L. ; FRAGA, J. V. C. ; SACRAMENTO, H. S. ; COSTA, J. M. ; MBANZE, S. F. ; CONGO, C. ; PEREIRA, J. G. ; SANTANA, T. F. ; FREITAS, F. O. ; SILVA, E. L. ; SANTOS, J. C. ; HENRIQUE, R. S. ; LEANDRO, C. V. G. . Error reduction as a calibration strategy for body composition measurements: A comparison between bioelectrical impedance analysis and dual-energy X-ray absorption. CLINICAL NUTRITION ESPEN 71, p. 102843, 2026.",
     "source_row": "389",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 15,
+    "posicao_docente": 14
   },
   {
     "id": "428",
@@ -10268,8 +10268,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "HENRIQUE, R. S.; SILVA, D. S. S. ; PRAZERES, T. M. P. ; OLIVEIRA, N. S. ; LIRA FILHO, R. S. ; OLIVEIRA, G. ; LUZ, L. G. O. ; MARTINS, C. M. L. ; ALBUQUERQUE, M. R. ; MOURA-DOS-SANTOS, M. A. ; BANDEIRA, P. F. R. ; PACHECO, M. M. . Motor Competence Assessment in Low-Income Brazilian Children: Factorial Structure and Concurrent Validity. JOURNAL OF MOTOR LEARNING AND DEVELOPMENT 14, p. 1-8, 2026. Citações:1",
     "source_row": "259",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 12,
+    "posicao_docente": 1
   },
   {
     "id": "429",
@@ -10292,8 +10292,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZHOU, BIN ; PHELPS, NOWELL H. ; GALEAZZI, AGNESE ; O'Driscoll, Olivia N. ; BENNETT, JAMES E. ; JAIN, LAKSHYA ; D'Ailhaud De Brisis, Ysé ; BARRADAS-PIRES, ANA ; Deo, Fulvio ; STEVENS, GRETCHEN A. ; Kontis, Vasilis ; Paciorek, Christopher J. ; CARRILLO-LARCO, RODRIGO M. ; MISHRA, ANU ; Fan, Yefeng ; RODRIGUEZ-MARTINEZ, ANDREA ; Nath, Vishwa ; RAYNER, ARCHIE W. ; Zouein, Annalise ; HENRIQUE, R. S. ; et.al . Obesity rise plateaus in developed nations and accelerates in developing nations. NATURE 653, p. 510-518, 2026. Citações:1",
     "source_row": "550",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 21,
+    "posicao_docente": 20
   },
   {
     "id": "430",
@@ -10317,7 +10317,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "LIMA FILHA, C. N. M. B. ; OLIVEIRA, S. F. M. ; LEONCIO, I. R. ; NERY, J. V. C. ; PINHEIRO, I. L. . ATIVIDADE FÍSICA EM TEMPOS DE PANDEMIA DE COVID-19: um relato de experiência. In: Oussama Naouar; Adriano Dias de Andrade. (Org.). Enfrentamento à COVID-19. 1ed.Recife: EDUFPE, 2021, v. 3, p. 45-66.",
     "source_row": "276",
     "numero_autores": 5,
-    "posicao_docente": 3
+    "posicao_docente": 2
   },
   {
     "id": "431",
@@ -10340,8 +10340,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ASSUNCAO, A. K. ; OLIVEIRA, J. I. V. ; FERNANDES, T. L. B. ; MELO, W. V. C. ; OLIVEIRA, L. I. G. L. ; OLIVEIRA, S. F. M. . Comparison between q angle measurements and their relationship with knee health in women practicing and not practicing futsal. JOURNAL OF PHYSICAL EDUCATION AND SPORT 21, p. 1505-1509, 2021.",
     "source_row": "68",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "432",
@@ -10364,8 +10364,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Machado, Taynara ; Santana, Luvanor ; LEITE, Lúcia Inês Guedes ; OLIVEIRA, S. F. M. . Efectos de la práctica de artes marciales en personas con discapacidad intelectual: una revisión sistemática. Revista Andaluza de Medicina Del Deporte 14, p. Avance-192, 2021. Citações:1",
     "source_row": "309",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "433",
@@ -10388,7 +10388,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, S. F. ; OLIVEIRA, J. I. V. ; DANTAS, M. J. B. ; OLIVEIRA, L. I. G. L. ; OLIVEIRA, S. F. M. . Estado de humor e percepção da qualidade de vida de jogadores de bocha paralímpica durante a Pandemia da COVID-19. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 28, p. 300-305, 2021. Citações:1|3",
     "source_row": "61",
-    "numero_autores": 6,
+    "numero_autores": 5,
     "posicao_docente": 5
   },
   {
@@ -10412,8 +10412,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Oliveira, José Igor Vasconcelos ; LEITE, Lúcia Inês Guedes ; COSTA, M. C. ; Perrier-Melo, Raphael ; SIMIM, M. ; Saulo Fernandes Melo de Oliveira . Impacts of home-based physical exercises on the health of people with spinal cord injury: a systematic review. REVISTA BRASILEIRA DE ATIVIDADE FÍSICA E SAÚDE 26, p. 1-13, 2021. Citações:3",
     "source_row": "377",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "435",
@@ -10436,8 +10436,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DANTAS, M. J. B. ; DANTAS, T. L. F. S. ; SOUZA, S. R. S. A. ; OLIVEIRA, J. I. V. ; OLIVEIRA, S. F. M. . Política, Biossegurança, Jogos Olímpicos e Paralímpicos Tóquio 2020. RESEARCH, SOCIETY AND DEVELOPMENT 10, p. 1-10, 2021.",
     "source_row": "168",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "436",
@@ -10460,8 +10460,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Oliveira, José Igor Vasconcelos ; LEITE, Lúcia Inês Guedes ; COSTA, M. C. ; Arruda, Sidcley Félix ; OLIVEIRA, S. F. M. . Protocolo para avaliação da precisão de jogadores de bocha paralímpica. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 27, p. 616-620, 2021. Citações:4|4",
     "source_row": "376",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "437",
@@ -10484,8 +10484,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FREITAS, L. J. F. ; OLIVEIRA, J. I. V. ; ARRUDA, S. F. ; OLIVEIRA, L. I. G. L. ; OLIVEIRA, S. F. M. . Reasons for adhering to the practice of paralympic athletics in adults with physical disabilities. Motricidade 17, p. 359-366, 2021.",
     "source_row": "236",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 5
   },
   {
     "id": "438",
@@ -10508,7 +10508,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, J. I. V. ; OLIVEIRA, L. I. G. L. ; ARRUDA, S. F. ; OLIVEIRA, S. F. M. . Reprodutibilidade teste-reteste de uma bateria de avaliação motora para jogadores de bocha paralímpica. Revista Andaluza de Medicina Del Deporte 14, p. 70, 2021. Citações:1",
     "source_row": "373",
-    "numero_autores": 5,
+    "numero_autores": 4,
     "posicao_docente": 4
   },
   {
@@ -10532,8 +10532,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FERNANDES, T. L. B. ; ASSUMPCAO, C. O. ; OLIVEIRA, S. F. M. ; FERMINO, R. C. ; VILAS-BOAS, J. P. . Single marker method to estimate center-of-mass velocity during vertical jumps. JOURNAL OF PHYSICAL EDUCATION AND SPORT 5, p. 2458-2465, 2021. Citações:3",
     "source_row": "212",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "440",
@@ -10556,8 +10556,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALBUQUERQUE, F. L. ; OLIVEIRA, Leonardo dos Santos ; Brito-Gomes, Jorge Luiz ; ACIOLI, T. ; OLIVEIRA, S. F. M. ; Perrier-Melo, Raphael ; COSTA, M. C. . A função tática causa interferência nas características morfológicas e metabólicas de futebolistas juniores brasileiros?. REVISTA BRASILEIRA DE FUTSAL E FUTEBOL 14, p. 47-57, 2022.",
     "source_row": "29",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 5
   },
   {
     "id": "441",
@@ -10580,8 +10580,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FERNANDES, T. L. B. ; OLIVEIRA, S. F. M. ; OLIVEIRA, J. I. V. ; AIDAR, F. ; RAMOS JUNIOR, V. R. ; COSTA, M. C. ; Tetsuo Tashiro . Contribuições da velocidade resultante sobre o desempenho de lançadores de disco paralímpicos classes F-44 e F-46. Revista Brasileira de Ciências do Esporte 44, p. 1-6, 2022.",
     "source_row": "213",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "442",
@@ -10604,8 +10604,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Torres, Wiliane Sales ; Oliveira, José Marcos Mendes ; SILVA, C. ; SILVA, D. F. ; SANTO, R. G. E. ; OLIVEIRA, S. F. M. . CORRELAÇÕES ENTRE A CLASSIFICAÇÃO FUNCIONAL E O DESEMPENHO MOTOR DE JOGADORES DE BASQUETEBOL DE CADEIRAS DE RODAS EXPERIENTES. Revista da Associação Brasileira de Atividade Motora Adaptada 23, p. 233-242, 2022.",
     "source_row": "526",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "443",
@@ -10628,8 +10628,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, D. F. ; LIMA, D. M. ; CARMO, Y. A. F. ; OLIVEIRA, G. J. S. ; SILVA, R. N. ; COSTA, E. C. ; OLIVEIRA, S. F. M. ; GUARDA, F. R. B. . Effect of Excess Weight on Health Expenditure with Diabetic Patients in Primary Health Care. Biomedical Journal of Scientific and Technical Research 44, p. 35150, 2022.",
     "source_row": "476",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "444",
@@ -10652,8 +10652,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MATEUS, GREYCE ANY SOUSA ; ASSUMPÇÃO, CLAUDIO OLIVEIRA ; CABIDO, CHRISTIAN EMMANUEL TORRES ; VENEROSO, CRISTIANO ; OLIVEIRA, SAULO FERNANDES MELO ; FERMINO, ROGÉRIO CÉSAR ; MORTATTI, ARNALDO ; LIMA, LEONARDO ; VILAS BOAS, JOAO PAULO ; BANJA, TÚLIO . Effect of Fatigue and Graded Running on Kinematics and Kinetics Parameters in Triathletes. INTERNATIONAL JOURNAL OF SPORTS MEDICINE 1, 2022. Citações:2|2",
     "source_row": "330",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "445",
@@ -10676,8 +10676,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, S. F. M.; OLIVEIRA, J. I. V. ; HAIACHI, M. C. ; FELDER, H. . Heart rate, oxygen uptake, and energy expenditure response of an SL3 class parabadminton athlete to a progressive test and simulated training session: a case study. Applied Physiology Nutrition and Metabolism 1-5, 2022. Citações:5|5",
     "source_row": "382",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 4,
+    "posicao_docente": 1
   },
   {
     "id": "446",
@@ -10700,8 +10700,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, S. F. ; OLIVEIRA, J. I. V. ; DANTAS, M. J. B. ; COSTA, M. C. ; OLIVEIRA, L. I. G. L. ; OLIVEIRA, S. F. M. . Mood States and Quality of Life in Paralympic Boccia Athetes in the COVID-19 Pandemic. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 28, p. 300-305, 2022. Citações:1",
     "source_row": "62",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "447",
@@ -10724,8 +10724,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Costa, Marlene Salvina ; MELLO, M. T. ; MOURA, M. ; DAMASCENO, V. ; SANTOS, W. R. ; NARCISO, F. V. ; SANTOS, W. R. ; OLIVEIRA, S. F. M. ; PAES, P. P. . RESPOSTAS DO SONO DE JOVENS NADADORES ÀS CARGAS DE TREINAMENTO E RECUPERAÇÃO, DURANTE O POLIMENTO. REVISTA BRASILEIRA DE MEDICINA DO ESPORTE (ONLINE), v. 29, p. 1-6, 2022. Citações:1",
     "source_row": "144",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "448",
@@ -10748,8 +10748,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, J. I. V. ; SILVA, L. R. ; GOMES, L. P. ; ALVES, J. F. V. V. ; DANTAS, M. J. B. ; ARRUDA, S. F. ; OLIVEIRA, S. F. M. . A ADIPOSIDADE CORPORAL E A AMPLITUDE ARTICULAR DE OMBROS PODEM INFLUENCIAR NO DESEMPENHO DA FORÇA EXPLOSIVA DOS MEMBROS SUPERIORES EM LANÇADORES PARALÍMPICOS?. Revista da Associação Brasileira de Atividade Motora Adaptada 24, p. 188-201, 2023.",
     "source_row": "374",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "449",
@@ -10772,8 +10772,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA-NETO, MANOEL E. ; OLIVEIRA, SAULO F. M. ; V. OLIVEIRA, JOSÉ IGOR ; GOMES, WILLEMAX S. ; LIRA, HUGO A. A. S. ; FORTES, LEONARDO S. . Acute Effects of Different Conditioning Activities on Amateur Soccer Players. INTERNATIONAL JOURNAL OF SPORTS MEDICINE 2023, p. 1-7, 2023. Citações:1|1",
     "source_row": "501",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "450",
@@ -10796,8 +10796,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MOREIRA, V. M. ; LIMA, L. C. R. ; MORTATTI, A. L. ; SOUZA, T. M. F. ; LIMA, F. V. ; OLIVEIRA, S. F. M. ; CABIDO, C. E. T. ; AIDAR, F. ; COSTA, M. C. ; PIRES, T. ; ACIOLI, T. ; FERMINO, R. C. ; ASSUMPCAO, C. O. ; FERNANDES, T. L. B. . Analysis of Muscle Strength and Electromyographic Activity during Different Deadlift Positions. Muscles 2, p. 218-227, 2023. Citações:1",
     "source_row": "348",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 14,
+    "posicao_docente": 6
   },
   {
     "id": "451",
@@ -10820,8 +10820,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, S. F. ; SILVA, E. ; OLIVEIRA, J. I. V. ; OLIVEIRA, S. F. M. . Bocha paralímpica en brasil: uso de estrategias de afrontamiento en el deporte durante la pandemia de Covid-19. Cuadernos de Psicología del Deporte, v. 23, p. 1-11, 2023.",
     "source_row": "65",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "452",
@@ -10844,8 +10844,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ARRUDA, S. F. ; OLIVEIRA, J. I. V. ; WINCLER, C. ; COSTA, A. S. ; PAES NETO, P. P. ; SIMIM, M. A. M. ; OLIVEIRA, S. F. M. . Can home-based training influence mood states and quality of life in Paralympic boccia athletes?. RETOS 50, p. 943-949, 2023. Citações:3",
     "source_row": "63",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "453",
@@ -10868,8 +10868,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SIMIM, M. ; MEDEIROS, A. I. A. ; FONTELES, A. I. ; OLIVEIRA, Saulo ; SOUSA JUNIOR, E. M. ; CATUNDA, F. N. ; SILVA, B. V. C. ; MOTA, G. R. ; ASSUMPCAO, C. O. . Comparative analysis of Amputee Soccer players and coach perception of intensity training. Revista Brasileira de Educação Física e Esporte 37, p. 1-12, 2023.",
     "source_row": "503",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 4
   },
   {
     "id": "454",
@@ -10892,8 +10892,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, J. I. V. ; GORLA, J. I. ; NASCIMENTO, S. M. ; Oliveira, José Marcos Mendes ; PAES, P. P. ; OLIVEIRA, S. F. M. . Content Validation and Inter-rater Reliability of a Protocol for The Precision Assessment of Boccia Players. JOURNAL OF HUMAN SPORT AND EXERCISE 18, p. 964-973, 2023. Citações:3|2",
     "source_row": "372",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "455",
@@ -10916,8 +10916,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MELO, J. H. M. V. ; OLIVEIRA, J. I. V. ; OLIVEIRA, S. F. M. ; COSTA, M. C. . CORRELAÇÕES ENTRE A CINEMÁTICA E CINÉTICA PROPULSIVA EM UM TESTE COM DINAMÔMETRO COMPACTO DE CADEIRAS DE RODAS: UM ESTUDO PILOTO. Revista da Associação Brasileira de Atividade Motora Adaptada 24, p. 59-72, 2023.",
     "source_row": "338",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 4,
+    "posicao_docente": 3
   },
   {
     "id": "456",
@@ -10940,8 +10940,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BANJA, TÚLIO ; ASSUMPCAO, C. O. ; PIRES, T. ; CABIDO, C. E. T. ; FERMINO, R. C. ; ANDRADE, R. ; ACIOLI, T. ; CIRILO-SOUSA, M. S. ; MARTINS, F. J. A. ; OLIVEIRA, S. F. M. ; SOUZA, T. M. F. . Effect of lower limb fatigue and performance prediction in CrossFit®. JOURNAL OF PHYSICAL EDUCATION AND SPORT 33, p. 714-721, 2023. Citações:3",
     "source_row": "73",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 10
   },
   {
     "id": "457",
@@ -10964,8 +10964,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LINHARES, M. ; FACANHA, C. ; TEIXEIRA, M. ; ALVES, K. S. ; PIRES, T. ; COSWIG, V. ; CABIDO, C. ; FERMINO, R. C. ; OLIVEIRA, Saulo ; SOUZA, T. M. F. ; AIDAR, F. J. ; ACIOLI, T. ; CIRILO-SOUSA, M. S. ; LIMA, L. C. R. ; BERTU, F. ; ASSUMPCAO, C. O. ; BANJA, T. . Examining strength, muscular power, and maximal performance in the power clean among CrossFit® practitioners. JOURNAL OF PHYSICAL EDUCATION AND SPORT 23, p. 3119-3126, 2023. Citações:2",
     "source_row": "293",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 17,
+    "posicao_docente": 9
   },
   {
     "id": "458",
@@ -10988,8 +10988,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CABRA, L. A. ; LIMA, L. C. R. ; CABIDO, H. E. T. ; FERMINO, R. C. ; OLIVEIRA, S. F. M. ; MEDEIROS, A. I. A. ; BARBOSA, L. F. ; SOUZA, T. M. F. ; FERNANDES, T. L. B. ; ASSUMPCAO, C. O. . Muscle Activation During the Squat Performed in Different Ranges of Motion by Women. Muscles 2, p. 12-22, 2023. Citações:4|6",
     "source_row": "110",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 10,
+    "posicao_docente": 5
   },
   {
     "id": "459",
@@ -11012,8 +11012,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTO, RUDÁ GONÇALVES ; OLIVEIRA, JOSÉ ; MACHADO-OLIVEIRA, LUCIANO ; FERREIRA, ANA PAULA ; PAES, PEDRO ; Oliveira, Saulo Fernandes . Pain, discomfort and psychobiological factors in wheelchair tennis athletes following COVID-19 lockdowns. Advances in Rehabilitation 37, p. 12-19, 2023. Citações:1",
     "source_row": "441",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "460",
@@ -11036,8 +11036,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, J. I. V. ; OLIVEIRA, S. F. M. ; UCHIDA, M. . Para Powerlifting Performance: A Systematic Review. INTERNATIONAL JOURNAL OF SPORTS MEDICINE 1-9, 2023. Citações:4|3",
     "source_row": "375",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "461",
@@ -11060,8 +11060,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Machado, Taynara ; COSTA JUNIOR, E. J. ; OLIVEIRA, G. J. S. ; OLIVEIRA, J. L. ; Torres, Wiliane Sales ; SILVA, D. F. ; OLIVEIRA, S. F. M. ; OLIVEIRA, J. I. V. . Avaliação da capacidade motora em atletas de bocha paralímpica. In: Marcelo de Castro Haiachi, Ailton Fernando Santana de Oliveira e Marcos Bezerra de Almeida. (Org.). Programa Paradesporto Brasil em Rede: o paradesporto em seus diferentes contextos. 1ed.Aracajú-SE: Criação, 2024, v. 1, p. 292-310.",
     "source_row": "308",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "462",
@@ -11084,8 +11084,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Torres, Wiliane Sales ; PEREIRA, M. E. S. ; ALVES, J. F. V. V. ; SILVA, J. L. F. B. E. ; ROSA, L. L. D. ; SOUZA, A. P. ; CAVALCANTI, J. V. A. ; SANTOS, W. S. P. ; OLIVEIRA, S. F. M. . Avaliação da Precisão Específica na Bocha Paralímpica. In: Marcelo de Castro Haiachi, Ailton Fernando Santana de Oliveira e Marcos Bezerra de Almeida. (Org.). Programa Paradesporto Brasil em Rede: o paradesporto em seus diferentes contextos. 1ed.Aracajú-SE: Criação, 2024, v. 1, p. 311-323.",
     "source_row": "527",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "463",
@@ -11108,8 +11108,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MATOS, M. T. ; ALVES, K. S. ; COSWIG, V. ; SOUZA, T. M. F. ; CABIDO, C. E. T. ; ACIOLI, T. ; CIRILO-SOUSA, M. S. ; AIDAR, F. J. ; FACANHA, C. ; BERTU, F. ; OLIVEIRA, S. F. M. ; ASSUMPCAO, C. O. ; BANJA, T. . Equilibrio y carga plantar en diferentes técnicas de sentadilla. RETOS 62, p. 225-231, 2024.",
     "source_row": "334",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 13,
+    "posicao_docente": 11
   },
   {
     "id": "464",
@@ -11133,7 +11133,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "OLIVEIRA, S. F. M.; OLIVEIRA, J. I. V. ; WINCLER, C. ; LOURENCO, T. ; HAIACHI, M. C. ; FELDER, H. . Physiological and metabolic responses of Parabadminton athletes to field simulated effort. THE JOURNAL OF SPORTS MEDICINE AND PHYSICAL FITNESS 1, p. 1-9, 2024. Citações:2",
     "source_row": "384",
     "numero_autores": 6,
-    "posicao_docente": 3
+    "posicao_docente": 1
   },
   {
     "id": "465",
@@ -11157,7 +11157,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "OLIVEIRA, Saulo; OLIVEIRA, JOSÉ ; ALVES, JOÃO FILLYPE ; FERNANDES, TÚLIO ; HAIACHI, MARCELO ; FELDER, HANNO . Change of direction profile in parabadminton: the role of impairment type and anthropometric factors. Advances in Rehabilitation 39, p. 40-52, 2025.",
     "source_row": "386",
     "numero_autores": 6,
-    "posicao_docente": 2
+    "posicao_docente": 1
   },
   {
     "id": "466",
@@ -11180,8 +11180,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, S. F. M.; OLIVEIRA, J. I. V. ; OLIVEIRA, L. I. G. L. ; COSTA, M. C. . Effects of wheelchair sports practice on body composition of people with spinal cord injury. Revista Brasileira de Cineantropometria e Desempenho Humano 27, p. 1-12, 2025.",
     "source_row": "383",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 4,
+    "posicao_docente": 1
   },
   {
     "id": "467",
@@ -11204,8 +11204,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "ARRUDA, S. F. ; ALVES, J. F. V. V. ; SOUZA, A. P. ; SILVA, J. L. F. B. E. ; COSTA JUNIOR, E. J. ; OLIVEIRA, G. J. S. ; FIGUEIREDO, R. L. S. ; Torres, Wiliane Sales ; ROSA, L. L. D. ; SANTOS, W. S. P. ; MENEZES, V. G. ; OLIVEIRA, S. F. M. . Hipnose no esporte: do palco à pista. In: Iberê Caldas Souza Leão. (Org.). Atualizações em Ciências do Esporte e Exercício. 2ed.Recife: Companhia Editora de Pernambuco (CEPE), 2025, v. 2, p. 217-242.",
     "source_row": "60",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 12,
+    "posicao_docente": 12
   },
   {
     "id": "468",
@@ -11228,7 +11228,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, SAULO F. M.; OLIVEIRA, J. I. V. ; FERNANDES, T. L. B. ; HAIACHI, M. C. ; FELDER, H. . Muscle activation in wheelchair Parabadminton: Effects of intensity and racket use. JOURNAL OF SPINAL CORD MEDICINE 1-10, 2025. Citações:1",
     "source_row": "385",
-    "numero_autores": 4,
+    "numero_autores": 5,
     "posicao_docente": 1
   },
   {
@@ -11253,7 +11253,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "Lima, Isael João ; SILVA, L. L. S. ; SILVA, R. A. ; SILVA, L. S. ; SANTANA, M. Z. ; OLIVEIRA, S. F. M. . PERFIL DAS PESSOAS COM DEFICIÊNCIA NA EDUCAÇÃO FÍSICA: UMA REVISÃO INTEGRATIVA. Gestus (Vitória de Santo Antão), v. 1, p. 83-89, 2025.",
     "source_row": "285",
     "numero_autores": 6,
-    "posicao_docente": 2
+    "posicao_docente": 6
   },
   {
     "id": "470",
@@ -11276,8 +11276,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MEDEIROS RIBEIRO, ANA FLÁVIA ; DE SOUZA MELO, RENATO ; CRISTINA RODRIGUES CARVALHO, DANIELA ; FERNANDES, JULIANA ; De Oliveira, Saulo Fernandes Melo ; DE ANDRADE MONTEIRO, RAFAELLA ; DA SILVA DE MELLO, ANDRESSA ; DE CÁSSIA BATISTA DE SOUZA, CAROLINE ; DE LYRA CARDOSO, MARIA JULIA ; DAS GRAÇAS RODRIGUES DE ARAÚJO, MARIA ; DE LIMA FERREIRA, ANA PAULA . Profile of para athletes and characterization of sports injuries during the 2023 Paralympic School Games. International Biomechanics 12, p. 7-17, 2025.",
     "source_row": "335",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 11,
+    "posicao_docente": 5
   },
   {
     "id": "471",
@@ -11300,8 +11300,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CARVALHO, IGOR ; CARPINELLI, EDUARDO ; Melo, Saulo ; HAIACHI, MARCELO ; SANTOS, SIMONE ; GUIMARÃES, CARLA . The association between gaze behavior and parabadminton serves accuracy. International Journal of Sports Science & Coaching 9, p. 1, 2025.",
     "source_row": "122",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "472",
@@ -11324,8 +11324,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, D. F. ; COSTA, A. ; FORTES, L. S. ; OLIVEIRA, SAULO F.M. . Does mental fatigue influence the accuracy of paralympic boccia players?. Frontiers In Sports And Active Living 7, p. 1-11, 2026.",
     "source_row": "25",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 4
   },
   {
     "id": "473",
@@ -11348,8 +11348,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, BRUNO RIBEIRO RAMALHO ; SANTOS, TONY MEIRELES ; GUERREIRO, RENATO ; D?AMORIM, IGOR ; LATTARI, EDUARDO ; DESLANDES, ANDRÉA CAMAZ . Acute affective responses to high-intensity interval exercise: implications on the use of different stimulus-recovery amplitudes. European Journal of Sport Science 1, p. 1-26, 2021. Citações:4|5",
     "source_row": "369",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 6,
+    "posicao_docente": 2
   },
   {
     "id": "474",
@@ -11372,8 +11372,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, BRUNO R. R. ; LATTARI, EDUARDO ; PIRES, FLÁVIO O. ; VIANA, BRUNO F. ; MACHADO, SÉRGIO ; RODRIGUES, GUILHERME M. ; OLIVEIRA, IZAILDO A. ; SANTOS, TONY M. . Can the self-selection of aerobic exercise be used in individuals with different cardiorespiratory fitness levels?. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) 1, p. 1-12, 2021. Citações:2|1",
     "source_row": "368",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "475",
@@ -11396,8 +11396,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DO COUTO, MOISÉS COSTA ; DE SOUSA FERNANDES, MATHEUS SANTOS ; DOS SANTOS, TONY MEIRELES . Comment: Kay et al.?s (2020) Isokinetic eccentric exercise substantially improves mobility, muscle strength, and size, but not postural sway metrics in older adults with limited regression observed following a detraining period. Eur J Appl Physiol. EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY 161, p. 1795-1796, 2021.",
     "source_row": "194",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "476",
@@ -11420,8 +11420,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "INOUE, ALLAN ; LATTARI, EDUARDO ; CARMO, EVERTON CRIVOI DO ; RODRIGUES, GUILHERME MORAES ; DE OLIVEIRA, BRUNO RIBEIRO RAMALHO ; SANTOS, TONY MEIRELES . Correlation between economy/efficiency and mountain biking cross-country race performance. European Journal of Sport Science 1, p. 1-23, 2021. Citações:4|3",
     "source_row": "262",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "477",
@@ -11444,8 +11444,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PERRIER-MELO, RAPHAEL J. ; D'AMORIM, IGOR ; MEIRELES SANTOS, TONY ; CALDAS COSTA, EDUARDO ; RODRIGUES BARBOSA, RHENNAN ; DA CUNHA COSTA, MANOEL . Effect of active versus passive recovery on performance-related outcome during high-intensity interval exercise. JOURNAL OF SPORTS MEDICINE AND PHYSICAL FITNESS 61, p. 562-570, 2021. Citações:7|12",
     "source_row": "400",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 6,
+    "posicao_docente": 3
   },
   {
     "id": "478",
@@ -11468,8 +11468,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, LUCAS EDUARDO RODRIGUES ; COSTA, ANDRÉ DOS SANTOS ; COSTA, EDUARDO CALDAS ; DAMASCENO, VINICIUS OLIVEIRA ; CHEN, ZHAOJING ; DE OLIVEIRA, IZAILDO ALVES ; DAMES, KARLA KRISTINE ; PIRES, FLÁVIO OLIVEIRA ; SANTOS, TONY MEIRELES . Effects of Self-Selected Passive Recovery Time in Interval Exercise on Perceptual and Heart Rate Responses in Older Women: A Promissory Approach. JOURNAL OF AGING AND PHYSICAL ACTIVITY 11, p. 1-11, 2021. Citações:2",
     "source_row": "456",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "479",
@@ -11492,8 +11492,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARRETO, C. B. ; VINÍCIUS, ÍTALO ; FRANCO-ALVARENGA, PAULO ESTEVÃO ; CANESTRI, RAUL ; GOETHEL, MÁRCIO FAGUNDES ; SANTOS, LUCAS EDUARDO RODRIGUES ; VIANA, BRUNO ; SANTOS, TONY MEIRELES DOS ; PIRES, FLÁVIO OLIVEIRA . Proof-of-Concept and Test-Retest Reliability Study of Psychological and Physiological Variables of the Mental Fatigue Paradigm. International Journal of Environmental Research and Public Health 18, p. 9532, 2021. Citações:11|11",
     "source_row": "82",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "480",
@@ -11516,8 +11516,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FREITAS JUNIOR CG ; PAES, P. P. ; FORTES, L. S. ; Silva AJ ; Costa MC ; Lima Junior DRAA ; Santos TM . Reliability of the high-speed camera-based system (hsc-kinovea) for lower-limb explosive strength endurance assessment in athletes. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 32, p. 2-8, 2021.",
     "source_row": "233",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "481",
@@ -11540,8 +11540,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FILGUEIRA, TAYRINE ORDONIO ; CASTOLDI, ANGELA ; SANTOS, LUCAS EDUARDO R. ; DE AMORIM, GERALDO JOSÉ ; DE SOUSA FERNANDES, MATHEUS SANTOS ; ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; CAMPOS, EDUARDO ZAPATERRA ; SANTOS, TONY MEIRELES ; SOUTO, FABRÍCIO OLIVEIRA . The Relevance of a Physical Active Lifestyle and Physical Fitness on Immune Defense: Mitigating Disease Burden, With Focus on COVID-19 Consequences. Frontiers in Immunology 12, p. 1-23, 2021. Citações:87|101",
     "source_row": "218",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "482",
@@ -11564,8 +11564,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BARBOSA, MAA ; MOURA, H. M. ; Santos LER ; DE SOUSA FERNANDES, MATHEUS SANTOS ; HENRIQUE RS ; Damasceno VO ; Santos TM . COMPARISON OF AFFECTIVE RESPONSES DURING SCHOOL PHYSICAL EDUCATION CLASSES WITH DIFFERENT RECOVERY TIMES. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 33, p. 1-9, 2022. Citações:1",
     "source_row": "78",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "483",
@@ -11588,8 +11588,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, VINICIUS ; COSTA, ANDRÉ ; CAMPELLO, MARIA ; SOUZA, DANILO ; GONÇALVES, REGINALDO ; CAMPOS, EDUARDO ; SANTOS, TONY . Criterion validity and accuracy of a heart rate monitor. Human Movement 23, p. 1-0, 2022. Citações:5|11",
     "source_row": "164",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "484",
@@ -11612,8 +11612,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUSA FERNANDES, MATHEUS SANTOS ; SANTOS, GABRIELA CARVALHO JUREMA ; FILGUEIRA, TAYRINE ORDONIO ; GOMES, DAYANE APARECIDA ; BARBOSA, ELIAS ALMEIDA SILVA ; DOS SANTOS, TONY MEIRELES ; CÂMARA, NIELS OLSEN SARAIVA ; CASTOLDI, ANGELA ; SOUTO, FABRICIO OLIVEIRA . Cytokines and Immune Cells Profile in Different Tissues of Rodents Induced by Environmental Enrichment: Systematic Review. INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES 23, p. 11986, 2022. Citações:9|8",
     "source_row": "178",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 9,
+    "posicao_docente": 6
   },
   {
     "id": "485",
@@ -11636,8 +11636,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LATTARI, EDUARDO ; VIEIRA, LUCAS ANTUNES FARIA ; SANTOS, LUCAS EDUARDO RODRIGUES ; JESUS ABREU, MARCO ANTONIO ; RODRIGUES, GUILHERME MORAES ; DE OLIVEIRA, BRUNO RIBEIRO RAMALHO ; MACHADO, SÉRGIO ; MARANHÃO NETO, GERALDO ALBUQUERQUE ; SANTOS, TONY MEIRELES . Transcranial Direct Current Stimulation Combined With or Without Caffeine: Effects on Training Volume and Pain Perception. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 1, p. 1-10, 2022. Citações:5|4",
     "source_row": "268",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "486",
@@ -11660,8 +11660,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUSA FERNANDES, MATHEUS SANTOS ; DA SILVA PEDROZA, ANDERSON APOLÔNIO ; DE ANDRADE SILVA, SEVERINA CÁSSIA ; DE LEMOS, MARIA DANIELE TEIXEIRA ; BERNARDO, ELENILSON M. ; PEREIRA, ALLIFER R ; DOS SANTOS, TONY MEIRELES ; JACQUES LAGRANHA, CLAUDIA . Undernutrition modulates endoplasmic reticulum stress genes in the hippocampus of juvenile rats: Involvement of oxidative stress. BRAIN RESEARCH 1, p. 148098, 2022. Citações:7",
     "source_row": "177",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "487",
@@ -11684,8 +11684,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title",
     "produto_referencia": "CHAVES, S. ; PEREIRA, A. ; HENRIQUE, S. R. ; SANTOS, L. E. R. ; SILVA, N. M. G. ; LIMA, V. F. ; BARROS, T. A. R. ; SANTOS, TONY M. ; CLAUDINO, J. G. . A importância do Desenvolvimento do Senso de Comunidade e Cooperação Entre Startups, Empresas, Clubes Esportivos e Universidades Brasileiras. In: João Gustavo Claudino. (Org.). Ecossistema de Inovação na área da Educação Física e Esporte: desafios e perspectivas. 1ed.São Paulo: Dialética, 2023, v. 1, p. 1-164.",
     "source_row": "133",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "488",
@@ -11708,8 +11708,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CÉSAR VASCONCELOS, GUSTAVO ; DAMORIM, IGOR ; SANTOS, TONY ; LIMA-JUNIOR, DALTON ; FORTES, LEONARDO . Acute effect of intensity and volume during strength training on sensation of pleasure, rating of perceived exertion, and pain in trained men. Human Movement 1, p. 1, 2023.",
     "source_row": "129",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 5,
+    "posicao_docente": 3
   },
   {
     "id": "489",
@@ -11732,8 +11732,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "SANTOS, TONY M.; TINOCO, G. ; ELSANGEDY, HASSAN MOHAMED ; SANTOS, L. E. R. . DEPENDÊNCIA COMPORTAMENTAL E ADESÃO À PRÁTICA DE ATIVIDADES FÍSICAS EM AMBIENTES NATURAIS: UMA REFLEXÃO A PARTIR DO SURFE. In: ERICK F. Q. CONDE; JULIANA A. DE O. CAMILO; LEO NEPOMUCENO. (Org.). Psicologia, Esporte e Natureza - Aspectos Subjetivos, Comportamentais e Socioculturais. 1ed.Curitiba - Paraná: Juruá Editora, 2023, v. 1, p. 1-170.",
     "source_row": "459",
-    "numero_autores": 3,
-    "posicao_docente": 2
+    "numero_autores": 4,
+    "posicao_docente": 1
   },
   {
     "id": "490",
@@ -11756,8 +11756,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ALBUQUERQUE, MAICON RODRIGUES ; HOOPER, BEATRIZ ; VIANA, IASMIN OLIVEIRA DE SOUSA ; MESQUITA, PAULO H. C. ; SANTOS, TONY MEIRELES ; APOLINÁRIOSOUZA, TÉRCIO ; FORTES, LEONARDO DE SOUSA ; GONÇALVES, DAWIT ALBIEIRO PINHEIRO . Do executive function performance, gaze behavior, and pupil size change during incremental acute physical exercise?. PSYCHOPHYSIOLOGY 60, p. 1-14, 2023. Citações:4|5",
     "source_row": "30",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 5
   },
   {
     "id": "491",
@@ -11780,7 +11780,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, GLEDSON TAVARES AMORIM ; COSTA, EDUARDO CALDAS ; SANTOS, TONY MEIRELES ; BEZERRA, RICARDO ANDRADE ; LEMOS, TELMA MARIA ARAÚJO MOURA ; MORTATTI, ARNALDO LUIS ; ELSANGEDY, HASSAN MOHAMED . Effect of High-Intensity Interval, Moderate-Intensity Continuous, and Self-Selected Intensity Training on Health and Affective Responses. RESEARCH QUARTERLY FOR EXERCISE AND SPORT 95, p. 1-16, 2023. Citações:9|7",
     "source_row": "371",
-    "numero_autores": 5,
+    "numero_autores": 7,
     "posicao_docente": 3
   },
   {
@@ -11804,8 +11804,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, L. E. R. ; DAMES, KARLA KRISTINE ; OLIVEIRA, E. D. ; FERNANDES, M. S. S. ; FILGUEIRA, T. O. ; Mesquita BMS ; Souza CFCXM ; Lattari E ; MEIRELES SANTOS, T. . Entropy of Heart Rate on Self-Selected Interval Exercises in Older Women. INTERNATIONAL JOURNAL OF EXERCISE SCIENCE 16, p. 525-537-537, 2023.",
     "source_row": "454",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "493",
@@ -11828,8 +11828,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DAMASCENO, VINICIUS ; GOMES, DAVID ; MELO, MARIA ; DE SOUZA, DANILO ; GONÇALVES, REGINALDO ; SANTOS, LUCAS ; COSTA, BRUNA ; SANTOS, ANDRÉ ; DOLEZAL, BRETT ; CAMPOS, EDUARDO ; SANTOS, TONY . Influence of the exercise intensity during EA Sport Active 2 on physiology and psychology variables. Human Movement 24, p. 1-10, 2023.",
     "source_row": "166",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 11,
+    "posicao_docente": 11
   },
   {
     "id": "494",
@@ -11852,8 +11852,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SILVA, MICHEL OLIVEIRA ; SANTOS, TONY MEIRELES ; INOUE, ALLAN ; SANTOS, LUCAS EDUARDO RODRIGUES ; DE LIMA DO NASCIMENTO ANASTÁCIO, WEYDYSON ; LATTARI, EDUARDO ; OLIVEIRA, BRUNO RIBEIRO RAMALHO . Is There a Dose-Response Relationship between High-Intensity Interval Exercise (HIIE) Intensity and Affective Valence? Analysis of Three HIIE Sessions Performed with Different Amplitudes. International Journal of Environmental Research and Public Health 20, p. 2698, 2023. Citações:5",
     "source_row": "497",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 2
   },
   {
     "id": "495",
@@ -11876,8 +11876,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, LUCAS EDUARDO RODRIGUES ; ELSANGEDY, HASSAN MOHAMED ; DE SOUZA, CATARINA FERNANDA COSTA XAVIER MONT ; DA SILVA MESQUITA, BRUNA MILENE ; BARRETO, C. B. ; VINÍCIUS, ÍTALO ; PEREIRA, DANIEL CARVALHO ; PIRES, FLÁVIO OLIVEIRA ; SANTOS, TONY MEIRELES DOS . Reliability of the Heartbeat Tracking Task to Assess Interoception. APPLIED PSYCHOPHYSIOLOGY AND BIOFEEDBACK xx, p. xx, 2023. Citações:11|7",
     "source_row": "457",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 9
   },
   {
     "id": "496",
@@ -11900,8 +11900,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RODRIGUES, A. I. ; LATTARI, E. ; CARMO, E. C. ; OLIVEIRA, B. R. R. ; Silva EB ; SANTOS, TONY MEIRELES DOS . Reliability of time to exhaustion above the power output at VOpeak in trained mountain bikers. INTERNATIONAL JOURNAL OF EXERCISE SCIENCE 16, p. 654-664, 2023.",
     "source_row": "427",
-    "numero_autores": 4,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "497",
@@ -11924,8 +11924,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "VIEIRA, C. B. ; PIRES, L. T. M. ; SILVA JUNIOR, A. A. ; ARAUJO, A. C. C. ; MAIA, D. E. F. ; FRANCA, E. O. ; SANTOS JUNIOR, E. S. ; PAIVA, G. M. ; SILVA, I. M. B. ; ALMEIDA, J. E. V. ; MACIEL, S. M. B. ; ALBUQUERQUE, V. P. ; NASCIMENTO, A. J. ; SANTOS, L. E. R. ; ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; Souto Maior EM ; BARRETO NETO, A. C. S. ; SANTOS, TONY M. . UTILIZAÇÃO DA INTELIGÊNCIA ARTIFICIAL ATRAVÉS DE UM SISTEMA ESPECIALISTA PARA A TOMADA DE DECISÃO NO ENFRENTAMENTO AO SEDENTARISMO. In: SECRETARIA DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO - SECTI. (Org.). 1º E-BOOK DO PROGRAMA DE EXTENSÃO TECNOLÓGICA. 2ed.Recife: , 2023, v. 1, p. 1-223.",
     "source_row": "537",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 18,
+    "posicao_docente": 18
   },
   {
     "id": "498",
@@ -11948,8 +11948,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DE SOUZA, DANILO ; CAMPOS, EDUARDO ; GONÇALVES, REGINALDO ; VIANA, JEFERSON ; DE LIMA, JORGE ; SANTOS, TONY ; DAMASCENO, VINICIUS . Validity of the Borg 6-20 categories obtegories obtained in incremental testing for prescribing aerobic exercise intensity: a systematic review. Human Movement 24, p. 46-55, 2023. Citações:9|8",
     "source_row": "184",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "499",
@@ -11972,8 +11972,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "BRIETZKE, CAYQUE ; VINÍCIUS, ÍTALO ; RIBEIRO, WESLEY ALVES ; FRANCO-ALVARENGA, PAULO ESTEVÃO ; CANESTRI, RAUL ; VASCONCELOS, GUSTAVO CÉSAR ; HETTINGA, FLORENTINA JOHANNA ; SANTOS, TONY MEIRELES ; PIRES, FLÁVIO OLIVEIRA . Carbohydrate mouth rinse improves performance of mentally fatigued cyclists despite null effects on psychological responses. PHYSIOLOGY & BEHAVIOR 274, p. 114428-114428, 2024. Citações:1|1",
     "source_row": "109",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 9,
+    "posicao_docente": 8
   },
   {
     "id": "500",
@@ -11996,8 +11996,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "FRAGA, JOÃO VICTOR CAVALCANTI ; DO REGO BARROS, TÉRCIO ARAÚJO ; LIMA, VICTOR FERREIRA ; LIRA FILHO, ROSTAND DE SOUZA ; DA SILVA, NOADIA MARIA GUIMARÃES ; DA SILVA, MARIVÂNIO JOSÉ ; DOS ANJOS PEREIRA, TIAGO ; DE ALMEIDA, MARCELUS BRITO ; DE SOUZA FONSECA, FABIANO ; DOS SANTOS, TONY MEIRELES ; NAKAMURA, FÁBIO YUZO ; HENRIQUE, RAFAEL DOS SANTOS . Locomotor profile of a new soccer modality played in 1v1 format. SPORT SCIENCES FOR HEALTH (TESTO STAMPATO) https://link.sp, 2024. Citações:1|1",
     "source_row": "229",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 12,
+    "posicao_docente": 10
   },
   {
     "id": "501",
@@ -12020,8 +12020,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Gonçalves JG ; Luz LGO ; Bandeira PFR ; Prazeres TMP ; LIMA, V. F. ; MAIA, D. E. F. ; Santos TM ; Gaya AR ; Santos MAM ; HENRIQUE RS . Psychometric properties of the Knowledge and Understanding Questionnaire of the Canadian Assessment of Physical Literacy-2 in low-income Brazilian children. RETOS 58, p. 291-298, 2024. Citações:1",
     "source_row": "246",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 10,
+    "posicao_docente": 7
   },
   {
     "id": "502",
@@ -12044,8 +12044,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VINÍCIUS, ÍTALO ; BRIETZKE, CAYQUE ; FRANCO-ALVARENGA, PAULO ; VASCONCELOS, GUSTAVO ; SAUNDERS, BRYAN ; SANTOS, TONY MEIRELES ; PIRES, FLÁVIO OLIVEIRA . Efficacy of caffeine as an ergogenic aid in multiple cycling time trials. EUROPEAN JOURNAL OF APPLIED PHYSIOLOGY 125, p. 1361-1370, 2025. Citações:1",
     "source_row": "541",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "503",
@@ -12068,8 +12068,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "VIANA, BRUNO ; OLIVEIRA, BRUNO R. R. ; INOUE, ALLAN ; SANTOS, LUCAS E. R. ; SANTOS, TONY M. ; PIRES, FLÁVIO OLIVEIRA . Exercise expectation changes psychophysiological responses to sprint exercise regardless of changes in pacing and performance. INTERNATIONAL JOURNAL OF SPORT AND EXERCISE PSYCHOLOGY 1, p. 1-14, 2025. Citações:1|1",
     "source_row": "535",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 6,
+    "posicao_docente": 5
   },
   {
     "id": "504",
@@ -12092,8 +12092,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Santos EL ; Wanderley Júnior R.S. ; Soares AJG ; Santos LER ; Damascena CR ; Santos TM ; Menezes, VG . Integration of cyberculture in physical education courses at federal universities in Northeastern Brazil. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 36, p. 1-16, 2025.",
     "source_row": "443",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 6
   },
   {
     "id": "505",
@@ -12116,8 +12116,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, TONY MEIRELES; RODRIGUES SANTOS, LUCAS EDUARDO ; VINICIUS, ÍTALO ; BRIETZKE, CAYQUE ; PEREIRA, LUCAS CAMILO ; MELO, PAULO HENRIQUE ; MOURA, THAIENE CAMILA BELTRÃO ; DE NEGRI, TADDEO ; ELSANGEDY, HASSAN MOHAMED ; PIRES, FLÁVIO OLIVEIRA . Intrinsic judgment error in men?s championship world surf league: WSL 2021. RETOS 64, p. 311-321, 2025.",
     "source_row": "461",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 10,
+    "posicao_docente": 1
   },
   {
     "id": "506",
@@ -12140,8 +12140,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; MEIRELES SANTOS, TONY . A ATIVIDADE FÍSICA NA PREVENÇÃO DO CÂNCER E NO TRATAMENTO DO PACIENTE ONCOLÓGICO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 59-82.",
     "source_row": "49",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "507",
@@ -12164,7 +12164,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "ZAPATERRA CAMPOS, EDUARDO ; DOS SANTOS, TONY MEIRELES ; PAPOTI, MARCELO ; HOFMANN, PETER . A -Further-Step- Toward Considering Exercise Session Duration in Training Prescription. MEDICINE AND SCIENCE IN SPORTS AND EXERCISE 9, p. 1, 2026.",
     "source_row": "546",
-    "numero_autores": 3,
+    "numero_autores": 4,
     "posicao_docente": 2
   },
   {
@@ -12188,8 +12188,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "RODRIGUES SANTOS, LUCAS EDUARDO ; ELSANGEDY, HASSAN MOHAMED ; ACEVEDO, EDMUND O. ; RAMALHO OLIVEIRA, BRUNO RIBEIRO ; LEÃO, HIGO FARADAY PARAISO ; ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; GOETHEL, MÁRCIO FAGUNDES ; SANTOS, TONY MEIRELES . Acute Effects of Binaural Beats on Interoception in Individuals WITH Symptoms of Depression. PSYCHOLOGICAL REPORTS 1, p. 1-16, 2026.",
     "source_row": "426",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "509",
@@ -12212,8 +12212,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; Bruno V. N. da Silva ; MEIRELES SANTOS, TONY . ASPECTOS INICIAIS EM ONCOLOGIA E EXERCÍCIO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 7-20.",
     "source_row": "45",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "510",
@@ -12236,8 +12236,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; MEIRELES SANTOS, TONY . CARCINOGÊNESE E METABOLISMO ENERGÉTICO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 21-30.",
     "source_row": "50",
-    "numero_autores": 6,
-    "posicao_docente": 6
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "511",
@@ -12260,8 +12260,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL (Org.) ; MEIRELES SANTOS, TONY (Org.) . Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1. ed. São Paulo: Editora Dialética, 2026. v. 1. 160p .",
     "source_row": "44",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "512",
@@ -12284,8 +12284,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; Bruno V. N. da Silva ; MEIRELES SANTOS, TONY . IMUNIDADE, CÂNCER E EXERCÍCIO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 43-58.",
     "source_row": "46",
-    "numero_autores": 6,
-    "posicao_docente": 2
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "513",
@@ -12308,8 +12308,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; MEIRELES SANTOS, TONY . INTERVENÇÃO COM EXERCÍCIOS FÍSICOS. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 117-138.",
     "source_row": "51",
-    "numero_autores": 5,
-    "posicao_docente": 3
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "514",
@@ -12333,7 +12333,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "ANASTÁCIO, WEYDYSON DE LIMA DO NASCIMENTO ; SANTOS, TONY MEIRELES DOS ; SOUTO, FABRÍCIO OLIVEIRA ; ACEVEDO, EDMUND O. . Mechanism-based management of taxane-induced neuropathic pain in breast cancer survivors: a critical review. Frontiers In Pain Research 7, p. 1, 2026.",
     "source_row": "54",
     "numero_autores": 4,
-    "posicao_docente": 4
+    "posicao_docente": 2
   },
   {
     "id": "515",
@@ -12356,7 +12356,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; MEIRELES SANTOS, TONY . PLANEJAMENTO DA INTERVENÇÃO E AVALIAÇÃO DO SOBREVIVENTE ONCOLÓGICO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 83-116.",
     "source_row": "52",
-    "numero_autores": 3,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -12380,8 +12380,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "Anastácio WL ; Bruno V. N. da Silva ; MEIRELES SANTOS, TONY . PRINCIPAIS MODALIDADES TERAPÊUTICAS. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 31-42.",
     "source_row": "47",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "517",
@@ -12404,7 +12404,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "Anastácio WL ; Santos LER ; MEIRELES SANTOS, TONY . SUPERVISÃO E ESTRATÉGIAS DE ENGAJAMENTO. In: Weydyson de Lima do Nascimento Anastácio ; Tony Meireles dos Santos. (Org.). Exercícios Físicos e Câncer: Um Guia de Condutas e Prescrição. 1ed.São Paulo: Editora Dialética, 2026, v. 1, p. 139-159.",
     "source_row": "48",
-    "numero_autores": 6,
+    "numero_autores": 3,
     "posicao_docente": 3
   },
   {
@@ -12428,8 +12428,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente",
     "produto_referencia": "MEIRELES SANTOS, TONY; HM ELSANGEDY ; Damascena CR ; Leão HFP ; Santos LER . Teorias comportamentais podem ajudar na adesão. In: Andrea Camaz Deslandes ;Natáli Valim Oliver Bento-Torres ;Felipe Barreto Schuch ;Ana Paula Lopes Carvalho. (Org.). Neurociência do exercício físico. 1ed.São Paulo: Manole, 2026, v. 1, p. 1-376.",
     "source_row": "336",
-    "numero_autores": 6,
-    "posicao_docente": 4
+    "numero_autores": 5,
+    "posicao_docente": 1
   },
   {
     "id": "519",
@@ -12452,7 +12452,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "SILVA, J. C. ; MENEZES, VILDE GOMES . Educação Permanente, cuidado em saúde da população negra e afrocentricidade. Os múltiplos olhares do laboratório de educação das relações étnico-raciais da UFPE. 01ed.Editora da UFPE: RECIFE-PE, 2021, v. 01, p. 07-141.",
     "source_row": "482",
-    "numero_autores": 5,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -12476,7 +12476,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "MENEZES, VILDE GOMES; AGUADO, D. M. ; SANTOS, T. M. ; VIANA, F. S. . Esporte no Brasil e sua importância no Brasil e sua importância para os municípios. In: VILDE GOMES DE MENEZES. (Org.). ESPORTE NO BRASIL E SUA IMPORTÂNCIA PARA OS MUNICÍPIOS. 01ed.RECIFE: EDITORA UFPE, 2021, v. , p. 25-42.",
     "source_row": "345",
-    "numero_autores": 1,
+    "numero_autores": 4,
     "posicao_docente": 1
   },
   {
@@ -12500,7 +12500,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "MENEZES, V. G.; AGUADO, D. M. ; HONORATO, T. ; VIANA, F. S. . Esporte no Brasil e sua Importância para os Municípios. In: Vilde Gomes Menezes. (Org.). POLÍTICAS PÚBLICAS E GESTÃO NO ESPORTE E LAZER NAS REGIÕES NORTE E NORDESTE DO BRASIL RECIFE, 2020. 1ed.Recife: Editora UFPE, 2021, v. 1, p. 25-42.",
     "source_row": "344",
-    "numero_autores": 3,
+    "numero_autores": 4,
     "posicao_docente": 1
   },
   {
@@ -12548,8 +12548,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Paes, Pedro Pinheiro ; COSTA, M. S. F. ; FREITAS JÚNIOR, Carlos Gilberto ; FIGUEIREDO, T. J. B. ; SANTOS, W. R. ; ARAUJO, J. C. S. ; ARRUDA, S. F. ; GUARDA, F. R. B. ; SANTOS, W. R. ; MENEZES, VILDE GOMES . Plan de estudios de los cursos de educación física en Brasil y la formación de profesionales en el perfil de los gestores deportivos. Revista peruana de atividade física e ciências do esporte 08, p. 1297-1306, 2021.",
     "source_row": "393",
-    "numero_autores": 5,
-    "posicao_docente": 5
+    "numero_autores": 10,
+    "posicao_docente": 10
   },
   {
     "id": "524",
@@ -12572,8 +12572,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "MENEZES, VILDE GOMES; AMORIM, A. B. ; FELICIANO, A. C. ; COSTA, A. M. ; OLIVEIRA, A. M. ; AGUADO, D. M. ; SANTOS, E. L. ; SANTOS, E. S. ; MELO, E. H. R. ; ALVES, F. A. P. ; VIANA, F. S. ; STAREPRAVO, F. A. ; BASTOS, F. C. ; BRAVO, G. ; FLORÊNCIO, J. P. W. ; ALMEIDA JUNIOR, J. C. ; MOURA, J. E. S. ; SIMOES, J. L. ; SOUZA, K. F. P. ; ALBUQUERQUE, L. B. ; et.al . POLÍTICAS PÚBLICAS E GESTÃO NO ESPORTE E LAZER NAS REGIÕES NORTE E NORDESTE DO BRASIL RECIFE, 2020. 01. ed. RECIFE: EDITORA UFPE, 2021. v. 01. 129p .",
     "source_row": "346",
-    "numero_autores": 5,
-    "posicao_docente": 2
+    "numero_autores": 21,
+    "posicao_docente": 1
   },
   {
     "id": "525",
@@ -12597,7 +12597,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "TEIXEIRA, A. G. M. ; SILVA, J. C. ; ALMEIDA JUNIOR, J. C. ; MENEZES, VILDE GOMES . Práticas corporais quilombolas na educação física escolar. In: Jorge Olímpio Bento; Wagner Wey Moreira; Rafael Guimarães Botelho; Sílvio Pedro José Saranga. (Org.). Desporto e Educação Física: Identidade e Missão. 01ed.Belo Horizonte: Casa da Educação Física, 2021, v. 01, p. 07-355.",
     "source_row": "523",
     "numero_autores": 4,
-    "posicao_docente": 1
+    "posicao_docente": 4
   },
   {
     "id": "526",
@@ -12620,7 +12620,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "PEDROZA JUNIOR, E. T. ; MENEZES, V. G. ; KOHL, H. G. ; COSTA, M. A. N. . História de vida de ex-jogadores profissionais de futebol em Pernambuco: sonho e influência parental. Revista Brasileira de Educação Física e Esporte 36, p. 1-8, 2022.",
     "source_row": "396",
-    "numero_autores": 3,
+    "numero_autores": 4,
     "posicao_docente": 2
   },
   {
@@ -12645,7 +12645,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "Figueira, Tiago Miguel Neves ; MENEZES, VILDE GOMES ; Souza, Lucio Marques Vieira ; Teixeira, Mário Rui Coelho . POLÍTICAS PÚBLICAS DE DESPORTO NA ÁREA METROPOLITANA DE LISBOA. In: Lucio Marques Vieira. (Org.). Educação Física e qualidade de vida: Reflexões e perspectivas. 2ed.ponta grossa -PR: Atena Editora, 2022, v. 2, p. 118-156.",
     "source_row": "217",
     "numero_autores": 4,
-    "posicao_docente": 1
+    "posicao_docente": 2
   },
   {
     "id": "528",
@@ -12668,8 +12668,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "OLIVEIRA, DAYZI SILVA ; BEZERRA, FÁBIO MARQUES ; MENEZES, VILDE GOMES DE . Agenda de pesquisa em programas de pós-graduação (stricto sensu) na temática Educação em Saúde no período 2015-2019. REVISTA BRASILEIRA DE EDUCAÇÃO 28, p. 1-22, 2023.",
     "source_row": "370",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 3,
+    "posicao_docente": 3
   },
   {
     "id": "529",
@@ -12692,8 +12692,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=doi",
     "produto_referencia": "Oliveira, José Vanbaster ; MENEZES, V. G. ; COSTA, Marcos André Nunes ; Costa, Alan Queiroz da . Educação física e cibercultura em Escolas de Referência em Ensino Médio (EREM) da região metropolitana do Recife -PE. https://doi.org/10.22456/2595-4377.134181, v. 36, p. 1-11, 2023.",
     "source_row": "378",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "530",
@@ -12716,8 +12716,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none",
     "produto_referencia": "COSTA, M. A. N. ; MENEZES, VILDE GOMES DE ; KOHL, H. G. ; FERREIRA, C. J. M. . Impactos da pandemia da covid-19 sobre o mercado fitness em Pernambuco. In: Silva, André Ribeiro da, Soares, Jitone Leônidas,Barros, Jônatas de França. (Org.). Educação física e qualidade de vida: reflexões e perspectivas atuais. 1ed.Ponta Grossa - PR: Editora Atenas, 2023, v. 1, p. 73-89.",
     "source_row": "141",
-    "numero_autores": 6,
-    "posicao_docente": 3
+    "numero_autores": 4,
+    "posicao_docente": 2
   },
   {
     "id": "531",
@@ -12740,7 +12740,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, W. L. ; MENEZES, V. G. ; Santos, Thiago Rodrigo F.da S. . O PROGRAMA SAÚDE NA ESCOLA (PSE) NO ESTADO DE PERNAMBUCO: DA CARACTERIZAÇÃO DO CENÁRIO À EFETIVIDADE DA POLÍTICA NOS MUNICÍPIOS. Revista Plurais 8, p. 00-e023025, 2023.",
     "source_row": "519",
-    "numero_autores": 2,
+    "numero_autores": 3,
     "posicao_docente": 2
   },
   {
@@ -12764,8 +12764,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, W. L. ; MENEZES, VILDE GOMES DE ; Santos, Thiago R. F. da Silva . EDUCAÇÃO EM SAÚDE NA REDE PÚBLICA ESTADUAL DE EDUCAÇÃO DE PERNAMBUCO:concepções de gestores, professores e estudantes. Revista Exitus 14, p. 1, 2024.",
     "source_row": "520",
-    "numero_autores": 5,
-    "posicao_docente": 4
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "533",
@@ -12812,8 +12812,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, ISABELA NASCIMENTO DOS ; SANTOS, IRANEIDE NASCIMENTO DOS ; ALMEIDA, CARLOS HENRIQUE DANTAS CAVALCANTI DE ; NASCIMENTO, JOSÉ HENRIQUE ARRUDA ; KOHL, Henrique Gerson ; GUARDA, FLÁVIO RENATO BARROS DA ; BERNARDO, RAUL ANTÔNIO DE LEMOS ; MENEZES, VILDE GOMES DE . Análise da oferta de Políticas Públicas de esportes nas regiões metropolitanas do Brasil. OBSERVATORIO DE LA ECONOMÍA LATINOAMERICANA 23, p. e9520, 2025.",
     "source_row": "449",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "535",
@@ -12836,7 +12836,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, GLEYCE KELLY BATISTA DE ; MENEZES, VILDE GOMES DE ; LIMA, DIEGO DE MELO ; CORREIA, PAOLA FRASSINETTI DE OLIVEIRA ; GUARDA, FLAVIO RENATO BARROS DA . Associação entre comportamento sedentário e custos públicos com doenças crônicas: protocolo de revisão sistemática. LECTURAS EDUCACIÓN FÍSICA Y DEPORTES 30, p. 183-197, 2025.",
     "source_row": "517",
-    "numero_autores": 2,
+    "numero_autores": 5,
     "posicao_docente": 2
   },
   {
@@ -12860,8 +12860,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, GLEYCE KELLY BATISTA DE ; CORREIA, PAOLA FRASSINETTI DE OLIVEIRA ; SILVA, JULIANA DANIELE DE ARAÚJO ; LIMA, DIEGO DE MELO ; GOUVEIA, VIVIANE MACIEL DE ; CAVALCANTI, MARIANA IZABEL SENA BARRETO DE MELO ; MENEZES, VILDE GOMES DE ; GUARDA, FLÁVIO RENATO BARROS DA . Associação entre comportamento sedentário e gastos públicos com doenças crônicas em adultos e idosos não institucionalizados: uma revisão sistemática. OBSERVATORIO DE LA ECONOMÍA LATINOAMERICANA 23, p. e10706, 2025.",
     "source_row": "516",
-    "numero_autores": 3,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "537",
@@ -12884,8 +12884,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SOUZA, W. L. ; MENEZES, V. G. ; Santos, Thiago R. F. da Silva . CONCEPÇÕES DE EDUCAÇÃO EM SAÚDE E SUAS REPERCUSSÕES NA TRAJETÓRIA DE ESTUDANTES DA REDE PÚBLICA ESTADUAL DE ENSINO MÉDIO DE PERNAMBUCO. EDUCAÇÃO EM FOCO (JUIZ DE FORA) 30, p. 1-21, 2025.",
     "source_row": "518",
-    "numero_autores": 4,
-    "posicao_docente": 4
+    "numero_autores": 3,
+    "posicao_docente": 2
   },
   {
     "id": "538",
@@ -12908,8 +12908,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "NASCIMENTO, JOSÉ HENRIQUE ARRUDA ; ALMEIDA, CARLOS HENRIQUE DANTAS CAVALCANTI DE ; BERNARDO, RAUL ANTÔNIO DE LEMOS ; NHABOMBA, HUMBERTO MATEUS ; SANTOS, ISABELA NASCIMENTO DOS ; MELO, FABÍOLA VIANA DE ; GUARDA, FLÁVIO RENATO BARROS DA ; MENEZES, VILDE GOMES DE . Educação em saúde: contribuições para a educação física escolar no contexto brasileiro. CUADERNOS DE EDUCACIÓN Y DESARROLLO 17, p. e7563, 2025.",
     "source_row": "356",
-    "numero_autores": 4,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "539",
@@ -12933,7 +12933,7 @@ window.PRODUCAO_CIENTIFICA = [
     "produto_referencia": "ALMEIDA, CARLOS HENRIQUE DANTAS CAVALCANTI DE ; MELO, FABÍOLA VIANA DE ; NASCIMENTO, JOSÉ HENRIQUE ARRUDA ; SILVA, EVELLYN LÚCIA MARTINS JERONIMO ; MENEZES, VILDE GOMES DE . FATORES CONDICIONANTES DA POLÍTICA EDUCACIONAL NO CONTEXTO DO ESTADO BRASILEIRO. CONTEMPORÂNEA - REVISTA DE ÉTICA E FILOSOFIA POLÍTICA, v. 5, p. e8906, 2025.",
     "source_row": "33",
     "numero_autores": 5,
-    "posicao_docente": 3
+    "posicao_docente": 5
   },
   {
     "id": "540",
@@ -12956,8 +12956,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Nhabomba, Humberto Mateus ; ALMEIDA, C. H. D. C. ; NASCIMENTO, L. J. H. A. ; SANTOS, L. E. R. ; COSTA, Marcos André Nunes ; KOHL, H. G. ; MENEZES, V. G. . Impacto da regulamentação do fair play financeiro na sustentabilidade económica e financeira dos clubes de futebol ? uma revisão sistemática da literatura e metanálises. CONTRIBUCIONES A LAS CIENCIAS SOCIALES 18, p. 1-29, 2025.",
     "source_row": "363",
-    "numero_autores": 4,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "541",
@@ -12980,8 +12980,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Nhabomba, Humberto Mateus ; PAIPE, G. ; Santos, Carlos Henrique ; NASCIMENTO, J. H. A. ; Santos, Lucas Eduardo ; Meireles, Tony Santos ; MENEZES, V. G. . Indicadores da Saúde Financeira dos Clubes de Futebol Profissionais. REVISTA INTERCONTINENTAL DE GESTÃO DESPORTIVA 15, p. 2-16, 2025.",
     "source_row": "364",
-    "numero_autores": 6,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "542",
@@ -13004,8 +13004,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=title_docente | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "SANTOS, E. L. ; SOARES, Antonio Jorge Gonçalves ; SANTOS, L. E. R. ; NASCIMENTO, J. H. A. ; Damacena. Conceição Rocha ; SANTOS, T. M. ; MENEZES, V. G. . Integration of cyberculture in physical education courses at federal universities in Northeastern Brazil. JOURNAL OF PHYSICAL EDUCATION (ONLINE), v. 36, p. 1-16, 2025.",
     "source_row": "447",
-    "numero_autores": 2,
-    "posicao_docente": 2
+    "numero_autores": 7,
+    "posicao_docente": 7
   },
   {
     "id": "543",
@@ -13028,8 +13028,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "MELO JÚNIOR, GLAUCIANO JOAQUIM DE ; LIMA, DIEGO DE MELO ; SOUZA, GLEYCE KELLY BATISTA DE ; GOUVEIA, VIVIANE MACIEL DE ; FREIRE, JUAN CARLOS ; SANTO, RUDÁ GONÇALVES ESPÍRITO ; MENEZES, VILDE GOMES DE ; GUARDA, FLÁVIO RENATO BARROS DA . Níveis de atividade física em pacientes hipertensos e diabéticos: um estudo na cidade de Caruaru- PE. OBSERVATORIO DE LA ECONOMÍA LATINOAMERICANA 23, p. e9746, 2025.",
     "source_row": "337",
-    "numero_autores": 1,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 7
   },
   {
     "id": "544",
@@ -13052,8 +13052,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "Nhabomba, Humberto Mateus ; Paipe, Gustavo Pascoal ; ALMEIDA, C. H. D. C. ; NASCIMENTO, L. J. H. A. ; SILVA, E. L. M. J. ; MENEZES, V. G. . O regulamento de fair play financeiro (FFP) da UEFA: Incidência empírica de critérios do FFP no contexto dos clubes de futebol moçambicanos, 2024. REVISTA INTERCONTINENTAL DE GESTÃO DESPORTIVA 15, p. 1-18, 2025.",
     "source_row": "365",
-    "numero_autores": 3,
-    "posicao_docente": 3
+    "numero_autores": 6,
+    "posicao_docente": 6
   },
   {
     "id": "545",
@@ -13076,8 +13076,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA HORA FILHO, EDMILTON AMARO ; DE MENEZES, VILDE GOMES . POLÍTICAS PÚBLICAS Y FINANCIACIÓN DE LA EDUCACIÓN EN BRASIL: FUNDEF Y FUNDEB. LUMEN ET VIRTUS 16, p. 6687-6695, 2025.",
     "source_row": "147",
-    "numero_autores": 6,
-    "posicao_docente": 5
+    "numero_autores": 2,
+    "posicao_docente": 2
   },
   {
     "id": "546",
@@ -13100,7 +13100,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "DA HORA FILHO, EDMILTON AMARO ; DE MENEZES, VILDE GOMES . POLÍTICAS PÚBLICAS Y LA EVOLUCIÓN HISTÓRICA DEL FINANCIAMIENTO DE LA EDUCACIÓN EN BRASIL: MARCOS JURÍDICOS, AVANCES Y RETROCESO ENTRE 1934 Y 1988. ARACÊ - DIREITOS HUMANOS EM REVISTA, v. 7, p. 30562-30571, 2025.",
     "source_row": "148",
-    "numero_autores": 6,
+    "numero_autores": 2,
     "posicao_docente": 2
   },
   {
@@ -13124,8 +13124,8 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "CAVALCANTI, THAURUS VINÍCIUS DE OLIVEIRA ; ALMEIDA, CARLOS HENRIQUE DANTAS CAVALCANTI DE ; BERNARDO, RAUL ANTÔNIO DE LEMOS ; NASCIMENTO, JOSÉ HENRIQUE ARRUDA ; SANTOS, EDMILSON SANTOS DOS ; TEIXEIRA, MÁRIO COELHO ; GUARDA, FLÁVIO RENATO BARROS DA ; MENEZES, VILDE GOMES DE . Produção científica no campo das políticas públicas de esporte e lazer no Brasil entre 2003 e 2023. OBSERVATORIO DE LA ECONOMÍA LATINOAMERICANA 23, p. e8932, 2025.",
     "source_row": "128",
-    "numero_autores": 2,
-    "posicao_docente": 1
+    "numero_autores": 8,
+    "posicao_docente": 8
   },
   {
     "id": "548",
@@ -13148,7 +13148,7 @@ window.PRODUCAO_CIENTIFICA = [
     "observacoes": "origem=rebuild_excel_staging | match_prior=none | indexacao_periodicos_csv=sincronizado",
     "produto_referencia": "LIMA, DIEGO DE MELO ; CODOGNO, JAMILE SANCHES ; JÚNIOR, GLAUCIANO JOAQUIM DE MELO ; MENEZES, VILDE GOMES DE ; CAVALCANTI, MARIANA IZABEL SENA BARRETO DE MELO ; SILVA, EDEN KALEO SOARES DA ; GUARDA, FLÁVIO RENATO BARROS DA . Effect of Physical Activity on Drug Expenditures for the Physical and Mental Health of Primary Care Users. International Journal of Environmental Research and Public Health 23, p. 221, 2026.",
     "source_row": "283",
-    "numero_autores": 5,
-    "posicao_docente": 1
+    "numero_autores": 7,
+    "posicao_docente": 4
   }
 ];
