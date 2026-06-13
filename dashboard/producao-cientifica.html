@@ -1476,6 +1476,28 @@
       white-space: normal;
     }
 
+    .docentes-structure-table th:first-child,
+    .docentes-structure-table td:first-child {
+      min-width: 280px;
+      width: 280px;
+    }
+
+    .docentes-structure-table th.docentes-th-vertical {
+      width: 38px;
+      min-width: 38px;
+      padding: 10px 6px;
+      vertical-align: bottom;
+      text-align: center;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing: 0.08em;
+    }
+
+    .docentes-structure-table th.docentes-th-year {
+      min-width: 52px;
+      text-align: center;
+    }
+
     .docentes-quad-table tbody tr:nth-child(odd),
     .docentes-structure-table tbody tr:nth-child(odd) {
       background: rgba(242, 235, 225, 0.45);
@@ -2341,18 +2363,6 @@
 
       <div class="tab-panel" id="tab-docentes">
         <section class="grid">
-          <div class="card docentes-headline-card docentes-hero-card">
-            <div>
-              <p class="docentes-eyebrow">Composição Docente</p>
-              <h2 id="docentes-hero-title">Quadriênio 2025-2028</h2>
-              <p id="docentes-hero-summary">Leitura integrada do núcleo permanente, da estabilidade e das pressões de composição do quadro.</p>
-            </div>
-            <div class="docentes-hero-side">
-              <strong id="docentes-hero-permanentes">0</strong>
-              <span id="docentes-hero-permanentes-caption">Permanentes no ano-base.</span>
-            </div>
-          </div>
-
           <div class="card docentes-controls-card">
             <div class="section-head">
               <h2>Recorte de Leitura</h2>
@@ -2447,16 +2457,16 @@
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>AMS</th>
-                    <th>DFE</th>
+                    <th class="docentes-th-vertical">AMS</th>
+                    <th class="docentes-th-vertical">DFE</th>
                     <th>Origem</th>
-                    <th># PPGs como P em 2026</th>
-                    <th>COL em outros PPGs</th>
+                    <th class="docentes-th-vertical"># PPGs como P em 2026</th>
+                    <th class="docentes-th-vertical">COL em outros PPGs</th>
                     <th>Status Quadri</th>
-                    <th>2025</th>
-                    <th>2026</th>
-                    <th>2027</th>
-                    <th>2028</th>
+                    <th class="docentes-th-year">2025</th>
+                    <th class="docentes-th-year">2026</th>
+                    <th class="docentes-th-year">2027</th>
+                    <th class="docentes-th-year">2028</th>
                     <th>Leitura crítica</th>
                   </tr>
                 </thead>
@@ -6151,20 +6161,14 @@
       const lpSummary = dataSourceCorpoDocente.lp_summary || {};
       const quadRows = dataSourceCorpoDocente.quad_summary?.rows || [];
       const permanentesMedia = quadRows.find((row) => row.key === "permanentes")?.average;
-      const nucleoDuroMedia = quadRows.find((row) => row.key === "nucleo_duro")?.average;
-      const quadroAmpliadoMedia = quadRows.find((row) => row.key === "quadro_ampliado")?.average;
-      const basePermanents = yearSummary?.permanent_count || 0;
-      const baseClassified = yearSummary?.classified_count || 0;
-      document.getElementById("docentes-hero-title").textContent = `Quadro docente e leitura APCN ${yearKey}`;
-      document.getElementById("docentes-hero-summary").textContent = `${basePermanents} permanentes entre ${baseClassified} docentes classificados no ano-base, com foco na estabilidade e na composição do núcleo duro.`;
-      document.getElementById("docentes-hero-permanentes").textContent = String(basePermanents);
-      document.getElementById("docentes-hero-permanentes-caption").textContent = `${formatDocentesShare(yearSummary?.metrics?.permanentes_no_corpo?.value || 0)} do corpo classificado em ${yearKey}.`;
+      const classificadosMedia = quadRows.find((row) => row.key === "docentes_classificados")?.average;
+      const baseProducaoMedia = quadRows.find((row) => row.key === "docentes_base_producao")?.average;
       document.getElementById("docentes-filter-note").textContent = `${filteredDocentes.length} docente(s) após os filtros nominais. Os indicadores executivos permanecem no recorte institucional do ano ${yearKey}.`;
       document.getElementById("docentes-summary-tiles").innerHTML = [
         { value: lpSummary.active_docentes, label: "Ativos no quadriênio" },
         { value: filteredDocentes.length, label: "Docentes na tabela filtrada" },
         { value: permanentesMedia, label: "Média de permanentes" },
-        { value: quadroAmpliadoMedia, label: "Média do quadro ampliado" },
+        { value: classificadosMedia, label: "Média de classificados" },
       ].map((item) => `
         <div class="docentes-summary-tile">
           <strong>${escapeHtml(formatDocentesCellValue(item.value))}</strong>
@@ -6175,7 +6179,7 @@
         `<span class="docentes-mini-chip">AMS ${formatDocentesShare(lpSummary.ams_share)}</span>`,
         `<span class="docentes-mini-chip">DFE ${formatDocentesShare(lpSummary.dfe_share)}</span>`,
         `<span class="docentes-mini-chip ${Number(lpSummary.balance_ratio || 0) >= 1 ? "ok" : "warn"}">Relação LP ${formatDocentesCellValue(lpSummary.balance_ratio)}</span>`,
-        `<span class="docentes-mini-chip">Núcleo duro médio ${formatDocentesCellValue(nucleoDuroMedia)}</span>`,
+        `<span class="docentes-mini-chip">Base científica ${formatDocentesCellValue(baseProducaoMedia)}</span>`,
       ].join("");
     }
 
