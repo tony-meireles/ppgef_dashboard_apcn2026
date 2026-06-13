@@ -3181,9 +3181,15 @@
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Somatório de JCR por Docente</h2>
-              <p>Ranking docente com soma dos JCRs e indicação da média por produto qualificado.</p>
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Somatório de JCR por Docente</h2>
+                <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR">
+                <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
+                <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
+              </div>
             </div>
             <div id="chart-lideranca-qualidade-jcr" class="chart"></div>
           </div>
@@ -3676,6 +3682,7 @@
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
     const liderancaQualidadeInsights = document.getElementById("lideranca-qualidade-insights");
     const liderancaQualidadeMetodologia = document.getElementById("lideranca-qualidade-metodologia");
+    const liderancaQualidadeJcrModeButtons = [...document.querySelectorAll("[data-lideranca-qualidade-jcr-mode]")];
     const liderancaParceriaInsights = document.getElementById("lideranca-parceria-insights");
     const liderancaParceriaMetodologia = document.getElementById("lideranca-parceria-metodologia");
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
@@ -3735,6 +3742,7 @@
     let docenteTableSortMode = "alfabetico";
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
+    let liderancaQualidadeJcrMode = "total";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
     let liderancaParceriaSortMode = "alfabetico";
     let liderancaParceriaAuditState = { integratedWorks: [], pairMap: new Map() };
@@ -5753,28 +5761,53 @@
       ].join("");
     }
 
+    function bindLeadershipQualityJcrModeButtons() {
+      liderancaQualidadeJcrModeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaQualidadeJcrMode = button.dataset.liderancaQualidadeJcrMode || "total";
+          liderancaQualidadeJcrModeButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+          renderLeadershipQualityJcrChart(aggregateLeadershipQualityByDocente(getFilteredScientificData()));
+        });
+      });
+    }
+
     function renderLeadershipQualityJcrChart(summary) {
-      const items = summary.filter((item) => item.jcrSum > 0).slice(0, 16);
+      liderancaQualidadeJcrModeButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.liderancaQualidadeJcrMode === liderancaQualidadeJcrMode);
+      });
+      const valueKey = liderancaQualidadeJcrMode === "media" ? "jcrAvg" : "jcrSum";
+      const items = summary
+        .filter((item) => item.jcrCount > 0 && item[valueKey] > 0)
+        .sort((a, b) =>
+          b[valueKey] - a[valueKey] ||
+          b.jcrSum - a.jcrSum ||
+          b.jcrCount - a.jcrCount ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        )
+        .slice(0, 16);
       if (!items.length) {
         chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR para o gráfico.</p>`;
         return;
       }
-      const maxValue = Math.max(...items.map((item) => item.jcrSum), 1);
+      const maxValue = Math.max(...items.map((item) => item[valueKey]), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
       const chartWidth = 760;
       const usableWidth = chartWidth - labelWidth - 84;
       chartLiderancaQualidadeJcr.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Somatório de JCR por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JCR por docente" : "Somatório de JCR por docente"}">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.jcrSum / maxValue) * usableWidth);
+            const primaryValue = item[valueKey];
+            const width = Math.max(8, (primaryValue / maxValue) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaJcrGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.jcrSum)} · m=${formatDecimal(item.jcrAvg)}</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${liderancaQualidadeJcrMode === "media" ? `m=${formatDecimal(item.jcrAvg)} · Σ=${formatDecimal(item.jcrSum)}` : `${formatDecimal(item.jcrSum)} · m=${formatDecimal(item.jcrAvg)}`}</text>
             `;
           }).join("")}
           <defs>
@@ -7609,6 +7642,7 @@
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
     bindLeadershipPartnershipSortToggles();
+    bindLeadershipQualityJcrModeButtons();
     bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
