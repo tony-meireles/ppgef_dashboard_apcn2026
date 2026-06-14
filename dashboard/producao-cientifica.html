@@ -1182,6 +1182,306 @@
       gap: 18px;
     }
 
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .guide-highlight {
+      grid-column: span 12;
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.16), transparent 28%),
+        linear-gradient(135deg, rgba(255, 253, 249, 0.98), rgba(246, 238, 227, 0.97));
+    }
+
+    .guide-highlight p,
+    .guide-note p {
+      margin: 0;
+      max-width: 900px;
+      color: var(--ufpe-cinza);
+      line-height: 1.6;
+    }
+
+    .guide-note {
+      grid-column: span 12;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(140, 21, 56, 0.18);
+      background:
+        radial-gradient(circle at top left, rgba(140, 21, 56, 0.08), transparent 24%),
+        linear-gradient(180deg, #fff8f9, #f9eeef);
+    }
+
+    .guide-note strong {
+      color: var(--ufpe-bordo);
+    }
+
+    .guide-overview-grid,
+    .guide-checklist-grid,
+    .guide-learning-grid {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .guide-overview-card,
+    .guide-checklist-card,
+    .guide-learning-card {
+      grid-column: span 4;
+      padding: 22px;
+    }
+
+    .guide-overview-card h3,
+    .guide-checklist-card h3,
+    .guide-learning-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .guide-overview-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.7rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--ufpe-bordo);
+    }
+
+    .guide-overview-card .eyebrow {
+      margin: 0 0 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+    }
+
+    .guide-overview-card p,
+    .guide-checklist-card p,
+    .guide-learning-card p,
+    .guide-faq details p,
+    .guide-evidence-detail p,
+    .guide-overview-card li,
+    .guide-learning-card li {
+      margin: 0;
+      color: var(--ufpe-cinza);
+      line-height: 1.55;
+    }
+
+    .guide-learning-card summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .guide-learning-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-learning-card summary::after {
+      content: "Saiba mais";
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      color: var(--ufpe-bordo);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(140, 21, 56, 0.06);
+    }
+
+    .guide-learning-card[open] summary::after {
+      content: "Recolher";
+    }
+
+    .guide-points {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .guide-details {
+      margin-top: 14px;
+      border-top: 1px solid #eadfce;
+      padding-top: 14px;
+    }
+
+    .guide-details summary {
+      list-style: none;
+    }
+
+    .guide-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-more-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      background: rgba(140, 21, 56, 0.06);
+      color: var(--ufpe-bordo);
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .guide-more-button:hover {
+      transform: translateY(-1px);
+      background: rgba(140, 21, 56, 0.1);
+      border-color: rgba(140, 21, 56, 0.24);
+    }
+
+    .guide-checklist {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .guide-checklist li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--ufpe-grafite);
+      line-height: 1.45;
+    }
+
+    .guide-checklist-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 1.5px solid #d2bda8;
+      background: #fffdf9;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .guide-faq,
+    .guide-evidence-card {
+      grid-column: span 12;
+    }
+
+    .guide-accordion {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .guide-accordion details {
+      padding: 18px 20px;
+      border-radius: 20px;
+      border: 1px solid #e4d7c6;
+      background: linear-gradient(180deg, #fffdf9, #f7f1e8);
+    }
+
+    .guide-accordion summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ufpe-grafite);
+    }
+
+    .guide-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-accordion summary::after {
+      content: "Saiba mais";
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      color: var(--ufpe-bordo);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(140, 21, 56, 0.06);
+    }
+
+    .guide-accordion details[open] summary::after {
+      content: "Recolher";
+    }
+
+    .guide-accordion-body {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .guide-inline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .guide-inline-tags span {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #f3ecdf;
+      border: 1px solid #e4d8c7;
+      color: var(--ufpe-grafite);
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .guide-evidence-table .guide-evidence-expand-row {
+      display: none;
+      background: #fff9f3;
+    }
+
+    .guide-evidence-table .guide-evidence-expand-row.open {
+      display: table-row;
+    }
+
+    .guide-evidence-table td,
+    .guide-evidence-table th {
+      vertical-align: top;
+    }
+
+    .guide-evidence-text {
+      display: block;
+      color: var(--ufpe-grafite);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .guide-evidence-source {
+      display: block;
+      margin-top: 8px;
+      color: var(--ufpe-cinza);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .guide-evidence-detail {
+      padding: 18px 16px 18px 22px;
+    }
+
+    .guide-evidence-detail strong {
+      color: var(--ufpe-bordo);
+    }
+
     .documents-highlight {
       grid-column: span 12;
       padding: 28px;
@@ -1876,6 +2176,9 @@
       .captacao-executive-summary { grid-template-columns: 1fr; }
       .captacao-metric-card { grid-column: span 6; }
       .documents-group { grid-column: span 12; }
+      .guide-overview-card,
+      .guide-checklist-card,
+      .guide-learning-card { grid-column: span 6; }
       .docentes-hero-card { grid-template-columns: 1fr; }
       .docentes-metric-card,
       .docentes-summary-card,
@@ -1891,6 +2194,9 @@
       .captacao-metric-card { grid-column: span 12; min-height: auto; }
       .metric { grid-column: span 12; }
       .documents-metric { grid-column: span 12; }
+      .guide-overview-card,
+      .guide-checklist-card,
+      .guide-learning-card { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; }
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
@@ -1935,7 +2241,9 @@
         <button class="tab-button" data-tab="tab-lideranca">Liderança e Impacto</button>
         <button class="tab-button" data-tab="tab-captacao">Captação de Recursos</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
+        <button class="tab-button" data-tab="tab-guia-docente">APCN 2026 - Guia do Docente</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
+        <button class="tab-button" data-tab="tab-metodologia">Metodologia e Base</button>
         <button class="tab-button" data-tab="tab-sobre">Sobre</button>
       </nav>
 
@@ -3751,6 +4059,83 @@
         </section>
       </div>
 
+      <div class="tab-panel" id="tab-guia-docente">
+        <section class="guide-grid">
+          <div class="card guide-highlight">
+            <div class="section-head">
+              <h2>APCN 2026 - Guia do Docente</h2>
+              <p>Guia institucional para compreensão dos critérios de avaliação da APCN de Doutorado da Área 21/CAPES.</p>
+            </div>
+            <p>
+              Esta aba funciona como uma camada de comunicação institucional voltada ao corpo docente do PPGEF. Ela não substitui
+              os painéis analíticos já existentes: resume os critérios, traduz a linguagem documental em ações operacionais e
+              organiza os pontos que cada docente precisa conferir para sustentar a proposta de Doutorado.
+            </p>
+          </div>
+
+          <div class="card guide-note">
+            <p>
+              <strong>Leitura operacional:</strong> o guia combina critérios formais da documentação CAPES com cortes internos já
+              usados no dashboard. Onde houver margem conservadora do PPGEF sobre o mínimo textual, isso aparece explicitado na
+              seção de evidências.
+            </p>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Visão Geral da APCN</h2>
+              <p>Critérios de entrada para leitura rápida do que o programa precisa comprovar na proposta.</p>
+            </div>
+          </div>
+          <div id="guide-overview-grid" class="guide-overview-grid"></div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>O que a CAPES Avaliará</h2>
+              <p>Blocos executivos com os focos centrais da análise da proposta e do corpo docente.</p>
+            </div>
+          </div>
+          <div id="guide-learning-grid" class="guide-learning-grid"></div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>O que Cada Docente Deve Conferir</h2>
+              <p>Checklist institucional para reduzir omissões, inconsistências cadastrais e heranças de informação incompleta.</p>
+            </div>
+          </div>
+          <div id="guide-checklist-grid" class="guide-checklist-grid"></div>
+
+          <div class="card guide-faq">
+            <div class="section-head">
+              <h2>Perguntas Frequentes</h2>
+              <p>Base inicial de respostas curtas, pronta para expansão futura sem alterar a estrutura da aba.</p>
+            </div>
+            <div id="guide-faq-list" class="guide-accordion"></div>
+          </div>
+
+          <div class="card guide-evidence-card">
+            <div class="section-head">
+              <h2>Critérios APCN com Evidência Textual</h2>
+              <p>Quadro de leitura que aproxima o texto orientador da interpretação operacional usada pelo PPGEF.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table guide-evidence-table">
+                <thead>
+                  <tr>
+                    <th>Critério</th>
+                    <th>Exigência</th>
+                    <th>Evidência Textual</th>
+                    <th>Interpretação para o PPGEF</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="guide-evidence-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div class="tab-panel" id="tab-documentos">
         <section class="documents-grid">
           <div class="card documents-highlight">
@@ -3797,6 +4182,204 @@
               <p>Documentos norteadores e resultado associado à avaliação.</p>
             </div>
             <div id="documents-capes" class="documents-list"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-metodologia">
+        <section class="grid">
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Escopo do Painel</h2>
+              <p>Referencial de leitura para uso institucional, discussão interna e consolidação da proposta de APCN.</p>
+            </div>
+            <p>
+              Esta aba documenta as bases utilizadas, as regras sintéticas de cálculo aplicadas no painel e as principais
+              limitações conhecidas da leitura analítica. O objetivo é tornar o dashboard auditável, distinguindo com clareza
+              o que é dado estruturado, o que é regra de negócio aplicada e o que ainda depende de revisão complementar.
+            </p>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Bases integradas</p>
+            <strong>7</strong>
+            <span>Produção científica, produção técnica, orientações, disciplinas, captação, corpo docente e documentos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Modelo de publicação</p>
+            <strong>Estático</strong>
+            <span>Site público em HTML e JavaScript, sem backend transacional e sem consulta dinâmica a banco.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Regra central</p>
+            <strong>APCN</strong>
+            <span>As leituras quantitativas são orientadas pelos critérios críticos mobilizados para o edital CAPES 2026.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Uso recomendado</p>
+            <strong>Analítico</strong>
+            <span>Painel para diagnóstico, leitura crítica, comparação interna e preparação documental do programa.</span>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mapa das Bases</h2>
+              <p>Origem imediata dos dados consumidos pelo site publicado.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Módulo</th>
+                    <th>Arquivo publicado</th>
+                    <th>Origem declarada</th>
+                    <th>Observação metodológica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Produção científica</td>
+                    <td><code>dashboard/producao-cientifica-data.js</code></td>
+                    <td>Base sincronizada e classificada da produção docente.</td>
+                    <td>Concentra a principal leitura APCN do painel, com tipologia, indexação, JCR e pontuação.</td>
+                  </tr>
+                  <tr>
+                    <td>Produção técnica</td>
+                    <td><code>dashboard/producao-tecnica-data.js</code></td>
+                    <td>Exportação consolidada da planilha <code>Produção Técnica docente 2026_06.xlsx</code>.</td>
+                    <td>Inclui registros positivos e marcações explícitas de docentes sem produção.</td>
+                  </tr>
+                  <tr>
+                    <td>Orientações</td>
+                    <td><code>dashboard/orientacoes-data.js</code></td>
+                    <td>Base agregada por docente.</td>
+                    <td>É usada tanto para leitura do pipeline de orientação quanto para critérios críticos de experiência formativa.</td>
+                  </tr>
+                  <tr>
+                    <td>Disciplinas</td>
+                    <td><code>dashboard/disciplinas-data.js</code></td>
+                    <td>Oferta consolidada de turmas e responsabilidades docentes.</td>
+                    <td>Permite leitura de docência, vínculo interno/externo e recortes temporais por período.</td>
+                  </tr>
+                  <tr>
+                    <td>Captação de recursos</td>
+                    <td><code>dashboard/captacao-recursos-data.js</code></td>
+                    <td>Levantamento estruturado a partir de respostas em formulário.</td>
+                    <td>É a base mais sensível a autodeclaração, padronização de editais e revisão manual de agências.</td>
+                  </tr>
+                  <tr>
+                    <td>Corpo docente</td>
+                    <td><code>dashboard/corpo-docente-data.js</code></td>
+                    <td>Extração da planilha <code>Corpo Docente.xlsx</code>, aba <code>2025-2028</code>.</td>
+                    <td>Estrutura o quadro projetado do programa, com histórico, permanência, exclusividade e dependência de colaboradores.</td>
+                  </tr>
+                  <tr>
+                    <td>Documentos</td>
+                    <td><code>dashboard/documentos-data.js</code></td>
+                    <td>Lista curada de documentos públicos incorporados ao repositório.</td>
+                    <td>Serve como camada documental de apoio, não como base analítica.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Regras Sintéticas de Cálculo</h2>
+              <p>Critérios resumidos que organizam os principais indicadores exibidos no painel.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Dimensão</th>
+                    <th>Regra aplicada</th>
+                    <th>Leitura produzida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pontuação APCN</td>
+                    <td>Artigos recebem pontuação conforme indexação do periódico; livros seguem regra fixa; capítulos entram pela base estruturada.</td>
+                    <td>Mede massa crítica de produção intelectual com foco comparativo entre docentes e anos.</td>
+                  </tr>
+                  <tr>
+                    <td>Liderança e impacto</td>
+                    <td>Aba combina posição autoral, pontuação APCN e evidências de JCR (SCimago | 2y cites per doc) para estimar liderança e qualidade.</td>
+                    <td>Não substitui avaliação qualitativa, mas ajuda a localizar fragilidade autoral e força bibliométrica.</td>
+                  </tr>
+                  <tr>
+                    <td>Orientações</td>
+                    <td>Consolida graduação, mestrado, doutorado e pós-doutorado por docente, com destaque para andamento e conclusão.</td>
+                    <td>Permite demonstrar capacidade formativa acumulada e pipeline de orientação vinculado à APCN.</td>
+                  </tr>
+                  <tr>
+                    <td>Docência</td>
+                    <td>Conta ofertas registradas por docente e vínculo institucional a partir da base de disciplinas.</td>
+                    <td>Suporta a leitura de participação docente e os critérios críticos ligados à docência.</td>
+                  </tr>
+                  <tr>
+                    <td>Captação</td>
+                    <td>Normaliza registros por agência, vigência, tipo e situação, destacando janela recente e vigência em 2026.</td>
+                    <td>Busca evidenciar lastro institucional e potencial de sustentabilidade financeira e de infraestrutura.</td>
+                  </tr>
+                  <tr>
+                    <td>Corpo docente</td>
+                    <td>Aplica metas de proporção de permanentes, internos, exclusivos, externos e vínculo com outros PPGs.</td>
+                    <td>Produz leitura de estabilidade e aderência do quadro projetado à lógica esperada para a APCN.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Limitações Conhecidas</h2>
+              <p>Pontos que devem ser lidos com cautela e, quando necessário, checados na documentação de origem.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Captação de recursos depende de autodeclaração inicial e padronização posterior.</span>
+              <span class="chip">Produção técnica ainda reflete a qualidade e a consistência do preenchimento na planilha de origem.</span>
+              <span class="chip">Leituras bibliométricas e de liderança autoral são instrumentos auxiliares e não substituem juízo acadêmico.</span>
+              <span class="chip">Documentos públicos representam o acervo incorporado ao repositório nesta versão do site.</span>
+              <span class="chip">Mudanças em bases locais exigem nova exportação dos arquivos JavaScript publicados.</span>
+            </div>
+            <p class="chart-note" style="margin-top: 16px;">
+              A interpretação recomendada é sempre combinada: evidência quantitativa no painel, checagem documental e validação acadêmica pelos docentes e pela coordenação.
+            </p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Boas Práticas de Uso</h2>
+              <p>Como utilizar o painel sem produzir inferências indevidas.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Uso recomendado</th>
+                    <th>Evitar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Usar o painel para localizar fragilidades, priorizar revisão documental e orientar decisões de composição.</td>
+                    <td>Tratar qualquer indicador isolado como prova suficiente de mérito ou fragilidade definitiva.</td>
+                  </tr>
+                  <tr>
+                    <td>Confrontar os resultados com regimento, ficha de área, documentos CAPES e memória institucional.</td>
+                    <td>Ler a base publicada como se fosse fonte oficial imutável sem revisão das planilhas e anexos correspondentes.</td>
+                  </tr>
+                  <tr>
+                    <td>Explicitar data, recorte e regra de cálculo ao usar gráficos em reuniões ou relatórios.</td>
+                    <td>Recortar números do painel fora do contexto metodológico da aba de origem.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       </div>
@@ -4077,6 +4660,260 @@
       vinculo_painel: disciplinasInternalDocentes.has(normalizeDisciplinasName(item.nome_responsavel)) ? "Interno" : "Externo",
     }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
+    // Static guide content stays local to this page to avoid creating new datasets for institutional copy.
+    const guideOverviewItems = [
+      {
+        criterio: "Corpo Docente",
+        exigencia: "Minimo de 12 docentes permanentes",
+        explicacao: "A proposta precisa mostrar massa critica suficiente para sustentar ensino, orientacao, pesquisa e governanca.",
+        detalhe: "No dashboard, isso deve ser lido em conjunto com estabilidade do quadro, distribuicao entre linhas e aderencia tematica de cada docente.",
+      },
+      {
+        criterio: "Exclusividade",
+        exigencia: "Minimo de 30% exclusivos ao PPG",
+        explicacao: "Parte do quadro permanente deve ter dedicacao central ao programa, reduzindo dispersao entre multiplos PPGs.",
+        detalhe: "O guia assume o corte operacional ja monitorado internamente: mapear quem atua apenas neste PPG e quem acumula participacoes externas.",
+      },
+      {
+        criterio: "Producao Intelectual",
+        exigencia: "75% dos docentes com >= 330 pontos",
+        explicacao: "Esse corte resume a expectativa de produtividade consistente do nucleo docente.",
+        detalhe: "O Norteador APCN localiza 320 pontos como referencia textual para doutorado academico; o painel atual trabalha com 330 como margem prudencial do PPGEF.",
+      },
+      {
+        criterio: "Producao Qualificada",
+        exigencia: "75% dos docentes com >= 2 produtos JCR/SJR ou Categoria A",
+        explicacao: "Nao basta volume: a proposta precisa evidenciar qualidade editorial e aderencia dos produtos.",
+        detalhe: "No uso institucional, o dashboard trata JCR/SJR, estratos qualificados e proxies editoriais como evidencias complementares para a leitura do criterio.",
+      },
+      {
+        criterio: "Formacao de Recursos Humanos",
+        exigencia: "100% com orientacao concluida; >= 9 com mestrado; >= 3 com doutorado",
+        explicacao: "A experiencia previa de orientacao e central para a confianca na oferta de doutorado.",
+        detalhe: "Para leitura interna, vale conferir orientacoes concluidas, nivel de experiencia e coerencia entre o nivel almejado e a trilha ja percorrida pelo docente.",
+      },
+      {
+        criterio: "Captacao de Recursos",
+        exigencia: "Ultimos 5 anos",
+        explicacao: "A carteira de editais, bolsas e financiamentos sinaliza maturidade cientifica e capacidade de sustentacao.",
+        detalhe: "O foco nao e apenas o valor captado: entram agencia, tipo de auxilio, vigencia, processo e relacao com os projetos da proposta.",
+      },
+      {
+        criterio: "Linhas de Pesquisa",
+        exigencia: "Minimo de duas linhas por area de concentracao",
+        explicacao: "A proposta deve ser coerente, hierarquizada e capaz de organizar projetos, disciplinas e orientacoes.",
+        detalhe: "O ponto critico nao e so o numero de linhas, mas a nao sobreposicao conceitual e a distribuicao equilibrada do corpo docente entre elas.",
+      },
+    ];
+    const guideLearningItems = [
+      {
+        titulo: "Corpo Docente",
+        resumo: "Composicao, dedicacao, exclusividade, experiencia de orientacao e distribuicao nas linhas de pesquisa.",
+        detalhes: [
+          "A CAPES observa se o quadro permanente e numericamente suficiente, estavel e coerente com a proposta.",
+          "Tambem pesa a aderencia entre a expertise docente, as linhas, os projetos e as disciplinas do curso.",
+          "A leitura institucional precisa evitar herancas de cadastro: docente produtivo, mas tematicamente desalinhado, enfraquece a proposta.",
+        ],
+        tags: ["Composicao", "Dedicacao", "Exclusividade", "Linhas"],
+      },
+      {
+        titulo: "Producao Intelectual",
+        resumo: "Pontuacao APCN, producao qualificada e aderencia tematica daquilo que o docente publica.",
+        detalhes: [
+          "A Area 21 nao le apenas quantidade: ela cruza pontuacao, qualificacao dos produtos e vinculacao com o escopo do PPG.",
+          "Produtos fora da tematica da linha podem existir no curriculo, mas nao devem ser a base central da sustentacao da proposta.",
+          "O docente precisa saber quais produtos sustentam sua leitura APCN e quais ainda dependem de classificacao, revisao ou confirmacao.",
+        ],
+        tags: ["Pontuacao", "Qualificacao", "Aderencia"],
+      },
+      {
+        titulo: "Formacao de Recursos Humanos",
+        resumo: "Orientacoes concluidas e experiencia na formacao de mestres e doutores.",
+        detalhes: [
+          "Para doutorado, experiencia acumulada de orientacao faz diferenca na confianca da proposta.",
+          "A leitura operacional deve separar orientacao concluida, em andamento e o nivel em que ela ocorreu.",
+          "Registros incompletos ou sem lastro documental tendem a gerar fragilidade justamente no item em que a maturidade docente precisa ser mais nitida.",
+        ],
+        tags: ["Orientacoes", "Mestrado", "Doutorado"],
+      },
+      {
+        titulo: "Captacao de Recursos",
+        resumo: "Financiamentos, bolsas, diversidade de agencias e sinais de maturidade cientifica.",
+        detalhes: [
+          "A CAPES valoriza a capacidade de captar recursos, independentemente do valor final, observando tipo de edital, processo e agencia.",
+          "Bolsas de produtividade e carteiras vigentes ajudam, mas nao substituem o conjunto da capacidade de financiamento.",
+          "Internamente, vale revisar duplicidades, vigencias e vinculacao com projetos ativos para evitar inflar ou subnotificar a base.",
+        ],
+        tags: ["Editais", "Bolsas", "Agencias", "Vigencia"],
+      },
+      {
+        titulo: "Organizacao Academica",
+        resumo: "Linhas de pesquisa, projetos, disciplinas e perfil do egresso precisam formar uma estrutura coerente.",
+        detalhes: [
+          "A proposta deve ter hierarquia entre area de concentracao, linhas, projetos e estrutura curricular.",
+          "Linhas sobrepostas, projetos sem abrigo real para discentes ou disciplinas sem aderencia direta geram ruido na avaliacao.",
+          "O ponto forte e mostrar um desenho curricular que deriva da identidade cientifica do programa, nao um mosaico de ofertas isoladas.",
+        ],
+        tags: ["Linhas", "Projetos", "Disciplinas", "Egresso"],
+      },
+      {
+        titulo: "Sustentacao Institucional",
+        resumo: "Planejamento, infraestrutura, autoavaliacao e apoio institucional sao parte da credibilidade da proposta.",
+        detalhes: [
+          "A proposta precisa demonstrar viabilidade, apoio da IES e mecanismos claros de autoavaliacao.",
+          "Infraestrutura compartilhada pode ser usada, mas sua disponibilidade efetiva para o PPG deve ficar clara.",
+          "No uso interno, esta camada ajuda a alinhar o que o docente informa com aquilo que o programa consegue provar documentalmente.",
+        ],
+        tags: ["Planejamento", "Infraestrutura", "Autoavaliacao"],
+      },
+    ];
+    const guideChecklistGroups = [
+      {
+        titulo: "Producao Intelectual",
+        resumo: "Conferencias basicas para evitar subregistro e perda de aderencia na leitura APCN.",
+        itens: [
+          "Minha producao esta atualizada.",
+          "Conheco minha pontuacao APCN.",
+          "Possuo produtos JCR/SJR identificados.",
+          "Minha producao esta aderente a linha de pesquisa.",
+        ],
+      },
+      {
+        titulo: "Formacao de Recursos Humanos",
+        resumo: "O foco aqui e fechar lacunas de orientacao que costumam aparecer tarde demais.",
+        itens: [
+          "Minhas orientacoes concluidas estao registradas.",
+          "Minhas orientacoes de mestrado estao registradas.",
+          "Minhas orientacoes de doutorado estao registradas.",
+        ],
+      },
+      {
+        titulo: "Captacao de Recursos",
+        resumo: "A carteira informada precisa estar completa, coerente e dentro da janela considerada.",
+        itens: [
+          "Informei todos os editais dos ultimos cinco anos.",
+          "Informei bolsas e financiamentos.",
+          "Informei vigencias e processos.",
+        ],
+      },
+      {
+        titulo: "Atuacao Academica",
+        resumo: "A aderencia do docente ao desenho do curso precisa ser demonstravel, nao apenas presumida.",
+        itens: [
+          "Estou vinculado a linha de pesquisa adequada.",
+          "Possuo projetos associados a linha.",
+          "Ministro disciplinas vinculadas a minha area de atuacao.",
+        ],
+      },
+    ];
+    const guideFaqItems = [
+      {
+        pergunta: "O Qualis e utilizado na APCN?",
+        resposta: "Nao como unico sinal de qualidade. A leitura da Area 21 combina pontuacao APCN, produtos qualificados e aderencia tematica. Por isso o dashboard usa estratos, JCR/SJR e categoria editorial como evidencias complementares.",
+      },
+      {
+        pergunta: "Como e calculada a pontuacao APCN?",
+        resposta: "Ela depende dos produtos declarados e das regras da Area 21 para o nivel pretendido. Nesta interface, o objetivo nao e recalcular a regra completa, mas indicar quais produtos sustentam a leitura institucional de cada docente.",
+      },
+      {
+        pergunta: "Qual periodo e considerado para producao?",
+        resposta: "O painel sintetiza o recorte usado na preparacao da proposta. Quando houver duvida, vale confrontar o produto com a janela do quadrenio e com a regra especifica do Documento Norteador APCN.",
+      },
+      {
+        pergunta: "Qual periodo e considerado para captacao de recursos?",
+        resposta: "Para este guia, considera-se a leitura institucional dos ultimos cinco anos, com enfase em editais, financiamentos e bolsas declaradas pelos docentes.",
+      },
+      {
+        pergunta: "Preciso possuir bolsa de produtividade?",
+        resposta: "Nao e requisito isolado para todos, mas bolsas e financiamentos ajudam a demonstrar maturidade cientifica e capacidade de sustentacao da proposta.",
+      },
+      {
+        pergunta: "Preciso ter orientacao de doutorado?",
+        resposta: "Nem todos os permanentes precisam ter essa experiencia, mas a proposta de doutorado precisa mostrar massa critica no nivel almejado e um nucleo docente com historico consistente.",
+      },
+      {
+        pergunta: "O que significa docente exclusivo?",
+        resposta: "No uso operacional do guia, e o permanente que atua como permanente somente neste PPG. Esse dado afeta diretamente o criterio de dedicacao exclusiva observado pela Area 21.",
+      },
+      {
+        pergunta: "Quantos docentes precisam ter orientacao de doutorado concluida?",
+        resposta: "O monitoramento institucional adota o minimo de tres docentes com orientacao de doutorado concluida como marcador critico para a proposta.",
+      },
+    ];
+    const guideEvidenceRows = [
+      {
+        criterio: "Docentes permanentes",
+        exigencia: "Minimo de 12 permanentes",
+        evidencia: "A proposta devera conter, no minimo, 12 docentes permanentes.",
+        interpretacao: "O PPGEF precisa manter dimensao minima e estabilidade do nucleo permanente.",
+        detalhe: "Na leitura operacional, 12 e piso. Quadro estavel, aderente e distribuido entre linhas e mais importante do que atingir o numero por arranjo temporario.",
+        fonte: "Documento Norteador APCN, p. 7",
+      },
+      {
+        criterio: "Exclusividade",
+        exigencia: "Minimo de 30% exclusivos ao PPG",
+        evidencia: "No minimo, 30% do corpo docente permanente seja exclusivo ao PPG proposto.",
+        interpretacao: "A dedicacao exclusiva reduz dispersao e reforca o compromisso estrutural do quadro.",
+        detalhe: "Esta e uma das areas em que o dashboard ja carrega herancas criticas: docentes com multiplas participacoes podem continuar produtivos, mas deixam de contar para o criterio quando extrapolam o limite.",
+        fonte: "Documento Norteador APCN, p. 8",
+      },
+      {
+        criterio: "Producao intelectual",
+        exigencia: "75% com >= 330 pontos",
+        evidencia: "75% dos docentes permanentes devem somar pelo menos 320 pontos.",
+        interpretacao: "O texto CAPES local indica 320; o PPGEF monitora 330 como margem conservadora.",
+        detalhe: "A aba orientadora mantem 330 porque esse corte ja aparece na infraestrutura analitica atual. Isso evita afrouxar a leitura interna, mas deixa claro que o lastro textual encontrado no documento local aponta 320.",
+        fonte: "Documento Norteador APCN, p. 10",
+      },
+      {
+        criterio: "Producao qualificada",
+        exigencia: "75% com >= 2 produtos qualificados",
+        evidencia: "75% dos docentes permanentes devem ter pelo menos 2 produtos qualificados.",
+        interpretacao: "O PPGEF deve mapear quais produtos realmente sustentam essa exigencia por docente.",
+        detalhe: "No dashboard, JCR/SJR e Categoria A funcionam como leitura operacional de qualidade. Isso ajuda a triagem interna, mas a prova final depende da aderencia do produto as regras documentais e editoriais.",
+        fonte: "Documento Norteador APCN, p. 10",
+      },
+      {
+        criterio: "Orientacoes concluidas",
+        exigencia: "Experiencia previa em orientacao",
+        evidencia: "75% dos docentes permanentes devem ter experiencia na orientacao de mestrandos.",
+        interpretacao: "O programa precisa mostrar experiencia difusa no quadro, nao concentrada em poucos nomes.",
+        detalhe: "Por isso o checklist separa orientacoes concluidas, mestrado e doutorado. O risco recorrente e ter experiencia real, mas registros incompletos ou mal classificados na base consolidada.",
+        fonte: "Documento Norteador APCN, p. 9",
+      },
+      {
+        criterio: "Captacao de recursos",
+        exigencia: "Declarar editais, bolsas e financiamentos",
+        evidencia: "A captação de recursos financeiros... e as Bolsas de Produtividade, devem ser declaradas.",
+        interpretacao: "Nao basta dizer que houve captacao; e preciso qualificar agencia, tipo de apoio e processo.",
+        detalhe: "A recomendacao institucional e revisar os ultimos cinco anos para eliminar omissoes, duplicidades e vigencias desatualizadas antes da consolidacao final da proposta.",
+        fonte: "Documento Norteador APCN, p. 9",
+      },
+      {
+        criterio: "Linhas de pesquisa",
+        exigencia: "Pelo menos duas linhas por area de concentracao",
+        evidencia: "Apresentou pelo menos 2 linhas de pesquisa/atuacao por area de concentracao?",
+        interpretacao: "A estrutura precisa ser plural, coerente e sem sobreposicao conceitual entre linhas.",
+        detalhe: "O numero minimo por si so nao resolve. O que sustenta a proposta e a hierarquia clara entre area, linhas, projetos e disciplinas, com docentes distribuidos de modo defensavel.",
+        fonte: "Documento Norteador APCN, p. 17",
+      },
+      {
+        criterio: "Projetos",
+        exigencia: "1 a 3 projetos por docente permanente",
+        evidencia: "E obrigatorio que todo docente permanente seja responsavel por pelo menos um projeto.",
+        interpretacao: "Cada permanente precisa entrar na proposta com projeto real, coerente e capaz de abrigar discentes.",
+        detalhe: "Projetos genéricos ou desalinhados costumam ser heranca de tentativas anteriores. O guia transforma isso em conferência objetiva para o docente.",
+        fonte: "Documento Norteador APCN, p. 5",
+      },
+      {
+        criterio: "Disciplinas",
+        exigencia: "Estrutura curricular coerente e docentes aderentes",
+        evidencia: "A proposta devera apresentar coerencia interna entre... Linhas de Pesquisa/Atuacao, as Disciplinas e os Projetos.",
+        interpretacao: "Disciplina entra como prova de coerencia curricular e de aderencia do docente ao curso proposto.",
+        detalhe: "Para o PPGEF, o ponto principal e mostrar que o docente ministra disciplina vinculada a sua area e ao desenho curricular do doutorado, nao apenas possui oferta isolada na base.",
+        fonte: "Documento Norteador APCN, p. 5",
+      },
+    ];
     const docenteChipList = document.getElementById("docentes-chip-list");
     const tiposSelect = document.getElementById("tipos");
     const anosSelect = document.getElementById("anos");
@@ -4202,6 +5039,11 @@
     const captacaoDocenteSortButtons = [...document.querySelectorAll("[data-captacao-docente-sort]")];
     const documentsInternos = document.getElementById("documents-internos");
     const documentsCapes = document.getElementById("documents-capes");
+    const guideOverviewGrid = document.getElementById("guide-overview-grid");
+    const guideLearningGrid = document.getElementById("guide-learning-grid");
+    const guideChecklistGrid = document.getElementById("guide-checklist-grid");
+    const guideFaqList = document.getElementById("guide-faq-list");
+    const guideEvidenceBody = document.getElementById("guide-evidence-body");
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
@@ -5730,6 +6572,128 @@
       }
 
       return "";
+    }
+
+    function renderGuideOverview() {
+      if (!guideOverviewGrid) return;
+      guideOverviewGrid.innerHTML = guideOverviewItems.map((item) => `
+        <article class="card guide-overview-card">
+          <p class="eyebrow">${escapeHtml(item.criterio)}</p>
+          <strong>${escapeHtml(item.exigencia)}</strong>
+          <p>${escapeHtml(item.explicacao)}</p>
+          <details class="guide-details">
+            <summary><span class="guide-more-button">Saiba mais</span></summary>
+            <p>${escapeHtml(item.detalhe)}</p>
+          </details>
+        </article>
+      `).join("");
+    }
+
+    function renderGuideLearning() {
+      if (!guideLearningGrid) return;
+      guideLearningGrid.innerHTML = guideLearningItems.map((item) => `
+        <details class="card guide-learning-card">
+          <summary>
+            <div>
+              <h3>${escapeHtml(item.titulo)}</h3>
+              <p>${escapeHtml(item.resumo)}</p>
+            </div>
+          </summary>
+          <div class="guide-accordion-body">
+            <ul class="guide-points">
+              ${item.detalhes.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}
+            </ul>
+            <div class="guide-inline-tags">
+              ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+            </div>
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function renderGuideChecklists() {
+      if (!guideChecklistGrid) return;
+      guideChecklistGrid.innerHTML = guideChecklistGroups.map((group) => `
+        <article class="card guide-checklist-card">
+          <h3>${escapeHtml(group.titulo)}</h3>
+          <p>${escapeHtml(group.resumo)}</p>
+          <ul class="guide-checklist">
+            ${group.itens.map((item) => `
+              <li>
+                <span class="guide-checklist-box" aria-hidden="true"></span>
+                <span>${escapeHtml(item)}</span>
+              </li>
+            `).join("")}
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function renderGuideFaq() {
+      if (!guideFaqList) return;
+      guideFaqList.innerHTML = guideFaqItems.map((item) => `
+        <details>
+          <summary>${escapeHtml(item.pergunta)}</summary>
+          <div class="guide-accordion-body">
+            <p>${escapeHtml(item.resposta)}</p>
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function bindGuideEvidenceRows() {
+      if (!guideEvidenceBody) return;
+      guideEvidenceBody.querySelectorAll("[data-guide-evidence-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.dataset.guideEvidenceToggle;
+          const detailRow = targetId ? document.getElementById(targetId) : null;
+          if (!detailRow) return;
+          const isOpen = detailRow.classList.toggle("open");
+          button.textContent = isOpen ? "Recolher" : "Saiba mais";
+          button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      });
+    }
+
+    function renderGuideEvidence() {
+      if (!guideEvidenceBody) return;
+      guideEvidenceBody.innerHTML = guideEvidenceRows.map((item, index) => {
+        const detailId = `guide-evidence-detail-${index}`;
+        return `
+          <tr>
+            <td>${escapeHtml(item.criterio)}</td>
+            <td>${escapeHtml(item.exigencia)}</td>
+            <td>
+              <span class="guide-evidence-text">${escapeHtml(item.evidencia)}</span>
+              <span class="guide-evidence-source">${escapeHtml(item.fonte)}</span>
+            </td>
+            <td>${escapeHtml(item.interpretacao)}</td>
+            <td>
+              <button
+                type="button"
+                class="guide-more-button"
+                data-guide-evidence-toggle="${detailId}"
+                aria-controls="${detailId}"
+                aria-expanded="false"
+              >Saiba mais</button>
+            </td>
+          </tr>
+          <tr id="${detailId}" class="guide-evidence-expand-row">
+            <td colspan="5" class="guide-evidence-detail">
+              <p><strong>Leitura operacional:</strong> ${escapeHtml(item.detalhe)}</p>
+            </td>
+          </tr>
+        `;
+      }).join("");
+      bindGuideEvidenceRows();
+    }
+
+    function renderGuideDocentePanel() {
+      renderGuideOverview();
+      renderGuideLearning();
+      renderGuideChecklists();
+      renderGuideFaq();
+      renderGuideEvidence();
     }
 
     function renderDocumentList(items, target) {
@@ -8879,6 +9843,7 @@
     bindDocentesControls();
     renderDocentesTab();
     renderCorpoDocenteCriticalCriteriaPanel();
+    renderGuideDocentePanel();
     renderDocumentsPanel();
   </script>
 </body>
