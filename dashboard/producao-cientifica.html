@@ -4586,21 +4586,31 @@
         .replaceAll("'", "&#39;");
     }
 
-    function toFileUrl(path) {
-      return `file:///${String(path).replaceAll("\\", "/")}`;
+    function toDocumentUrl(path) {
+      if (!path) {
+        return "";
+      }
+
+      const normalized = String(path).trim();
+      if (/^(https?:)?\/\//i.test(normalized) || normalized.startsWith("../") || normalized.startsWith("./") || normalized.startsWith("/")) {
+        return normalized;
+      }
+
+      return "";
     }
 
     function renderDocumentList(items, target) {
       target.innerHTML = items.map((item) => {
-        const hasFile = Boolean(item.caminho);
+        const primaryUrl = toDocumentUrl(item.caminho);
+        const hasFile = Boolean(primaryUrl);
         const statusClass = hasFile ? "ok" : "pending";
         const statusLabel = hasFile ? "Disponível" : "Pendente";
         const primaryAction = hasFile
-          ? `<a class="document-link primary" href="${encodeURI(toFileUrl(item.caminho))}" download>Abrir documento</a>`
+          ? `<a class="document-link primary" href="${encodeURI(primaryUrl)}" target="_blank" rel="noopener noreferrer">Abrir documento</a>`
           : "";
         const secondaryActions = Array.isArray(item.linksSecundarios)
           ? item.linksSecundarios.map((link) => `
-              <a class="document-link secondary" href="${encodeURI(toFileUrl(link.caminho))}" download>${escapeHtml(link.rotulo || "Versão adicional")}</a>
+              <a class="document-link secondary" href="${encodeURI(toDocumentUrl(link.caminho))}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.rotulo || "Versão adicional")}</a>
             `).join("")
           : "";
         const emptyState = hasFile
@@ -4628,7 +4638,7 @@
     function renderDocumentsPanel() {
       const internos = dataSourceDocumentos.filter((item) => item.categoria === "Internos");
       const capes = dataSourceDocumentos.filter((item) => item.categoria === "CAPES");
-      const available = dataSourceDocumentos.filter((item) => item.caminho).length;
+      const available = dataSourceDocumentos.filter((item) => toDocumentUrl(item.caminho)).length;
       const pending = dataSourceDocumentos.length - available;
 
       document.getElementById("documents-total").textContent = String(dataSourceDocumentos.length);
