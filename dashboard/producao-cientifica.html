@@ -949,18 +949,19 @@
     }
 
     .captacao-detail-table {
-      min-width: 2450px;
+      min-width: 2140px;
+      font-size: 0.88rem;
     }
 
     .captacao-detail-table td:nth-child(5) {
-      min-width: 380px;
+      min-width: 140px;
       white-space: normal;
       overflow-wrap: anywhere;
     }
 
     .captacao-detail-table td:nth-child(16),
     .captacao-detail-table td:nth-child(17) {
-      min-width: 260px;
+      min-width: 200px;
       white-space: normal;
       overflow-wrap: anywhere;
     }
@@ -975,6 +976,7 @@
 
     .captacao-executive-summary {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 8px;
     }
@@ -992,6 +994,53 @@
       font-size: clamp(1.45rem, 2vw, 2.1rem);
       line-height: 1.05;
       letter-spacing: -0.03em;
+    }
+
+    .captacao-metric-card {
+      grid-column: span 4;
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .captacao-metric-card span {
+      display: block;
+      max-width: 34ch;
+    }
+
+    .captacao-chip-limit .chip {
+      max-width: 100%;
+    }
+
+    .captacao-table-meta {
+      margin: 6px 0 0;
+      font-size: 0.82rem;
+      color: var(--ufpe-cinza);
+    }
+
+    .captacao-key {
+      font-family: "IBM Plex Mono", "Consolas", monospace;
+      font-size: 0.76rem;
+      color: #6a5f57;
+    }
+
+    .captacao-key-short {
+      display: inline-block;
+      max-width: 320px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+    }
+
+    .captacao-detail-table thead th {
+      white-space: nowrap;
+    }
+
+    .captacao-detail-table td,
+    .captacao-detail-table th {
+      vertical-align: top;
     }
 
     .orientation-grid-table .numeric-soft {
@@ -1824,6 +1873,8 @@
       .orientation-focus { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr 1fr; }
       .filters-grid-captacao { grid-template-columns: 1fr 1fr; }
+      .captacao-executive-summary { grid-template-columns: 1fr; }
+      .captacao-metric-card { grid-column: span 6; }
       .documents-group { grid-column: span 12; }
       .docentes-hero-card { grid-template-columns: 1fr; }
       .docentes-metric-card,
@@ -1837,6 +1888,7 @@
       .filters-grid { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr; }
       .filters-grid-captacao { grid-template-columns: 1fr; }
+      .captacao-metric-card { grid-column: span 12; min-height: auto; }
       .metric { grid-column: span 12; }
       .documents-metric { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; }
@@ -1875,19 +1927,19 @@
 
     <section class="tabs-shell">
       <nav class="tabs-nav" id="tabs-nav">
-        <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
-        <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
+        <button class="tab-button active" data-tab="tab-docentes">Docentes</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-disciplinas">Disciplinas</button>
+        <button class="tab-button" data-tab="tab-producao">Produção Científica</button>
+        <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
+        <button class="tab-button" data-tab="tab-lideranca">Liderança e Impacto</button>
         <button class="tab-button" data-tab="tab-captacao">Captação de Recursos</button>
-        <button class="tab-button" data-tab="tab-docentes">Docentes</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
-        <button class="tab-button" data-tab="tab-lideranca">Liderança e Impacto</button>
         <button class="tab-button" data-tab="tab-sobre">Sobre</button>
       </nav>
 
-      <div class="tab-panel active" id="tab-producao">
+      <div class="tab-panel" id="tab-producao">
         <section class="grid">
           <div class="card filters">
             <div class="section-head">
@@ -2657,47 +2709,47 @@
             <div class="chips" id="captacao-insight-chips"></div>
           </div>
 
-          <div class="card metric captacao-metric-value">
+          <div class="card metric captacao-metric-card captacao-metric-value">
             <p class="eyebrow">Valor Total Captado</p>
             <strong id="captacao-valor-total">R$ 0</strong>
             <span>Volume total aprovado no recorte analítico dos últimos 5 anos.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Registros</p>
             <strong id="captacao-registros-total">0</strong>
             <span>Captações visíveis após filtros, sem desdobro financeiro por tipo.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Docentes com Captação</p>
             <strong id="captacao-docentes-total">0</strong>
             <span id="captacao-docentes-total-resumo">0 docentes permanentes com pelo menos uma captação.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">% com Captação</p>
             <strong id="captacao-percentual-docentes">0%</strong>
             <span id="captacao-percentual-docentes-resumo">0 de 0 docentes permanentes no recorte.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Docentes sem Captação</p>
             <strong id="captacao-docentes-sem">0</strong>
             <span id="captacao-docentes-sem-resumo">Nenhum docente sem captação no recorte.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Captação Vigente 2026</p>
             <strong id="captacao-docentes-vigentes">0</strong>
             <span id="captacao-docentes-vigentes-resumo">0 docentes com carteira vigente em 2026.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">PQ / DT</p>
             <strong id="captacao-docentes-pqdt">0</strong>
             <span id="captacao-docentes-pqdt-resumo">0 docentes com bolsa estratégica identificada.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Agências Distintas</p>
             <strong id="captacao-agencias-total">0</strong>
             <span id="captacao-agencias-total-resumo">0 fontes estratégicas no recorte.</span>
           </div>
-          <div class="card metric metric-compact">
+          <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Alertas de Duplicidade</p>
             <strong id="captacao-alertas-total">0</strong>
             <span id="captacao-alertas-total-resumo">Nenhuma suspeita de duplicidade.</span>
@@ -2774,6 +2826,7 @@
               <h2>Base Detalhada</h2>
               <p>Leitura operacional para auditoria de persistência, incluindo vigência, edital, bolsas e alerta de duplicidade.</p>
             </div>
+            <p class="captacao-table-meta">A tabela abaixo prioriza rastreabilidade. A chave de duplicidade foi abreviada visualmente para reduzir ruído, preservando o valor completo no tooltip.</p>
             <div class="table-wrap">
               <table class="captacao-detail-table">
                 <thead>
@@ -2813,7 +2866,7 @@
         </section>
       </div>
 
-      <div class="tab-panel" id="tab-docentes">
+      <div class="tab-panel active" id="tab-docentes">
         <section class="grid">
           <div class="card docentes-controls-card">
             <div class="section-head">
