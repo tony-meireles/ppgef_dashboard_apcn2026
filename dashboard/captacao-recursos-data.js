@@ -1,6 +1,8 @@
 window.CAPTACAO_RECURSOS_PPGEF = {
   "updated_at": "2026-06-14",
   "source_csv": "C:\\Users\\tonym\\Downloads\\APCN 2026 _ Levantamento de Recursos Captados por Docentes do PPGEF (respostas) - Respostas ao formulário 1.csv",
+  "reference_year": 2026,
+  "recent_window_start": 2022,
   "rows": [
     {
       "id": 1,
@@ -12,17 +14,31 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de extensão",
         "Infraestrutura"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Projeto de extensão",
+        "Infraestrutura"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Estudos Étnico-Raciais Solano Trindade",
       "edital_numero": "21/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Estudos Étnico-Raciais Solano Trindade · 21/2024 · 2024",
       "vigencia_anos": [
         "2024",
         "2025",
         "2026"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2026,
+      "anos_vigencia": 3,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 85800.0,
       "valor_capital": 58000.0,
       "valor_custeio": 32800.0,
@@ -33,8 +49,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "melissa-leandro-celestino|recreia-potencializando-as-capacidades-fisicas-sociais-e-educacionais-das-criancas-em-situacao-de-vulnerabilidade|facepe|21-2024|em-execucao|2024|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 2,
@@ -45,17 +76,30 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de pesquisa",
         "Infraestrutura"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Infraestrutura"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Auxílio a Projetos de Pesquisa - APQ",
       "edital_numero": "18/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Auxílio a Projetos de Pesquisa - APQ · 18/2024 · 2024",
       "vigencia_anos": [
         "2024",
         "2025",
         "2026"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2026,
+      "anos_vigencia": 3,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 75653.0,
       "valor_capital": 75653.0,
       "valor_custeio": 0.0,
@@ -66,8 +110,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "melissa-leandro-celestino|analise-biomecanica-no-paratletismo|facepe|18-2024|em-execucao|2024|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 3,
@@ -77,16 +136,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "FACEPE - PROGRAMA DE BOLSAS DE PÓS-GRADUAÇÃO (1º SEMESTRE/2026)",
       "edital_numero": "EDITAL FACEPE 38/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "FACEPE - PROGRAMA DE BOLSAS DE PÓS-GRADUAÇÃO (1º SEMESTRE/2026) · EDITAL FACEPE 38/2025 · 2025",
       "vigencia_anos": [
         "2026",
         "2027"
       ],
+      "ano_inicio": 2026,
+      "ano_fim": 2027,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 57600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -97,8 +168,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 57600.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-mestrado-facepe-2026-1|facepe|edital-facepe-38-2025|em-execucao|2026|2027",
+      "motivo_alerta": ""
     },
     {
       "id": 4,
@@ -108,16 +193,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "EDITAL FACEPE 05/2022 – PIBIC 2022",
       "edital_numero": "05/2022",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "EDITAL FACEPE 05/2022 – PIBIC 2022 · 05/2022 · 2022",
       "vigencia_anos": [
         "2022",
         "2023"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2023,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 6000.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -128,8 +225,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 6000.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-facepe|facepe|05-2022|concluida|2022|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 5,
@@ -139,16 +250,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "EDITAL FACEPE Nº 01/2025",
       "edital_numero": "01/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "EDITAL FACEPE Nº 01/2025 · 01/2025 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -159,8 +282,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|iniciacao-cientifica-edital-facepe-n-01-2025|facepe|01-2025|em-execucao|2025|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 6,
@@ -170,15 +307,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Auxílio individual"
       ],
+      "tipo_lista": [
+        "Auxílio individual"
+      ],
       "status": "Concluída",
       "agencia": "PROPESQI/UFPE",
       "agencia_original": "PROPESQI/UFPE",
+      "agencia_normalizada": "PROPESQI/UFPE",
+      "agencia_grupo": "UFPE/PROPG/PROPESQI/PROGRAD",
       "edital_nome": "EDITAL PROPESQI Nº 05/2023 - EDITAL DE APOIO À PRODUÇÃO QUALIFICADA",
       "edital_numero": "Nº 05/2023",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "EDITAL PROPESQI Nº 05/2023 - EDITAL DE APOIO À PRODUÇÃO QUALIFICADA · Nº 05/2023 · 2023",
       "vigencia_anos": [
         "2023"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2023,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 3000.0,
       "valor_capital": 3000.0,
       "valor_custeio": 0.0,
@@ -189,8 +338,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|edital-propesqi-n-05-2023-edital-de-apoio-a-producao-qualificada|propesqi-ufpe|n-05-2023|concluida|2023|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 7,
@@ -200,16 +363,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de inovação/tecnologia"
       ],
+      "tipo_lista": [
+        "Projeto de inovação/tecnologia"
+      ],
       "status": "Concluída",
       "agencia": "PROGRAD/UFPE",
       "agencia_original": "Outra",
+      "agencia_normalizada": "PROGRAD/UFPE",
+      "agencia_grupo": "UFPE/PROPG/PROPESQI/PROGRAD",
       "edital_nome": "PROGRAD AditivoNº01aoEditalNº18/2023 ChamadaPúblicaInterna-EstímuloàInovaçãonoÂmbitodePráticasdeEnsinonaGraduação",
       "edital_numero": "Aditivo Nº01 ao Edital Nº18/2023",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "PROGRAD AditivoNº01aoEditalNº18/2023 ChamadaPúblicaInterna-EstímuloàInovaçãonoÂmbitodePráticasdeEnsinonaGraduação · Aditivo Nº01 ao Edital Nº18/2023 · 2023",
       "vigencia_anos": [
         "2024",
         "2025"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2025,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 49289.97,
       "valor_capital": 46525.86,
       "valor_custeio": 2764.11,
@@ -220,8 +395,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|aditivon-01aoeditaln-18-2023-chamadapublicainterna-estimuloainovacaonoambitodepraticasdeensinonagraduacao|prograd-ufpe|aditivo-n-01-ao-edital-n-18-2023|concluida|2024|2025",
+      "motivo_alerta": ""
     },
     {
       "id": 8,
@@ -231,15 +420,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Aprovada",
       "agencia": "PROPESQI/UFPE",
       "agencia_original": "PROPESQI/UFPE",
+      "agencia_normalizada": "PROPESQI/UFPE",
+      "agencia_grupo": "UFPE/PROPG/PROPESQI/PROGRAD",
       "edital_nome": "EDITAL PROPESQI N° 03/2026 EDITAL INSTITUCIONAL DE APOIO A JOVENS PESQUISADORES",
       "edital_numero": "N° 03/2026",
-      "edital_ano": "2026",
+      "edital_ano": 2026,
+      "edital_processo": "EDITAL PROPESQI N° 03/2026 EDITAL INSTITUCIONAL DE APOIO A JOVENS PESQUISADORES · N° 03/2026 · 2026",
       "vigencia_anos": [
         "2026"
       ],
+      "ano_inicio": 2026,
+      "ano_fim": 2026,
+      "anos_vigencia": 1,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 10000.0,
       "valor_capital": 0.0,
       "valor_custeio": 10000.0,
@@ -250,8 +451,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|edital-propesqi-n-03-2026-edital-institucional-de-apoio-a-jovens-pesquisadores|propesqi-ufpe|n-03-2026|aprovada|2026|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 9,
@@ -261,16 +476,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital Propesqi nº 02/2022",
       "edital_numero": "nº 02/2022",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "Edital Propesqi nº 02/2022 · nº 02/2022 · 2022",
       "vigencia_anos": [
         "2022",
         "2023"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2023,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 4800.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -281,8 +508,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 4800.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-cnpq-ufpe-22-23|cnpq|n-02-2022|concluida|2022|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 10,
@@ -292,16 +533,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital Propesqi Nº04/2023",
       "edital_numero": "Nº04/2023",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Edital Propesqi Nº04/2023 · Nº04/2023 · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -312,8 +565,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 4800.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-cnpq-ufpe-23-24|cnpq|n-04-2023|concluida|2023|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 11,
@@ -323,16 +590,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2024",
       "edital_numero": "nº 004/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Edital PROPESQI nº 004/2024 · nº 004/2024 · 2024",
       "vigencia_anos": [
         "2024",
         "2025"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2025,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -343,8 +622,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-cnpq-ufpe-24-25|cnpq|n-004-2024|concluida|2024|2025",
+      "motivo_alerta": ""
     },
     {
       "id": 12,
@@ -354,16 +647,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2024",
       "edital_numero": "nº 004/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Edital PROPESQI nº 004/2024 · nº 004/2024 · 2024",
       "vigencia_anos": [
         "2024",
         "2025"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2025,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -374,8 +679,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-propesqi-cnpq-ufpe|cnpq|n-004-2024|concluida|2024|2025",
+      "motivo_alerta": ""
     },
     {
       "id": 13,
@@ -385,16 +704,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2025",
       "edital_numero": "nº 004/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital PROPESQI nº 004/2025 · nº 004/2025 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -405,8 +736,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Pendente",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Possível duplicidade (2 registro(s) com mesma chave analítica). Situação de vigência: Vigente.",
       "suspeita_duplicidade": true,
-      "duplicidade_grupo": 2
+      "duplicidade_suspeita": true,
+      "duplicidade_grupo": 2,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-cnpq-ufpe-25-26|cnpq|n-004-2025|em-execucao|2025|2026",
+      "motivo_alerta": "Mesmo docente, título, agência, edital e janela de vigência em múltiplos registros."
     },
     {
       "id": 14,
@@ -416,16 +761,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2025",
       "edital_numero": "nº 004/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital PROPESQI nº 004/2025 · nº 004/2025 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -436,8 +793,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Pendente",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Possível duplicidade (2 registro(s) com mesma chave analítica). Situação de vigência: Vigente.",
       "suspeita_duplicidade": true,
-      "duplicidade_grupo": 2
+      "duplicidade_suspeita": true,
+      "duplicidade_grupo": 2,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-cnpq-ufpe-25-26|cnpq|n-004-2025|em-execucao|2025|2026",
+      "motivo_alerta": "Mesmo docente, título, agência, edital e janela de vigência em múltiplos registros."
     },
     {
       "id": 15,
@@ -447,16 +818,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 005/2025",
       "edital_numero": "nº 005/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital PROPESQI nº 005/2025 · nº 005/2025 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -467,8 +850,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-cientifica-propesqi-cnpq-ufpe-25-26|cnpq|n-005-2025|em-execucao|2025|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 16,
@@ -478,16 +875,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 006/2025",
       "edital_numero": "nº 006/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital PROPESQI nº 006/2025 · nº 006/2025 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 8400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -498,8 +907,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8400.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-iniciacao-tecnologica-propesqi-cnpq-ufpe-25-26|cnpq|n-006-2025|em-execucao|2025|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 17,
@@ -509,16 +932,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CAPES",
       "agencia_original": "CAPES",
+      "agencia_normalizada": "CAPES",
+      "agencia_grupo": "CAPES",
       "edital_nome": "Bolsa de Mestrado CAPES UFPE 23/24",
       "edital_numero": "Não sei informar",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Bolsa de Mestrado CAPES UFPE 23/24 · Não sei informar · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 25200.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -529,8 +964,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 25200.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Pendente",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Possível duplicidade (2 registro(s) com mesma chave analítica). Situação de vigência: Encerrada.",
       "suspeita_duplicidade": true,
-      "duplicidade_grupo": 2
+      "duplicidade_suspeita": true,
+      "duplicidade_grupo": 2,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-mestrado-capes-ufpe-23-24|capes|nao-sei-informar|concluida|2023|2024",
+      "motivo_alerta": "Mesmo docente, título, agência, edital e janela de vigência em múltiplos registros."
     },
     {
       "id": 18,
@@ -540,16 +989,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CAPES",
       "agencia_original": "CAPES",
+      "agencia_normalizada": "CAPES",
+      "agencia_grupo": "CAPES",
       "edital_nome": "Bolsa de Mestrado CAPES UFPE 23/24",
       "edital_numero": "Não sei informar",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Bolsa de Mestrado CAPES UFPE 23/24 · Não sei informar · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 35700.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -560,8 +1021,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 35700.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Pendente",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Possível duplicidade (2 registro(s) com mesma chave analítica). Situação de vigência: Encerrada.",
       "suspeita_duplicidade": true,
-      "duplicidade_grupo": 2
+      "duplicidade_suspeita": true,
+      "duplicidade_grupo": 2,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-mestrado-capes-ufpe-23-24|capes|nao-sei-informar|concluida|2023|2024",
+      "motivo_alerta": "Mesmo docente, título, agência, edital e janela de vigência em múltiplos registros."
     },
     {
       "id": 19,
@@ -571,17 +1046,29 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Bolsa de Mestrado CNPq UFPE 24/26",
       "edital_numero": "Não sei informar",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Bolsa de Mestrado CNPq UFPE 24/26 · Não sei informar · 2024",
       "vigencia_anos": [
         "2024",
         "2025",
         "2026"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2026,
+      "anos_vigencia": 3,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 50400.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -592,8 +1079,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 50400.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-mestrado-cnpq-ufpe-24-26|cnpq|nao-sei-informar|concluida|2024|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 20,
@@ -603,16 +1104,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CAPES",
       "agencia_original": "CAPES",
+      "agencia_normalizada": "CAPES",
+      "agencia_grupo": "CAPES",
       "edital_nome": "Bolsa de Mestrado CAPES UFPE 26/27",
       "edital_numero": "Não sei informar",
-      "edital_ano": "2026",
+      "edital_ano": 2026,
+      "edital_processo": "Bolsa de Mestrado CAPES UFPE 26/27 · Não sei informar · 2026",
       "vigencia_anos": [
         "2026",
         "2027"
       ],
+      "ano_inicio": 2026,
+      "ano_fim": 2027,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 25200.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -623,8 +1136,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 25200.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "daniel-da-rocha-queiroz|bolsa-de-mestrado-capes-ufpe-26-27|capes|nao-sei-informar|em-execucao|2026|2027",
+      "motivo_alerta": ""
     },
     {
       "id": 21,
@@ -634,15 +1161,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "APQ Universal",
       "edital_numero": "Edital n. 18/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "APQ Universal · Edital n. 18/2024 · 2024",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 74212.0,
       "valor_capital": 55780.0,
       "valor_custeio": 10032.0,
@@ -653,8 +1192,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 8000.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "bruno-teixeira-barbosa|efeitos-da-privacao-parcial-do-sono-no-desempenho-percepto-cognitivo-ao-longo-do-dia-de-profissionais-de-saude-do-hospital-das-clinicas-ufpe|facepe|edital-n-18-2024|em-execucao|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 22,
@@ -664,15 +1217,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Aprovada",
       "agencia": "PROPESQI/UFPE",
       "agencia_original": "PROPESQI/UFPE",
+      "agencia_normalizada": "PROPESQI/UFPE",
+      "agencia_grupo": "UFPE/PROPG/PROPESQI/PROGRAD",
       "edital_nome": "Edital Institucional de Apoio a Jovens Pesquisadores",
       "edital_numero": "Edital Propesqi nº 03/2026",
-      "edital_ano": "2026",
+      "edital_ano": 2026,
+      "edital_processo": "Edital Institucional de Apoio a Jovens Pesquisadores · Edital Propesqi nº 03/2026 · 2026",
       "vigencia_anos": [
         "2026"
       ],
+      "ano_inicio": 2026,
+      "ano_fim": 2026,
+      "anos_vigencia": 1,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 10000.0,
       "valor_capital": 10000.0,
       "valor_custeio": 0.0,
@@ -683,8 +1248,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "bruno-teixeira-barbosa|efeitos-da-privacao-parcial-do-sono-sobre-o-desempenho-percepto-cognitivo-ao-longo-do-dia-uma-analise-da-atencao-sustentada-em-profissionais-de-saude|propesqi-ufpe|edital-propesqi-n-03-2026|aprovada|2026|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 23,
@@ -694,15 +1273,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de Bolsas de Iniciação Científica",
       "edital_numero": "Edital FACEPE n. 01/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Programa Institucional de Bolsas de Iniciação Científica · Edital FACEPE n. 01/2025 · 2025",
       "vigencia_anos": [
         "2025"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2025,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -713,8 +1304,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "bruno-teixeira-barbosa|desenvolvimento-e-reprodutibilidade-de-teste-reteste-de-um-metodo-de-avaliacao-visuomotora-especifica-do-futsal-teste-de-acuracia-do-passe|facepe|edital-facepe-n-01-2025|em-execucao|2025|2025",
+      "motivo_alerta": ""
     },
     {
       "id": 24,
@@ -724,15 +1329,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
-      "agencia": "PROPESQI/UFPE",
+      "agencia": "CNPq",
       "agencia_original": "PROPESQI/UFPE",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2024:PIBIC/UFPE/CNPq, PIBIC-Af/UFPE/CNPq, PIBITI/UFPE/CNPq",
       "edital_numero": "Edital PROPESQI nº 004/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Edital PROPESQI nº 004/2024:PIBIC/UFPE/CNPq, PIBIC-Af/UFPE/CNPq, PIBITI/UFPE/CNPq · Edital PROPESQI nº 004/2024 · 2024",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -743,8 +1360,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": true,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: DT. Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "bruno-teixeira-barbosa|efeitos-da-privacao-parcial-do-sono-no-desempenho-percepto-cognitivo-ao-teste-visuomotor-de-defesa-em-atletas-treinados-de-voleibol|cnpq|edital-propesqi-n-004-2024|concluida|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 25,
@@ -754,15 +1385,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Edital PROPESQI nº 004/2025:PIBIC/UFPE/CNPq",
       "edital_numero": "Edital PROPESQI nº 004/2025",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital PROPESQI nº 004/2025:PIBIC/UFPE/CNPq · Edital PROPESQI nº 004/2025 · 2025",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -773,8 +1416,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "bruno-teixeira-barbosa|desenvolvimento-e-reprodutibilidade-de-teste-reteste-de-um-metodo-de-avaliacao-visuomotora-especifica-do-futsal-teste-de-acuracia-do-passe|cnpq|edital-propesqi-n-004-2025|em-execucao|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 26,
@@ -784,17 +1441,29 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "APQ - Universal - 18/2024",
       "edital_numero": "18/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "APQ - Universal - 18/2024 · 18/2024 · 2024",
       "vigencia_anos": [
         "2024",
         "2025",
         "2026"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2026,
+      "anos_vigencia": 3,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 74998.0,
       "valor_capital": 55478.0,
       "valor_custeio": 7520.0,
@@ -805,8 +1474,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 12000.0,
       "alunos_mestrado": 2,
       "alunos_doutorado": 2,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "rafael-dos-santos-henrique|autocuidado-em-saude-e-combate-as-doencas-cronicas-nao-transmissiveis|facepe|18-2024|em-execucao|2024|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 27,
@@ -817,18 +1501,31 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de inovação/tecnologia",
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Projeto de inovação/tecnologia",
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "CNPq",
       "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
       "edital_nome": "Chamada CNPq Nº 04/2023 - Bolsa de Produtividade em Desenvolvimento Tecnológico e Extensão Inovadora - DT",
       "edital_numero": "04/2023",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Chamada CNPq Nº 04/2023 - Bolsa de Produtividade em Desenvolvimento Tecnológico e Extensão Inovadora - DT · 04/2023 · 2023",
       "vigencia_anos": [
         "2024",
         "2025",
         "2026",
         "2027"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2027,
+      "anos_vigencia": 4,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 33900.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -839,8 +1536,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 33900.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": true,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ/DT. Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "rafael-dos-santos-henrique|autocuidado-em-saude-e-combate-as-doencas-cronicas-nao-transmissiveis|cnpq|04-2023|em-execucao|2024|2027",
+      "motivo_alerta": ""
     },
     {
       "id": 28,
@@ -850,15 +1562,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Concluída",
       "agencia": "FUNCAP",
       "agencia_original": "Outra",
+      "agencia_normalizada": "FUNCAP",
+      "agencia_grupo": "Outras fontes",
       "edital_nome": "FUNCAP",
       "edital_numero": "BOLSA DE PRODUTIVIDADE EM PESQUISA, ESTÍMULO À INTERIORIZAÇÃO E INOVAÇÃO TECNOLÓGICA – BPI 04/2022",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "FUNCAP · BOLSA DE PRODUTIVIDADE EM PESQUISA, ESTÍMULO À INTERIORIZAÇÃO E INOVAÇÃO TECNOLÓGICA – BPI 04/2022 · 2022",
       "vigencia_anos": [
         "2022"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2022,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 80700.0,
       "valor_capital": 30000.0,
       "valor_custeio": 6000.0,
@@ -869,8 +1593,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 44700.0,
       "alunos_mestrado": 3,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "paulo-felipe-ribeiro-bandeira|projeto-soldadinho-do-araripe-efeito-de-uma-intervencao-motora-na-competencia-motora-cognicao-e-saude-de-criancas-algoritmo-de-redes-complexas|funcap|bolsa-de-produtividade-em-pesquisa-estimulo-a-interiorizacao-e-inovacao-tecnologica-bpi-04-2022|concluida|2022|2022",
+      "motivo_alerta": ""
     },
     {
       "id": 29,
@@ -882,15 +1620,29 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Diárias e Passagens",
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Diárias e Passagens",
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FUNCAP",
       "agencia_original": "Outra",
+      "agencia_normalizada": "FUNCAP",
+      "agencia_grupo": "Outras fontes",
       "edital_nome": "FUNCAP",
       "edital_numero": "BOLSA DE PRODUTIVIDADE EM PESQUISA, ESTÍMULO À INTERIORIZAÇÃO E INOV. TECNOL. - BPI EDITAL nº 11/2024",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "FUNCAP · BOLSA DE PRODUTIVIDADE EM PESQUISA, ESTÍMULO À INTERIORIZAÇÃO E INOV. TECNOL. - BPI EDITAL nº 11/2024 · 2024",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 92400.0,
       "valor_capital": 18000.0,
       "valor_custeio": 12000.0,
@@ -901,8 +1653,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 62400.0,
       "alunos_mestrado": 3,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": true,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Marcador estratégico identificado: PQ. Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "paulo-felipe-ribeiro-bandeira|avaliacao-da-progressao-individual-e-coletiva-da-cooperacao-competencia-motora-e-cognitiva-em-criancas-durante-e-apos-um-programa-de-intervencao-motor|funcap|bolsa-de-produtividade-em-pesquisa-estimulo-a-interiorizacao-e-inov-tecnol-bpi-edital-n-11-2024|em-execucao|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 30,
@@ -915,15 +1681,30 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de inovação/tecnologia",
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Diárias e Passagens",
+        "Projeto de inovação/tecnologia",
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FUNCAP",
       "agencia_original": "Outra",
+      "agencia_normalizada": "FUNCAP",
+      "agencia_grupo": "Outras fontes",
       "edital_nome": "FUNCAP",
       "edital_numero": "EDITAL Nº 07/2023 - FUNCAP PRÓ-HUMANIDADES",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "FUNCAP · EDITAL Nº 07/2023 - FUNCAP PRÓ-HUMANIDADES · 2023",
       "vigencia_anos": [
         "2023"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2023,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 100000.0,
       "valor_capital": 51808.0,
       "valor_custeio": 19391.0,
@@ -934,8 +1715,22 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 28800.0,
       "alunos_mestrado": 3,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS",
+      "linha_pesquisa_lista": [
+        "AMS"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "paulo-felipe-ribeiro-bandeira|cartografia-de-redes-um-novo-metodo-para-avaliar-cooperacao-desenvolvimento-motor-e-cognitivo-em-criancas-nas-aulas-de-educacao-fisica|funcap|edital-n-07-2023-funcap-pro-humanidades|concluida|2023|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 31,
@@ -948,16 +1743,31 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Bolsa",
         "Auxílio individual"
       ],
+      "tipo_lista": [
+        "Projeto de extensão",
+        "Projeto de inovação/tecnologia",
+        "Bolsa",
+        "Auxílio individual"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "PET segunda rodada 2022",
       "edital_numero": "22",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "PET segunda rodada 2022 · 22 · 2022",
       "vigencia_anos": [
         "2022",
         "2023"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2023,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 24600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -968,8 +1778,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 24600.0,
       "alunos_mestrado": 3,
       "alunos_doutorado": 1,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|pense-e-brinque-app|facepe|22|concluida|2022|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 32,
@@ -980,16 +1805,29 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de pesquisa",
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Edital FACEPE Programa Institucional de bolsas de Iniciação Científica",
       "edital_numero": "n. 01",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Edital FACEPE Programa Institucional de bolsas de Iniciação Científica · n. 01 · 2025",
       "vigencia_anos": [
         "2025",
         "2026"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1000,8 +1838,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|efeitos-da-pre-exaustao-versus-treinamento-de-resistencia-tradicional-na-hipertrofia-de-quadriceps-em-mulheres|facepe|n-01|em-execucao|2025|2026",
+      "motivo_alerta": ""
     },
     {
       "id": 33,
@@ -1012,15 +1865,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
         "Projeto de pesquisa",
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa",
+        "Bolsa"
+      ],
       "status": "Em execução",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "01",
-      "edital_ano": "2025",
+      "edital_ano": 2025,
+      "edital_processo": "Programa Institucional de BIC · 01 · 2025",
       "vigencia_anos": [
         "2025"
       ],
+      "ano_inicio": 2025,
+      "ano_fim": 2025,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1031,8 +1897,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|efeito-da-suplementacao-de-nitrato-de-sodio-nas-funcoes-executivas-durante-estimulos-cognitivos-e-exercicio-intermitente-de-alta-intensidade-um-ensaio-clinico-crossover-randomizado-duplo-cego|facepe|01|em-execucao|2025|2025",
+      "motivo_alerta": ""
     },
     {
       "id": 34,
@@ -1042,15 +1923,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "03",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Programa Institucional de BIC · 03 · 2024",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1061,8 +1954,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|efeito-da-suplementacao-de-nitrato-de-sodio-nas-funcoes-executivas-durante-estimulos-cognitivos-e-exercicio-intermitente-de-alta-intensidade-um-ensaio-clinico-crossover-randomizado-duplo-cego|facepe|03|concluida|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 35,
@@ -1072,15 +1980,27 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "03",
-      "edital_ano": "2024",
+      "edital_ano": 2024,
+      "edital_processo": "Programa Institucional de BIC · 03 · 2024",
       "vigencia_anos": [
         "2024"
       ],
+      "ano_inicio": 2024,
+      "ano_fim": 2024,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 9600.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1091,8 +2011,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 9600.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|pense-brinque-app-avaliacao-da-usabilidade-e-eficacia-para-o-desenvolvimento-defuncoes-cognitivas-em-criancas-e-adolescentes|facepe|03|concluida|2024|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 36,
@@ -1102,16 +2037,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "01",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Programa Institucional de BIC · 01 · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 6000.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1122,8 +2069,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 6000.0,
       "alunos_mestrado": 1,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|pense-brinque-app-avaliacao-da-usabilidade-e-eficacia-para-o-desenvolvimento-de-funcoes-cognitivas-em-criancas-e-adolescentes|facepe|01|concluida|2023|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 37,
@@ -1133,16 +2095,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "01",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "Programa Institucional de BIC · 01 · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 6000.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1153,8 +2127,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 6000.0,
       "alunos_mestrado": 2,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|consumo-de-nitrato-risco-nutricional-forca-muscular-e-cognicao-em-pacientes-oncologicos-em-tratamento-quimioterapico-um-estudo-de-coorte-prospectivo|facepe|01|concluida|2023|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 38,
@@ -1164,16 +2153,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Bolsa"
       ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "Programa Institucional de BIC",
       "edital_numero": "05",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "Programa Institucional de BIC · 05 · 2022",
       "vigencia_anos": [
         "2022",
         "2023"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2023,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 6000.0,
       "valor_capital": 0.0,
       "valor_custeio": 0.0,
@@ -1184,8 +2185,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 6000.0,
       "alunos_mestrado": 2,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|consumo-de-nitrato-risco-nutricional-forca-muscular-e-cognicao-em-pacientes-oncologicos-em-tratamento-quimioterapico-um-estudo-de-coorte-prospectivo|facepe|05|concluida|2022|2023",
+      "motivo_alerta": ""
     },
     {
       "id": 39,
@@ -1195,16 +2211,28 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de inovação/tecnologia"
       ],
+      "tipo_lista": [
+        "Projeto de inovação/tecnologia"
+      ],
       "status": "Concluída",
       "agencia": "PROGRAD/UFPE",
       "agencia_original": "Outra",
+      "agencia_normalizada": "PROGRAD/UFPE",
+      "agencia_grupo": "UFPE/PROPG/PROPESQI/PROGRAD",
       "edital_nome": "PROGRAD - Estímulo à inovação no âmbito das práticas de ensino na graduação",
       "edital_numero": "18",
-      "edital_ano": "2023",
+      "edital_ano": 2023,
+      "edital_processo": "PROGRAD - Estímulo à inovação no âmbito das práticas de ensino na graduação · 18 · 2023",
       "vigencia_anos": [
         "2023",
         "2024"
       ],
+      "ano_inicio": 2023,
+      "ano_fim": 2024,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 11270.44,
       "valor_capital": 10777.44,
       "valor_custeio": 493.0,
@@ -1215,8 +2243,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 0,
       "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "andre-dos-santos-costa|estimulo-a-inovacao-no-ambito-das-praticas-de-ensino-na-graduacao|prograd-ufpe|18|concluida|2023|2024",
+      "motivo_alerta": ""
     },
     {
       "id": 40,
@@ -1226,18 +2269,30 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "tipos": [
         "Projeto de pesquisa"
       ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
       "status": "Concluída",
       "agencia": "FACEPE",
       "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
       "edital_nome": "FACEPE — Programa Estadual de Pesquisa Aplicada ao SUS - 19/2022",
       "edital_numero": "19/2022",
-      "edital_ano": "2022",
+      "edital_ano": 2022,
+      "edital_processo": "FACEPE — Programa Estadual de Pesquisa Aplicada ao SUS - 19/2022 · 19/2022 · 2022",
       "vigencia_anos": [
         "2022",
         "2023",
         "2024",
         "2025"
       ],
+      "ano_inicio": 2022,
+      "ano_fim": 2025,
+      "anos_vigencia": 4,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
       "valor_total": 99934.0,
       "valor_capital": 99934.0,
       "valor_custeio": 0.0,
@@ -1248,8 +2303,23 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "valor_bolsas_destinado": 0.0,
       "alunos_mestrado": 7,
       "alunos_doutorado": 1,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
       "suspeita_duplicidade": false,
-      "duplicidade_grupo": 1
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "rafael-dos-santos-henrique|vida-saudavel-em-lagoa-do-carro-ii-impacto-da-pandemia-sobre-indicadores-de-saude-de-criancas-e-adolescentes|facepe|19-2022|concluida|2022|2025",
+      "motivo_alerta": ""
     }
   ]
 };

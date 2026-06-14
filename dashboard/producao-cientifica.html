@@ -663,6 +663,18 @@
       border-color: rgba(140, 21, 56, 0.18);
     }
 
+    .status-pill.warn {
+      color: #8a5d12;
+      background: rgba(197, 142, 41, 0.15);
+      border-color: rgba(197, 142, 41, 0.24);
+    }
+
+    .status-pill.muted {
+      color: #6d727c;
+      background: rgba(109, 114, 124, 0.08);
+      border-color: rgba(109, 114, 124, 0.18);
+    }
+
     .sem-producao-list {
       display: grid;
       gap: 10px;
@@ -932,14 +944,54 @@
       min-width: 1120px;
     }
 
+    .captacao-docente-table {
+      min-width: 1340px;
+    }
+
     .captacao-detail-table {
-      min-width: 1700px;
+      min-width: 2450px;
     }
 
     .captacao-detail-table td:nth-child(5) {
       min-width: 380px;
       white-space: normal;
       overflow-wrap: anywhere;
+    }
+
+    .captacao-detail-table td:nth-child(16),
+    .captacao-detail-table td:nth-child(17) {
+      min-width: 260px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .captacao-metric-value strong {
+      font-size: clamp(1.65rem, 2.6vw, 2.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .captacao-executive-summary {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .captacao-executive-summary p {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff8ef;
+      border: 1px solid #ead8c5;
+      color: #40342f;
+    }
+
+    .metric.metric-compact strong {
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
     }
 
     .orientation-grid-table .numeric-soft {
@@ -2588,32 +2640,74 @@
             </div>
           </div>
 
-          <div class="card metric">
-            <p class="eyebrow">Valor Captado</p>
-            <strong id="captacao-valor-total">R$ 0</strong>
-            <span>Volume total aprovado no recorte, sem desdobrar um mesmo registro por múltiplos tipos.</span>
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Síntese Executiva APCN</h2>
+              <p>Leitura automática para maturidade científica, cobertura do corpo permanente e sustentabilidade da carteira de recursos.</p>
+            </div>
+            <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
           </div>
-          <div class="card metric">
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Mix Financeiro e Tipológico</h2>
+              <p>Separa valor financeiro por registro e ocorrência por tipo de captação, sem duplicar montantes multi-classificados.</p>
+            </div>
+            <div id="captacao-tipos-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-insight-chips"></div>
+          </div>
+
+          <div class="card metric captacao-metric-value">
+            <p class="eyebrow">Valor Total Captado</p>
+            <strong id="captacao-valor-total">R$ 0</strong>
+            <span>Volume total aprovado no recorte analítico dos últimos 5 anos.</span>
+          </div>
+          <div class="card metric metric-compact">
             <p class="eyebrow">Registros</p>
             <strong id="captacao-registros-total">0</strong>
-            <span>Quantidade de captações visíveis após aplicação dos filtros.</span>
+            <span>Captações visíveis após filtros, sem desdobro financeiro por tipo.</span>
           </div>
-          <div class="card metric">
-            <p class="eyebrow">Docentes Ativos</p>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">Docentes com Captação</p>
             <strong id="captacao-docentes-total">0</strong>
-            <span>Docentes com pelo menos uma captação no recorte filtrado.</span>
+            <span id="captacao-docentes-total-resumo">0 docentes permanentes com pelo menos uma captação.</span>
           </div>
-          <div class="card metric">
-            <p class="eyebrow">Bolsas + Alertas</p>
-            <strong id="captacao-bolsas-alertas">0</strong>
-            <span id="captacao-bolsas-alertas-resumo">0 bolsas vinculadas e nenhuma suspeita de duplicidade.</span>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">% com Captação</p>
+            <strong id="captacao-percentual-docentes">0%</strong>
+            <span id="captacao-percentual-docentes-resumo">0 de 0 docentes permanentes no recorte.</span>
+          </div>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">Docentes sem Captação</p>
+            <strong id="captacao-docentes-sem">0</strong>
+            <span id="captacao-docentes-sem-resumo">Nenhum docente sem captação no recorte.</span>
+          </div>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">Captação Vigente 2026</p>
+            <strong id="captacao-docentes-vigentes">0</strong>
+            <span id="captacao-docentes-vigentes-resumo">0 docentes com carteira vigente em 2026.</span>
+          </div>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">PQ / DT</p>
+            <strong id="captacao-docentes-pqdt">0</strong>
+            <span id="captacao-docentes-pqdt-resumo">0 docentes com bolsa estratégica identificada.</span>
+          </div>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">Agências Distintas</p>
+            <strong id="captacao-agencias-total">0</strong>
+            <span id="captacao-agencias-total-resumo">0 fontes estratégicas no recorte.</span>
+          </div>
+          <div class="card metric metric-compact">
+            <p class="eyebrow">Alertas de Duplicidade</p>
+            <strong id="captacao-alertas-total">0</strong>
+            <span id="captacao-alertas-total-resumo">Nenhuma suspeita de duplicidade.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head section-head-inline">
               <div>
-                <h2>Ranking por Docente</h2>
-                <p id="captacao-docente-chart-caption">Leitura por valor total aprovado no recorte filtrado.</p>
+                <h2>Distribuição Docente</h2>
+                <p id="captacao-docente-chart-caption">Leitura estratégica por valor total, concentração e status APCN do corpo permanente.</p>
               </div>
               <div class="sort-toggle-group" aria-label="Ordenação da captação por docente">
                 <button type="button" class="sort-toggle active" data-captacao-docente-sort="valor">Por valor</button>
@@ -2625,8 +2719,17 @@
 
           <div class="card chart-narrow">
             <div class="section-head">
-              <h2>Agências Estratégicas</h2>
-              <p>Concentração financeira por agência/fonte normalizada, já reclassificando parte dos registros marcados como “Outra”.</p>
+              <h2>Linhas de Pesquisa</h2>
+              <p>Distribui a carteira por linha institucional do docente para verificar aderência e concentração entre AMS e DFE.</p>
+            </div>
+            <div id="captacao-linhas-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-linhas-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Diversidade de Agências</h2>
+              <p>Diferencia CNPq, CAPES, FACEPE, FINEP, UFPE, fontes internacionais e demais grupos para leitura APCN.</p>
             </div>
             <div id="captacao-agencias-stack" class="type-stack"></div>
             <div class="chips" id="captacao-agencias-chips"></div>
@@ -2635,38 +2738,30 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Vigência da Carteira</h2>
-              <p>Quantidade de registros com vigência ativa por ano, somada ao valor total vinculado a cada janela.</p>
+              <p>Mostra valor ativo por ano, número de projetos ativos e docentes contemplados, destacando 2026 como referência APCN.</p>
             </div>
             <div id="chart-captacao-vigencia" class="chart"></div>
             <p class="chart-note" id="captacao-vigencia-nota"></p>
           </div>
 
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Mix Financeiro e Tipológico</h2>
-              <p>Composição do recurso entre capital, custeio e bolsas, com leitura complementar por presença de tipos.</p>
-            </div>
-            <div id="captacao-tipos-stack" class="type-stack"></div>
-            <div class="chips" id="captacao-insight-chips"></div>
-          </div>
-
           <div class="card table-card">
             <div class="section-head">
-              <h2>Síntese por Docente</h2>
-              <p>Resumo executivo para identificar concentração, diversidade de fontes e impacto discente por orientador.</p>
+              <h2>Tabela APCN por Docente</h2>
+              <p>Inclui docentes com e sem captação para evidenciar cobertura do corpo permanente, vigência, PQ/DT e fragilidades.</p>
             </div>
             <div class="table-wrap">
-              <table class="captacao-summary-table">
+              <table class="captacao-summary-table captacao-docente-table">
                 <thead>
                   <tr>
                     <th>Docente</th>
                     <th>Registros</th>
                     <th>Valor total</th>
+                    <th>Captação vigente</th>
+                    <th>PQ / DT</th>
+                    <th>Internacional</th>
+                    <th>Linhas de pesquisa</th>
                     <th>Agências</th>
-                    <th>Bolsas</th>
-                    <th>Mestrado vinculado</th>
-                    <th>Doutorado vinculado</th>
-                    <th>Alertas</th>
+                    <th>Status APCN</th>
                   </tr>
                 </thead>
                 <tbody id="captacao-resumo-docentes-body"></tbody>
@@ -2685,7 +2780,9 @@
                   <tr>
                     <th>Docente</th>
                     <th>Agência</th>
+                    <th>Grupo</th>
                     <th>Situação</th>
+                    <th>Status vigência</th>
                     <th>Vigência</th>
                     <th>Título / captação</th>
                     <th>Tipos</th>
@@ -2694,8 +2791,16 @@
                     <th>Capital</th>
                     <th>Custeio</th>
                     <th>Bolsas</th>
+                    <th>PQ / DT</th>
+                    <th>Internacional</th>
+                    <th>Linha</th>
+                    <th>Chave duplicidade</th>
+                    <th>Motivo do alerta</th>
+                    <th>Status revisão</th>
+                    <th>Observação</th>
+                    <th>Evidência / documento</th>
+                    <th>Link edital / processo</th>
                     <th>Vínculo discente</th>
-                    <th>Auditoria</th>
                   </tr>
                 </thead>
                 <tbody id="captacao-tabela-body"></tbody>
@@ -3881,6 +3986,8 @@
     const dataSourceCaptacaoPayload = window.CAPTACAO_RECURSOS_PPGEF || { updated_at: "", rows: [] };
     const dataSourceCaptacao = dataSourceCaptacaoPayload.rows || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
+    const captacaoReferenceYear = Number(dataSourceCaptacaoPayload.reference_year || 2026);
+    const captacaoRecentWindowStart = Number(dataSourceCaptacaoPayload.recent_window_start || 2022);
     const normalizeDisciplinasName = (value) => String(value || "")
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
@@ -4014,8 +4121,11 @@
     const statusCaptacaoSelect = document.getElementById("status-captacao");
     const chartCaptacaoDocentes = document.getElementById("chart-captacao-docentes");
     const captacaoDocenteChartCaption = document.getElementById("captacao-docente-chart-caption");
+    const captacaoExecutiveSummary = document.getElementById("captacao-executive-summary");
     const captacaoAgenciasStack = document.getElementById("captacao-agencias-stack");
     const captacaoAgenciasChips = document.getElementById("captacao-agencias-chips");
+    const captacaoLinhasStack = document.getElementById("captacao-linhas-stack");
+    const captacaoLinhasChips = document.getElementById("captacao-linhas-chips");
     const chartCaptacaoVigencia = document.getElementById("chart-captacao-vigencia");
     const captacaoVigenciaNota = document.getElementById("captacao-vigencia-nota");
     const captacaoTiposStack = document.getElementById("captacao-tipos-stack");
@@ -4668,7 +4778,10 @@
     }
 
     function populateCaptacaoFilters(data) {
-      const docentes = unique(data.map((item) => item.docente));
+      const docentes = unique([
+        ...captacaoPermanentDocenteMeta.map((item) => item.docente),
+        ...data.map((item) => item.docente),
+      ]).sort((a, b) => a.localeCompare(b, "pt-BR"));
       const tipos = unique(data.flatMap((item) => item.tipos || []));
       const vigencias = unique(data.flatMap((item) => item.vigencia_anos || [])).sort((a, b) => Number(a) - Number(b));
       const agencias = unique(data.map((item) => item.agencia));
@@ -4781,74 +4894,26 @@
       });
     }
 
-    function aggregateCaptacaoByDocente(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        if (!grouped.has(item.docente)) {
-          grouped.set(item.docente, {
-            docente: item.docente,
-            registros: 0,
-            valorTotal: 0,
-            bolsas: 0,
-            alunosMestrado: 0,
-            alunosDoutorado: 0,
-            alertas: 0,
-            agencias: new Set(),
-          });
-        }
-        const bucket = grouped.get(item.docente);
-        bucket.registros += 1;
-        bucket.valorTotal += Number(item.valor_total) || 0;
-        bucket.bolsas += Number(item.quantidade_bolsas) || 0;
-        bucket.alunosMestrado += Number(item.alunos_mestrado) || 0;
-        bucket.alunosDoutorado += Number(item.alunos_doutorado) || 0;
-        bucket.alertas += item.suspeita_duplicidade ? 1 : 0;
-        if (item.agencia) bucket.agencias.add(item.agencia);
-      });
-      return [...grouped.values()]
-        .map((item) => ({
-          ...item,
-          agencias: [...item.agencias].sort((a, b) => a.localeCompare(b, "pt-BR")),
-        }))
-        .sort((a, b) => b.valorTotal - a.valorTotal || a.docente.localeCompare(b.docente, "pt-BR"));
-    }
+    const captacaoPermanentDocenteMeta = (dataSourceCorpoDocente.docentes || [])
+      .filter((docente) => docente.anos?.[String(captacaoReferenceYear)] === "Per")
+      .map((docente) => ({
+        docente: docente.docente,
+        key: normalizeDisciplinasName(docente.docente),
+        linhas: [
+          ...(docente.ams ? ["AMS"] : []),
+          ...(docente.dfe ? ["DFE"] : []),
+        ],
+      }));
+    const captacaoPermanentDocenteMap = new Map(captacaoPermanentDocenteMeta.map((item) => [item.key, item]));
 
-    function aggregateCaptacaoByAgencia(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        if (!grouped.has(item.agencia)) {
-          grouped.set(item.agencia, {
-            agencia: item.agencia,
-            registros: 0,
-            valorTotal: 0,
-          });
-        }
-        const bucket = grouped.get(item.agencia);
-        bucket.registros += 1;
-        bucket.valorTotal += Number(item.valor_total) || 0;
-      });
-      return [...grouped.values()].sort((a, b) => b.valorTotal - a.valorTotal || a.agencia.localeCompare(b.agencia, "pt-BR"));
-    }
-
-    function aggregateCaptacaoByVigencia(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        (item.vigencia_anos || []).forEach((ano) => {
-          if (!grouped.has(ano)) {
-            grouped.set(ano, { ano, registros: 0, valorTotal: 0 });
-          }
-          const bucket = grouped.get(ano);
-          bucket.registros += 1;
-          bucket.valorTotal += Number(item.valor_total) || 0;
-        });
-      });
-      return [...grouped.values()].sort((a, b) => Number(a.ano) - Number(b.ano));
+    function getCaptacaoRelevantRows(data) {
+      return data.filter((item) => item.recorte_apcn_2022_2026 !== false);
     }
 
     function aggregateCaptacaoTypePresence(data) {
       const grouped = new Map();
       data.forEach((item) => {
-        (item.tipos || []).forEach((tipo) => {
+        (item.tipo_lista || item.tipos || []).forEach((tipo) => {
           if (!grouped.has(tipo)) {
             grouped.set(tipo, { tipo, registros: 0 });
           }
@@ -4858,58 +4923,246 @@
       return [...grouped.values()].sort((a, b) => b.registros - a.registros || a.tipo.localeCompare(b.tipo, "pt-BR"));
     }
 
-    function renderCaptacaoMetrics(data, docenteSummary) {
-      const totalValor = data.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0);
-      const totalBolsas = data.reduce((acc, item) => acc + (Number(item.quantidade_bolsas) || 0), 0);
-      const totalAlertas = data.filter((item) => item.suspeita_duplicidade).length;
-      const totalCapital = data.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
-      const totalCusteio = data.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
-      const totalBolsasValor = data.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
+    function buildCaptacaoSummary(data) {
+      const relevantRows = getCaptacaoRelevantRows(data);
+      const selectedDocenteKeys = new Set([...selectedDocentesCaptacao].map((item) => normalizeDisciplinasName(item)));
+      const baseDocentes = (selectedDocenteKeys.size
+        ? captacaoPermanentDocenteMeta.filter((item) => selectedDocenteKeys.has(item.key))
+        : captacaoPermanentDocenteMeta
+      ).map((item) => ({
+        docente: item.docente,
+        key: item.key,
+        linhas: item.linhas.length ? item.linhas : ["Não informada"],
+      }));
 
-      document.getElementById("captacao-valor-total").textContent = formatCurrency(totalValor);
-      document.getElementById("captacao-registros-total").textContent = String(data.length);
-      document.getElementById("captacao-docentes-total").textContent = String(docenteSummary.length);
-      document.getElementById("captacao-bolsas-alertas").textContent = `${totalBolsas} | ${totalAlertas}`;
-      document.getElementById("captacao-bolsas-alertas-resumo").textContent = `${totalBolsas} bolsas vinculadas e ${totalAlertas} registro(s) com suspeita de duplicidade.`;
+      const docenteBuckets = new Map(baseDocentes.map((item) => [item.key, {
+        docente: item.docente,
+        key: item.key,
+        registros: 0,
+        valorTotal: 0,
+        vigente: false,
+        pqdt: false,
+        internacional: false,
+        linhas: new Set(item.linhas),
+        agencias: new Set(),
+        alertas: 0,
+      }]));
 
-      captacaoInsightChips.innerHTML = [
-        `<span class="chip">Capital: <strong>${formatCurrency(totalCapital)}</strong></span>`,
-        `<span class="chip">Custeio: <strong>${formatCurrency(totalCusteio)}</strong></span>`,
-        `<span class="chip">Bolsas: <strong>${formatCurrency(totalBolsasValor)}</strong></span>`,
-        dataSourceCaptacaoPayload.updated_at ? `<span class="chip">Base atualizada em <strong>${dataSourceCaptacaoPayload.updated_at}</strong></span>` : "",
-      ].filter(Boolean).join("");
-    }
+      relevantRows.forEach((item) => {
+        const key = normalizeDisciplinasName(item.docente);
+        if (!docenteBuckets.has(key)) {
+          docenteBuckets.set(key, {
+            docente: item.docente,
+            key,
+            registros: 0,
+            valorTotal: 0,
+            vigente: false,
+            pqdt: false,
+            internacional: false,
+            linhas: new Set(item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : ["Não informada"])),
+            agencias: new Set(),
+            alertas: 0,
+          });
+        }
+        const bucket = docenteBuckets.get(key);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.vigente = bucket.vigente || Boolean(item.vigente_em_2026);
+        bucket.pqdt = bucket.pqdt || Boolean(item.bolsa_produtividade || item.bolsa_desenvolvimento_tecnologico);
+        bucket.internacional = bucket.internacional || Boolean(item.captacao_internacional);
+        (item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : [])).forEach((linha) => bucket.linhas.add(linha));
+        if (item.agencia_normalizada || item.agencia) bucket.agencias.add(item.agencia_normalizada || item.agencia);
+        bucket.alertas += item.duplicidade_suspeita ? 1 : 0;
+      });
 
-    function renderCaptacaoDocenteChart(data) {
-      const items = [...data].sort((a, b) => {
+      const docenteSummary = [...docenteBuckets.values()].map((item) => {
+        const statusApcn = item.registros === 0
+          ? "Frágil"
+          : (item.vigente || item.pqdt || item.internacional ? "Forte" : "Intermediário");
+        return {
+          ...item,
+          linhas: [...item.linhas].filter(Boolean).sort((a, b) => a.localeCompare(b, "pt-BR")),
+          agencias: [...item.agencias].sort((a, b) => a.localeCompare(b, "pt-BR")),
+          statusApcn,
+        };
+      }).sort((a, b) => {
         if (captacaoDocenteSortMode === "alfabetico") {
           return a.docente.localeCompare(b.docente, "pt-BR") || b.valorTotal - a.valorTotal;
         }
-        return b.valorTotal - a.valorTotal || b.registros - a.registros || a.docente.localeCompare(b.docente, "pt-BR");
+        const statusWeight = { Forte: 3, Intermediário: 2, "Frágil": 1 };
+        return (statusWeight[b.statusApcn] || 0) - (statusWeight[a.statusApcn] || 0)
+          || b.valorTotal - a.valorTotal
+          || b.registros - a.registros
+          || a.docente.localeCompare(b.docente, "pt-BR");
       });
+
+      const totalValor = relevantRows.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0);
+      const totalCapital = relevantRows.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
+      const totalCusteio = relevantRows.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
+      const totalBolsasValor = relevantRows.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
+      const totalAlertas = relevantRows.filter((item) => item.duplicidade_suspeita).length;
+      const docentesComCaptacao = docenteSummary.filter((item) => item.registros > 0);
+      const docentesSemCaptacao = docenteSummary.filter((item) => item.registros === 0);
+      const docentesVigentes = docenteSummary.filter((item) => item.vigente);
+      const docentesPqdt = docenteSummary.filter((item) => item.pqdt);
+      const docentesInternacionais = docenteSummary.filter((item) => item.internacional);
+      const percentualDocentes = baseDocentes.length ? Math.round((docentesComCaptacao.length / baseDocentes.length) * 100) : 0;
+
+      const agencyMap = new Map();
+      relevantRows.forEach((item) => {
+        const group = item.agencia_grupo || item.agencia_normalizada || item.agencia || "Não informada";
+        if (!agencyMap.has(group)) {
+          agencyMap.set(group, { agencia: group, registros: 0, valorTotal: 0, docentes: new Set() });
+        }
+        const bucket = agencyMap.get(group);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.docentes.add(item.docente);
+      });
+      const agencySummary = [...agencyMap.values()].map((item) => ({
+        ...item,
+        docentes: item.docentes.size,
+        percentualValor: totalValor ? Math.round((item.valorTotal / totalValor) * 100) : 0,
+      })).sort((a, b) => b.valorTotal - a.valorTotal || a.agencia.localeCompare(b.agencia, "pt-BR"));
+
+      const lineMap = new Map();
+      relevantRows.forEach((item) => {
+        const linhas = item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : ["Não informada"]);
+        linhas.forEach((linha) => {
+          if (!lineMap.has(linha)) {
+            lineMap.set(linha, {
+              linha,
+              docentes: new Set(),
+              registros: 0,
+              valorTotal: 0,
+              agencias: new Set(),
+              vigente: false,
+              internacional: false,
+            });
+          }
+          const bucket = lineMap.get(linha);
+          bucket.docentes.add(item.docente);
+          bucket.registros += 1;
+          bucket.valorTotal += Number(item.valor_total) || 0;
+          if (item.agencia_normalizada || item.agencia) bucket.agencias.add(item.agencia_normalizada || item.agencia);
+          bucket.vigente = bucket.vigente || Boolean(item.vigente_em_2026);
+          bucket.internacional = bucket.internacional || Boolean(item.captacao_internacional);
+        });
+      });
+      const lineSummary = [...lineMap.values()].map((item) => ({
+        ...item,
+        docentes: item.docentes.size,
+        agencias: item.agencias.size,
+        percentualValor: totalValor ? Math.round((item.valorTotal / totalValor) * 100) : 0,
+      })).sort((a, b) => b.valorTotal - a.valorTotal || a.linha.localeCompare(b.linha, "pt-BR"));
+
+      const yearMin = Math.min(captacaoRecentWindowStart, ...relevantRows.map((item) => Number(item.ano_inicio)).filter(Boolean), captacaoReferenceYear);
+      const yearMax = Math.max(captacaoReferenceYear, ...relevantRows.map((item) => Number(item.ano_fim)).filter(Boolean));
+      const vigenciaSummary = [];
+      for (let ano = yearMin; ano <= yearMax; ano += 1) {
+        const ativos = relevantRows.filter((item) => Number(item.ano_inicio) <= ano && Number(item.ano_fim) >= ano);
+        vigenciaSummary.push({
+          ano,
+          valorTotal: ativos.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0),
+          registros: ativos.length,
+          docentes: new Set(ativos.map((item) => item.docente)).size,
+          destaque: ano === captacaoReferenceYear,
+        });
+      }
+
+      const topLine = lineSummary[0];
+      const lowLine = lineSummary[lineSummary.length - 1];
+      const executiveSummary = [
+        `A base registra ${docentesComCaptacao.length} docente(s) com captação nos últimos 5 anos, correspondendo a ${percentualDocentes}% do corpo permanente analisado.`,
+        `Há ${docentesVigentes.length} docente(s) com captação vigente em ${captacaoReferenceYear} e ${docentesPqdt.length} com marcador estratégico PQ/DT ou equivalente.`,
+        `A carteira envolve ${agencySummary.length} grupos de agências/fonte e ${docentesInternacionais.length} docente(s) com captação internacional identificada.`,
+        `Foram identificados ${totalAlertas} alerta(s) de possível duplicidade que exigem revisão antes do uso final da base.`,
+        topLine
+          ? `A distribuição por linha de pesquisa concentra ${topLine.percentualValor}% do valor em ${topLine.linha}${lowLine && lowLine.linha !== topLine.linha ? `, com atenção adicional para ${lowLine.linha}` : ""}.`
+          : "A base ainda não permite leitura consistente por linha de pesquisa além do vínculo institucional do docente.",
+      ];
+
+      return {
+        rows: relevantRows,
+        totalValor,
+        totalCapital,
+        totalCusteio,
+        totalBolsasValor,
+        totalAlertas,
+        totalRegistros: relevantRows.length,
+        totalBaseDocentes: baseDocentes.length,
+        totalAgencias: agencySummary.length,
+        docentesComCaptacao,
+        docentesSemCaptacao,
+        docentesVigentes,
+        docentesPqdt,
+        docentesInternacionais,
+        percentualDocentes,
+        docenteSummary,
+        agencySummary,
+        lineSummary,
+        vigenciaSummary,
+        typePresence: aggregateCaptacaoTypePresence(relevantRows),
+        executiveSummary,
+      };
+    }
+
+    function renderCaptacaoMetrics(summary) {
+      document.getElementById("captacao-valor-total").textContent = formatCurrency(summary.totalValor);
+      document.getElementById("captacao-registros-total").textContent = String(summary.totalRegistros);
+      document.getElementById("captacao-docentes-total").textContent = String(summary.docentesComCaptacao.length);
+      document.getElementById("captacao-docentes-total-resumo").textContent = `${summary.docentesComCaptacao.length} docente(s) permanentes com pelo menos uma captação.`;
+      document.getElementById("captacao-percentual-docentes").textContent = `${summary.percentualDocentes}%`;
+      document.getElementById("captacao-percentual-docentes-resumo").textContent = `${summary.docentesComCaptacao.length} de ${summary.totalBaseDocentes} docentes permanentes no recorte.`;
+      document.getElementById("captacao-docentes-sem").textContent = String(summary.docentesSemCaptacao.length);
+      document.getElementById("captacao-docentes-sem-resumo").textContent = `${summary.docentesSemCaptacao.length} docente(s) permanentes sem captação visível nos filtros.`;
+      document.getElementById("captacao-docentes-vigentes").textContent = String(summary.docentesVigentes.length);
+      document.getElementById("captacao-docentes-vigentes-resumo").textContent = `${summary.docentesVigentes.length} docente(s) com carteira vigente em ${captacaoReferenceYear}.`;
+      document.getElementById("captacao-docentes-pqdt").textContent = String(summary.docentesPqdt.length);
+      document.getElementById("captacao-docentes-pqdt-resumo").textContent = `${summary.docentesPqdt.length} docente(s) com PQ, DT ou equivalente.`;
+      document.getElementById("captacao-agencias-total").textContent = String(summary.totalAgencias);
+      document.getElementById("captacao-agencias-total-resumo").textContent = `${summary.totalAgencias} grupos de fontes estratégicas no recorte.`;
+      document.getElementById("captacao-alertas-total").textContent = String(summary.totalAlertas);
+      document.getElementById("captacao-alertas-total-resumo").textContent = summary.totalAlertas
+        ? `${summary.totalAlertas} alerta(s) de possível duplicidade na carteira.`
+        : "Nenhuma suspeita de duplicidade no recorte atual.";
+    }
+
+    function renderCaptacaoExecutiveSummary(summary) {
+      captacaoExecutiveSummary.innerHTML = summary.executiveSummary.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
+    }
+
+    function renderCaptacaoDocenteChart(data) {
+      const items = data.slice(0, 12);
       if (!items.length) {
         chartCaptacaoDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
       captacaoDocenteChartCaption.textContent = captacaoDocenteSortMode === "alfabetico"
-        ? "Leitura alfabética, preservando o total financeiro ao lado de cada docente."
-        : "Leitura ordenada pelo volume financeiro total aprovado no recorte filtrado.";
+        ? "Ordem alfabética com leitura do valor, status APCN e concentração por docente."
+        : "Ordem por intensidade APCN e volume financeiro, priorizando docentes com maior tração estratégica.";
       const labelWidth = 250;
-      const rowHeight = 34;
-      const chartWidth = 760;
-      const usableWidth = chartWidth - labelWidth - 110;
+      const rowHeight = 36;
+      const chartWidth = 860;
+      const usableWidth = chartWidth - labelWidth - 230;
       const maxValor = Math.max(...items.map((item) => item.valorTotal), 1);
-      const height = Math.max(240, items.length * rowHeight + 30);
+      const height = Math.max(240, items.length * rowHeight + 36);
       chartCaptacaoDocentes.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Valor captado por docente">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Distribuição da captação por docente">
           ${items.map((item, index) => {
             const y = 18 + index * rowHeight;
-            const width = (item.valorTotal / maxValor) * usableWidth;
-            const alertAccent = item.alertas ? "#d4a017" : "#8c1538";
+            const width = item.valorTotal ? (item.valorTotal / maxValor) * usableWidth : 10;
+            const fill = item.statusApcn === "Forte" ? "#8c1538" : item.statusApcn === "Intermediário" ? "#c58e29" : "#b9ad9d";
+            const flags = [
+              item.vigente ? "vigente" : "",
+              item.pqdt ? "PQ/DT" : "",
+              item.internacional ? "intl." : "",
+            ].filter(Boolean).join(" · ");
             return `
-              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente}</text>
-              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${alertAccent}"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#262930" font-size="12">${formatCompactCurrency(item.valorTotal)}</text>
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${escapeHtml(item.docente)}</text>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${fill}"></rect>
+              <text x="${labelWidth + width + 8}" y="${y + 14}" fill="#262930" font-size="12">${escapeHtml(formatCompactCurrency(item.valorTotal))}</text>
+              <text x="${chartWidth - 170}" y="${y + 14}" fill="#6d727c" font-size="11">${item.registros} reg. ${flags ? "· " + escapeHtml(flags) : ""}</text>
             `;
           }).join("")}
         </svg>
@@ -4925,13 +5178,32 @@
       }
       captacaoAgenciasStack.innerHTML = data.map((item) => `
         <div class="type-row">
-          <strong>${item.agencia}</strong>
+          <strong>${escapeHtml(item.agencia)}</strong>
           <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
-          <span>${formatCompactCurrency(item.valorTotal)}</span>
+          <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s) · ${item.registros} reg.</span>
         </div>
       `).join("");
-      captacaoAgenciasChips.innerHTML = data.slice(0, 3).map((item) => `
-        <span class="chip">${item.registros} registro(s) em <strong>${item.agencia}</strong></span>
+      captacaoAgenciasChips.innerHTML = data.map((item) => `
+        <span class="chip">${escapeHtml(item.agencia)}: <strong>${item.percentualValor}%</strong> do valor total</span>
+      `).join("");
+    }
+
+    function renderCaptacaoLinhasPanel(data) {
+      const totalValor = data.reduce((acc, item) => acc + item.valorTotal, 0);
+      if (!data.length || !totalValor) {
+        captacaoLinhasStack.innerHTML = `<p class="chart-note">Sem leitura institucional de linha disponível.</p>`;
+        captacaoLinhasChips.innerHTML = `<span class="chip">A linha deriva do vínculo institucional do docente, não do formulário original do projeto.</span>`;
+        return;
+      }
+      captacaoLinhasStack.innerHTML = data.map((item) => `
+        <div class="type-row">
+          <strong>${escapeHtml(item.linha)}</strong>
+          <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s)</span>
+        </div>
+      `).join("");
+      captacaoLinhasChips.innerHTML = data.map((item) => `
+        <span class="chip">${escapeHtml(item.linha)}: ${item.registros} reg. · ${item.agencias} agência(s) · ${item.vigente ? "com vigência" : "sem vigência"}${item.internacional ? " · intl." : ""}</span>
       `).join("");
     }
 
@@ -4941,80 +5213,82 @@
         captacaoVigenciaNota.textContent = "";
         return;
       }
-      const height = 280;
-      const paddingX = 44;
-      const baseY = 232;
-      const barWidth = 62;
-      const gap = 26;
-      const rightPadding = 40;
-      const width = Math.max(760, paddingX + data.length * barWidth + Math.max(0, data.length - 1) * gap + rightPadding);
+      const height = 300;
+      const paddingX = 52;
+      const baseY = 236;
+      const barWidth = 54;
+      const gap = 22;
+      const width = Math.max(760, paddingX + data.length * (barWidth + gap) + 30);
       const maxValor = Math.max(...data.map((item) => item.valorTotal), 1);
       chartCaptacaoVigencia.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Captações por ano de vigência">
-          <line x1="${paddingX}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Carteira ativa por ano de vigência">
+          <line x1="${paddingX}" y1="${baseY}" x2="${width - 20}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
           ${data.map((item, index) => {
             const x = paddingX + index * (barWidth + gap);
-            const barHeight = (item.valorTotal / maxValor) * 150;
+            const barHeight = item.valorTotal ? (item.valorTotal / maxValor) * 150 : 2;
             const y = baseY - barHeight;
+            const fill = item.destaque ? "#8c1538" : "#c7a87d";
             return `
-              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="16" fill="#8c1538"></rect>
-              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
-              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#262930" font-size="11">${item.registros}</text>
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="14" fill="${fill}" opacity="${item.destaque ? 1 : 0.88}"></rect>
+              <text x="${x + barWidth / 2}" y="${baseY + 20}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+              <text x="${x + barWidth / 2}" y="${y - 10}" text-anchor="middle" fill="#262930" font-size="11">${item.registros} reg.</text>
+              <text x="${x + barWidth / 2}" y="${baseY + 36}" text-anchor="middle" fill="#6d727c" font-size="10">${item.docentes} doc.</text>
             `;
           }).join("")}
         </svg>
       `;
-      const peak = [...data].sort((a, b) => b.valorTotal - a.valorTotal)[0];
-      captacaoVigenciaNota.textContent = peak
-        ? `${peak.ano} concentra ${formatCurrency(peak.valorTotal)} distribuídos em ${peak.registros} registro(s) com vigência ativa.`
+      const refYear = data.find((item) => item.ano === captacaoReferenceYear);
+      captacaoVigenciaNota.textContent = refYear
+        ? `${captacaoReferenceYear}: ${formatCurrency(refYear.valorTotal)} ativos em ${refYear.registros} projeto(s), envolvendo ${refYear.docentes} docente(s).`
         : "";
     }
 
-    function renderCaptacaoTiposPanel(typePresence, data) {
+    function renderCaptacaoTiposPanel(typePresence, summary) {
       const totalOcorrencias = typePresence.reduce((acc, item) => acc + item.registros, 0);
-      const totalCapital = data.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
-      const totalCusteio = data.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
-      const totalBolsas = data.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
       const pool = [
-        { label: "Capital", value: totalCapital },
-        { label: "Custeio", value: totalCusteio },
-        { label: "Bolsas", value: totalBolsas },
+        { label: "Capital", value: summary.totalCapital },
+        { label: "Custeio", value: summary.totalCusteio },
+        { label: "Bolsas", value: summary.totalBolsasValor },
       ].filter((item) => item.value > 0);
-
       if (!pool.length && !typePresence.length) {
         captacaoTiposStack.innerHTML = `<p class="chart-note">Sem composição disponível.</p>`;
+        captacaoInsightChips.innerHTML = "";
         return;
       }
-
       const denominator = Math.max(...pool.map((item) => item.value), 1);
-      const poolRows = pool.map((item) => `
+      const financeRows = pool.map((item) => `
         <div class="type-row">
           <strong>${item.label}</strong>
           <div class="track"><div class="bar" style="width:${(item.value / denominator) * 100}%"></div></div>
           <span>${formatCompactCurrency(item.value)}</span>
         </div>
       `);
-      const typeRows = typePresence.slice(0, 3).map((item) => `
+      const typeRows = typePresence.slice(0, 4).map((item) => `
         <div class="type-row">
-          <strong>${item.tipo}</strong>
+          <strong>${escapeHtml(item.tipo)}</strong>
           <div class="track"><div class="bar" style="width:${totalOcorrencias ? (item.registros / totalOcorrencias) * 100 : 0}%"></div></div>
-          <span>${item.registros}</span>
+          <span>${item.registros} ocorrência(s)</span>
         </div>
       `);
-      captacaoTiposStack.innerHTML = [...poolRows, ...typeRows].join("");
+      captacaoTiposStack.innerHTML = [...financeRows, ...typeRows].join("");
+      captacaoInsightChips.innerHTML = [
+        `<span class="chip">Base APCN: <strong>${captacaoRecentWindowStart}-${captacaoReferenceYear}</strong></span>`,
+        dataSourceCaptacaoPayload.updated_at ? `<span class="chip">Base atualizada em <strong>${dataSourceCaptacaoPayload.updated_at}</strong></span>` : "",
+      ].filter(Boolean).join("");
     }
 
     function renderCaptacaoResumoDocentes(data) {
       captacaoResumoDocentesBody.innerHTML = data.map((item) => `
         <tr>
-          <td>${item.docente}</td>
+          <td>${escapeHtml(item.docente)}</td>
           <td>${item.registros}</td>
           <td>${formatCurrency(item.valorTotal)}</td>
-          <td>${item.agencias.join(", ")}</td>
-          <td>${item.bolsas}</td>
-          <td>${item.alunosMestrado}</td>
-          <td>${item.alunosDoutorado}</td>
-          <td><span class="status-pill ${item.alertas ? "alert" : "ok"}">${item.alertas ? `${item.alertas} alerta(s)` : "Sem alerta"}</span></td>
+          <td><span class="status-pill ${item.vigente ? "ok" : "muted"}">${item.vigente ? "Sim" : "Não"}</span></td>
+          <td><span class="status-pill ${item.pqdt ? "ok" : "muted"}">${item.pqdt ? "Sim" : "Não"}</span></td>
+          <td><span class="status-pill ${item.internacional ? "ok" : "muted"}">${item.internacional ? "Sim" : "Não"}</span></td>
+          <td>${escapeHtml(item.linhas.join(", ") || "Não informada")}</td>
+          <td>${escapeHtml(item.agencias.join(", ") || "-")}</td>
+          <td><span class="status-pill ${item.statusApcn === "Forte" ? "ok" : item.statusApcn === "Intermediário" ? "warn" : "alert"}">${item.statusApcn}</span></td>
         </tr>
       `).join("");
     }
@@ -5024,20 +5298,30 @@
         .slice()
         .sort((a, b) => (Number(b.valor_total) || 0) - (Number(a.valor_total) || 0) || a.docente.localeCompare(b.docente, "pt-BR"))
         .map((item) => `
-          <tr class="${item.suspeita_duplicidade ? "table-row-alert" : ""}">
-            <td>${item.docente}</td>
-            <td>${item.agencia}</td>
-            <td>${item.status}</td>
-            <td>${(item.vigencia_anos || []).join(", ") || "-"}</td>
-            <td>${item.titulo}</td>
-            <td>${(item.tipos || []).join(", ") || "-"}</td>
-            <td>${[item.edital_nome, item.edital_numero].filter(Boolean).join(" · ") || "-"}</td>
+          <tr class="${item.duplicidade_suspeita ? "table-row-alert" : ""}">
+            <td>${escapeHtml(item.docente)}</td>
+            <td>${escapeHtml(item.agencia_normalizada || item.agencia || "-")}</td>
+            <td>${escapeHtml(item.agencia_grupo || "-")}</td>
+            <td>${escapeHtml(item.status || "-")}</td>
+            <td>${escapeHtml(item.status_vigencia || "-")}</td>
+            <td>${escapeHtml((item.vigencia_anos || []).join(", ") || "-")}</td>
+            <td>${escapeHtml(item.titulo || "-")}</td>
+            <td>${escapeHtml((item.tipo_lista || item.tipos || []).join(", ") || "-")}</td>
+            <td>${escapeHtml(item.edital_processo || [item.edital_nome, item.edital_numero].filter(Boolean).join(" · ") || "-")}</td>
             <td>${formatCurrency(item.valor_total)}</td>
             <td>${formatCurrency(item.valor_capital)}</td>
             <td>${formatCurrency(item.valor_custeio)}</td>
             <td>${formatCurrency(item.valor_bolsas_destinado || item.valor_bolsas_aprovado)}</td>
+            <td>${item.bolsa_produtividade || item.bolsa_desenvolvimento_tecnologico ? `${item.bolsa_produtividade ? "PQ" : ""}${item.bolsa_produtividade && item.bolsa_desenvolvimento_tecnologico ? " / " : ""}${item.bolsa_desenvolvimento_tecnologico ? "DT" : ""}` : "-"}</td>
+            <td>${item.captacao_internacional ? "Sim" : "Não"}</td>
+            <td>${escapeHtml(item.linha_pesquisa || "-")}</td>
+            <td>${escapeHtml(item.chave_deduplicacao || "-")}</td>
+            <td>${escapeHtml(item.motivo_alerta || "-")}</td>
+            <td><span class="status-pill ${item.duplicidade_suspeita ? "alert" : "muted"}">${escapeHtml(item.status_revisao || "Sem alerta")}</span></td>
+            <td>${escapeHtml(item.observacao_auditoria || "-")}</td>
+            <td>${escapeHtml(item.evidencia_documento || "-")}</td>
+            <td>${item.link_edital_processo ? `<a href="${escapeHtml(item.link_edital_processo)}" target="_blank" rel="noopener noreferrer">Abrir</a>` : "-"}</td>
             <td>M: ${item.alunos_mestrado || 0} · D: ${item.alunos_doutorado || 0}</td>
-            <td><span class="status-pill ${item.suspeita_duplicidade ? "alert" : "ok"}">${item.suspeita_duplicidade ? `Revisar (${item.duplicidade_grupo}x)` : "Ok"}</span></td>
           </tr>
         `).join("");
       captacaoEstadoVazio.style.display = data.length ? "none" : "block";
@@ -5046,17 +5330,16 @@
     function applyCaptacaoFilters() {
       syncCaptacaoFilterViews();
       const filtered = getFilteredCaptacaoData();
-      const docenteSummary = aggregateCaptacaoByDocente(filtered);
-      const agencySummary = aggregateCaptacaoByAgencia(filtered);
-      const vigenciaSummary = aggregateCaptacaoByVigencia(filtered);
-      const typePresence = aggregateCaptacaoTypePresence(filtered);
-      renderCaptacaoMetrics(filtered, docenteSummary);
-      renderCaptacaoDocenteChart(docenteSummary);
-      renderCaptacaoAgenciasPanel(agencySummary);
-      renderCaptacaoVigenciaChart(vigenciaSummary);
-      renderCaptacaoTiposPanel(typePresence, filtered);
-      renderCaptacaoResumoDocentes(docenteSummary);
-      renderCaptacaoTable(filtered);
+      const summary = buildCaptacaoSummary(filtered);
+      renderCaptacaoMetrics(summary);
+      renderCaptacaoExecutiveSummary(summary);
+      renderCaptacaoDocenteChart(summary.docenteSummary);
+      renderCaptacaoLinhasPanel(summary.lineSummary);
+      renderCaptacaoAgenciasPanel(summary.agencySummary);
+      renderCaptacaoVigenciaChart(summary.vigenciaSummary);
+      renderCaptacaoTiposPanel(summary.typePresence, summary);
+      renderCaptacaoResumoDocentes(summary.docenteSummary);
+      renderCaptacaoTable(summary.rows);
     }
 
     function syncScientificFilterViews() {
