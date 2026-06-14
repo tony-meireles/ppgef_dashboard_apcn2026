@@ -3145,6 +3145,73 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Captação de Recursos</h2>
+              <p>Leitura exploratória do quantitativo de docentes com captação registrada, preparando a definição posterior de uma linha de corte crítica.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Base docente</p>
+            <strong id="captacao-crit-base-total">0</strong>
+            <span>Total de docentes considerados na base APCN para leitura da captação.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com captação</p>
+            <strong id="captacao-crit-docentes-total">0</strong>
+            <span id="captacao-crit-docentes-resumo">0 docentes com pelo menos uma captação registrada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Cobertura da base</p>
+            <strong id="captacao-crit-percentual">0%</strong>
+            <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação de recursos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Registros/valor</p>
+            <strong id="captacao-crit-registros-total">0</strong>
+            <span id="captacao-crit-registros-resumo">R$ 0 em registros consolidados da base.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Captação por Docente</h2>
+              <p>Quantidade de registros por docente com apoio do valor total captado em cada carteira.</p>
+            </div>
+            <div id="chart-captacao-crit-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura de Captação</h2>
+              <p>Painel exploratório para apoiar a futura definição do corte desejável.</p>
+            </div>
+            <div class="criteria-summary" id="captacao-crit-summary-cards"></div>
+            <div class="chips" id="captacao-crit-insights"></div>
+            <p class="chart-note" id="captacao-crit-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese de Captação</h2>
+              <p>Resumo do quantitativo atual de docentes com captação e da composição por situação da base.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Indicador</th>
+                    <th>Base de leitura</th>
+                    <th>Resultado atual</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-crit-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Corpo Docente</h2>
               <p>Regras críticas de composição do quadro permanente, vínculo institucional, exclusividade e dimensão mínima do programa.</p>
             </div>
@@ -3961,6 +4028,9 @@
     const tabApcn = document.getElementById("tab-apcn");
     const docenciaCritSummaryCards = document.getElementById("docencia-crit-summary-cards");
     const docenciaCritInsights = document.getElementById("docencia-crit-insights");
+    const chartCaptacaoCritDocentes = document.getElementById("chart-captacao-crit-docentes");
+    const captacaoCritSummaryCards = document.getElementById("captacao-crit-summary-cards");
+    const captacaoCritInsights = document.getElementById("captacao-crit-insights");
     const corpoDocenteCritSummaryCards = document.getElementById("corpo-docente-crit-summary-cards");
     const corpoDocenteCritInsights = document.getElementById("corpo-docente-crit-insights");
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
@@ -7575,6 +7645,160 @@
       renderLeadershipPartnershipNetwork(partnershipNetwork);
     }
 
+    function aggregateCaptacaoCriticalCriteria() {
+      const baseDocentes = [...new Set((dataSourceOrientacoes || []).map((item) => item.docente).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const relevantStatuses = new Set(["Aprovada", "Concluída", "Em execução"]);
+      const relevantRows = (dataSourceCaptacao || []).filter((item) => relevantStatuses.has(item.status));
+      const docenteMap = new Map();
+      const statusMap = new Map();
+      let totalValor = 0;
+      let totalAlertas = 0;
+
+      relevantRows.forEach((item) => {
+        totalValor += Number(item.valor_total) || 0;
+        totalAlertas += item.suspeita_duplicidade ? 1 : 0;
+        statusMap.set(item.status, (statusMap.get(item.status) || 0) + 1);
+        if (!docenteMap.has(item.docente)) {
+          docenteMap.set(item.docente, {
+            docente: item.docente,
+            registros: 0,
+            valorTotal: 0,
+            statuses: new Set(),
+          });
+        }
+        const bucket = docenteMap.get(item.docente);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.statuses.add(item.status);
+      });
+
+      const docentesComCaptacao = [...docenteMap.values()]
+        .map((item) => ({
+          ...item,
+          statuses: [...item.statuses].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        }))
+        .sort((a, b) => b.registros - a.registros || b.valorTotal - a.valorTotal || a.docente.localeCompare(b.docente, "pt-BR"));
+
+      const totalBase = baseDocentes.length;
+      const totalDocentes = docentesComCaptacao.length;
+      const percentual = totalBase ? Math.round((totalDocentes / totalBase) * 100) : 0;
+
+      return {
+        baseDocentes,
+        totalBase,
+        totalDocentes,
+        percentual,
+        totalRegistros: relevantRows.length,
+        totalValor,
+        totalAlertas,
+        docentesComCaptacao,
+        statusSummary: [...statusMap.entries()]
+          .map(([status, total]) => ({ status, total }))
+          .sort((a, b) => b.total - a.total || a.status.localeCompare(b.status, "pt-BR")),
+      };
+    }
+
+    function renderCaptacaoCriticalCriteriaChart(summary) {
+      if (!chartCaptacaoCritDocentes) return;
+      if (!summary.docentesComCaptacao.length) {
+        chartCaptacaoCritDocentes.innerHTML = `<p class="chart-note">Sem registros de captação para o recorte atual.</p>`;
+        return;
+      }
+      const items = summary.docentesComCaptacao.slice(0, 12);
+      const width = 860;
+      const rowHeight = 34;
+      const topPadding = 18;
+      const leftLabel = 280;
+      const barArea = 300;
+      const valueX = 610;
+      const metaX = 740;
+      const height = Math.max(240, items.length * rowHeight + 30);
+      const maxRegistros = Math.max(...items.map((item) => item.registros), 1);
+
+      chartCaptacaoCritDocentes.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Quantitativo de captações por docente">
+          ${items.map((item, index) => {
+            const y = topPadding + index * rowHeight;
+            const barWidth = (item.registros / maxRegistros) * barArea;
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${escapeHtml(item.docente)}</text>
+              <rect x="${leftLabel}" y="${y}" width="${barWidth}" height="18" rx="9" fill="#8c1538"></rect>
+              <text x="${leftLabel + barWidth + 10}" y="${y + 14}" fill="#262930" font-size="12">${item.registros} registro(s)</text>
+              <text x="${metaX}" y="${y + 14}" fill="#6d727c" font-size="11">${escapeHtml(formatCompactCurrency(item.valorTotal))}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderCaptacaoCriticalCriteriaPanel() {
+      const summary = aggregateCaptacaoCriticalCriteria();
+      const topDocente = summary.docentesComCaptacao[0];
+      const statusPrincipal = summary.statusSummary[0];
+
+      document.getElementById("captacao-crit-base-total").textContent = String(summary.totalBase);
+      document.getElementById("captacao-crit-docentes-total").textContent = String(summary.totalDocentes);
+      document.getElementById("captacao-crit-percentual").textContent = `${summary.percentual}%`;
+      document.getElementById("captacao-crit-registros-total").textContent = String(summary.totalRegistros);
+      document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação registrada.`;
+      document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação de recursos.`;
+      document.getElementById("captacao-crit-registros-resumo").textContent = `${formatCurrency(summary.totalValor)} em registros consolidados da base.`;
+
+      captacaoCritSummaryCards.innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Docentes com captação</div>
+              <strong>${summary.totalDocentes}/${summary.totalBase}</strong>
+            </div>
+            <span class="criteria-status ok">Exploratório</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Registros elegíveis</div>
+              <strong>${summary.totalRegistros}</strong>
+            </div>
+            <span class="criteria-status ${summary.totalAlertas ? "risk" : "ok"}">${summary.totalAlertas ? `${summary.totalAlertas} alerta(s)` : "Sem alerta"}</span>
+          </div>
+        `,
+      ].join("");
+
+      captacaoCritInsights.innerHTML = [
+        `<span class="chip">Cobertura atual: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
+        topDocente ? `<span class="chip">Maior carteira: <strong>${topDocente.docente}</strong> (${topDocente.registros} registro(s) e ${formatCurrency(topDocente.valorTotal)})</span>` : "",
+        statusPrincipal ? `<span class="chip">Situação mais frequente: <strong>${statusPrincipal.status}</strong> (${statusPrincipal.total} registro(s))</span>` : "",
+        `<span class="chip">Valor total informado: <strong>${formatCurrency(summary.totalValor)}</strong></span>`,
+      ].filter(Boolean).join("");
+
+      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção considera registros de captação com situação Aprovada, Em execução ou Concluída. A leitura é exploratória e usa a base APCN de 18 docentes como denominador até a definição do corte desejável.";
+
+      document.getElementById("captacao-crit-resumo-body").innerHTML = [
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com captação de recursos</td>
+            <td>${summary.totalBase} docentes na base APCN</td>
+            <td>${summary.totalDocentes} docentes (${summary.percentual}%)</td>
+            <td>Indicador preparado para futura parametrização de corte.</td>
+          </tr>
+        `,
+        ...summary.statusSummary.map((item) => `
+          <tr>
+            <td>Captação</td>
+            <td>Registros na situação ${item.status}</td>
+            <td>Base de captações elegíveis</td>
+            <td>${item.total} registro(s)</td>
+            <td>Composição operacional do portfólio atual de captação.</td>
+          </tr>
+        `),
+      ].join("");
+
+      renderCaptacaoCriticalCriteriaChart(summary);
+    }
+
     const docentesCriteriaLabels = {
       permanentes_no_corpo: "Permanentes no corpo classificado",
       permanentes_internos: "Permanentes com vínculo com a IES",
@@ -8246,6 +8470,7 @@
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
     renderDocenciaCriticalCriteriaPanel();
+    renderCaptacaoCriticalCriteriaPanel();
     populateDocentesYearSelect();
     bindDocentesControls();
     renderDocentesTab();
