@@ -3559,7 +3559,7 @@
   </div>
 
   <script src="./producao-cientifica-data.js?v=2026-06-12g"></script>
-  <script src="./producao-tecnica-data.js?v=2026-06-12g"></script>
+  <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
   <script src="./disciplinas-data.js?v=2026-06-12f"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
@@ -4378,10 +4378,14 @@
     }
 
     function initializeTechnicalFilters() {
-      selectedDocentesTecnica = new Set(technicalFilterValues.docentes);
-      selectedTiposTecnica = new Set(technicalFilterValues.tipos);
-      selectedAnosTecnica = new Set(technicalFilterValues.anos);
-      selectedStatusTecnica = new Set(technicalFilterValues.status);
+      selectedDocentesTecnica.clear();
+      selectedTiposTecnica.clear();
+      selectedAnosTecnica.clear();
+      selectedStatusTecnica.clear();
+      technicalFilterValues.docentes.forEach((value) => selectedDocentesTecnica.add(value));
+      technicalFilterValues.tipos.forEach((value) => selectedTiposTecnica.add(value));
+      technicalFilterValues.anos.forEach((value) => selectedAnosTecnica.add(value));
+      technicalFilterValues.status.forEach((value) => selectedStatusTecnica.add(value));
       syncTechnicalFilterViews();
     }
 

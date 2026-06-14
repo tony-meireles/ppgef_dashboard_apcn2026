@@ -1,18 +1,18 @@
-docente,status_producao,total_produtos,tipos_produto,subtipos_relevantes
-Tony Meireles dos Santos,Com produção,93,Assessoria e consultoria; Demais tipos; Entrevistas; Processos ou técnicas; Produtos tecnológicos; Programas de computador sem registro; Redes sociais; Trabalhos técnicos,Curso de curta duração ministrado/Outra; Curso de curta duração ministrado/Especialização; Desenvolvimento de material didático ou instrucional - Mapa de Competências
-Pedro Pinheiro Paes,Com produção,81,Demais tipos; Entrevistas,Programa de rádio ou TV/Entrevista; Curso de curta duração ministrado/Extensão; Curso de curta duração ministrado/Especialização
-Bruno Teixeira Barbosa,Com produção,31,Demais tipos; Entrevistas; Redes sociais,Programa de rádio ou TV/Entrevista; Desenvolvimento de material didático ou instrucional - Apostila; Programa de rádio ou TV/Comentário
-Daniel da Rocha Queiroz,Com produção,19,Demais tipos; Redes sociais; Trabalhos técnicos,Desenvolvimento de material didático ou instrucional - Jogo Educativo; Palestra; Curso de curta duração ministrado/Extensão
-Paulo Roberto Cavalcanti Carvalho,Com produção,12,Demais tipos; Trabalhos técnicos,Curso de curta duração ministrado/Outra; Curso de curta duração ministrado/Extensão
-Vilde Gomes de Menezes,Com produção,11,Demais tipos; Programas de computador sem registro; Trabalhos técnicos,Curso de curta duração ministrado/Especialização; Curso de curta duração ministrado/Outra; Avaliadora
-Daniela Karina da Silva Ferreira,Com produção,7,Assessoria e consultoria; Demais tipos,Relatório de pesquisa; Desenvolvimento de material didático ou instrucional - MANUAL
-Eduardo Zapaterra Campos,Com produção,6,Assessoria e consultoria; Demais tipos,Curso de curta duração ministrado/Especialização; Curso de curta duração ministrado/Extensão; Curso de curta duração ministrado/Outra
-Lucas Eduardo Rodrigues dos Santos,Com produção,6,Assessoria e consultoria; Demais tipos,Curso de curta duração ministrado/Extensão
-Paulo Felipe Ribeiro Bandeira,Com produção,6,Demais tipos,Curso de curta duração ministrado/Outra; Relatório de pesquisa
-Saulo Fernandes Melo de Oliveira,Com produção,6,Demais tipos; Entrevistas; Produtos tecnológicos; Programas de computador sem registro,Programa de rádio ou TV/Entrevista; Relatório de pesquisa; Curso de curta duração ministrado/Extensão
-Ozeas de Lima Lins Filho,Com produção,5,Demais tipos,Curso de curta duração ministrado/Extensão; Desenvolvimento de material didático ou instrucional - Manual; Desenvolvimento de material didático ou instrucional - Manual técnico
-Leonardo Gomes de Oliveira Luz,Com produção,4,Demais tipos; Entrevistas; Redes sociais,Programa de rádio ou TV/Entrevista; Rede social; Desenvolvimento de material didático ou instrucional - Blog
-André dos Santos Costa,Com produção,3,Demais tipos; Entrevistas,Curso de curta duração ministrado/Especialização; Curso de curta duração ministrado/Extensão; Programa de rádio ou TV/Entrevista
-Guilherme Assunção Ferreira,Com produção,2,Assessoria e consultoria; Demais tipos,Curso de curta duração ministrado/Extensão
+docente,situacao,quantitativo_total,tipos,subtipos
+André dos Santos Costa,Sem produção,0,,
+Bruno Teixeira Barbosa,Com produção,10,Demais tipos; Entrevistas; Redes sociais,Desenvolvimento de material didático ou instrucional - Videoaula; Programa de rádio ou TV/Comentário; Programa de rádio ou TV/Entrevista; Rede social
 Clarice Maria de Lucena Martins,Sem produção,0,,
+Daniel da Rocha Queiroz,Com produção,5,Demais tipos; Redes sociais; Trabalhos técnicos,Desenvolvimento de material didático ou instrucional - Jogo Educativo; Desenvolvimento de material didático ou instrucional - JogoEducativo; Rede social
+Daniela Karina da Silva Ferreira,Sem produção,0,,
+Eduardo Zapaterra Campos,Sem produção,0,,
+Guilherme Assunção Ferreira,Sem produção,0,,
+Leonardo Gomes de Oliveira Luz,Com produção,1,Entrevistas,Programa de rádio ou TV/Entrevista
+Lucas Eduardo Rodrigues dos Santos,Com produção,5,Assessoria e consultoria; Demais tipos,Curso de curta duração ministrado/Extensão
 Melissa Leandro Celestino,Sem produção,0,,
+Ozeas de Lima Lins Filho,Com produção,5,Demais tipos,Curso de curta duração ministrado/Extensão; Desenvolvimento de material didático ou instrucional - Manual; Desenvolvimento de material didático ou instrucional - Manual técnico
+Paulo Felipe Ribeiro Bandeira,Sem produção,0,,
+Paulo Roberto Cavalcanti Carvalho,Sem produção,0,,
+Pedro Pinheiro Paes,Com produção,13,Demais tipos; Entrevistas,Curso de curta duração ministrado/Especialização; Curso de curta duração ministrado/Extensão
+Saulo Fernandes Melo de Oliveira,Sem produção,0,,
+Tony Meireles dos Santos,Com produção,11,Assessoria e consultoria; Demais tipos; Processos ou técnicas; Programas de computador sem registro,Desenvolvimento de material didático ou instrucional - MapadeCompetências; Reunião
+Vilde Gomes de Menezes,Sem produção,0,,
