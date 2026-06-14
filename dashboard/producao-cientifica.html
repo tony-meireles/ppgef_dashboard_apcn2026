@@ -2512,10 +2512,6 @@
                   <option value="I">Inativo</option>
                 </select>
               </div>
-              <div>
-                <label for="docentes-search">Busca nominal</label>
-                <input id="docentes-search" type="search" placeholder="Filtrar docente...">
-              </div>
             </div>
             <p class="docentes-toolbar-note" id="docentes-filter-note">Os filtros nominais afetam as tabelas abaixo.</p>
           </div>
@@ -6920,7 +6916,7 @@
     const docentesDashboardState = {
       year: dataSourceCorpoDocente.default_year || "2026",
       origin: "Todos",
-      quadStatus: "Todos",
+      quadStatus: "A",
       search: "",
     };
 
@@ -7210,7 +7206,6 @@
       const yearSelect = document.getElementById("docentes-year-select");
       const originFilter = document.getElementById("docentes-origin-filter");
       const statusFilter = document.getElementById("docentes-status-filter");
-      const searchInput = document.getElementById("docentes-search");
       yearSelect.addEventListener("change", () => {
         docentesDashboardState.year = yearSelect.value;
         renderDocentesTab();
@@ -7223,13 +7218,11 @@
         docentesDashboardState.quadStatus = statusFilter.value;
         renderDocentesStructureTables();
       });
-      searchInput.addEventListener("input", () => {
-        docentesDashboardState.search = searchInput.value;
-        renderDocentesStructureTables();
-      });
     }
 
     function renderDocentesTab() {
+      document.getElementById("docentes-origin-filter").value = docentesDashboardState.origin;
+      document.getElementById("docentes-status-filter").value = docentesDashboardState.quadStatus;
       const yearSummary = dataSourceCorpoDocente.by_year?.[docentesDashboardState.year];
       renderDocentesMetricCards(yearSummary);
       renderDocentesTimeline();
