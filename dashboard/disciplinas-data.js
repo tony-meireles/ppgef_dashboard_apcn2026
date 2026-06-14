@@ -1546,7 +1546,7 @@ window.DISCIPLINAS_PPGEF = [
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Leonardo Luz",
+    "nome_responsavel": "Leonardo Gomes de Oliveira Luz",
     "categoria_responsavel": "Docente",
     "indicador_responsavel_principal": "Sim",
     "carga_horaria_docente": "45"
@@ -1562,9 +1562,9 @@ window.DISCIPLINAS_PPGEF = [
     "tipo": "Eletiva",
     "quantidade_creditos": "3",
     "carga_horaria_total": "45",
-    "nome_responsavel": "Leonardo Luz",
+    "nome_responsavel": "Leonardo Gomes de Oliveira Luz",
     "categoria_responsavel": "Docente",
-    "indicador_responsavel_principal": "Sim",
+    "indicador_responsavel_principal": "Não",
     "carga_horaria_docente": "15"
   },
   {
