@@ -193,6 +193,12 @@
       gap: 16px;
     }
 
+    .filters-grid-captacao {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
     label {
       display: block;
       margin-bottom: 8px;
@@ -920,6 +926,20 @@
     .discipline-detail-table td:nth-child(7),
     .discipline-detail-table td:nth-child(8) {
       white-space: nowrap;
+    }
+
+    .captacao-summary-table {
+      min-width: 1120px;
+    }
+
+    .captacao-detail-table {
+      min-width: 1700px;
+    }
+
+    .captacao-detail-table td:nth-child(5) {
+      min-width: 380px;
+      white-space: normal;
+      overflow-wrap: anywhere;
     }
 
     .orientation-grid-table .numeric-soft {
@@ -1751,6 +1771,7 @@
       .orientation-split { grid-column: span 12; }
       .orientation-focus { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr 1fr; }
+      .filters-grid-captacao { grid-template-columns: 1fr 1fr; }
       .documents-group { grid-column: span 12; }
       .docentes-hero-card { grid-template-columns: 1fr; }
       .docentes-metric-card,
@@ -1763,6 +1784,7 @@
       .wrap { padding: 18px 14px 32px; }
       .filters-grid { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr; }
+      .filters-grid-captacao { grid-template-columns: 1fr; }
       .metric { grid-column: span 12; }
       .documents-metric { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; }
@@ -1805,6 +1827,7 @@
         <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-disciplinas">Disciplinas</button>
+        <button class="tab-button" data-tab="tab-captacao">Captação de Recursos</button>
         <button class="tab-button" data-tab="tab-docentes">Docentes</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
@@ -2294,9 +2317,9 @@
           <div class="card filters">
             <div class="section-head">
               <h2>Filtros</h2>
-              <p>Primeira leitura da atividade docente na oferta de disciplinas da nova base 2021-2026, focada nos responsáveis categorizados como docentes.</p>
+              <p>Painel de ministrantes das disciplinas da base 2021-2026, com distinção analítica entre internos e externos.</p>
             </div>
-            <div class="filters-grid" style="grid-template-columns: 1.8fr 0.8fr 0.9fr;">
+            <div class="filters-grid" style="grid-template-columns: 1.55fr 0.75fr 0.8fr 0.9fr;">
               <div>
                 <label for="docentes-disciplinas-chip-list">Docentes</label>
                 <div class="filter-toolbar">
@@ -2310,6 +2333,20 @@
                   </button>
                 </div>
                 <div id="docentes-disciplinas-chip-list" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="vinculos-disciplinas">Vínculo</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-disciplina-group="vinculos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-disciplina-group="vinculos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="vinculos-disciplinas" class="filter-picker compact"></div>
               </div>
               <div>
                 <label for="anos-disciplinas">Ano</label>
@@ -2345,12 +2382,12 @@
           <div class="card metric">
             <p class="eyebrow">CH Docente</p>
             <strong id="disciplinas-carga-total">0h</strong>
-            <span>Soma da carga horária atribuída aos docentes no recorte filtrado.</span>
+            <span>Soma da carga horária atribuída aos ministrantes visíveis no recorte filtrado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes Ativos</p>
+            <p class="eyebrow">Ministrantes Ativos</p>
             <strong id="disciplinas-docentes-ativos">0</strong>
-            <span>Quantidade de professores com atuação visível no conjunto corrente.</span>
+            <span>Quantidade de nomes com atuação visível no conjunto corrente.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Ofertas</p>
@@ -2358,9 +2395,9 @@
             <span>Componentes ofertados na janela 2021-2026 considerando turma/período distintos.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Formação Docente</p>
-            <strong id="disciplinas-formacao-share">0%</strong>
-            <span>Participação da carga horária em componentes marcados como formação docente.</span>
+            <p class="eyebrow">Externos Colaborando</p>
+            <strong id="disciplinas-externos-colaboradores">0</strong>
+            <span>Quantidade de ministrantes externos que aparecem no recorte corrente.</span>
           </div>
 
           <div class="card chart-wide">
@@ -2412,6 +2449,8 @@
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Vínculo</th>
+                    <th>Categoria base</th>
                     <th>CH total</th>
                     <th>CH principal</th>
                     <th>Ofertas</th>
@@ -2449,6 +2488,8 @@
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Vínculo</th>
+                    <th>Categoria base</th>
                     <th>Ano/Período</th>
                     <th>Disciplina</th>
                     <th>Núcleo</th>
@@ -2462,6 +2503,207 @@
               </table>
             </div>
             <p class="chart-note" id="disciplinas-detalhe-nota"></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-captacao">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Filtros</h2>
+              <p>Recorte cruzado por docente, tipo de recurso, vigência, agência e status da captação.</p>
+            </div>
+            <div class="filters-grid-captacao">
+              <div>
+                <label for="docentes-captacao">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="docentes-captacao" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="tipos-captacao">Tipo de captação</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="tipos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="tipos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="tipos-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="vigencias-captacao">Ano de vigência</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="vigencias" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="vigencias" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="vigencias-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="agencias-captacao">Agência/Fonte</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="agencias" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="agencias" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="agencias-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="status-captacao">Situação</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="status" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="status" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="status-captacao" class="filter-picker compact"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Valor Captado</p>
+            <strong id="captacao-valor-total">R$ 0</strong>
+            <span>Volume total aprovado no recorte, sem desdobrar um mesmo registro por múltiplos tipos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Registros</p>
+            <strong id="captacao-registros-total">0</strong>
+            <span>Quantidade de captações visíveis após aplicação dos filtros.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes Ativos</p>
+            <strong id="captacao-docentes-total">0</strong>
+            <span>Docentes com pelo menos uma captação no recorte filtrado.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Bolsas + Alertas</p>
+            <strong id="captacao-bolsas-alertas">0</strong>
+            <span id="captacao-bolsas-alertas-resumo">0 bolsas vinculadas e nenhuma suspeita de duplicidade.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Ranking por Docente</h2>
+                <p id="captacao-docente-chart-caption">Leitura por valor total aprovado no recorte filtrado.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação da captação por docente">
+                <button type="button" class="sort-toggle active" data-captacao-docente-sort="valor">Por valor</button>
+                <button type="button" class="sort-toggle" data-captacao-docente-sort="alfabetico">Alfabético</button>
+              </div>
+            </div>
+            <div id="chart-captacao-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Agências Estratégicas</h2>
+              <p>Concentração financeira por agência/fonte normalizada, já reclassificando parte dos registros marcados como “Outra”.</p>
+            </div>
+            <div id="captacao-agencias-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-agencias-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Vigência da Carteira</h2>
+              <p>Quantidade de registros com vigência ativa por ano, somada ao valor total vinculado a cada janela.</p>
+            </div>
+            <div id="chart-captacao-vigencia" class="chart"></div>
+            <p class="chart-note" id="captacao-vigencia-nota"></p>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Mix Financeiro e Tipológico</h2>
+              <p>Composição do recurso entre capital, custeio e bolsas, com leitura complementar por presença de tipos.</p>
+            </div>
+            <div id="captacao-tipos-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-insight-chips"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese por Docente</h2>
+              <p>Resumo executivo para identificar concentração, diversidade de fontes e impacto discente por orientador.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="captacao-summary-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Registros</th>
+                    <th>Valor total</th>
+                    <th>Agências</th>
+                    <th>Bolsas</th>
+                    <th>Mestrado vinculado</th>
+                    <th>Doutorado vinculado</th>
+                    <th>Alertas</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-resumo-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Base Detalhada</h2>
+              <p>Leitura operacional para auditoria de persistência, incluindo vigência, edital, bolsas e alerta de duplicidade.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="captacao-detail-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Agência</th>
+                    <th>Situação</th>
+                    <th>Vigência</th>
+                    <th>Título / captação</th>
+                    <th>Tipos</th>
+                    <th>Edital</th>
+                    <th>Valor total</th>
+                    <th>Capital</th>
+                    <th>Custeio</th>
+                    <th>Bolsas</th>
+                    <th>Vínculo discente</th>
+                    <th>Auditoria</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-tabela-body"></tbody>
+              </table>
+            </div>
+            <div id="captacao-estado-vazio" class="empty">
+              Nenhum registro de captação atende aos filtros atuais.
+            </div>
           </div>
         </section>
       </div>
@@ -3562,26 +3804,40 @@
   <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
   <script src="./disciplinas-data.js?v=2026-06-12f"></script>
+  <script src="./captacao-recursos-data.js?v=2026-06-14a"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const dataSourceCaptacaoPayload = window.CAPTACAO_RECURSOS_PPGEF || { updated_at: "", rows: [] };
+    const dataSourceCaptacao = dataSourceCaptacaoPayload.rows || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
     const normalizeDisciplinasName = (value) => String(value || "")
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .toUpperCase();
-    const disciplinasExcludedDocentes = new Set([
-      "CARLA MENESES HARDMAN",
-      "BRENO QUINTELLA FARAH",
-      "ANDRE LUIZ TORRES PIRAUA",
-      "FABIANO DE SOUZA FONSECA",
-      "FLAVIO RENATO BARROS DA GUARDA",
-      "LUCIANO MACHADO FERREIRA TENORIO DE OLIVEIRA",
-      "VINICIUS DE OLIVEIRA DAMASCENO",
+    const disciplinasInternalDocentes = new Set([
+      "André dos Santos Costa",
+      "Bruno Teixeira Barbosa",
+      "Clarice Maria de Lucena Martins",
+      "Daniel da Rocha Queiroz",
+      "Daniela Karina da Silva Ferreira",
+      "Eduardo Zapaterra Campos",
+      "Guilherme Assunção Ferreira",
+      "Leonardo Gomes de Oliveira Luz",
+      "Lucas Eduardo Rodrigues dos Santos",
+      "Melissa Leandro Celestino",
+      "Ozeas de Lima Lins Filho",
+      "Paulo Felipe Ribeiro Bandeira",
+      "Paulo Roberto Cavalcanti Carvalho",
+      "Pedro Pinheiro Paes Neto",
+      "Rafael dos Santos Henrique",
+      "Saulo Fernandes Melo de Oliveira",
+      "Tony Meireles dos Santos",
+      "Vilde Gomes de Menezes",
     ].map(normalizeDisciplinasName));
     const dataSourceDisciplinas = (window.DISCIPLINAS_PPGEF || []).map((item) => ({
       ...item,
@@ -3595,6 +3851,7 @@
       nucleo_didatico: String(item.nucleo_didatico || "").trim(),
       carga_horaria_docente: Number(item.carga_horaria_docente) || 0,
       carga_horaria_total: Number(item.carga_horaria_total) || 0,
+      vinculo_painel: disciplinasInternalDocentes.has(normalizeDisciplinasName(item.nome_responsavel)) ? "Interno" : "Externo",
     }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
     const docenteChipList = document.getElementById("docentes-chip-list");
@@ -3669,6 +3926,7 @@
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
     const docenteDisciplinasChipList = document.getElementById("docentes-disciplinas-chip-list");
+    const vinculosDisciplinasSelect = document.getElementById("vinculos-disciplinas");
     const anosDisciplinasSelect = document.getElementById("anos-disciplinas");
     const periodosDisciplinasSelect = document.getElementById("periodos-disciplinas");
     const chartDisciplinasDocentes = document.getElementById("chart-disciplinas-docentes");
@@ -3682,6 +3940,22 @@
     const disciplinasHeatmapBody = document.getElementById("disciplinas-heatmap-body");
     const disciplinasDetalheBody = document.getElementById("disciplinas-detalhe-body");
     const disciplinasDetalheNota = document.getElementById("disciplinas-detalhe-nota");
+    const docenteCaptacaoList = document.getElementById("docentes-captacao");
+    const tiposCaptacaoSelect = document.getElementById("tipos-captacao");
+    const vigenciasCaptacaoSelect = document.getElementById("vigencias-captacao");
+    const agenciasCaptacaoSelect = document.getElementById("agencias-captacao");
+    const statusCaptacaoSelect = document.getElementById("status-captacao");
+    const chartCaptacaoDocentes = document.getElementById("chart-captacao-docentes");
+    const captacaoDocenteChartCaption = document.getElementById("captacao-docente-chart-caption");
+    const captacaoAgenciasStack = document.getElementById("captacao-agencias-stack");
+    const captacaoAgenciasChips = document.getElementById("captacao-agencias-chips");
+    const chartCaptacaoVigencia = document.getElementById("chart-captacao-vigencia");
+    const captacaoVigenciaNota = document.getElementById("captacao-vigencia-nota");
+    const captacaoTiposStack = document.getElementById("captacao-tipos-stack");
+    const captacaoInsightChips = document.getElementById("captacao-insight-chips");
+    const captacaoResumoDocentesBody = document.getElementById("captacao-resumo-docentes-body");
+    const captacaoTabelaBody = document.getElementById("captacao-tabela-body");
+    const captacaoEstadoVazio = document.getElementById("captacao-estado-vazio");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
     const tabApcn = document.getElementById("tab-apcn");
@@ -3695,6 +3969,8 @@
     const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
     const disciplinasDocenteSortButtons = [...document.querySelectorAll("[data-disciplinas-docente-sort]")];
     const disciplinasFilterToggles = [...document.querySelectorAll('.filter-toggle[data-disciplina-group]')];
+    const captacaoFilterToggles = [...document.querySelectorAll('.filter-toggle[data-captacao-group]')];
+    const captacaoDocenteSortButtons = [...document.querySelectorAll("[data-captacao-docente-sort]")];
     const documentsInternos = document.getElementById("documents-internos");
     const documentsCapes = document.getElementById("documents-capes");
     let selectedDocentes = new Set();
@@ -3705,11 +3981,18 @@
     let selectedAnosTecnica = new Set();
     let selectedStatusTecnica = new Set();
     let selectedDocentesDisciplinas = new Set();
+    let selectedVinculosDisciplinas = new Set();
     let selectedAnosDisciplinas = new Set();
     let selectedPeriodosDisciplinas = new Set();
+    let selectedDocentesCaptacao = new Set();
+    let selectedTiposCaptacao = new Set();
+    let selectedVigenciasCaptacao = new Set();
+    let selectedAgenciasCaptacao = new Set();
+    let selectedStatusCaptacao = new Set();
     let docenteSortMode = "alfabetico";
     let tecnicaDocenteSortMode = "alfabetico";
     let disciplinasDocenteSortMode = "carga";
+    let captacaoDocenteSortMode = "valor";
     let docenteTableSortMode = "alfabetico";
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
@@ -3730,8 +4013,16 @@
     };
     let disciplinasFilterValues = {
       docentes: [],
+      vinculos: [],
       anos: [],
       periodos: [],
+    };
+    let captacaoFilterValues = {
+      docentes: [],
+      tipos: [],
+      vigencias: [],
+      agencias: [],
+      status: [],
     };
 
     const typeLabels = {
@@ -3931,8 +4222,8 @@
 
     function getDisciplinasBaseData() {
       return dataSourceDisciplinas.filter((item) =>
-        item.categoria_responsavel === "Docente" &&
-        !disciplinasExcludedDocentes.has(normalizeDisciplinasName(item.nome_responsavel))
+        item.nome_responsavel &&
+        item.carga_horaria_docente > 0
       );
     }
 
@@ -3942,13 +4233,20 @@
 
     function populateDisciplinasFilters(data) {
       const docentes = unique(data.map((item) => item.nome_responsavel));
+      const vinculos = unique(data.map((item) => item.vinculo_painel));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
       const periodos = unique(data.map((item) => item.ano_periodo)).sort((a, b) => a.localeCompare(b, "pt-BR"));
-      disciplinasFilterValues = { docentes, anos, periodos };
+      disciplinasFilterValues = { docentes, vinculos, anos, periodos };
       docenteDisciplinasChipList.innerHTML = docentes.map((docente) => `
         <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
+        </label>
+      `).join("");
+      vinculosDisciplinasSelect.innerHTML = vinculos.map((vinculo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${vinculo}">
+          <span>${vinculo}</span>
         </label>
       `).join("");
       anosDisciplinasSelect.innerHTML = anos.map((ano) => `
@@ -3968,6 +4266,7 @@
     function syncDisciplinasFilterViews() {
       [
         [docenteDisciplinasChipList, selectedDocentesDisciplinas],
+        [vinculosDisciplinasSelect, selectedVinculosDisciplinas],
         [anosDisciplinasSelect, selectedAnosDisciplinas],
         [periodosDisciplinasSelect, selectedPeriodosDisciplinas],
       ].forEach(([container, selectedSet]) => {
@@ -3980,15 +4279,18 @@
 
     function bindDisciplinasFilters() {
       bindScientificCheckboxContainer(docenteDisciplinasChipList, selectedDocentesDisciplinas, applyDisciplinasFilters);
+      bindScientificCheckboxContainer(vinculosDisciplinasSelect, selectedVinculosDisciplinas, applyDisciplinasFilters);
       bindScientificCheckboxContainer(anosDisciplinasSelect, selectedAnosDisciplinas, applyDisciplinasFilters);
       bindScientificCheckboxContainer(periodosDisciplinasSelect, selectedPeriodosDisciplinas, applyDisciplinasFilters);
     }
 
     function initializeDisciplinasFilters() {
       selectedDocentesDisciplinas.clear();
+      selectedVinculosDisciplinas.clear();
       selectedAnosDisciplinas.clear();
       selectedPeriodosDisciplinas.clear();
       disciplinasFilterValues.docentes.forEach((value) => selectedDocentesDisciplinas.add(value));
+      disciplinasFilterValues.vinculos.forEach((value) => selectedVinculosDisciplinas.add(value));
       disciplinasFilterValues.anos.forEach((value) => selectedAnosDisciplinas.add(value));
       disciplinasFilterValues.periodos.forEach((value) => selectedPeriodosDisciplinas.add(value));
       syncDisciplinasFilterViews();
@@ -3997,6 +4299,7 @@
     function bindDisciplinasFilterToggles() {
       const groupConfig = {
         docentes: { selectedSet: selectedDocentesDisciplinas, getValues: () => disciplinasFilterValues.docentes },
+        vinculos: { selectedSet: selectedVinculosDisciplinas, getValues: () => disciplinasFilterValues.vinculos },
         anos: { selectedSet: selectedAnosDisciplinas, getValues: () => disciplinasFilterValues.anos },
         periodos: { selectedSet: selectedPeriodosDisciplinas, getValues: () => disciplinasFilterValues.periodos },
       };
@@ -4016,13 +4319,15 @@
 
     function getFilteredDisciplinasData() {
       const docentes = [...selectedDocentesDisciplinas];
+      const vinculos = [...selectedVinculosDisciplinas];
       const anos = [...selectedAnosDisciplinas];
       const periodos = [...selectedPeriodosDisciplinas];
       return getDisciplinasBaseData().filter((item) => {
         const docenteOk = !docentes.length || docentes.includes(item.nome_responsavel);
+        const vinculoOk = !vinculos.length || vinculos.includes(item.vinculo_painel);
         const anoOk = !anos.length || anos.includes(item.ano);
         const periodoOk = !periodos.length || periodos.includes(item.ano_periodo);
-        return docenteOk && anoOk && periodoOk;
+        return docenteOk && vinculoOk && anoOk && periodoOk;
       });
     }
 
@@ -4033,11 +4338,13 @@
         if (!grouped.has(key)) {
           grouped.set(key, {
             docente: key,
+            vinculo: item.vinculo_painel || "Externo",
             carga: 0,
             cargaPrincipal: 0,
             cargaFormacao: 0,
             ofertas: new Set(),
             periodos: new Set(),
+            categorias: new Set(),
           });
         }
         const bucket = grouped.get(key);
@@ -4046,10 +4353,13 @@
         if (item.formacao_docente === "Sim") bucket.cargaFormacao += item.carga_horaria_docente;
         bucket.ofertas.add(`${item.ano_periodo}||${item.nome_disciplina_completo}`);
         bucket.periodos.add(item.ano_periodo);
+        if (item.categoria_responsavel) bucket.categorias.add(item.categoria_responsavel);
       });
       return [...grouped.values()]
         .map((item) => ({
           docente: item.docente,
+          vinculo: item.vinculo,
+          categoriaBase: [...item.categorias].sort((a, b) => a.localeCompare(b, "pt-BR")).join(", ") || "Não informada",
           carga: item.carga,
           cargaPrincipal: item.cargaPrincipal,
           ofertas: item.ofertas.size,
@@ -4094,6 +4404,13 @@
       const totalOfertas = new Set(data.map((item) => `${item.ano_periodo}||${item.nome_disciplina_completo}`)).size;
       const cargaFormacao = data.reduce((acc, item) => acc + (item.formacao_docente === "Sim" ? item.carga_horaria_docente : 0), 0);
       const cargaObrigatoria = data.reduce((acc, item) => acc + (item.tipo === "Obrigatória" ? item.carga_horaria_docente : 0), 0);
+      const internosAtivos = docenteSummary.filter((item) => item.vinculo === "Interno").length;
+      const externosAtivos = docenteSummary.filter((item) => item.vinculo === "Externo").length;
+      const externosFormacao = new Set(
+        data
+          .filter((item) => item.vinculo_painel === "Externo" && item.formacao_docente === "Sim")
+          .map((item) => item.nome_responsavel)
+      ).size;
       const topDocente = docenteSummary[0];
       const topPeriodo = [...periodSummary].sort((a, b) => b.carga - a.carga)[0];
       const topNucleo = nucleoSummary[0];
@@ -4101,11 +4418,14 @@
       document.getElementById("disciplinas-carga-total").textContent = formatHours(totalCarga);
       document.getElementById("disciplinas-docentes-ativos").textContent = String(docenteSummary.length);
       document.getElementById("disciplinas-ofertas-total").textContent = String(totalOfertas);
-      document.getElementById("disciplinas-formacao-share").textContent = formatPercent(totalCarga ? cargaFormacao / totalCarga : 0);
+      document.getElementById("disciplinas-externos-colaboradores").textContent = String(externosAtivos);
 
       disciplinasInsightChips.innerHTML = [
         topDocente ? `<span class="chip">Maior carga: <strong>${topDocente.docente}</strong> (${formatHours(topDocente.carga)})</span>` : "",
         topPeriodo ? `<span class="chip">Pico temporal: <strong>${topPeriodo.periodo.replace("_", ".")}</strong> (${formatHours(topPeriodo.carga)})</span>` : "",
+        `<span class="chip">Internos ativos: <strong>${internosAtivos}</strong> · Externos ativos: <strong>${externosAtivos}</strong></span>`,
+        `<span class="chip">Externos em componentes de formação docente: <strong>${externosFormacao}</strong></span>`,
+        `<span class="chip">Formação docente concentra <strong>${formatPercent(totalCarga ? cargaFormacao / totalCarga : 0)}</strong> da CH filtrada</span>`,
         `<span class="chip">Obrigatórias concentram <strong>${formatPercent(totalCarga ? cargaObrigatoria / totalCarga : 0)}</strong> da CH docente filtrada</span>`,
         topNucleo ? `<span class="chip">Núcleo dominante: <strong>${topNucleo.nucleo}</strong> (${formatHours(topNucleo.carga)})</span>` : "",
       ].filter(Boolean).join("");
@@ -4137,11 +4457,12 @@
             const y = 18 + index * rowHeight;
             const width = (item.carga / maxCarga) * usableWidth;
             const principalWidth = (item.cargaPrincipal / maxCarga) * usableWidth;
+            const secondaryFill = item.vinculo === "Interno" ? "#8c1538" : "#4d7c68";
             return `
-              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente}</text>
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente} · ${item.vinculo}</text>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="#d7c3ad"></rect>
               <rect x="${labelWidth}" y="${y}" width="${principalWidth}" height="18" rx="9" fill="#d4a017"></rect>
-              <rect x="${labelWidth + principalWidth}" y="${y}" width="${Math.max(0, width - principalWidth)}" height="18" rx="9" fill="#8c1538"></rect>
+              <rect x="${labelWidth + principalWidth}" y="${y}" width="${Math.max(0, width - principalWidth)}" height="18" rx="9" fill="${secondaryFill}"></rect>
               <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#262930" font-size="12">${formatHours(item.carga)}</text>
             `;
           }).join("")}
@@ -4202,6 +4523,8 @@
       disciplinasResumoDocentesBody.innerHTML = data.map((item) => `
         <tr>
           <td>${item.docente}</td>
+          <td>${item.vinculo}</td>
+          <td>${item.categoriaBase}</td>
           <td>${formatHours(item.carga)}</td>
           <td>${formatHours(item.cargaPrincipal)}</td>
           <td>${item.ofertas}</td>
@@ -4226,7 +4549,7 @@
       ].join("");
       disciplinasHeatmapBody.innerHTML = docenteSummary.map((docente) => `
         <tr>
-          <td>${docente.docente}</td>
+          <td><strong>${docente.docente}</strong><br><span style="font-size:11px;color:#6d727c;">${docente.vinculo}</span></td>
           ${periods.map((periodo) => {
             const carga = matrix.get(`${docente.docente}||${periodo}`) || 0;
             const alpha = carga ? 0.12 + (carga / maxCarga) * 0.42 : 0;
@@ -4245,6 +4568,8 @@
         .map((item) => `
           <tr>
             <td>${item.nome_responsavel}</td>
+            <td>${item.vinculo_painel}</td>
+            <td>${item.categoria_responsavel || "Não informada"}</td>
             <td>${item.ano_periodo.replace("_", ".")}</td>
             <td>${item.nome_disciplina}</td>
             <td>${item.nucleo_didatico}</td>
@@ -4254,7 +4579,7 @@
             <td>${formatHours(item.carga_horaria_docente)}</td>
           </tr>
         `).join("");
-      disciplinasDetalheNota.textContent = `${data.length} vínculo(s) docente(s) exibidos no recorte atual. Participações de egressos, pós-docs e externos ficaram fora desta primeira proposição para manter o foco na atividade do corpo docente.`;
+      disciplinasDetalheNota.textContent = `${data.length} participação(ões) de ministrantes exibidas no recorte atual. O painel agora distingue internos e externos com base na lista de referência informada para o PPGEF.`;
     }
 
     function applyDisciplinasFilters() {
@@ -4270,6 +4595,398 @@
       renderDisciplinasResumoDocentes(docenteSummary);
       renderDisciplinasHeatmap(docenteSummary, periodSummary, filtered);
       renderDisciplinasDetalhe(filtered);
+    }
+
+    function populateCaptacaoFilters(data) {
+      const docentes = unique(data.map((item) => item.docente));
+      const tipos = unique(data.flatMap((item) => item.tipos || []));
+      const vigencias = unique(data.flatMap((item) => item.vigencia_anos || [])).sort((a, b) => Number(a) - Number(b));
+      const agencias = unique(data.map((item) => item.agencia));
+      const status = unique(data.map((item) => item.status));
+      captacaoFilterValues = { docentes, tipos, vigencias, agencias, status };
+      docenteCaptacaoList.innerHTML = docentes.map((docente) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
+      tiposCaptacaoSelect.innerHTML = tipos.map((tipo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${tipo}">
+          <span>${tipo}</span>
+        </label>
+      `).join("");
+      vigenciasCaptacaoSelect.innerHTML = vigencias.map((ano) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${ano}">
+          <span>${ano}</span>
+        </label>
+      `).join("");
+      agenciasCaptacaoSelect.innerHTML = agencias.map((agencia) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${agencia}">
+          <span>${agencia}</span>
+        </label>
+      `).join("");
+      statusCaptacaoSelect.innerHTML = status.map((item) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${item}">
+          <span>${item}</span>
+        </label>
+      `).join("");
+    }
+
+    function syncCaptacaoFilterViews() {
+      [
+        [docenteCaptacaoList, selectedDocentesCaptacao],
+        [tiposCaptacaoSelect, selectedTiposCaptacao],
+        [vigenciasCaptacaoSelect, selectedVigenciasCaptacao],
+        [agenciasCaptacaoSelect, selectedAgenciasCaptacao],
+        [statusCaptacaoSelect, selectedStatusCaptacao],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
+    }
+
+    function initializeCaptacaoFilters() {
+      selectedDocentesCaptacao.clear();
+      selectedTiposCaptacao.clear();
+      selectedVigenciasCaptacao.clear();
+      selectedAgenciasCaptacao.clear();
+      selectedStatusCaptacao.clear();
+      captacaoFilterValues.docentes.forEach((value) => selectedDocentesCaptacao.add(value));
+      captacaoFilterValues.tipos.forEach((value) => selectedTiposCaptacao.add(value));
+      captacaoFilterValues.vigencias.forEach((value) => selectedVigenciasCaptacao.add(value));
+      captacaoFilterValues.agencias.forEach((value) => selectedAgenciasCaptacao.add(value));
+      captacaoFilterValues.status.forEach((value) => selectedStatusCaptacao.add(value));
+      syncCaptacaoFilterViews();
+    }
+
+    function bindCaptacaoFilters() {
+      bindScientificCheckboxContainer(docenteCaptacaoList, selectedDocentesCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(tiposCaptacaoSelect, selectedTiposCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(vigenciasCaptacaoSelect, selectedVigenciasCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(agenciasCaptacaoSelect, selectedAgenciasCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(statusCaptacaoSelect, selectedStatusCaptacao, applyCaptacaoFilters);
+    }
+
+    function bindCaptacaoFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesCaptacao, getValues: () => captacaoFilterValues.docentes },
+        tipos: { selectedSet: selectedTiposCaptacao, getValues: () => captacaoFilterValues.tipos },
+        vigencias: { selectedSet: selectedVigenciasCaptacao, getValues: () => captacaoFilterValues.vigencias },
+        agencias: { selectedSet: selectedAgenciasCaptacao, getValues: () => captacaoFilterValues.agencias },
+        status: { selectedSet: selectedStatusCaptacao, getValues: () => captacaoFilterValues.status },
+      };
+
+      captacaoFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.captacaoGroup];
+          if (!config) return;
+          config.selectedSet.clear();
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          values.forEach((value) => config.selectedSet.add(value));
+          syncCaptacaoFilterViews();
+          applyCaptacaoFilters();
+        });
+      });
+    }
+
+    function getFilteredCaptacaoData() {
+      const docentes = [...selectedDocentesCaptacao];
+      const tipos = [...selectedTiposCaptacao];
+      const vigencias = [...selectedVigenciasCaptacao];
+      const agencias = [...selectedAgenciasCaptacao];
+      const status = [...selectedStatusCaptacao];
+      return dataSourceCaptacao.filter((item) => {
+        const docenteOk = !docentes.length || docentes.includes(item.docente);
+        const tipoOk = !tipos.length || tipos.some((tipo) => (item.tipos || []).includes(tipo));
+        const vigenciaOk = !vigencias.length || vigencias.some((ano) => (item.vigencia_anos || []).includes(ano));
+        const agenciaOk = !agencias.length || agencias.includes(item.agencia);
+        const statusOk = !status.length || status.includes(item.status);
+        return docenteOk && tipoOk && vigenciaOk && agenciaOk && statusOk;
+      });
+    }
+
+    function aggregateCaptacaoByDocente(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            registros: 0,
+            valorTotal: 0,
+            bolsas: 0,
+            alunosMestrado: 0,
+            alunosDoutorado: 0,
+            alertas: 0,
+            agencias: new Set(),
+          });
+        }
+        const bucket = grouped.get(item.docente);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.bolsas += Number(item.quantidade_bolsas) || 0;
+        bucket.alunosMestrado += Number(item.alunos_mestrado) || 0;
+        bucket.alunosDoutorado += Number(item.alunos_doutorado) || 0;
+        bucket.alertas += item.suspeita_duplicidade ? 1 : 0;
+        if (item.agencia) bucket.agencias.add(item.agencia);
+      });
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          agencias: [...item.agencias].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        }))
+        .sort((a, b) => b.valorTotal - a.valorTotal || a.docente.localeCompare(b.docente, "pt-BR"));
+    }
+
+    function aggregateCaptacaoByAgencia(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!grouped.has(item.agencia)) {
+          grouped.set(item.agencia, {
+            agencia: item.agencia,
+            registros: 0,
+            valorTotal: 0,
+          });
+        }
+        const bucket = grouped.get(item.agencia);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+      });
+      return [...grouped.values()].sort((a, b) => b.valorTotal - a.valorTotal || a.agencia.localeCompare(b.agencia, "pt-BR"));
+    }
+
+    function aggregateCaptacaoByVigencia(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        (item.vigencia_anos || []).forEach((ano) => {
+          if (!grouped.has(ano)) {
+            grouped.set(ano, { ano, registros: 0, valorTotal: 0 });
+          }
+          const bucket = grouped.get(ano);
+          bucket.registros += 1;
+          bucket.valorTotal += Number(item.valor_total) || 0;
+        });
+      });
+      return [...grouped.values()].sort((a, b) => Number(a.ano) - Number(b.ano));
+    }
+
+    function aggregateCaptacaoTypePresence(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        (item.tipos || []).forEach((tipo) => {
+          if (!grouped.has(tipo)) {
+            grouped.set(tipo, { tipo, registros: 0 });
+          }
+          grouped.get(tipo).registros += 1;
+        });
+      });
+      return [...grouped.values()].sort((a, b) => b.registros - a.registros || a.tipo.localeCompare(b.tipo, "pt-BR"));
+    }
+
+    function renderCaptacaoMetrics(data, docenteSummary) {
+      const totalValor = data.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0);
+      const totalBolsas = data.reduce((acc, item) => acc + (Number(item.quantidade_bolsas) || 0), 0);
+      const totalAlertas = data.filter((item) => item.suspeita_duplicidade).length;
+      const totalCapital = data.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
+      const totalCusteio = data.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
+      const totalBolsasValor = data.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
+
+      document.getElementById("captacao-valor-total").textContent = formatCurrency(totalValor);
+      document.getElementById("captacao-registros-total").textContent = String(data.length);
+      document.getElementById("captacao-docentes-total").textContent = String(docenteSummary.length);
+      document.getElementById("captacao-bolsas-alertas").textContent = `${totalBolsas} | ${totalAlertas}`;
+      document.getElementById("captacao-bolsas-alertas-resumo").textContent = `${totalBolsas} bolsas vinculadas e ${totalAlertas} registro(s) com suspeita de duplicidade.`;
+
+      captacaoInsightChips.innerHTML = [
+        `<span class="chip">Capital: <strong>${formatCurrency(totalCapital)}</strong></span>`,
+        `<span class="chip">Custeio: <strong>${formatCurrency(totalCusteio)}</strong></span>`,
+        `<span class="chip">Bolsas: <strong>${formatCurrency(totalBolsasValor)}</strong></span>`,
+        dataSourceCaptacaoPayload.updated_at ? `<span class="chip">Base atualizada em <strong>${dataSourceCaptacaoPayload.updated_at}</strong></span>` : "",
+      ].filter(Boolean).join("");
+    }
+
+    function renderCaptacaoDocenteChart(data) {
+      const items = [...data].sort((a, b) => {
+        if (captacaoDocenteSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.valorTotal - a.valorTotal;
+        }
+        return b.valorTotal - a.valorTotal || b.registros - a.registros || a.docente.localeCompare(b.docente, "pt-BR");
+      });
+      if (!items.length) {
+        chartCaptacaoDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      captacaoDocenteChartCaption.textContent = captacaoDocenteSortMode === "alfabetico"
+        ? "Leitura alfabética, preservando o total financeiro ao lado de cada docente."
+        : "Leitura ordenada pelo volume financeiro total aprovado no recorte filtrado.";
+      const labelWidth = 250;
+      const rowHeight = 34;
+      const chartWidth = 760;
+      const usableWidth = chartWidth - labelWidth - 110;
+      const maxValor = Math.max(...items.map((item) => item.valorTotal), 1);
+      const height = Math.max(240, items.length * rowHeight + 30);
+      chartCaptacaoDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Valor captado por docente">
+          ${items.map((item, index) => {
+            const y = 18 + index * rowHeight;
+            const width = (item.valorTotal / maxValor) * usableWidth;
+            const alertAccent = item.alertas ? "#d4a017" : "#8c1538";
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente}</text>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${alertAccent}"></rect>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#262930" font-size="12">${formatCompactCurrency(item.valorTotal)}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderCaptacaoAgenciasPanel(data) {
+      const totalValor = data.reduce((acc, item) => acc + item.valorTotal, 0);
+      if (!data.length || !totalValor) {
+        captacaoAgenciasStack.innerHTML = `<p class="chart-note">Sem dados para composição.</p>`;
+        captacaoAgenciasChips.innerHTML = "";
+        return;
+      }
+      captacaoAgenciasStack.innerHTML = data.map((item) => `
+        <div class="type-row">
+          <strong>${item.agencia}</strong>
+          <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.valorTotal)}</span>
+        </div>
+      `).join("");
+      captacaoAgenciasChips.innerHTML = data.slice(0, 3).map((item) => `
+        <span class="chip">${item.registros} registro(s) em <strong>${item.agencia}</strong></span>
+      `).join("");
+    }
+
+    function renderCaptacaoVigenciaChart(data) {
+      if (!data.length) {
+        chartCaptacaoVigencia.innerHTML = `<p class="chart-note">Sem dados de vigência para o recorte atual.</p>`;
+        captacaoVigenciaNota.textContent = "";
+        return;
+      }
+      const height = 280;
+      const paddingX = 44;
+      const baseY = 232;
+      const barWidth = 62;
+      const gap = 26;
+      const rightPadding = 40;
+      const width = Math.max(760, paddingX + data.length * barWidth + Math.max(0, data.length - 1) * gap + rightPadding);
+      const maxValor = Math.max(...data.map((item) => item.valorTotal), 1);
+      chartCaptacaoVigencia.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Captações por ano de vigência">
+          <line x1="${paddingX}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
+          ${data.map((item, index) => {
+            const x = paddingX + index * (barWidth + gap);
+            const barHeight = (item.valorTotal / maxValor) * 150;
+            const y = baseY - barHeight;
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="16" fill="#8c1538"></rect>
+              <text x="${x + barWidth / 2}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+              <text x="${x + barWidth / 2}" y="${y - 8}" text-anchor="middle" fill="#262930" font-size="11">${item.registros}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+      const peak = [...data].sort((a, b) => b.valorTotal - a.valorTotal)[0];
+      captacaoVigenciaNota.textContent = peak
+        ? `${peak.ano} concentra ${formatCurrency(peak.valorTotal)} distribuídos em ${peak.registros} registro(s) com vigência ativa.`
+        : "";
+    }
+
+    function renderCaptacaoTiposPanel(typePresence, data) {
+      const totalOcorrencias = typePresence.reduce((acc, item) => acc + item.registros, 0);
+      const totalCapital = data.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
+      const totalCusteio = data.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
+      const totalBolsas = data.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
+      const pool = [
+        { label: "Capital", value: totalCapital },
+        { label: "Custeio", value: totalCusteio },
+        { label: "Bolsas", value: totalBolsas },
+      ].filter((item) => item.value > 0);
+
+      if (!pool.length && !typePresence.length) {
+        captacaoTiposStack.innerHTML = `<p class="chart-note">Sem composição disponível.</p>`;
+        return;
+      }
+
+      const denominator = Math.max(...pool.map((item) => item.value), 1);
+      const poolRows = pool.map((item) => `
+        <div class="type-row">
+          <strong>${item.label}</strong>
+          <div class="track"><div class="bar" style="width:${(item.value / denominator) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.value)}</span>
+        </div>
+      `);
+      const typeRows = typePresence.slice(0, 3).map((item) => `
+        <div class="type-row">
+          <strong>${item.tipo}</strong>
+          <div class="track"><div class="bar" style="width:${totalOcorrencias ? (item.registros / totalOcorrencias) * 100 : 0}%"></div></div>
+          <span>${item.registros}</span>
+        </div>
+      `);
+      captacaoTiposStack.innerHTML = [...poolRows, ...typeRows].join("");
+    }
+
+    function renderCaptacaoResumoDocentes(data) {
+      captacaoResumoDocentesBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${item.docente}</td>
+          <td>${item.registros}</td>
+          <td>${formatCurrency(item.valorTotal)}</td>
+          <td>${item.agencias.join(", ")}</td>
+          <td>${item.bolsas}</td>
+          <td>${item.alunosMestrado}</td>
+          <td>${item.alunosDoutorado}</td>
+          <td><span class="status-pill ${item.alertas ? "alert" : "ok"}">${item.alertas ? `${item.alertas} alerta(s)` : "Sem alerta"}</span></td>
+        </tr>
+      `).join("");
+    }
+
+    function renderCaptacaoTable(data) {
+      captacaoTabelaBody.innerHTML = data
+        .slice()
+        .sort((a, b) => (Number(b.valor_total) || 0) - (Number(a.valor_total) || 0) || a.docente.localeCompare(b.docente, "pt-BR"))
+        .map((item) => `
+          <tr class="${item.suspeita_duplicidade ? "table-row-alert" : ""}">
+            <td>${item.docente}</td>
+            <td>${item.agencia}</td>
+            <td>${item.status}</td>
+            <td>${(item.vigencia_anos || []).join(", ") || "-"}</td>
+            <td>${item.titulo}</td>
+            <td>${(item.tipos || []).join(", ") || "-"}</td>
+            <td>${[item.edital_nome, item.edital_numero].filter(Boolean).join(" · ") || "-"}</td>
+            <td>${formatCurrency(item.valor_total)}</td>
+            <td>${formatCurrency(item.valor_capital)}</td>
+            <td>${formatCurrency(item.valor_custeio)}</td>
+            <td>${formatCurrency(item.valor_bolsas_destinado || item.valor_bolsas_aprovado)}</td>
+            <td>M: ${item.alunos_mestrado || 0} · D: ${item.alunos_doutorado || 0}</td>
+            <td><span class="status-pill ${item.suspeita_duplicidade ? "alert" : "ok"}">${item.suspeita_duplicidade ? `Revisar (${item.duplicidade_grupo}x)` : "Ok"}</span></td>
+          </tr>
+        `).join("");
+      captacaoEstadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function applyCaptacaoFilters() {
+      syncCaptacaoFilterViews();
+      const filtered = getFilteredCaptacaoData();
+      const docenteSummary = aggregateCaptacaoByDocente(filtered);
+      const agencySummary = aggregateCaptacaoByAgencia(filtered);
+      const vigenciaSummary = aggregateCaptacaoByVigencia(filtered);
+      const typePresence = aggregateCaptacaoTypePresence(filtered);
+      renderCaptacaoMetrics(filtered, docenteSummary);
+      renderCaptacaoDocenteChart(docenteSummary);
+      renderCaptacaoAgenciasPanel(agencySummary);
+      renderCaptacaoVigenciaChart(vigenciaSummary);
+      renderCaptacaoTiposPanel(typePresence, filtered);
+      renderCaptacaoResumoDocentes(docenteSummary);
+      renderCaptacaoTable(filtered);
     }
 
     function syncScientificFilterViews() {
@@ -4702,6 +5419,16 @@
       });
     }
 
+    function bindCaptacaoDocenteSortToggles() {
+      captacaoDocenteSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          captacaoDocenteSortMode = button.dataset.captacaoDocenteSort || "valor";
+          captacaoDocenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyCaptacaoFilters();
+        });
+      });
+    }
+
     function normalizePersonText(value) {
       return String(value || "")
         .normalize("NFD")
@@ -4863,6 +5590,22 @@
 
     function formatPercent(value) {
       return `${formatDecimal(value)}%`;
+    }
+
+    function formatCurrency(value) {
+      return Number(value || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    }
+
+    function formatCompactCurrency(value) {
+      const amount = Number(value || 0);
+      if (amount >= 1000000) return `R$ ${(amount / 1000000).toFixed(2).replace(".", ",")} mi`;
+      if (amount >= 1000) return `R$ ${(amount / 1000).toFixed(1).replace(".", ",")} mil`;
+      return formatCurrency(amount);
     }
 
     function getFilteredScientificData() {
@@ -7465,6 +8208,7 @@
     populateFilters(dataSource);
     populateTechnicalFilters(dataSourceTecnica);
     populateDisciplinasFilters(getDisciplinasBaseData());
+    populateCaptacaoFilters(dataSourceCaptacao);
     bindDocenteChips();
     bindTypeFilters();
     bindYearFilters();
@@ -7473,10 +8217,13 @@
     bindTechnicalFilterToggles();
     bindDisciplinasFilters();
     bindDisciplinasFilterToggles();
+    bindCaptacaoFilters();
+    bindCaptacaoFilterToggles();
     bindCriteriaSortButtons();
     initializeScientificFilters();
     initializeTechnicalFilters();
     initializeDisciplinasFilters();
+    initializeCaptacaoFilters();
     bindTabs();
     bindApcnCollapsibleSections();
     bindApcnScoringModal();
@@ -7486,6 +8233,7 @@
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
+    bindCaptacaoDocenteSortToggles();
     bindLeadershipQualityJcrModeButtons();
     bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
@@ -7493,6 +8241,7 @@
     applyLeadershipFilters();
     applyTechnicalFilters();
     applyDisciplinasFilters();
+    applyCaptacaoFilters();
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
