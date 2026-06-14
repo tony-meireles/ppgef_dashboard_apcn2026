@@ -399,19 +399,6 @@
       margin-bottom: 14px;
     }
 
-    .modal-close {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      border: 1px solid rgba(140, 21, 56, 0.18);
-      background: white;
-      color: var(--ufpe-bordo);
-      font-size: 1.4rem;
-      line-height: 1;
-      cursor: pointer;
-      flex: 0 0 auto;
-    }
-
     .modal-actions {
       display: flex;
       flex-wrap: wrap;
@@ -468,6 +455,19 @@
 
     .network-edge-link {
       cursor: pointer;
+    }
+
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.18);
+      background: white;
+      color: var(--ufpe-bordo);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      flex: 0 0 auto;
     }
 
     .sort-toggle.active {
@@ -705,96 +705,24 @@
     }
 
     .table-wrap {
-      max-width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
+      overflow: auto;
     }
 
     .lideranca-detail-table {
-      width: 100%;
-      min-width: 0;
-      table-layout: fixed;
-      font-size: 0.82rem;
-    }
-
-    .lideranca-detail-table th,
-    .lideranca-detail-table td {
-      padding: 8px 6px;
-      vertical-align: top;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .lideranca-detail-table thead th {
-      background: #f3ecdf;
-      padding: 10px 8px;
-    }
-
-    .lideranca-detail-table th:first-child,
-    .lideranca-detail-table td:first-child {
-      position: sticky;
-      left: 0;
-      z-index: 1;
-      width: 14%;
-      white-space: normal;
-      background: #fffaf3;
-    }
-
-    .lideranca-detail-table thead th:first-child {
-      z-index: 2;
-      background: #f3ecdf;
-    }
-
-    .lideranca-detail-table th:nth-child(2),
-    .lideranca-detail-table td:nth-child(2) {
-      width: 4.5%;
-      text-align: center;
-    }
-
-    .lideranca-detail-table th:nth-child(3),
-    .lideranca-detail-table td:nth-child(3) {
-      width: 5.5%;
-      text-align: center;
+      min-width: 1680px;
     }
 
     .lideranca-detail-table th:nth-child(4),
-    .lideranca-detail-table td:nth-child(4),
-    .lideranca-detail-table th:nth-child(5),
-    .lideranca-detail-table td:nth-child(5),
-    .lideranca-detail-table th:nth-child(8),
-    .lideranca-detail-table td:nth-child(8) {
-      width: 5.5%;
-      text-align: center;
+    .lideranca-detail-table td:nth-child(4) {
+      min-width: 440px;
     }
 
-    .lideranca-detail-table th:nth-child(6),
-    .lideranca-detail-table td:nth-child(6) {
-      width: 25%;
-    }
-
-    .lideranca-detail-table td:nth-child(6) {
-      font-size: 0.62rem;
-      line-height: 1.3;
-    }
-
-    .lideranca-detail-table th:nth-child(7),
-    .lideranca-detail-table td:nth-child(7) {
-      width: 8.5%;
-    }
-
-    .lideranca-detail-table th:nth-child(9),
-    .lideranca-detail-table td:nth-child(9) {
-      width: 15%;
+    .lideranca-detail-table td:nth-child(4) {
+      font-size: 0.68rem;
       line-height: 1.35;
-    }
-
-    .lideranca-detail-table th .sort-toggle {
-      width: 100%;
-      padding: 7px 8px;
-      font-size: 0.8rem;
-      line-height: 1.2;
       white-space: normal;
-      justify-content: center;
+      overflow-wrap: anywhere;
+      padding-left: 14px;
     }
 
     .lideranca-authors-text {
@@ -2366,9 +2294,9 @@
           <div class="card filters">
             <div class="section-head">
               <h2>Filtros</h2>
-              <p>Primeira leitura da atividade docente na oferta de disciplinas da nova base 2021-2026, focada nos responsáveis categorizados como docentes.</p>
+              <p>Painel de ministrantes das disciplinas da base 2021-2026, com distinção analítica entre internos e externos.</p>
             </div>
-            <div class="filters-grid" style="grid-template-columns: 1.8fr 0.8fr 0.9fr;">
+            <div class="filters-grid" style="grid-template-columns: 1.55fr 0.75fr 0.8fr 0.9fr;">
               <div>
                 <label for="docentes-disciplinas-chip-list">Docentes</label>
                 <div class="filter-toolbar">
@@ -2382,6 +2310,20 @@
                   </button>
                 </div>
                 <div id="docentes-disciplinas-chip-list" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="vinculos-disciplinas">Vínculo</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-disciplina-group="vinculos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-disciplina-group="vinculos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="vinculos-disciplinas" class="filter-picker compact"></div>
               </div>
               <div>
                 <label for="anos-disciplinas">Ano</label>
@@ -2417,12 +2359,12 @@
           <div class="card metric">
             <p class="eyebrow">CH Docente</p>
             <strong id="disciplinas-carga-total">0h</strong>
-            <span>Soma da carga horária atribuída aos docentes no recorte filtrado.</span>
+            <span>Soma da carga horária atribuída aos ministrantes visíveis no recorte filtrado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes Ativos</p>
+            <p class="eyebrow">Ministrantes Ativos</p>
             <strong id="disciplinas-docentes-ativos">0</strong>
-            <span>Quantidade de professores com atuação visível no conjunto corrente.</span>
+            <span>Quantidade de nomes com atuação visível no conjunto corrente.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Ofertas</p>
@@ -2430,9 +2372,9 @@
             <span>Componentes ofertados na janela 2021-2026 considerando turma/período distintos.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Formação Docente</p>
-            <strong id="disciplinas-formacao-share">0%</strong>
-            <span>Participação da carga horária em componentes marcados como formação docente.</span>
+            <p class="eyebrow">Externos Colaborando</p>
+            <strong id="disciplinas-externos-colaboradores">0</strong>
+            <span>Quantidade de ministrantes externos que aparecem no recorte corrente.</span>
           </div>
 
           <div class="card chart-wide">
@@ -2484,6 +2426,8 @@
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Vínculo</th>
+                    <th>Categoria base</th>
                     <th>CH total</th>
                     <th>CH principal</th>
                     <th>Ofertas</th>
@@ -2521,6 +2465,8 @@
                 <thead>
                   <tr>
                     <th>Docente</th>
+                    <th>Vínculo</th>
+                    <th>Categoria base</th>
                     <th>Ano/Período</th>
                     <th>Disciplina</th>
                     <th>Núcleo</th>
@@ -2699,7 +2645,7 @@
           <div class="card metric">
             <p class="eyebrow">Critério 2</p>
             <strong id="criterios-crit2-percentual">0%</strong>
-            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR ou Categoria A.</span>
+            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR (SCimago | 2y cites per doc) ou Categoria A.</span>
           </div>
 
           <div class="card chart-wide">
@@ -2763,7 +2709,7 @@
                     <th>Docente</th>
                     <th>Pontuação agregada</th>
                     <th>Critério 1</th>
-                    <th>JCR</th>
+                    <th>JCR (SCimago | 2y cites per doc)</th>
                     <th>Q1/Q2</th>
                     <th>Critério 2</th>
                   </tr>
@@ -2898,6 +2844,83 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Cooperação</h2>
+              <p>Indicador crítico de integração autoral entre docentes, mostrando densidade de cooperação interna e evidências de obras compartilhadas.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Parceiros por produto</p>
+            <strong id="lideranca-parceria-media">0</strong>
+            <span>Média de parceiros autores por produto na base científica sincronizada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Parceiros distintos</p>
+            <strong id="lideranca-parceria-distintos">0</strong>
+            <span>Total de parceiros distintos identificados nas autorias da base.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Produtos integrados</p>
+            <strong id="lideranca-parceria-internos">0</strong>
+            <span>Produtos que reúnem mais de um docente do PPGEF no mesmo registro consolidado.</span>
+            <div style="margin-top: 12px;">
+              <button type="button" class="info-button" id="open-lideranca-parceria-modal">Ver obras integradas</button>
+            </div>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes integrados</p>
+            <strong id="lideranca-parceria-docentes">0</strong>
+            <span>Docentes com ao menos uma cooperação interna com outro docente do programa.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Cooperação Interna por Docente</h2>
+                <p>Quantidade de docentes do PPGEF com quem cada docente compartilha obras na base científica.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação do gráfico de cooperação interna">
+                <button type="button" class="sort-toggle active" data-lideranca-parceria-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-lideranca-parceria-sort="desempenho">Por desempenho</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-parceria-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura da Cooperação</h2>
+              <p>Resumo executivo da densidade de colaboração e da integração interna.</p>
+            </div>
+            <div class="chips" id="lideranca-parceria-insights"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Evolução Temporal da Cooperação</h2>
+              <p>Média de parceiros por produto e volume de produtos integrados ao longo do tempo.</p>
+            </div>
+            <div id="chart-lideranca-parceria-anos" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Metodologia da Cooperação</h2>
+              <p>Critérios usados para consolidar parceiros autores e vínculos internos entre docentes.</p>
+            </div>
+            <div class="chips" id="lideranca-parceria-metodologia"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Rede de Cooperação Docente</h2>
+              <p>Nó por docente e arestas proporcionais à força da coautoria interna entre docentes do programa.</p>
+            </div>
+            <div id="chart-lideranca-parceria-rede" class="chart"></div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Corpo Docente</h2>
               <p>Regras críticas de composição do quadro permanente, vínculo institucional, exclusividade e dimensão mínima do programa.</p>
             </div>
@@ -2963,20 +2986,8 @@
           <div class="card filters">
             <div class="section-head">
               <h2>Liderança e Impacto</h2>
-              <p>
-                O Mostard Index foi estruturado para qualificar a liderança autoral da produção intelectual.
-                A régua-alvo considera 1,0 ponto para primeira ou última autoria, 0,5 para segunda ou
-                penúltima posição e 0,1 para as demais. A base científica reconstruída passa a preservar
-                a sequência autoral na referência de quase todos os registros, permitindo uma leitura
-                muito mais fiel do protagonismo investigativo por docente e por ano.
-              </p>
+              <p>Esta aba reúne leituras complementares sobre liderança autoral, impacto qualificado da produção e consistência do protagonismo investigativo docente no recorte filtrado.</p>
             </div>
-            <p class="chart-note">
-              Nesta base científica, o campo estruturado <strong>autores</strong> passou a registrar a ordem autoral extraída
-              da referência completa. Com isso, a régua de <strong>1,0</strong>, <strong>0,5</strong> e <strong>0,1</strong>
-              é aplicada diretamente sobre a posição do docente na lista de autores, com fallback residual apenas para casos
-              em que o nome do docente não seja localizado automaticamente.
-            </p>
             <div class="filters-grid">
               <div>
                 <label for="docentes-lideranca-chip-list">Docentes</label>
@@ -3026,8 +3037,22 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Mostard</h2>
-              <p>Leitura do índice invertido, da liderança corrigida por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
+              <p>Leitura do índice invertido, do índice corrigido por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
             </div>
+          </div>
+
+          <div class="card table-card">
+            <p>
+              O <strong>Mostard Index</strong> foi estruturado para qualificar a liderança autoral da produção intelectual.
+              A régua considera <strong>1,0 ponto</strong> para primeira ou última autoria, <strong>0,5</strong> para segunda
+              ou penúltima posição e <strong>0,1</strong> para as demais. Com a base autoral estruturada, essa leitura passa
+              a capturar com mais fidelidade o protagonismo investigativo por docente e por ano.
+            </p>
+            <p>
+              Nesta base científica, a posição autoral é aplicada diretamente sobre os campos estruturados de
+              <strong> número de autores </strong> e <strong> posição do docente </strong>. Assim, a leitura de liderança
+              deixa de depender de inferência textual residual e passa a operar sobre um registro autoral explicitamente revisado.
+            </p>
           </div>
 
           <div class="card metric">
@@ -3067,14 +3092,14 @@
             <div class="chips" id="lideranca-insight-chips"></div>
             <div class="legend">
               <span><i style="background: var(--ufpe-bordo)"></i> Índice Mostarda</span>
-              <span><i style="background: var(--ufpe-destaque)"></i> Liderança corrigida por pontos</span>
+              <span><i style="background: var(--ufpe-destaque)"></i> Índice ponderado por pontos</span>
             </div>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Liderança Corrigida por Pontos</h2>
-              <p>Inverso do Índice Mostarda multiplicado pela pontuação APCN do docente no recorte.</p>
+              <h2>Produção em Pontos APCN corrigidos pelo Mustard Index</h2>
+              <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
             </div>
             <div id="chart-lideranca-corrigido" class="chart"></div>
           </div>
@@ -3090,7 +3115,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Dispersão Índice x Pontos</h2>
-              <p>Eixo Y com o Índice Mostarda, eixo X com o total de pontos APCN e faixas diagonais de perfil docente com cortes p30 e p55 no score combinado do recorte.</p>
+              <p>Eixo Y com o Índice Mostarda e eixo X com o total de pontos APCN por docente.</p>
             </div>
             <div id="chart-lideranca-dispersao" class="chart"></div>
           </div>
@@ -3106,7 +3131,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Listagem de Docentes</h2>
-              <p>Índice isolado, liderança corrigida por pontos e composição das posições consideradas.</p>
+              <p>Índice isolado, índice corrigido por pontos e composição das posições consideradas.</p>
             </div>
             <div class="table-wrap">
               <table>
@@ -3115,7 +3140,7 @@
                     <th>Docente</th>
                     <th>Índice Mostarda</th>
                     <th>Pontos APCN</th>
-                    <th>Liderança Corrigida</th>
+                    <th>Índice Corrigido</th>
                     <th>Registros</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
@@ -3139,7 +3164,7 @@
                     <th>Ano</th>
                     <th>Índice Mostarda</th>
                     <th>Pontos APCN</th>
-                    <th>Liderança Corrigida</th>
+                    <th>Índice Corrigido</th>
                     <th>Registros</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
@@ -3151,64 +3176,53 @@
             </div>
           </div>
 
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Posição Autoral por Docente</h2>
-              <p>Proporção das obras em que cada docente aparece na 1ª, 2ª, meio, penúltima e última posição autoral.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Docente</th>
-                    <th>Obras válidas</th>
-                    <th>1ª</th>
-                    <th>2ª</th>
-                    <th>Meio</th>
-                    <th>Penúltima</th>
-                    <th>Última</th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-parceria-posicoes-body"></tbody>
-              </table>
-            </div>
-          </div>
-
           <div class="card group-card">
             <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JCR, média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
+              <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
             </div>
           </div>
 
+          <div class="card table-card">
+            <p>
+              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JCR (SCimago | 2y cites per doc)</strong>,
+              tanto no somatório acumulado quanto na média por produto qualificado. Isso permite distinguir docentes
+              com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
+            </p>
+            <p>
+              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas APCN dos periódicos</strong>,
+              permitindo relacionar impacto bibliométrico, qualidade editorial e contribuição efetiva para a pontuação do programa.
+            </p>
+          </div>
+
           <div class="card metric">
-            <p class="eyebrow">Produtos com JCR</p>
+            <p class="eyebrow">Produtos com JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-produtos-jcr">0</strong>
-            <span>Quantidade de produtos com valor JCR estruturado no recorte filtrado.</span>
+            <span>Quantidade de produtos com valor JCR (SCimago | 2y cites per doc) estruturado no recorte filtrado.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Soma JCR</p>
+            <p class="eyebrow">Soma JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-jcr-soma">0</strong>
-            <span>Somatório dos valores de JCR atribuídos aos produtos do recorte.</span>
+            <span>Somatório dos valores de JCR (SCimago | 2y cites per doc) atribuídos aos produtos do recorte.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Média JCR</p>
+            <p class="eyebrow">Média JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-jcr-media">0</strong>
-            <span>Valor médio de JCR entre os produtos que possuem essa evidência.</span>
+            <span>Valor médio de JCR (SCimago | 2y cites per doc) entre os produtos que possuem essa evidência.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com publicação Scopus</p>
+            <p class="eyebrow">Docentes com JCR (SCimago | 2y cites per doc)</p>
             <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto indexado na Scopus no recorte atual.</span>
+            <span>Docentes que possuem ao menos um produto com JCR (SCimago | 2y cites per doc) no recorte atual.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head section-head-inline">
               <div>
-                <h2>Somatório de JCR por Docente</h2>
+                <h2>Somatório de JCR (SCimago | 2y cites per doc) por Docente</h2>
                 <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
               </div>
-              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR">
+              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR (SCimago | 2y cites per doc)">
                 <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
                 <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
               </div>
@@ -3235,7 +3249,7 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JCR e agrupar faixas APCN dos periódicos.</p>
+              <p>Critérios usados para somar JCR (SCimago | 2y cites per doc) e agrupar faixas APCN dos periódicos.</p>
             </div>
             <div class="chips" id="lideranca-qualidade-metodologia"></div>
           </div>
@@ -3243,16 +3257,16 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Qualidade por Docente</h2>
-              <p>Soma JCR, média JCR e composição dos artigos por faixas APCN.</p>
+              <p>Soma JCR (SCimago | 2y cites per doc), média JCR (SCimago | 2y cites per doc) e composição dos artigos por faixas APCN.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Soma JCR</th>
-                    <th>Média JCR</th>
-                    <th>Produtos com JCR</th>
+                    <th>Soma JCR (SCimago | 2y cites per doc)</th>
+                    <th>Média JCR (SCimago | 2y cites per doc)</th>
+                    <th>Produtos com JCR (SCimago | 2y cites per doc)</th>
                     <th>Artigos 90</th>
                     <th>Artigos 60</th>
                     <th>Artigos 30</th>
@@ -3264,98 +3278,19 @@
             </div>
           </div>
 
-          <div class="card group-card">
-            <div class="section-head">
-              <h2>Parceria Docente</h2>
-              <p>Leitura da colaboração autoral, da integração interna entre docentes e da evolução temporal das parcerias no recorte filtrado.</p>
-            </div>
-          </div>
-
-          <div class="card metric">
-            <p class="eyebrow">Parceiros por produto</p>
-            <strong id="lideranca-parceria-media">0</strong>
-            <span>Média de parceiros autores por produto no recorte visível.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Parceiros distintos</p>
-            <strong id="lideranca-parceria-distintos">0</strong>
-            <span>Total de parceiros distintos identificados nas autorias do recorte.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Produtos integrados</p>
-            <strong id="lideranca-parceria-internos">0</strong>
-            <span>Produtos que reúnem mais de um docente do PPGEF no mesmo registro consolidado.</span>
-            <div style="margin-top: 12px;">
-              <button type="button" class="info-button" id="open-lideranca-parceria-modal">Ver obras integradas</button>
-            </div>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Docentes integrados</p>
-            <strong id="lideranca-parceria-docentes">0</strong>
-            <span>Docentes com ao menos uma parceria interna com outro docente do programa.</span>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head section-head-inline">
-              <div>
-                <h2>Parceiros Internos por Docente</h2>
-                <p>Quantidade de docentes do PPGEF com quem cada docente compartilha obras no recorte atual.</p>
-              </div>
-              <div class="sort-toggle-group" aria-label="Ordenação do gráfico de parceiros internos">
-                <button type="button" class="sort-toggle active" data-lideranca-parceria-sort="alfabetico">Alfabético</button>
-                <button type="button" class="sort-toggle" data-lideranca-parceria-sort="desempenho">Por desempenho</button>
-              </div>
-            </div>
-            <div id="chart-lideranca-parceria-docentes" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Leitura da Parceria</h2>
-              <p>Resumo executivo da densidade de colaboração e da integração interna.</p>
-            </div>
-            <div class="chips" id="lideranca-parceria-insights"></div>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Evolução Temporal das Parcerias</h2>
-              <p>Média de parceiros por produto e volume de produtos integrados ao longo do tempo.</p>
-            </div>
-            <div id="chart-lideranca-parceria-anos" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Metodologia da Parceria</h2>
-              <p>Critérios usados para consolidar parceiros autores e vínculos internos entre docentes.</p>
-            </div>
-            <div class="chips" id="lideranca-parceria-metodologia"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Rede de Integração Docente</h2>
-              <p>Nó por docente e arestas proporcionais à força da coautoria interna entre docentes do programa.</p>
-            </div>
-            <div id="chart-lideranca-parceria-rede" class="chart"></div>
-          </div>
-
           <div class="card table-card">
             <div class="section-head">
               <h2>Registros Avaliados</h2>
-              <p>Detalhamento por produto para auditoria do cálculo aplicado com os campos estruturados de autoria.</p>
+              <p>Detalhamento por produto para auditoria do cálculo aplicado.</p>
             </div>
             <div class="table-wrap">
-              <table class="lideranca-detail-table">
+              <table>
                 <thead>
                   <tr>
                     <th><button type="button" class="sort-toggle active" data-lideranca-detail-sort="docente">Docente</button></th>
                     <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="ano">Ano</button></th>
                     <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="tipo">Tipo</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="numero_autores">N autores</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="posicao_docente">Pos. docente</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="referencia">Referência completa</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="autores">Autores</button></th>
                     <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="posicao">Posição lida</button></th>
                     <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="peso">Peso</button></th>
                     <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="titulo">Título</button></th>
@@ -3470,9 +3405,9 @@
                 <tbody>
                   <tr>
                     <td>Artigo</td>
-                    <td>Web of Science (JCR)</td>
+                    <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
                     <td>90</td>
-                    <td>Artigo em periódico indexado no Web of Science com JCR</td>
+                    <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
                   </tr>
                   <tr>
                     <td>Artigo</td>
@@ -3514,6 +3449,49 @@
               </table>
             </div>
           </div>
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mostard Index</h2>
+              <p>Lógica de cálculo, relevância estratégica e leitura da produção corrigida por liderança autoral.</p>
+            </div>
+            <p>
+              O <strong>Mostard Index</strong> foi incorporado ao painel para qualificar um aspecto
+              decisivo na análise de viabilidade do doutorado: a <strong>capacidade de liderança
+              científica</strong> do corpo docente. Não basta apenas acumular produtos e pontos APCN.
+              Para sustentar a proposta de doutorado, também importa demonstrar que o grupo ocupa,
+              com frequência, posições de protagonismo intelectual nas publicações.
+            </p>
+            <p>
+              A régua usada no dashboard atribui <strong>1,0 ponto</strong> quando o docente aparece
+              na <strong>primeira</strong> ou <strong>última autoria</strong>, <strong>0,5 ponto</strong>
+              quando aparece na <strong>segunda</strong> ou <strong>penúltima</strong> posição, e
+              <strong>0,1 ponto</strong> nas demais posições. A média desses pesos produz a medida
+              de liderança autoral do recorte. Em seguida, o painel exibe o índice de forma
+              <strong>invertida</strong>, pela fórmula
+              <strong>Índice Mostarda = (1 - média de liderança) x 100</strong>. Portanto,
+              <strong>quanto maior o índice Mostarda, menor a liderança autoral média</strong>.
+            </p>
+            <p>
+              Esse ponto é estratégico para o curso de doutorado porque a proposta depende de um
+              núcleo docente capaz de liderar agendas, orientar redes de pesquisa e sustentar
+              produção qualificada com centralidade intelectual própria. Nesse contexto, um grupo
+              com <strong>grande quantitativo de pesquisadores com índice Mostarda alto</strong>
+              passa a sinalizar uma <strong>ameaça</strong> à narrativa de maturidade acadêmica do
+              programa: existe produção, mas com menor evidência de comando autoral recorrente.
+              Em uma leitura institucional, isso pode enfraquecer a demonstração de autonomia,
+              densidade investigativa e capacidade de condução de teses em nível de doutorado.
+            </p>
+            <p>
+              Para ampliar essa leitura, o painel também calcula a <strong>produção em pontos
+              corrigida pelo Mostard Index</strong>. A fórmula aplicada é
+              <strong>Índice Mostarda corrigido = índice Mostarda decimal x pontos APCN</strong>.
+              Na prática, esse indicador mostra onde há simultaneamente <strong>muito ponto
+              acumulado</strong> e <strong>menor protagonismo autoral médio</strong>. Assim, ele ajuda
+              a distinguir dois cenários: produção volumosa com liderança consistente, que fortalece
+              a APCN, e produção volumosa porém mais dependente de posições periféricas de autoria,
+              que exige leitura crítica e eventual correção estratégica do portfólio docente.
+            </p>
+          </div>
         </section>
       </div>
     </section>
@@ -3529,7 +3507,7 @@
         <button type="button" class="modal-close" id="close-apcn-scoring-modal" aria-label="Fechar modal">×</button>
       </div>
       <p class="chart-note">
-        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR)</strong> ou
+        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR (SCimago | 2y cites per doc))</strong> ou
         <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
         <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
         recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
@@ -3546,9 +3524,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>Web of Science (JCR)</td>
+              <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
               <td>90</td>
-              <td>Artigo em periódico indexado no Web of Science com JCR</td>
+              <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
             </tr>
             <tr>
               <td>Scopus (SJR)</td>
@@ -3586,7 +3564,7 @@
       <div class="modal-head">
         <div class="section-head">
           <h2 id="lideranca-parceria-modal-title">Obras Integradas</h2>
-          <p id="lideranca-parceria-modal-subtitle">Detalhamento das obras que sustentam a integração interna entre docentes do PPGEF.</p>
+          <p id="lideranca-parceria-modal-subtitle">Detalhamento das obras que sustentam a cooperação interna entre docentes do PPGEF.</p>
         </div>
         <button type="button" class="modal-close" id="close-lideranca-parceria-modal" aria-label="Fechar modal">×</button>
       </div>
@@ -3598,24 +3576,14 @@
     </div>
   </div>
 
-  <script src="./producao-cientifica-data.js?v=2026-06-13c"></script>
-  <script src="./producao-tecnica-data.js?v=2026-06-12g"></script>
+  <script src="./producao-cientifica-data.js?v=2026-06-12g"></script>
+  <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
   <script src="./disciplinas-data.js?v=2026-06-12f"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
   <script>
-    const dataSource = (window.PRODUCAO_CIENTIFICA || []).map((item) => {
-      const numeroAutores = Number(item.numero_autores);
-      const posicaoDocente = Number(item.posicao_docente);
-      const hasValidNumero = Number.isInteger(numeroAutores) && numeroAutores >= 1;
-      const hasValidPosicao = hasValidNumero && Number.isInteger(posicaoDocente) && posicaoDocente >= 1 && posicaoDocente <= numeroAutores;
-      return {
-        ...item,
-        numero_autores: hasValidNumero ? numeroAutores : "",
-        posicao_docente: hasValidPosicao ? posicaoDocente : "",
-      };
-    });
+    const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
@@ -3624,14 +3592,25 @@
       .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .toUpperCase();
-    const disciplinasExcludedDocentes = new Set([
-      "CARLA MENESES HARDMAN",
-      "BRENO QUINTELLA FARAH",
-      "ANDRE LUIZ TORRES PIRAUA",
-      "FABIANO DE SOUZA FONSECA",
-      "FLAVIO RENATO BARROS DA GUARDA",
-      "LUCIANO MACHADO FERREIRA TENORIO DE OLIVEIRA",
-      "VINICIUS DE OLIVEIRA DAMASCENO",
+    const disciplinasInternalDocentes = new Set([
+      "André dos Santos Costa",
+      "Bruno Teixeira Barbosa",
+      "Clarice Maria de Lucena Martins",
+      "Daniel da Rocha Queiroz",
+      "Daniela Karina da Silva Ferreira",
+      "Eduardo Zapaterra Campos",
+      "Guilherme Assunção Ferreira",
+      "Leonardo Gomes de Oliveira Luz",
+      "Lucas Eduardo Rodrigues dos Santos",
+      "Melissa Leandro Celestino",
+      "Ozeas de Lima Lins Filho",
+      "Paulo Felipe Ribeiro Bandeira",
+      "Paulo Roberto Cavalcanti Carvalho",
+      "Pedro Pinheiro Paes Neto",
+      "Rafael dos Santos Henrique",
+      "Saulo Fernandes Melo de Oliveira",
+      "Tony Meireles dos Santos",
+      "Vilde Gomes de Menezes",
     ].map(normalizeDisciplinasName));
     const dataSourceDisciplinas = (window.DISCIPLINAS_PPGEF || []).map((item) => ({
       ...item,
@@ -3645,6 +3624,7 @@
       nucleo_didatico: String(item.nucleo_didatico || "").trim(),
       carga_horaria_docente: Number(item.carga_horaria_docente) || 0,
       carga_horaria_total: Number(item.carga_horaria_total) || 0,
+      vinculo_painel: disciplinasInternalDocentes.has(normalizeDisciplinasName(item.nome_responsavel)) ? "Interno" : "Externo",
     }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
     const docenteChipList = document.getElementById("docentes-chip-list");
@@ -3710,7 +3690,6 @@
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
-    const liderancaParceriaPosicoesBody = document.getElementById("lideranca-parceria-posicoes-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
     const liderancaParceriaSortButtons = [...document.querySelectorAll("[data-lideranca-parceria-sort]")];
@@ -3720,6 +3699,7 @@
     const orientacoesPosdocBody = document.getElementById("orientacoes-posdoc-body");
     const chartOrientacoesDocentes = document.getElementById("chart-orientacoes-docentes");
     const docenteDisciplinasChipList = document.getElementById("docentes-disciplinas-chip-list");
+    const vinculosDisciplinasSelect = document.getElementById("vinculos-disciplinas");
     const anosDisciplinasSelect = document.getElementById("anos-disciplinas");
     const periodosDisciplinasSelect = document.getElementById("periodos-disciplinas");
     const chartDisciplinasDocentes = document.getElementById("chart-disciplinas-docentes");
@@ -3756,6 +3736,7 @@
     let selectedAnosTecnica = new Set();
     let selectedStatusTecnica = new Set();
     let selectedDocentesDisciplinas = new Set();
+    let selectedVinculosDisciplinas = new Set();
     let selectedAnosDisciplinas = new Set();
     let selectedPeriodosDisciplinas = new Set();
     let docenteSortMode = "alfabetico";
@@ -3781,6 +3762,7 @@
     };
     let disciplinasFilterValues = {
       docentes: [],
+      vinculos: [],
       anos: [],
       periodos: [],
     };
@@ -3982,8 +3964,8 @@
 
     function getDisciplinasBaseData() {
       return dataSourceDisciplinas.filter((item) =>
-        item.categoria_responsavel === "Docente" &&
-        !disciplinasExcludedDocentes.has(normalizeDisciplinasName(item.nome_responsavel))
+        item.nome_responsavel &&
+        item.carga_horaria_docente > 0
       );
     }
 
@@ -3993,13 +3975,20 @@
 
     function populateDisciplinasFilters(data) {
       const docentes = unique(data.map((item) => item.nome_responsavel));
+      const vinculos = unique(data.map((item) => item.vinculo_painel));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
       const periodos = unique(data.map((item) => item.ano_periodo)).sort((a, b) => a.localeCompare(b, "pt-BR"));
-      disciplinasFilterValues = { docentes, anos, periodos };
+      disciplinasFilterValues = { docentes, vinculos, anos, periodos };
       docenteDisciplinasChipList.innerHTML = docentes.map((docente) => `
         <label class="filter-option">
           <input type="checkbox" value="${docente}">
           <span>${docente}</span>
+        </label>
+      `).join("");
+      vinculosDisciplinasSelect.innerHTML = vinculos.map((vinculo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${vinculo}">
+          <span>${vinculo}</span>
         </label>
       `).join("");
       anosDisciplinasSelect.innerHTML = anos.map((ano) => `
@@ -4019,6 +4008,7 @@
     function syncDisciplinasFilterViews() {
       [
         [docenteDisciplinasChipList, selectedDocentesDisciplinas],
+        [vinculosDisciplinasSelect, selectedVinculosDisciplinas],
         [anosDisciplinasSelect, selectedAnosDisciplinas],
         [periodosDisciplinasSelect, selectedPeriodosDisciplinas],
       ].forEach(([container, selectedSet]) => {
@@ -4031,15 +4021,18 @@
 
     function bindDisciplinasFilters() {
       bindScientificCheckboxContainer(docenteDisciplinasChipList, selectedDocentesDisciplinas, applyDisciplinasFilters);
+      bindScientificCheckboxContainer(vinculosDisciplinasSelect, selectedVinculosDisciplinas, applyDisciplinasFilters);
       bindScientificCheckboxContainer(anosDisciplinasSelect, selectedAnosDisciplinas, applyDisciplinasFilters);
       bindScientificCheckboxContainer(periodosDisciplinasSelect, selectedPeriodosDisciplinas, applyDisciplinasFilters);
     }
 
     function initializeDisciplinasFilters() {
       selectedDocentesDisciplinas.clear();
+      selectedVinculosDisciplinas.clear();
       selectedAnosDisciplinas.clear();
       selectedPeriodosDisciplinas.clear();
       disciplinasFilterValues.docentes.forEach((value) => selectedDocentesDisciplinas.add(value));
+      disciplinasFilterValues.vinculos.forEach((value) => selectedVinculosDisciplinas.add(value));
       disciplinasFilterValues.anos.forEach((value) => selectedAnosDisciplinas.add(value));
       disciplinasFilterValues.periodos.forEach((value) => selectedPeriodosDisciplinas.add(value));
       syncDisciplinasFilterViews();
@@ -4048,6 +4041,7 @@
     function bindDisciplinasFilterToggles() {
       const groupConfig = {
         docentes: { selectedSet: selectedDocentesDisciplinas, getValues: () => disciplinasFilterValues.docentes },
+        vinculos: { selectedSet: selectedVinculosDisciplinas, getValues: () => disciplinasFilterValues.vinculos },
         anos: { selectedSet: selectedAnosDisciplinas, getValues: () => disciplinasFilterValues.anos },
         periodos: { selectedSet: selectedPeriodosDisciplinas, getValues: () => disciplinasFilterValues.periodos },
       };
@@ -4067,13 +4061,15 @@
 
     function getFilteredDisciplinasData() {
       const docentes = [...selectedDocentesDisciplinas];
+      const vinculos = [...selectedVinculosDisciplinas];
       const anos = [...selectedAnosDisciplinas];
       const periodos = [...selectedPeriodosDisciplinas];
       return getDisciplinasBaseData().filter((item) => {
         const docenteOk = !docentes.length || docentes.includes(item.nome_responsavel);
+        const vinculoOk = !vinculos.length || vinculos.includes(item.vinculo_painel);
         const anoOk = !anos.length || anos.includes(item.ano);
         const periodoOk = !periodos.length || periodos.includes(item.ano_periodo);
-        return docenteOk && anoOk && periodoOk;
+        return docenteOk && vinculoOk && anoOk && periodoOk;
       });
     }
 
@@ -4084,11 +4080,13 @@
         if (!grouped.has(key)) {
           grouped.set(key, {
             docente: key,
+            vinculo: item.vinculo_painel || "Externo",
             carga: 0,
             cargaPrincipal: 0,
             cargaFormacao: 0,
             ofertas: new Set(),
             periodos: new Set(),
+            categorias: new Set(),
           });
         }
         const bucket = grouped.get(key);
@@ -4097,10 +4095,13 @@
         if (item.formacao_docente === "Sim") bucket.cargaFormacao += item.carga_horaria_docente;
         bucket.ofertas.add(`${item.ano_periodo}||${item.nome_disciplina_completo}`);
         bucket.periodos.add(item.ano_periodo);
+        if (item.categoria_responsavel) bucket.categorias.add(item.categoria_responsavel);
       });
       return [...grouped.values()]
         .map((item) => ({
           docente: item.docente,
+          vinculo: item.vinculo,
+          categoriaBase: [...item.categorias].sort((a, b) => a.localeCompare(b, "pt-BR")).join(", ") || "Não informada",
           carga: item.carga,
           cargaPrincipal: item.cargaPrincipal,
           ofertas: item.ofertas.size,
@@ -4145,6 +4146,13 @@
       const totalOfertas = new Set(data.map((item) => `${item.ano_periodo}||${item.nome_disciplina_completo}`)).size;
       const cargaFormacao = data.reduce((acc, item) => acc + (item.formacao_docente === "Sim" ? item.carga_horaria_docente : 0), 0);
       const cargaObrigatoria = data.reduce((acc, item) => acc + (item.tipo === "Obrigatória" ? item.carga_horaria_docente : 0), 0);
+      const internosAtivos = docenteSummary.filter((item) => item.vinculo === "Interno").length;
+      const externosAtivos = docenteSummary.filter((item) => item.vinculo === "Externo").length;
+      const externosFormacao = new Set(
+        data
+          .filter((item) => item.vinculo_painel === "Externo" && item.formacao_docente === "Sim")
+          .map((item) => item.nome_responsavel)
+      ).size;
       const topDocente = docenteSummary[0];
       const topPeriodo = [...periodSummary].sort((a, b) => b.carga - a.carga)[0];
       const topNucleo = nucleoSummary[0];
@@ -4152,11 +4160,14 @@
       document.getElementById("disciplinas-carga-total").textContent = formatHours(totalCarga);
       document.getElementById("disciplinas-docentes-ativos").textContent = String(docenteSummary.length);
       document.getElementById("disciplinas-ofertas-total").textContent = String(totalOfertas);
-      document.getElementById("disciplinas-formacao-share").textContent = formatPercent(totalCarga ? cargaFormacao / totalCarga : 0);
+      document.getElementById("disciplinas-externos-colaboradores").textContent = String(externosAtivos);
 
       disciplinasInsightChips.innerHTML = [
         topDocente ? `<span class="chip">Maior carga: <strong>${topDocente.docente}</strong> (${formatHours(topDocente.carga)})</span>` : "",
         topPeriodo ? `<span class="chip">Pico temporal: <strong>${topPeriodo.periodo.replace("_", ".")}</strong> (${formatHours(topPeriodo.carga)})</span>` : "",
+        `<span class="chip">Internos ativos: <strong>${internosAtivos}</strong> · Externos ativos: <strong>${externosAtivos}</strong></span>`,
+        `<span class="chip">Externos em componentes de formação docente: <strong>${externosFormacao}</strong></span>`,
+        `<span class="chip">Formação docente concentra <strong>${formatPercent(totalCarga ? cargaFormacao / totalCarga : 0)}</strong> da CH filtrada</span>`,
         `<span class="chip">Obrigatórias concentram <strong>${formatPercent(totalCarga ? cargaObrigatoria / totalCarga : 0)}</strong> da CH docente filtrada</span>`,
         topNucleo ? `<span class="chip">Núcleo dominante: <strong>${topNucleo.nucleo}</strong> (${formatHours(topNucleo.carga)})</span>` : "",
       ].filter(Boolean).join("");
@@ -4188,11 +4199,12 @@
             const y = 18 + index * rowHeight;
             const width = (item.carga / maxCarga) * usableWidth;
             const principalWidth = (item.cargaPrincipal / maxCarga) * usableWidth;
+            const secondaryFill = item.vinculo === "Interno" ? "#8c1538" : "#4d7c68";
             return `
-              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente}</text>
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${item.docente} · ${item.vinculo}</text>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="#d7c3ad"></rect>
               <rect x="${labelWidth}" y="${y}" width="${principalWidth}" height="18" rx="9" fill="#d4a017"></rect>
-              <rect x="${labelWidth + principalWidth}" y="${y}" width="${Math.max(0, width - principalWidth)}" height="18" rx="9" fill="#8c1538"></rect>
+              <rect x="${labelWidth + principalWidth}" y="${y}" width="${Math.max(0, width - principalWidth)}" height="18" rx="9" fill="${secondaryFill}"></rect>
               <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#262930" font-size="12">${formatHours(item.carga)}</text>
             `;
           }).join("")}
@@ -4253,6 +4265,8 @@
       disciplinasResumoDocentesBody.innerHTML = data.map((item) => `
         <tr>
           <td>${item.docente}</td>
+          <td>${item.vinculo}</td>
+          <td>${item.categoriaBase}</td>
           <td>${formatHours(item.carga)}</td>
           <td>${formatHours(item.cargaPrincipal)}</td>
           <td>${item.ofertas}</td>
@@ -4277,7 +4291,7 @@
       ].join("");
       disciplinasHeatmapBody.innerHTML = docenteSummary.map((docente) => `
         <tr>
-          <td>${docente.docente}</td>
+          <td><strong>${docente.docente}</strong><br><span style="font-size:11px;color:#6d727c;">${docente.vinculo}</span></td>
           ${periods.map((periodo) => {
             const carga = matrix.get(`${docente.docente}||${periodo}`) || 0;
             const alpha = carga ? 0.12 + (carga / maxCarga) * 0.42 : 0;
@@ -4296,6 +4310,8 @@
         .map((item) => `
           <tr>
             <td>${item.nome_responsavel}</td>
+            <td>${item.vinculo_painel}</td>
+            <td>${item.categoria_responsavel || "Não informada"}</td>
             <td>${item.ano_periodo.replace("_", ".")}</td>
             <td>${item.nome_disciplina}</td>
             <td>${item.nucleo_didatico}</td>
@@ -4305,7 +4321,7 @@
             <td>${formatHours(item.carga_horaria_docente)}</td>
           </tr>
         `).join("");
-      disciplinasDetalheNota.textContent = `${data.length} vínculo(s) docente(s) exibidos no recorte atual. Participações de egressos, pós-docs e externos ficaram fora desta primeira proposição para manter o foco na atividade do corpo docente.`;
+      disciplinasDetalheNota.textContent = `${data.length} participação(ões) de ministrantes exibidas no recorte atual. O painel agora distingue internos e externos com base na lista de referência informada para o PPGEF.`;
     }
 
     function applyDisciplinasFilters() {
@@ -4429,10 +4445,14 @@
     }
 
     function initializeTechnicalFilters() {
-      selectedDocentesTecnica = new Set(technicalFilterValues.docentes);
-      selectedTiposTecnica = new Set(technicalFilterValues.tipos);
-      selectedAnosTecnica = new Set(technicalFilterValues.anos);
-      selectedStatusTecnica = new Set(technicalFilterValues.status);
+      selectedDocentesTecnica.clear();
+      selectedTiposTecnica.clear();
+      selectedAnosTecnica.clear();
+      selectedStatusTecnica.clear();
+      technicalFilterValues.docentes.forEach((value) => selectedDocentesTecnica.add(value));
+      technicalFilterValues.tipos.forEach((value) => selectedTiposTecnica.add(value));
+      technicalFilterValues.anos.forEach((value) => selectedAnosTecnica.add(value));
+      technicalFilterValues.status.forEach((value) => selectedStatusTecnica.add(value));
       syncTechnicalFilterViews();
     }
 
@@ -4507,7 +4527,7 @@
     function renderLiderancaParceriaAuditCards(items) {
       if (!liderancaParceriaModalBody) return;
       if (!items.length) {
-        liderancaParceriaModalBody.innerHTML = `<p class="chart-note">Nenhuma obra integrada encontrada para este recorte.</p>`;
+        liderancaParceriaModalBody.innerHTML = `<p class="chart-note">Nenhuma obra integrada encontrada para esta leitura.</p>`;
         return;
       }
       liderancaParceriaModalBody.innerHTML = items.map((item) => `
@@ -4539,8 +4559,8 @@
       } else {
         const items = liderancaParceriaAuditState.integratedWorks || [];
         liderancaParceriaModalTitle.textContent = "Obras Integradas";
-        liderancaParceriaModalSubtitle.textContent = "Detalhamento das obras que sustentam a integração interna entre docentes do PPGEF.";
-        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) integrada(s) identificada(s) no recorte filtrado atual.`;
+        liderancaParceriaModalSubtitle.textContent = "Detalhamento das obras que sustentam a cooperação interna entre docentes do PPGEF.";
+        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) integrada(s) identificada(s) na base científica sincronizada.`;
         renderLiderancaParceriaAuditCards(items);
       }
       setLiderancaParceriaModalState(true);
@@ -4633,21 +4653,31 @@
         .replaceAll("'", "&#39;");
     }
 
-    function toFileUrl(path) {
-      return `file:///${String(path).replaceAll("\\", "/")}`;
+    function toDocumentUrl(path) {
+      if (!path) {
+        return "";
+      }
+
+      const normalized = String(path).trim();
+      if (/^(https?:)?\/\//i.test(normalized) || normalized.startsWith("../") || normalized.startsWith("./") || normalized.startsWith("/")) {
+        return normalized;
+      }
+
+      return "";
     }
 
     function renderDocumentList(items, target) {
       target.innerHTML = items.map((item) => {
-        const hasFile = Boolean(item.caminho);
+        const primaryUrl = toDocumentUrl(item.caminho);
+        const hasFile = Boolean(primaryUrl);
         const statusClass = hasFile ? "ok" : "pending";
         const statusLabel = hasFile ? "Disponível" : "Pendente";
         const primaryAction = hasFile
-          ? `<a class="document-link primary" href="${encodeURI(toFileUrl(item.caminho))}" download>Abrir documento</a>`
+          ? `<a class="document-link primary" href="${encodeURI(primaryUrl)}" target="_blank" rel="noopener noreferrer">Abrir documento</a>`
           : "";
         const secondaryActions = Array.isArray(item.linksSecundarios)
           ? item.linksSecundarios.map((link) => `
-              <a class="document-link secondary" href="${encodeURI(toFileUrl(link.caminho))}" download>${escapeHtml(link.rotulo || "Versão adicional")}</a>
+              <a class="document-link secondary" href="${encodeURI(toDocumentUrl(link.caminho))}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.rotulo || "Versão adicional")}</a>
             `).join("")
           : "";
         const emptyState = hasFile
@@ -4675,7 +4705,7 @@
     function renderDocumentsPanel() {
       const internos = dataSourceDocumentos.filter((item) => item.categoria === "Internos");
       const capes = dataSourceDocumentos.filter((item) => item.categoria === "CAPES");
-      const available = dataSourceDocumentos.filter((item) => item.caminho).length;
+      const available = dataSourceDocumentos.filter((item) => toDocumentUrl(item.caminho)).length;
       const pending = dataSourceDocumentos.length - available;
 
       document.getElementById("documents-total").textContent = String(dataSourceDocumentos.length);
@@ -4746,14 +4776,6 @@
         .replace(/[^A-Za-z0-9]+/g, " ")
         .toUpperCase()
         .trim();
-    }
-
-    function normalizeSeedText(value) {
-      return String(value || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim()
-        .toUpperCase();
     }
 
     function getNameTokens(value) {
@@ -4831,42 +4853,72 @@
       return [];
     }
 
-    function getStructuredMostardPosition(item) {
-      const total = Number(item.numero_autores);
-      const position = Number(item.posicao_docente);
-      const valid = Number.isInteger(total) && total >= 1 && Number.isInteger(position) && position >= 1 && position <= total;
-      return {
-        total,
-        position,
-        valid,
-      };
+    function normalizeSeedText(value) {
+      return normalizeText(value)
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+    }
+
+    function getLeadershipProductKey(item) {
+      const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
+      const baseKey = [
+        titleKey,
+        normalizeSeedText(item.ano),
+        normalizeSeedText(item.tipo_producao),
+      ].join("|");
+      return baseKey || [
+        normalizeSeedText(item.titulo),
+        normalizeSeedText(item.ano),
+        normalizeSeedText(item.revista_ou_veiculo),
+        normalizeSeedText(item.produto_referencia),
+      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
+    }
+
+    function getCoauthorNames(item) {
+      const authors = inferScientificAuthors(item);
+      return authors.filter((author) => !authorMatchesDocente(author, item.docente));
+    }
+
+    function buildLeadershipProductGroups(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const key = getLeadershipProductKey(item);
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            key,
+            ano: item.ano || "Sem ano",
+            items: [],
+            docentes: new Set(),
+            numeroAutores: Number(item.numero_autores) || 1,
+          });
+        }
+        const group = grouped.get(key);
+        group.items.push(item);
+        group.docentes.add(item.docente);
+        group.numeroAutores = Math.max(group.numeroAutores, Number(item.numero_autores) || 1);
+      });
+      return grouped;
     }
 
     function getMostardScore(item) {
-      const structured = getStructuredMostardPosition(item);
-      if (!structured.valid) {
-        return { score: 0, label: "Registro inválido", source: "campos_estruturados_invalidos" };
+      const authors = inferScientificAuthors(item);
+      const matchedIndex = authors.findIndex((author) => authorMatchesDocente(author, item.docente));
+      if (matchedIndex >= 0) {
+        const lastIndex = authors.length - 1;
+        if (matchedIndex === 0 || matchedIndex === lastIndex) {
+          return { score: 1, label: "1ª ou última autoria", source: "lista_autores" };
+        }
+        if (matchedIndex === 1 || matchedIndex === lastIndex - 1) {
+          return { score: 0.5, label: "2ª ou penúltima autoria", source: "lista_autores" };
+        }
+        return { score: 0.1, label: "Demais posições", source: "lista_autores" };
       }
-      const lastPosition = structured.total;
-      const penultimatePosition = structured.total - 1;
-      if (structured.position === 1 || structured.position === lastPosition) {
-        return { score: 1, label: "1ª ou última autoria", source: "campos_estruturados" };
-      }
-      if (structured.position === 2 || structured.position === penultimatePosition) {
-        return { score: 0.5, label: "2ª ou penúltima autoria", source: "campos_estruturados" };
-      }
-      return { score: 0.1, label: "Demais posições", source: "campos_estruturados" };
-    }
 
-    function getStructuredAuthorshipBucket(item) {
-      const structured = getStructuredMostardPosition(item);
-      if (!structured.valid) return "invalido";
-      const { total, position } = structured;
-      if (position === 1) return "primeira";
-      if (position === total) return "ultima";
-      if (position === 2) return "segunda";
-      if (position === total - 1) return "penultima";
-      return "meio";
+      if (authorMatchesDocente(item.autor_principal, item.docente)) {
+        return { score: 1, label: "1ª autoria", source: "autor_principal" };
+      }
+
+      return { score: 0.1, label: "Demais posições", source: "fallback_autor_principal" };
     }
 
     function formatDecimal(value) {
@@ -4878,21 +4930,6 @@
 
     function formatPercent(value) {
       return `${formatDecimal(value)}%`;
-    }
-
-    function clamp(value, min, max) {
-      return Math.min(Math.max(value, min), max);
-    }
-
-    function getPercentileValue(values, percentile) {
-      if (!values.length) return 0;
-      const sorted = [...values].sort((a, b) => a - b);
-      const position = (sorted.length - 1) * percentile;
-      const lowerIndex = Math.floor(position);
-      const upperIndex = Math.ceil(position);
-      if (lowerIndex === upperIndex) return sorted[lowerIndex];
-      const weight = position - lowerIndex;
-      return sorted[lowerIndex] + (sorted[upperIndex] - sorted[lowerIndex]) * weight;
     }
 
     function getFilteredScientificData() {
@@ -5329,11 +5366,11 @@
           liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
           liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
           indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          liderancaCorrigida: item.total ? (item.pontosMostard / item.total) * item.pontosApcn : 0,
+          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
         }))
         .sort((a, b) =>
           b.indiceMostarda - a.indiceMostarda ||
-          b.liderancaCorrigida - a.liderancaCorrigida ||
+          b.indiceMostardaCorrigido - a.indiceMostardaCorrigido ||
           b.pontosApcn - a.pontosApcn ||
           b.total - a.total ||
           a.docente.localeCompare(b.docente, "pt-BR")
@@ -5374,7 +5411,7 @@
           liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
           liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
           indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          liderancaCorrigida: item.total ? (item.pontosMostard / item.total) * item.pontosApcn : 0,
+          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -5382,21 +5419,26 @@
     function summarizeMostardEvidence(data) {
       const summary = {
         records: data.length,
-        validStructuredRecords: 0,
-        invalidStructuredRecords: 0,
-        totalStructuredAuthors: 0,
+        parsedRecords: 0,
+        parsedAuthorNames: 0,
+        parsedRecordsMatchingDocente: 0,
+        firstByAutorPrincipal: 0,
+        fallbackDemais: 0,
         secondOrPenultimate: 0,
         explicitLastOrFirst: 0,
       };
       data.forEach((item) => {
-        const structured = getStructuredMostardPosition(item);
-        if (structured.valid) {
-          summary.validStructuredRecords += 1;
-          summary.totalStructuredAuthors += structured.total;
-        } else {
-          summary.invalidStructuredRecords += 1;
+        const authors = inferScientificAuthors(item);
+        if (authors.length) {
+          summary.parsedRecords += 1;
+          summary.parsedAuthorNames += authors.length;
+          if (authors.some((author) => authorMatchesDocente(author, item.docente))) {
+            summary.parsedRecordsMatchingDocente += 1;
+          }
         }
         const score = getMostardScore(item);
+        if (score.source === "autor_principal") summary.firstByAutorPrincipal += 1;
+        if (score.source === "fallback_autor_principal") summary.fallbackDemais += 1;
         if (score.label === "2ª ou penúltima autoria") summary.secondOrPenultimate += 1;
         if (score.label === "1ª ou última autoria") summary.explicitLastOrFirst += 1;
       });
@@ -5408,7 +5450,7 @@
       const pontosApcn = data.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
       const liderancaMedia = data.length ? pontosMostard / data.length : 0;
       const indiceGeral = (1 - liderancaMedia) * 100;
-      const liderancaGeralCorrigida = liderancaMedia * pontosApcn;
+      const indiceGeralCorrigido = (indiceGeral / 100) * pontosApcn;
       const visibleDocentes = docenteSummary.length;
       const worstDocente = docenteSummary[0];
       const bestDocente = [...docenteSummary].sort((a, b) => a.indiceMostarda - b.indiceMostarda || b.pontosApcn - a.pontosApcn)[0];
@@ -5424,19 +5466,19 @@
         worstDocente ? `<span class="chip">Maior índice Mostarda: <strong>${worstDocente.docente}</strong> (${formatPercent(worstDocente.indiceMostarda)})</span>` : "",
         bestDocente ? `<span class="chip">Menor índice Mostarda: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indiceMostarda)})</span>` : "",
         worstYear ? `<span class="chip">Ano mais crítico: <strong>${worstYear.ano}</strong> (${formatPercent(worstYear.indiceMostarda)})</span>` : "",
-        `<span class="chip">Liderança do recorte corrigida por pontos: <strong>${formatDecimal(liderancaGeralCorrigida)}</strong></span>`,
-        `<span class="chip">Registros válidos com número de autores e posição docente: <strong>${evidence.validStructuredRecords}</strong> de ${data.length}</span>`,
-        `<span class="chip">Soma de autores declarados nesses registros: <strong>${evidence.totalStructuredAuthors}</strong></span>`,
+        `<span class="chip">Índice do recorte corrigido por pontos: <strong>${formatDecimal(indiceGeralCorrigido)}</strong></span>`,
+        `<span class="chip">Registros com sequência explícita de autores: <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
+        `<span class="chip">Com docente identificado nessa sequência: <strong>${evidence.parsedRecordsMatchingDocente}</strong></span>`,
       ].join("");
 
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
         `<span class="chip">Índice Mostarda exibido = <strong>1 - média de liderança</strong>; logo, valores maiores indicam menor liderança</span>`,
-        `<span class="chip">Liderança corrigida = <strong>média de liderança x pontos APCN</strong> do docente ou do ano</span>`,
-        `<span class="chip">Cálculo atual baseado exclusivamente em <strong>numero_autores</strong> e <strong>posicao_docente</strong></span>`,
-        `<span class="chip">Registros inválidos para o cálculo estruturado: <strong>${evidence.invalidStructuredRecords}</strong></span>`,
-        `<span class="chip">Ocorrências estruturadas de 1,0: <strong>${evidence.explicitLastOrFirst}</strong></span>`,
-        `<span class="chip">Ocorrências estruturadas de 0,5: <strong>${evidence.secondOrPenultimate}</strong></span>`,
+        `<span class="chip">Índice corrigido = <strong>Índice Mostarda decimal x pontos APCN</strong> do docente ou do ano</span>`,
+        `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
+        `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
+        `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
+        `<span class="chip">Ocorrências reais de 0,5 na base atual: <strong>${evidence.secondOrPenultimate}</strong></span>`,
       ].join("");
     }
 
@@ -5476,28 +5518,28 @@
 
     function renderLeadershipWeightedChart(summary) {
       const items = [...summary]
-        .sort((a, b) => b.liderancaCorrigida - a.liderancaCorrigida || b.pontosApcn - a.pontosApcn)
+        .sort((a, b) => b.indiceMostardaCorrigido - a.indiceMostardaCorrigido || b.pontosApcn - a.pontosApcn)
         .slice(0, 18);
       if (!items.length) {
         chartLiderancaCorrigido.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxMetric = Math.max(...items.map((item) => item.liderancaCorrigida), 1);
+      const maxMetric = Math.max(...items.map((item) => item.indiceMostardaCorrigido), 1);
       const rowHeight = 34;
       const height = items.length * rowHeight + 48;
       const labelWidth = 270;
       const chartWidth = 720;
       const usableWidth = chartWidth - labelWidth - 70;
       chartLiderancaCorrigido.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Liderança corrigida por pontos APCN">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda corrigido por pontos APCN">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
-            const width = Math.max(8, (item.liderancaCorrigida / maxMetric) * usableWidth);
+            const width = Math.max(8, (item.indiceMostardaCorrigido / maxMetric) * usableWidth);
             return `
               <text x="0" y="${y + 16}" fill="#262930" font-size="13">${item.docente}</text>
               <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eadfce"></rect>
               <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="url(#liderancaWeightedGradient)"></rect>
-              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.liderancaCorrigida)}</text>
+              <text x="${labelWidth + width + 10}" y="${y + 14}" fill="#6d727c" font-size="12">${formatDecimal(item.indiceMostardaCorrigido)}</text>
             `;
           }).join("")}
           <defs>
@@ -5515,74 +5557,20 @@
         chartLiderancaDispersao.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const width = 992;
-      const height = 512;
-      const left = 97;
-      const right = 27;
-      const top = 69;
-      const bottom = 67;
+      const width = 940;
+      const height = 440;
+      const left = 82;
+      const right = 24;
+      const top = 24;
+      const bottom = 52;
       const innerWidth = width - left - right;
       const innerHeight = height - top - bottom;
       const maxPoints = Math.max(...summary.map((item) => item.pontosApcn), 1);
       const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
-      const items = summary.map((item) => {
-        const xRatio = clamp((item.pontosApcn || 0) / maxPoints, 0, 1);
-        const inverseMostardRatio = clamp(1 - ((item.indiceMostarda || 0) / maxIndex), 0, 1);
-        return {
-          ...item,
-          xRatio,
-          inverseMostardRatio,
-          diagonalScore: (xRatio + inverseMostardRatio) / 2,
-        };
-      });
-      const p30 = 0.30;
-      const p55 = 0.55;
-      const p30Score = getPercentileValue(items.map((item) => item.diagonalScore), p30);
-      const p55Score = getPercentileValue(items.map((item) => item.diagonalScore), p55);
       const xTicks = 4;
       const yTicks = 4;
-      const plotRight = width - right;
-      const plotBottom = height - bottom;
-      const bandLineY = (score, xScreen) => {
-        const xRatio = clamp((xScreen - left) / innerWidth, 0, 1);
-        return top + ((2 * score) - xRatio) * innerHeight;
-      };
-      const buildBandPolygon = (upperScore, lowerScore) => {
-        const pointsTop = [];
-        const pointsBottom = [];
-        for (let step = 0; step <= 240; step += 1) {
-          const x = left + (step / 240) * innerWidth;
-          const upperY = clamp(bandLineY(upperScore, x), top, plotBottom);
-          const lowerY = clamp(bandLineY(lowerScore, x), top, plotBottom);
-          pointsTop.push(`${x.toFixed(1)},${upperY.toFixed(1)}`);
-          pointsBottom.push(`${x.toFixed(1)},${lowerY.toFixed(1)}`);
-        }
-        return [...pointsTop, ...pointsBottom.reverse()].join(" ");
-      };
-      const buildBoundaryArea = (score, mode) => {
-        const boundary = [];
-        for (let step = 0; step <= 240; step += 1) {
-          const x = left + (step / 240) * innerWidth;
-          const lineY = clamp(bandLineY(score, x), top, plotBottom);
-          boundary.push(`${x.toFixed(1)},${lineY.toFixed(1)}`);
-        }
-        const ceiling = mode === "top" ? top : plotBottom;
-        const edge = [];
-        for (let step = 240; step >= 0; step -= 1) {
-          const x = left + (step / 240) * innerWidth;
-          edge.push(`${x.toFixed(1)},${ceiling.toFixed(1)}`);
-        }
-        return [...boundary, ...edge].join(" ");
-      };
-      const redPolygon = buildBoundaryArea(p30Score, "top");
-      const amberPolygon = buildBandPolygon(p30Score, p55Score);
-      const greenPolygon = buildBoundaryArea(p55Score, "bottom");
       chartLiderancaDispersao.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
-          <rect x="${left}" y="${top}" width="${innerWidth}" height="${innerHeight}" rx="18" fill="#fbf7f1" stroke="#d7cdbc" stroke-width="1.5"></rect>
-          <polygon points="${redPolygon}" fill="#b2344a" fill-opacity="0.12"></polygon>
-          <polygon points="${amberPolygon}" fill="#e2b02b" fill-opacity="0.13"></polygon>
-          <polygon points="${greenPolygon}" fill="#4d7c68" fill-opacity="0.22"></polygon>
           ${Array.from({ length: yTicks + 1 }, (_, index) => {
             const ratio = index / yTicks;
             const y = top + innerHeight - ratio * innerHeight;
@@ -5601,24 +5589,19 @@
               <text x="${x}" y="${height - bottom + 18}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(value)}</text>
             `;
           }).join("")}
-          <line x1="${left}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          <line x1="${left}" y1="${top}" x2="${left}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${items.map((item) => {
-            const x = left + item.xRatio * innerWidth;
+          <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          <line x1="${left}" y1="${top}" x2="${left}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${summary.map((item) => {
+            const x = left + ((item.pontosApcn || 0) / maxPoints) * innerWidth;
             const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
             return `
-              <circle cx="${x}" cy="${y}" r="6.2" fill="#8c1538" stroke="#fff9f2" stroke-width="1.6"></circle>
+              <circle cx="${x}" cy="${y}" r="5.5" fill="#8c1538" opacity="0.9"></circle>
               <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
             `;
           }).join("")}
-          <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
+          <text x="${width / 2}" y="${height - 10}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
-        <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
-          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Indesejado</strong>, a faixa amarela representa o perfil <strong>Esperado</strong> e a faixa verde representa o perfil <strong>Desejado</strong>.
-          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade APCN e inverso do Índice Mostarda.
-          Leitura: <strong>Indesejado</strong> ≤ p30,0; <strong>Esperado</strong> entre p30,0 e p55,0; <strong>Desejado</strong> &gt; p55,0.
-        </div>
       `;
     }
 
@@ -5657,7 +5640,7 @@
           <td>${item.docente}</td>
           <td>${formatPercent(item.indiceMostarda)}</td>
           <td>${formatDecimal(item.pontosApcn)}</td>
-          <td>${formatDecimal(item.liderancaCorrigida)}</td>
+          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
@@ -5672,7 +5655,7 @@
           <td>${item.ano}</td>
           <td>${formatPercent(item.indiceMostarda)}</td>
           <td>${formatDecimal(item.pontosApcn)}</td>
-          <td>${formatDecimal(item.liderancaCorrigida)}</td>
+          <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
@@ -5698,7 +5681,6 @@
             docente: item.docente,
             jcrSum: 0,
             jcrCount: 0,
-            hasScopus: false,
             artigos90: 0,
             artigos60: 0,
             artigos30: 0,
@@ -5707,13 +5689,9 @@
         }
         const row = grouped.get(item.docente);
         const jcr = Number(item.jif_jcr_2025) || 0;
-        const indexacao = String(item.indexacao || "");
         if (jcr > 0) {
           row.jcrSum += jcr;
           row.jcrCount += 1;
-        }
-        if (indexacao.includes("Scopus")) {
-          row.hasScopus = true;
         }
         const bucket = getApcnArticleBucket(item);
         if (bucket === "90") row.artigos90 += 1;
@@ -5758,7 +5736,7 @@
     }
 
     function renderLeadershipQualityMetrics(summary, totals) {
-      const docentesComScopus = summary.filter((item) => item.hasScopus);
+      const docentesComJcr = summary.filter((item) => item.jcrCount > 0);
       const topJcr = summary[0];
       const bestAvg = [...summary]
         .filter((item) => item.jcrCount > 0)
@@ -5767,18 +5745,18 @@
       document.getElementById("lideranca-qualidade-produtos-jcr").textContent = String(totals.jcrCount);
       document.getElementById("lideranca-qualidade-jcr-soma").textContent = formatDecimal(totals.jcrSum);
       document.getElementById("lideranca-qualidade-jcr-media").textContent = formatDecimal(totals.jcrCount ? totals.jcrSum / totals.jcrCount : 0);
-      document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComScopus.length);
+      document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComJcr.length);
 
       liderancaQualidadeInsights.innerHTML = [
-        topJcr ? `<span class="chip">Maior soma de JCR: <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
-        bestAvg ? `<span class="chip">Maior média JCR: <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
+        topJcr ? `<span class="chip">Maior soma de JCR (SCimago | 2y cites per doc): <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
+        bestAvg ? `<span class="chip">Maior média JCR (SCimago | 2y cites per doc): <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
         `<span class="chip">Artigos em periódicos de 90 pontos: <strong>${totals.artigos90}</strong></span>`,
         `<span class="chip">Artigos sem pontuação APCN de periódico: <strong>${totals.artigos0}</strong></span>`,
       ].filter(Boolean).join("");
 
       liderancaQualidadeMetodologia.innerHTML = [
-        `<span class="chip">Somatório JCR: soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
-        `<span class="chip">Média JCR: somatório dividido apenas pelos produtos com JCR informado</span>`,
+        `<span class="chip">Somatório JCR (SCimago | 2y cites per doc): soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
+        `<span class="chip">Média JCR (SCimago | 2y cites per doc): somatório dividido apenas pelos produtos com JCR informado</span>`,
         `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "60", "30", "0"].join(" / ")})</span>`,
       ].join("");
     }
@@ -5810,7 +5788,7 @@
         )
         .slice(0, 16);
       if (!items.length) {
-        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR para o gráfico.</p>`;
+        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR (SCimago | 2y cites per doc) para o gráfico.</p>`;
         return;
       }
       const maxValue = Math.max(...items.map((item) => item[valueKey]), 1);
@@ -5820,7 +5798,7 @@
       const chartWidth = 760;
       const usableWidth = chartWidth - labelWidth - 84;
       chartLiderancaQualidadeJcr.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JCR por docente" : "Somatório de JCR por docente"}">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JCR (SCimago | 2y cites per doc) por docente" : "Somatório de JCR (SCimago | 2y cites per doc) por docente"}">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
             const primaryValue = item[valueKey];
@@ -5886,47 +5864,6 @@
           <td>${item.artigos0}</td>
         </tr>
       `).join("");
-    }
-
-    function getLeadershipProductKey(item) {
-      const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
-      const baseKey = [
-        titleKey,
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.tipo_producao),
-      ].join("|");
-      return baseKey || [
-        normalizeSeedText(item.titulo),
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.revista_ou_veiculo),
-        normalizeSeedText(item.produto_referencia),
-      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
-    }
-
-    function getCoauthorNames(item) {
-      const authors = inferScientificAuthors(item);
-      return authors.filter((author) => !authorMatchesDocente(author, item.docente));
-    }
-
-    function buildLeadershipProductGroups(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        const key = getLeadershipProductKey(item);
-        if (!grouped.has(key)) {
-          grouped.set(key, {
-            key,
-            ano: item.ano || "Sem ano",
-            items: [],
-            docentes: new Set(),
-            numeroAutores: Number(item.numero_autores) || 1,
-          });
-        }
-        const group = grouped.get(key);
-        group.items.push(item);
-        group.docentes.add(item.docente);
-        group.numeroAutores = Math.max(group.numeroAutores, Number(item.numero_autores) || 1);
-      });
-      return grouped;
     }
 
     function aggregateLeadershipPartnershipByDocente(data, productGroups) {
@@ -6026,43 +5963,6 @@
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
 
-    function aggregateLeadershipAuthorshipPositionsByDocente(data) {
-      const grouped = new Map();
-      data.forEach((item) => {
-        if (!item.docente) return;
-        if (!grouped.has(item.docente)) {
-          grouped.set(item.docente, {
-            docente: item.docente,
-            validos: 0,
-            primeira: 0,
-            segunda: 0,
-            meio: 0,
-            penultima: 0,
-            ultima: 0,
-          });
-        }
-        const row = grouped.get(item.docente);
-        const bucket = getStructuredAuthorshipBucket(item);
-        if (bucket === "invalido") return;
-        row.validos += 1;
-        row[bucket] += 1;
-      });
-      return [...grouped.values()]
-        .map((item) => ({
-          ...item,
-          primeiraPct: item.validos ? (item.primeira / item.validos) * 100 : 0,
-          segundaPct: item.validos ? (item.segunda / item.validos) * 100 : 0,
-          meioPct: item.validos ? (item.meio / item.validos) * 100 : 0,
-          penultimaPct: item.validos ? (item.penultima / item.validos) * 100 : 0,
-          ultimaPct: item.validos ? (item.ultima / item.validos) * 100 : 0,
-        }))
-        .filter((item) => item.validos > 0)
-        .sort((a, b) =>
-          a.docente.localeCompare(b.docente, "pt-BR") ||
-          b.validos - a.validos
-        );
-    }
-
     function buildLeadershipPartnershipNetwork(summary, productGroups) {
       const edgeMap = new Map();
       [...productGroups.values()].forEach((group) => {
@@ -6081,7 +5981,6 @@
           }
         }
       });
-      const nodeMap = new Map(summary.map((item) => [item.docente, item]));
       const nodes = summary
         .filter((item) => item.totalProdutos > 0)
         .map((item) => ({
@@ -6094,12 +5993,11 @@
       return {
         nodes,
         edges: [...edgeMap.values()].sort((a, b) => b.weight - a.weight || a.source.localeCompare(b.source, "pt-BR")),
-        nodeMap,
       };
     }
 
     function buildLeadershipIntegratedWorksAudit(productGroups) {
-      const works = [];
+      const integratedWorks = [];
       const pairMap = new Map();
       [...productGroups.values()].forEach((group) => {
         const docentes = [...group.docentes].sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -6114,7 +6012,7 @@
           referencia: baseItem.produto_referencia || baseItem.autores || baseItem.autor_principal || "",
           totalRegistros: group.items.length,
         };
-        works.push(work);
+        integratedWorks.push(work);
         for (let index = 0; index < docentes.length; index += 1) {
           for (let innerIndex = index + 1; innerIndex < docentes.length; innerIndex += 1) {
             const source = docentes[index];
@@ -6125,12 +6023,13 @@
           }
         }
       });
-      works.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR"));
+      integratedWorks.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR"));
       pairMap.forEach((items) => items.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR")));
-      return { works, pairMap };
+      return { integratedWorks, pairMap };
     }
 
     function renderLeadershipPartnershipMetrics(summary, totals, yearSummary, network) {
+      if (!liderancaParceriaInsights || !liderancaParceriaMetodologia) return;
       const topPartners = summary[0];
       const mostIntegrated = [...summary].sort((a, b) => b.docentesInternos - a.docentesInternos || b.forcaInterna - a.forcaInterna || a.docente.localeCompare(b.docente, "pt-BR"))[0];
       const topYear = [...yearSummary].sort((a, b) => b.parceirosMedios - a.parceirosMedios || b.produtosInternos - a.produtosInternos)[0];
@@ -6144,8 +6043,8 @@
       liderancaParceriaInsights.innerHTML = [
         topPartners ? `<span class="chip">Maior volume relacional: <strong>${topPartners.docente}</strong> (${topPartners.parceirosOcorrencias} parceiros acumulados)</span>` : "",
         mostIntegrated ? `<span class="chip">Maior integração interna: <strong>${mostIntegrated.docente}</strong> (${mostIntegrated.docentesInternos} docentes conectados)</span>` : "",
-        topYear ? `<span class="chip">Ano mais colaborativo: <strong>${topYear.ano}</strong> (média ${formatDecimal(topYear.parceirosMedios)} parceiros)</span>` : "",
-        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados na chave título + ano + tipo)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado no recorte atual.</span>`,
+        topYear ? `<span class="chip">Ano mais cooperativo: <strong>${topYear.ano}</strong> (média ${formatDecimal(topYear.parceirosMedios)} parceiros)</span>` : "",
+        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados na chave título + ano + tipo)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado na base atual.</span>`,
       ].filter(Boolean).join("");
 
       liderancaParceriaMetodologia.innerHTML = [
@@ -6161,12 +6060,13 @@
         button.addEventListener("click", () => {
           liderancaParceriaSortMode = button.dataset.liderancaParceriaSort || "alfabetico";
           liderancaParceriaSortButtons.forEach((item) => item.classList.toggle("active", item === button));
-          applyLeadershipFilters();
+          renderCooperationCriticalCriteriaPanel();
         });
       });
     }
 
     function renderLeadershipPartnershipDocenteChart(summary) {
+      if (!chartLiderancaParceriaDocentes) return;
       liderancaParceriaSortButtons.forEach((button) => {
         button.classList.toggle("active", button.dataset.liderancaParceriaSort === liderancaParceriaSortMode);
       });
@@ -6188,7 +6088,7 @@
       }
       const maxMetric = Math.max(...items.map((item) => item.docentesInternos), 1);
       chartLiderancaParceriaDocentes.innerHTML = `
-        <div class="lideranca-parceria-bars" role="img" aria-label="Parceiros internos por docente">
+        <div class="lideranca-parceria-bars" role="img" aria-label="Cooperação interna por docente">
           ${items.map((item) => {
             const width = item.docentesInternos > 0
               ? Math.max(10, (item.docentesInternos / maxMetric) * 100)
@@ -6208,6 +6108,7 @@
     }
 
     function renderLeadershipPartnershipYearChart(summary) {
+      if (!chartLiderancaParceriaAnos) return;
       if (!summary.length) {
         chartLiderancaParceriaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
@@ -6221,7 +6122,7 @@
       const gap = 20;
       const barWidth = Math.max(34, Math.floor((width - left - 20 - ((summary.length - 1) * gap)) / summary.length));
       chartLiderancaParceriaAnos.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução temporal das parcerias autorais">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução temporal da cooperação autoral">
           <line x1="${left}" y1="${baseY}" x2="${width - 16}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
           ${summary.map((item, index) => {
             const x = left + 10 + index * (barWidth + gap);
@@ -6261,8 +6162,9 @@
     }
 
     function renderLeadershipPartnershipNetwork(network) {
+      if (!chartLiderancaParceriaRede) return;
       if (!network.edges.length) {
-        chartLiderancaParceriaRede.innerHTML = `<p class="chart-note">Sem vínculos internos entre docentes para a rede no recorte atual.</p>`;
+        chartLiderancaParceriaRede.innerHTML = `<p class="chart-note">Sem vínculos internos entre docentes para a rede na base atual.</p>`;
         return;
       }
       const width = 980;
@@ -6294,7 +6196,7 @@
       });
       const positionMap = new Map(positionedNodes.map((node) => [node.id, node]));
       chartLiderancaParceriaRede.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Rede de integração entre docentes">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Rede de cooperação entre docentes">
           <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="24" fill="#fbf7f1" stroke="#dfd2c2"></rect>
           ${network.edges.map((edge) => {
             const source = positionMap.get(edge.source);
@@ -6323,25 +6225,6 @@
       `;
     }
 
-    function renderLeadershipAuthorshipPositionsTable(summary) {
-      if (!liderancaParceriaPosicoesBody) return;
-      liderancaParceriaPosicoesBody.innerHTML = summary.map((item) => `
-        <tr>
-          <td>${escapeHtml(item.docente)}</td>
-          <td>${item.validos}</td>
-          <td>${formatPercent(item.primeiraPct)}</td>
-          <td>${formatPercent(item.segundaPct)}</td>
-          <td>${formatPercent(item.meioPct)}</td>
-          <td>${formatPercent(item.penultimaPct)}</td>
-          <td>${formatPercent(item.ultimaPct)}</td>
-        </tr>
-      `).join("") || `
-        <tr>
-          <td colspan="7" class="docentes-empty-state">Nenhum registro com autoria estruturada válida no recorte atual.</td>
-        </tr>
-      `;
-    }
-
     function updateLeadershipDetailSortButtons() {
       liderancaDetailSortButtons.forEach((button) => {
         const isActive = button.dataset.liderancaDetailSort === liderancaDetailSort.key;
@@ -6360,12 +6243,8 @@
           return Number(item.ano) || 0;
         case "tipo":
           return typeLabels[item.tipo_producao] || item.tipo_producao || "";
-        case "numero_autores":
-          return Number(item.numero_autores) || 0;
-        case "posicao_docente":
-          return Number(item.posicao_docente) || 0;
-        case "referencia":
-          return item.produto_referencia || item.autores || item.autor_principal || "";
+        case "autores":
+          return item.autores || item.autor_principal || "";
         case "posicao":
           return score.label;
         case "peso":
@@ -6404,9 +6283,7 @@
             <td>${item.docente || ""}</td>
             <td>${item.ano || ""}</td>
             <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
-            <td>${item.numero_autores || ""}</td>
-            <td>${item.posicao_docente || ""}</td>
-            <td><span class="lideranca-authors-text">${item.produto_referencia || item.autores || item.autor_principal || ""}</span></td>
+            <td><span class="lideranca-authors-text">${item.autores || item.autor_principal || ""}</span></td>
             <td>${score.label}</td>
             <td>${formatDecimal(score.score)}</td>
             <td>${item.titulo || ""}</td>
@@ -6441,7 +6318,6 @@
       const partnershipSummary = aggregateLeadershipPartnershipByDocente(filtered, partnershipProductGroups);
       const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
       const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
-      const authorshipPositionSummary = aggregateLeadershipAuthorshipPositionsByDocente(filtered);
       const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
       liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
@@ -6458,7 +6334,6 @@
       renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
       renderLeadershipPartnershipDocenteChart(partnershipSummary);
       renderLeadershipPartnershipYearChart(partnershipYearSummary);
-      renderLeadershipAuthorshipPositionsTable(authorshipPositionSummary);
       renderLeadershipPartnershipNetwork(partnershipNetwork);
       renderLeadershipDetailTable(filtered);
     }
@@ -6722,7 +6597,7 @@
         },
         {
           criterio: "Critério 2",
-          label: "75% com JCR ou Categoria A",
+          label: "75% com JCR (SCimago | 2y cites per doc) ou Categoria A",
           atual: summary.criterio2Atendidos,
           minimo: summary.minimo,
           color: "var(--orientation-co-andamento)",
@@ -7007,6 +6882,21 @@
           <td>${docenciaOk ? "Todos os docentes da base de disciplinas possuem pelo menos uma oferta registrada." : `Há ${summary.totalDocentes - summary.atendidos} docente(s) sem oferta registrada na base de disciplinas.`}</td>
         </tr>
       `;
+    }
+
+    function renderCooperationCriticalCriteriaPanel() {
+      const filtered = getFilteredScientificData();
+      const partnershipProductGroups = buildLeadershipProductGroups(filtered);
+      const partnershipSummary = aggregateLeadershipPartnershipByDocente(filtered, partnershipProductGroups);
+      const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
+      const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
+      const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
+      liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
+
+      renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
+      renderLeadershipPartnershipDocenteChart(partnershipSummary);
+      renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipPartnershipNetwork(partnershipNetwork);
     }
 
     const docentesCriteriaLabels = {
@@ -7520,7 +7410,7 @@
       document.getElementById("criterios-crit1-percentual").textContent = `${summary.criterio1Percentual}%`;
       document.getElementById("criterios-crit2-percentual").textContent = `${summary.criterio2Percentual}%`;
       document.getElementById("criterios-crit1-resumo").textContent = `${summary.criterio1Atendidos} de ${summary.totalDocentes} docentes com mais de 330 pontos.`;
-      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR ou proxy Q1/Q2.`;
+      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR (SCimago | 2y cites per doc) ou proxy Q1/Q2.`;
 
       renderProductivityCriteriaChart(summary);
 
@@ -7557,7 +7447,7 @@
         `<span class="chip">Margem sobre a exigência: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
       ].join("");
 
-      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
+      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR (SCimago | 2y cites per doc) na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
 
       document.getElementById("criterios-resumo-body").innerHTML = [
         `
@@ -7571,7 +7461,7 @@
         `,
         `
           <tr>
-            <td>Critério 2<br><small>75% dos docentes com JCR ou Categoria A</small></td>
+            <td>Critério 2<br><small>75% dos docentes com JCR (SCimago | 2y cites per doc) ou Categoria A</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio2Atendidos}/${summary.totalDocentes} docentes (${summary.criterio2Percentual}%)</td>
             <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Não atende"}</span></td>
@@ -7663,8 +7553,8 @@
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
-    bindLeadershipPartnershipSortToggles();
     bindLeadershipQualityJcrModeButtons();
+    bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
