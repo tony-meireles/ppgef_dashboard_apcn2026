@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PPGEF - Produção Científica</title>
+  <script src="../auth.js"></script>
+  <script>
+    window.ppgefStaticAuth.protectPage();
+  </script>
   <style>
     :root {
       --ufpe-bordo: #8c1538;
@@ -602,13 +606,18 @@
 
     .type-row {
       display: grid;
-      grid-template-columns: 120px 1fr 64px;
-      gap: 10px;
+      grid-template-columns: 132px minmax(0, 1fr) 104px;
+      gap: 12px;
       align-items: center;
       font-size: 0.94rem;
     }
 
     .type-row strong { color: var(--ufpe-grafite); }
+
+    .type-row span {
+      text-align: right;
+      color: #544b45;
+    }
 
     .track {
       height: 14px;
@@ -1017,6 +1026,20 @@
       margin: 6px 0 0;
       font-size: 0.82rem;
       color: var(--ufpe-cinza);
+    }
+
+    .captacao-mix-card .section-head {
+      display: block;
+    }
+
+    .captacao-mix-card .section-head h2 {
+      margin-bottom: 8px;
+      max-width: 18ch;
+    }
+
+    .captacao-mix-card .section-head p {
+      max-width: none;
+      line-height: 1.5;
     }
 
     .captacao-key {
@@ -2197,7 +2220,8 @@
       .guide-overview-card,
       .guide-checklist-card,
       .guide-learning-card { grid-column: span 12; }
-      .type-row { grid-template-columns: 1fr; }
+      .type-row { grid-template-columns: 1fr; gap: 6px; }
+      .type-row span { text-align: left; }
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
       .tabs-nav { flex-direction: column; }
@@ -3008,7 +3032,7 @@
             <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
           </div>
 
-          <div class="card chart-narrow">
+          <div class="card chart-narrow captacao-mix-card">
             <div class="section-head">
               <h2>Mix Financeiro e Tipológico</h2>
               <p>Separa valor financeiro por registro e ocorrência por tipo de captação, sem duplicar montantes multi-classificados.</p>
