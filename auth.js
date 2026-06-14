@@ -44,7 +44,14 @@
     if (/^https?:\/\//i.test(requested) || requested.startsWith("//")) {
       return buildDefaultTarget();
     }
-    return requested;
+    const normalized = requested.replace(/^\.?\//, "");
+    if (normalized.startsWith("dashboard/")) {
+      return `./${normalized}`;
+    }
+    if (normalized.endsWith(".html")) {
+      return `./dashboard/${normalized}`;
+    }
+    return buildDefaultTarget();
   }
 
   function redirectToIndex() {
