@@ -3324,9 +3324,9 @@
             <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação de recursos.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Registros/valor</p>
-            <strong id="captacao-crit-registros-total">0</strong>
-            <span id="captacao-crit-registros-resumo">R$ 0 em registros consolidados da base.</span>
+            <p class="eyebrow">PQ vigentes</p>
+            <strong id="captacao-crit-pq-total">0</strong>
+            <span id="captacao-crit-pq-resumo">0 docentes com PQ estratégico vigente.</span>
           </div>
 
           <div class="card chart-wide">
@@ -5236,7 +5236,8 @@
           <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s) · ${item.registros} reg.</span>
         </div>
       `).join("");
-      captacaoAgenciasChips.innerHTML = data.map((item) => `
+      captacaoAgenciasChips.classList.add("captacao-chip-limit");
+      captacaoAgenciasChips.innerHTML = data.slice(0, 4).map((item) => `
         <span class="chip">${escapeHtml(item.agencia)}: <strong>${item.percentualValor}%</strong> do valor total</span>
       `).join("");
     }
@@ -5255,7 +5256,8 @@
           <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s)</span>
         </div>
       `).join("");
-      captacaoLinhasChips.innerHTML = data.map((item) => `
+      captacaoLinhasChips.classList.add("captacao-chip-limit");
+      captacaoLinhasChips.innerHTML = data.slice(0, 3).map((item) => `
         <span class="chip">${escapeHtml(item.linha)}: ${item.registros} reg. · ${item.agencias} agência(s) · ${item.vigente ? "com vigência" : "sem vigência"}${item.internacional ? " · intl." : ""}</span>
       `).join("");
     }
@@ -5368,7 +5370,11 @@
             <td>${item.bolsa_produtividade || item.bolsa_desenvolvimento_tecnologico ? `${item.bolsa_produtividade ? "PQ" : ""}${item.bolsa_produtividade && item.bolsa_desenvolvimento_tecnologico ? " / " : ""}${item.bolsa_desenvolvimento_tecnologico ? "DT" : ""}` : "-"}</td>
             <td>${item.captacao_internacional ? "Sim" : "Não"}</td>
             <td>${escapeHtml(item.linha_pesquisa || "-")}</td>
-            <td>${escapeHtml(item.chave_deduplicacao || "-")}</td>
+            <td>
+              <span class="captacao-key captacao-key-short" title="${escapeHtml(item.chave_deduplicacao || "-")}">
+                ${escapeHtml(truncateMiddle(item.chave_deduplicacao || "-", 26, 14))}
+              </span>
+            </td>
             <td>${escapeHtml(item.motivo_alerta || "-")}</td>
             <td><span class="status-pill ${item.duplicidade_suspeita ? "alert" : "muted"}">${escapeHtml(item.status_revisao || "Sem alerta")}</span></td>
             <td>${escapeHtml(item.observacao_auditoria || "-")}</td>
@@ -5707,6 +5713,14 @@
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#39;");
+    }
+
+    function truncateMiddle(value, start = 28, end = 16) {
+      const text = String(value || "");
+      if (text.length <= start + end + 3) {
+        return text;
+      }
+      return `${text.slice(0, start)}...${text.slice(-end)}`;
     }
 
     function toDocumentUrl(path) {
@@ -7982,19 +7996,47 @@
     }
 
     function aggregateCaptacaoCriticalCriteria() {
-      const baseDocentes = [...new Set((dataSourceOrientacoes || []).map((item) => item.docente).filter(Boolean))]
+      const baseDocentes = [...captacaoPermanentDocenteMeta]
+        .map((item) => item.docente)
         .sort((a, b) => a.localeCompare(b, "pt-BR"));
-      const relevantStatuses = new Set(["Aprovada", "Concluída", "Em execução"]);
-      const relevantRows = (dataSourceCaptacao || []).filter((item) => relevantStatuses.has(item.status));
+      const baseDocenteKeys = new Set(captacaoPermanentDocenteMeta.map((item) => item.key));
+      const relevantRows = getCaptacaoRelevantRows(dataSourceCaptacao).filter((item) => {
+        const key = normalizeDisciplinasName(item.docente);
+        return baseDocenteKeys.has(key);
+      });
       const docenteMap = new Map();
       const statusMap = new Map();
       let totalValor = 0;
       let totalAlertas = 0;
+      const pqDocentes = new Set();
+      const dtDocentes = new Set();
+      const vigentesDocentes = new Set();
+
+      const isStrategicPq = (item) => {
+        const strategicText = [item.titulo, item.edital_nome, item.edital_numero, item.observacao_auditoria]
+          .filter(Boolean)
+          .join(" ")
+          .toUpperCase();
+        const blocked = /MESTRADO|INICIACAO|INICIAÇÃO|PIBIC|PIBITI|BOLSA DE MESTRADO/.test(strategicText);
+        return Boolean(item.bolsa_produtividade) && !blocked;
+      };
+
+      const isStrategicDt = (item) => {
+        const strategicText = [item.titulo, item.edital_nome, item.edital_numero, item.observacao_auditoria]
+          .filter(Boolean)
+          .join(" ")
+          .toUpperCase();
+        const blocked = /MESTRADO|INICIACAO|INICIAÇÃO|PIBIC|PIBITI|BOLSA DE MESTRADO/.test(strategicText);
+        return Boolean(item.bolsa_desenvolvimento_tecnologico) && !blocked;
+      };
 
       relevantRows.forEach((item) => {
         totalValor += Number(item.valor_total) || 0;
         totalAlertas += item.suspeita_duplicidade ? 1 : 0;
         statusMap.set(item.status, (statusMap.get(item.status) || 0) + 1);
+        if (item.vigente_em_2026) vigentesDocentes.add(item.docente);
+        if (item.vigente_em_2026 && isStrategicPq(item)) pqDocentes.add(item.docente);
+        if (item.vigente_em_2026 && isStrategicDt(item)) dtDocentes.add(item.docente);
         if (!docenteMap.has(item.docente)) {
           docenteMap.set(item.docente, {
             docente: item.docente,
@@ -8028,6 +8070,9 @@
         totalRegistros: relevantRows.length,
         totalValor,
         totalAlertas,
+        docentesVigentes: [...vigentesDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesPq: [...pqDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesDt: [...dtDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
         docentesComCaptacao,
         statusSummary: [...statusMap.entries()]
           .map(([status, total]) => ({ status, total }))
@@ -8076,10 +8121,10 @@
       document.getElementById("captacao-crit-base-total").textContent = String(summary.totalBase);
       document.getElementById("captacao-crit-docentes-total").textContent = String(summary.totalDocentes);
       document.getElementById("captacao-crit-percentual").textContent = `${summary.percentual}%`;
-      document.getElementById("captacao-crit-registros-total").textContent = String(summary.totalRegistros);
+      document.getElementById("captacao-crit-pq-total").textContent = String(summary.docentesPq.length);
       document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação registrada.`;
       document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação de recursos.`;
-      document.getElementById("captacao-crit-registros-resumo").textContent = `${formatCurrency(summary.totalValor)} em registros consolidados da base.`;
+      document.getElementById("captacao-crit-pq-resumo").textContent = `${summary.docentesPq.length} docente(s) com PQ estratégico vigente.`;
 
       captacaoCritSummaryCards.innerHTML = [
         `
@@ -8094,31 +8139,61 @@
         `
           <div class="criteria-score">
             <div>
-              <div>Registros elegíveis</div>
-              <strong>${summary.totalRegistros}</strong>
+              <div>Carteira vigente em 2026</div>
+              <strong>${summary.docentesVigentes.length}</strong>
             </div>
-            <span class="criteria-status ${summary.totalAlertas ? "risk" : "ok"}">${summary.totalAlertas ? `${summary.totalAlertas} alerta(s)` : "Sem alerta"}</span>
+            <span class="criteria-status ok">${summary.docentesDt.length} DT</span>
           </div>
         `,
       ].join("");
 
       captacaoCritInsights.innerHTML = [
         `<span class="chip">Cobertura atual: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
+        `<span class="chip">Captação vigente em 2026: <strong>${summary.docentesVigentes.length}</strong> docente(s)</span>`,
+        `<span class="chip">PQ estratégico vigente: <strong>${summary.docentesPq.length}</strong> docente(s)</span>`,
+        `<span class="chip">DT estratégico vigente: <strong>${summary.docentesDt.length}</strong> docente(s)</span>`,
         topDocente ? `<span class="chip">Maior carteira: <strong>${topDocente.docente}</strong> (${topDocente.registros} registro(s) e ${formatCurrency(topDocente.valorTotal)})</span>` : "",
         statusPrincipal ? `<span class="chip">Situação mais frequente: <strong>${statusPrincipal.status}</strong> (${statusPrincipal.total} registro(s))</span>` : "",
         `<span class="chip">Valor total informado: <strong>${formatCurrency(summary.totalValor)}</strong></span>`,
       ].filter(Boolean).join("");
 
-      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção considera registros de captação com situação Aprovada, Em execução ou Concluída. A leitura é exploratória e usa a base APCN de 18 docentes como denominador até a definição do corte desejável.";
+      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa a base de docentes permanentes do ano de referência da aba de captação. Considera registros APCN 2022-2026, destaca vigência em 2026 e separa PQ/DT estratégicos com exclusão de bolsas ordinárias de mestrado e iniciação científica para evitar falso positivo.";
 
       document.getElementById("captacao-crit-resumo-body").innerHTML = [
         `
           <tr>
             <td>Captação</td>
             <td>Docentes com captação de recursos</td>
-            <td>${summary.totalBase} docentes na base APCN</td>
+            <td>${summary.totalBase} docentes permanentes na base</td>
             <td>${summary.totalDocentes} docentes (${summary.percentual}%)</td>
             <td>Indicador preparado para futura parametrização de corte.</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com carteira vigente em 2026</td>
+            <td>Docentes permanentes com captação ativa no ano de referência</td>
+            <td>${summary.docentesVigentes.length} docente(s)</td>
+            <td>${summary.docentesVigentes.length ? `Base ativa em 2026: ${summary.docentesVigentes.join(", ")}.` : "Nenhum docente com carteira vigente em 2026."}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com PQ estratégico vigente</td>
+            <td>Marcador crítico de maturidade em captação qualificada</td>
+            <td>${summary.docentesPq.length} docente(s)</td>
+            <td>${summary.docentesPq.length ? `PQ vigente identificado em: ${summary.docentesPq.join(", ")}.` : "Nenhum PQ estratégico vigente identificado."}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com DT estratégico vigente</td>
+            <td>Marcador complementar de desenvolvimento tecnológico</td>
+            <td>${summary.docentesDt.length} docente(s)</td>
+            <td>${summary.docentesDt.length ? `DT vigente identificado em: ${summary.docentesDt.join(", ")}.` : "Nenhum DT estratégico vigente identificado."}</td>
           </tr>
         `,
         ...summary.statusSummary.map((item) => `
