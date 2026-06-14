@@ -399,6 +399,64 @@
       margin-bottom: 14px;
     }
 
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    .modal-grid-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .audit-product-card {
+      border: 1px solid #e4d8c9;
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 16px 18px;
+    }
+
+    .audit-product-card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: var(--ufpe-grafite);
+    }
+
+    .audit-product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .audit-product-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(140, 21, 56, 0.07);
+      color: var(--ufpe-bordo);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .audit-product-card p {
+      margin: 8px 0;
+      color: #555b65;
+      line-height: 1.45;
+      font-size: 0.94rem;
+    }
+
+    .audit-product-card strong {
+      color: var(--ufpe-grafite);
+    }
+
+    .network-edge-link {
+      cursor: pointer;
+    }
+
     .modal-close {
       width: 40px;
       height: 40px;
@@ -483,6 +541,51 @@
       margin-top: 10px;
       color: var(--ufpe-cinza);
       font-size: 0.9rem;
+    }
+
+    .lideranca-parceria-bars {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .lideranca-parceria-bar-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(220px, 1fr) minmax(120px, 170px);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .lideranca-parceria-bar-label {
+      color: var(--ufpe-grafite);
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .lideranca-parceria-bar-track {
+      position: relative;
+      height: 18px;
+      border-radius: 999px;
+      background: #eadfce;
+      overflow: hidden;
+    }
+
+    .lideranca-parceria-bar-fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+      min-width: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #d4a017, #8c1538);
+    }
+
+    .lideranca-parceria-bar-meta {
+      color: var(--ufpe-cinza);
+      font-size: 0.84rem;
+      line-height: 1.2;
+      text-align: right;
+      white-space: normal;
     }
 
     .type-stack {
@@ -1666,6 +1769,8 @@
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
       .tabs-nav { flex-direction: column; }
+      .lideranca-parceria-bar-row { grid-template-columns: 1fr; gap: 8px; }
+      .lideranca-parceria-bar-meta { text-align: left; }
       .docentes-hero-card { padding: 20px; }
       .docentes-controls-grid,
       .docentes-subgrid,
@@ -2721,6 +2826,83 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Cooperação</h2>
+              <p>Indicador crítico de integração autoral entre docentes, mostrando densidade de cooperação interna e evidências de obras compartilhadas.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Parceiros por produto</p>
+            <strong id="lideranca-parceria-media">0</strong>
+            <span>Média de parceiros autores por produto na base científica sincronizada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Parceiros distintos</p>
+            <strong id="lideranca-parceria-distintos">0</strong>
+            <span>Total de parceiros distintos identificados nas autorias da base.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Produtos integrados</p>
+            <strong id="lideranca-parceria-internos">0</strong>
+            <span>Produtos que reúnem mais de um docente do PPGEF no mesmo registro consolidado.</span>
+            <div style="margin-top: 12px;">
+              <button type="button" class="info-button" id="open-lideranca-parceria-modal">Ver obras integradas</button>
+            </div>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes integrados</p>
+            <strong id="lideranca-parceria-docentes">0</strong>
+            <span>Docentes com ao menos uma cooperação interna com outro docente do programa.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Cooperação Interna por Docente</h2>
+                <p>Quantidade de docentes do PPGEF com quem cada docente compartilha obras na base científica.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação do gráfico de cooperação interna">
+                <button type="button" class="sort-toggle active" data-lideranca-parceria-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-lideranca-parceria-sort="desempenho">Por desempenho</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-parceria-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura da Cooperação</h2>
+              <p>Resumo executivo da densidade de colaboração e da integração interna.</p>
+            </div>
+            <div class="chips" id="lideranca-parceria-insights"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Evolução Temporal da Cooperação</h2>
+              <p>Média de parceiros por produto e volume de produtos integrados ao longo do tempo.</p>
+            </div>
+            <div id="chart-lideranca-parceria-anos" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Metodologia da Cooperação</h2>
+              <p>Critérios usados para consolidar parceiros autores e vínculos internos entre docentes.</p>
+            </div>
+            <div class="chips" id="lideranca-parceria-metodologia"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Rede de Cooperação Docente</h2>
+              <p>Nó por docente e arestas proporcionais à força da coautoria interna entre docentes do programa.</p>
+            </div>
+            <div id="chart-lideranca-parceria-rede" class="chart"></div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Corpo Docente</h2>
               <p>Regras críticas de composição do quadro permanente, vínculo institucional, exclusividade e dimensão mínima do programa.</p>
             </div>
@@ -3359,6 +3541,23 @@
     </div>
   </div>
 
+  <div class="modal-backdrop" id="lideranca-parceria-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="lideranca-parceria-modal-title">
+      <div class="modal-head">
+        <div class="section-head">
+          <h2 id="lideranca-parceria-modal-title">Obras Integradas</h2>
+          <p id="lideranca-parceria-modal-subtitle">Detalhamento das obras que sustentam a cooperação interna entre docentes do PPGEF.</p>
+        </div>
+        <button type="button" class="modal-close" id="close-lideranca-parceria-modal" aria-label="Fechar modal">×</button>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="info-button" id="lideranca-parceria-modal-show-all">Todas as obras integradas</button>
+      </div>
+      <div id="lideranca-parceria-modal-summary" class="chart-note" style="margin-bottom: 14px;"></div>
+      <div id="lideranca-parceria-modal-body" class="modal-grid-cards"></div>
+    </div>
+  </div>
+
   <script src="./producao-cientifica-data.js?v=2026-06-12g"></script>
   <script src="./producao-tecnica-data.js?v=2026-06-12g"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
@@ -3417,6 +3616,14 @@
     const apcnScoringModal = document.getElementById("apcn-scoring-modal");
     const openApcnScoringModalButton = document.getElementById("open-apcn-scoring-modal");
     const closeApcnScoringModalButton = document.getElementById("close-apcn-scoring-modal");
+    const liderancaParceriaModal = document.getElementById("lideranca-parceria-modal");
+    const openLiderancaParceriaModalButton = document.getElementById("open-lideranca-parceria-modal");
+    const closeLiderancaParceriaModalButton = document.getElementById("close-lideranca-parceria-modal");
+    const liderancaParceriaModalTitle = document.getElementById("lideranca-parceria-modal-title");
+    const liderancaParceriaModalSubtitle = document.getElementById("lideranca-parceria-modal-subtitle");
+    const liderancaParceriaModalSummary = document.getElementById("lideranca-parceria-modal-summary");
+    const liderancaParceriaModalBody = document.getElementById("lideranca-parceria-modal-body");
+    const liderancaParceriaModalShowAllButton = document.getElementById("lideranca-parceria-modal-show-all");
     const docenteTecnicaChipList = document.getElementById("docentes-tecnica-chip-list");
     const tiposTecnicaSelect = document.getElementById("tipos-tecnica");
     const anosTecnicaSelect = document.getElementById("anos-tecnica");
@@ -3440,16 +3647,22 @@
     const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
     const chartLiderancaQualidadeJcr = document.getElementById("chart-lideranca-qualidade-jcr");
     const chartLiderancaQualidadeApcn = document.getElementById("chart-lideranca-qualidade-apcn");
+    const chartLiderancaParceriaDocentes = document.getElementById("chart-lideranca-parceria-docentes");
+    const chartLiderancaParceriaAnos = document.getElementById("chart-lideranca-parceria-anos");
+    const chartLiderancaParceriaRede = document.getElementById("chart-lideranca-parceria-rede");
     const liderancaInsightChips = document.getElementById("lideranca-insight-chips");
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
     const liderancaQualidadeInsights = document.getElementById("lideranca-qualidade-insights");
     const liderancaQualidadeMetodologia = document.getElementById("lideranca-qualidade-metodologia");
     const liderancaQualidadeJcrModeButtons = [...document.querySelectorAll("[data-lideranca-qualidade-jcr-mode]")];
+    const liderancaParceriaInsights = document.getElementById("lideranca-parceria-insights");
+    const liderancaParceriaMetodologia = document.getElementById("lideranca-parceria-metodologia");
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
+    const liderancaParceriaSortButtons = [...document.querySelectorAll("[data-lideranca-parceria-sort]")];
     const liderancaEstadoVazio = document.getElementById("lideranca-estado-vazio");
     const orientacoesStrictoBody = document.getElementById("orientacoes-stricto-body");
     const orientacoesGraduacaoBody = document.getElementById("orientacoes-graduacao-body");
@@ -3502,6 +3715,8 @@
     let criteriaDocentesSort = "alpha";
     let liderancaQualidadeJcrMode = "total";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
+    let liderancaParceriaSortMode = "alfabetico";
+    let liderancaParceriaAuditState = { integratedWorks: [], pairMap: new Map() };
     let scientificFilterValues = {
       docentes: [],
       tipos: [],
@@ -4231,6 +4446,80 @@
       });
     }
 
+    function setLiderancaParceriaModalState(isOpen) {
+      if (!liderancaParceriaModal) return;
+      liderancaParceriaModal.classList.toggle("open", isOpen);
+      liderancaParceriaModal.setAttribute("aria-hidden", isOpen ? "false" : "true");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    function renderLiderancaParceriaAuditCards(items) {
+      if (!liderancaParceriaModalBody) return;
+      if (!items.length) {
+        liderancaParceriaModalBody.innerHTML = `<p class="chart-note">Nenhuma obra integrada encontrada para esta leitura.</p>`;
+        return;
+      }
+      liderancaParceriaModalBody.innerHTML = items.map((item) => `
+        <article class="audit-product-card">
+          <h3>${escapeHtml(item.titulo || "Sem título")}</h3>
+          <div class="audit-product-meta">
+            <span>${escapeHtml(item.ano || "Sem ano")}</span>
+            <span>${escapeHtml(typeLabels[item.tipo_producao] || item.tipo_producao || "Sem tipo")}</span>
+            <span>${escapeHtml(`${item.docentes.length} docente(s) PPGEF`)}</span>
+            <span>${escapeHtml(`${item.totalRegistros} registro(s)`)}</span>
+          </div>
+          <p><strong>Docentes parceiros:</strong> ${escapeHtml(item.docentes.join("; "))}</p>
+          <p><strong>Referência completa:</strong> ${escapeHtml(item.referencia)}</p>
+        </article>
+      `).join("");
+    }
+
+    function openLiderancaParceriaModal(mode = "all", payload = {}) {
+      if (!liderancaParceriaModal) return;
+      if (mode === "pair") {
+        const source = payload.source || "";
+        const target = payload.target || "";
+        const key = [source, target].sort((a, b) => a.localeCompare(b, "pt-BR")).join("|||");
+        const items = liderancaParceriaAuditState.pairMap.get(key) || [];
+        liderancaParceriaModalTitle.textContent = "Obras do Vínculo Interno";
+        liderancaParceriaModalSubtitle.textContent = `${source} × ${target}`;
+        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) compartilhada(s) entre <strong>${escapeHtml(source)}</strong> e <strong>${escapeHtml(target)}</strong>.`;
+        renderLiderancaParceriaAuditCards(items);
+      } else {
+        const items = liderancaParceriaAuditState.integratedWorks || [];
+        liderancaParceriaModalTitle.textContent = "Obras Integradas";
+        liderancaParceriaModalSubtitle.textContent = "Detalhamento das obras que sustentam a cooperação interna entre docentes do PPGEF.";
+        liderancaParceriaModalSummary.innerHTML = `${items.length} obra(s) integrada(s) identificada(s) na base científica sincronizada.`;
+        renderLiderancaParceriaAuditCards(items);
+      }
+      setLiderancaParceriaModalState(true);
+    }
+
+    function bindLiderancaParceriaModal() {
+      if (!liderancaParceriaModal || !closeLiderancaParceriaModalButton || !openLiderancaParceriaModalButton) return;
+      openLiderancaParceriaModalButton.addEventListener("click", () => openLiderancaParceriaModal("all"));
+      closeLiderancaParceriaModalButton.addEventListener("click", () => setLiderancaParceriaModalState(false));
+      liderancaParceriaModal.addEventListener("click", (event) => {
+        if (event.target === liderancaParceriaModal) {
+          setLiderancaParceriaModalState(false);
+        }
+      });
+      liderancaParceriaModalShowAllButton?.addEventListener("click", () => openLiderancaParceriaModal("all"));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && liderancaParceriaModal.classList.contains("open")) {
+          setLiderancaParceriaModalState(false);
+        }
+      });
+      chartLiderancaParceriaRede?.addEventListener("click", (event) => {
+        const edge = event.target.closest(".network-edge-link");
+        if (!edge) return;
+        openLiderancaParceriaModal("pair", {
+          source: edge.getAttribute("data-source") || "",
+          target: edge.getAttribute("data-target") || "",
+        });
+      });
+    }
+
     function bindGroupedCollapsibleSections(root, prefix) {
       if (!root) return;
       const groupCards = [...root.querySelectorAll(".group-card")];
@@ -4481,6 +4770,53 @@
         return titleCandidate.split(";").map((author) => author.trim()).filter(Boolean);
       }
       return [];
+    }
+
+    function normalizeSeedText(value) {
+      return normalizeText(value)
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+    }
+
+    function getLeadershipProductKey(item) {
+      const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
+      const baseKey = [
+        titleKey,
+        normalizeSeedText(item.ano),
+        normalizeSeedText(item.tipo_producao),
+      ].join("|");
+      return baseKey || [
+        normalizeSeedText(item.titulo),
+        normalizeSeedText(item.ano),
+        normalizeSeedText(item.revista_ou_veiculo),
+        normalizeSeedText(item.produto_referencia),
+      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
+    }
+
+    function getCoauthorNames(item) {
+      const authors = inferScientificAuthors(item);
+      return authors.filter((author) => !authorMatchesDocente(author, item.docente));
+    }
+
+    function buildLeadershipProductGroups(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const key = getLeadershipProductKey(item);
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            key,
+            ano: item.ano || "Sem ano",
+            items: [],
+            docentes: new Set(),
+            numeroAutores: Number(item.numero_autores) || 1,
+          });
+        }
+        const group = grouped.get(key);
+        group.items.push(item);
+        group.docentes.add(item.docente);
+        group.numeroAutores = Math.max(group.numeroAutores, Number(item.numero_autores) || 1);
+      });
+      return grouped;
     }
 
     function getMostardScore(item) {
@@ -5449,6 +5785,365 @@
       `).join("");
     }
 
+    function aggregateLeadershipPartnershipByDocente(data, productGroups) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            totalProdutos: 0,
+            parceirosOcorrencias: 0,
+            parceirosDistintosMap: new Map(),
+            produtosInternos: 0,
+            docentesInternosSet: new Set(),
+            forcaInterna: 0,
+          });
+        }
+        const row = grouped.get(item.docente);
+        const key = getLeadershipProductKey(item);
+        const group = productGroups.get(key);
+        row.totalProdutos += 1;
+        row.parceirosOcorrencias += Math.max((Number(item.numero_autores) || 1) - 1, 0);
+        getCoauthorNames(item).forEach((author) => {
+          const normalized = normalizePersonText(author);
+          if (normalized) row.parceirosDistintosMap.set(normalized, author);
+        });
+        const internalDocentes = [...(group?.docentes || [])].filter((docente) => docente !== item.docente);
+        if (internalDocentes.length) {
+          row.produtosInternos += 1;
+          internalDocentes.forEach((docente) => row.docentesInternosSet.add(docente));
+          row.forcaInterna += internalDocentes.length;
+        }
+      });
+      return [...grouped.values()]
+        .map((item) => ({
+          docente: item.docente,
+          totalProdutos: item.totalProdutos,
+          parceirosOcorrencias: item.parceirosOcorrencias,
+          parceirosDistintos: item.parceirosDistintosMap.size,
+          parceirosMedios: item.totalProdutos ? item.parceirosOcorrencias / item.totalProdutos : 0,
+          produtosInternos: item.produtosInternos,
+          docentesInternos: item.docentesInternosSet.size,
+          forcaInterna: item.forcaInterna,
+        }))
+        .sort((a, b) =>
+          b.parceirosOcorrencias - a.parceirosOcorrencias ||
+          b.docentesInternos - a.docentesInternos ||
+          b.parceirosDistintos - a.parceirosDistintos ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+    }
+
+    function aggregateLeadershipPartnershipTotals(summary, productGroups, data) {
+      const uniquePartnerSet = new Set();
+      data.forEach((item) => {
+        getCoauthorNames(item).forEach((author) => {
+          const normalized = normalizePersonText(author);
+          if (normalized) uniquePartnerSet.add(normalized);
+        });
+      });
+      const groups = [...productGroups.values()];
+      const totalProdutos = groups.length;
+      const totalParceiros = groups.reduce((acc, group) => acc + Math.max((group.numeroAutores || 1) - 1, 0), 0);
+      const produtosInternos = groups.filter((group) => group.docentes.size > 1).length;
+      const docentesIntegrados = summary.filter((item) => item.docentesInternos > 0).length;
+      return {
+        uniquePartners: uniquePartnerSet.size,
+        totalProdutos,
+        totalParceiros,
+        produtosInternos,
+        docentesIntegrados,
+        mediaParceiros: totalProdutos ? totalParceiros / totalProdutos : 0,
+      };
+    }
+
+    function aggregateLeadershipPartnershipByYear(productGroups) {
+      const grouped = new Map();
+      [...productGroups.values()].forEach((group) => {
+        const year = group.ano || "Sem ano";
+        if (!grouped.has(year)) {
+          grouped.set(year, {
+            ano: year,
+            totalProdutos: 0,
+            parceirosTotal: 0,
+            produtosInternos: 0,
+          });
+        }
+        const row = grouped.get(year);
+        row.totalProdutos += 1;
+        row.parceirosTotal += Math.max((group.numeroAutores || 1) - 1, 0);
+        if (group.docentes.size > 1) row.produtosInternos += 1;
+      });
+      return [...grouped.values()]
+        .map((item) => ({
+          ...item,
+          parceirosMedios: item.totalProdutos ? item.parceirosTotal / item.totalProdutos : 0,
+        }))
+        .sort((a, b) => Number(a.ano) - Number(b.ano));
+    }
+
+    function buildLeadershipPartnershipNetwork(summary, productGroups) {
+      const edgeMap = new Map();
+      [...productGroups.values()].forEach((group) => {
+        const docentes = [...group.docentes].sort((a, b) => a.localeCompare(b, "pt-BR"));
+        if (docentes.length < 2) return;
+        for (let index = 0; index < docentes.length; index += 1) {
+          for (let innerIndex = index + 1; innerIndex < docentes.length; innerIndex += 1) {
+            const source = docentes[index];
+            const target = docentes[innerIndex];
+            const key = `${source}|||${target}`;
+            edgeMap.set(key, {
+              source,
+              target,
+              weight: (edgeMap.get(key)?.weight || 0) + 1,
+            });
+          }
+        }
+      });
+      const nodes = summary
+        .filter((item) => item.totalProdutos > 0)
+        .map((item) => ({
+          id: item.docente,
+          value: item.docentesInternos || 0,
+          produtosInternos: item.produtosInternos || 0,
+          parceirosMedios: item.parceirosMedios || 0,
+          parceirosOcorrencias: item.parceirosOcorrencias || 0,
+        }));
+      return {
+        nodes,
+        edges: [...edgeMap.values()].sort((a, b) => b.weight - a.weight || a.source.localeCompare(b.source, "pt-BR")),
+      };
+    }
+
+    function buildLeadershipIntegratedWorksAudit(productGroups) {
+      const integratedWorks = [];
+      const pairMap = new Map();
+      [...productGroups.values()].forEach((group) => {
+        const docentes = [...group.docentes].sort((a, b) => a.localeCompare(b, "pt-BR"));
+        if (docentes.length < 2) return;
+        const baseItem = group.items[0] || {};
+        const work = {
+          key: group.key,
+          titulo: baseItem.titulo || "",
+          ano: baseItem.ano || "",
+          tipo_producao: baseItem.tipo_producao || "",
+          docentes,
+          referencia: baseItem.produto_referencia || baseItem.autores || baseItem.autor_principal || "",
+          totalRegistros: group.items.length,
+        };
+        integratedWorks.push(work);
+        for (let index = 0; index < docentes.length; index += 1) {
+          for (let innerIndex = index + 1; innerIndex < docentes.length; innerIndex += 1) {
+            const source = docentes[index];
+            const target = docentes[innerIndex];
+            const pairKey = [source, target].sort((a, b) => a.localeCompare(b, "pt-BR")).join("|||");
+            if (!pairMap.has(pairKey)) pairMap.set(pairKey, []);
+            pairMap.get(pairKey).push(work);
+          }
+        }
+      });
+      integratedWorks.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR"));
+      pairMap.forEach((items) => items.sort((a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0) || a.titulo.localeCompare(b.titulo, "pt-BR")));
+      return { integratedWorks, pairMap };
+    }
+
+    function renderLeadershipPartnershipMetrics(summary, totals, yearSummary, network) {
+      if (!liderancaParceriaInsights || !liderancaParceriaMetodologia) return;
+      const topPartners = summary[0];
+      const mostIntegrated = [...summary].sort((a, b) => b.docentesInternos - a.docentesInternos || b.forcaInterna - a.forcaInterna || a.docente.localeCompare(b.docente, "pt-BR"))[0];
+      const topYear = [...yearSummary].sort((a, b) => b.parceirosMedios - a.parceirosMedios || b.produtosInternos - a.produtosInternos)[0];
+      const topEdge = network.edges[0];
+
+      document.getElementById("lideranca-parceria-media").textContent = formatDecimal(totals.mediaParceiros);
+      document.getElementById("lideranca-parceria-distintos").textContent = String(totals.uniquePartners);
+      document.getElementById("lideranca-parceria-internos").textContent = String(totals.produtosInternos);
+      document.getElementById("lideranca-parceria-docentes").textContent = String(totals.docentesIntegrados);
+
+      liderancaParceriaInsights.innerHTML = [
+        topPartners ? `<span class="chip">Maior volume relacional: <strong>${topPartners.docente}</strong> (${topPartners.parceirosOcorrencias} parceiros acumulados)</span>` : "",
+        mostIntegrated ? `<span class="chip">Maior integração interna: <strong>${mostIntegrated.docente}</strong> (${mostIntegrated.docentesInternos} docentes conectados)</span>` : "",
+        topYear ? `<span class="chip">Ano mais cooperativo: <strong>${topYear.ano}</strong> (média ${formatDecimal(topYear.parceirosMedios)} parceiros)</span>` : "",
+        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados na chave título + ano + tipo)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado na base atual.</span>`,
+      ].filter(Boolean).join("");
+
+      liderancaParceriaMetodologia.innerHTML = [
+        `<span class="chip">Parceiros por produto = <strong>numero_autores - 1</strong>, usando os campos estruturados do novo modelo</span>`,
+        `<span class="chip">Parceiros distintos usam os nomes explícitos do campo <strong>autores</strong> quando a lista está disponível</span>`,
+        `<span class="chip">Produtos internos são consolidados principalmente por <strong>título</strong>, com apoio de <strong>ano</strong> e <strong>tipo</strong></span>`,
+        `<span class="chip">Força do vínculo na rede = quantidade de produtos compartilhados entre o mesmo par de docentes</span>`,
+      ].join("");
+    }
+
+    function bindLeadershipPartnershipSortToggles() {
+      liderancaParceriaSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaParceriaSortMode = button.dataset.liderancaParceriaSort || "alfabetico";
+          liderancaParceriaSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          renderCooperationCriticalCriteriaPanel();
+        });
+      });
+    }
+
+    function renderLeadershipPartnershipDocenteChart(summary) {
+      if (!chartLiderancaParceriaDocentes) return;
+      liderancaParceriaSortButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.liderancaParceriaSort === liderancaParceriaSortMode);
+      });
+      const sorted = [...summary].sort((a, b) => {
+        if (liderancaParceriaSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.docentesInternos - a.docentesInternos;
+        }
+        return (
+          b.docentesInternos - a.docentesInternos ||
+          b.forcaInterna - a.forcaInterna ||
+          b.produtosInternos - a.produtosInternos ||
+          a.docente.localeCompare(b.docente, "pt-BR")
+        );
+      });
+      const items = sorted.slice(0, 18);
+      if (!items.length) {
+        chartLiderancaParceriaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxMetric = Math.max(...items.map((item) => item.docentesInternos), 1);
+      chartLiderancaParceriaDocentes.innerHTML = `
+        <div class="lideranca-parceria-bars" role="img" aria-label="Cooperação interna por docente">
+          ${items.map((item) => {
+            const width = item.docentesInternos > 0
+              ? Math.max(10, (item.docentesInternos / maxMetric) * 100)
+              : 0;
+            return `
+              <div class="lideranca-parceria-bar-row">
+                <div class="lideranca-parceria-bar-label">${escapeHtml(item.docente)}</div>
+                <div class="lideranca-parceria-bar-track" aria-hidden="true">
+                  <div class="lideranca-parceria-bar-fill" style="width:${width}%;"></div>
+                </div>
+                <div class="lideranca-parceria-bar-meta">${item.docentesInternos} parceiro(s) · força ${item.forcaInterna}</div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderLeadershipPartnershipYearChart(summary) {
+      if (!chartLiderancaParceriaAnos) return;
+      if (!summary.length) {
+        chartLiderancaParceriaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      const maxPartners = Math.max(...summary.map((item) => item.parceirosMedios), 1);
+      const maxInternal = Math.max(...summary.map((item) => item.produtosInternos), 1);
+      const width = 780;
+      const height = 330;
+      const left = 52;
+      const baseY = 266;
+      const gap = 20;
+      const barWidth = Math.max(34, Math.floor((width - left - 20 - ((summary.length - 1) * gap)) / summary.length));
+      chartLiderancaParceriaAnos.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução temporal da cooperação autoral">
+          <line x1="${left}" y1="${baseY}" x2="${width - 16}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${summary.map((item, index) => {
+            const x = left + 10 + index * (barWidth + gap);
+            const barHeight = Math.max(10, Math.round((item.parceirosMedios / maxPartners) * 168));
+            const y = baseY - barHeight;
+            const dotY = baseY - ((item.produtosInternos / maxInternal) * 182);
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="#d4a017"></rect>
+              <circle cx="${x + (barWidth / 2)}" cy="${dotY}" r="6" fill="#8c1538"></circle>
+              <text x="${x + (barWidth / 2)}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(item.parceirosMedios)}</text>
+              <text x="${x + (barWidth / 2)}" y="${dotY - 10}" text-anchor="middle" fill="#8c1538" font-size="11">${item.produtosInternos}</text>
+              <text x="${x + (barWidth / 2)}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+            `;
+          }).join("")}
+          <text x="${width / 2}" y="${height - 12}" text-anchor="middle" fill="#262930" font-size="12">Barras: parceiros médios por produto · Pontos: produtos com integração interna</text>
+        </svg>
+      `;
+    }
+
+    function splitNetworkLabel(name, maxChars = 22) {
+      const tokens = String(name || "").trim().split(/\s+/).filter(Boolean);
+      if (!tokens.length) return [""];
+      const lines = [];
+      let current = "";
+      for (const token of tokens) {
+        const next = current ? `${current} ${token}` : token;
+        if (next.length <= maxChars || !current) {
+          current = next;
+          continue;
+        }
+        lines.push(current);
+        current = token;
+      }
+      if (current) lines.push(current);
+      if (lines.length <= 2) return lines;
+      return [lines[0], lines.slice(1).join(" ")];
+    }
+
+    function renderLeadershipPartnershipNetwork(network) {
+      if (!chartLiderancaParceriaRede) return;
+      if (!network.edges.length) {
+        chartLiderancaParceriaRede.innerHTML = `<p class="chart-note">Sem vínculos internos entre docentes para a rede na base atual.</p>`;
+        return;
+      }
+      const width = 980;
+      const height = 620;
+      const centerX = width / 2;
+      const centerY = 292;
+      const radius = 178;
+      const labelRadius = 246;
+      const sortedNodes = [...network.nodes].sort((a, b) => b.value - a.value || b.parceirosOcorrencias - a.parceirosOcorrencias || a.id.localeCompare(b.id, "pt-BR"));
+      const maxEdge = Math.max(...network.edges.map((edge) => edge.weight), 1);
+      const maxNode = Math.max(...sortedNodes.map((node) => Math.max(node.value, 1)), 1);
+      const positionedNodes = sortedNodes.map((node, index) => {
+        const angle = ((Math.PI * 2) / sortedNodes.length) * index - (Math.PI / 2);
+        const labelX = centerX + (Math.cos(angle) * labelRadius);
+        const labelY = centerY + (Math.sin(angle) * labelRadius);
+        const textAnchor = Math.cos(angle) > 0.2 ? "start" : Math.cos(angle) < -0.2 ? "end" : "middle";
+        const labelLines = splitNetworkLabel(node.id, 22);
+        return {
+          ...node,
+          angle,
+          x: centerX + (Math.cos(angle) * radius),
+          y: centerY + (Math.sin(angle) * radius),
+          r: 10 + ((Math.max(node.value, 1) / maxNode) * 14),
+          labelX,
+          labelY,
+          textAnchor,
+          labelLines,
+        };
+      });
+      const positionMap = new Map(positionedNodes.map((node) => [node.id, node]));
+      chartLiderancaParceriaRede.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Rede de cooperação entre docentes">
+          <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="24" fill="#fbf7f1" stroke="#dfd2c2"></rect>
+          ${network.edges.map((edge) => {
+            const source = positionMap.get(edge.source);
+            const target = positionMap.get(edge.target);
+            if (!source || !target) return "";
+            const stroke = 2 + ((edge.weight / maxEdge) * 6);
+            return `<line class="network-edge-link" data-source="${escapeHtml(edge.source)}" data-target="${escapeHtml(edge.target)}" x1="${source.x}" y1="${source.y}" x2="${target.x}" y2="${target.y}" stroke="#9b2b44" stroke-opacity="0.42" stroke-width="${stroke}" stroke-linecap="round"></line>`;
+          }).join("")}
+          ${positionedNodes.map((node) => {
+            const connectorStartX = node.x + (Math.cos(node.angle) * (node.r + 3));
+            const connectorStartY = node.y + (Math.sin(node.angle) * (node.r + 3));
+            const connectorEndX = node.labelX - (node.textAnchor === "start" ? 8 : node.textAnchor === "end" ? -8 : 0);
+            const connectorEndY = node.labelY - 4;
+            return `
+              <line x1="${connectorStartX}" y1="${connectorStartY}" x2="${connectorEndX}" y2="${connectorEndY}" stroke="#d8c1c7" stroke-width="1.4"></line>
+            `;
+          }).join("")}
+          ${positionedNodes.map((node) => `
+            <circle cx="${node.x}" cy="${node.y}" r="${node.r}" fill="${node.value > 0 ? "#8c1538" : "#d4a017"}" stroke="#fff8f2" stroke-width="3"></circle>
+            <text x="${node.labelX}" y="${node.labelY}" text-anchor="${node.textAnchor}" fill="#2e3138" font-size="12">
+              ${node.labelLines.map((line, index) => `<tspan x="${node.labelX}" dy="${index === 0 ? 0 : 14}">${escapeHtml(line)}</tspan>`).join("")}
+            </text>
+          `).join("")}
+        </svg>
+        <p class="chart-note">Leitura da rede: tamanho do nó = quantidade de conexões internas do docente; espessura da aresta = número de produtos compartilhados; clique na aresta para abrir as obras do vínculo.</p>
+      `;
+    }
+
     function updateLeadershipDetailSortButtons() {
       liderancaDetailSortButtons.forEach((button) => {
         const isActive = button.dataset.liderancaDetailSort === liderancaDetailSort.key;
@@ -5538,6 +6233,12 @@
       const yearSummary = aggregateMostardByYear(filtered);
       const qualitySummary = aggregateLeadershipQualityByDocente(filtered);
       const qualityTotals = aggregateLeadershipQualityTotals(filtered);
+      const partnershipProductGroups = buildLeadershipProductGroups(filtered);
+      const partnershipSummary = aggregateLeadershipPartnershipByDocente(filtered, partnershipProductGroups);
+      const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
+      const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
+      const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
+      liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
       renderLeadershipMetrics(filtered, docenteSummary, yearSummary);
       renderLeadershipDocenteChart(docenteSummary);
       renderLeadershipWeightedChart(docenteSummary);
@@ -5549,6 +6250,10 @@
       renderLeadershipQualityJcrChart(qualitySummary);
       renderLeadershipQualityApcnChart(qualityTotals);
       renderLeadershipQualityTable(qualitySummary);
+      renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
+      renderLeadershipPartnershipDocenteChart(partnershipSummary);
+      renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipPartnershipNetwork(partnershipNetwork);
       renderLeadershipDetailTable(filtered);
     }
 
@@ -6096,6 +6801,21 @@
           <td>${docenciaOk ? "Todos os docentes da base de disciplinas possuem pelo menos uma oferta registrada." : `Há ${summary.totalDocentes - summary.atendidos} docente(s) sem oferta registrada na base de disciplinas.`}</td>
         </tr>
       `;
+    }
+
+    function renderCooperationCriticalCriteriaPanel() {
+      const filtered = getFilteredScientificData();
+      const partnershipProductGroups = buildLeadershipProductGroups(filtered);
+      const partnershipSummary = aggregateLeadershipPartnershipByDocente(filtered, partnershipProductGroups);
+      const partnershipTotals = aggregateLeadershipPartnershipTotals(partnershipSummary, partnershipProductGroups, filtered);
+      const partnershipYearSummary = aggregateLeadershipPartnershipByYear(partnershipProductGroups);
+      const partnershipNetwork = buildLeadershipPartnershipNetwork(partnershipSummary, partnershipProductGroups);
+      liderancaParceriaAuditState = buildLeadershipIntegratedWorksAudit(partnershipProductGroups);
+
+      renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
+      renderLeadershipPartnershipDocenteChart(partnershipSummary);
+      renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipPartnershipNetwork(partnershipNetwork);
     }
 
     const docentesCriteriaLabels = {
@@ -6746,12 +7466,14 @@
     bindTabs();
     bindApcnCollapsibleSections();
     bindApcnScoringModal();
+    bindLiderancaParceriaModal();
     bindDocenteSortToggles();
     bindDocenteTableSortToggles();
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
     bindLeadershipQualityJcrModeButtons();
+    bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
     applyFilters();
     applyLeadershipFilters();
