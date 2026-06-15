@@ -2990,7 +2990,7 @@
                 <div id="vigencias-captacao" class="filter-picker compact"></div>
               </div>
               <div>
-                <label for="agencias-captacao">Agência/Fonte</label>
+                <label for="agencias-captacao">Grupo de fomento</label>
                 <div class="filter-toolbar">
                   <button type="button" class="filter-toggle" data-captacao-group="agencias" data-action="all">
                     <span class="filter-toggle-box">✓</span>
@@ -5688,15 +5688,28 @@
       renderDisciplinasDetalhe(filtered);
     }
 
+    function getCaptacaoAgencyFilterValue(item) {
+      return item.agencia_grupo || item.agencia_normalizada || item.agencia || "Não informada";
+    }
+
+    function getCaptacaoTypeFilterValues(item) {
+      return item.tipo_lista || item.tipos || [];
+    }
+
     function populateCaptacaoFilters(data) {
+      const relevantData = getCaptacaoRelevantRows(data);
       const docentes = unique([
         ...captacaoPermanentDocenteMeta.map((item) => item.docente),
-        ...data.map((item) => item.docente),
+        ...relevantData.map((item) => item.docente),
       ]).sort((a, b) => a.localeCompare(b, "pt-BR"));
-      const tipos = unique(data.flatMap((item) => item.tipos || []));
-      const vigencias = unique(data.flatMap((item) => item.vigencia_anos || [])).sort((a, b) => Number(a) - Number(b));
-      const agencias = unique(data.map((item) => item.agencia));
-      const status = unique(data.map((item) => item.status));
+      const tipos = unique(relevantData.flatMap((item) => getCaptacaoTypeFilterValues(item)))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const vigencias = unique(relevantData.flatMap((item) => item.vigencia_anos || []))
+        .sort((a, b) => Number(a) - Number(b));
+      const agencias = unique(relevantData.map((item) => getCaptacaoAgencyFilterValue(item)))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const status = unique(relevantData.map((item) => item.status))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
       captacaoFilterValues = { docentes, tipos, vigencias, agencias, status };
       docenteCaptacaoList.innerHTML = docentes.map((docente) => `
         <label class="filter-option">
@@ -5797,9 +5810,9 @@
       const status = [...selectedStatusCaptacao];
       return dataSourceCaptacao.filter((item) => {
         const docenteOk = !docentes.length || docentes.includes(item.docente);
-        const tipoOk = !tipos.length || tipos.some((tipo) => (item.tipos || []).includes(tipo));
+        const tipoOk = !tipos.length || tipos.some((tipo) => getCaptacaoTypeFilterValues(item).includes(tipo));
         const vigenciaOk = !vigencias.length || vigencias.some((ano) => (item.vigencia_anos || []).includes(ano));
-        const agenciaOk = !agencias.length || agencias.includes(item.agencia);
+        const agenciaOk = !agencias.length || agencias.includes(getCaptacaoAgencyFilterValue(item));
         const statusOk = !status.length || status.includes(item.status);
         return docenteOk && tipoOk && vigenciaOk && agenciaOk && statusOk;
       });
@@ -5824,7 +5837,7 @@
     function aggregateCaptacaoTypePresence(data) {
       const grouped = new Map();
       data.forEach((item) => {
-        (item.tipo_lista || item.tipos || []).forEach((tipo) => {
+        getCaptacaoTypeFilterValues(item).forEach((tipo) => {
           if (!grouped.has(tipo)) {
             grouped.set(tipo, { tipo, registros: 0 });
           }
