@@ -6932,19 +6932,40 @@
         .trim();
     }
 
+    function isLowSignalProductText(value) {
+      const normalized = normalizeSeedText(value);
+      if (!normalized) return true;
+      const tokens = normalized.split(/\s+/).filter(Boolean);
+      return normalized.length < 12 || tokens.length < 3;
+    }
+
+    function extractReferenceProductTitle(value) {
+      const raw = String(value || "").replace(/https?:\/\/\S+/gi, " ");
+      const candidates = raw
+        .split(/\.\s+/)
+        .map((part) => normalizeSeedText(part).replace(/\s+/g, " ").trim())
+        .filter(Boolean)
+        .filter((part) => !/^(v|vol|volume|p|pp|n|no)\b/i.test(part))
+        .filter((part) => !/\b\d{4}\b/.test(part) || part.split(/\s+/).length >= 6)
+        .sort((a, b) => b.length - a.length);
+      return candidates.find((part) => !isLowSignalProductText(part)) || "";
+    }
+
     function getLeadershipProductKey(item) {
       const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
-      const baseKey = [
-        titleKey,
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.tipo_producao),
-      ].join("|");
-      return baseKey || [
-        normalizeSeedText(item.titulo),
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.revista_ou_veiculo),
-        normalizeSeedText(item.produto_referencia),
-      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
+      const referenceTitleKey = extractReferenceProductTitle(item.produto_referencia);
+      const referenceKey = normalizeSeedText(item.produto_referencia).replace(/\s+/g, " ").trim();
+      const venueKey = normalizeSeedText(item.revista_ou_veiculo).replace(/\s+/g, " ").trim();
+      const yearKey = normalizeSeedText(item.ano);
+      const typeKey = normalizeSeedText(item.tipo_producao);
+      const doiKey = normalizeSeedText(item.doi);
+      const primaryDescriptor = !isLowSignalProductText(titleKey)
+        ? titleKey
+        : referenceTitleKey || doiKey || referenceKey;
+      const baseKey = [primaryDescriptor, yearKey, typeKey].filter(Boolean).join("|");
+      if (baseKey) return baseKey;
+      const fallbackKey = [doiKey, referenceTitleKey, referenceKey, venueKey, yearKey, typeKey].filter(Boolean).join("|");
+      return fallbackKey || `ROW|${item.id || item.source_row || ""}`;
     }
 
     function getCoauthorNames(item) {
