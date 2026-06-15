@@ -4,6 +4,7 @@ import re
 import sys
 import unicodedata
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 
@@ -320,7 +321,7 @@ def main():
         )
 
     payload = {
-        "updated_at": "2026-06-14",
+        "updated_at": date.today().isoformat(),
         "source_csv": str(source),
         "reference_year": REFERENCE_YEAR,
         "recent_window_start": RECENT_WINDOW_START,
