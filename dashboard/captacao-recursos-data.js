@@ -1155,6 +1155,578 @@ window.CAPTACAO_RECURSOS_PPGEF = {
     },
     {
       "id": 21,
+      "carimbo_data_hora": "15/06/2026 13:20:56",
+      "docente": "Eduardo Zapaterra Campos",
+      "titulo": "Efeitos agudos e crônicos do treinamento intervalado de alta intensidade associado à suplementação de nitrato de sódio sobre parâmetros aeróbios e desempenho de sujeitos fisicamente ativos",
+      "tipos": [
+        "Projeto de pesquisa"
+      ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
+      "status": "Concluída",
+      "agencia": "CNPq",
+      "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
+      "edital_nome": "UNIVERSAL 2018",
+      "edital_numero": "Chamada MCTIC/CNPq Nº 28/2018",
+      "edital_ano": 2021,
+      "edital_processo": "UNIVERSAL 2018 · Chamada MCTIC/CNPq Nº 28/2018 · 2021",
+      "vigencia_anos": [
+        "2021",
+        "2022"
+      ],
+      "ano_inicio": 2021,
+      "ano_fim": 2022,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 30000.0,
+      "valor_capital": 20000.0,
+      "valor_custeio": 10000.0,
+      "valor_bolsas_aprovado": 0.0,
+      "bolsa_destinacao": "Não se aplica",
+      "quantidade_bolsas": 0,
+      "duracao_bolsas_meses": 0,
+      "valor_bolsas_destinado": 0.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "eduardo-zapaterra-campos|efeitos-agudos-e-cronicos-do-treinamento-intervalado-de-alta-intensidade-associado-a-suplementacao-de-nitrato-de-sodio-sobre-parametros-aerobios-e-desempenho-de-sujeitos-fisicamente-ativos|cnpq|chamada-mctic-cnpq-n-28-2018|concluida|2021|2022",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 22,
+      "carimbo_data_hora": "15/06/2026 13:23:16",
+      "docente": "Eduardo Zapaterra Campos",
+      "titulo": "Efeito da suplementação de gel de nitrato comercial durante a prova na durabilidade e desempenho de ciclistas",
+      "tipos": [
+        "Projeto de pesquisa"
+      ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
+      "status": "Em execução",
+      "agencia": "CNPq",
+      "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
+      "edital_nome": "Universal 2023",
+      "edital_numero": "Chamada CNPq/MCTI Nº 10/2023",
+      "edital_ano": 2023,
+      "edital_processo": "Universal 2023 · Chamada CNPq/MCTI Nº 10/2023 · 2023",
+      "vigencia_anos": [
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027"
+      ],
+      "ano_inicio": 2023,
+      "ano_fim": 2027,
+      "anos_vigencia": 5,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 47000.0,
+      "valor_capital": 12000.0,
+      "valor_custeio": 37000.0,
+      "valor_bolsas_aprovado": 0.0,
+      "bolsa_destinacao": "Não se aplica",
+      "quantidade_bolsas": 0,
+      "duracao_bolsas_meses": 0,
+      "valor_bolsas_destinado": 0.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 1,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "eduardo-zapaterra-campos|efeito-da-suplementacao-de-gel-de-nitrato-comercial-durante-a-prova-na-durabilidade-e-desempenho-de-ciclistas|cnpq|chamada-cnpq-mcti-n-10-2023|em-execucao|2023|2027",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 23,
+      "carimbo_data_hora": "15/06/2026 13:34:55",
+      "docente": "Eduardo Zapaterra Campos",
+      "titulo": "Impacto de uma intervenção com práticas esportivas, criativas e de jogos e brincadeiras, nas capacidades físicas e cognitivas de crianças em alta vulnerabilidade social",
+      "tipos": [
+        "Projeto de pesquisa"
+      ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "Edital APQ",
+      "edital_numero": "16/2021",
+      "edital_ano": 2021,
+      "edital_processo": "Edital APQ · 16/2021 · 2021",
+      "vigencia_anos": [
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "ano_inicio": 2021,
+      "ano_fim": 2023,
+      "anos_vigencia": 3,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 47545.0,
+      "valor_capital": 40000.0,
+      "valor_custeio": 7545.0,
+      "valor_bolsas_aprovado": 0.0,
+      "bolsa_destinacao": "Não se aplica",
+      "quantidade_bolsas": 0,
+      "duracao_bolsas_meses": 0,
+      "valor_bolsas_destinado": 0.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "eduardo-zapaterra-campos|impacto-de-uma-intervencao-com-praticas-esportivas-criativas-e-de-jogos-e-brincadeiras-nas-capacidades-fisicas-e-cognitivas-de-criancas-em-alta-vulnerabilidade-social|facepe|16-2021|concluida|2021|2023",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 24,
+      "carimbo_data_hora": "15/06/2026 13:44:16",
+      "docente": "Eduardo Zapaterra Campos",
+      "titulo": "Caracterização metabólica do frevo e comparação de respostas fisiológicas e psicométricas com protocolo de exercício intervalado convencional",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "PBPG",
+      "edital_numero": "35",
+      "edital_ano": 2022,
+      "edital_processo": "PBPG · 35 · 2022",
+      "vigencia_anos": [
+        "2022",
+        "2023"
+      ],
+      "ano_inicio": 2022,
+      "ano_fim": 2023,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 48000.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 48000.0,
+      "bolsa_destinacao": "Mestrado",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 24,
+      "valor_bolsas_destinado": 48000.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "eduardo-zapaterra-campos|caracterizacao-metabolica-do-frevo-e-comparacao-de-respostas-fisiologicas-e-psicometricas-com-protocolo-de-exercicio-intervalado-convencional|facepe|35|concluida|2022|2023",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 25,
+      "carimbo_data_hora": "15/06/2026 13:51:50",
+      "docente": "Eduardo Zapaterra Campos",
+      "titulo": "Impacto de uma intervenção com práticas esportivas, criativas e de jogos e brincadeiras, nas capacidades físicas e cognitivas de crianças em alta vulnerabilidade social",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Em execução",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "PBPG",
+      "edital_numero": "29",
+      "edital_ano": 2024,
+      "edital_processo": "PBPG · 29 · 2024",
+      "vigencia_anos": [
+        "2026",
+        "2027",
+        "2028"
+      ],
+      "ano_inicio": 2026,
+      "ano_fim": 2028,
+      "anos_vigencia": 3,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 50400.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 50400.0,
+      "bolsa_destinacao": "Mestrado",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 24,
+      "valor_bolsas_destinado": 50400.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "eduardo-zapaterra-campos|impacto-de-uma-intervencao-com-praticas-esportivas-criativas-e-de-jogos-e-brincadeiras-nas-capacidades-fisicas-e-cognitivas-de-criancas-em-alta-vulnerabilidade-social|facepe|29|em-execucao|2026|2028",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 26,
+      "carimbo_data_hora": "15/06/2026 09:13:20",
+      "docente": "Guilherme Assunção Ferreira",
+      "titulo": "SUPLEMENTAÇÃO DE CAFEÍNA COMO ESTRATÉGIA PARA REVERTER A QUEDA DE DESEMPENHO COM RESTRIÇÃO DE SONO",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "Edital 01/2021 - PIBIC 2021",
+      "edital_numero": "",
+      "edital_ano": 2021,
+      "edital_processo": "Edital 01/2021 - PIBIC 2021 · 2021",
+      "vigencia_anos": [
+        "2021"
+      ],
+      "ano_inicio": 2021,
+      "ano_fim": 2021,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": false,
+      "valor_total": 6000.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 6000.0,
+      "bolsa_destinacao": "Iniciação científica",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 12,
+      "valor_bolsas_destinado": 6000.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "guilherme-assuncao-ferreira|suplementacao-de-cafeina-como-estrategia-para-reverter-a-queda-de-desempenho-com-restricao-de-sono|facepe|edital-01-2021-pibic-2021|concluida|2021|2021",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 27,
+      "carimbo_data_hora": "15/06/2026 09:18:03",
+      "docente": "Guilherme Assunção Ferreira",
+      "titulo": "SUPLEMENTAÇÃO DE CAFEÍNA COMO ESTRATÉGIA PARA REVERTER A QUEDA DE DESEMPENHO COM RESTRIÇÃO DE SONO",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "Edital 05/2022 - PIBIC 2022,",
+      "edital_numero": "",
+      "edital_ano": 2022,
+      "edital_processo": "Edital 05/2022 - PIBIC 2022, · 2022",
+      "vigencia_anos": [
+        "2022"
+      ],
+      "ano_inicio": 2022,
+      "ano_fim": 2022,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 7800.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 7800.0,
+      "bolsa_destinacao": "Iniciação científica",
+      "quantidade_bolsas": 2,
+      "duracao_bolsas_meses": 6,
+      "valor_bolsas_destinado": 7800.0,
+      "alunos_mestrado": 2,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "guilherme-assuncao-ferreira|suplementacao-de-cafeina-como-estrategia-para-reverter-a-queda-de-desempenho-com-restricao-de-sono|facepe|edital-05-2022-pibic-2022|concluida|2022|2022",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 28,
+      "carimbo_data_hora": "15/06/2026 09:21:42",
+      "docente": "Guilherme Assunção Ferreira",
+      "titulo": "A manipulação da duração do esforço durante o exercício intervalado de alta intensidade, como estratégia para aumentar o estresse cronotrópico sem aumentar a fatigabilidade do desempenho em indivíduos fisicamente ativos",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "EDITAL: PIBIC 2023 - 01/2023",
+      "edital_numero": "",
+      "edital_ano": 2023,
+      "edital_processo": "EDITAL: PIBIC 2023 - 01/2023 · 2023",
+      "vigencia_anos": [
+        "2023"
+      ],
+      "ano_inicio": 2023,
+      "ano_fim": 2023,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 8400.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 8400.0,
+      "bolsa_destinacao": "Iniciação científica",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 12,
+      "valor_bolsas_destinado": 8400.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "guilherme-assuncao-ferreira|a-manipulacao-da-duracao-do-esforco-durante-o-exercicio-intervalado-de-alta-intensidade-como-estrategia-para-aumentar-o-estresse-cronotropico-sem-aumentar-a-fatigabilidade-do-desempenho-em-individuos-fisicamente-ativos|facepe|edital-pibic-2023-01-2023|concluida|2023|2023",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 29,
+      "carimbo_data_hora": "15/06/2026 09:26:47",
+      "docente": "Guilherme Assunção Ferreira",
+      "titulo": "Suplementação de cafeína como estratégia para reverter a queda de desempenho com restrição de sono",
+      "tipos": [
+        "Bolsa"
+      ],
+      "tipo_lista": [
+        "Bolsa"
+      ],
+      "status": "Em execução",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "EDITAL: PIBIC 2025 - 01/2025",
+      "edital_numero": "",
+      "edital_ano": 2025,
+      "edital_processo": "EDITAL: PIBIC 2025 - 01/2025 · 2025",
+      "vigencia_anos": [
+        "2025"
+      ],
+      "ano_inicio": 2025,
+      "ano_fim": 2025,
+      "anos_vigencia": 1,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 9600.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 9600.0,
+      "bolsa_destinacao": "Iniciação científica",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 12,
+      "valor_bolsas_destinado": 9600.0,
+      "alunos_mestrado": 0,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "guilherme-assuncao-ferreira|suplementacao-de-cafeina-como-estrategia-para-reverter-a-queda-de-desempenho-com-restricao-de-sono|facepe|edital-pibic-2025-01-2025|em-execucao|2025|2025",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 30,
+      "carimbo_data_hora": "15/06/2026 09:33:06",
+      "docente": "Guilherme Assunção Ferreira",
+      "titulo": "Suplementação de cafeína como estratégia para reverter a queda de desempenho com restrição de sono",
+      "tipos": [
+        "Projeto de pesquisa"
+      ],
+      "tipo_lista": [
+        "Projeto de pesquisa"
+      ],
+      "status": "Concluída",
+      "agencia": "FACEPE",
+      "agencia_original": "FACEPE",
+      "agencia_normalizada": "FACEPE",
+      "agencia_grupo": "FACEPE",
+      "edital_nome": "Fluxo contínuo - PROCESSO Nº BFP-0131-4.05/21",
+      "edital_numero": "PROCESSO Nº BFP-0131-4.05/21",
+      "edital_ano": 2021,
+      "edital_processo": "Fluxo contínuo - PROCESSO Nº BFP-0131-4.05/21 · PROCESSO Nº BFP-0131-4.05/21 · 2021",
+      "vigencia_anos": [
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "ano_inicio": 2021,
+      "ano_fim": 2023,
+      "anos_vigencia": 3,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 105600.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 105600.0,
+      "bolsa_destinacao": "Outra",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 24,
+      "valor_bolsas_destinado": 105600.0,
+      "alunos_mestrado": 1,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "DFE",
+      "linha_pesquisa_lista": [
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "guilherme-assuncao-ferreira|suplementacao-de-cafeina-como-estrategia-para-reverter-a-queda-de-desempenho-com-restricao-de-sono|facepe|processo-n-bfp-0131-4-05-21|concluida|2021|2023",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 31,
       "carimbo_data_hora": "11/06/2026 16:16:43",
       "docente": "Melissa Leandro Celestino",
       "titulo": "Recreia: Potencializando as capacidades físicas, sociais e educacionais das crianças em situação de vulnerabilidade",
@@ -1217,7 +1789,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 22,
+      "id": 32,
       "carimbo_data_hora": "11/06/2026 16:18:53",
       "docente": "Melissa Leandro Celestino",
       "titulo": "Análise biomecânica no paratletismo",
@@ -1278,7 +1850,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 23,
+      "id": 33,
       "carimbo_data_hora": "12/06/2026 13:56:57",
       "docente": "Paulo Felipe Ribeiro Bandeira",
       "titulo": "Projeto Soldadinho do Araripe: Efeito de uma intervenção motora na competência motora,cognição e saúde de crianças: Algoritmo de redes complexas",
@@ -1334,7 +1906,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 24,
+      "id": 34,
       "carimbo_data_hora": "12/06/2026 13:59:49",
       "docente": "Paulo Felipe Ribeiro Bandeira",
       "titulo": "Avaliação da progressão individual e coletiva da cooperação competência motora e cognitiva em crianças durante e após um programa de intervenção motor",
@@ -1394,7 +1966,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 25,
+      "id": 35,
       "carimbo_data_hora": "12/06/2026 14:03:38",
       "docente": "Paulo Felipe Ribeiro Bandeira",
       "titulo": "CARTOGRAFIA DE REDES: UM NOVO MÉTODO PARA AVALIAR COOPERAÇÃO, DESENVOLVIMENTO MOTOR E COGNITIVO EM CRIANÇAS NAS AULAS DE EDUCAÇÃO FÍSICA",
@@ -1456,7 +2028,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 26,
+      "id": 36,
       "carimbo_data_hora": "14/06/2026 16:22:42",
       "docente": "Paulo Roberto Cavalcanti Carvalho",
       "titulo": "Efeitos de um programa de exercício físico para indivíduos pré e pós cirurgia Bariatrica",
@@ -1513,7 +2085,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 27,
+      "id": 37,
       "carimbo_data_hora": "12/06/2026 08:03:38",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e combate às doenças crônicas não transmissíveis",
@@ -1572,7 +2144,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 28,
+      "id": 38,
       "carimbo_data_hora": "12/06/2026 08:08:29",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e combate às doenças crônicas não transmissíveis",
@@ -1634,7 +2206,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 29,
+      "id": 39,
       "carimbo_data_hora": "14/06/2026 10:11:16",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Vida Saudável em Lagoa do Carro II: Impacto da pandemia sobre indicadores de saúde de crianças e adolescentes",
@@ -1694,7 +2266,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 30,
+      "id": 40,
       "carimbo_data_hora": "14/06/2026 13:05:27",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Rede de Inovação em Saúde, Bem-Estar e Esporte",
@@ -1753,7 +2325,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 31,
+      "id": 41,
       "carimbo_data_hora": "14/06/2026 13:07:23",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "G+Health: aplicativo para avaliação de saúde de crianças e adolescentes",
@@ -1810,7 +2382,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 32,
+      "id": 42,
       "carimbo_data_hora": "14/06/2026 13:12:32",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Monitoramento e gestão de indicadores de saúde de escolares de Lagoa do Carro-PE",
@@ -1868,7 +2440,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 33,
+      "id": 43,
       "carimbo_data_hora": "14/06/2026 13:15:34",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Sistema de avaliação e monitoramento do desempenho motor",
@@ -1928,7 +2500,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 34,
+      "id": 44,
       "carimbo_data_hora": "14/06/2026 13:17:27",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Vida Saudável em Lagoa do Carro II: Impacto da pandemia sobre indicadores de saúde de crianças e adolescentes",
@@ -1987,7 +2559,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 35,
+      "id": 45,
       "carimbo_data_hora": "14/06/2026 13:19:17",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e combate às doenças crônicas não transmissíveis em escolares em situação de vulnerabilidade social",
@@ -2048,7 +2620,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 36,
+      "id": 46,
       "carimbo_data_hora": "14/06/2026 13:25:24",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Rede Pernambucana de Pesquisa e Inovação em Neurodiversidade",
@@ -2116,7 +2688,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 37,
+      "id": 47,
       "carimbo_data_hora": "14/06/2026 13:35:34",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e desempenho cognitivo em escolares",
@@ -2177,7 +2749,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 38,
+      "id": 48,
       "carimbo_data_hora": "14/06/2026 13:37:44",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e fatores de risco cardiometabólico em escolares",
@@ -2238,7 +2810,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 39,
+      "id": 49,
       "carimbo_data_hora": "14/06/2026 13:41:36",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Impacto da pandemia por COVID-19 sobre a relação entre atividade física, comportamento sedentário e sono e fatores de risco cardiometabólico em escolares",
@@ -2297,7 +2869,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 40,
+      "id": 50,
       "carimbo_data_hora": "14/06/2026 13:44:22",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Efeitos do treinamento intervalado de alta intensidade sobre o desempenho físico, cognitivo e cardiometabólico de escolares",
@@ -2356,7 +2928,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 41,
+      "id": 51,
       "carimbo_data_hora": "14/06/2026 13:47:20",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Impacto da pandemia por COVID-19 no desempenho acadêmico e cognitivo de crianças e adolescentes de Lagoa do Carro: análise de fatores associados",
@@ -2416,7 +2988,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 42,
+      "id": 52,
       "carimbo_data_hora": "14/06/2026 13:49:36",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Relação entre desempenho motor, obesidade e desempenho acadêmico de crianças e adolescentes: Análise de potenciais mediadores",
@@ -2475,7 +3047,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 43,
+      "id": 53,
       "carimbo_data_hora": "14/06/2026 13:52:02",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Influência de características individuais e da escola no desempenho motor de crianças e adolescentes: Um estudo multinível com crianças de Lagoa do Carro-PE.",
@@ -2534,7 +3106,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 44,
+      "id": 54,
       "carimbo_data_hora": "14/06/2026 20:45:10",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Impacto da pandemia em comportamentos integrados das 24 horas de movimento e a sua relação com a cognição de escolares",
@@ -2592,7 +3164,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 45,
+      "id": 55,
       "carimbo_data_hora": "14/06/2026 20:46:59",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Impacto da pandemia sobre a relação entre comportamento integrado das 24h de movimento e desempenho cognitivo de escolares: o papel mediador da aptidão física",
@@ -2650,7 +3222,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 46,
+      "id": 56,
       "carimbo_data_hora": "14/06/2026 20:48:16",
       "docente": "Rafael dos Santos Henrique",
       "titulo": "Autocuidado em saúde e combate ao comportamento sedentário de escolares em escolares",
@@ -2708,7 +3280,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 47,
+      "id": 57,
       "carimbo_data_hora": "14/06/2026 10:44:30",
       "docente": "Tony Meireles dos Santos",
       "titulo": "sUrFPE de Letramento no Surfe: Proposta de Inovação do ensino em Educação Física",
@@ -2765,7 +3337,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 48,
+      "id": 58,
       "carimbo_data_hora": "14/06/2026 10:46:31",
       "docente": "Tony Meireles dos Santos",
       "titulo": "ESTRATÉGIA DE MICRO-LEARNING ORIENTADA AO LETRAMENTO FÍSICO NO SURFE EM CRIANÇAS E ADOLESCENTES EM VULNERABILIDADE SOCIAL",
@@ -2824,7 +3396,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 49,
+      "id": 59,
       "carimbo_data_hora": "14/06/2026 11:07:28",
       "docente": "Tony Meireles dos Santos",
       "titulo": "EFEITOS DA ESTIMULAÇÃO POR ÁUDIOS BINAURAIS E DE EXERCÍCIOS AUTOSSELECIONADOS NAS RESPOSTAS INTEROCEPTIVAS E PERCEPTUAIS DE INDIVÍDUOS COM SINTOMAS DE DEPRESSÃO",
@@ -2883,7 +3455,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 50,
+      "id": 60,
       "carimbo_data_hora": "14/06/2026 11:14:05",
       "docente": "Tony Meireles dos Santos",
       "titulo": "EFEITOS PSICOFISIOLÓGICOS DAS ORIENTAÇÕES DE ATIVIDADES FÍSICAS DOMICILIARES POR UM APLICATIVO MOBILE VERSUS POR CARTILHA EM SOBREVIVENTES DE CÂNCER DE MAMA: UM ENSAIO CLÍNICO RANDOMIZADO",
@@ -2944,7 +3516,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 51,
+      "id": 61,
       "carimbo_data_hora": "14/06/2026 11:29:11",
       "docente": "Tony Meireles dos Santos",
       "titulo": "Efeito da terapia do surfe na saúde física, mental e nas respostas interoceptivas e perceptuais em indivíduos com sintomas de depressão e ansiedade: um ensaio clínico randomizado",
@@ -3003,7 +3575,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 52,
+      "id": 62,
       "carimbo_data_hora": "14/06/2026 11:35:22",
       "docente": "Tony Meireles dos Santos",
       "titulo": "GRUPOS OPERATIVOS E SURF COMO INTERVENÇÃO TERAPÊUTICA NO CUIDADO À SAÚDE INTEGRAL DE JOVENS UNIVERSITÁRIOS",
@@ -3062,7 +3634,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "motivo_alerta": ""
     },
     {
-      "id": 53,
+      "id": 63,
       "carimbo_data_hora": "14/06/2026 14:27:06",
       "docente": "Tony Meireles dos Santos",
       "titulo": "APRIMORAMENTO DAS FUNCIONALIDADES DO COMPETENCE APP PARA O ENFRENTAMENTO AO SEDENTARISMO E ADOÇÃO DE UM ESTILO DE VIDA ATIVO ATRAVÉS DA INTELIGÊNCIA ARTIFICIAL E GAMIFICAÇÃO",
@@ -3116,6 +3688,122 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
       "chave_deduplicacao": "tony-meireles-dos-santos|aprimoramento-das-funcionalidades-do-competence-app-para-o-enfrentamento-ao-sedentarismo-e-adocao-de-um-estilo-de-vida-ativo-atraves-da-inteligencia-artificial-e-gamificacao|facepe|05-2023|concluida|2023|2023",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 64,
+      "carimbo_data_hora": "15/06/2026 13:46:44",
+      "docente": "Tony Meireles dos Santos",
+      "titulo": "AVALIAÇÃO DA USABILIDADE DE UM APLICATIVO DE ORIENTAÇÃO DE ATIVIDADES FÍSICAS PARA SOBREVIVENTES DE CÂNCER DE MAMA SEGUNDO A PERCEPÇÃO DO USUÁRIO",
+      "tipos": [
+        "Projeto de inovação/tecnologia"
+      ],
+      "tipo_lista": [
+        "Projeto de inovação/tecnologia"
+      ],
+      "status": "Concluída",
+      "agencia": "CNPq",
+      "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
+      "edital_nome": "Edital PROPESQI",
+      "edital_numero": "004/2024",
+      "edital_ano": 2024,
+      "edital_processo": "Edital PROPESQI · 004/2024 · 2024",
+      "vigencia_anos": [
+        "2024",
+        "2025"
+      ],
+      "ano_inicio": 2024,
+      "ano_fim": 2025,
+      "anos_vigencia": 2,
+      "status_vigencia": "Encerrada",
+      "vigente_em_2026": false,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 8400.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 8400.0,
+      "bolsa_destinacao": "Iniciação tecnológica",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 12,
+      "valor_bolsas_destinado": 8400.0,
+      "alunos_mestrado": 0,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Encerrada.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "tony-meireles-dos-santos|avaliacao-da-usabilidade-de-um-aplicativo-de-orientacao-de-atividades-fisicas-para-sobreviventes-de-cancer-de-mama-segundo-a-percepcao-do-usuario|cnpq|004-2024|concluida|2024|2025",
+      "motivo_alerta": ""
+    },
+    {
+      "id": 65,
+      "carimbo_data_hora": "15/06/2026 13:55:27",
+      "docente": "Tony Meireles dos Santos",
+      "titulo": "IMPACTO DAS ORIENTAÇÕES DE ATIVIDADE FÍSICA DOMICILIAR NA REDUÇÃO DO COMPORTAMENTO SEDENTÁRIO EM SOBREVIVENTES DE CÂNCER DE MAMA",
+      "tipos": [
+        "Projeto de inovação/tecnologia"
+      ],
+      "tipo_lista": [
+        "Projeto de inovação/tecnologia"
+      ],
+      "status": "Concluída",
+      "agencia": "CNPq",
+      "agencia_original": "CNPq",
+      "agencia_normalizada": "CNPq",
+      "agencia_grupo": "CNPq",
+      "edital_nome": "EDITAL PROPESQI",
+      "edital_numero": "Edital PROPESQI nº 004/2025",
+      "edital_ano": 2025,
+      "edital_processo": "EDITAL PROPESQI · Edital PROPESQI nº 004/2025 · 2025",
+      "vigencia_anos": [
+        "2025",
+        "2026"
+      ],
+      "ano_inicio": 2025,
+      "ano_fim": 2026,
+      "anos_vigencia": 2,
+      "status_vigencia": "Vigente",
+      "vigente_em_2026": true,
+      "recorte_apcn_2022_2026": true,
+      "valor_total": 8400.0,
+      "valor_capital": 0.0,
+      "valor_custeio": 0.0,
+      "valor_bolsas_aprovado": 8400.0,
+      "bolsa_destinacao": "Iniciação tecnológica",
+      "quantidade_bolsas": 1,
+      "duracao_bolsas_meses": 12,
+      "valor_bolsas_destinado": 8400.0,
+      "alunos_mestrado": 0,
+      "alunos_doutorado": 0,
+      "bolsa_produtividade": false,
+      "bolsa_desenvolvimento_tecnologico": false,
+      "captacao_internacional": false,
+      "linha_pesquisa": "AMS + DFE",
+      "linha_pesquisa_lista": [
+        "AMS",
+        "DFE"
+      ],
+      "status_revisao": "Sem alerta",
+      "evidencia_documento": "",
+      "link_edital_processo": "",
+      "observacao_auditoria": "Situação de vigência: Vigente.",
+      "suspeita_duplicidade": false,
+      "duplicidade_suspeita": false,
+      "duplicidade_grupo": 1,
+      "chave_deduplicacao": "tony-meireles-dos-santos|impacto-das-orientacoes-de-atividade-fisica-domiciliar-na-reducao-do-comportamento-sedentario-em-sobreviventes-de-cancer-de-mama|cnpq|edital-propesqi-n-004-2025|concluida|2025|2026",
       "motivo_alerta": ""
     }
   ]
