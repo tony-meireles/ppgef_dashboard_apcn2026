@@ -1,6 +1,6 @@
 (() => {
   const STORAGE_KEY = "ppgef-dashboard-static-access";
-  const STATIC_PASSWORD = "apcn2026@";
+  const STATIC_PASSWORD_HASH = "4ce47c45bab1d366fe2e2cd3d636ad25e097d0cf00f4bfde8120337d4c344839";
   const DEFAULT_TARGET = "./dashboard/producao-cientifica.html";
 
   function normalizePath(path) {
@@ -22,6 +22,12 @@
 
   function revokeAccess() {
     window.localStorage.removeItem(STORAGE_KEY);
+  }
+
+  async function hashText(value) {
+    const bytes = new TextEncoder().encode(value);
+    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
+    return Array.from(new Uint8Array(digest), (item) => item.toString(16).padStart(2, "0")).join("");
   }
 
   function buildIndexUrl() {
@@ -142,10 +148,11 @@
 
     input?.focus();
 
-    form?.addEventListener("submit", (event) => {
+    form?.addEventListener("submit", async (event) => {
       event.preventDefault();
       const value = String(input?.value || "");
-      if (value !== STATIC_PASSWORD) {
+      const digest = await hashText(value);
+      if (digest !== STATIC_PASSWORD_HASH) {
         if (error) {
           error.hidden = false;
         }
