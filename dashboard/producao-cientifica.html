@@ -6999,6 +6999,22 @@
       return '<span class="docentes-bool na">—</span>';
     }
 
+    function getDocenteYearStatus(docente, yearKey = docentesDashboardState.year) {
+      return String(docente?.anos?.[yearKey] || "---").trim();
+    }
+
+    function getDocenteYearStatusLabel(docente, yearKey = docentesDashboardState.year) {
+      const status = getDocenteYearStatus(docente, yearKey);
+      const labelMap = {
+        Per: "Permanente",
+        Col: "Colaborador",
+        Temp: "Temporário",
+        Vis: "Visitante",
+        "---": "Sem atuação",
+      };
+      return labelMap[status] || status;
+    }
+
     function getDocentesFilteredList() {
       const search = normalizeText(docentesDashboardState.search || "");
       return (dataSourceCorpoDocente.docentes || []).filter((docente) => {
@@ -7126,6 +7142,17 @@
 
     function buildDocentesReading(docente) {
       const readings = [];
+      const yearKey = docentesDashboardState.year;
+      const yearStatus = getDocenteYearStatus(docente, yearKey);
+      if (yearStatus === "Vis") {
+        readings.push(`Visitante em ${yearKey}`);
+      } else if (yearStatus === "Temp") {
+        readings.push(`Temporário em ${yearKey}`);
+      } else if (yearStatus === "Col") {
+        readings.push(`Colaborador em ${yearKey}`);
+      } else if (yearStatus === "Per") {
+        readings.push(`Permanente em ${yearKey}`);
+      }
       if (docente.issues.includes("permanente_externo_2026")) {
         readings.push("Externo no ano-base");
       }
@@ -7135,10 +7162,10 @@
       if (docente.issues.includes("colabora_em_outro_ppg_2026")) {
         readings.push("Colabora em outro PPG");
       }
-      if (docente.issues.includes("temporario_2026")) {
+      if (docente.issues.includes("temporario_2026") && yearStatus !== "Temp") {
         readings.push("Temporário em 2026");
       }
-      if (docente.issues.includes("visitante_2026")) {
+      if (docente.issues.includes("visitante_2026") && yearStatus !== "Vis") {
         readings.push("Visitante em 2026");
       }
       return readings.length
@@ -7152,16 +7179,17 @@
       const structureBody = document.getElementById("docentes-structure-body");
       const historyBody = document.getElementById("docentes-history-body");
       structureBody.innerHTML = filtered.map((docente) => {
+        const yearStatus = getDocenteYearStatus(docente);
         const issueClass = docente.issues.includes("permanente_externo_2026") || docente.issues.includes("nao_exclusivo_ao_programa_2026")
           ? "docentes-row-critical"
-          : docente.issues.length
+          : docente.issues.length || yearStatus === "Vis" || yearStatus === "Temp"
             ? "docentes-row-attention"
             : "";
         return `
           <tr class="${issueClass}">
             <td class="docentes-structure-name">
               <strong>${escapeHtml(docente.docente)}</strong>
-              <span>${escapeHtml(docente.status_quadri === "A" ? "Ativo no desenho 2025-2028" : "Inativo no desenho 2025-2028")}</span>
+              <span>${escapeHtml(getDocenteYearStatusLabel(docente))} em ${escapeHtml(String(docentesDashboardState.year))} · ${escapeHtml(docente.status_quadri === "A" ? "Ativo no desenho 2025-2028" : "Inativo no desenho 2025-2028")}</span>
             </td>
             <td>${getDocentesBoolBadge(docente.ams)}</td>
             <td>${getDocentesBoolBadge(docente.dfe)}</td>
@@ -7178,7 +7206,7 @@
         <tr>
           <td class="docentes-structure-name">
             <strong>${escapeHtml(docente.docente)}</strong>
-            <span>${escapeHtml(docente.origem_matriz || "—")} · status quadri ${escapeHtml(docente.status_quadri || "—")}</span>
+            <span>${escapeHtml(getDocenteYearStatusLabel(docente))} em ${escapeHtml(String(docentesDashboardState.year))} · ${escapeHtml(docente.origem_matriz || "—")} · status quadri ${escapeHtml(docente.status_quadri || "—")}</span>
           </td>
           <td>
             <div class="docentes-history-line">
