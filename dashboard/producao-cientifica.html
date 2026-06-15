@@ -6044,7 +6044,7 @@
     }
 
     function renderCaptacaoDocenteChart(data) {
-      const items = data.slice(0, 12);
+      const items = data;
       if (!items.length) {
         chartCaptacaoDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;

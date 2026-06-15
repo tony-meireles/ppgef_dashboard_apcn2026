@@ -119,20 +119,23 @@ def infer_international(title, edital_name, agency_normalized, agency_group):
 
 def infer_pq_dt(title, edital_name, edital_number, agency_normalized):
     haystack = strip_accents(" ".join([title, edital_name, edital_number, agency_normalized])).upper()
-    produtividade = False
-    desenvolvimento = False
+    produtividade_markers = (
+        "BOLSA DE PRODUTIVIDADE",
+        "PRODUTIVIDADE EM PESQUISA",
+        "BOLSISTA DE PRODUTIVIDADE",
+        "PESQUISADOR PRODUTIVIDADE",
+        " BPI ",
+    )
+    desenvolvimento_markers = (
+        "BOLSA DE PRODUTIVIDADE EM DESENVOLVIMENTO TECNOLOGICO",
+        "DESENVOLVIMENTO TECNOLOGICO E EXTENSAO INOVADORA - DT",
+        "DESENVOLVIMENTO TECNOLOGICO E EXTENSAO INOVADORA",
+        "EXTENSAO INOVADORA - DT",
+    )
 
-    if "BOLSA DE PRODUTIVIDADE" in haystack or "PRODUTIVIDADE EM PESQUISA" in haystack:
-        produtividade = True
-    if "BPI" in haystack:
-        produtividade = True
-    if "PQ" in haystack and "PROPESQI" not in haystack and "PIBIC" not in haystack:
-        produtividade = True
-
-    if "DESENVOLVIMENTO TECNOLOG" in haystack or "EXTENSAO INOVADORA - DT" in haystack or "EXTENSAO INOVADORA" in haystack and "DT" in haystack:
-        desenvolvimento = True
-    if "PIBITI" in haystack:
-        desenvolvimento = True
+    normalized = f" {haystack} "
+    produtividade = any(marker in normalized for marker in produtividade_markers)
+    desenvolvimento = any(marker in normalized for marker in desenvolvimento_markers)
 
     return produtividade, desenvolvimento
 
