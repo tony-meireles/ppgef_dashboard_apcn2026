@@ -5330,8 +5330,19 @@
       return `${Math.round(Number(value) || 0)}h`;
     }
 
+    function getCanonicalDisciplinasDocenteOptions(data) {
+      const byKey = new Map();
+      data.forEach((item) => {
+        const canonicalName = canonicalizeDisciplinasName(item.nome_responsavel);
+        const key = normalizeDisciplinasName(canonicalName);
+        if (!key || byKey.has(key)) return;
+        byKey.set(key, canonicalName);
+      });
+      return [...byKey.values()].sort((a, b) => a.localeCompare(b, "pt-BR"));
+    }
+
     function populateDisciplinasFilters(data) {
-      const docentes = unique(data.map((item) => item.nome_responsavel));
+      const docentes = getCanonicalDisciplinasDocenteOptions(data);
       const vinculos = unique(data.map((item) => item.vinculo_painel));
       const anos = unique(data.map((item) => item.ano)).sort((a, b) => Number(a) - Number(b));
       const periodos = unique(data.map((item) => item.ano_periodo)).sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -5360,6 +5371,36 @@
           <span>${periodo.replace("_", ".")}</span>
         </label>
       `).join("");
+    }
+
+    function refreshDisciplinasDocenteOptions() {
+      const vinculos = [...selectedVinculosDisciplinas];
+      const anos = [...selectedAnosDisciplinas];
+      const periodos = [...selectedPeriodosDisciplinas];
+      const docenteOptions = getCanonicalDisciplinasDocenteOptions(
+        getDisciplinasBaseData()
+          .filter((item) => {
+            const vinculoOk = !vinculos.length || vinculos.includes(item.vinculo_painel);
+            const anoOk = !anos.length || anos.includes(item.ano);
+            const periodoOk = !periodos.length || periodos.includes(item.ano_periodo);
+            return vinculoOk && anoOk && periodoOk;
+          })
+      );
+
+      disciplinasFilterValues.docentes = docenteOptions;
+      [...selectedDocentesDisciplinas].forEach((docente) => {
+        if (!docenteOptions.includes(docente)) {
+          selectedDocentesDisciplinas.delete(docente);
+        }
+      });
+
+      docenteDisciplinasChipList.innerHTML = docenteOptions.map((docente) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
+      bindScientificCheckboxContainer(docenteDisciplinasChipList, selectedDocentesDisciplinas, applyDisciplinasFilters);
     }
 
     function syncDisciplinasFilterViews() {
@@ -5682,6 +5723,7 @@
     }
 
     function applyDisciplinasFilters() {
+      refreshDisciplinasDocenteOptions();
       syncDisciplinasFilterViews();
       const filtered = getFilteredDisciplinasData();
       const docenteSummary = aggregateDisciplinasByDocente(filtered);
