@@ -7422,6 +7422,21 @@
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
     }
 
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function getPercentileValue(values, percentile) {
+      if (!values.length) return 0;
+      const sorted = [...values].sort((a, b) => a - b);
+      const index = clamp((sorted.length - 1) * percentile, 0, sorted.length - 1);
+      const lower = Math.floor(index);
+      const upper = Math.ceil(index);
+      if (lower === upper) return sorted[lower];
+      const weight = index - lower;
+      return sorted[lower] + (sorted[upper] - sorted[lower]) * weight;
+    }
+
     function aggregateMostardByDocente(data) {
       const grouped = new Map();
       for (const item of data) {
@@ -7646,20 +7661,74 @@
         chartLiderancaDispersao.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const width = 940;
-      const height = 440;
-      const left = 82;
-      const right = 24;
-      const top = 24;
-      const bottom = 52;
+      const width = 992;
+      const height = 512;
+      const left = 97;
+      const right = 27;
+      const top = 69;
+      const bottom = 67;
       const innerWidth = width - left - right;
       const innerHeight = height - top - bottom;
       const maxPoints = Math.max(...summary.map((item) => item.pontosApcn), 1);
       const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
+      const items = summary.map((item) => {
+        const xRatio = clamp((item.pontosApcn || 0) / maxPoints, 0, 1);
+        const inverseMostardRatio = clamp(1 - ((item.indiceMostarda || 0) / maxIndex), 0, 1);
+        return {
+          ...item,
+          xRatio,
+          inverseMostardRatio,
+          diagonalScore: (xRatio + inverseMostardRatio) / 2,
+        };
+      });
+      const p30 = 0.30;
+      const p55 = 0.55;
+      const p30Score = getPercentileValue(items.map((item) => item.diagonalScore), p30);
+      const p55Score = getPercentileValue(items.map((item) => item.diagonalScore), p55);
       const xTicks = 4;
       const yTicks = 4;
+      const plotRight = width - right;
+      const plotBottom = height - bottom;
+      const bandLineY = (score, xScreen) => {
+        const xRatio = clamp((xScreen - left) / innerWidth, 0, 1);
+        return top + ((2 * score) - xRatio) * innerHeight;
+      };
+      const buildBandPolygon = (upperScore, lowerScore) => {
+        const pointsTop = [];
+        const pointsBottom = [];
+        for (let step = 0; step <= 240; step += 1) {
+          const x = left + (step / 240) * innerWidth;
+          const upperY = clamp(bandLineY(upperScore, x), top, plotBottom);
+          const lowerY = clamp(bandLineY(lowerScore, x), top, plotBottom);
+          pointsTop.push(`${x.toFixed(1)},${upperY.toFixed(1)}`);
+          pointsBottom.push(`${x.toFixed(1)},${lowerY.toFixed(1)}`);
+        }
+        return [...pointsTop, ...pointsBottom.reverse()].join(" ");
+      };
+      const buildBoundaryArea = (score, mode) => {
+        const boundary = [];
+        for (let step = 0; step <= 240; step += 1) {
+          const x = left + (step / 240) * innerWidth;
+          const lineY = clamp(bandLineY(score, x), top, plotBottom);
+          boundary.push(`${x.toFixed(1)},${lineY.toFixed(1)}`);
+        }
+        const ceiling = mode === "top" ? top : plotBottom;
+        const edge = [];
+        for (let step = 240; step >= 0; step -= 1) {
+          const x = left + (step / 240) * innerWidth;
+          edge.push(`${x.toFixed(1)},${ceiling.toFixed(1)}`);
+        }
+        return [...boundary, ...edge].join(" ");
+      };
+      const redPolygon = buildBoundaryArea(p30Score, "top");
+      const amberPolygon = buildBandPolygon(p30Score, p55Score);
+      const greenPolygon = buildBoundaryArea(p55Score, "bottom");
       chartLiderancaDispersao.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
+          <rect x="${left}" y="${top}" width="${innerWidth}" height="${innerHeight}" rx="18" fill="#fbf7f1" stroke="#d7cdbc" stroke-width="1.5"></rect>
+          <polygon points="${redPolygon}" fill="#b2344a" fill-opacity="0.12"></polygon>
+          <polygon points="${amberPolygon}" fill="#e2b02b" fill-opacity="0.13"></polygon>
+          <polygon points="${greenPolygon}" fill="#4d7c68" fill-opacity="0.22"></polygon>
           ${Array.from({ length: yTicks + 1 }, (_, index) => {
             const ratio = index / yTicks;
             const y = top + innerHeight - ratio * innerHeight;
@@ -7678,19 +7747,24 @@
               <text x="${x}" y="${height - bottom + 18}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(value)}</text>
             `;
           }).join("")}
-          <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          <line x1="${left}" y1="${top}" x2="${left}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${summary.map((item) => {
-            const x = left + ((item.pontosApcn || 0) / maxPoints) * innerWidth;
+          <line x1="${left}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          <line x1="${left}" y1="${top}" x2="${left}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${items.map((item) => {
+            const x = left + item.xRatio * innerWidth;
             const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
             return `
-              <circle cx="${x}" cy="${y}" r="5.5" fill="#8c1538" opacity="0.9"></circle>
+              <circle cx="${x}" cy="${y}" r="6.2" fill="#8c1538" stroke="#fff9f2" stroke-width="1.6"></circle>
               <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
             `;
           }).join("")}
-          <text x="${width / 2}" y="${height - 10}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
+          <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
+        <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
+          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Indesejado</strong>, a faixa amarela representa o perfil <strong>Esperado</strong> e a faixa verde representa o perfil <strong>Desejado</strong>.
+          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade APCN e inverso do Índice Mostarda.
+          Leitura: <strong>Indesejado</strong> ≤ p30,0; <strong>Esperado</strong> entre p30,0 e p55,0; <strong>Desejado</strong> &gt; p55,0.
+        </div>
       `;
     }
 
@@ -8047,7 +8121,7 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          parceirosMedios: item.totalProdutos ? item.parceirosTotal / item.totalProdutos : 0,
+          parceirosMedios: item.totalProdutos ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1) : 0,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -8202,26 +8276,36 @@
         chartLiderancaParceriaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxPartners = Math.max(...summary.map((item) => item.parceirosMedios), 1);
+      const normalizedSummary = summary.map((item) => {
+        const rawMedia = Number(item.parceirosMedios);
+        const fallbackMedia = Number(item.totalProdutos)
+          ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1)
+          : 0;
+        return {
+          ...item,
+          parceirosMediosNormalizado: Number.isFinite(rawMedia) && rawMedia > 0 ? rawMedia : fallbackMedia,
+        };
+      });
+      const maxPartners = Math.max(...normalizedSummary.map((item) => item.parceirosMediosNormalizado), 1);
       const maxInternal = Math.max(...summary.map((item) => item.produtosInternos), 1);
       const width = 780;
       const height = 330;
       const left = 52;
       const baseY = 266;
       const gap = 20;
-      const barWidth = Math.max(34, Math.floor((width - left - 20 - ((summary.length - 1) * gap)) / summary.length));
+      const barWidth = Math.max(34, Math.floor((width - left - 20 - ((normalizedSummary.length - 1) * gap)) / normalizedSummary.length));
       chartLiderancaParceriaAnos.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução temporal da cooperação autoral">
           <line x1="${left}" y1="${baseY}" x2="${width - 16}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${summary.map((item, index) => {
+          ${normalizedSummary.map((item, index) => {
             const x = left + 10 + index * (barWidth + gap);
-            const barHeight = Math.max(10, Math.round((item.parceirosMedios / maxPartners) * 168));
+            const barHeight = Math.max(10, Math.round((item.parceirosMediosNormalizado / maxPartners) * 168));
             const y = baseY - barHeight;
             const dotY = baseY - ((item.produtosInternos / maxInternal) * 182);
             return `
               <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="#d4a017"></rect>
               <circle cx="${x + (barWidth / 2)}" cy="${dotY}" r="6" fill="#8c1538"></circle>
-              <text x="${x + (barWidth / 2)}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(item.parceirosMedios)}</text>
+              <text x="${x + (barWidth / 2)}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(item.parceirosMediosNormalizado)}</text>
               <text x="${x + (barWidth / 2)}" y="${dotY - 10}" text-anchor="middle" fill="#8c1538" font-size="11">${item.produtosInternos}</text>
               <text x="${x + (barWidth / 2)}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
             `;
