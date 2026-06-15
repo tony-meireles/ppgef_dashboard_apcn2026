@@ -193,6 +193,12 @@
       gap: 16px;
     }
 
+    .filters-grid-captacao {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
     label {
       display: block;
       margin-bottom: 8px;
@@ -596,13 +602,18 @@
 
     .type-row {
       display: grid;
-      grid-template-columns: 120px 1fr 64px;
-      gap: 10px;
+      grid-template-columns: 132px minmax(0, 1fr) 104px;
+      gap: 12px;
       align-items: center;
       font-size: 0.94rem;
     }
 
     .type-row strong { color: var(--ufpe-grafite); }
+
+    .type-row span {
+      text-align: right;
+      color: #544b45;
+    }
 
     .track {
       height: 14px;
@@ -655,6 +666,18 @@
       color: var(--ufpe-bordo);
       background: rgba(140, 21, 56, 0.1);
       border-color: rgba(140, 21, 56, 0.18);
+    }
+
+    .status-pill.warn {
+      color: #8a5d12;
+      background: rgba(197, 142, 41, 0.15);
+      border-color: rgba(197, 142, 41, 0.24);
+    }
+
+    .status-pill.muted {
+      color: #6d727c;
+      background: rgba(109, 114, 124, 0.08);
+      border-color: rgba(109, 114, 124, 0.18);
     }
 
     .sem-producao-list {
@@ -922,6 +945,123 @@
       white-space: nowrap;
     }
 
+    .captacao-summary-table {
+      min-width: 1120px;
+    }
+
+    .captacao-docente-table {
+      min-width: 1340px;
+    }
+
+    .captacao-detail-table {
+      min-width: 2140px;
+      font-size: 0.88rem;
+    }
+
+    .captacao-detail-table td:nth-child(5) {
+      min-width: 140px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .captacao-detail-table td:nth-child(16),
+    .captacao-detail-table td:nth-child(17) {
+      min-width: 200px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .captacao-metric-value strong {
+      font-size: clamp(1.65rem, 2.6vw, 2.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .captacao-executive-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .captacao-executive-summary p {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff8ef;
+      border: 1px solid #ead8c5;
+      color: #40342f;
+    }
+
+    .metric.metric-compact strong {
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .captacao-metric-card {
+      grid-column: span 4;
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .captacao-metric-card span {
+      display: block;
+      max-width: 34ch;
+    }
+
+    .captacao-chip-limit .chip {
+      max-width: 100%;
+    }
+
+    .captacao-table-meta {
+      margin: 6px 0 0;
+      font-size: 0.82rem;
+      color: var(--ufpe-cinza);
+    }
+
+    .captacao-mix-card .section-head {
+      display: block;
+    }
+
+    .captacao-mix-card .section-head h2 {
+      margin-bottom: 8px;
+      max-width: 18ch;
+    }
+
+    .captacao-mix-card .section-head p {
+      max-width: none;
+      line-height: 1.5;
+    }
+
+    .captacao-key {
+      font-family: "IBM Plex Mono", "Consolas", monospace;
+      font-size: 0.76rem;
+      color: #6a5f57;
+    }
+
+    .captacao-key-short {
+      display: inline-block;
+      max-width: 320px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+    }
+
+    .captacao-detail-table thead th {
+      white-space: nowrap;
+    }
+
+    .captacao-detail-table td,
+    .captacao-detail-table th {
+      vertical-align: top;
+    }
+
     .orientation-grid-table .numeric-soft {
       color: #56714f;
       font-weight: 700;
@@ -1059,6 +1199,306 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 18px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .guide-highlight {
+      grid-column: span 12;
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.16), transparent 28%),
+        linear-gradient(135deg, rgba(255, 253, 249, 0.98), rgba(246, 238, 227, 0.97));
+    }
+
+    .guide-highlight p,
+    .guide-note p {
+      margin: 0;
+      max-width: 900px;
+      color: var(--ufpe-cinza);
+      line-height: 1.6;
+    }
+
+    .guide-note {
+      grid-column: span 12;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(140, 21, 56, 0.18);
+      background:
+        radial-gradient(circle at top left, rgba(140, 21, 56, 0.08), transparent 24%),
+        linear-gradient(180deg, #fff8f9, #f9eeef);
+    }
+
+    .guide-note strong {
+      color: var(--ufpe-bordo);
+    }
+
+    .guide-overview-grid,
+    .guide-checklist-grid,
+    .guide-learning-grid {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .guide-overview-card,
+    .guide-checklist-card,
+    .guide-learning-card {
+      grid-column: span 4;
+      padding: 22px;
+    }
+
+    .guide-overview-card h3,
+    .guide-checklist-card h3,
+    .guide-learning-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .guide-overview-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.7rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--ufpe-bordo);
+    }
+
+    .guide-overview-card .eyebrow {
+      margin: 0 0 10px;
+      color: var(--ufpe-cinza);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+    }
+
+    .guide-overview-card p,
+    .guide-checklist-card p,
+    .guide-learning-card p,
+    .guide-faq details p,
+    .guide-evidence-detail p,
+    .guide-overview-card li,
+    .guide-learning-card li {
+      margin: 0;
+      color: var(--ufpe-cinza);
+      line-height: 1.55;
+    }
+
+    .guide-learning-card summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .guide-learning-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-learning-card summary::after {
+      content: "Saiba mais";
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      color: var(--ufpe-bordo);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(140, 21, 56, 0.06);
+    }
+
+    .guide-learning-card[open] summary::after {
+      content: "Recolher";
+    }
+
+    .guide-points {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .guide-details {
+      margin-top: 14px;
+      border-top: 1px solid #eadfce;
+      padding-top: 14px;
+    }
+
+    .guide-details summary {
+      list-style: none;
+    }
+
+    .guide-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-more-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      background: rgba(140, 21, 56, 0.06);
+      color: var(--ufpe-bordo);
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .guide-more-button:hover {
+      transform: translateY(-1px);
+      background: rgba(140, 21, 56, 0.1);
+      border-color: rgba(140, 21, 56, 0.24);
+    }
+
+    .guide-checklist {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .guide-checklist li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--ufpe-grafite);
+      line-height: 1.45;
+    }
+
+    .guide-checklist-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 1.5px solid #d2bda8;
+      background: #fffdf9;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .guide-faq,
+    .guide-evidence-card {
+      grid-column: span 12;
+    }
+
+    .guide-accordion {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .guide-accordion details {
+      padding: 18px 20px;
+      border-radius: 20px;
+      border: 1px solid #e4d7c6;
+      background: linear-gradient(180deg, #fffdf9, #f7f1e8);
+    }
+
+    .guide-accordion summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ufpe-grafite);
+    }
+
+    .guide-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-accordion summary::after {
+      content: "Saiba mais";
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 21, 56, 0.16);
+      color: var(--ufpe-bordo);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(140, 21, 56, 0.06);
+    }
+
+    .guide-accordion details[open] summary::after {
+      content: "Recolher";
+    }
+
+    .guide-accordion-body {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .guide-inline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .guide-inline-tags span {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #f3ecdf;
+      border: 1px solid #e4d8c7;
+      color: var(--ufpe-grafite);
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .guide-evidence-table .guide-evidence-expand-row {
+      display: none;
+      background: #fff9f3;
+    }
+
+    .guide-evidence-table .guide-evidence-expand-row.open {
+      display: table-row;
+    }
+
+    .guide-evidence-table td,
+    .guide-evidence-table th {
+      vertical-align: top;
+    }
+
+    .guide-evidence-text {
+      display: block;
+      color: var(--ufpe-grafite);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .guide-evidence-source {
+      display: block;
+      margin-top: 8px;
+      color: var(--ufpe-cinza);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .guide-evidence-detail {
+      padding: 18px 16px 18px 22px;
+    }
+
+    .guide-evidence-detail strong {
+      color: var(--ufpe-bordo);
     }
 
     .documents-highlight {
@@ -1751,7 +2191,13 @@
       .orientation-split { grid-column: span 12; }
       .orientation-focus { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr 1fr; }
+      .filters-grid-captacao { grid-template-columns: 1fr 1fr; }
+      .captacao-executive-summary { grid-template-columns: 1fr; }
+      .captacao-metric-card { grid-column: span 6; }
       .documents-group { grid-column: span 12; }
+      .guide-overview-card,
+      .guide-checklist-card,
+      .guide-learning-card { grid-column: span 6; }
       .docentes-hero-card { grid-template-columns: 1fr; }
       .docentes-metric-card,
       .docentes-summary-card,
@@ -1763,9 +2209,15 @@
       .wrap { padding: 18px 14px 32px; }
       .filters-grid { grid-template-columns: 1fr; }
       .filters-grid-technical { grid-template-columns: 1fr; }
+      .filters-grid-captacao { grid-template-columns: 1fr; }
+      .captacao-metric-card { grid-column: span 12; min-height: auto; }
       .metric { grid-column: span 12; }
       .documents-metric { grid-column: span 12; }
-      .type-row { grid-template-columns: 1fr; }
+      .guide-overview-card,
+      .guide-checklist-card,
+      .guide-learning-card { grid-column: span 12; }
+      .type-row { grid-template-columns: 1fr; gap: 6px; }
+      .type-row span { text-align: left; }
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
       .tabs-nav { flex-direction: column; }
@@ -1801,18 +2253,21 @@
 
     <section class="tabs-shell">
       <nav class="tabs-nav" id="tabs-nav">
-        <button class="tab-button active" data-tab="tab-producao">Produção Científica</button>
-        <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
+        <button class="tab-button active" data-tab="tab-docentes">Docentes</button>
         <button class="tab-button" data-tab="tab-orientacoes">Orientações</button>
         <button class="tab-button" data-tab="tab-disciplinas">Disciplinas</button>
-        <button class="tab-button" data-tab="tab-docentes">Docentes</button>
-        <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
-        <button class="tab-button" data-tab="tab-documentos">Documentos</button>
+        <button class="tab-button" data-tab="tab-producao">Produção Científica</button>
+        <button class="tab-button" data-tab="tab-tecnica">Produção Técnica</button>
         <button class="tab-button" data-tab="tab-lideranca">Liderança e Impacto</button>
+        <button class="tab-button" data-tab="tab-captacao">Captação de Recursos</button>
+        <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
+        <button class="tab-button" data-tab="tab-guia-docente">APCN 2026 - Guia do Docente</button>
+        <button class="tab-button" data-tab="tab-documentos">Documentos</button>
+        <button class="tab-button" data-tab="tab-metodologia">Metodologia e Base</button>
         <button class="tab-button" data-tab="tab-sobre">Sobre</button>
       </nav>
 
-      <div class="tab-panel active" id="tab-producao">
+      <div class="tab-panel" id="tab-producao">
         <section class="grid">
           <div class="card filters">
             <div class="section-head">
@@ -2484,7 +2939,262 @@
         </section>
       </div>
 
-      <div class="tab-panel" id="tab-docentes">
+      <div class="tab-panel" id="tab-captacao">
+        <section class="grid">
+          <div class="card filters">
+            <div class="section-head">
+              <h2>Filtros</h2>
+              <p>Recorte cruzado por docente, tipo de recurso, vigência, agência e status da captação.</p>
+            </div>
+            <div class="filters-grid-captacao">
+              <div>
+                <label for="docentes-captacao">Docentes</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="docentes" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="docentes" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="docentes-captacao" class="filter-picker"></div>
+              </div>
+              <div>
+                <label for="tipos-captacao">Tipo de captação</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="tipos" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="tipos" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="tipos-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="vigencias-captacao">Ano de vigência</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="vigencias" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="vigencias" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="vigencias-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="agencias-captacao">Grupo de fomento</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="agencias" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="agencias" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="agencias-captacao" class="filter-picker compact"></div>
+              </div>
+              <div>
+                <label for="status-captacao">Situação</label>
+                <div class="filter-toolbar">
+                  <button type="button" class="filter-toggle" data-captacao-group="status" data-action="all">
+                    <span class="filter-toggle-box">✓</span>
+                    <span>Marcar tudo</span>
+                  </button>
+                  <button type="button" class="filter-toggle" data-captacao-group="status" data-action="none">
+                    <span class="filter-toggle-box"></span>
+                    <span>Desmarcar tudo</span>
+                  </button>
+                </div>
+                <div id="status-captacao" class="filter-picker compact"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Síntese Executiva APCN</h2>
+              <p>Leitura automática para maturidade científica, cobertura do corpo permanente e sustentabilidade da carteira de recursos.</p>
+            </div>
+            <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
+          </div>
+
+          <div class="card chart-narrow captacao-mix-card">
+            <div class="section-head">
+              <h2>Mix Financeiro e Tipológico</h2>
+              <p>Separa valor financeiro por registro e ocorrência por tipo de captação, sem duplicar montantes multi-classificados.</p>
+            </div>
+            <div id="captacao-tipos-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-insight-chips"></div>
+          </div>
+
+          <div class="card metric captacao-metric-card captacao-metric-value">
+            <p class="eyebrow">Valor Total Captado</p>
+            <strong id="captacao-valor-total">R$ 0</strong>
+            <span>Volume total aprovado no recorte analítico dos últimos 5 anos.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Registros</p>
+            <strong id="captacao-registros-total">0</strong>
+            <span>Captações visíveis após filtros, sem desdobro financeiro por tipo.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Docentes com Captação</p>
+            <strong id="captacao-docentes-total">0</strong>
+            <span id="captacao-docentes-total-resumo">0 docentes permanentes com pelo menos uma captação.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">% com Captação</p>
+            <strong id="captacao-percentual-docentes">0%</strong>
+            <span id="captacao-percentual-docentes-resumo">0 de 0 docentes permanentes no recorte.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Docentes sem Captação</p>
+            <strong id="captacao-docentes-sem">0</strong>
+            <span id="captacao-docentes-sem-resumo">Nenhum docente sem captação no recorte.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Captação Vigente 2026</p>
+            <strong id="captacao-docentes-vigentes">0</strong>
+            <span id="captacao-docentes-vigentes-resumo">0 docentes com carteira vigente em 2026.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">PQ / DT</p>
+            <strong id="captacao-docentes-pqdt">0</strong>
+            <span id="captacao-docentes-pqdt-resumo">0 docentes com bolsa estratégica identificada.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Agências Distintas</p>
+            <strong id="captacao-agencias-total">0</strong>
+            <span id="captacao-agencias-total-resumo">0 fontes estratégicas no recorte.</span>
+          </div>
+          <div class="card metric metric-compact captacao-metric-card">
+            <p class="eyebrow">Alertas de Duplicidade</p>
+            <strong id="captacao-alertas-total">0</strong>
+            <span id="captacao-alertas-total-resumo">Nenhuma suspeita de duplicidade.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Distribuição Docente</h2>
+                <p id="captacao-docente-chart-caption">Leitura estratégica por valor total, concentração e status APCN do corpo permanente.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Ordenação da captação por docente">
+                <button type="button" class="sort-toggle active" data-captacao-docente-sort="valor">Por valor</button>
+                <button type="button" class="sort-toggle" data-captacao-docente-sort="alfabetico">Alfabético</button>
+              </div>
+            </div>
+            <div id="chart-captacao-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Linhas de Pesquisa</h2>
+              <p>Distribui a carteira por linha institucional do docente para verificar aderência e concentração entre AMS e DFE.</p>
+            </div>
+            <div id="captacao-linhas-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-linhas-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Diversidade de Agências</h2>
+              <p>Diferencia CNPq, CAPES, FACEPE, FINEP, UFPE, fontes internacionais e demais grupos para leitura APCN.</p>
+            </div>
+            <div id="captacao-agencias-stack" class="type-stack"></div>
+            <div class="chips" id="captacao-agencias-chips"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Vigência da Carteira</h2>
+              <p>Mostra valor ativo por ano, número de projetos ativos e docentes contemplados, destacando 2026 como referência APCN.</p>
+            </div>
+            <div id="chart-captacao-vigencia" class="chart"></div>
+            <p class="chart-note" id="captacao-vigencia-nota"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Tabela APCN por Docente</h2>
+              <p>Inclui docentes com e sem captação para evidenciar cobertura do corpo permanente, vigência, PQ/DT e fragilidades.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="captacao-summary-table captacao-docente-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Registros</th>
+                    <th>Valor total</th>
+                    <th>Captação vigente</th>
+                    <th>PQ / DT</th>
+                    <th>Internacional</th>
+                    <th>Linhas de pesquisa</th>
+                    <th>Agências</th>
+                    <th>Status APCN</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-resumo-docentes-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Base Detalhada</h2>
+              <p>Leitura operacional para auditoria de persistência, incluindo vigência, edital, bolsas e alerta de duplicidade.</p>
+            </div>
+            <p class="captacao-table-meta">A tabela abaixo prioriza rastreabilidade. A chave de duplicidade foi abreviada visualmente para reduzir ruído, preservando o valor completo no tooltip.</p>
+            <div class="table-wrap">
+              <table class="captacao-detail-table">
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Agência</th>
+                    <th>Grupo</th>
+                    <th>Situação</th>
+                    <th>Status vigência</th>
+                    <th>Vigência</th>
+                    <th>Título / captação</th>
+                    <th>Tipos</th>
+                    <th>Edital</th>
+                    <th>Valor total</th>
+                    <th>Capital</th>
+                    <th>Custeio</th>
+                    <th>Bolsas</th>
+                    <th>PQ / DT</th>
+                    <th>Internacional</th>
+                    <th>Linha</th>
+                    <th>Chave duplicidade</th>
+                    <th>Motivo do alerta</th>
+                    <th>Status revisão</th>
+                    <th>Observação</th>
+                    <th>Evidência / documento</th>
+                    <th>Link edital / processo</th>
+                    <th>Vínculo discente</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-tabela-body"></tbody>
+              </table>
+            </div>
+            <div id="captacao-estado-vazio" class="empty">
+              Nenhum registro de captação atende aos filtros atuais.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel active" id="tab-docentes">
         <section class="grid">
           <div class="card docentes-controls-card">
             <div class="section-head">
@@ -2917,6 +3627,73 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Captação de Recursos</h2>
+              <p>Leitura exploratória do quantitativo de docentes com captação registrada, preparando a definição posterior de uma linha de corte crítica.</p>
+            </div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Base docente</p>
+            <strong id="captacao-crit-base-total">0</strong>
+            <span>Total de docentes considerados na base APCN para leitura da captação.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com captação</p>
+            <strong id="captacao-crit-docentes-total">0</strong>
+            <span id="captacao-crit-docentes-resumo">0 docentes com pelo menos uma captação registrada.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Cobertura da base</p>
+            <strong id="captacao-crit-percentual">0%</strong>
+            <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação de recursos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">PQ vigentes</p>
+            <strong id="captacao-crit-pq-total">0</strong>
+            <span id="captacao-crit-pq-resumo">0 docentes com PQ estratégico vigente.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Captação por Docente</h2>
+              <p>Quantidade de registros por docente com apoio do valor total captado em cada carteira.</p>
+            </div>
+            <div id="chart-captacao-crit-docentes" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura de Captação</h2>
+              <p>Painel exploratório para apoiar a futura definição do corte desejável.</p>
+            </div>
+            <div class="criteria-summary" id="captacao-crit-summary-cards"></div>
+            <div class="chips" id="captacao-crit-insights"></div>
+            <p class="chart-note" id="captacao-crit-metodologia"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Síntese de Captação</h2>
+              <p>Resumo do quantitativo atual de docentes com captação e da composição por situação da base.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Indicador</th>
+                    <th>Base de leitura</th>
+                    <th>Resultado atual</th>
+                    <th>Leitura</th>
+                  </tr>
+                </thead>
+                <tbody id="captacao-crit-resumo-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Corpo Docente</h2>
               <p>Regras críticas de composição do quadro permanente, vínculo institucional, exclusividade e dimensão mínima do programa.</p>
             </div>
@@ -3302,6 +4079,83 @@
         </section>
       </div>
 
+      <div class="tab-panel" id="tab-guia-docente">
+        <section class="guide-grid">
+          <div class="card guide-highlight">
+            <div class="section-head">
+              <h2>APCN 2026 - Guia do Docente</h2>
+              <p>Guia institucional para compreensão dos critérios de avaliação da APCN de Doutorado da Área 21/CAPES.</p>
+            </div>
+            <p>
+              Esta aba funciona como uma camada de comunicação institucional voltada ao corpo docente do PPGEF. Ela não substitui
+              os painéis analíticos já existentes: resume os critérios, traduz a linguagem documental em ações operacionais e
+              organiza os pontos que cada docente precisa conferir para sustentar a proposta de Doutorado.
+            </p>
+          </div>
+
+          <div class="card guide-note">
+            <p>
+              <strong>Leitura operacional:</strong> o guia combina critérios formais da documentação CAPES com cortes internos já
+              usados no dashboard. Onde houver margem conservadora do PPGEF sobre o mínimo textual, isso aparece explicitado na
+              seção de evidências.
+            </p>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Visão Geral da APCN</h2>
+              <p>Critérios de entrada para leitura rápida do que o programa precisa comprovar na proposta.</p>
+            </div>
+          </div>
+          <div id="guide-overview-grid" class="guide-overview-grid"></div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>O que a CAPES Avaliará</h2>
+              <p>Blocos executivos com os focos centrais da análise da proposta e do corpo docente.</p>
+            </div>
+          </div>
+          <div id="guide-learning-grid" class="guide-learning-grid"></div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>O que Cada Docente Deve Conferir</h2>
+              <p>Checklist institucional para reduzir omissões, inconsistências cadastrais e heranças de informação incompleta.</p>
+            </div>
+          </div>
+          <div id="guide-checklist-grid" class="guide-checklist-grid"></div>
+
+          <div class="card guide-faq">
+            <div class="section-head">
+              <h2>Perguntas Frequentes</h2>
+              <p>Base inicial de respostas curtas, pronta para expansão futura sem alterar a estrutura da aba.</p>
+            </div>
+            <div id="guide-faq-list" class="guide-accordion"></div>
+          </div>
+
+          <div class="card guide-evidence-card">
+            <div class="section-head">
+              <h2>Critérios APCN com Evidência Textual</h2>
+              <p>Quadro de leitura que aproxima o texto orientador da interpretação operacional usada pelo PPGEF.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table guide-evidence-table">
+                <thead>
+                  <tr>
+                    <th>Critério</th>
+                    <th>Exigência</th>
+                    <th>Evidência Textual</th>
+                    <th>Interpretação para o PPGEF</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="guide-evidence-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div class="tab-panel" id="tab-documentos">
         <section class="documents-grid">
           <div class="card documents-highlight">
@@ -3348,6 +4202,204 @@
               <p>Documentos norteadores e resultado associado à avaliação.</p>
             </div>
             <div id="documents-capes" class="documents-list"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="tab-metodologia">
+        <section class="grid">
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Escopo do Painel</h2>
+              <p>Referencial de leitura para uso institucional, discussão interna e consolidação da proposta de APCN.</p>
+            </div>
+            <p>
+              Esta aba documenta as bases utilizadas, as regras sintéticas de cálculo aplicadas no painel e as principais
+              limitações conhecidas da leitura analítica. O objetivo é tornar o dashboard auditável, distinguindo com clareza
+              o que é dado estruturado, o que é regra de negócio aplicada e o que ainda depende de revisão complementar.
+            </p>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Bases integradas</p>
+            <strong>7</strong>
+            <span>Produção científica, produção técnica, orientações, disciplinas, captação, corpo docente e documentos.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Modelo de publicação</p>
+            <strong>Estático</strong>
+            <span>Site público em HTML e JavaScript, sem backend transacional e sem consulta dinâmica a banco.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Regra central</p>
+            <strong>APCN</strong>
+            <span>As leituras quantitativas são orientadas pelos critérios críticos mobilizados para o edital CAPES 2026.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Uso recomendado</p>
+            <strong>Analítico</strong>
+            <span>Painel para diagnóstico, leitura crítica, comparação interna e preparação documental do programa.</span>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Mapa das Bases</h2>
+              <p>Origem imediata dos dados consumidos pelo site publicado.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Módulo</th>
+                    <th>Arquivo publicado</th>
+                    <th>Origem declarada</th>
+                    <th>Observação metodológica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Produção científica</td>
+                    <td><code>dashboard/producao-cientifica-data.js</code></td>
+                    <td>Base sincronizada e classificada da produção docente.</td>
+                    <td>Concentra a principal leitura APCN do painel, com tipologia, indexação, JCR e pontuação.</td>
+                  </tr>
+                  <tr>
+                    <td>Produção técnica</td>
+                    <td><code>dashboard/producao-tecnica-data.js</code></td>
+                    <td>Exportação consolidada da planilha <code>Produção Técnica docente 2026_06.xlsx</code>.</td>
+                    <td>Inclui registros positivos e marcações explícitas de docentes sem produção.</td>
+                  </tr>
+                  <tr>
+                    <td>Orientações</td>
+                    <td><code>dashboard/orientacoes-data.js</code></td>
+                    <td>Base agregada por docente.</td>
+                    <td>É usada tanto para leitura do pipeline de orientação quanto para critérios críticos de experiência formativa.</td>
+                  </tr>
+                  <tr>
+                    <td>Disciplinas</td>
+                    <td><code>dashboard/disciplinas-data.js</code></td>
+                    <td>Oferta consolidada de turmas e responsabilidades docentes.</td>
+                    <td>Permite leitura de docência, vínculo interno/externo e recortes temporais por período.</td>
+                  </tr>
+                  <tr>
+                    <td>Captação de recursos</td>
+                    <td><code>dashboard/captacao-recursos-data.js</code></td>
+                    <td>Levantamento estruturado a partir de respostas em formulário.</td>
+                    <td>É a base mais sensível a autodeclaração, padronização de editais e revisão manual de agências.</td>
+                  </tr>
+                  <tr>
+                    <td>Corpo docente</td>
+                    <td><code>dashboard/corpo-docente-data.js</code></td>
+                    <td>Extração da planilha <code>Corpo Docente.xlsx</code>, aba <code>2025-2028</code>.</td>
+                    <td>Estrutura o quadro projetado do programa, com histórico, permanência, exclusividade e dependência de colaboradores.</td>
+                  </tr>
+                  <tr>
+                    <td>Documentos</td>
+                    <td><code>dashboard/documentos-data.js</code></td>
+                    <td>Lista curada de documentos públicos incorporados ao repositório.</td>
+                    <td>Serve como camada documental de apoio, não como base analítica.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Regras Sintéticas de Cálculo</h2>
+              <p>Critérios resumidos que organizam os principais indicadores exibidos no painel.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Dimensão</th>
+                    <th>Regra aplicada</th>
+                    <th>Leitura produzida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pontuação APCN</td>
+                    <td>Artigos recebem pontuação conforme indexação do periódico; livros seguem regra fixa; capítulos entram pela base estruturada.</td>
+                    <td>Mede massa crítica de produção intelectual com foco comparativo entre docentes e anos.</td>
+                  </tr>
+                  <tr>
+                    <td>Liderança e impacto</td>
+                    <td>Aba combina posição autoral, pontuação APCN e evidências de JCR (SCimago | 2y cites per doc) para estimar liderança e qualidade.</td>
+                    <td>Não substitui avaliação qualitativa, mas ajuda a localizar fragilidade autoral e força bibliométrica.</td>
+                  </tr>
+                  <tr>
+                    <td>Orientações</td>
+                    <td>Consolida graduação, mestrado, doutorado e pós-doutorado por docente, com destaque para andamento e conclusão.</td>
+                    <td>Permite demonstrar capacidade formativa acumulada e pipeline de orientação vinculado à APCN.</td>
+                  </tr>
+                  <tr>
+                    <td>Docência</td>
+                    <td>Conta ofertas registradas por docente e vínculo institucional a partir da base de disciplinas.</td>
+                    <td>Suporta a leitura de participação docente e os critérios críticos ligados à docência.</td>
+                  </tr>
+                  <tr>
+                    <td>Captação</td>
+                    <td>Normaliza registros por agência, vigência, tipo e situação, destacando janela recente e vigência em 2026.</td>
+                    <td>Busca evidenciar lastro institucional e potencial de sustentabilidade financeira e de infraestrutura.</td>
+                  </tr>
+                  <tr>
+                    <td>Corpo docente</td>
+                    <td>Aplica metas de proporção de permanentes, internos, exclusivos, externos e vínculo com outros PPGs.</td>
+                    <td>Produz leitura de estabilidade e aderência do quadro projetado à lógica esperada para a APCN.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Limitações Conhecidas</h2>
+              <p>Pontos que devem ser lidos com cautela e, quando necessário, checados na documentação de origem.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Captação de recursos depende de autodeclaração inicial e padronização posterior.</span>
+              <span class="chip">Produção técnica ainda reflete a qualidade e a consistência do preenchimento na planilha de origem.</span>
+              <span class="chip">Leituras bibliométricas e de liderança autoral são instrumentos auxiliares e não substituem juízo acadêmico.</span>
+              <span class="chip">Documentos públicos representam o acervo incorporado ao repositório nesta versão do site.</span>
+              <span class="chip">Mudanças em bases locais exigem nova exportação dos arquivos JavaScript publicados.</span>
+            </div>
+            <p class="chart-note" style="margin-top: 16px;">
+              A interpretação recomendada é sempre combinada: evidência quantitativa no painel, checagem documental e validação acadêmica pelos docentes e pela coordenação.
+            </p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Boas Práticas de Uso</h2>
+              <p>Como utilizar o painel sem produzir inferências indevidas.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Uso recomendado</th>
+                    <th>Evitar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Usar o painel para localizar fragilidades, priorizar revisão documental e orientar decisões de composição.</td>
+                    <td>Tratar qualquer indicador isolado como prova suficiente de mérito ou fragilidade definitiva.</td>
+                  </tr>
+                  <tr>
+                    <td>Confrontar os resultados com regimento, ficha de área, documentos CAPES e memória institucional.</td>
+                    <td>Ler a base publicada como se fosse fonte oficial imutável sem revisão das planilhas e anexos correspondentes.</td>
+                  </tr>
+                  <tr>
+                    <td>Explicitar data, recorte e regra de cálculo ao usar gráficos em reuniões ou relatórios.</td>
+                    <td>Recortar números do painel fora do contexto metodológico da aba de origem.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       </div>
@@ -3575,19 +4627,32 @@
   <script src="./producao-cientifica-data.js?v=2026-06-12g"></script>
   <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
-  <script src="./disciplinas-data.js?v=2026-06-12f"></script>
+  <script src="./disciplinas-data.js?v=2026-06-15a"></script>
+  <script src="./captacao-recursos-data.js?v=2026-06-15a"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
     const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const dataSourceCaptacaoPayload = window.CAPTACAO_RECURSOS_PPGEF || { updated_at: "", rows: [] };
+    const dataSourceCaptacao = dataSourceCaptacaoPayload.rows || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
+    const captacaoReferenceYear = Number(dataSourceCaptacaoPayload.reference_year || 2026);
+    const captacaoRecentWindowStart = Number(dataSourceCaptacaoPayload.recent_window_start || 2022);
     const normalizeDisciplinasName = (value) => String(value || "")
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .toUpperCase();
+    const disciplinasCanonicalNameMap = new Map([
+      ["LEONARDO LUZ", "Leonardo Gomes de Oliveira Luz"],
+    ]);
+    const canonicalizeDisciplinasName = (value) => {
+      const trimmed = String(value || "").trim();
+      const normalized = normalizeDisciplinasName(trimmed);
+      return disciplinasCanonicalNameMap.get(normalized) || trimmed;
+    };
     const disciplinasInternalDocentes = new Set([
       "André dos Santos Costa",
       "Bruno Teixeira Barbosa",
@@ -3612,7 +4677,7 @@
       ...item,
       ano: String(item.ano || "").trim(),
       ano_periodo: String(item.ano_periodo || "").trim(),
-      nome_responsavel: String(item.nome_responsavel || "").trim(),
+      nome_responsavel: canonicalizeDisciplinasName(item.nome_responsavel),
       categoria_responsavel: String(item.categoria_responsavel || "").trim(),
       indicador_responsavel_principal: String(item.indicador_responsavel_principal || "").trim(),
       formacao_docente: String(item.formacao_docente || "").trim(),
@@ -3623,6 +4688,260 @@
       vinculo_painel: disciplinasInternalDocentes.has(normalizeDisciplinasName(item.nome_responsavel)) ? "Interno" : "Externo",
     }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
+    // Static guide content stays local to this page to avoid creating new datasets for institutional copy.
+    const guideOverviewItems = [
+      {
+        criterio: "Corpo Docente",
+        exigencia: "Minimo de 12 docentes permanentes",
+        explicacao: "A proposta precisa mostrar massa critica suficiente para sustentar ensino, orientacao, pesquisa e governanca.",
+        detalhe: "No dashboard, isso deve ser lido em conjunto com estabilidade do quadro, distribuicao entre linhas e aderencia tematica de cada docente.",
+      },
+      {
+        criterio: "Exclusividade",
+        exigencia: "Minimo de 30% exclusivos ao PPG",
+        explicacao: "Parte do quadro permanente deve ter dedicacao central ao programa, reduzindo dispersao entre multiplos PPGs.",
+        detalhe: "O guia assume o corte operacional ja monitorado internamente: mapear quem atua apenas neste PPG e quem acumula participacoes externas.",
+      },
+      {
+        criterio: "Producao Intelectual",
+        exigencia: "75% dos docentes com >= 330 pontos",
+        explicacao: "Esse corte resume a expectativa de produtividade consistente do nucleo docente.",
+        detalhe: "O Norteador APCN localiza 320 pontos como referencia textual para doutorado academico; o painel atual trabalha com 330 como margem prudencial do PPGEF.",
+      },
+      {
+        criterio: "Producao Qualificada",
+        exigencia: "75% dos docentes com >= 2 produtos JCR/SJR ou Categoria A",
+        explicacao: "Nao basta volume: a proposta precisa evidenciar qualidade editorial e aderencia dos produtos.",
+        detalhe: "No uso institucional, o dashboard trata JCR/SJR, estratos qualificados e proxies editoriais como evidencias complementares para a leitura do criterio.",
+      },
+      {
+        criterio: "Formacao de Recursos Humanos",
+        exigencia: "100% com orientacao concluida; >= 9 com mestrado; >= 3 com doutorado",
+        explicacao: "A experiencia previa de orientacao e central para a confianca na oferta de doutorado.",
+        detalhe: "Para leitura interna, vale conferir orientacoes concluidas, nivel de experiencia e coerencia entre o nivel almejado e a trilha ja percorrida pelo docente.",
+      },
+      {
+        criterio: "Captacao de Recursos",
+        exigencia: "Ultimos 5 anos",
+        explicacao: "A carteira de editais, bolsas e financiamentos sinaliza maturidade cientifica e capacidade de sustentacao.",
+        detalhe: "O foco nao e apenas o valor captado: entram agencia, tipo de auxilio, vigencia, processo e relacao com os projetos da proposta.",
+      },
+      {
+        criterio: "Linhas de Pesquisa",
+        exigencia: "Minimo de duas linhas por area de concentracao",
+        explicacao: "A proposta deve ser coerente, hierarquizada e capaz de organizar projetos, disciplinas e orientacoes.",
+        detalhe: "O ponto critico nao e so o numero de linhas, mas a nao sobreposicao conceitual e a distribuicao equilibrada do corpo docente entre elas.",
+      },
+    ];
+    const guideLearningItems = [
+      {
+        titulo: "Corpo Docente",
+        resumo: "Composicao, dedicacao, exclusividade, experiencia de orientacao e distribuicao nas linhas de pesquisa.",
+        detalhes: [
+          "A CAPES observa se o quadro permanente e numericamente suficiente, estavel e coerente com a proposta.",
+          "Tambem pesa a aderencia entre a expertise docente, as linhas, os projetos e as disciplinas do curso.",
+          "A leitura institucional precisa evitar herancas de cadastro: docente produtivo, mas tematicamente desalinhado, enfraquece a proposta.",
+        ],
+        tags: ["Composicao", "Dedicacao", "Exclusividade", "Linhas"],
+      },
+      {
+        titulo: "Producao Intelectual",
+        resumo: "Pontuacao APCN, producao qualificada e aderencia tematica daquilo que o docente publica.",
+        detalhes: [
+          "A Area 21 nao le apenas quantidade: ela cruza pontuacao, qualificacao dos produtos e vinculacao com o escopo do PPG.",
+          "Produtos fora da tematica da linha podem existir no curriculo, mas nao devem ser a base central da sustentacao da proposta.",
+          "O docente precisa saber quais produtos sustentam sua leitura APCN e quais ainda dependem de classificacao, revisao ou confirmacao.",
+        ],
+        tags: ["Pontuacao", "Qualificacao", "Aderencia"],
+      },
+      {
+        titulo: "Formacao de Recursos Humanos",
+        resumo: "Orientacoes concluidas e experiencia na formacao de mestres e doutores.",
+        detalhes: [
+          "Para doutorado, experiencia acumulada de orientacao faz diferenca na confianca da proposta.",
+          "A leitura operacional deve separar orientacao concluida, em andamento e o nivel em que ela ocorreu.",
+          "Registros incompletos ou sem lastro documental tendem a gerar fragilidade justamente no item em que a maturidade docente precisa ser mais nitida.",
+        ],
+        tags: ["Orientacoes", "Mestrado", "Doutorado"],
+      },
+      {
+        titulo: "Captacao de Recursos",
+        resumo: "Financiamentos, bolsas, diversidade de agencias e sinais de maturidade cientifica.",
+        detalhes: [
+          "A CAPES valoriza a capacidade de captar recursos, independentemente do valor final, observando tipo de edital, processo e agencia.",
+          "Bolsas de produtividade e carteiras vigentes ajudam, mas nao substituem o conjunto da capacidade de financiamento.",
+          "Internamente, vale revisar duplicidades, vigencias e vinculacao com projetos ativos para evitar inflar ou subnotificar a base.",
+        ],
+        tags: ["Editais", "Bolsas", "Agencias", "Vigencia"],
+      },
+      {
+        titulo: "Organizacao Academica",
+        resumo: "Linhas de pesquisa, projetos, disciplinas e perfil do egresso precisam formar uma estrutura coerente.",
+        detalhes: [
+          "A proposta deve ter hierarquia entre area de concentracao, linhas, projetos e estrutura curricular.",
+          "Linhas sobrepostas, projetos sem abrigo real para discentes ou disciplinas sem aderencia direta geram ruido na avaliacao.",
+          "O ponto forte e mostrar um desenho curricular que deriva da identidade cientifica do programa, nao um mosaico de ofertas isoladas.",
+        ],
+        tags: ["Linhas", "Projetos", "Disciplinas", "Egresso"],
+      },
+      {
+        titulo: "Sustentacao Institucional",
+        resumo: "Planejamento, infraestrutura, autoavaliacao e apoio institucional sao parte da credibilidade da proposta.",
+        detalhes: [
+          "A proposta precisa demonstrar viabilidade, apoio da IES e mecanismos claros de autoavaliacao.",
+          "Infraestrutura compartilhada pode ser usada, mas sua disponibilidade efetiva para o PPG deve ficar clara.",
+          "No uso interno, esta camada ajuda a alinhar o que o docente informa com aquilo que o programa consegue provar documentalmente.",
+        ],
+        tags: ["Planejamento", "Infraestrutura", "Autoavaliacao"],
+      },
+    ];
+    const guideChecklistGroups = [
+      {
+        titulo: "Producao Intelectual",
+        resumo: "Conferencias basicas para evitar subregistro e perda de aderencia na leitura APCN.",
+        itens: [
+          "Minha producao esta atualizada.",
+          "Conheco minha pontuacao APCN.",
+          "Possuo produtos JCR/SJR identificados.",
+          "Minha producao esta aderente a linha de pesquisa.",
+        ],
+      },
+      {
+        titulo: "Formacao de Recursos Humanos",
+        resumo: "O foco aqui e fechar lacunas de orientacao que costumam aparecer tarde demais.",
+        itens: [
+          "Minhas orientacoes concluidas estao registradas.",
+          "Minhas orientacoes de mestrado estao registradas.",
+          "Minhas orientacoes de doutorado estao registradas.",
+        ],
+      },
+      {
+        titulo: "Captacao de Recursos",
+        resumo: "A carteira informada precisa estar completa, coerente e dentro da janela considerada.",
+        itens: [
+          "Informei todos os editais dos ultimos cinco anos.",
+          "Informei bolsas e financiamentos.",
+          "Informei vigencias e processos.",
+        ],
+      },
+      {
+        titulo: "Atuacao Academica",
+        resumo: "A aderencia do docente ao desenho do curso precisa ser demonstravel, nao apenas presumida.",
+        itens: [
+          "Estou vinculado a linha de pesquisa adequada.",
+          "Possuo projetos associados a linha.",
+          "Ministro disciplinas vinculadas a minha area de atuacao.",
+        ],
+      },
+    ];
+    const guideFaqItems = [
+      {
+        pergunta: "O Qualis e utilizado na APCN?",
+        resposta: "Nao como unico sinal de qualidade. A leitura da Area 21 combina pontuacao APCN, produtos qualificados e aderencia tematica. Por isso o dashboard usa estratos, JCR/SJR e categoria editorial como evidencias complementares.",
+      },
+      {
+        pergunta: "Como e calculada a pontuacao APCN?",
+        resposta: "Ela depende dos produtos declarados e das regras da Area 21 para o nivel pretendido. Nesta interface, o objetivo nao e recalcular a regra completa, mas indicar quais produtos sustentam a leitura institucional de cada docente.",
+      },
+      {
+        pergunta: "Qual periodo e considerado para producao?",
+        resposta: "O painel sintetiza o recorte usado na preparacao da proposta. Quando houver duvida, vale confrontar o produto com a janela do quadrenio e com a regra especifica do Documento Norteador APCN.",
+      },
+      {
+        pergunta: "Qual periodo e considerado para captacao de recursos?",
+        resposta: "Para este guia, considera-se a leitura institucional dos ultimos cinco anos, com enfase em editais, financiamentos e bolsas declaradas pelos docentes.",
+      },
+      {
+        pergunta: "Preciso possuir bolsa de produtividade?",
+        resposta: "Nao e requisito isolado para todos, mas bolsas e financiamentos ajudam a demonstrar maturidade cientifica e capacidade de sustentacao da proposta.",
+      },
+      {
+        pergunta: "Preciso ter orientacao de doutorado?",
+        resposta: "Nem todos os permanentes precisam ter essa experiencia, mas a proposta de doutorado precisa mostrar massa critica no nivel almejado e um nucleo docente com historico consistente.",
+      },
+      {
+        pergunta: "O que significa docente exclusivo?",
+        resposta: "No uso operacional do guia, e o permanente que atua como permanente somente neste PPG. Esse dado afeta diretamente o criterio de dedicacao exclusiva observado pela Area 21.",
+      },
+      {
+        pergunta: "Quantos docentes precisam ter orientacao de doutorado concluida?",
+        resposta: "O monitoramento institucional adota o minimo de tres docentes com orientacao de doutorado concluida como marcador critico para a proposta.",
+      },
+    ];
+    const guideEvidenceRows = [
+      {
+        criterio: "Docentes permanentes",
+        exigencia: "Minimo de 12 permanentes",
+        evidencia: "A proposta devera conter, no minimo, 12 docentes permanentes.",
+        interpretacao: "O PPGEF precisa manter dimensao minima e estabilidade do nucleo permanente.",
+        detalhe: "Na leitura operacional, 12 e piso. Quadro estavel, aderente e distribuido entre linhas e mais importante do que atingir o numero por arranjo temporario.",
+        fonte: "Documento Norteador APCN, p. 7",
+      },
+      {
+        criterio: "Exclusividade",
+        exigencia: "Minimo de 30% exclusivos ao PPG",
+        evidencia: "No minimo, 30% do corpo docente permanente seja exclusivo ao PPG proposto.",
+        interpretacao: "A dedicacao exclusiva reduz dispersao e reforca o compromisso estrutural do quadro.",
+        detalhe: "Esta e uma das areas em que o dashboard ja carrega herancas criticas: docentes com multiplas participacoes podem continuar produtivos, mas deixam de contar para o criterio quando extrapolam o limite.",
+        fonte: "Documento Norteador APCN, p. 8",
+      },
+      {
+        criterio: "Producao intelectual",
+        exigencia: "75% com >= 330 pontos",
+        evidencia: "75% dos docentes permanentes devem somar pelo menos 320 pontos.",
+        interpretacao: "O texto CAPES local indica 320; o PPGEF monitora 330 como margem conservadora.",
+        detalhe: "A aba orientadora mantem 330 porque esse corte ja aparece na infraestrutura analitica atual. Isso evita afrouxar a leitura interna, mas deixa claro que o lastro textual encontrado no documento local aponta 320.",
+        fonte: "Documento Norteador APCN, p. 10",
+      },
+      {
+        criterio: "Producao qualificada",
+        exigencia: "75% com >= 2 produtos qualificados",
+        evidencia: "75% dos docentes permanentes devem ter pelo menos 2 produtos qualificados.",
+        interpretacao: "O PPGEF deve mapear quais produtos realmente sustentam essa exigencia por docente.",
+        detalhe: "No dashboard, JCR/SJR e Categoria A funcionam como leitura operacional de qualidade. Isso ajuda a triagem interna, mas a prova final depende da aderencia do produto as regras documentais e editoriais.",
+        fonte: "Documento Norteador APCN, p. 10",
+      },
+      {
+        criterio: "Orientacoes concluidas",
+        exigencia: "Experiencia previa em orientacao",
+        evidencia: "75% dos docentes permanentes devem ter experiencia na orientacao de mestrandos.",
+        interpretacao: "O programa precisa mostrar experiencia difusa no quadro, nao concentrada em poucos nomes.",
+        detalhe: "Por isso o checklist separa orientacoes concluidas, mestrado e doutorado. O risco recorrente e ter experiencia real, mas registros incompletos ou mal classificados na base consolidada.",
+        fonte: "Documento Norteador APCN, p. 9",
+      },
+      {
+        criterio: "Captacao de recursos",
+        exigencia: "Declarar editais, bolsas e financiamentos",
+        evidencia: "A captação de recursos financeiros... e as Bolsas de Produtividade, devem ser declaradas.",
+        interpretacao: "Nao basta dizer que houve captacao; e preciso qualificar agencia, tipo de apoio e processo.",
+        detalhe: "A recomendacao institucional e revisar os ultimos cinco anos para eliminar omissoes, duplicidades e vigencias desatualizadas antes da consolidacao final da proposta.",
+        fonte: "Documento Norteador APCN, p. 9",
+      },
+      {
+        criterio: "Linhas de pesquisa",
+        exigencia: "Pelo menos duas linhas por area de concentracao",
+        evidencia: "Apresentou pelo menos 2 linhas de pesquisa/atuacao por area de concentracao?",
+        interpretacao: "A estrutura precisa ser plural, coerente e sem sobreposicao conceitual entre linhas.",
+        detalhe: "O numero minimo por si so nao resolve. O que sustenta a proposta e a hierarquia clara entre area, linhas, projetos e disciplinas, com docentes distribuidos de modo defensavel.",
+        fonte: "Documento Norteador APCN, p. 17",
+      },
+      {
+        criterio: "Projetos",
+        exigencia: "1 a 3 projetos por docente permanente",
+        evidencia: "E obrigatorio que todo docente permanente seja responsavel por pelo menos um projeto.",
+        interpretacao: "Cada permanente precisa entrar na proposta com projeto real, coerente e capaz de abrigar discentes.",
+        detalhe: "Projetos genéricos ou desalinhados costumam ser heranca de tentativas anteriores. O guia transforma isso em conferência objetiva para o docente.",
+        fonte: "Documento Norteador APCN, p. 5",
+      },
+      {
+        criterio: "Disciplinas",
+        exigencia: "Estrutura curricular coerente e docentes aderentes",
+        evidencia: "A proposta devera apresentar coerencia interna entre... Linhas de Pesquisa/Atuacao, as Disciplinas e os Projetos.",
+        interpretacao: "Disciplina entra como prova de coerencia curricular e de aderencia do docente ao curso proposto.",
+        detalhe: "Para o PPGEF, o ponto principal e mostrar que o docente ministra disciplina vinculada a sua area e ao desenho curricular do doutorado, nao apenas possui oferta isolada na base.",
+        fonte: "Documento Norteador APCN, p. 5",
+      },
+    ];
     const docenteChipList = document.getElementById("docentes-chip-list");
     const tiposSelect = document.getElementById("tipos");
     const anosSelect = document.getElementById("anos");
@@ -3709,11 +5028,33 @@
     const disciplinasHeatmapBody = document.getElementById("disciplinas-heatmap-body");
     const disciplinasDetalheBody = document.getElementById("disciplinas-detalhe-body");
     const disciplinasDetalheNota = document.getElementById("disciplinas-detalhe-nota");
+    const docenteCaptacaoList = document.getElementById("docentes-captacao");
+    const tiposCaptacaoSelect = document.getElementById("tipos-captacao");
+    const vigenciasCaptacaoSelect = document.getElementById("vigencias-captacao");
+    const agenciasCaptacaoSelect = document.getElementById("agencias-captacao");
+    const statusCaptacaoSelect = document.getElementById("status-captacao");
+    const chartCaptacaoDocentes = document.getElementById("chart-captacao-docentes");
+    const captacaoDocenteChartCaption = document.getElementById("captacao-docente-chart-caption");
+    const captacaoExecutiveSummary = document.getElementById("captacao-executive-summary");
+    const captacaoAgenciasStack = document.getElementById("captacao-agencias-stack");
+    const captacaoAgenciasChips = document.getElementById("captacao-agencias-chips");
+    const captacaoLinhasStack = document.getElementById("captacao-linhas-stack");
+    const captacaoLinhasChips = document.getElementById("captacao-linhas-chips");
+    const chartCaptacaoVigencia = document.getElementById("chart-captacao-vigencia");
+    const captacaoVigenciaNota = document.getElementById("captacao-vigencia-nota");
+    const captacaoTiposStack = document.getElementById("captacao-tipos-stack");
+    const captacaoInsightChips = document.getElementById("captacao-insight-chips");
+    const captacaoResumoDocentesBody = document.getElementById("captacao-resumo-docentes-body");
+    const captacaoTabelaBody = document.getElementById("captacao-tabela-body");
+    const captacaoEstadoVazio = document.getElementById("captacao-estado-vazio");
     const chartCriteriosProd = document.getElementById("chart-criterios-prod");
     const chartCriteriosOrient = document.getElementById("chart-criterios-orient");
     const tabApcn = document.getElementById("tab-apcn");
     const docenciaCritSummaryCards = document.getElementById("docencia-crit-summary-cards");
     const docenciaCritInsights = document.getElementById("docencia-crit-insights");
+    const chartCaptacaoCritDocentes = document.getElementById("chart-captacao-crit-docentes");
+    const captacaoCritSummaryCards = document.getElementById("captacao-crit-summary-cards");
+    const captacaoCritInsights = document.getElementById("captacao-crit-insights");
     const corpoDocenteCritSummaryCards = document.getElementById("corpo-docente-crit-summary-cards");
     const corpoDocenteCritInsights = document.getElementById("corpo-docente-crit-insights");
     const criteriosSortPerformanceButton = document.getElementById("criterios-sort-performance");
@@ -3722,8 +5063,15 @@
     const docenteTableSortButtons = [...document.querySelectorAll("[data-docente-table-sort]")];
     const disciplinasDocenteSortButtons = [...document.querySelectorAll("[data-disciplinas-docente-sort]")];
     const disciplinasFilterToggles = [...document.querySelectorAll('.filter-toggle[data-disciplina-group]')];
+    const captacaoFilterToggles = [...document.querySelectorAll('.filter-toggle[data-captacao-group]')];
+    const captacaoDocenteSortButtons = [...document.querySelectorAll("[data-captacao-docente-sort]")];
     const documentsInternos = document.getElementById("documents-internos");
     const documentsCapes = document.getElementById("documents-capes");
+    const guideOverviewGrid = document.getElementById("guide-overview-grid");
+    const guideLearningGrid = document.getElementById("guide-learning-grid");
+    const guideChecklistGrid = document.getElementById("guide-checklist-grid");
+    const guideFaqList = document.getElementById("guide-faq-list");
+    const guideEvidenceBody = document.getElementById("guide-evidence-body");
     let selectedDocentes = new Set();
     let selectedTipos = new Set();
     let selectedAnos = new Set();
@@ -3735,9 +5083,15 @@
     let selectedVinculosDisciplinas = new Set();
     let selectedAnosDisciplinas = new Set();
     let selectedPeriodosDisciplinas = new Set();
+    let selectedDocentesCaptacao = new Set();
+    let selectedTiposCaptacao = new Set();
+    let selectedVigenciasCaptacao = new Set();
+    let selectedAgenciasCaptacao = new Set();
+    let selectedStatusCaptacao = new Set();
     let docenteSortMode = "alfabetico";
     let tecnicaDocenteSortMode = "alfabetico";
     let disciplinasDocenteSortMode = "carga";
+    let captacaoDocenteSortMode = "valor";
     let docenteTableSortMode = "alfabetico";
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
@@ -3761,6 +5115,13 @@
       vinculos: [],
       anos: [],
       periodos: [],
+    };
+    let captacaoFilterValues = {
+      docentes: [],
+      tipos: [],
+      vigencias: [],
+      agencias: [],
+      status: [],
     };
 
     const typeLabels = {
@@ -4335,6 +5696,590 @@
       renderDisciplinasDetalhe(filtered);
     }
 
+    function getCaptacaoAgencyFilterValue(item) {
+      return item.agencia_grupo || item.agencia_normalizada || item.agencia || "Não informada";
+    }
+
+    function getCaptacaoTypeFilterValues(item) {
+      return item.tipo_lista || item.tipos || [];
+    }
+
+    function populateCaptacaoFilters(data) {
+      const relevantData = getCaptacaoRelevantRows(data);
+      const docentes = unique([
+        ...captacaoPermanentDocenteMeta.map((item) => item.docente),
+        ...relevantData.map((item) => item.docente),
+      ]).sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const tipos = unique(relevantData.flatMap((item) => getCaptacaoTypeFilterValues(item)))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const vigencias = unique(relevantData.flatMap((item) => item.vigencia_anos || []))
+        .sort((a, b) => Number(a) - Number(b));
+      const agencias = unique(relevantData.map((item) => getCaptacaoAgencyFilterValue(item)))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const status = unique(relevantData.map((item) => item.status))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      captacaoFilterValues = { docentes, tipos, vigencias, agencias, status };
+      docenteCaptacaoList.innerHTML = docentes.map((docente) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${docente}">
+          <span>${docente}</span>
+        </label>
+      `).join("");
+      tiposCaptacaoSelect.innerHTML = tipos.map((tipo) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${tipo}">
+          <span>${tipo}</span>
+        </label>
+      `).join("");
+      vigenciasCaptacaoSelect.innerHTML = vigencias.map((ano) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${ano}">
+          <span>${ano}</span>
+        </label>
+      `).join("");
+      agenciasCaptacaoSelect.innerHTML = agencias.map((agencia) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${agencia}">
+          <span>${agencia}</span>
+        </label>
+      `).join("");
+      statusCaptacaoSelect.innerHTML = status.map((item) => `
+        <label class="filter-option">
+          <input type="checkbox" value="${item}">
+          <span>${item}</span>
+        </label>
+      `).join("");
+    }
+
+    function syncCaptacaoFilterViews() {
+      [
+        [docenteCaptacaoList, selectedDocentesCaptacao],
+        [tiposCaptacaoSelect, selectedTiposCaptacao],
+        [vigenciasCaptacaoSelect, selectedVigenciasCaptacao],
+        [agenciasCaptacaoSelect, selectedAgenciasCaptacao],
+        [statusCaptacaoSelect, selectedStatusCaptacao],
+      ].forEach(([container, selectedSet]) => {
+        if (!container) return;
+        [...container.querySelectorAll('input[type="checkbox"]')].forEach((input) => {
+          input.checked = selectedSet.has(input.value);
+        });
+      });
+    }
+
+    function initializeCaptacaoFilters() {
+      selectedDocentesCaptacao.clear();
+      selectedTiposCaptacao.clear();
+      selectedVigenciasCaptacao.clear();
+      selectedAgenciasCaptacao.clear();
+      selectedStatusCaptacao.clear();
+      captacaoFilterValues.docentes.forEach((value) => selectedDocentesCaptacao.add(value));
+      captacaoFilterValues.tipos.forEach((value) => selectedTiposCaptacao.add(value));
+      captacaoFilterValues.vigencias.forEach((value) => selectedVigenciasCaptacao.add(value));
+      captacaoFilterValues.agencias.forEach((value) => selectedAgenciasCaptacao.add(value));
+      captacaoFilterValues.status.forEach((value) => selectedStatusCaptacao.add(value));
+      syncCaptacaoFilterViews();
+    }
+
+    function bindCaptacaoFilters() {
+      bindScientificCheckboxContainer(docenteCaptacaoList, selectedDocentesCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(tiposCaptacaoSelect, selectedTiposCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(vigenciasCaptacaoSelect, selectedVigenciasCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(agenciasCaptacaoSelect, selectedAgenciasCaptacao, applyCaptacaoFilters);
+      bindScientificCheckboxContainer(statusCaptacaoSelect, selectedStatusCaptacao, applyCaptacaoFilters);
+    }
+
+    function bindCaptacaoFilterToggles() {
+      const groupConfig = {
+        docentes: { selectedSet: selectedDocentesCaptacao, getValues: () => captacaoFilterValues.docentes },
+        tipos: { selectedSet: selectedTiposCaptacao, getValues: () => captacaoFilterValues.tipos },
+        vigencias: { selectedSet: selectedVigenciasCaptacao, getValues: () => captacaoFilterValues.vigencias },
+        agencias: { selectedSet: selectedAgenciasCaptacao, getValues: () => captacaoFilterValues.agencias },
+        status: { selectedSet: selectedStatusCaptacao, getValues: () => captacaoFilterValues.status },
+      };
+
+      captacaoFilterToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          const config = groupConfig[button.dataset.captacaoGroup];
+          if (!config) return;
+          config.selectedSet.clear();
+          const values = button.dataset.action === "all" ? config.getValues() : [];
+          values.forEach((value) => config.selectedSet.add(value));
+          syncCaptacaoFilterViews();
+          applyCaptacaoFilters();
+        });
+      });
+    }
+
+    function getFilteredCaptacaoData() {
+      const docentes = [...selectedDocentesCaptacao];
+      const tipos = [...selectedTiposCaptacao];
+      const vigencias = [...selectedVigenciasCaptacao];
+      const agencias = [...selectedAgenciasCaptacao];
+      const status = [...selectedStatusCaptacao];
+      return dataSourceCaptacao.filter((item) => {
+        const docenteOk = !docentes.length || docentes.includes(item.docente);
+        const tipoOk = !tipos.length || tipos.some((tipo) => getCaptacaoTypeFilterValues(item).includes(tipo));
+        const vigenciaOk = !vigencias.length || vigencias.some((ano) => (item.vigencia_anos || []).includes(ano));
+        const agenciaOk = !agencias.length || agencias.includes(getCaptacaoAgencyFilterValue(item));
+        const statusOk = !status.length || status.includes(item.status);
+        return docenteOk && tipoOk && vigenciaOk && agenciaOk && statusOk;
+      });
+    }
+
+    const captacaoPermanentDocenteMeta = (dataSourceCorpoDocente.docentes || [])
+      .filter((docente) => docente.anos?.[String(captacaoReferenceYear)] === "Per")
+      .map((docente) => ({
+        docente: docente.docente,
+        key: normalizeDisciplinasName(docente.docente),
+        linhas: [
+          ...(docente.ams ? ["AMS"] : []),
+          ...(docente.dfe ? ["DFE"] : []),
+        ],
+      }));
+    const captacaoPermanentDocenteMap = new Map(captacaoPermanentDocenteMeta.map((item) => [item.key, item]));
+
+    function getCaptacaoRelevantRows(data) {
+      return data.filter((item) => item.recorte_apcn_2022_2026 !== false);
+    }
+
+    function aggregateCaptacaoTypePresence(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        getCaptacaoTypeFilterValues(item).forEach((tipo) => {
+          if (!grouped.has(tipo)) {
+            grouped.set(tipo, { tipo, registros: 0 });
+          }
+          grouped.get(tipo).registros += 1;
+        });
+      });
+      return [...grouped.values()].sort((a, b) => b.registros - a.registros || a.tipo.localeCompare(b.tipo, "pt-BR"));
+    }
+
+    function buildCaptacaoSummary(data) {
+      const relevantRows = getCaptacaoRelevantRows(data);
+      const selectedDocenteKeys = new Set([...selectedDocentesCaptacao].map((item) => normalizeDisciplinasName(item)));
+      const baseDocentes = (selectedDocenteKeys.size
+        ? captacaoPermanentDocenteMeta.filter((item) => selectedDocenteKeys.has(item.key))
+        : captacaoPermanentDocenteMeta
+      ).map((item) => ({
+        docente: item.docente,
+        key: item.key,
+        linhas: item.linhas.length ? item.linhas : ["Não informada"],
+      }));
+
+      const docenteBuckets = new Map(baseDocentes.map((item) => [item.key, {
+        docente: item.docente,
+        key: item.key,
+        registros: 0,
+        valorTotal: 0,
+        vigente: false,
+        pqdt: false,
+        internacional: false,
+        linhas: new Set(item.linhas),
+        agencias: new Set(),
+        alertas: 0,
+      }]));
+
+      relevantRows.forEach((item) => {
+        const key = normalizeDisciplinasName(item.docente);
+        if (!docenteBuckets.has(key)) {
+          docenteBuckets.set(key, {
+            docente: item.docente,
+            key,
+            registros: 0,
+            valorTotal: 0,
+            vigente: false,
+            pqdt: false,
+            internacional: false,
+            linhas: new Set(item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : ["Não informada"])),
+            agencias: new Set(),
+            alertas: 0,
+          });
+        }
+        const bucket = docenteBuckets.get(key);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.vigente = bucket.vigente || Boolean(item.vigente_em_2026);
+        bucket.pqdt = bucket.pqdt || Boolean(item.bolsa_produtividade || item.bolsa_desenvolvimento_tecnologico);
+        bucket.internacional = bucket.internacional || Boolean(item.captacao_internacional);
+        (item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : [])).forEach((linha) => bucket.linhas.add(linha));
+        if (item.agencia_normalizada || item.agencia) bucket.agencias.add(item.agencia_normalizada || item.agencia);
+        bucket.alertas += item.duplicidade_suspeita ? 1 : 0;
+      });
+
+      const docenteSummary = [...docenteBuckets.values()].map((item) => {
+        const statusApcn = item.registros === 0
+          ? "Frágil"
+          : (item.vigente || item.pqdt || item.internacional ? "Forte" : "Intermediário");
+        return {
+          ...item,
+          linhas: [...item.linhas].filter(Boolean).sort((a, b) => a.localeCompare(b, "pt-BR")),
+          agencias: [...item.agencias].sort((a, b) => a.localeCompare(b, "pt-BR")),
+          statusApcn,
+        };
+      }).sort((a, b) => {
+        if (captacaoDocenteSortMode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR") || b.valorTotal - a.valorTotal;
+        }
+        const statusWeight = { Forte: 3, Intermediário: 2, "Frágil": 1 };
+        return (statusWeight[b.statusApcn] || 0) - (statusWeight[a.statusApcn] || 0)
+          || b.valorTotal - a.valorTotal
+          || b.registros - a.registros
+          || a.docente.localeCompare(b.docente, "pt-BR");
+      });
+
+      const totalValor = relevantRows.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0);
+      const totalCapital = relevantRows.reduce((acc, item) => acc + (Number(item.valor_capital) || 0), 0);
+      const totalCusteio = relevantRows.reduce((acc, item) => acc + (Number(item.valor_custeio) || 0), 0);
+      const totalBolsasValor = relevantRows.reduce((acc, item) => acc + (Number(item.valor_bolsas_destinado) || Number(item.valor_bolsas_aprovado) || 0), 0);
+      const totalAlertas = relevantRows.filter((item) => item.duplicidade_suspeita).length;
+      const docentesComCaptacao = docenteSummary.filter((item) => item.registros > 0);
+      const docentesSemCaptacao = docenteSummary.filter((item) => item.registros === 0);
+      const docentesVigentes = docenteSummary.filter((item) => item.vigente);
+      const docentesPqdt = docenteSummary.filter((item) => item.pqdt);
+      const docentesInternacionais = docenteSummary.filter((item) => item.internacional);
+      const percentualDocentes = baseDocentes.length ? Math.round((docentesComCaptacao.length / baseDocentes.length) * 100) : 0;
+
+      const agencyMap = new Map();
+      relevantRows.forEach((item) => {
+        const group = item.agencia_grupo || item.agencia_normalizada || item.agencia || "Não informada";
+        if (!agencyMap.has(group)) {
+          agencyMap.set(group, { agencia: group, registros: 0, valorTotal: 0, docentes: new Set() });
+        }
+        const bucket = agencyMap.get(group);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.docentes.add(item.docente);
+      });
+      const agencySummary = [...agencyMap.values()].map((item) => ({
+        ...item,
+        docentes: item.docentes.size,
+        percentualValor: totalValor ? Math.round((item.valorTotal / totalValor) * 100) : 0,
+      })).sort((a, b) => b.valorTotal - a.valorTotal || a.agencia.localeCompare(b.agencia, "pt-BR"));
+
+      const lineMap = new Map();
+      relevantRows.forEach((item) => {
+        const linhas = item.linha_pesquisa_lista || (item.linha_pesquisa ? [item.linha_pesquisa] : ["Não informada"]);
+        linhas.forEach((linha) => {
+          if (!lineMap.has(linha)) {
+            lineMap.set(linha, {
+              linha,
+              docentes: new Set(),
+              registros: 0,
+              valorTotal: 0,
+              agencias: new Set(),
+              vigente: false,
+              internacional: false,
+            });
+          }
+          const bucket = lineMap.get(linha);
+          bucket.docentes.add(item.docente);
+          bucket.registros += 1;
+          bucket.valorTotal += Number(item.valor_total) || 0;
+          if (item.agencia_normalizada || item.agencia) bucket.agencias.add(item.agencia_normalizada || item.agencia);
+          bucket.vigente = bucket.vigente || Boolean(item.vigente_em_2026);
+          bucket.internacional = bucket.internacional || Boolean(item.captacao_internacional);
+        });
+      });
+      const lineSummary = [...lineMap.values()].map((item) => ({
+        ...item,
+        docentes: item.docentes.size,
+        agencias: item.agencias.size,
+        percentualValor: totalValor ? Math.round((item.valorTotal / totalValor) * 100) : 0,
+      })).sort((a, b) => b.valorTotal - a.valorTotal || a.linha.localeCompare(b.linha, "pt-BR"));
+
+      const yearMin = Math.min(captacaoRecentWindowStart, ...relevantRows.map((item) => Number(item.ano_inicio)).filter(Boolean), captacaoReferenceYear);
+      const yearMax = Math.max(captacaoReferenceYear, ...relevantRows.map((item) => Number(item.ano_fim)).filter(Boolean));
+      const vigenciaSummary = [];
+      for (let ano = yearMin; ano <= yearMax; ano += 1) {
+        const ativos = relevantRows.filter((item) => Number(item.ano_inicio) <= ano && Number(item.ano_fim) >= ano);
+        vigenciaSummary.push({
+          ano,
+          valorTotal: ativos.reduce((acc, item) => acc + (Number(item.valor_total) || 0), 0),
+          registros: ativos.length,
+          docentes: new Set(ativos.map((item) => item.docente)).size,
+          destaque: ano === captacaoReferenceYear,
+        });
+      }
+
+      const topLine = lineSummary[0];
+      const lowLine = lineSummary[lineSummary.length - 1];
+      const executiveSummary = [
+        `A base registra ${docentesComCaptacao.length} docente(s) com captação nos últimos 5 anos, correspondendo a ${percentualDocentes}% do corpo permanente analisado.`,
+        `Há ${docentesVigentes.length} docente(s) com captação vigente em ${captacaoReferenceYear} e ${docentesPqdt.length} com marcador estratégico PQ/DT ou equivalente.`,
+        `A carteira envolve ${agencySummary.length} grupos de agências/fonte e ${docentesInternacionais.length} docente(s) com captação internacional identificada.`,
+        `Foram identificados ${totalAlertas} alerta(s) de possível duplicidade que exigem revisão antes do uso final da base.`,
+        topLine
+          ? `A distribuição por linha de pesquisa concentra ${topLine.percentualValor}% do valor em ${topLine.linha}${lowLine && lowLine.linha !== topLine.linha ? `, com atenção adicional para ${lowLine.linha}` : ""}.`
+          : "A base ainda não permite leitura consistente por linha de pesquisa além do vínculo institucional do docente.",
+      ];
+
+      return {
+        rows: relevantRows,
+        totalValor,
+        totalCapital,
+        totalCusteio,
+        totalBolsasValor,
+        totalAlertas,
+        totalRegistros: relevantRows.length,
+        totalBaseDocentes: baseDocentes.length,
+        totalAgencias: agencySummary.length,
+        docentesComCaptacao,
+        docentesSemCaptacao,
+        docentesVigentes,
+        docentesPqdt,
+        docentesInternacionais,
+        percentualDocentes,
+        docenteSummary,
+        agencySummary,
+        lineSummary,
+        vigenciaSummary,
+        typePresence: aggregateCaptacaoTypePresence(relevantRows),
+        executiveSummary,
+      };
+    }
+
+    function renderCaptacaoMetrics(summary) {
+      document.getElementById("captacao-valor-total").textContent = formatCurrency(summary.totalValor);
+      document.getElementById("captacao-registros-total").textContent = String(summary.totalRegistros);
+      document.getElementById("captacao-docentes-total").textContent = String(summary.docentesComCaptacao.length);
+      document.getElementById("captacao-docentes-total-resumo").textContent = `${summary.docentesComCaptacao.length} docente(s) permanentes com pelo menos uma captação.`;
+      document.getElementById("captacao-percentual-docentes").textContent = `${summary.percentualDocentes}%`;
+      document.getElementById("captacao-percentual-docentes-resumo").textContent = `${summary.docentesComCaptacao.length} de ${summary.totalBaseDocentes} docentes permanentes no recorte.`;
+      document.getElementById("captacao-docentes-sem").textContent = String(summary.docentesSemCaptacao.length);
+      document.getElementById("captacao-docentes-sem-resumo").textContent = `${summary.docentesSemCaptacao.length} docente(s) permanentes sem captação visível nos filtros.`;
+      document.getElementById("captacao-docentes-vigentes").textContent = String(summary.docentesVigentes.length);
+      document.getElementById("captacao-docentes-vigentes-resumo").textContent = `${summary.docentesVigentes.length} docente(s) com carteira vigente em ${captacaoReferenceYear}.`;
+      document.getElementById("captacao-docentes-pqdt").textContent = String(summary.docentesPqdt.length);
+      document.getElementById("captacao-docentes-pqdt-resumo").textContent = `${summary.docentesPqdt.length} docente(s) com PQ, DT ou equivalente.`;
+      document.getElementById("captacao-agencias-total").textContent = String(summary.totalAgencias);
+      document.getElementById("captacao-agencias-total-resumo").textContent = `${summary.totalAgencias} grupos de fontes estratégicas no recorte.`;
+      document.getElementById("captacao-alertas-total").textContent = String(summary.totalAlertas);
+      document.getElementById("captacao-alertas-total-resumo").textContent = summary.totalAlertas
+        ? `${summary.totalAlertas} alerta(s) de possível duplicidade na carteira.`
+        : "Nenhuma suspeita de duplicidade no recorte atual.";
+    }
+
+    function renderCaptacaoExecutiveSummary(summary) {
+      captacaoExecutiveSummary.innerHTML = summary.executiveSummary.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
+    }
+
+    function renderCaptacaoDocenteChart(data) {
+      const items = data;
+      if (!items.length) {
+        chartCaptacaoDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
+        return;
+      }
+      captacaoDocenteChartCaption.textContent = captacaoDocenteSortMode === "alfabetico"
+        ? "Ordem alfabética com leitura do valor, status APCN e concentração por docente."
+        : "Ordem por intensidade APCN e volume financeiro, priorizando docentes com maior tração estratégica.";
+      const labelWidth = 250;
+      const rowHeight = 36;
+      const chartWidth = 860;
+      const usableWidth = chartWidth - labelWidth - 230;
+      const maxValor = Math.max(...items.map((item) => item.valorTotal), 1);
+      const height = Math.max(240, items.length * rowHeight + 36);
+      chartCaptacaoDocentes.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Distribuição da captação por docente">
+          ${items.map((item, index) => {
+            const y = 18 + index * rowHeight;
+            const width = item.valorTotal ? (item.valorTotal / maxValor) * usableWidth : 10;
+            const fill = item.statusApcn === "Forte" ? "#8c1538" : item.statusApcn === "Intermediário" ? "#c58e29" : "#b9ad9d";
+            const flags = [
+              item.vigente ? "vigente" : "",
+              item.pqdt ? "PQ/DT" : "",
+              item.internacional ? "intl." : "",
+            ].filter(Boolean).join(" · ");
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${escapeHtml(item.docente)}</text>
+              <rect x="${labelWidth}" y="${y}" width="${width}" height="18" rx="9" fill="${fill}"></rect>
+              <text x="${labelWidth + width + 8}" y="${y + 14}" fill="#262930" font-size="12">${escapeHtml(formatCompactCurrency(item.valorTotal))}</text>
+              <text x="${chartWidth - 170}" y="${y + 14}" fill="#6d727c" font-size="11">${item.registros} reg. ${flags ? "· " + escapeHtml(flags) : ""}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderCaptacaoAgenciasPanel(data) {
+      const totalValor = data.reduce((acc, item) => acc + item.valorTotal, 0);
+      if (!data.length || !totalValor) {
+        captacaoAgenciasStack.innerHTML = `<p class="chart-note">Sem dados para composição.</p>`;
+        captacaoAgenciasChips.innerHTML = "";
+        return;
+      }
+      captacaoAgenciasStack.innerHTML = data.map((item) => `
+        <div class="type-row">
+          <strong>${escapeHtml(item.agencia)}</strong>
+          <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s) · ${item.registros} reg.</span>
+        </div>
+      `).join("");
+      captacaoAgenciasChips.classList.add("captacao-chip-limit");
+      captacaoAgenciasChips.innerHTML = data.slice(0, 4).map((item) => `
+        <span class="chip">${escapeHtml(item.agencia)}: <strong>${item.percentualValor}%</strong> do valor total</span>
+      `).join("");
+    }
+
+    function renderCaptacaoLinhasPanel(data) {
+      const totalValor = data.reduce((acc, item) => acc + item.valorTotal, 0);
+      if (!data.length || !totalValor) {
+        captacaoLinhasStack.innerHTML = `<p class="chart-note">Sem leitura institucional de linha disponível.</p>`;
+        captacaoLinhasChips.innerHTML = `<span class="chip">A linha deriva do vínculo institucional do docente, não do formulário original do projeto.</span>`;
+        return;
+      }
+      captacaoLinhasStack.innerHTML = data.map((item) => `
+        <div class="type-row">
+          <strong>${escapeHtml(item.linha)}</strong>
+          <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s)</span>
+        </div>
+      `).join("");
+      captacaoLinhasChips.classList.add("captacao-chip-limit");
+      captacaoLinhasChips.innerHTML = data.slice(0, 3).map((item) => `
+        <span class="chip">${escapeHtml(item.linha)}: ${item.registros} reg. · ${item.agencias} agência(s) · ${item.vigente ? "com vigência" : "sem vigência"}${item.internacional ? " · intl." : ""}</span>
+      `).join("");
+    }
+
+    function renderCaptacaoVigenciaChart(data) {
+      if (!data.length) {
+        chartCaptacaoVigencia.innerHTML = `<p class="chart-note">Sem dados de vigência para o recorte atual.</p>`;
+        captacaoVigenciaNota.textContent = "";
+        return;
+      }
+      const height = 300;
+      const paddingX = 52;
+      const baseY = 236;
+      const barWidth = 54;
+      const gap = 22;
+      const width = Math.max(760, paddingX + data.length * (barWidth + gap) + 30);
+      const maxValor = Math.max(...data.map((item) => item.valorTotal), 1);
+      chartCaptacaoVigencia.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Carteira ativa por ano de vigência">
+          <line x1="${paddingX}" y1="${baseY}" x2="${width - 20}" y2="${baseY}" stroke="#b9ad9d" stroke-width="1"></line>
+          ${data.map((item, index) => {
+            const x = paddingX + index * (barWidth + gap);
+            const barHeight = item.valorTotal ? (item.valorTotal / maxValor) * 150 : 2;
+            const y = baseY - barHeight;
+            const fill = item.destaque ? "#8c1538" : "#c7a87d";
+            return `
+              <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="14" fill="${fill}" opacity="${item.destaque ? 1 : 0.88}"></rect>
+              <text x="${x + barWidth / 2}" y="${baseY + 20}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
+              <text x="${x + barWidth / 2}" y="${y - 10}" text-anchor="middle" fill="#262930" font-size="11">${item.registros} reg.</text>
+              <text x="${x + barWidth / 2}" y="${baseY + 36}" text-anchor="middle" fill="#6d727c" font-size="10">${item.docentes} doc.</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+      const refYear = data.find((item) => item.ano === captacaoReferenceYear);
+      captacaoVigenciaNota.textContent = refYear
+        ? `${captacaoReferenceYear}: ${formatCurrency(refYear.valorTotal)} ativos em ${refYear.registros} projeto(s), envolvendo ${refYear.docentes} docente(s).`
+        : "";
+    }
+
+    function renderCaptacaoTiposPanel(typePresence, summary) {
+      const totalOcorrencias = typePresence.reduce((acc, item) => acc + item.registros, 0);
+      const pool = [
+        { label: "Capital", value: summary.totalCapital },
+        { label: "Custeio", value: summary.totalCusteio },
+        { label: "Bolsas", value: summary.totalBolsasValor },
+      ].filter((item) => item.value > 0);
+      if (!pool.length && !typePresence.length) {
+        captacaoTiposStack.innerHTML = `<p class="chart-note">Sem composição disponível.</p>`;
+        captacaoInsightChips.innerHTML = "";
+        return;
+      }
+      const denominator = Math.max(...pool.map((item) => item.value), 1);
+      const financeRows = pool.map((item) => `
+        <div class="type-row">
+          <strong>${item.label}</strong>
+          <div class="track"><div class="bar" style="width:${(item.value / denominator) * 100}%"></div></div>
+          <span>${formatCompactCurrency(item.value)}</span>
+        </div>
+      `);
+      const typeRows = typePresence.slice(0, 4).map((item) => `
+        <div class="type-row">
+          <strong>${escapeHtml(item.tipo)}</strong>
+          <div class="track"><div class="bar" style="width:${totalOcorrencias ? (item.registros / totalOcorrencias) * 100 : 0}%"></div></div>
+          <span>${item.registros} ocorrência(s)</span>
+        </div>
+      `);
+      captacaoTiposStack.innerHTML = [...financeRows, ...typeRows].join("");
+      captacaoInsightChips.innerHTML = [
+        `<span class="chip">Base APCN: <strong>${captacaoRecentWindowStart}-${captacaoReferenceYear}</strong></span>`,
+        dataSourceCaptacaoPayload.updated_at ? `<span class="chip">Base atualizada em <strong>${dataSourceCaptacaoPayload.updated_at}</strong></span>` : "",
+      ].filter(Boolean).join("");
+    }
+
+    function renderCaptacaoResumoDocentes(data) {
+      captacaoResumoDocentesBody.innerHTML = data.map((item) => `
+        <tr>
+          <td>${escapeHtml(item.docente)}</td>
+          <td>${item.registros}</td>
+          <td>${formatCurrency(item.valorTotal)}</td>
+          <td><span class="status-pill ${item.vigente ? "ok" : "muted"}">${item.vigente ? "Sim" : "Não"}</span></td>
+          <td><span class="status-pill ${item.pqdt ? "ok" : "muted"}">${item.pqdt ? "Sim" : "Não"}</span></td>
+          <td><span class="status-pill ${item.internacional ? "ok" : "muted"}">${item.internacional ? "Sim" : "Não"}</span></td>
+          <td>${escapeHtml(item.linhas.join(", ") || "Não informada")}</td>
+          <td>${escapeHtml(item.agencias.join(", ") || "-")}</td>
+          <td><span class="status-pill ${item.statusApcn === "Forte" ? "ok" : item.statusApcn === "Intermediário" ? "warn" : "alert"}">${item.statusApcn}</span></td>
+        </tr>
+      `).join("");
+    }
+
+    function renderCaptacaoTable(data) {
+      captacaoTabelaBody.innerHTML = data
+        .slice()
+        .sort((a, b) => (Number(b.valor_total) || 0) - (Number(a.valor_total) || 0) || a.docente.localeCompare(b.docente, "pt-BR"))
+        .map((item) => `
+          <tr class="${item.duplicidade_suspeita ? "table-row-alert" : ""}">
+            <td>${escapeHtml(item.docente)}</td>
+            <td>${escapeHtml(item.agencia_normalizada || item.agencia || "-")}</td>
+            <td>${escapeHtml(item.agencia_grupo || "-")}</td>
+            <td>${escapeHtml(item.status || "-")}</td>
+            <td>${escapeHtml(item.status_vigencia || "-")}</td>
+            <td>${escapeHtml((item.vigencia_anos || []).join(", ") || "-")}</td>
+            <td>${escapeHtml(item.titulo || "-")}</td>
+            <td>${escapeHtml((item.tipo_lista || item.tipos || []).join(", ") || "-")}</td>
+            <td>${escapeHtml(item.edital_processo || [item.edital_nome, item.edital_numero].filter(Boolean).join(" · ") || "-")}</td>
+            <td>${formatCurrency(item.valor_total)}</td>
+            <td>${formatCurrency(item.valor_capital)}</td>
+            <td>${formatCurrency(item.valor_custeio)}</td>
+            <td>${formatCurrency(item.valor_bolsas_destinado || item.valor_bolsas_aprovado)}</td>
+            <td>${item.bolsa_produtividade || item.bolsa_desenvolvimento_tecnologico ? `${item.bolsa_produtividade ? "PQ" : ""}${item.bolsa_produtividade && item.bolsa_desenvolvimento_tecnologico ? " / " : ""}${item.bolsa_desenvolvimento_tecnologico ? "DT" : ""}` : "-"}</td>
+            <td>${item.captacao_internacional ? "Sim" : "Não"}</td>
+            <td>${escapeHtml(item.linha_pesquisa || "-")}</td>
+            <td>
+              <span class="captacao-key captacao-key-short" title="${escapeHtml(item.chave_deduplicacao || "-")}">
+                ${escapeHtml(truncateMiddle(item.chave_deduplicacao || "-", 26, 14))}
+              </span>
+            </td>
+            <td>${escapeHtml(item.motivo_alerta || "-")}</td>
+            <td><span class="status-pill ${item.duplicidade_suspeita ? "alert" : "muted"}">${escapeHtml(item.status_revisao || "Sem alerta")}</span></td>
+            <td>${escapeHtml(item.observacao_auditoria || "-")}</td>
+            <td>${escapeHtml(item.evidencia_documento || "-")}</td>
+            <td>${item.link_edital_processo ? `<a href="${escapeHtml(item.link_edital_processo)}" target="_blank" rel="noopener noreferrer">Abrir</a>` : "-"}</td>
+            <td>M: ${item.alunos_mestrado || 0} · D: ${item.alunos_doutorado || 0}</td>
+          </tr>
+        `).join("");
+      captacaoEstadoVazio.style.display = data.length ? "none" : "block";
+    }
+
+    function applyCaptacaoFilters() {
+      syncCaptacaoFilterViews();
+      const filtered = getFilteredCaptacaoData();
+      const summary = buildCaptacaoSummary(filtered);
+      renderCaptacaoMetrics(summary);
+      renderCaptacaoExecutiveSummary(summary);
+      renderCaptacaoDocenteChart(summary.docenteSummary);
+      renderCaptacaoLinhasPanel(summary.lineSummary);
+      renderCaptacaoAgenciasPanel(summary.agencySummary);
+      renderCaptacaoVigenciaChart(summary.vigenciaSummary);
+      renderCaptacaoTiposPanel(summary.typePresence, summary);
+      renderCaptacaoResumoDocentes(summary.docenteSummary);
+      renderCaptacaoTable(summary.rows);
+    }
+
     function syncScientificFilterViews() {
       [
         [docenteChipList, selectedDocentes],
@@ -4649,6 +6594,14 @@
         .replaceAll("'", "&#39;");
     }
 
+    function truncateMiddle(value, start = 28, end = 16) {
+      const text = String(value || "");
+      if (text.length <= start + end + 3) {
+        return text;
+      }
+      return `${text.slice(0, start)}...${text.slice(-end)}`;
+    }
+
     function toDocumentUrl(path) {
       if (!path) {
         return "";
@@ -4660,6 +6613,128 @@
       }
 
       return "";
+    }
+
+    function renderGuideOverview() {
+      if (!guideOverviewGrid) return;
+      guideOverviewGrid.innerHTML = guideOverviewItems.map((item) => `
+        <article class="card guide-overview-card">
+          <p class="eyebrow">${escapeHtml(item.criterio)}</p>
+          <strong>${escapeHtml(item.exigencia)}</strong>
+          <p>${escapeHtml(item.explicacao)}</p>
+          <details class="guide-details">
+            <summary><span class="guide-more-button">Saiba mais</span></summary>
+            <p>${escapeHtml(item.detalhe)}</p>
+          </details>
+        </article>
+      `).join("");
+    }
+
+    function renderGuideLearning() {
+      if (!guideLearningGrid) return;
+      guideLearningGrid.innerHTML = guideLearningItems.map((item) => `
+        <details class="card guide-learning-card">
+          <summary>
+            <div>
+              <h3>${escapeHtml(item.titulo)}</h3>
+              <p>${escapeHtml(item.resumo)}</p>
+            </div>
+          </summary>
+          <div class="guide-accordion-body">
+            <ul class="guide-points">
+              ${item.detalhes.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}
+            </ul>
+            <div class="guide-inline-tags">
+              ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+            </div>
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function renderGuideChecklists() {
+      if (!guideChecklistGrid) return;
+      guideChecklistGrid.innerHTML = guideChecklistGroups.map((group) => `
+        <article class="card guide-checklist-card">
+          <h3>${escapeHtml(group.titulo)}</h3>
+          <p>${escapeHtml(group.resumo)}</p>
+          <ul class="guide-checklist">
+            ${group.itens.map((item) => `
+              <li>
+                <span class="guide-checklist-box" aria-hidden="true"></span>
+                <span>${escapeHtml(item)}</span>
+              </li>
+            `).join("")}
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function renderGuideFaq() {
+      if (!guideFaqList) return;
+      guideFaqList.innerHTML = guideFaqItems.map((item) => `
+        <details>
+          <summary>${escapeHtml(item.pergunta)}</summary>
+          <div class="guide-accordion-body">
+            <p>${escapeHtml(item.resposta)}</p>
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function bindGuideEvidenceRows() {
+      if (!guideEvidenceBody) return;
+      guideEvidenceBody.querySelectorAll("[data-guide-evidence-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.dataset.guideEvidenceToggle;
+          const detailRow = targetId ? document.getElementById(targetId) : null;
+          if (!detailRow) return;
+          const isOpen = detailRow.classList.toggle("open");
+          button.textContent = isOpen ? "Recolher" : "Saiba mais";
+          button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      });
+    }
+
+    function renderGuideEvidence() {
+      if (!guideEvidenceBody) return;
+      guideEvidenceBody.innerHTML = guideEvidenceRows.map((item, index) => {
+        const detailId = `guide-evidence-detail-${index}`;
+        return `
+          <tr>
+            <td>${escapeHtml(item.criterio)}</td>
+            <td>${escapeHtml(item.exigencia)}</td>
+            <td>
+              <span class="guide-evidence-text">${escapeHtml(item.evidencia)}</span>
+              <span class="guide-evidence-source">${escapeHtml(item.fonte)}</span>
+            </td>
+            <td>${escapeHtml(item.interpretacao)}</td>
+            <td>
+              <button
+                type="button"
+                class="guide-more-button"
+                data-guide-evidence-toggle="${detailId}"
+                aria-controls="${detailId}"
+                aria-expanded="false"
+              >Saiba mais</button>
+            </td>
+          </tr>
+          <tr id="${detailId}" class="guide-evidence-expand-row">
+            <td colspan="5" class="guide-evidence-detail">
+              <p><strong>Leitura operacional:</strong> ${escapeHtml(item.detalhe)}</p>
+            </td>
+          </tr>
+        `;
+      }).join("");
+      bindGuideEvidenceRows();
+    }
+
+    function renderGuideDocentePanel() {
+      renderGuideOverview();
+      renderGuideLearning();
+      renderGuideChecklists();
+      renderGuideFaq();
+      renderGuideEvidence();
     }
 
     function renderDocumentList(items, target) {
@@ -4765,6 +6840,16 @@
       });
     }
 
+    function bindCaptacaoDocenteSortToggles() {
+      captacaoDocenteSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          captacaoDocenteSortMode = button.dataset.captacaoDocenteSort || "valor";
+          captacaoDocenteSortButtons.forEach((item) => item.classList.toggle("active", item === button));
+          applyCaptacaoFilters();
+        });
+      });
+    }
+
     function normalizePersonText(value) {
       return String(value || "")
         .normalize("NFD")
@@ -4855,19 +6940,40 @@
         .trim();
     }
 
+    function isLowSignalProductText(value) {
+      const normalized = normalizeSeedText(value);
+      if (!normalized) return true;
+      const tokens = normalized.split(/\s+/).filter(Boolean);
+      return normalized.length < 12 || tokens.length < 3;
+    }
+
+    function extractReferenceProductTitle(value) {
+      const raw = String(value || "").replace(/https?:\/\/\S+/gi, " ");
+      const candidates = raw
+        .split(/\.\s+/)
+        .map((part) => normalizeSeedText(part).replace(/\s+/g, " ").trim())
+        .filter(Boolean)
+        .filter((part) => !/^(v|vol|volume|p|pp|n|no)\b/i.test(part))
+        .filter((part) => !/\b\d{4}\b/.test(part) || part.split(/\s+/).length >= 6)
+        .sort((a, b) => b.length - a.length);
+      return candidates.find((part) => !isLowSignalProductText(part)) || "";
+    }
+
     function getLeadershipProductKey(item) {
       const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
-      const baseKey = [
-        titleKey,
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.tipo_producao),
-      ].join("|");
-      return baseKey || [
-        normalizeSeedText(item.titulo),
-        normalizeSeedText(item.ano),
-        normalizeSeedText(item.revista_ou_veiculo),
-        normalizeSeedText(item.produto_referencia),
-      ].join("|") || `ROW|${item.id || item.source_row || ""}`;
+      const referenceTitleKey = extractReferenceProductTitle(item.produto_referencia);
+      const referenceKey = normalizeSeedText(item.produto_referencia).replace(/\s+/g, " ").trim();
+      const venueKey = normalizeSeedText(item.revista_ou_veiculo).replace(/\s+/g, " ").trim();
+      const yearKey = normalizeSeedText(item.ano);
+      const typeKey = normalizeSeedText(item.tipo_producao);
+      const doiKey = normalizeSeedText(item.doi);
+      const primaryDescriptor = !isLowSignalProductText(titleKey)
+        ? titleKey
+        : referenceTitleKey || doiKey || referenceKey;
+      const baseKey = [primaryDescriptor, yearKey, typeKey].filter(Boolean).join("|");
+      if (baseKey) return baseKey;
+      const fallbackKey = [doiKey, referenceTitleKey, referenceKey, venueKey, yearKey, typeKey].filter(Boolean).join("|");
+      return fallbackKey || `ROW|${item.id || item.source_row || ""}`;
     }
 
     function getCoauthorNames(item) {
@@ -4926,6 +7032,22 @@
 
     function formatPercent(value) {
       return `${formatDecimal(value)}%`;
+    }
+
+    function formatCurrency(value) {
+      return Number(value || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    }
+
+    function formatCompactCurrency(value) {
+      const amount = Number(value || 0);
+      if (amount >= 1000000) return `R$ ${(amount / 1000000).toFixed(2).replace(".", ",")} mi`;
+      if (amount >= 1000) return `R$ ${(amount / 1000).toFixed(1).replace(".", ",")} mil`;
+      return formatCurrency(amount);
     }
 
     function getFilteredScientificData() {
@@ -5329,6 +7451,21 @@
       estadoVazioTecnica.style.display = data.length ? "none" : "block";
     }
 
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function getPercentileValue(values, percentile) {
+      if (!values.length) return 0;
+      const sorted = [...values].sort((a, b) => a - b);
+      const index = clamp((sorted.length - 1) * percentile, 0, sorted.length - 1);
+      const lower = Math.floor(index);
+      const upper = Math.ceil(index);
+      if (lower === upper) return sorted[lower];
+      const weight = index - lower;
+      return sorted[lower] + (sorted[upper] - sorted[lower]) * weight;
+    }
+
     function aggregateMostardByDocente(data) {
       const grouped = new Map();
       for (const item of data) {
@@ -5553,20 +7690,74 @@
         chartLiderancaDispersao.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const width = 940;
-      const height = 440;
-      const left = 82;
-      const right = 24;
-      const top = 24;
-      const bottom = 52;
+      const width = 992;
+      const height = 512;
+      const left = 97;
+      const right = 27;
+      const top = 69;
+      const bottom = 67;
       const innerWidth = width - left - right;
       const innerHeight = height - top - bottom;
       const maxPoints = Math.max(...summary.map((item) => item.pontosApcn), 1);
       const maxIndex = Math.max(...summary.map((item) => item.indiceMostarda), 1);
+      const items = summary.map((item) => {
+        const xRatio = clamp((item.pontosApcn || 0) / maxPoints, 0, 1);
+        const inverseMostardRatio = clamp(1 - ((item.indiceMostarda || 0) / maxIndex), 0, 1);
+        return {
+          ...item,
+          xRatio,
+          inverseMostardRatio,
+          diagonalScore: (xRatio + inverseMostardRatio) / 2,
+        };
+      });
+      const p30 = 0.30;
+      const p55 = 0.55;
+      const p30Score = getPercentileValue(items.map((item) => item.diagonalScore), p30);
+      const p55Score = getPercentileValue(items.map((item) => item.diagonalScore), p55);
       const xTicks = 4;
       const yTicks = 4;
+      const plotRight = width - right;
+      const plotBottom = height - bottom;
+      const bandLineY = (score, xScreen) => {
+        const xRatio = clamp((xScreen - left) / innerWidth, 0, 1);
+        return top + ((2 * score) - xRatio) * innerHeight;
+      };
+      const buildBandPolygon = (upperScore, lowerScore) => {
+        const pointsTop = [];
+        const pointsBottom = [];
+        for (let step = 0; step <= 240; step += 1) {
+          const x = left + (step / 240) * innerWidth;
+          const upperY = clamp(bandLineY(upperScore, x), top, plotBottom);
+          const lowerY = clamp(bandLineY(lowerScore, x), top, plotBottom);
+          pointsTop.push(`${x.toFixed(1)},${upperY.toFixed(1)}`);
+          pointsBottom.push(`${x.toFixed(1)},${lowerY.toFixed(1)}`);
+        }
+        return [...pointsTop, ...pointsBottom.reverse()].join(" ");
+      };
+      const buildBoundaryArea = (score, mode) => {
+        const boundary = [];
+        for (let step = 0; step <= 240; step += 1) {
+          const x = left + (step / 240) * innerWidth;
+          const lineY = clamp(bandLineY(score, x), top, plotBottom);
+          boundary.push(`${x.toFixed(1)},${lineY.toFixed(1)}`);
+        }
+        const ceiling = mode === "top" ? top : plotBottom;
+        const edge = [];
+        for (let step = 240; step >= 0; step -= 1) {
+          const x = left + (step / 240) * innerWidth;
+          edge.push(`${x.toFixed(1)},${ceiling.toFixed(1)}`);
+        }
+        return [...boundary, ...edge].join(" ");
+      };
+      const redPolygon = buildBoundaryArea(p30Score, "top");
+      const amberPolygon = buildBandPolygon(p30Score, p55Score);
+      const greenPolygon = buildBoundaryArea(p55Score, "bottom");
       chartLiderancaDispersao.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
+          <rect x="${left}" y="${top}" width="${innerWidth}" height="${innerHeight}" rx="18" fill="#fbf7f1" stroke="#d7cdbc" stroke-width="1.5"></rect>
+          <polygon points="${redPolygon}" fill="#b2344a" fill-opacity="0.12"></polygon>
+          <polygon points="${amberPolygon}" fill="#e2b02b" fill-opacity="0.13"></polygon>
+          <polygon points="${greenPolygon}" fill="#4d7c68" fill-opacity="0.22"></polygon>
           ${Array.from({ length: yTicks + 1 }, (_, index) => {
             const ratio = index / yTicks;
             const y = top + innerHeight - ratio * innerHeight;
@@ -5585,19 +7776,24 @@
               <text x="${x}" y="${height - bottom + 18}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(value)}</text>
             `;
           }).join("")}
-          <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          <line x1="${left}" y1="${top}" x2="${left}" y2="${height - bottom}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${summary.map((item) => {
-            const x = left + ((item.pontosApcn || 0) / maxPoints) * innerWidth;
+          <line x1="${left}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          <line x1="${left}" y1="${top}" x2="${left}" y2="${plotBottom}" stroke="#cfc4b3" stroke-width="2"></line>
+          ${items.map((item) => {
+            const x = left + item.xRatio * innerWidth;
             const y = top + innerHeight - ((item.indiceMostarda || 0) / maxIndex) * innerHeight;
             return `
-              <circle cx="${x}" cy="${y}" r="5.5" fill="#8c1538" opacity="0.9"></circle>
+              <circle cx="${x}" cy="${y}" r="6.2" fill="#8c1538" stroke="#fff9f2" stroke-width="1.6"></circle>
               <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
             `;
           }).join("")}
-          <text x="${width / 2}" y="${height - 10}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
+          <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
+        <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
+          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Indesejado</strong>, a faixa amarela representa o perfil <strong>Esperado</strong> e a faixa verde representa o perfil <strong>Desejado</strong>.
+          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade APCN e inverso do Índice Mostarda.
+          Leitura: <strong>Indesejado</strong> ≤ p30,0; <strong>Esperado</strong> entre p30,0 e p55,0; <strong>Desejado</strong> &gt; p55,0.
+        </div>
       `;
     }
 
@@ -5954,7 +8150,7 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          parceirosMedios: item.totalProdutos ? item.parceirosTotal / item.totalProdutos : 0,
+          parceirosMedios: item.totalProdutos ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1) : 0,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -6109,26 +8305,36 @@
         chartLiderancaParceriaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const maxPartners = Math.max(...summary.map((item) => item.parceirosMedios), 1);
+      const normalizedSummary = summary.map((item) => {
+        const rawMedia = Number(item.parceirosMedios);
+        const fallbackMedia = Number(item.totalProdutos)
+          ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1)
+          : 0;
+        return {
+          ...item,
+          parceirosMediosNormalizado: Number.isFinite(rawMedia) && rawMedia > 0 ? rawMedia : fallbackMedia,
+        };
+      });
+      const maxPartners = Math.max(...normalizedSummary.map((item) => item.parceirosMediosNormalizado), 1);
       const maxInternal = Math.max(...summary.map((item) => item.produtosInternos), 1);
       const width = 780;
       const height = 330;
       const left = 52;
       const baseY = 266;
       const gap = 20;
-      const barWidth = Math.max(34, Math.floor((width - left - 20 - ((summary.length - 1) * gap)) / summary.length));
+      const barWidth = Math.max(34, Math.floor((width - left - 20 - ((normalizedSummary.length - 1) * gap)) / normalizedSummary.length));
       chartLiderancaParceriaAnos.innerHTML = `
         <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Evolução temporal da cooperação autoral">
           <line x1="${left}" y1="${baseY}" x2="${width - 16}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
-          ${summary.map((item, index) => {
+          ${normalizedSummary.map((item, index) => {
             const x = left + 10 + index * (barWidth + gap);
-            const barHeight = Math.max(10, Math.round((item.parceirosMedios / maxPartners) * 168));
+            const barHeight = Math.max(10, Math.round((item.parceirosMediosNormalizado / maxPartners) * 168));
             const y = baseY - barHeight;
             const dotY = baseY - ((item.produtosInternos / maxInternal) * 182);
             return `
               <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="10" fill="#d4a017"></rect>
               <circle cx="${x + (barWidth / 2)}" cy="${dotY}" r="6" fill="#8c1538"></circle>
-              <text x="${x + (barWidth / 2)}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(item.parceirosMedios)}</text>
+              <text x="${x + (barWidth / 2)}" y="${y - 8}" text-anchor="middle" fill="#6d727c" font-size="11">${formatDecimal(item.parceirosMediosNormalizado)}</text>
               <text x="${x + (barWidth / 2)}" y="${dotY - 10}" text-anchor="middle" fill="#8c1538" font-size="11">${item.produtosInternos}</text>
               <text x="${x + (barWidth / 2)}" y="${baseY + 18}" text-anchor="middle" fill="#262930" font-size="12">${item.ano}</text>
             `;
@@ -6895,6 +9101,221 @@
       renderLeadershipPartnershipNetwork(partnershipNetwork);
     }
 
+    function aggregateCaptacaoCriticalCriteria() {
+      const baseDocentes = [...captacaoPermanentDocenteMeta]
+        .map((item) => item.docente)
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      const baseDocenteKeys = new Set(captacaoPermanentDocenteMeta.map((item) => item.key));
+      const relevantRows = getCaptacaoRelevantRows(dataSourceCaptacao).filter((item) => {
+        const key = normalizeDisciplinasName(item.docente);
+        return baseDocenteKeys.has(key);
+      });
+      const docenteMap = new Map();
+      const statusMap = new Map();
+      let totalValor = 0;
+      let totalAlertas = 0;
+      const pqDocentes = new Set();
+      const dtDocentes = new Set();
+      const vigentesDocentes = new Set();
+
+      const isStrategicPq = (item) => {
+        const strategicText = [item.titulo, item.edital_nome, item.edital_numero, item.observacao_auditoria]
+          .filter(Boolean)
+          .join(" ")
+          .toUpperCase();
+        const blocked = /MESTRADO|INICIACAO|INICIAÇÃO|PIBIC|PIBITI|BOLSA DE MESTRADO/.test(strategicText);
+        return Boolean(item.bolsa_produtividade) && !blocked;
+      };
+
+      const isStrategicDt = (item) => {
+        const strategicText = [item.titulo, item.edital_nome, item.edital_numero, item.observacao_auditoria]
+          .filter(Boolean)
+          .join(" ")
+          .toUpperCase();
+        const blocked = /MESTRADO|INICIACAO|INICIAÇÃO|PIBIC|PIBITI|BOLSA DE MESTRADO/.test(strategicText);
+        return Boolean(item.bolsa_desenvolvimento_tecnologico) && !blocked;
+      };
+
+      relevantRows.forEach((item) => {
+        totalValor += Number(item.valor_total) || 0;
+        totalAlertas += item.suspeita_duplicidade ? 1 : 0;
+        statusMap.set(item.status, (statusMap.get(item.status) || 0) + 1);
+        if (item.vigente_em_2026) vigentesDocentes.add(item.docente);
+        if (item.vigente_em_2026 && isStrategicPq(item)) pqDocentes.add(item.docente);
+        if (item.vigente_em_2026 && isStrategicDt(item)) dtDocentes.add(item.docente);
+        if (!docenteMap.has(item.docente)) {
+          docenteMap.set(item.docente, {
+            docente: item.docente,
+            registros: 0,
+            valorTotal: 0,
+            statuses: new Set(),
+          });
+        }
+        const bucket = docenteMap.get(item.docente);
+        bucket.registros += 1;
+        bucket.valorTotal += Number(item.valor_total) || 0;
+        bucket.statuses.add(item.status);
+      });
+
+      const docentesComCaptacao = [...docenteMap.values()]
+        .map((item) => ({
+          ...item,
+          statuses: [...item.statuses].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        }))
+        .sort((a, b) => b.registros - a.registros || b.valorTotal - a.valorTotal || a.docente.localeCompare(b.docente, "pt-BR"));
+
+      const totalBase = baseDocentes.length;
+      const totalDocentes = docentesComCaptacao.length;
+      const percentual = totalBase ? Math.round((totalDocentes / totalBase) * 100) : 0;
+
+      return {
+        baseDocentes,
+        totalBase,
+        totalDocentes,
+        percentual,
+        totalRegistros: relevantRows.length,
+        totalValor,
+        totalAlertas,
+        docentesVigentes: [...vigentesDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesPq: [...pqDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesDt: [...dtDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesComCaptacao,
+        statusSummary: [...statusMap.entries()]
+          .map(([status, total]) => ({ status, total }))
+          .sort((a, b) => b.total - a.total || a.status.localeCompare(b.status, "pt-BR")),
+      };
+    }
+
+    function renderCaptacaoCriticalCriteriaChart(summary) {
+      if (!chartCaptacaoCritDocentes) return;
+      if (!summary.docentesComCaptacao.length) {
+        chartCaptacaoCritDocentes.innerHTML = `<p class="chart-note">Sem registros de captação para o recorte atual.</p>`;
+        return;
+      }
+      const items = summary.docentesComCaptacao.slice(0, 12);
+      const width = 860;
+      const rowHeight = 34;
+      const topPadding = 18;
+      const leftLabel = 280;
+      const barArea = 300;
+      const valueX = 610;
+      const metaX = 740;
+      const height = Math.max(240, items.length * rowHeight + 30);
+      const maxRegistros = Math.max(...items.map((item) => item.registros), 1);
+
+      chartCaptacaoCritDocentes.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Quantitativo de captações por docente">
+          ${items.map((item, index) => {
+            const y = topPadding + index * rowHeight;
+            const barWidth = (item.registros / maxRegistros) * barArea;
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="12">${escapeHtml(item.docente)}</text>
+              <rect x="${leftLabel}" y="${y}" width="${barWidth}" height="18" rx="9" fill="#8c1538"></rect>
+              <text x="${leftLabel + barWidth + 10}" y="${y + 14}" fill="#262930" font-size="12">${item.registros} registro(s)</text>
+              <text x="${metaX}" y="${y + 14}" fill="#6d727c" font-size="11">${escapeHtml(formatCompactCurrency(item.valorTotal))}</text>
+            `;
+          }).join("")}
+        </svg>
+      `;
+    }
+
+    function renderCaptacaoCriticalCriteriaPanel() {
+      const summary = aggregateCaptacaoCriticalCriteria();
+      const topDocente = summary.docentesComCaptacao[0];
+      const statusPrincipal = summary.statusSummary[0];
+
+      document.getElementById("captacao-crit-base-total").textContent = String(summary.totalBase);
+      document.getElementById("captacao-crit-docentes-total").textContent = String(summary.totalDocentes);
+      document.getElementById("captacao-crit-percentual").textContent = `${summary.percentual}%`;
+      document.getElementById("captacao-crit-pq-total").textContent = String(summary.docentesPq.length);
+      document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação registrada.`;
+      document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação de recursos.`;
+      document.getElementById("captacao-crit-pq-resumo").textContent = `${summary.docentesPq.length} docente(s) com PQ estratégico vigente.`;
+
+      captacaoCritSummaryCards.innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Docentes com captação</div>
+              <strong>${summary.totalDocentes}/${summary.totalBase}</strong>
+            </div>
+            <span class="criteria-status ok">Exploratório</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Carteira vigente em 2026</div>
+              <strong>${summary.docentesVigentes.length}</strong>
+            </div>
+            <span class="criteria-status ok">${summary.docentesDt.length} DT</span>
+          </div>
+        `,
+      ].join("");
+
+      captacaoCritInsights.innerHTML = [
+        `<span class="chip">Cobertura atual: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
+        `<span class="chip">Captação vigente em 2026: <strong>${summary.docentesVigentes.length}</strong> docente(s)</span>`,
+        `<span class="chip">PQ estratégico vigente: <strong>${summary.docentesPq.length}</strong> docente(s)</span>`,
+        `<span class="chip">DT estratégico vigente: <strong>${summary.docentesDt.length}</strong> docente(s)</span>`,
+        topDocente ? `<span class="chip">Maior carteira: <strong>${topDocente.docente}</strong> (${topDocente.registros} registro(s) e ${formatCurrency(topDocente.valorTotal)})</span>` : "",
+        statusPrincipal ? `<span class="chip">Situação mais frequente: <strong>${statusPrincipal.status}</strong> (${statusPrincipal.total} registro(s))</span>` : "",
+        `<span class="chip">Valor total informado: <strong>${formatCurrency(summary.totalValor)}</strong></span>`,
+      ].filter(Boolean).join("");
+
+      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa a base de docentes permanentes do ano de referência da aba de captação. Considera registros APCN 2022-2026, destaca vigência em 2026 e separa PQ/DT estratégicos com exclusão de bolsas ordinárias de mestrado e iniciação científica para evitar falso positivo.";
+
+      document.getElementById("captacao-crit-resumo-body").innerHTML = [
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com captação de recursos</td>
+            <td>${summary.totalBase} docentes permanentes na base</td>
+            <td>${summary.totalDocentes} docentes (${summary.percentual}%)</td>
+            <td>Indicador preparado para futura parametrização de corte.</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com carteira vigente em 2026</td>
+            <td>Docentes permanentes com captação ativa no ano de referência</td>
+            <td>${summary.docentesVigentes.length} docente(s)</td>
+            <td>${summary.docentesVigentes.length ? `Base ativa em 2026: ${summary.docentesVigentes.join(", ")}.` : "Nenhum docente com carteira vigente em 2026."}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com PQ estratégico vigente</td>
+            <td>Marcador crítico de maturidade em captação qualificada</td>
+            <td>${summary.docentesPq.length} docente(s)</td>
+            <td>${summary.docentesPq.length ? `PQ vigente identificado em: ${summary.docentesPq.join(", ")}.` : "Nenhum PQ estratégico vigente identificado."}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com DT estratégico vigente</td>
+            <td>Marcador complementar de desenvolvimento tecnológico</td>
+            <td>${summary.docentesDt.length} docente(s)</td>
+            <td>${summary.docentesDt.length ? `DT vigente identificado em: ${summary.docentesDt.join(", ")}.` : "Nenhum DT estratégico vigente identificado."}</td>
+          </tr>
+        `,
+        ...summary.statusSummary.map((item) => `
+          <tr>
+            <td>Captação</td>
+            <td>Registros na situação ${item.status}</td>
+            <td>Base de captações elegíveis</td>
+            <td>${item.total} registro(s)</td>
+            <td>Composição operacional do portfólio atual de captação.</td>
+          </tr>
+        `),
+      ].join("");
+
+      renderCaptacaoCriticalCriteriaChart(summary);
+    }
+
     const docentesCriteriaLabels = {
       permanentes_no_corpo: "Permanentes no corpo classificado",
       permanentes_internos: "Permanentes com vínculo com a IES",
@@ -7553,6 +9974,7 @@
     populateFilters(dataSource);
     populateTechnicalFilters(dataSourceTecnica);
     populateDisciplinasFilters(getDisciplinasBaseData());
+    populateCaptacaoFilters(dataSourceCaptacao);
     bindDocenteChips();
     bindTypeFilters();
     bindYearFilters();
@@ -7561,10 +9983,13 @@
     bindTechnicalFilterToggles();
     bindDisciplinasFilters();
     bindDisciplinasFilterToggles();
+    bindCaptacaoFilters();
+    bindCaptacaoFilterToggles();
     bindCriteriaSortButtons();
     initializeScientificFilters();
     initializeTechnicalFilters();
     initializeDisciplinasFilters();
+    initializeCaptacaoFilters();
     bindTabs();
     bindApcnCollapsibleSections();
     bindApcnScoringModal();
@@ -7574,6 +9999,7 @@
     bindTechnicalDocenteSortToggles();
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
+    bindCaptacaoDocenteSortToggles();
     bindLeadershipQualityJcrModeButtons();
     bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
@@ -7581,14 +10007,17 @@
     applyLeadershipFilters();
     applyTechnicalFilters();
     applyDisciplinasFilters();
+    applyCaptacaoFilters();
     renderOrientationPanel();
     renderProductivityCriteriaPanel();
     renderOrientationCriticalCriteriaPanel();
     renderDocenciaCriticalCriteriaPanel();
+    renderCaptacaoCriticalCriteriaPanel();
     populateDocentesYearSelect();
     bindDocentesControls();
     renderDocentesTab();
     renderCorpoDocenteCriticalCriteriaPanel();
+    renderGuideDocentePanel();
     renderDocumentsPanel();
   </script>
 </body>
