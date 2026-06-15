@@ -4627,7 +4627,7 @@
   <script src="./producao-cientifica-data.js?v=2026-06-12g"></script>
   <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-12g"></script>
-  <script src="./disciplinas-data.js?v=2026-06-12f"></script>
+  <script src="./disciplinas-data.js?v=2026-06-15a"></script>
   <script src="./captacao-recursos-data.js?v=2026-06-15a"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
@@ -4645,6 +4645,14 @@
       .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .toUpperCase();
+    const disciplinasCanonicalNameMap = new Map([
+      ["LEONARDO LUZ", "Leonardo Gomes de Oliveira Luz"],
+    ]);
+    const canonicalizeDisciplinasName = (value) => {
+      const trimmed = String(value || "").trim();
+      const normalized = normalizeDisciplinasName(trimmed);
+      return disciplinasCanonicalNameMap.get(normalized) || trimmed;
+    };
     const disciplinasInternalDocentes = new Set([
       "André dos Santos Costa",
       "Bruno Teixeira Barbosa",
@@ -4669,7 +4677,7 @@
       ...item,
       ano: String(item.ano || "").trim(),
       ano_periodo: String(item.ano_periodo || "").trim(),
-      nome_responsavel: String(item.nome_responsavel || "").trim(),
+      nome_responsavel: canonicalizeDisciplinasName(item.nome_responsavel),
       categoria_responsavel: String(item.categoria_responsavel || "").trim(),
       indicador_responsavel_principal: String(item.indicador_responsavel_principal || "").trim(),
       formacao_docente: String(item.formacao_docente || "").trim(),
