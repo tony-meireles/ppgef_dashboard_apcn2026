@@ -1,0 +1,15 @@
+diff --git a/dashboard/producao-cientifica.html b/dashboard/producao-cientifica.html
+index b4e7f3f..db2abf9 100644
+--- a/dashboard/producao-cientifica.html
++++ b/dashboard/producao-cientifica.html
+@@ -4,6 +4,10 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PPGEF - Produção Científica</title>
++  <script src="../auth.js"></script>
++  <script>
++    window.ppgefStaticAuth.protectPage();
++  </script>
+   <style>
+     :root {
+
