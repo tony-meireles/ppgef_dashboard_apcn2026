@@ -5,7 +5,7 @@ window.ORIENTACOES_PPGEF = [
     tcc_concluidas: 121,
     ic_andamento: 10,
     ic_concluidas: 43,
-    mestrado_andamento: 10,
+    mestrado_andamento: 9,
     mestrado_concluintes_2026: 0,
     mestrado_concluidas: 15,
     doutorado_andamento_co: 0,
@@ -18,7 +18,7 @@ window.ORIENTACOES_PPGEF = [
     posdoc_andamento: 0,
     posdoc_concluintes_2026: 0,
     posdoc_concluidas: 1,
-    total_andamento_apcn: 10,
+    total_andamento_apcn: 9,
     total_concluidas_apcn: 17,
     total_concluidas_d: 15,
     total_concluintes_2026_apcn: 0,
@@ -371,7 +371,7 @@ window.ORIENTACOES_PPGEF = [
     ic_concluidas: 6,
     mestrado_andamento: 5,
     mestrado_concluintes_2026: 0,
-    mestrado_concluidas: 1,
+    mestrado_concluidas: 8,
     doutorado_andamento_co: 0,
     doutorado_andamento_principal: 0,
     doutorado_andamento: 0,
@@ -383,11 +383,11 @@ window.ORIENTACOES_PPGEF = [
     posdoc_concluintes_2026: 0,
     posdoc_concluidas: 0,
     total_andamento_apcn: 5,
-    total_concluidas_apcn: 1,
-    total_concluidas_d: 1,
+    total_concluidas_apcn: 8,
+    total_concluidas_d: 8,
     total_concluintes_2026_apcn: 0,
-    total_geral_apcn: 1,
-    total_mestrado_concluido: 1
+    total_geral_apcn: 8,
+    total_mestrado_concluido: 8
   },
   {
     docente: "Tony Meireles dos Santos",
@@ -466,5 +466,5 @@ window.ORIENTACOES_PPGEF = [
     total_concluintes_2026_apcn: 0,
     total_geral_apcn: 2,
     total_mestrado_concluido: 2
-  }
+  },
 ];

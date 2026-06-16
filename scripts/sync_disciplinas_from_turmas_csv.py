@@ -141,6 +141,58 @@ def build_canonical_name_map(rows: list[dict[str, str]]) -> dict[str, str]:
     return canonical_map
 
 
+def apply_manual_row_overrides(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    overrides = {
+        (
+            "1",
+            "2024_2",
+            "MÉTODOS ESTATÍSTICOS APLICADOS AO MOVIMENTO HUMANO (Turma: 1)",
+            "leonardo gomes de oliveira luz",
+        ): {
+            "nome_responsavel": "Leonardo Gomes de Oliveira Luz",
+            "categoria_responsavel": "Participante Externo",
+            "indicador_responsavel_principal": "Não",
+            "carga_horaria_docente": "20",
+        },
+        (
+            "01",
+            "2025.2",
+            "Tópicos Especiais: Temas Emergentes em Atividades Motoras e Saúde: COMPORTAMENTO DE MOVIMENTO DA CRIANÇA E DO ADOLESCENTE (Turma: 01)",
+            "leonardo luz",
+        ): {
+            "nome_responsavel": "Leonardo Gomes de Oliveira Luz",
+            "categoria_responsavel": "Docente",
+            "indicador_responsavel_principal": "Sim",
+            "carga_horaria_docente": "45",
+        },
+        (
+            "01",
+            "2026.1",
+            "Tópicos Especiais: Temas Emergentes em Atividades Motoras e Saúde: LETRAMENTO CORPORAL (Turma: 01)",
+            "leonardo luz",
+        ): {
+            "nome_responsavel": "Leonardo Gomes de Oliveira Luz",
+            "categoria_responsavel": "Docente",
+            "indicador_responsavel_principal": "Não",
+            "carga_horaria_docente": "15",
+        },
+    }
+
+    updated = []
+    for row in rows:
+        override_key = (
+            row["nome_turma"],
+            row["ano_periodo"],
+            row["nome_disciplina_completo"],
+            fold_text(row["nome_responsavel"]),
+        )
+        normalized_row = dict(row)
+        if override_key in overrides:
+            normalized_row.update(overrides[override_key])
+        updated.append(normalized_row)
+    return updated
+
+
 def normalize_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     canonical_names = build_canonical_name_map(rows)
     normalized = []
@@ -150,7 +202,7 @@ def normalize_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
         if folded:
             normalized_row["nome_responsavel"] = canonical_names[folded]
         normalized.append(normalized_row)
-    return normalized
+    return apply_manual_row_overrides(normalized)
 
 
 def write_outputs(rows: list[dict[str, str]]) -> None:
@@ -161,7 +213,8 @@ def write_outputs(rows: list[dict[str, str]]) -> None:
 
 def main() -> int:
     rows = load_csv_rows(SOURCE_CSV)
-    normalized_rows = normalize_rows(rows)
+    overridden_rows = apply_manual_row_overrides(rows)
+    normalized_rows = normalize_rows(overridden_rows)
     write_outputs(normalized_rows)
 
     before_names = {row["nome_responsavel"] for row in rows if row["nome_responsavel"]}

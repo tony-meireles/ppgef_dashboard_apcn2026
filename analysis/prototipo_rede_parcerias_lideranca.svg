@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f3eb"/>
+      <stop offset="100%" stop-color="#f2eadf"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffdfa"/>
+      <stop offset="100%" stop-color="#f7f1e8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg)"/>
+
+  <text x="56" y="56" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Protótipo: Rede de Parcerias na Aba Liderança e Impacto</text>
+  <text x="56" y="84" fill="#6a6f78" font-family="Segoe UI, Arial, sans-serif" font-size="16">Leitura proposta para colaboração autoral, integração entre docentes e força dos vínculos.</text>
+
+  <rect x="44" y="118" width="270" height="598" rx="26" fill="url(#card)" stroke="#e2d7c7" filter="url(#shadow)"/>
+  <text x="72" y="162" fill="#7e1f38" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">SEÇÃO PROPOSTA</text>
+  <text x="72" y="194" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Parceria e Integração</text>
+  <text x="72" y="224" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="15">Explorar coautoria externa, densidade da rede e integração entre docentes do programa.</text>
+
+  <rect x="72" y="256" width="214" height="92" rx="18" fill="#fff8f2" stroke="#eadcc9"/>
+  <text x="90" y="282" fill="#7f8690" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1">DOCENTES CONECTADOS</text>
+  <text x="90" y="322" fill="#8c1538" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">16</text>
+  <text x="90" y="340" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">com ao menos uma parceria ativa no recorte.</text>
+
+  <rect x="72" y="364" width="214" height="92" rx="18" fill="#fff8f2" stroke="#eadcc9"/>
+  <text x="90" y="390" fill="#7f8690" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PARCERIAS INTERNAS</text>
+  <text x="90" y="430" fill="#8c1538" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">11</text>
+  <text x="90" y="448" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">produtos com mais de um docente do PPGEF.</text>
+
+  <rect x="72" y="472" width="214" height="92" rx="18" fill="#fff8f2" stroke="#eadcc9"/>
+  <text x="90" y="498" fill="#7f8690" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PARCEIROS MÉDIOS</text>
+  <text x="90" y="538" fill="#8c1538" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">4,7</text>
+  <text x="90" y="556" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">coautores por produto no recorte visível.</text>
+
+  <text x="72" y="612" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Leituras previstas</text>
+  <text x="72" y="638" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">1. Quantidade total de parceiros por docente</text>
+  <text x="72" y="662" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">2. Evolução anual das parcerias</text>
+  <text x="72" y="686" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">3. Integração interna entre docentes</text>
+
+  <rect x="334" y="118" width="902" height="598" rx="26" fill="url(#card)" stroke="#e2d7c7" filter="url(#shadow)"/>
+  <text x="366" y="160" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Rede de Parcerias Autorais</text>
+  <text x="366" y="186" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="15">Cada bolota representa um docente. O tamanho indica volume relacional. A espessura das arestas indica força do vínculo.</text>
+
+  <rect x="1062" y="142" width="146" height="122" rx="18" fill="#fff8f2" stroke="#eadcc9"/>
+  <text x="1084" y="172" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Legenda</text>
+  <line x1="1086" y1="198" x2="1136" y2="198" stroke="#c9bba7" stroke-width="2"/>
+  <text x="1150" y="202" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="13">vínculo fraco</text>
+  <line x1="1086" y1="222" x2="1136" y2="222" stroke="#9c2342" stroke-width="6" stroke-linecap="round"/>
+  <text x="1150" y="226" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="13">vínculo forte</text>
+  <circle cx="1102" cy="248" r="9" fill="#d9a326"/>
+  <text x="1150" y="252" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="13">integração média</text>
+  <circle cx="1102" cy="276" r="12" fill="#8c1538"/>
+  <text x="1150" y="280" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="13">hub de parceria</text>
+
+  <g opacity="0.95">
+    <line x1="540" y1="366" x2="662" y2="302" stroke="#ae9d8b" stroke-width="3" stroke-linecap="round"/>
+    <line x1="540" y1="366" x2="640" y2="450" stroke="#8c1538" stroke-width="7" stroke-linecap="round"/>
+    <line x1="540" y1="366" x2="748" y2="390" stroke="#b9a995" stroke-width="4" stroke-linecap="round"/>
+    <line x1="540" y1="366" x2="464" y2="500" stroke="#a78d72" stroke-width="5" stroke-linecap="round"/>
+    <line x1="540" y1="366" x2="414" y2="286" stroke="#c8baa7" stroke-width="3" stroke-linecap="round"/>
+    <line x1="640" y1="450" x2="748" y2="390" stroke="#a27453" stroke-width="6" stroke-linecap="round"/>
+    <line x1="640" y1="450" x2="790" y2="502" stroke="#c4b39f" stroke-width="4" stroke-linecap="round"/>
+    <line x1="662" y1="302" x2="844" y2="276" stroke="#c6b49f" stroke-width="3" stroke-linecap="round"/>
+    <line x1="662" y1="302" x2="748" y2="390" stroke="#9b2b44" stroke-width="6" stroke-linecap="round"/>
+    <line x1="748" y1="390" x2="844" y2="276" stroke="#b27b50" stroke-width="5" stroke-linecap="round"/>
+    <line x1="748" y1="390" x2="922" y2="356" stroke="#ccbca9" stroke-width="3" stroke-linecap="round"/>
+    <line x1="844" y1="276" x2="922" y2="356" stroke="#b08d67" stroke-width="4" stroke-linecap="round"/>
+    <line x1="414" y1="286" x2="464" y2="500" stroke="#d2c6b8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="464" y1="500" x2="640" y2="450" stroke="#bc9c78" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <circle cx="540" cy="366" r="30" fill="#8c1538" stroke="#fff8f2" stroke-width="4"/>
+    <text x="540" y="415" text-anchor="middle" fill="#2e3138" font-size="14" font-weight="700">Pedro Pinheiro Paes Neto</text>
+
+    <circle cx="640" cy="450" r="26" fill="#b6543d" stroke="#fff8f2" stroke-width="4"/>
+    <text x="640" y="492" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Rafael dos Santos Henrique</text>
+
+    <circle cx="662" cy="302" r="22" fill="#d9a326" stroke="#fff8f2" stroke-width="4"/>
+    <text x="662" y="266" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Lucas Eduardo Rodrigues dos Santos</text>
+
+    <circle cx="748" cy="390" r="24" fill="#a8364d" stroke="#fff8f2" stroke-width="4"/>
+    <text x="748" y="432" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Saulo Fernandes Melo de Oliveira</text>
+
+    <circle cx="844" cy="276" r="20" fill="#cc8b1f" stroke="#fff8f2" stroke-width="4"/>
+    <text x="844" y="242" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Paulo Felipe Ribeiro Bandeira</text>
+
+    <circle cx="922" cy="356" r="18" fill="#d59a32" stroke="#fff8f2" stroke-width="4"/>
+    <text x="922" y="322" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Tony Meireles dos Santos</text>
+
+    <circle cx="464" cy="500" r="18" fill="#d59a32" stroke="#fff8f2" stroke-width="4"/>
+    <text x="464" y="536" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">André dos Santos Costa</text>
+
+    <circle cx="414" cy="286" r="16" fill="#e0b34d" stroke="#fff8f2" stroke-width="4"/>
+    <text x="414" y="252" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Daniel da Rocha Queiroz</text>
+
+    <circle cx="790" cy="502" r="14" fill="#e3bd67" stroke="#fff8f2" stroke-width="4"/>
+    <text x="790" y="536" text-anchor="middle" fill="#2e3138" font-size="13" font-weight="700">Clarice Maria de Lucena Martins</text>
+  </g>
+
+  <rect x="370" y="592" width="826" height="88" rx="20" fill="#fff8f2" stroke="#eadcc9"/>
+  <text x="396" y="622" fill="#2e3138" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Leitura proposta fora do grafo</text>
+  <text x="396" y="648" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">1. Total de parceiros distintos por docente. 2. Série anual do número de coautores médios. 3. Quantidade de produtos com mais de um docente PPGEF.</text>
+  <text x="396" y="670" fill="#666b73" font-family="Segoe UI, Arial, sans-serif" font-size="14">4. Grau de integração interna: quantos docentes diferentes do programa cada docente acionou em coautoria e com que intensidade.</text>
+</svg>
