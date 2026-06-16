@@ -42,6 +42,7 @@ Depois dessa migracao:
 - alteracao commitada e enviada para `codex/publish-turmas` vira deploy
 - deixa de existir promocao manual obrigatoria para `master`
 - o site publicado passa a refletir diretamente a branch de trabalho escolhida
+- clones auxiliares e worktrees de publicacao devem permanecer fora do workspace operacional
 
 ### Fluxo que deve parar de ser usado
 
@@ -50,6 +51,7 @@ Evitar daqui em diante:
 - publicar manualmente pela `master`
 - usar clones ou worktrees paralelos para “fechar” publicacao
 - tratar `master` como branch intermediaria de deploy
+- recriar pastas locais como `publish_clone/` ou `tmp-publish-master/` para testar publicacao
 
 Ao abrir a raiz do site, `index.html` redireciona para `dashboard/producao-cientifica.html`.
 
