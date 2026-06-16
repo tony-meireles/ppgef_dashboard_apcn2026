@@ -3983,7 +3983,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
     {
       "id": 69,
       "carimbo_data_hora": "16/06/2026 10:03:50",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Comparação da resposta aguda entre o sistema Cluster baseado na redistribuição de repouso e o sistema tradicional do treinamento com peso sobre o nível de fadiga no desempenho técnico em jovens atletas de basquetebol: ensaio clínico randomizado",
       "tipos": [
         "Bolsa"
@@ -4022,9 +4022,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4033,13 +4034,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|comparacao-da-resposta-aguda-entre-o-sistema-cluster-baseado-na-redistribuicao-de-repouso-e-o-sistema-tradicional-do-treinamento-com-peso-sobre-o-nivel-de-fadiga-no-desempenho-tecnico-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|facepe|1360-4-09-21|concluida|2021|2021",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|comparacao-da-resposta-aguda-entre-o-sistema-cluster-baseado-na-redistribuicao-de-repouso-e-o-sistema-tradicional-do-treinamento-com-peso-sobre-o-nivel-de-fadiga-no-desempenho-tecnico-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|facepe|1360-4-09-21|concluida|2021|2021",
       "motivo_alerta": ""
     },
     {
       "id": 70,
       "carimbo_data_hora": "16/06/2026 10:16:33",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Implicações da ingestão aguda de taurina nas variáveis ergoespirométricas em jovens ativos, durante um teste progressivo de esforço máximo",
       "tipos": [
         "Bolsa"
@@ -4078,9 +4079,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4089,13 +4091,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|implicacoes-da-ingestao-aguda-de-taurina-nas-variaveis-ergoespirometricas-em-jovens-ativos-durante-um-teste-progressivo-de-esforco-maximo|cnpq|04-2023|concluida|2023|2023",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|implicacoes-da-ingestao-aguda-de-taurina-nas-variaveis-ergoespirometricas-em-jovens-ativos-durante-um-teste-progressivo-de-esforco-maximo|cnpq|04-2023|concluida|2023|2023",
       "motivo_alerta": ""
     },
     {
       "id": 71,
       "carimbo_data_hora": "16/06/2026 10:19:27",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeitos da ingestão aguda de taurina nas variáveis cardiovasculares em jovens ativos, durante teste progressivo de esforço máximo: uma investigação experimental",
       "tipos": [
         "Bolsa"
@@ -4134,9 +4136,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4145,13 +4148,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeitos-da-ingestao-aguda-de-taurina-nas-variaveis-cardiovasculares-em-jovens-ativos-durante-teste-progressivo-de-esforco-maximo-uma-investigacao-experimental|cnpq|04-2023|concluida|2023|2023",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeitos-da-ingestao-aguda-de-taurina-nas-variaveis-cardiovasculares-em-jovens-ativos-durante-teste-progressivo-de-esforco-maximo-uma-investigacao-experimental|cnpq|04-2023|concluida|2023|2023",
       "motivo_alerta": ""
     },
     {
       "id": 72,
       "carimbo_data_hora": "16/06/2026 10:23:26",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Influência da ingestão aguda de cafeína no consumo máximo de oxigênio e na fadiga mental em jovens adultos ativos",
       "tipos": [
         "Bolsa"
@@ -4190,9 +4193,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4201,13 +4205,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|influencia-da-ingestao-aguda-de-cafeina-no-consumo-maximo-de-oxigenio-e-na-fadiga-mental-em-jovens-adultos-ativos|cnpq|04-2025|em-execucao|2025|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|influencia-da-ingestao-aguda-de-cafeina-no-consumo-maximo-de-oxigenio-e-na-fadiga-mental-em-jovens-adultos-ativos|cnpq|04-2025|em-execucao|2025|2025",
       "motivo_alerta": ""
     },
     {
       "id": 73,
       "carimbo_data_hora": "16/06/2026 10:25:56",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Influência da ingestão aguda de taurina no metabolismo aeróbio de atletas universitários durante teste de esforço máximo",
       "tipos": [
         "Bolsa"
@@ -4246,9 +4250,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4257,13 +4262,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|influencia-da-ingestao-aguda-de-taurina-no-metabolismo-aerobio-de-atletas-universitarios-durante-teste-de-esforco-maximo|cnpq|04-2025|em-execucao|2025|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|influencia-da-ingestao-aguda-de-taurina-no-metabolismo-aerobio-de-atletas-universitarios-durante-teste-de-esforco-maximo|cnpq|04-2025|em-execucao|2025|2025",
       "motivo_alerta": ""
     },
     {
       "id": 74,
       "carimbo_data_hora": "16/06/2026 10:28:42",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "A suplementação aguda de taurina influencia na capacidade aeróbia e na performance intermitente de atletas de futsal, durante teste progressivo máximo de campo?",
       "tipos": [
         "Bolsa"
@@ -4302,9 +4307,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4313,13 +4319,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|a-suplementacao-aguda-de-taurina-influencia-na-capacidade-aerobia-e-na-performance-intermitente-de-atletas-de-futsal-durante-teste-progressivo-maximo-de-campo|cnpq|04-2025|em-execucao|2025|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|a-suplementacao-aguda-de-taurina-influencia-na-capacidade-aerobia-e-na-performance-intermitente-de-atletas-de-futsal-durante-teste-progressivo-maximo-de-campo|cnpq|04-2025|em-execucao|2025|2025",
       "motivo_alerta": ""
     },
     {
       "id": 75,
       "carimbo_data_hora": "16/06/2026 10:32:52",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Influência do nível de atividade física na ansiedade, estresse, depressão e qualidade do sono de jovens em tempos de pandemia de COVID-19",
       "tipos": [
         "Bolsa"
@@ -4358,9 +4364,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4369,13 +4376,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|influencia-do-nivel-de-atividade-fisica-na-ansiedade-estresse-depressao-e-qualidade-do-sono-de-jovens-em-tempos-de-pandemia-de-covid-19|cnpq|04-2022|concluida|2022|2022",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|influencia-do-nivel-de-atividade-fisica-na-ansiedade-estresse-depressao-e-qualidade-do-sono-de-jovens-em-tempos-de-pandemia-de-covid-19|cnpq|04-2022|concluida|2022|2022",
       "motivo_alerta": ""
     },
     {
       "id": 76,
       "carimbo_data_hora": "16/06/2026 10:35:17",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Influência do nível de atividade física na composição corporal, satisfação corporal e maturação biológica de adolescentes em tempo de pandemia de COVID-19",
       "tipos": [
         "Bolsa"
@@ -4414,9 +4421,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4425,13 +4433,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|influencia-do-nivel-de-atividade-fisica-na-composicao-corporal-satisfacao-corporal-e-maturacao-biologica-de-adolescentes-em-tempo-de-pandemia-de-covid-19|cnpq|04-2022|concluida|2022|2022",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|influencia-do-nivel-de-atividade-fisica-na-composicao-corporal-satisfacao-corporal-e-maturacao-biologica-de-adolescentes-em-tempo-de-pandemia-de-covid-19|cnpq|04-2022|concluida|2022|2022",
       "motivo_alerta": ""
     },
     {
       "id": 77,
       "carimbo_data_hora": "16/06/2026 10:40:06",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeitos agudos da coingestão de taurina e cafeína na performance física e cognitiva de indivíduos adultos",
       "tipos": [
         "Bolsa"
@@ -4471,9 +4479,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4482,13 +4491,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeitos-agudos-da-coingestao-de-taurina-e-cafeina-na-performance-fisica-e-cognitiva-de-individuos-adultos|cnpq|1-2026|em-execucao|2025|2026",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeitos-agudos-da-coingestao-de-taurina-e-cafeina-na-performance-fisica-e-cognitiva-de-individuos-adultos|cnpq|1-2026|em-execucao|2025|2026",
       "motivo_alerta": ""
     },
     {
       "id": 78,
       "carimbo_data_hora": "16/06/2026 11:16:37",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeitos da motivação verbal e privação visual da carga no teste de 1RM em indivíduos treinados",
       "tipos": [
         "Bolsa"
@@ -4529,9 +4538,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4540,13 +4550,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeitos-da-motivacao-verbal-e-privacao-visual-da-carga-no-teste-de-1rm-em-individuos-treinados|facepe||em-execucao|2024|2026",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeitos-da-motivacao-verbal-e-privacao-visual-da-carga-no-teste-de-1rm-em-individuos-treinados|facepe||em-execucao|2024|2026",
       "motivo_alerta": ""
     },
     {
       "id": 79,
       "carimbo_data_hora": "16/06/2026 11:19:26",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeitos agudos da suplementação de taurina nas variáveis cardiorrespiratórias em jovens adultos ativos, durante teste progressivo de esforço máximo",
       "tipos": [
         "Bolsa"
@@ -4587,9 +4597,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4598,13 +4609,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeitos-agudos-da-suplementacao-de-taurina-nas-variaveis-cardiorrespiratorias-em-jovens-adultos-ativos-durante-teste-progressivo-de-esforco-maximo|cnpq||em-execucao|2024|2026",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeitos-agudos-da-suplementacao-de-taurina-nas-variaveis-cardiorrespiratorias-em-jovens-adultos-ativos-durante-teste-progressivo-de-esforco-maximo|cnpq||em-execucao|2024|2026",
       "motivo_alerta": ""
     },
     {
       "id": 80,
       "carimbo_data_hora": "16/06/2026 11:23:00",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeitos agudos de diferentes tipos de exercício físico sobre as variáveis da função pulmonar, psicológicas e cognitivas em mulheres com sintomas pós COVID19: um estudo de séries de casos",
       "tipos": [
         "Bolsa"
@@ -4645,9 +4656,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4656,13 +4668,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeitos-agudos-de-diferentes-tipos-de-exercicio-fisico-sobre-as-variaveis-da-funcao-pulmonar-psicologicas-e-cognitivas-em-mulheres-com-sintomas-pos-covid19-um-estudo-de-series-de-casos|facepe|35-2022|concluida|2023|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeitos-agudos-de-diferentes-tipos-de-exercicio-fisico-sobre-as-variaveis-da-funcao-pulmonar-psicologicas-e-cognitivas-em-mulheres-com-sintomas-pos-covid19-um-estudo-de-series-de-casos|facepe|35-2022|concluida|2023|2025",
       "motivo_alerta": ""
     },
     {
       "id": 81,
       "carimbo_data_hora": "16/06/2026 11:27:09",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeito da idade relativa e maturação no desempenho competitivo em jovens atletas de judô",
       "tipos": [
         "Bolsa"
@@ -4701,9 +4713,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4712,13 +4725,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeito-da-idade-relativa-e-maturacao-no-desempenho-competitivo-em-jovens-atletas-de-judo|capes||concluida|2021|2021",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeito-da-idade-relativa-e-maturacao-no-desempenho-competitivo-em-jovens-atletas-de-judo|capes||concluida|2021|2021",
       "motivo_alerta": ""
     },
     {
       "id": 82,
       "carimbo_data_hora": "16/06/2026 11:33:54",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Comparação das respostas agudas entre os sistemas cluster baseado na redistribuição de repouso e tradicional do treinamento resistido sobre os esforço percebido, níveis de fadiga neutro muscular e desempenho técnico em jovens atletas de basquetebol: ensaio clínico randomizado",
       "tipos": [
         "Bolsa"
@@ -4757,9 +4770,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4768,13 +4782,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|comparacao-das-respostas-agudas-entre-os-sistemas-cluster-baseado-na-redistribuicao-de-repouso-e-tradicional-do-treinamento-resistido-sobre-os-esforco-percebido-niveis-de-fadiga-neutro-muscular-e-desempenho-tecnico-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|cnpq||concluida|2021|2021",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|comparacao-das-respostas-agudas-entre-os-sistemas-cluster-baseado-na-redistribuicao-de-repouso-e-tradicional-do-treinamento-resistido-sobre-os-esforco-percebido-niveis-de-fadiga-neutro-muscular-e-desempenho-tecnico-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|cnpq||concluida|2021|2021",
       "motivo_alerta": ""
     },
     {
       "id": 83,
       "carimbo_data_hora": "16/06/2026 11:37:40",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Implicações do estímulo verbal e musical no desempenho de força em pessoas com e sem experiência de treinamento",
       "tipos": [
         "Bolsa"
@@ -4814,9 +4828,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4825,13 +4840,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|implicacoes-do-estimulo-verbal-e-musical-no-desempenho-de-forca-em-pessoas-com-e-sem-experiencia-de-treinamento|cnpq|04-2024|concluida|2024|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|implicacoes-do-estimulo-verbal-e-musical-no-desempenho-de-forca-em-pessoas-com-e-sem-experiencia-de-treinamento|cnpq|04-2024|concluida|2024|2025",
       "motivo_alerta": ""
     },
     {
       "id": 84,
       "carimbo_data_hora": "16/06/2026 11:39:19",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Efeito da privação visual no desempenho de força em indivíduos treinados e destreinados",
       "tipos": [
         "Bolsa"
@@ -4871,9 +4886,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4882,13 +4898,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|efeito-da-privacao-visual-no-desempenho-de-forca-em-individuos-treinados-e-destreinados|cnpq|04-2024|concluida|2024|2025",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|efeito-da-privacao-visual-no-desempenho-de-forca-em-individuos-treinados-e-destreinados|cnpq|04-2024|concluida|2024|2025",
       "motivo_alerta": ""
     },
     {
       "id": 85,
       "carimbo_data_hora": "16/06/2026 11:43:37",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Comparação da resposta aguda entre o sistema cluster baseado na redistribuição e o sistema tradicional do treinamento resistido sobre os níveis de fadiga e desempenho técnico do drible em jovens atletas de basquetebol: ensaio clínico randomizado",
       "tipos": [
         "Bolsa"
@@ -4928,9 +4944,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4939,13 +4956,13 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|comparacao-da-resposta-aguda-entre-o-sistema-cluster-baseado-na-redistribuicao-e-o-sistema-tradicional-do-treinamento-resistido-sobre-os-niveis-de-fadiga-e-desempenho-tecnico-do-drible-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|cnpq|04-21|concluida|2021|2022",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|comparacao-da-resposta-aguda-entre-o-sistema-cluster-baseado-na-redistribuicao-e-o-sistema-tradicional-do-treinamento-resistido-sobre-os-niveis-de-fadiga-e-desempenho-tecnico-do-drible-em-jovens-atletas-de-basquetebol-ensaio-clinico-randomizado|cnpq|04-21|concluida|2021|2022",
       "motivo_alerta": ""
     },
     {
       "id": 86,
       "carimbo_data_hora": "16/06/2026 11:46:25",
-      "docente": "Pedro Pinheiro Paes",
+      "docente": "Pedro Pinheiro Paes Neto",
       "titulo": "Nível de atividade física, perfil do sono e qualidade de vida em profissionais noturnos",
       "tipos": [
         "Bolsa"
@@ -4985,9 +5002,10 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "bolsa_produtividade": false,
       "bolsa_desenvolvimento_tecnologico": false,
       "captacao_internacional": false,
-      "linha_pesquisa": "Não informada",
+      "linha_pesquisa": "AMS + DFE",
       "linha_pesquisa_lista": [
-        "Não informada"
+        "AMS",
+        "DFE"
       ],
       "status_revisao": "Sem alerta",
       "evidencia_documento": "",
@@ -4996,7 +5014,7 @@ window.CAPTACAO_RECURSOS_PPGEF = {
       "suspeita_duplicidade": false,
       "duplicidade_suspeita": false,
       "duplicidade_grupo": 1,
-      "chave_deduplicacao": "pedro-pinheiro-paes|nivel-de-atividade-fisica-perfil-do-sono-e-qualidade-de-vida-em-profissionais-noturnos|cnpq|04-2021|concluida|2021|2022",
+      "chave_deduplicacao": "pedro-pinheiro-paes-neto|nivel-de-atividade-fisica-perfil-do-sono-e-qualidade-de-vida-em-profissionais-noturnos|cnpq|04-2021|concluida|2021|2022",
       "motivo_alerta": ""
     },
     {
