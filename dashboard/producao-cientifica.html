@@ -8279,8 +8279,14 @@
       const mostIntegrated = [...summary].sort((a, b) => b.docentesInternos - a.docentesInternos || b.forcaInterna - a.forcaInterna || a.docente.localeCompare(b.docente, "pt-BR"))[0];
       const topYear = [...yearSummary].sort((a, b) => b.parceirosMedios - a.parceirosMedios || b.produtosInternos - a.produtosInternos)[0];
       const topEdge = network.edges[0];
+      const rawMediaParceiros = Number(totals?.mediaParceiros);
+      const fallbackMediaParceiros = yearSummary.reduce((acc, item) => acc + Number(item?.parceirosTotal || 0), 0);
+      const fallbackTotalProdutos = yearSummary.reduce((acc, item) => acc + Number(item?.totalProdutos || 0), 0);
+      const mediaParceiros = Number.isFinite(rawMediaParceiros) && rawMediaParceiros > 0
+        ? rawMediaParceiros
+        : (fallbackTotalProdutos ? fallbackMediaParceiros / fallbackTotalProdutos : 0);
 
-      document.getElementById("lideranca-parceria-media").textContent = formatDecimal(totals.mediaParceiros);
+      document.getElementById("lideranca-parceria-media").textContent = formatDecimal(mediaParceiros);
       document.getElementById("lideranca-parceria-distintos").textContent = String(totals.uniquePartners);
       document.getElementById("lideranca-parceria-internos").textContent = String(totals.produtosInternos);
       document.getElementById("lideranca-parceria-docentes").textContent = String(totals.docentesIntegrados);
