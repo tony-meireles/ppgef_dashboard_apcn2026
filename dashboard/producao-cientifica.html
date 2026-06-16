@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PPGEF - Produção Científica</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NZSTNGH9');</script>
+  <!-- End Google Tag Manager -->
   <style>
     :root {
       --ufpe-bordo: #8c1538;
@@ -2232,6 +2239,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZSTNGH9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="wrap">
     <section class="hero">
       <div>
@@ -8341,13 +8352,29 @@
       `;
     }
 
-    function renderLeadershipPartnershipYearChart(summary) {
+    function buildLeadershipPartnershipYearChartSummary(summary, productGroups) {
+      const baseSummary = Array.isArray(summary) ? summary : [];
+      const hasValidMetrics = baseSummary.some((item) => {
+        const media = Number(item?.parceirosMedios);
+        const parceirosTotal = Number(item?.parceirosTotal);
+        const totalProdutos = Number(item?.totalProdutos);
+        return (Number.isFinite(media) && media > 0)
+          || (Number.isFinite(parceirosTotal) && parceirosTotal > 0 && Number.isFinite(totalProdutos) && totalProdutos > 0);
+      });
+      if (hasValidMetrics || !(productGroups instanceof Map)) {
+        return baseSummary;
+      }
+      return aggregateLeadershipPartnershipByYear(productGroups);
+    }
+
+    function renderLeadershipPartnershipYearChart(summary, productGroups = null) {
       if (!chartLiderancaParceriaAnos) return;
-      if (!summary.length) {
+      const chartSummary = buildLeadershipPartnershipYearChartSummary(summary, productGroups);
+      if (!chartSummary.length) {
         chartLiderancaParceriaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
       }
-      const normalizedSummary = summary.map((item) => {
+      const normalizedSummary = chartSummary.map((item) => {
         const rawMedia = Number(item.parceirosMedios);
         const fallbackMedia = Number(item.totalProdutos)
           ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1)
@@ -8358,7 +8385,7 @@
         };
       });
       const maxPartners = Math.max(...normalizedSummary.map((item) => item.parceirosMediosNormalizado), 1);
-      const maxInternal = Math.max(...summary.map((item) => item.produtosInternos), 1);
+      const maxInternal = Math.max(...normalizedSummary.map((item) => item.produtosInternos), 1);
       const width = 780;
       const height = 330;
       const left = 52;
@@ -8577,7 +8604,7 @@
       renderLeadershipQualityTable(qualitySummary);
       renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
       renderLeadershipPartnershipDocenteChart(partnershipSummary);
-      renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipPartnershipYearChart(partnershipYearSummary, partnershipProductGroups);
       renderLeadershipPartnershipNetwork(partnershipNetwork);
       renderLeadershipDetailTable(filtered);
     }
@@ -9139,7 +9166,7 @@
 
       renderLeadershipPartnershipMetrics(partnershipSummary, partnershipTotals, partnershipYearSummary, partnershipNetwork);
       renderLeadershipPartnershipDocenteChart(partnershipSummary);
-      renderLeadershipPartnershipYearChart(partnershipYearSummary);
+      renderLeadershipPartnershipYearChart(partnershipYearSummary, partnershipProductGroups);
       renderLeadershipPartnershipNetwork(partnershipNetwork);
     }
 
