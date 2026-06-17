@@ -79,6 +79,30 @@ def parse_years_from_columns(row, vigencia_columns):
     return sorted(set(years))
 
 
+def apply_manual_overrides(row):
+    docente = clean_text(row.get("Nome do docente"))
+    titulo = clean_text(row.get("Título do projeto, auxílio, bolsa ou captação"))
+
+    overrides = {
+        (
+            "Paulo Felipe Ribeiro Bandeira",
+            "Avaliação da progressão individual e coletiva da cooperação competência motora e cognitiva em crianças durante e após um programa de intervenção motor",
+        ): {
+            "Anos de vigência da captação [2024]": "Sim",
+            "Anos de vigência da captação [2025]": "Sim",
+            "Anos de vigência da captação [2026]": "Sim",
+        },
+    }
+
+    override = overrides.get((docente, titulo))
+    if not override:
+      return row
+
+    updated = dict(row)
+    updated.update(override)
+    return updated
+
+
 def parse_types(value):
     return [clean_text(part) for part in str(value or "").split(",") if clean_text(part)]
 
@@ -134,8 +158,8 @@ def infer_pq_dt(title, edital_name, edital_number, agency_normalized):
     )
 
     normalized = f" {haystack} "
-    produtividade = any(marker in normalized for marker in produtividade_markers)
     desenvolvimento = any(marker in normalized for marker in desenvolvimento_markers)
+    produtividade = any(marker in normalized for marker in produtividade_markers) and not desenvolvimento
 
     return produtividade, desenvolvimento
 
@@ -208,7 +232,7 @@ def main():
     docente_line_map = load_docente_line_map()
 
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
-        rows = list(csv.DictReader(handle))
+        rows = [apply_manual_overrides(row) for row in csv.DictReader(handle)]
 
     if not rows:
         raise SystemExit("CSV vazio.")

@@ -990,7 +990,7 @@
     }
 
     .captacao-metric-value strong {
-      font-size: clamp(1.65rem, 2.6vw, 2.7rem);
+      font-size: clamp(1.95rem, 2.9vw, 3rem);
       line-height: 1.05;
       letter-spacing: -0.04em;
       overflow-wrap: anywhere;
@@ -1013,6 +1013,42 @@
       color: #40342f;
     }
 
+    .captacao-executive-card {
+      grid-column: span 4;
+      padding: 18px;
+      background: rgba(255, 251, 245, 0.9);
+    }
+
+    .captacao-executive-card .section-head {
+      margin-bottom: 10px;
+    }
+
+    .captacao-executive-card .section-head h2 {
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    .captacao-executive-card .section-head p {
+      font-size: 0.82rem;
+      line-height: 1.35;
+      color: var(--ufpe-cinza);
+      max-width: none;
+    }
+
+    .captacao-executive-card .captacao-executive-summary {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 0;
+    }
+
+    .captacao-executive-card .captacao-executive-summary p {
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      background: #fffaf3;
+    }
+
     .metric.metric-compact strong {
       font-size: clamp(1.45rem, 2vw, 2.1rem);
       line-height: 1.05;
@@ -1020,16 +1056,32 @@
     }
 
     .captacao-metric-card {
-      grid-column: span 4;
-      min-height: 168px;
+      grid-column: span 3;
+      min-height: 152px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 10px;
     }
 
     .captacao-metric-card span {
       display: block;
-      max-width: 34ch;
+      max-width: 30ch;
+      margin-top: auto;
+    }
+
+    .captacao-metric-value {
+      grid-column: span 6;
+      min-height: 152px;
+      padding: 20px 22px;
+    }
+
+    .captacao-metric-value .eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .captacao-metric-value span {
+      max-width: 28ch;
     }
 
     .captacao-chip-limit .chip {
@@ -2280,6 +2332,7 @@
       .filters-grid-captacao { grid-template-columns: 1fr 1fr; }
       .captacao-executive-summary { grid-template-columns: 1fr; }
       .captacao-metric-card { grid-column: span 6; }
+      .captacao-metric-value { grid-column: span 12; }
       .documents-group { grid-column: span 12; }
       .guide-overview-card,
       .guide-checklist-card,
@@ -3110,14 +3163,6 @@
             </div>
           </div>
 
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Síntese Executiva APCN</h2>
-              <p>Leitura automática para maturidade científica, cobertura do corpo permanente e sustentabilidade da carteira de recursos.</p>
-            </div>
-            <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
-          </div>
-
           <div class="card chart-narrow captacao-mix-card">
             <div class="section-head">
               <h2>Mix Financeiro e Tipológico</h2>
@@ -3125,6 +3170,14 @@
             <div id="captacao-tipos-stack" class="type-stack"></div>
             <div class="chips" id="captacao-insight-chips"></div>
             <p class="captacao-mix-note">Leitura sem duplicar montantes multi-classificados, separando volume financeiro e incidência tipológica.</p>
+          </div>
+
+          <div class="card captacao-executive-card">
+            <div class="section-head">
+              <h2>Síntese Executiva APCN</h2>
+              <p>Leitura lateral para maturidade científica, cobertura do corpo permanente e sustentabilidade da carteira.</p>
+            </div>
+            <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
           </div>
 
           <div class="card metric captacao-metric-card captacao-metric-value">
@@ -3738,9 +3791,9 @@
             <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação de recursos.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">PQ vigentes</p>
+            <p class="eyebrow">PQ / DT vigentes</p>
             <strong id="captacao-crit-pq-total">0</strong>
-            <span id="captacao-crit-pq-resumo">0 docentes com PQ estratégico vigente.</span>
+            <span id="captacao-crit-pq-resumo">0 docentes com PQ/DT estratégico vigente.</span>
           </div>
 
           <div class="card chart-wide">
@@ -4027,6 +4080,89 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Perfil de Inserção Autoral</h2>
+              <p>Como cada docente se distribui entre lideranças absolutas, colaborações de destaque e participações de menor relevância nas obras do recorte.</p>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <p>
+              O <strong>Perfil de Inserção Autoral</strong> decompõe a presença do docente nas obras em três dimensões:
+              <strong>lideranças absolutas</strong> para 1ª ou última posição, <strong>colaborações de destaque</strong> para
+              2ª ou penúltima posição e <strong>participações de menor relevância</strong> para as demais posições.
+            </p>
+            <p>
+              Em vez de resumir a liderança em um único índice, esta leitura mostra <strong>como</strong> o docente se insere
+              autoralmente na produção. O mapa triangular apresenta a tipologia geral; as barras e a tabela permitem auditoria e comparação direta.
+            </p>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div class="section-head-grow">
+                <h2>Mapa Triangular de Perfis</h2>
+                <p>Posicionamento composicional entre liderança, destaque colaborativo e menor relevância, com alternância do tamanho da bolha.</p>
+              </div>
+              <div class="sort-toggle-group section-head-actions-right">
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos APCN</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-size="jcr">JCR médio</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-perfil-triade" class="chart"></div>
+            <p id="lideranca-perfil-caption" class="chart-note"></p>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura Tipológica</h2>
+              <p>Resumo rápido dos perfis autorais dominantes no recorte.</p>
+            </div>
+            <div class="chips" id="lideranca-perfil-insights"></div>
+            <div class="chips" id="lideranca-perfil-metodologia"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head-inline">
+              <div class="section-head">
+                <h2>Comparação Direta por Docente</h2>
+                <p>Barras 100% empilhadas para auditoria da composição autoral por docente.</p>
+              </div>
+              <div class="sort-toggle-group">
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">ALfabético</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="lideranca">Liderança</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Co de Destaque</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Co com menor relevância</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-perfil-barras" class="chart"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Tabela Analítica</h2>
+              <p>Percentuais e totais utilizados na composição do perfil de inserção autoral.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Obras válidas</th>
+                    <th>Lideranças absolutas</th>
+                    <th>Colaborações de destaque</th>
+                    <th>Menor relevância</th>
+                    <th>Pontos APCN</th>
+                    <th>JCR médio</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-perfil-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Índice Mostarda</h2>
               <p>Leitura do índice invertido, do índice corrigido por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
             </div>
@@ -4163,89 +4299,6 @@
                   </tr>
                 </thead>
                 <tbody id="lideranca-anos-body"></tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card group-card">
-            <div class="section-head">
-              <h2>Perfil de Inserção Autoral</h2>
-              <p>Como cada docente se distribui entre lideranças absolutas, colaborações de destaque e participações de menor relevância nas obras do recorte.</p>
-            </div>
-          </div>
-
-          <div class="card table-card">
-            <p>
-              O <strong>Perfil de Inserção Autoral</strong> decompõe a presença do docente nas obras em três dimensões:
-              <strong>lideranças absolutas</strong> para 1ª ou última posição, <strong>colaborações de destaque</strong> para
-              2ª ou penúltima posição e <strong>participações de menor relevância</strong> para as demais posições.
-            </p>
-            <p>
-              Em vez de resumir a liderança em um único índice, esta leitura mostra <strong>como</strong> o docente se insere
-              autoralmente na produção. O mapa triangular apresenta a tipologia geral; as barras e a tabela permitem auditoria e comparação direta.
-            </p>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head section-head-inline">
-              <div class="section-head-grow">
-                <h2>Mapa Triangular de Perfis</h2>
-                <p>Posicionamento composicional entre liderança, destaque colaborativo e menor relevância, com alternância do tamanho da bolha.</p>
-              </div>
-              <div class="sort-toggle-group section-head-actions-right">
-                <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos APCN</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-size="jcr">JCR médio</button>
-              </div>
-            </div>
-            <div id="chart-lideranca-perfil-triade" class="chart"></div>
-            <p id="lideranca-perfil-caption" class="chart-note"></p>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Leitura Tipológica</h2>
-              <p>Resumo rápido dos perfis autorais dominantes no recorte.</p>
-            </div>
-            <div class="chips" id="lideranca-perfil-insights"></div>
-            <div class="chips" id="lideranca-perfil-metodologia"></div>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head-inline">
-              <div class="section-head">
-                <h2>Comparação Direta por Docente</h2>
-                <p>Barras 100% empilhadas para auditoria da composição autoral por docente.</p>
-              </div>
-              <div class="sort-toggle-group">
-                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">ALfabético</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="lideranca">Liderança</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Co de Destaque</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Co com menor relevância</button>
-              </div>
-            </div>
-            <div id="chart-lideranca-perfil-barras" class="chart"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Tabela Analítica</h2>
-              <p>Percentuais e totais utilizados na composição do perfil de inserção autoral.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Docente</th>
-                    <th>Obras válidas</th>
-                    <th>Lideranças absolutas</th>
-                    <th>Colaborações de destaque</th>
-                    <th>Menor relevância</th>
-                    <th>Pontos APCN</th>
-                    <th>JCR médio</th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-perfil-body"></tbody>
               </table>
             </div>
           </div>
@@ -4814,7 +4867,7 @@
   <script src="./producao-tecnica-data.js?v=2026-06-14a"></script>
   <script src="./orientacoes-data.js?v=2026-06-16a"></script>
   <script src="./disciplinas-data.js?v=2026-06-15a"></script>
-  <script src="./captacao-recursos-data.js?v=2026-06-16a"></script>
+  <script src="./captacao-recursos-data.js?v=2026-06-16b"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
   <script>
@@ -8264,7 +8317,12 @@
       const bubbleValues = summary.map((item) => getLeadershipAuthorshipBubbleMetric(item));
       const minBubble = Math.min(...bubbleValues);
       const maxBubble = Math.max(...bubbleValues);
-      const medianBubble = getPercentileValue(bubbleValues, 0.5);
+      const quartileLegend = [
+        { label: "Q1", value: getPercentileValue(bubbleValues, 0.25) },
+        { label: "Q2", value: getPercentileValue(bubbleValues, 0.5) },
+        { label: "Q3", value: getPercentileValue(bubbleValues, 0.75) },
+        { label: "Q4", value: maxBubble },
+      ];
       const points = summary.map((item) => {
         const x = (item.liderancaPct * triangle.top.x) + (item.destaquePct * triangle.left.x) + (item.menorPct * triangle.right.x);
         const y = (item.liderancaPct * triangle.top.y) + (item.destaquePct * triangle.left.y) + (item.menorPct * triangle.right.y);
@@ -8321,12 +8379,13 @@
           <text x="723" y="152" fill="#6d727c" font-size="12">Tamanho = ${getLeadershipAuthorshipBubbleLabel()}</text>
           <text x="700" y="184" fill="#6d727c" font-size="12">Recorte atual: ${summary.length} docentes com autoria válida.</text>
           <text x="700" y="220" fill="#262930" font-size="12" font-weight="700">Escala do tamanho da bolha</text>
-          <circle cx="714" cy="255" r="${scaleLeadershipAuthorshipBubble(minBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
-          <text x="742" y="259" fill="#6d727c" font-size="12">Mínimo: ${formatLeadershipAuthorshipBubbleValue(minBubble)}</text>
-          <circle cx="714" cy="296" r="${scaleLeadershipAuthorshipBubble(medianBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
-          <text x="742" y="300" fill="#6d727c" font-size="12">Mediana: ${formatLeadershipAuthorshipBubbleValue(medianBubble)}</text>
-          <circle cx="714" cy="342" r="${scaleLeadershipAuthorshipBubble(maxBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
-          <text x="742" y="346" fill="#6d727c" font-size="12">Máximo: ${formatLeadershipAuthorshipBubbleValue(maxBubble)}</text>
+          ${quartileLegend.map((item, index) => {
+            const cy = 254 + (index * 40);
+            return `
+              <circle cx="714" cy="${cy}" r="${scaleLeadershipAuthorshipBubble(item.value, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
+              <text x="742" y="${cy + 4}" fill="#6d727c" font-size="12">${item.label}: ${formatLeadershipAuthorshipBubbleValue(item.value)}</text>
+            `;
+          }).join("")}
         </svg>
       `;
       liderancaPerfilCaption.textContent = liderancaPerfilSizeMode === "produtos"
@@ -9673,6 +9732,7 @@
       let totalAlertas = 0;
       const pqDocentes = new Set();
       const dtDocentes = new Set();
+      const strategicDocentes = new Set();
       const vigentesDocentes = new Set();
 
       const isStrategicPq = (item) => {
@@ -9700,6 +9760,7 @@
         if (item.vigente_em_2026) vigentesDocentes.add(item.docente);
         if (item.vigente_em_2026 && isStrategicPq(item)) pqDocentes.add(item.docente);
         if (item.vigente_em_2026 && isStrategicDt(item)) dtDocentes.add(item.docente);
+        if (item.vigente_em_2026 && (isStrategicPq(item) || isStrategicDt(item))) strategicDocentes.add(item.docente);
         if (!docenteMap.has(item.docente)) {
           docenteMap.set(item.docente, {
             docente: item.docente,
@@ -9736,6 +9797,7 @@
         docentesVigentes: [...vigentesDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
         docentesPq: [...pqDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
         docentesDt: [...dtDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
+        docentesPqdtVigentes: [...strategicDocentes].sort((a, b) => a.localeCompare(b, "pt-BR")),
         docentesComCaptacao,
         statusSummary: [...statusMap.entries()]
           .map(([status, total]) => ({ status, total }))
@@ -9784,10 +9846,10 @@
       document.getElementById("captacao-crit-base-total").textContent = String(summary.totalBase);
       document.getElementById("captacao-crit-docentes-total").textContent = String(summary.totalDocentes);
       document.getElementById("captacao-crit-percentual").textContent = `${summary.percentual}%`;
-      document.getElementById("captacao-crit-pq-total").textContent = String(summary.docentesPq.length);
+      document.getElementById("captacao-crit-pq-total").textContent = String(summary.docentesPqdtVigentes.length);
       document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação registrada.`;
       document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação de recursos.`;
-      document.getElementById("captacao-crit-pq-resumo").textContent = `${summary.docentesPq.length} docente(s) com PQ estratégico vigente.`;
+      document.getElementById("captacao-crit-pq-resumo").textContent = `${summary.docentesPqdtVigentes.length} docente(s) com PQ/DT estratégico vigente.`;
 
       captacaoCritSummaryCards.innerHTML = [
         `
@@ -9805,7 +9867,7 @@
               <div>Carteira vigente em 2026</div>
               <strong>${summary.docentesVigentes.length}</strong>
             </div>
-            <span class="criteria-status ok">${summary.docentesDt.length} DT</span>
+            <span class="criteria-status ok">${summary.docentesPq.length} PQ · ${summary.docentesDt.length} DT</span>
           </div>
         `,
       ].join("");
@@ -9813,6 +9875,7 @@
       captacaoCritInsights.innerHTML = [
         `<span class="chip">Cobertura atual: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
         `<span class="chip">Captação vigente em 2026: <strong>${summary.docentesVigentes.length}</strong> docente(s)</span>`,
+        `<span class="chip">PQ/DT estratégicos vigentes: <strong>${summary.docentesPqdtVigentes.length}</strong> docente(s)</span>`,
         `<span class="chip">PQ estratégico vigente: <strong>${summary.docentesPq.length}</strong> docente(s)</span>`,
         `<span class="chip">DT estratégico vigente: <strong>${summary.docentesDt.length}</strong> docente(s)</span>`,
         topDocente ? `<span class="chip">Maior carteira: <strong>${topDocente.docente}</strong> (${topDocente.registros} registro(s) e ${formatCurrency(topDocente.valorTotal)})</span>` : "",
@@ -9820,7 +9883,7 @@
         `<span class="chip">Valor total informado: <strong>${formatCurrency(summary.totalValor)}</strong></span>`,
       ].filter(Boolean).join("");
 
-      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa a base de docentes permanentes do ano de referência da aba de captação. Considera registros APCN 2022-2026, destaca vigência em 2026 e separa PQ/DT estratégicos com exclusão de bolsas ordinárias de mestrado e iniciação científica para evitar falso positivo.";
+      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa a base de docentes permanentes do ano de referência da aba de captação. Considera registros APCN 2022-2026, destaca vigência em 2026 e consolida bolsas estratégicas vigentes no agrupamento PQ/DT, preservando a separação entre PQ e DT para leitura fina. Bolsas ordinárias de mestrado e iniciação científica seguem excluídas para evitar falso positivo.";
 
       document.getElementById("captacao-crit-resumo-body").innerHTML = [
         `
@@ -9839,6 +9902,15 @@
             <td>Docentes permanentes com captação ativa no ano de referência</td>
             <td>${summary.docentesVigentes.length} docente(s)</td>
             <td>${summary.docentesVigentes.length ? `Base ativa em 2026: ${summary.docentesVigentes.join(", ")}.` : "Nenhum docente com carteira vigente em 2026."}</td>
+          </tr>
+        `,
+        `
+          <tr>
+            <td>Captação</td>
+            <td>Docentes com PQ/DT estratégico vigente</td>
+            <td>Marcador agregado de maturidade em captação qualificada</td>
+            <td>${summary.docentesPqdtVigentes.length} docente(s)</td>
+            <td>${summary.docentesPqdtVigentes.length ? `Bolsas estratégicas vigentes identificadas em: ${summary.docentesPqdtVigentes.join(", ")}.` : "Nenhuma bolsa estratégica vigente identificada."}</td>
           </tr>
         `,
         `
