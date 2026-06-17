@@ -1098,6 +1098,32 @@
       font-size: 0.98rem;
     }
 
+    .captacao-agencias-stack .type-row {
+      grid-template-columns: 132px minmax(0, 1fr) 146px;
+      align-items: start;
+    }
+
+    .type-row-meta {
+      display: grid;
+      gap: 4px;
+      justify-items: end;
+      min-width: 0;
+      text-align: right;
+    }
+
+    .type-row-meta-main {
+      color: #544b45;
+      font-weight: 600;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .type-row-meta-sub {
+      color: var(--ufpe-cinza);
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
     .captacao-key {
       font-family: "IBM Plex Mono", "Consolas", monospace;
       font-size: 0.76rem;
@@ -2278,6 +2304,7 @@
       .guide-learning-card { grid-column: span 12; }
       .type-row { grid-template-columns: 1fr; gap: 6px; }
       .type-row span { text-align: left; }
+      .type-row-meta { justify-items: start; text-align: left; }
       .hero { padding: 20px; }
       .hero-brand { min-height: 160px; }
       .tabs-nav { flex-direction: column; }
@@ -6323,7 +6350,10 @@
         <div class="type-row">
           <strong>${escapeHtml(item.agencia)}</strong>
           <div class="track"><div class="bar" style="width:${(item.valorTotal / totalValor) * 100}%"></div></div>
-          <span>${formatCompactCurrency(item.valorTotal)} · ${item.docentes} docente(s) · ${item.registros} reg.</span>
+          <div class="type-row-meta">
+            <span class="type-row-meta-main">${formatCompactCurrency(item.valorTotal)}</span>
+            <span class="type-row-meta-sub">${item.docentes} docente(s) · ${item.registros} reg.</span>
+          </div>
         </div>
       `).join("");
       captacaoAgenciasChips.classList.add("captacao-chip-limit");
