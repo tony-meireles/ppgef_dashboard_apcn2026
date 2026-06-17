@@ -4051,10 +4051,10 @@
                 <p>Barras 100% empilhadas para auditoria da composição autoral por docente.</p>
               </div>
               <div class="sort-toggle-group">
-                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">ALfabético</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-sort="lideranca">Liderança</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Destaque</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Menor Relevância</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Co de Destaque</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Co com menor relevância</button>
               </div>
             </div>
             <div id="chart-lideranca-perfil-barras" class="chart"></div>
@@ -8158,6 +8158,14 @@
       return "Número de produtos";
     }
 
+    function formatLeadershipAuthorshipBubbleValue(value, mode = liderancaPerfilSizeMode) {
+      if (mode === "jcr") return formatDecimal(value);
+      return Number(value || 0).toLocaleString("pt-BR", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+    }
+
     function scaleLeadershipAuthorshipBubble(value, minValue, maxValue) {
       if (maxValue <= minValue) return 10;
       return 6 + ((value - minValue) / (maxValue - minValue)) * 12;
@@ -8214,6 +8222,7 @@
       const bubbleValues = summary.map((item) => getLeadershipAuthorshipBubbleMetric(item));
       const minBubble = Math.min(...bubbleValues);
       const maxBubble = Math.max(...bubbleValues);
+      const medianBubble = getPercentileValue(bubbleValues, 0.5);
       const points = summary.map((item) => {
         const x = (item.liderancaPct * triangle.top.x) + (item.destaquePct * triangle.left.x) + (item.menorPct * triangle.right.x);
         const y = (item.liderancaPct * triangle.top.y) + (item.destaquePct * triangle.left.y) + (item.menorPct * triangle.right.y);
@@ -8269,6 +8278,13 @@
           <circle cx="700" cy="148" r="14" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
           <text x="723" y="152" fill="#6d727c" font-size="12">Tamanho = ${getLeadershipAuthorshipBubbleLabel()}</text>
           <text x="700" y="184" fill="#6d727c" font-size="12">Recorte atual: ${summary.length} docentes com autoria válida.</text>
+          <text x="700" y="220" fill="#262930" font-size="12" font-weight="700">Escala do tamanho da bolha</text>
+          <circle cx="714" cy="255" r="${scaleLeadershipAuthorshipBubble(minBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
+          <text x="742" y="259" fill="#6d727c" font-size="12">Mínimo: ${formatLeadershipAuthorshipBubbleValue(minBubble)}</text>
+          <circle cx="714" cy="296" r="${scaleLeadershipAuthorshipBubble(medianBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
+          <text x="742" y="300" fill="#6d727c" font-size="12">Mediana: ${formatLeadershipAuthorshipBubbleValue(medianBubble)}</text>
+          <circle cx="714" cy="342" r="${scaleLeadershipAuthorshipBubble(maxBubble, minBubble, maxBubble).toFixed(1)}" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
+          <text x="742" y="346" fill="#6d727c" font-size="12">Máximo: ${formatLeadershipAuthorshipBubbleValue(maxBubble)}</text>
         </svg>
       `;
       liderancaPerfilCaption.textContent = liderancaPerfilSizeMode === "produtos"
