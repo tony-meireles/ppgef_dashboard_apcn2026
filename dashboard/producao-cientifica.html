@@ -1043,7 +1043,8 @@
     }
 
     .captacao-mix-card {
-      padding: 22px 22px 18px;
+      grid-column: span 8;
+      padding: 24px 24px 20px;
     }
 
     .captacao-mix-card .section-head {
@@ -1057,22 +1058,24 @@
     .captacao-mix-card .section-head h2 {
       margin: 0;
       max-width: none;
-      font-size: 1.28rem;
+      font-size: 1.4rem;
       letter-spacing: 0.01em;
     }
 
     .captacao-mix-card .type-stack {
-      gap: 16px;
+      gap: 18px;
       margin-top: 0;
+      padding: 8px 6px 2px 0;
     }
 
     .captacao-mix-card .type-row {
-      grid-template-columns: 136px minmax(0, 1fr) 110px;
-      gap: 14px;
+      grid-template-columns: 172px minmax(0, 1fr) 124px;
+      gap: 18px;
+      font-size: 1rem;
     }
 
     .captacao-mix-card .track {
-      height: 15px;
+      height: 18px;
     }
 
     .captacao-mix-card .chips {
@@ -1084,6 +1087,15 @@
       color: var(--ufpe-cinza);
       font-size: 0.88rem;
       line-height: 1.45;
+    }
+
+    .captacao-mix-card .type-row strong {
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    .captacao-mix-card .type-row span {
+      font-size: 0.98rem;
     }
 
     .captacao-key {
@@ -3860,14 +3872,142 @@
 
           <div class="card group-card">
             <div class="section-head">
-              <h2>Mostard</h2>
+              <h2>Qualidade dos Produtos</h2>
+              <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <p>
+              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JCR (SCimago | 2y cites per doc)</strong>,
+              tanto no somatório acumulado quanto na média por produto qualificado. Isso permite distinguir docentes
+              com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
+            </p>
+            <p>
+              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas APCN dos periódicos</strong>,
+              permitindo relacionar impacto bibliométrico, qualidade editorial e contribuição efetiva para a pontuação do programa.
+            </p>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Produtos com JCR (SCimago | 2y cites per doc)</p>
+            <strong id="lideranca-qualidade-produtos-jcr">0</strong>
+            <span>Quantidade de produtos com valor JCR (SCimago | 2y cites per doc) estruturado no recorte filtrado.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Soma JCR (SCimago | 2y cites per doc)</p>
+            <strong id="lideranca-qualidade-jcr-soma">0</strong>
+            <span>Somatório dos valores de JCR (SCimago | 2y cites per doc) atribuídos aos produtos do recorte.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Média JCR (SCimago | 2y cites per doc)</p>
+            <strong id="lideranca-qualidade-jcr-media">0</strong>
+            <span>Valor médio de JCR (SCimago | 2y cites per doc) entre os produtos que possuem essa evidência.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Docentes com JCR (SCimago | 2y cites per doc)</p>
+            <strong id="lideranca-qualidade-docentes-jcr">0</strong>
+            <span>Docentes que possuem ao menos um produto com JCR (SCimago | 2y cites per doc) no recorte atual.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head section-head-inline">
+              <div>
+                <h2>Somatório de JCR (SCimago | 2y cites per doc) por Docente</h2>
+                <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
+              </div>
+              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR (SCimago | 2y cites per doc)">
+                <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
+                <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-qualidade-jcr" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura da Qualidade</h2>
+              <p>Resumo executivo da massa crítica de periódicos qualificados.</p>
+            </div>
+            <div class="chips" id="lideranca-qualidade-insights"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Faixas APCN dos Periódicos</h2>
+              <p>Quantitativo de artigos por faixa de pontuação APCN dos periódicos utilizados na base.</p>
+            </div>
+            <div id="chart-lideranca-qualidade-apcn" class="chart"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Metodologia da Qualidade</h2>
+              <p>Critérios usados para somar JCR (SCimago | 2y cites per doc) e agrupar faixas APCN dos periódicos.</p>
+            </div>
+            <div class="chips" id="lideranca-qualidade-metodologia"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Qualidade por Docente</h2>
+              <p>Soma JCR (SCimago | 2y cites per doc), média JCR (SCimago | 2y cites per doc) e composição dos artigos por faixas APCN.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Soma JCR (SCimago | 2y cites per doc)</th>
+                    <th>Média JCR (SCimago | 2y cites per doc)</th>
+                    <th>Produtos com JCR (SCimago | 2y cites per doc)</th>
+                    <th>Artigos 90</th>
+                    <th>Artigos 60</th>
+                    <th>Artigos 30</th>
+                    <th>Artigos sem ponto</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-qualidade-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Registros Avaliados</h2>
+              <p>Detalhamento por produto para auditoria do cálculo aplicado.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th><button type="button" class="sort-toggle active" data-lideranca-detail-sort="docente">Docente</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="ano">Ano</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="tipo">Tipo</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="autores">Autores</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="posicao">Posição lida</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="peso">Peso</button></th>
+                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="titulo">Título</button></th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-detalhe-body"></tbody>
+              </table>
+            </div>
+            <div id="lideranca-estado-vazio" class="empty">
+              Nenhum registro atende aos filtros atuais.
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Índice Mostarda</h2>
               <p>Leitura do índice invertido, do índice corrigido por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
             </div>
           </div>
 
           <div class="card table-card">
             <p>
-              O <strong>Mostard Index</strong> foi estruturado para qualificar a liderança autoral da produção intelectual.
+              O <strong>Índice Mostarda</strong> foi estruturado para qualificar a liderança autoral da produção intelectual.
               A régua considera <strong>1,0 ponto</strong> para primeira ou última autoria, <strong>0,5</strong> para segunda
               ou penúltima posição e <strong>0,1</strong> para as demais. Com a base autoral estruturada, essa leitura passa
               a capturar com mais fidelidade o protagonismo investigativo por docente e por ano.
@@ -3922,7 +4062,7 @@
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Produção em Pontos APCN corrigidos pelo Mustard Index</h2>
+              <h2>Produção em Pontos APCN corrigidos pelo Índice Mostarda</h2>
               <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
             </div>
             <div id="chart-lideranca-corrigido" class="chart"></div>
@@ -4080,134 +4220,6 @@
                 </thead>
                 <tbody id="lideranca-perfil-body"></tbody>
               </table>
-            </div>
-          </div>
-
-          <div class="card group-card">
-            <div class="section-head">
-              <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
-            </div>
-          </div>
-
-          <div class="card table-card">
-            <p>
-              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JCR (SCimago | 2y cites per doc)</strong>,
-              tanto no somatório acumulado quanto na média por produto qualificado. Isso permite distinguir docentes
-              com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
-            </p>
-            <p>
-              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas APCN dos periódicos</strong>,
-              permitindo relacionar impacto bibliométrico, qualidade editorial e contribuição efetiva para a pontuação do programa.
-            </p>
-          </div>
-
-          <div class="card metric">
-            <p class="eyebrow">Produtos com JCR (SCimago | 2y cites per doc)</p>
-            <strong id="lideranca-qualidade-produtos-jcr">0</strong>
-            <span>Quantidade de produtos com valor JCR (SCimago | 2y cites per doc) estruturado no recorte filtrado.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Soma JCR (SCimago | 2y cites per doc)</p>
-            <strong id="lideranca-qualidade-jcr-soma">0</strong>
-            <span>Somatório dos valores de JCR (SCimago | 2y cites per doc) atribuídos aos produtos do recorte.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Média JCR (SCimago | 2y cites per doc)</p>
-            <strong id="lideranca-qualidade-jcr-media">0</strong>
-            <span>Valor médio de JCR (SCimago | 2y cites per doc) entre os produtos que possuem essa evidência.</span>
-          </div>
-          <div class="card metric">
-            <p class="eyebrow">Docentes com JCR (SCimago | 2y cites per doc)</p>
-            <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto com JCR (SCimago | 2y cites per doc) no recorte atual.</span>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head section-head-inline">
-              <div>
-                <h2>Somatório de JCR (SCimago | 2y cites per doc) por Docente</h2>
-                <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
-              </div>
-              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR (SCimago | 2y cites per doc)">
-                <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
-                <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
-              </div>
-            </div>
-            <div id="chart-lideranca-qualidade-jcr" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Leitura da Qualidade</h2>
-              <p>Resumo executivo da massa crítica de periódicos qualificados.</p>
-            </div>
-            <div class="chips" id="lideranca-qualidade-insights"></div>
-          </div>
-
-          <div class="card chart-wide">
-            <div class="section-head">
-              <h2>Faixas APCN dos Periódicos</h2>
-              <p>Quantitativo de artigos por faixa de pontuação APCN dos periódicos utilizados na base.</p>
-            </div>
-            <div id="chart-lideranca-qualidade-apcn" class="chart"></div>
-          </div>
-
-          <div class="card chart-narrow">
-            <div class="section-head">
-              <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JCR (SCimago | 2y cites per doc) e agrupar faixas APCN dos periódicos.</p>
-            </div>
-            <div class="chips" id="lideranca-qualidade-metodologia"></div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Qualidade por Docente</h2>
-              <p>Soma JCR (SCimago | 2y cites per doc), média JCR (SCimago | 2y cites per doc) e composição dos artigos por faixas APCN.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Docente</th>
-                    <th>Soma JCR (SCimago | 2y cites per doc)</th>
-                    <th>Média JCR (SCimago | 2y cites per doc)</th>
-                    <th>Produtos com JCR (SCimago | 2y cites per doc)</th>
-                    <th>Artigos 90</th>
-                    <th>Artigos 60</th>
-                    <th>Artigos 30</th>
-                    <th>Artigos sem ponto</th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-qualidade-body"></tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card table-card">
-            <div class="section-head">
-              <h2>Registros Avaliados</h2>
-              <p>Detalhamento por produto para auditoria do cálculo aplicado.</p>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th><button type="button" class="sort-toggle active" data-lideranca-detail-sort="docente">Docente</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="ano">Ano</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="tipo">Tipo</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="autores">Autores</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="posicao">Posição lida</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="peso">Peso</button></th>
-                    <th><button type="button" class="sort-toggle" data-lideranca-detail-sort="titulo">Título</button></th>
-                  </tr>
-                </thead>
-                <tbody id="lideranca-detalhe-body"></tbody>
-              </table>
-            </div>
-            <div id="lideranca-estado-vazio" class="empty">
-              Nenhum registro atende aos filtros atuais.
             </div>
           </div>
         </section>
@@ -4646,11 +4658,11 @@
           </div>
           <div class="card table-card">
             <div class="section-head">
-              <h2>Mostard Index</h2>
+              <h2>Índice Mostarda</h2>
               <p>Lógica de cálculo, relevância estratégica e leitura da produção corrigida por liderança autoral.</p>
             </div>
             <p>
-              O <strong>Mostard Index</strong> foi incorporado ao painel para qualificar um aspecto
+              O <strong>Índice Mostarda</strong> foi incorporado ao painel para qualificar um aspecto
               decisivo na análise de viabilidade do doutorado: a <strong>capacidade de liderança
               científica</strong> do corpo docente. Não basta apenas acumular produtos e pontos APCN.
               Para sustentar a proposta de doutorado, também importa demonstrar que o grupo ocupa,
@@ -4678,7 +4690,7 @@
             </p>
             <p>
               Para ampliar essa leitura, o painel também calcula a <strong>produção em pontos
-              corrigida pelo Mostard Index</strong>. A fórmula aplicada é
+              corrigida pelo Índice Mostarda</strong>. A fórmula aplicada é
               <strong>Índice Mostarda corrigido = índice Mostarda decimal x pontos APCN</strong>.
               Na prática, esse indicador mostra onde há simultaneamente <strong>muito ponto
               acumulado</strong> e <strong>menor protagonismo autoral médio</strong>. Assim, ele ajuda
