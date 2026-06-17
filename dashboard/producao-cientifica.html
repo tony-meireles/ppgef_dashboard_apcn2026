@@ -1031,18 +1031,48 @@
       color: var(--ufpe-cinza);
     }
 
+    .captacao-mix-card {
+      padding: 22px 22px 18px;
+    }
+
     .captacao-mix-card .section-head {
-      display: block;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .captacao-mix-card .section-head h2 {
-      margin-bottom: 8px;
-      max-width: 18ch;
+      margin: 0;
+      max-width: none;
+      font-size: 1.28rem;
+      letter-spacing: 0.01em;
     }
 
-    .captacao-mix-card .section-head p {
-      max-width: none;
-      line-height: 1.5;
+    .captacao-mix-card .type-stack {
+      gap: 16px;
+      margin-top: 0;
+    }
+
+    .captacao-mix-card .type-row {
+      grid-template-columns: 136px minmax(0, 1fr) 110px;
+      gap: 14px;
+    }
+
+    .captacao-mix-card .track {
+      height: 15px;
+    }
+
+    .captacao-mix-card .chips {
+      margin-top: 16px;
+    }
+
+    .captacao-mix-note {
+      margin: 14px 0 0;
+      color: var(--ufpe-cinza);
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     .captacao-key {
@@ -3041,10 +3071,10 @@
           <div class="card chart-narrow captacao-mix-card">
             <div class="section-head">
               <h2>Mix Financeiro e Tipológico</h2>
-              <p>Separa valor financeiro por registro e ocorrência por tipo de captação, sem duplicar montantes multi-classificados.</p>
             </div>
             <div id="captacao-tipos-stack" class="type-stack"></div>
             <div class="chips" id="captacao-insight-chips"></div>
+            <p class="captacao-mix-note">Leitura sem duplicar montantes multi-classificados, separando volume financeiro e incidência tipológica.</p>
           </div>
 
           <div class="card metric captacao-metric-card captacao-metric-value">
@@ -4449,12 +4479,13 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Critérios de Pontuação</h2>
-              <p>Régua sintética usada para leitura da produção intelectual de artigos e livros.</p>
+              <p>Régua sintética usada para leitura da produção intelectual de artigos, livros e capítulos.</p>
             </div>
             <p>
               Para <strong>artigos</strong>, a pontuação APCN considera a base de indexação do periódico
               como evidência principal. Para <strong>livros</strong>, o painel aplica a regra fixa de
-              <strong>90 pontos</strong>.
+              <strong>90 pontos</strong>. Para <strong>capítulos</strong>, aplica a regra fixa de
+              <strong>45 pontos</strong>.
             </p>
             <div class="table-wrap">
               <table class="criteria-table">
@@ -4508,6 +4539,12 @@
                     <td>Regra fixa</td>
                     <td>90</td>
                     <td>Livro recebe 90 pontos por regra fixa</td>
+                  </tr>
+                  <tr>
+                    <td>Capítulo</td>
+                    <td>Regra fixa</td>
+                    <td>45</td>
+                    <td>Capítulo recebe 45 pontos por regra fixa</td>
                   </tr>
                 </tbody>
               </table>

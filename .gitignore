@@ -14,3 +14,4 @@ Thumbs.db
 publish_clone/
 tmp-publish-master/
 tmp_corpo_docente.xlsx
+.artifacts/spreadsheet-build/node_modules/

@@ -1331,8 +1331,8 @@
           return a.docente.localeCompare(b.docente, "pt-BR") || b.valorTotal - a.valorTotal;
         }
         const statusWeight = { Forte: 3, Intermediário: 2, "Frágil": 1 };
-        return (statusWeight[b.statusApcn] || 0) - (statusWeight[a.statusApcn] || 0)
-          || b.valorTotal - a.valorTotal
+        return b.valorTotal - a.valorTotal
+          || (statusWeight[b.statusApcn] || 0) - (statusWeight[a.statusApcn] || 0)
           || b.registros - a.registros
           || a.docente.localeCompare(b.docente, "pt-BR");
       });
@@ -4092,7 +4092,6 @@
         <tr>
           <td>${item.docente}</td>
           <td>${formatOrientationValue(item.mestrado_andamento)}</td>
-          <td>${formatOrientationValue(item.mestrado_concluintes_2026)}</td>
           <td>${formatOrientationValue(item.mestrado_concluidas)}</td>
           <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento_co)}</td>
           <td class="numeric-soft">${formatOrientationValue(item.doutorado_andamento_principal)}</td>
