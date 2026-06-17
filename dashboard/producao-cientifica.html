@@ -3991,6 +3991,89 @@
 
           <div class="card group-card">
             <div class="section-head">
+              <h2>Perfil de Inserção Autoral</h2>
+              <p>Como cada docente se distribui entre lideranças absolutas, colaborações de destaque e participações de menor relevância nas obras do recorte.</p>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <p>
+              O <strong>Perfil de Inserção Autoral</strong> decompõe a presença do docente nas obras em três dimensões:
+              <strong>lideranças absolutas</strong> para 1ª ou última posição, <strong>colaborações de destaque</strong> para
+              2ª ou penúltima posição e <strong>participações de menor relevância</strong> para as demais posições.
+            </p>
+            <p>
+              Em vez de resumir a liderança em um único índice, esta leitura mostra <strong>como</strong> o docente se insere
+              autoralmente na produção. O mapa triangular apresenta a tipologia geral; as barras e a tabela permitem auditoria e comparação direta.
+            </p>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head-inline">
+              <div class="section-head">
+                <h2>Mapa Triangular de Perfis</h2>
+                <p>Posicionamento composicional entre liderança, destaque colaborativo e menor relevância, com alternância do tamanho da bolha.</p>
+              </div>
+              <div class="sort-toggle-group">
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos APCN</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-size="jcr">JCR médio</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-perfil-triade" class="chart"></div>
+            <p id="lideranca-perfil-caption" class="chart-note"></p>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Leitura Tipológica</h2>
+              <p>Resumo rápido dos perfis autorais dominantes no recorte.</p>
+            </div>
+            <div class="chips" id="lideranca-perfil-insights"></div>
+            <div class="chips" id="lideranca-perfil-metodologia"></div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head-inline">
+              <div class="section-head">
+                <h2>Comparação Direta por Docente</h2>
+                <p>Barras 100% empilhadas para auditoria da composição autoral por docente.</p>
+              </div>
+              <div class="sort-toggle-group">
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="lideranca">Mais liderança</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Mais destaque</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Mais menor relevância</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="alfabetico">Alfabético</button>
+              </div>
+            </div>
+            <div id="chart-lideranca-perfil-barras" class="chart"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Tabela Analítica</h2>
+              <p>Percentuais e totais utilizados na composição do perfil de inserção autoral.</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Docente</th>
+                    <th>Obras válidas</th>
+                    <th>Lideranças absolutas</th>
+                    <th>Colaborações de destaque</th>
+                    <th>Menor relevância</th>
+                    <th>Pontos APCN</th>
+                    <th>JCR médio</th>
+                  </tr>
+                </thead>
+                <tbody id="lideranca-perfil-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card group-card">
+            <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
               <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
             </div>
@@ -5043,6 +5126,8 @@
     const chartLiderancaCorrigido = document.getElementById("chart-lideranca-corrigido");
     const chartLiderancaDispersao = document.getElementById("chart-lideranca-dispersao");
     const chartLiderancaAnos = document.getElementById("chart-lideranca-anos");
+    const chartLiderancaPerfilTriade = document.getElementById("chart-lideranca-perfil-triade");
+    const chartLiderancaPerfilBarras = document.getElementById("chart-lideranca-perfil-barras");
     const chartLiderancaQualidadeJcr = document.getElementById("chart-lideranca-qualidade-jcr");
     const chartLiderancaQualidadeApcn = document.getElementById("chart-lideranca-qualidade-apcn");
     const chartLiderancaParceriaDocentes = document.getElementById("chart-lideranca-parceria-docentes");
@@ -5050,13 +5135,19 @@
     const chartLiderancaParceriaRede = document.getElementById("chart-lideranca-parceria-rede");
     const liderancaInsightChips = document.getElementById("lideranca-insight-chips");
     const liderancaMetodologiaChips = document.getElementById("lideranca-metodologia-chips");
+    const liderancaPerfilInsights = document.getElementById("lideranca-perfil-insights");
+    const liderancaPerfilMetodologia = document.getElementById("lideranca-perfil-metodologia");
+    const liderancaPerfilCaption = document.getElementById("lideranca-perfil-caption");
     const liderancaQualidadeInsights = document.getElementById("lideranca-qualidade-insights");
     const liderancaQualidadeMetodologia = document.getElementById("lideranca-qualidade-metodologia");
     const liderancaQualidadeJcrModeButtons = [...document.querySelectorAll("[data-lideranca-qualidade-jcr-mode]")];
+    const liderancaPerfilSizeButtons = [...document.querySelectorAll("[data-lideranca-perfil-size]")];
+    const liderancaPerfilSortButtons = [...document.querySelectorAll("[data-lideranca-perfil-sort]")];
     const liderancaParceriaInsights = document.getElementById("lideranca-parceria-insights");
     const liderancaParceriaMetodologia = document.getElementById("lideranca-parceria-metodologia");
     const liderancaDocentesBody = document.getElementById("lideranca-docentes-body");
     const liderancaAnosBody = document.getElementById("lideranca-anos-body");
+    const liderancaPerfilBody = document.getElementById("lideranca-perfil-body");
     const liderancaQualidadeBody = document.getElementById("lideranca-qualidade-body");
     const liderancaDetalheBody = document.getElementById("lideranca-detalhe-body");
     const liderancaDetailSortButtons = [...document.querySelectorAll("[data-lideranca-detail-sort]")];
@@ -5149,6 +5240,8 @@
     let tecnicaTableSortMode = "alfabetico";
     let criteriaDocentesSort = "alpha";
     let liderancaQualidadeJcrMode = "total";
+    let liderancaPerfilSizeMode = "produtos";
+    let liderancaPerfilSortMode = "lideranca";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
     let liderancaParceriaSortMode = "alfabetico";
     let liderancaParceriaAuditState = { integratedWorks: [], pairMap: new Map() };
@@ -6945,6 +7038,27 @@
       });
     }
 
+    function bindLeadershipAuthorshipProfileControls() {
+      liderancaPerfilSizeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaPerfilSizeMode = button.dataset.liderancaPerfilSize || "produtos";
+          liderancaPerfilSizeButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+          applyLeadershipFilters();
+        });
+      });
+      liderancaPerfilSortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          liderancaPerfilSortMode = button.dataset.liderancaPerfilSort || "lideranca";
+          liderancaPerfilSortButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+          applyLeadershipFilters();
+        });
+      });
+    }
+
     function normalizePersonText(value) {
       return String(value || "")
         .normalize("NFD")
@@ -7951,6 +8065,259 @@
       `).join("");
     }
 
+    function getLeadershipAuthorshipPosition(item) {
+      const numeroAutores = Number(item.numero_autores);
+      const posicaoDocente = Number(item.posicao_docente);
+      if (!Number.isFinite(numeroAutores) || !Number.isFinite(posicaoDocente)) return null;
+      if (numeroAutores < 1 || posicaoDocente < 1 || posicaoDocente > numeroAutores) return null;
+      if (posicaoDocente === 1 || posicaoDocente === numeroAutores) return "lideranca";
+      if (posicaoDocente === 2 || posicaoDocente === numeroAutores - 1) return "destaque";
+      return "menor";
+    }
+
+    function aggregateLeadershipAuthorshipProfile(data) {
+      const grouped = new Map();
+      data.forEach((item) => {
+        const position = getLeadershipAuthorshipPosition(item);
+        if (!position) return;
+        if (!grouped.has(item.docente)) {
+          grouped.set(item.docente, {
+            docente: item.docente,
+            total: 0,
+            lideranca: 0,
+            destaque: 0,
+            menor: 0,
+            pontosApcn: 0,
+            jcrSum: 0,
+            jcrCount: 0,
+          });
+        }
+        const row = grouped.get(item.docente);
+        row.total += 1;
+        row[position] += 1;
+        row.pontosApcn += Number(item.pontuacao) || 0;
+        const jcr = Number(item.jif_jcr_2025) || 0;
+        if (jcr > 0) {
+          row.jcrSum += jcr;
+          row.jcrCount += 1;
+        }
+      });
+      return [...grouped.values()].map((item) => ({
+        ...item,
+        liderancaPct: item.total ? item.lideranca / item.total : 0,
+        destaquePct: item.total ? item.destaque / item.total : 0,
+        menorPct: item.total ? item.menor / item.total : 0,
+        jcrAvg: item.jcrCount ? item.jcrSum / item.jcrCount : 0,
+      }));
+    }
+
+    function sortLeadershipAuthorshipSummary(summary, mode = liderancaPerfilSortMode) {
+      return [...summary].sort((a, b) => {
+        if (mode === "alfabetico") {
+          return a.docente.localeCompare(b.docente, "pt-BR");
+        }
+        if (mode === "destaque") {
+          return b.destaquePct - a.destaquePct ||
+            b.total - a.total ||
+            b.pontosApcn - a.pontosApcn ||
+            a.docente.localeCompare(b.docente, "pt-BR");
+        }
+        if (mode === "menor") {
+          return b.menorPct - a.menorPct ||
+            b.total - a.total ||
+            b.pontosApcn - a.pontosApcn ||
+            a.docente.localeCompare(b.docente, "pt-BR");
+        }
+        return b.liderancaPct - a.liderancaPct ||
+          b.total - a.total ||
+          b.pontosApcn - a.pontosApcn ||
+          a.docente.localeCompare(b.docente, "pt-BR");
+      });
+    }
+
+    function getLeadershipAuthorshipBubbleMetric(item, mode = liderancaPerfilSizeMode) {
+      if (mode === "pontos") return item.pontosApcn;
+      if (mode === "jcr") return item.jcrAvg;
+      return item.total;
+    }
+
+    function getLeadershipAuthorshipBubbleLabel(mode = liderancaPerfilSizeMode) {
+      if (mode === "pontos") return "Pontos APCN";
+      if (mode === "jcr") return "JCR médio";
+      return "Número de produtos";
+    }
+
+    function scaleLeadershipAuthorshipBubble(value, minValue, maxValue) {
+      if (maxValue <= minValue) return 10;
+      return 6 + ((value - minValue) / (maxValue - minValue)) * 12;
+    }
+
+    function abbreviateDocenteName(name) {
+      const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+      if (parts.length <= 2) return String(name || "");
+      const joiners = new Set(["Neto", "Filho", "Júnior", "Junior"]);
+      const last = parts[parts.length - 1];
+      const prev = parts[parts.length - 2];
+      if (joiners.has(last) && prev) return `${parts[0]} ${prev} ${last}`;
+      return `${parts[0]} ${last}`;
+    }
+
+    function renderLeadershipAuthorshipProfileInsights(summary) {
+      if (!summary.length) {
+        liderancaPerfilInsights.innerHTML = `<p class="chart-note">Sem docentes com autoria válida no recorte atual.</p>`;
+        liderancaPerfilMetodologia.innerHTML = "";
+        return;
+      }
+      const byLeadership = [...summary].sort((a, b) => b.liderancaPct - a.liderancaPct || b.total - a.total)[0];
+      const byDestaque = [...summary].sort((a, b) => b.destaquePct - a.destaquePct || b.total - a.total)[0];
+      const byMenor = [...summary].sort((a, b) => b.menorPct - a.menorPct || b.total - a.total)[0];
+      const totalWorks = summary.reduce((acc, item) => acc + item.total, 0);
+      const totalLead = summary.reduce((acc, item) => acc + item.lideranca, 0);
+      const totalHighlight = summary.reduce((acc, item) => acc + item.destaque, 0);
+      const totalMinor = summary.reduce((acc, item) => acc + item.menor, 0);
+      liderancaPerfilInsights.innerHTML = [
+        byLeadership ? `<span class="chip">Maior liderança absoluta: <strong>${escapeHtml(byLeadership.docente)}</strong> (${formatPercent(byLeadership.liderancaPct * 100)})</span>` : "",
+        byDestaque ? `<span class="chip">Maior colaboração de destaque: <strong>${escapeHtml(byDestaque.docente)}</strong> (${formatPercent(byDestaque.destaquePct * 100)})</span>` : "",
+        byMenor ? `<span class="chip">Maior participação de menor relevância: <strong>${escapeHtml(byMenor.docente)}</strong> (${formatPercent(byMenor.menorPct * 100)})</span>` : "",
+      ].filter(Boolean).join("");
+      liderancaPerfilMetodologia.innerHTML = [
+        `<span class="chip">Obras válidas na tríade: <strong>${totalWorks}</strong></span>`,
+        `<span class="chip">Distribuição geral: <strong>${formatPercent((totalLead / totalWorks) * 100)}</strong> liderança · <strong>${formatPercent((totalHighlight / totalWorks) * 100)}</strong> destaque · <strong>${formatPercent((totalMinor / totalWorks) * 100)}</strong> menor relevância</span>`,
+        `<span class="chip">Tamanho da bolha atual: <strong>${getLeadershipAuthorshipBubbleLabel()}</strong></span>`,
+      ].join("");
+    }
+
+    function renderLeadershipAuthorshipProfileTriangle(summary) {
+      if (!summary.length) {
+        chartLiderancaPerfilTriade.innerHTML = `<p class="chart-note">Sem docentes com autoria válida no recorte atual.</p>`;
+        liderancaPerfilCaption.textContent = "";
+        return;
+      }
+      const width = 980;
+      const height = 620;
+      const triangle = {
+        top: { x: 336, y: 74 },
+        left: { x: 88, y: 520 },
+        right: { x: 584, y: 520 },
+      };
+      const bubbleValues = summary.map((item) => getLeadershipAuthorshipBubbleMetric(item));
+      const minBubble = Math.min(...bubbleValues);
+      const maxBubble = Math.max(...bubbleValues);
+      const points = summary.map((item) => {
+        const x = (item.liderancaPct * triangle.top.x) + (item.destaquePct * triangle.left.x) + (item.menorPct * triangle.right.x);
+        const y = (item.liderancaPct * triangle.top.y) + (item.destaquePct * triangle.left.y) + (item.menorPct * triangle.right.y);
+        return {
+          ...item,
+          x,
+          y,
+          radius: scaleLeadershipAuthorshipBubble(getLeadershipAuthorshipBubbleMetric(item), minBubble, maxBubble),
+        };
+      });
+      const gridLevels = [0.25, 0.5, 0.75];
+      const segmentA = (a) => {
+        const p1 = { x: (a * triangle.top.x) + ((1 - a) * triangle.left.x), y: (a * triangle.top.y) + ((1 - a) * triangle.left.y) };
+        const p2 = { x: (a * triangle.top.x) + ((1 - a) * triangle.right.x), y: (a * triangle.top.y) + ((1 - a) * triangle.right.y) };
+        return `<line x1="${p1.x.toFixed(1)}" y1="${p1.y.toFixed(1)}" x2="${p2.x.toFixed(1)}" y2="${p2.y.toFixed(1)}" stroke="#eadfce" stroke-width="1"></line>`;
+      };
+      const segmentB = (b) => {
+        const p1 = { x: (b * triangle.left.x) + ((1 - b) * triangle.top.x), y: (b * triangle.left.y) + ((1 - b) * triangle.top.y) };
+        const p2 = { x: (b * triangle.left.x) + ((1 - b) * triangle.right.x), y: (b * triangle.left.y) + ((1 - b) * triangle.right.y) };
+        return `<line x1="${p1.x.toFixed(1)}" y1="${p1.y.toFixed(1)}" x2="${p2.x.toFixed(1)}" y2="${p2.y.toFixed(1)}" stroke="#f0e7da" stroke-width="1"></line>`;
+      };
+      const segmentC = (c) => {
+        const p1 = { x: (c * triangle.right.x) + ((1 - c) * triangle.top.x), y: (c * triangle.right.y) + ((1 - c) * triangle.top.y) };
+        const p2 = { x: (c * triangle.right.x) + ((1 - c) * triangle.left.x), y: (c * triangle.right.y) + ((1 - c) * triangle.left.y) };
+        return `<line x1="${p1.x.toFixed(1)}" y1="${p1.y.toFixed(1)}" x2="${p2.x.toFixed(1)}" y2="${p2.y.toFixed(1)}" stroke="#f5ede2" stroke-width="1"></line>`;
+      };
+      chartLiderancaPerfilTriade.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Mapa triangular do perfil de inserção autoral">
+          <polygon points="${triangle.top.x},${triangle.top.y} ${triangle.left.x},${triangle.left.y} ${triangle.right.x},${triangle.right.y}" fill="#fcf8f3" stroke="#d7cdbc" stroke-width="2.2"></polygon>
+          ${gridLevels.map(segmentA).join("")}
+          ${gridLevels.map(segmentB).join("")}
+          ${gridLevels.map(segmentC).join("")}
+          ${points.map((item) => {
+            const dx = item.x < 280 ? -8 : 10;
+            const dy = item.y > 420 ? 16 : -10;
+            const anchor = dx < 0 ? "end" : "start";
+            return `
+              <g>
+                <title>${item.docente} | Obras válidas: ${item.total} | Pontos APCN: ${formatDecimal(item.pontosApcn)} | JCR médio: ${formatDecimal(item.jcrAvg)} | Liderança: ${formatPercent(item.liderancaPct * 100)} | Destaque: ${formatPercent(item.destaquePct * 100)} | Menor relevância: ${formatPercent(item.menorPct * 100)}</title>
+                <circle cx="${item.x.toFixed(1)}" cy="${item.y.toFixed(1)}" r="${item.radius.toFixed(1)}" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.7"></circle>
+                <text x="${(item.x + dx).toFixed(1)}" y="${(item.y + dy).toFixed(1)}" text-anchor="${anchor}" fill="#262930" font-size="10.8">${abbreviateDocenteName(item.docente)}</text>
+              </g>
+            `;
+          }).join("")}
+          <text x="${triangle.top.x}" y="28" text-anchor="middle" fill="#8c1538" font-size="16" font-weight="700">Lideranças absolutas</text>
+          <text x="${triangle.top.x}" y="48" text-anchor="middle" fill="#6d727c" font-size="12">1ª ou última posição</text>
+          <text x="14" y="554" fill="#b3830f" font-size="16" font-weight="700">Colaborações de destaque</text>
+          <text x="14" y="574" fill="#6d727c" font-size="12">2ª ou penúltima posição</text>
+          <text x="408" y="554" fill="#7c6a55" font-size="16" font-weight="700">Menor relevância</text>
+          <text x="408" y="574" fill="#6d727c" font-size="12">Demais posições</text>
+          <circle cx="700" cy="116" r="7" fill="#8c1538" stroke="#fffaf3" stroke-width="1.5"></circle>
+          <text x="718" y="120" fill="#6d727c" font-size="12">Cada bolota representa um docente</text>
+          <circle cx="700" cy="148" r="14" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
+          <text x="723" y="152" fill="#6d727c" font-size="12">Tamanho = ${getLeadershipAuthorshipBubbleLabel()}</text>
+          <text x="700" y="184" fill="#6d727c" font-size="12">Recorte atual: ${summary.length} docentes com autoria válida.</text>
+        </svg>
+      `;
+      liderancaPerfilCaption.textContent = liderancaPerfilSizeMode === "produtos"
+        ? "Modo padrão recomendado: o tamanho da bolha representa o número de obras válidas de cada docente."
+        : liderancaPerfilSizeMode === "pontos"
+          ? "Modo analítico: o tamanho da bolha representa o total de pontos APCN do docente no recorte."
+          : "Modo exploratório: o tamanho da bolha representa o JCR médio do docente, podendo inflar casos com poucos produtos qualificados.";
+    }
+
+    function renderLeadershipAuthorshipProfileBars(summary) {
+      const items = sortLeadershipAuthorshipSummary(summary);
+      if (!items.length) {
+        chartLiderancaPerfilBarras.innerHTML = `<p class="chart-note">Sem docentes com autoria válida no recorte atual.</p>`;
+        return;
+      }
+      const rowHeight = 34;
+      const height = items.length * rowHeight + 54;
+      const labelWidth = 270;
+      const chartWidth = 820;
+      const usableWidth = chartWidth - labelWidth - 78;
+      chartLiderancaPerfilBarras.innerHTML = `
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Comparação do perfil de inserção autoral por docente">
+          ${items.map((item, index) => {
+            const y = 24 + index * rowHeight;
+            const leadWidth = item.liderancaPct * usableWidth;
+            const destaqueWidth = item.destaquePct * usableWidth;
+            const menorWidth = Math.max(0, usableWidth - leadWidth - destaqueWidth);
+            return `
+              <text x="0" y="${y + 15}" fill="#262930" font-size="13">${escapeHtml(item.docente)}</text>
+              <rect x="${labelWidth}" y="${y}" width="${usableWidth}" height="18" rx="9" fill="#eee3d3"></rect>
+              <rect x="${labelWidth}" y="${y}" width="${leadWidth.toFixed(1)}" height="18" rx="9" fill="#8c1538"></rect>
+              <rect x="${(labelWidth + leadWidth).toFixed(1)}" y="${y}" width="${destaqueWidth.toFixed(1)}" height="18" fill="#d4a017"></rect>
+              <rect x="${(labelWidth + leadWidth + destaqueWidth).toFixed(1)}" y="${y}" width="${menorWidth.toFixed(1)}" height="18" rx="9" fill="#9f8d78"></rect>
+              <text x="${labelWidth + usableWidth + 10}" y="${y + 14}" fill="#6d727c" font-size="12">N=${item.total}</text>
+            `;
+          }).join("")}
+        </svg>
+        <div class="legend">
+          <span><i style="background: #8c1538"></i> Lideranças absolutas</span>
+          <span><i style="background: #d4a017"></i> Colaborações de destaque</span>
+          <span><i style="background: #9f8d78"></i> Menor relevância</span>
+        </div>
+      `;
+    }
+
+    function renderLeadershipAuthorshipProfileTable(summary) {
+      const items = sortLeadershipAuthorshipSummary(summary);
+      liderancaPerfilBody.innerHTML = items.map((item) => `
+        <tr>
+          <td>${escapeHtml(item.docente)}</td>
+          <td>${item.total}</td>
+          <td>${formatPercent(item.liderancaPct * 100)} (${item.lideranca})</td>
+          <td>${formatPercent(item.destaquePct * 100)} (${item.destaque})</td>
+          <td>${formatPercent(item.menorPct * 100)} (${item.menor})</td>
+          <td>${formatDecimal(item.pontosApcn)}</td>
+          <td>${item.jcrCount ? formatDecimal(item.jcrAvg) : "-"}</td>
+        </tr>
+      `).join("");
+    }
+
     function getApcnArticleBucket(item) {
       if (item.tipo_producao !== "artigo") return null;
       const points = Number(item.pontuacao) || 0;
@@ -8631,6 +8998,7 @@
       const filtered = getFilteredScientificData();
       const docenteSummary = aggregateMostardByDocente(filtered);
       const yearSummary = aggregateMostardByYear(filtered);
+      const authorshipProfileSummary = aggregateLeadershipAuthorshipProfile(filtered);
       const qualitySummary = aggregateLeadershipQualityByDocente(filtered);
       const qualityTotals = aggregateLeadershipQualityTotals(filtered);
       const partnershipProductGroups = buildLeadershipProductGroups(filtered);
@@ -8646,6 +9014,10 @@
       renderLeadershipYearChart(yearSummary);
       renderLeadershipDocentesTable(docenteSummary);
       renderLeadershipYearTable(yearSummary);
+      renderLeadershipAuthorshipProfileInsights(authorshipProfileSummary);
+      renderLeadershipAuthorshipProfileTriangle(authorshipProfileSummary);
+      renderLeadershipAuthorshipProfileBars(authorshipProfileSummary);
+      renderLeadershipAuthorshipProfileTable(authorshipProfileSummary);
       renderLeadershipQualityMetrics(qualitySummary, qualityTotals);
       renderLeadershipQualityJcrChart(qualitySummary);
       renderLeadershipQualityApcnChart(qualityTotals);
@@ -10116,6 +10488,7 @@
     bindTechnicalTableSortToggles();
     bindDisciplinasDocenteSortToggles();
     bindCaptacaoDocenteSortToggles();
+    bindLeadershipAuthorshipProfileControls();
     bindLeadershipQualityJcrModeButtons();
     bindLeadershipPartnershipSortToggles();
     bindLeadershipDetailSortToggles();
