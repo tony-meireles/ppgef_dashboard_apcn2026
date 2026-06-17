@@ -342,6 +342,17 @@
       flex-wrap: wrap;
     }
 
+    .section-head-grow {
+      flex: 1 1 420px;
+      min-width: 0;
+    }
+
+    .section-head-actions-right {
+      margin-left: auto;
+      justify-content: flex-end;
+      align-self: flex-start;
+    }
+
     .sort-toggle {
       border: 1px solid #d7c3ad;
       background: #fffdf9;
@@ -4009,12 +4020,12 @@
           </div>
 
           <div class="card chart-wide">
-            <div class="section-head-inline">
-              <div class="section-head">
+            <div class="section-head section-head-inline">
+              <div class="section-head-grow">
                 <h2>Mapa Triangular de Perfis</h2>
                 <p>Posicionamento composicional entre liderança, destaque colaborativo e menor relevância, com alternância do tamanho da bolha.</p>
               </div>
-              <div class="sort-toggle-group">
+              <div class="sort-toggle-group section-head-actions-right">
                 <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos APCN</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-size="jcr">JCR médio</button>
@@ -4040,10 +4051,10 @@
                 <p>Barras 100% empilhadas para auditoria da composição autoral por docente.</p>
               </div>
               <div class="sort-toggle-group">
-                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="lideranca">Mais liderança</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Mais destaque</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Mais menor relevância</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">Alfabético</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="lideranca">Liderança</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Destaque</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Menor Relevância</button>
               </div>
             </div>
             <div id="chart-lideranca-perfil-barras" class="chart"></div>
@@ -5241,7 +5252,7 @@
     let criteriaDocentesSort = "alpha";
     let liderancaQualidadeJcrMode = "total";
     let liderancaPerfilSizeMode = "produtos";
-    let liderancaPerfilSortMode = "lideranca";
+    let liderancaPerfilSortMode = "alfabetico";
     let liderancaDetailSort = { key: "docente", direction: "asc" };
     let liderancaParceriaSortMode = "alfabetico";
     let liderancaParceriaAuditState = { integratedWorks: [], pairMap: new Map() };
@@ -8251,8 +8262,8 @@
           <text x="${triangle.top.x}" y="48" text-anchor="middle" fill="#6d727c" font-size="12">1ª ou última posição</text>
           <text x="14" y="554" fill="#b3830f" font-size="16" font-weight="700">Colaborações de destaque</text>
           <text x="14" y="574" fill="#6d727c" font-size="12">2ª ou penúltima posição</text>
-          <text x="408" y="554" fill="#7c6a55" font-size="16" font-weight="700">Menor relevância</text>
-          <text x="408" y="574" fill="#6d727c" font-size="12">Demais posições</text>
+          <text x="${triangle.right.x}" y="554" text-anchor="end" fill="#7c6a55" font-size="16" font-weight="700">Menor relevância</text>
+          <text x="${triangle.right.x}" y="574" text-anchor="end" fill="#6d727c" font-size="12">Demais posições</text>
           <circle cx="700" cy="116" r="7" fill="#8c1538" stroke="#fffaf3" stroke-width="1.5"></circle>
           <text x="718" y="120" fill="#6d727c" font-size="12">Cada bolota representa um docente</text>
           <circle cx="700" cy="148" r="14" fill="none" stroke="#8c1538" stroke-width="1.5"></circle>
