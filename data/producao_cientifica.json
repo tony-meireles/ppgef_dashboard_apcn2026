@@ -2574,28 +2574,6 @@
     "source_row": "480"
   },
   {
-    "id": "118",
-    "docente": "Daniela Karina da Silva Ferreira",
-    "autores": "ALMEIDA, J. R. V; FARAH, B. Q; SANTOS, E. C. F; LIMA, V",
-    "autor_principal": "ALMEIDA, J. R. V",
-    "ano": "2026",
-    "titulo": "D",
-    "tipo_producao": "artigo",
-    "revista_ou_veiculo": "A",
-    "editora": "",
-    "cidade": "",
-    "isbn_issn": "13899457",
-    "doi": "10.1016/j.sleep.2026.108879",
-    "url": "",
-    "indexacao": "Web of Science (JCR); Scopus (SJR)",
-    "jif_jcr_2025": "3.4",
-    "quartil_jcr_2025": "Q2",
-    "pontuacao": "90",
-    "observacoes": "origem=rebuild_excel_staging | match_prior=doi",
-    "produto_referencia": "ALMEIDA, J. R. V. ; FARAH, B. Q. ; SANTOS, E. C. F. ; LIMA, V. . D. A. ; SANTOS, E. N. N. . ; SILVA, N. S. S. O. ; GERMANO-SOARES, A. ?. H. ; SAAVEDRA, J. M. ; PEDROSA, R. P. ; FERREIRA, D.K.S. ; LINS-FILHO, O. L. . Effects of resistance training on obstructive sleep apnea severity: a randomized controlled trial. https://doi.org/10.1016/j.sleep.2026.108879, v. 142, p. 1-7, 2026.",
-    "source_row": "5"
-  },
-  {
     "id": "119",
     "docente": "Daniela Karina da Silva Ferreira",
     "autores": "DINZ, I. M; FERREIRA, D.K.S; CAMAROTTI JUNIOR, F",

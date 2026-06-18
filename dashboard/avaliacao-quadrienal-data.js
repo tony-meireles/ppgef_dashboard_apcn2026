@@ -17,6 +17,40 @@ window.AVALIACAO_QUADRIENAL_PPGEF = {
     integrative_result: "A ascensão da nota 3 para a nota 4 ocorreu porque o programa sustentou desempenho Muito Bom em Programa e Impacto na Sociedade, enquanto Formação permaneceu como o único eixo abaixo desse patamar, com fragilidade mais nítida em egressos e na curadoria dos produtos finais destacados.",
     critical_reading: "O dado mais importante não é apenas a nota 4. A ficha mostra que a base informacional foi considerada Muito Boa, então o principal freio não foi documentação insuficiente, mas desempenho e seleção de evidências no eixo de Formação."
   },
+  evaluative_timeline: [
+    {
+      id: "abertura-2016",
+      label: "Abertura",
+      period: "2016",
+      concept: "3",
+      status: "Oficial",
+      reading: "Entrada do programa no sistema com conceito 3, marcando a base institucional inicial do PPGEF."
+    },
+    {
+      id: "quadri-2017-2020",
+      label: "Avaliação Quadrienal",
+      period: "2017-2020",
+      concept: "3",
+      status: "Oficial",
+      reading: "O programa manteve conceito 3 no ciclo seguinte, sem avanço de patamar."
+    },
+    {
+      id: "quadri-2021-2024",
+      label: "Avaliação Quadrienal",
+      period: "2021-2024",
+      concept: "4",
+      status: "Oficial",
+      reading: "A combinação de Programa Muito Bom, Formação Bom e Impacto Muito Bom sustentou a ascensão para conceito 4."
+    },
+    {
+      id: "apcn-2026",
+      label: "APCN Doutorado",
+      period: "2026",
+      concept: "?",
+      status: "Projeção",
+      reading: "A APCN 2026 ainda não possui conceito oficial. Nesta linha do tempo, ela deve ser lida como janela prospectiva: o conceito dependerá da consistência do corpo docente, da formação e da robustez do dossiê submetido."
+    }
+  ],
   quesitos: [
     {
       id: "1",

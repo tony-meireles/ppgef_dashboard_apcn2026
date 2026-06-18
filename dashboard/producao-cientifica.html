@@ -1361,6 +1361,72 @@
       margin-top: 8px;
     }
 
+    .quadri-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .quadri-timeline-card {
+      position: relative;
+      min-height: 220px;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--ufpe-linha);
+      background: rgba(255, 253, 249, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .quadri-timeline-card::before {
+      content: "";
+      position: absolute;
+      top: 38px;
+      left: -16px;
+      width: 16px;
+      height: 2px;
+      background: #d9c7b1;
+    }
+
+    .quadri-timeline-card:first-child::before {
+      display: none;
+    }
+
+    .quadri-timeline-period {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(140, 21, 56, 0.08);
+      color: var(--ufpe-bordo);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .quadri-timeline-title {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .quadri-timeline-concept {
+      margin: 0 0 10px;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--ufpe-grafite);
+    }
+
+    .quadri-timeline-copy {
+      margin: 0;
+      color: var(--ufpe-cinza);
+      line-height: 1.58;
+      font-size: 0.96rem;
+    }
+
     .criteria-table td small {
       display: block;
       margin-top: 4px;
@@ -2432,7 +2498,8 @@
       .docentes-timeline-card,
       .docentes-issues-card { grid-column: span 12; }
       .quadri-columns,
-      .quadri-plan-grid { grid-template-columns: 1fr; }
+      .quadri-plan-grid,
+      .quadri-timeline { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 800px) {
@@ -4037,6 +4104,14 @@
             </div>
             <div class="criteria-summary" id="quadri-integrative-summary"></div>
             <div class="chips" id="quadri-critical-chips"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Timeline dos Conceitos Avaliativos</h2>
+              <p>Sequência histórica entre a abertura do programa, as avaliações quadrienais concluídas e a janela prospectiva da APCN 2026.</p>
+            </div>
+            <div class="quadri-timeline" id="quadri-timeline"></div>
           </div>
 
           <div class="card table-card">
@@ -7103,6 +7178,12 @@
       return "alert";
     }
 
+    function getQuadrienalTimelineStatusClass(status) {
+      if (status === "Oficial") return "ok";
+      if (status === "Projeção") return "warn";
+      return "muted";
+    }
+
     function formatQuadrienalDate(value) {
       if (!value) return "";
       const date = new Date(`${value}T00:00:00`);
@@ -7118,6 +7199,7 @@
       if (!dataSourceAvaliacaoQuadrienal) return;
 
       const metadata = dataSourceAvaliacaoQuadrienal.metadata || {};
+      const evaluativeTimeline = Array.isArray(dataSourceAvaliacaoQuadrienal.evaluative_timeline) ? dataSourceAvaliacaoQuadrienal.evaluative_timeline : [];
       const quesitos = Array.isArray(dataSourceAvaliacaoQuadrienal.quesitos) ? dataSourceAvaliacaoQuadrienal.quesitos : [];
       const plan = Array.isArray(dataSourceAvaliacaoQuadrienal.development_plan) ? dataSourceAvaliacaoQuadrienal.development_plan : [];
       const qualitySummary = dataSourceAvaliacaoQuadrienal.quality_data_summary || {};
@@ -7191,6 +7273,18 @@
         `<span class="chip">Programa e Impacto ficaram em <strong>Muito Bom</strong>, sustentando o avanço institucional.</span>`,
         `<span class="chip">${escapeHtml(metadata.ctc_final_text || "")}</span>`,
       ].join("");
+
+      document.getElementById("quadri-timeline").innerHTML = evaluativeTimeline.map((entry) => `
+        <article class="quadri-timeline-card">
+          <div class="quadri-timeline-period">${escapeHtml(entry.period || "")}</div>
+          <h3 class="quadri-timeline-title">${escapeHtml(entry.label || "")}</h3>
+          <div class="quadri-timeline-concept">${escapeHtml(entry.concept || "-")}</div>
+          <div class="chips">
+            <span class="status-pill ${getQuadrienalTimelineStatusClass(entry.status)}">${escapeHtml(entry.status || "")}</span>
+          </div>
+          <p class="quadri-timeline-copy">${escapeHtml(entry.reading || "")}</p>
+        </article>
+      `).join("");
 
       const flatItems = quesitos.flatMap((quesito) => (Array.isArray(quesito.items) ? quesito.items : []).map((item) => ({
         ...item,

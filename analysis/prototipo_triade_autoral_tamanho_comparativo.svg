@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1160" viewBox="0 0 1640 1160">
+  <rect width="100%" height="100%" fill="#f5f1ea" />
+  <rect x="22" y="22" width="1596" height="1116" rx="30" fill="#fffdf9" stroke="#ddd4c7" />
+
+  <text x="52" y="66" font-size="34" font-weight="700" fill="#262930">Protótipo Comparativo: Tamanho da Bolha na Tríade Autoral</text>
+  <text x="52" y="96" font-size="17" fill="#6d727c">Dados reais do recorte atual. A posição do docente permanece estável; o que muda é apenas a escala de tamanho da bolha.</text>
+
+  <rect x="54" y="116" width="130" height="34" rx="17" fill="#8c1538" />
+  <text x="119" y="138" text-anchor="middle" font-size="14" font-weight="700" fill="#fffdf9">Produtos</text>
+  <rect x="194" y="116" width="130" height="34" rx="17" fill="#f4efe8" stroke="#d9c7b1" />
+  <text x="259" y="138" text-anchor="middle" font-size="14" font-weight="700" fill="#262930">Pontos APCN</text>
+  <rect x="334" y="116" width="130" height="34" rx="17" fill="#f4efe8" stroke="#d9c7b1" />
+  <text x="399" y="138" text-anchor="middle" font-size="14" font-weight="700" fill="#262930">JCR médio</text>
+  <text x="490" y="138" font-size="13" fill="#6d727c">Mock do seletor que pode ir para a aba como controle interativo.</text>
+
+  
+    <rect x="42" y="108" width="456" height="610" rx="24" fill="#fffdf9" stroke="#ddd4c7"/>
+    <text x="60" y="142" font-size="21" font-weight="700" fill="#262930">Tamanho = Número de produtos</text>
+    <text x="60" y="164" font-size="13.5" fill="#6d727c">Melhor leitura de robustez do perfil</text>
+    <polygon points="270,200 80,530 460,530" fill="#fcf8f3" stroke="#d7cdbc" stroke-width="2.2"/>
+    <line x1="127.5" y1="447.5" x2="412.5" y2="447.5" stroke="#ebdfcf" stroke-width="1"/><line x1="175.0" y1="365.0" x2="365.0" y2="365.0" stroke="#ebdfcf" stroke-width="1"/><line x1="222.5" y1="282.5" x2="317.5" y2="282.5" stroke="#ebdfcf" stroke-width="1"/>
+    <line x1="222.5" y1="282.5" x2="365.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="175.0" y1="365.0" x2="270.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="127.5" y1="447.5" x2="175.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/>
+    <line x1="317.5" y1="282.5" x2="175.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="365.0" y1="365.0" x2="270.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="412.5" y1="447.5" x2="365.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/>
+    <text x="270" y="152" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8c1538">Lideranças</text>
+    <text x="52" y="558" font-size="14.5" font-weight="700" fill="#b3830f">Destaque</text>
+    <text x="290" y="558" font-size="14.5" font-weight="700" fill="#7c6a55">Menor relevância</text>
+    
+      <circle cx="178.1" cy="402.3" r="9.1" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="171.1" y="393.3" text-anchor="end" font-size="10.4" fill="#262930">André Costa</text>
+      <circle cx="336.1" cy="400.9" r="7.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="344.1" y="391.9" text-anchor="start" font-size="10.4" fill="#262930">Bruno Barbosa</text>
+      <circle cx="353.8" cy="403.8" r="9.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="361.8" y="394.8" text-anchor="start" font-size="10.4" fill="#262930">Clarice Martins</text>
+      <circle cx="315.6" cy="437.6" r="8.2" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="323.6" y="452.6" text-anchor="start" font-size="10.4" fill="#262930">Daniel Queiroz</text>
+      <circle cx="175.0" cy="365.0" r="5.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="168.0" y="356.0" text-anchor="end" font-size="10.4" fill="#262930">Daniela Ferreira</text>
+      <circle cx="247.6" cy="432.9" r="7.1" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="255.6" y="447.9" text-anchor="start" font-size="10.4" fill="#262930">Eduardo Campos</text>
+      <circle cx="270.0" cy="346.7" r="5.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="278.0" y="337.7" text-anchor="start" font-size="10.4" fill="#262930">Guilherme Ferreira</text>
+      <circle cx="277.0" cy="383.3" r="8.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="285.0" y="374.3" text-anchor="start" font-size="10.4" fill="#262930">Leonardo Luz</text>
+      <circle cx="370.0" cy="443.2" r="7.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="378.0" y="458.2" text-anchor="start" font-size="10.4" fill="#262930">Lucas Santos</text>
+      <circle cx="215.7" cy="388.6" r="5.6" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="208.7" y="379.6" text-anchor="end" font-size="10.4" fill="#262930">Melissa Celestino</text>
+      <circle cx="247.2" cy="398.0" r="8.2" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="255.2" y="389.0" text-anchor="start" font-size="10.4" fill="#262930">Ozeas Lins Filho</text>
+      <circle cx="263.9" cy="484.4" r="18.0" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="271.9" y="499.4" text-anchor="start" font-size="10.4" fill="#262930">Paulo Bandeira</text>
+      <circle cx="211.5" cy="301.5" r="8.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="204.5" y="292.5" text-anchor="end" font-size="10.4" fill="#262930">Paulo Carvalho</text>
+      <circle cx="219.7" cy="403.8" r="9.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="212.7" y="394.8" text-anchor="end" font-size="10.4" fill="#262930">Pedro Paes Neto</text>
+      <circle cx="273.7" cy="447.5" r="12.0" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="281.7" y="462.5" text-anchor="start" font-size="10.4" fill="#262930">Rafael Henrique</text>
+      <circle cx="274.4" cy="345.8" r="10.8" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="282.4" y="336.8" text-anchor="start" font-size="10.4" fill="#262930">Saulo Oliveira</text>
+      <circle cx="245.2" cy="343.5" r="11.2" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="253.2" y="334.5" text-anchor="start" font-size="10.4" fill="#262930">Tony Santos</text>
+      <circle cx="213.0" cy="321.0" r="8.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="206.0" y="312.0" text-anchor="end" font-size="10.4" fill="#262930">Vilde Menezes</text>
+    <text x="60" y="592" font-size="12.8" fill="#6d727c">Escala atual: 6 a 94 produtos</text>
+    <text x="60" y="616" font-size="12.8" fill="#6d727c">Modo recomendado como padrão.</text>
+  
+    <rect x="592" y="108" width="456" height="610" rx="24" fill="#fffdf9" stroke="#ddd4c7"/>
+    <text x="610" y="142" font-size="21" font-weight="700" fill="#262930">Tamanho = Pontos APCN</text>
+    <text x="610" y="164" font-size="13.5" fill="#6d727c">Melhor leitura de peso produtivo</text>
+    <polygon points="820,200 630,530 1010,530" fill="#fcf8f3" stroke="#d7cdbc" stroke-width="2.2"/>
+    <line x1="677.5" y1="447.5" x2="962.5" y2="447.5" stroke="#ebdfcf" stroke-width="1"/><line x1="725.0" y1="365.0" x2="915.0" y2="365.0" stroke="#ebdfcf" stroke-width="1"/><line x1="772.5" y1="282.5" x2="867.5" y2="282.5" stroke="#ebdfcf" stroke-width="1"/>
+    <line x1="772.5" y1="282.5" x2="915.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="725.0" y1="365.0" x2="820.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="677.5" y1="447.5" x2="725.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/>
+    <line x1="867.5" y1="282.5" x2="725.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="915.0" y1="365.0" x2="820.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="962.5" y1="447.5" x2="915.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/>
+    <text x="820" y="152" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8c1538">Lideranças</text>
+    <text x="602" y="558" font-size="14.5" font-weight="700" fill="#b3830f">Destaque</text>
+    <text x="840" y="558" font-size="14.5" font-weight="700" fill="#7c6a55">Menor relevância</text>
+    
+      <circle cx="728.1" cy="402.3" r="8.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="721.1" y="393.3" text-anchor="end" font-size="10.4" fill="#262930">André Costa</text>
+      <circle cx="886.1" cy="400.9" r="7.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="894.1" y="391.9" text-anchor="start" font-size="10.4" fill="#262930">Bruno Barbosa</text>
+      <circle cx="903.8" cy="403.8" r="10.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="911.8" y="394.8" text-anchor="start" font-size="10.4" fill="#262930">Clarice Martins</text>
+      <circle cx="865.6" cy="437.6" r="8.7" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="873.6" y="452.6" text-anchor="start" font-size="10.4" fill="#262930">Daniel Queiroz</text>
+      <circle cx="725.0" cy="365.0" r="5.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="718.0" y="356.0" text-anchor="end" font-size="10.4" fill="#262930">Daniela Ferreira</text>
+      <circle cx="797.6" cy="432.9" r="7.6" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="805.6" y="447.9" text-anchor="start" font-size="10.4" fill="#262930">Eduardo Campos</text>
+      <circle cx="820.0" cy="346.7" r="6.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="828.0" y="337.7" text-anchor="start" font-size="10.4" fill="#262930">Guilherme Ferreira</text>
+      <circle cx="827.0" cy="383.3" r="8.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="835.0" y="374.3" text-anchor="start" font-size="10.4" fill="#262930">Leonardo Luz</text>
+      <circle cx="920.0" cy="443.2" r="7.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="928.0" y="458.2" text-anchor="start" font-size="10.4" fill="#262930">Lucas Santos</text>
+      <circle cx="765.7" cy="388.6" r="6.2" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="758.7" y="379.6" text-anchor="end" font-size="10.4" fill="#262930">Melissa Celestino</text>
+      <circle cx="797.2" cy="398.0" r="8.7" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="805.2" y="389.0" text-anchor="start" font-size="10.4" fill="#262930">Ozeas Lins Filho</text>
+      <circle cx="813.9" cy="484.4" r="18.0" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="821.9" y="499.4" text-anchor="start" font-size="10.4" fill="#262930">Paulo Bandeira</text>
+      <circle cx="761.5" cy="301.5" r="7.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="754.5" y="292.5" text-anchor="end" font-size="10.4" fill="#262930">Paulo Carvalho</text>
+      <circle cx="769.7" cy="403.8" r="9.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="762.7" y="394.8" text-anchor="end" font-size="10.4" fill="#262930">Pedro Paes Neto</text>
+      <circle cx="823.7" cy="447.5" r="13.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="831.7" y="462.5" text-anchor="start" font-size="10.4" fill="#262930">Rafael Henrique</text>
+      <circle cx="824.4" cy="345.8" r="10.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="832.4" y="336.8" text-anchor="start" font-size="10.4" fill="#262930">Saulo Oliveira</text>
+      <circle cx="795.2" cy="343.5" r="10.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="803.2" y="334.5" text-anchor="start" font-size="10.4" fill="#262930">Tony Santos</text>
+      <circle cx="763.0" cy="321.0" r="6.7" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="756.0" y="312.0" text-anchor="end" font-size="10.4" fill="#262930">Vilde Menezes</text>
+    <text x="610" y="592" font-size="12.8" fill="#6d727c">Escala atual: 270 a 6810 pontos</text>
+    <text x="610" y="616" font-size="12.8" fill="#6d727c">Bom para peso produtivo, sem trocar a posição autoral.</text>
+  
+    <rect x="1142" y="108" width="456" height="610" rx="24" fill="#fffdf9" stroke="#ddd4c7"/>
+    <text x="1160" y="142" font-size="21" font-weight="700" fill="#262930">Tamanho = JCR médio</text>
+    <text x="1160" y="164" font-size="13.5" fill="#6d727c">Leitura exploratória de impacto médio</text>
+    <polygon points="1370,200 1180,530 1560,530" fill="#fcf8f3" stroke="#d7cdbc" stroke-width="2.2"/>
+    <line x1="1227.5" y1="447.5" x2="1512.5" y2="447.5" stroke="#ebdfcf" stroke-width="1"/><line x1="1275.0" y1="365.0" x2="1465.0" y2="365.0" stroke="#ebdfcf" stroke-width="1"/><line x1="1322.5" y1="282.5" x2="1417.5" y2="282.5" stroke="#ebdfcf" stroke-width="1"/>
+    <line x1="1322.5" y1="282.5" x2="1465.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="1275.0" y1="365.0" x2="1370.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/><line x1="1227.5" y1="447.5" x2="1275.0" y2="530.0" stroke="#f0e8dc" stroke-width="1"/>
+    <line x1="1417.5" y1="282.5" x2="1275.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="1465.0" y1="365.0" x2="1370.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/><line x1="1512.5" y1="447.5" x2="1465.0" y2="530.0" stroke="#f5eee4" stroke-width="1"/>
+    <text x="1370" y="152" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8c1538">Lideranças</text>
+    <text x="1152" y="558" font-size="14.5" font-weight="700" fill="#b3830f">Destaque</text>
+    <text x="1390" y="558" font-size="14.5" font-weight="700" fill="#7c6a55">Menor relevância</text>
+    
+      <circle cx="1278.1" cy="402.3" r="5.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1271.1" y="393.3" text-anchor="end" font-size="10.4" fill="#262930">André Costa</text>
+      <circle cx="1436.1" cy="400.9" r="11.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1444.1" y="391.9" text-anchor="start" font-size="10.4" fill="#262930">Bruno Barbosa</text>
+      <circle cx="1453.8" cy="403.8" r="12.8" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1461.8" y="394.8" text-anchor="start" font-size="10.4" fill="#262930">Clarice Martins</text>
+      <circle cx="1415.6" cy="437.6" r="10.4" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1423.6" y="452.6" text-anchor="start" font-size="10.4" fill="#262930">Daniel Queiroz</text>
+      <circle cx="1275.0" cy="365.0" r="8.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1268.0" y="356.0" text-anchor="end" font-size="10.4" fill="#262930">Daniela Ferreira</text>
+      <circle cx="1347.6" cy="432.9" r="11.3" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1355.6" y="447.9" text-anchor="start" font-size="10.4" fill="#262930">Eduardo Campos</text>
+      <circle cx="1370.0" cy="346.7" r="16.7" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1378.0" y="337.7" text-anchor="start" font-size="10.4" fill="#262930">Guilherme Ferreira</text>
+      <circle cx="1377.0" cy="383.3" r="9.4" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1385.0" y="374.3" text-anchor="start" font-size="10.4" fill="#262930">Leonardo Luz</text>
+      <circle cx="1470.0" cy="443.2" r="10.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1478.0" y="458.2" text-anchor="start" font-size="10.4" fill="#262930">Lucas Santos</text>
+      <circle cx="1315.7" cy="388.6" r="5.9" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1308.7" y="379.6" text-anchor="end" font-size="10.4" fill="#262930">Melissa Celestino</text>
+      <circle cx="1347.2" cy="398.0" r="9.4" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1355.2" y="389.0" text-anchor="start" font-size="10.4" fill="#262930">Ozeas Lins Filho</text>
+      <circle cx="1363.9" cy="484.4" r="10.6" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1371.9" y="499.4" text-anchor="start" font-size="10.4" fill="#262930">Paulo Bandeira</text>
+      <circle cx="1311.5" cy="301.5" r="9.1" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1304.5" y="292.5" text-anchor="end" font-size="10.4" fill="#262930">Paulo Carvalho</text>
+      <circle cx="1319.7" cy="403.8" r="6.7" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1312.7" y="394.8" text-anchor="end" font-size="10.4" fill="#262930">Pedro Paes Neto</text>
+      <circle cx="1373.7" cy="447.5" r="18.0" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1381.7" y="462.5" text-anchor="start" font-size="10.4" fill="#262930">Rafael Henrique</text>
+      <circle cx="1374.4" cy="345.8" r="6.1" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1382.4" y="336.8" text-anchor="start" font-size="10.4" fill="#262930">Saulo Oliveira</text>
+      <circle cx="1345.2" cy="343.5" r="10.5" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1353.2" y="334.5" text-anchor="start" font-size="10.4" fill="#262930">Tony Santos</text>
+      <circle cx="1313.0" cy="321.0" r="7.2" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.6"/>
+      <text x="1306.0" y="312.0" text-anchor="end" font-size="10.4" fill="#262930">Vilde Menezes</text>
+    <text x="1160" y="592" font-size="12.8" fill="#6d727c">Escala atual: 1,3 a 4,8</text>
+    <text x="1160" y="616" font-size="12.8" fill="#6d727c">Útil como exploração, mas sensível a poucos produtos qualificados.</text>
+  
+
+  <rect x="56" y="720" width="1528" height="378" rx="24" fill="#fbf6ef" stroke="#e1d5c7" />
+  <text x="84" y="760" font-size="23" font-weight="700" fill="#262930">Leitura de viabilidade</text>
+  <text x="84" y="790" font-size="14" fill="#6d727c">1. O modo por Produtos é o mais estável para leitura de robustez autoral.</text>
+  <text x="84" y="814" font-size="14" fill="#6d727c">2. O modo por Pontos APCN evidencia o peso produtivo sem distorcer a geometria composicional.</text>
+  <text x="84" y="838" font-size="14" fill="#6d727c">3. O modo por JCR médio é viável, mas amplia docentes com poucos produtos qualificados; por isso deve ser tratado como leitura exploratória.</text>
+  <text x="84" y="870" font-size="16" font-weight="700" fill="#262930">Top 10 por proporção de lideranças absolutas</text>
+  <text x="92" y="760" font-size="13" fill="#262930">1. Paulo Roberto Cavalcanti Carvalho · Lid 69,2% · Dest 30,8% · Menor 0,0%</text><text x="92" y="788" font-size="13" fill="#262930">2. Vilde Gomes de Menezes · Lid 63,3% · Dest 33,3% · Menor 3,3%</text><text x="92" y="816" font-size="13" fill="#262930">3. Tony Meireles dos Santos · Lid 56,5% · Dest 28,3% · Menor 15,2%</text><text x="92" y="844" font-size="13" fill="#262930">4. Saulo Fernandes Melo de Oliveira · Lid 55,8% · Dest 20,9% · Menor 23,3%</text><text x="92" y="872" font-size="13" fill="#262930">5. Guilherme Assunção Ferreira · Lid 55,6% · Dest 22,2% · Menor 22,2%</text><text x="92" y="900" font-size="13" fill="#262930">6. Daniela Karina da Silva Ferreira · Lid 50,0% · Dest 50,0% · Menor 0,0%</text><text x="92" y="928" font-size="13" fill="#262930">7. Leonardo Gomes de Oliveira Luz · Lid 44,4% · Dest 25,9% · Menor 29,6%</text><text x="92" y="956" font-size="13" fill="#262930">8. Melissa Leandro Celestino · Lid 42,9% · Dest 42,9% · Menor 14,3%</text><text x="92" y="984" font-size="13" fill="#262930">9. Ozeas de Lima Lins Filho · Lid 40,0% · Dest 36,0% · Menor 24,0%</text><text x="92" y="1012" font-size="13" fill="#262930">10. Bruno Teixeira Barbosa · Lid 39,1% · Dest 13,0% · Menor 47,8%</text>
+  <text x="84" y="1070" font-size="13.5" fill="#6d727c">Recomendação de implementação: manter Produtos como padrão, oferecer Pontos APCN e JCR médio como alternâncias do tamanho da bolha, com tooltip mostrando sempre os três valores.</text>
+</svg>
