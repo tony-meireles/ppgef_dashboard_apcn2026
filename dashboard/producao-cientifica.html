@@ -1272,6 +1272,95 @@
       border: 1px solid rgba(140, 21, 56, 0.18);
     }
 
+    .quadri-overview {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quadri-overview-row {
+      display: grid;
+      grid-template-columns: 170px 1fr 110px;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .quadri-overview-label {
+      font-weight: 700;
+      color: var(--ufpe-grafite);
+    }
+
+    .quadri-overview-track {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e7dccd;
+    }
+
+    .quadri-overview-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--ufpe-bordo), var(--ufpe-destaque));
+    }
+
+    .quadri-overview-value {
+      text-align: right;
+      font-weight: 700;
+      color: var(--ufpe-grafite);
+    }
+
+    .quadri-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .quadri-column h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .quadri-critical-reading {
+      margin: 0;
+      color: var(--ufpe-grafite);
+      line-height: 1.65;
+    }
+
+    .quadri-plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .quadri-plan-card {
+      border-radius: 20px;
+      border: 1px solid var(--ufpe-linha);
+      background: rgba(244, 241, 235, 0.86);
+      padding: 18px;
+    }
+
+    .quadri-plan-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .quadri-plan-card p {
+      margin: 0 0 12px;
+      color: var(--ufpe-cinza);
+      line-height: 1.55;
+    }
+
+    .quadri-plan-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ufpe-grafite);
+      line-height: 1.55;
+    }
+
+    .quadri-plan-list li + li {
+      margin-top: 8px;
+    }
+
     .criteria-table td small {
       display: block;
       margin-top: 4px;
@@ -2342,6 +2431,8 @@
       .docentes-summary-card,
       .docentes-timeline-card,
       .docentes-issues-card { grid-column: span 12; }
+      .quadri-columns,
+      .quadri-plan-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 800px) {
@@ -2368,6 +2459,8 @@
       .docentes-subgrid,
       .docentes-metrics-grid { grid-template-columns: 1fr; }
       .docentes-timeline-row { grid-template-columns: 56px 1fr 56px; }
+      .quadri-overview-row { grid-template-columns: 1fr; }
+      .quadri-overview-value { text-align: left; }
     }
   </style>
 </head>
@@ -2405,6 +2498,7 @@
         <button class="tab-button" data-tab="tab-lideranca">Liderança e Impacto</button>
         <button class="tab-button" data-tab="tab-captacao">Captação de Recursos</button>
         <button class="tab-button" data-tab="tab-apcn">Critérios Críticos para APCN</button>
+        <button class="tab-button" data-tab="tab-avaliacao-quadrienal">Avaliação Quadrienal 2021-2024</button>
         <button class="tab-button" data-tab="tab-guia-docente">APCN 2026 - Guia do Docente</button>
         <button class="tab-button" data-tab="tab-documentos">Documentos</button>
         <button class="tab-button" data-tab="tab-metodologia">Metodologia e Base</button>
@@ -3897,6 +3991,110 @@
         </section>
       </div>
 
+      <div class="tab-panel" id="tab-avaliacao-quadrienal">
+        <section class="grid">
+          <div class="card group-card">
+            <div class="section-head">
+              <h2>Avaliação Quadrienal 2021-2024</h2>
+              <p>Leitura integrada da ficha CAPES publicada em 12/01/2026 e ratificada pelo CTC-ES na 240ª reunião, com foco nos vetores que sustentaram a nota final.</p>
+            </div>
+            <div class="chips" id="quadri-meta-chips"></div>
+          </div>
+
+          <div class="card metric">
+            <p class="eyebrow">Conceito da Comissão</p>
+            <strong id="quadri-commission-concept">-</strong>
+            <span>Leitura global inicial do parecer da comissão de área.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Nota Final</p>
+            <strong id="quadri-final-note">-</strong>
+            <span>Resultado final ratificado pelo CTC-ES para o quadriênio 2021-2024.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Qualidade dos Dados</p>
+            <strong id="quadri-data-quality-concept">-</strong>
+            <span>Indicador crítico para separar falha de preenchimento de fragilidade real de desempenho.</span>
+          </div>
+          <div class="card metric">
+            <p class="eyebrow">Principal Gargalo</p>
+            <strong id="quadri-main-gap">-</strong>
+            <span>Quesito com maior tração negativa sobre o resultado final.</span>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Panorama Integrativo</h2>
+              <p>Distribuição dos três quesitos e leitura ponderada por conceito qualitativo.</p>
+            </div>
+            <div id="quadri-quesitos-overview" class="quadri-overview"></div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Resultado Final</h2>
+              <p>Tradução executiva do que efetivamente levou o programa à nota 4.</p>
+            </div>
+            <div class="criteria-summary" id="quadri-integrative-summary"></div>
+            <div class="chips" id="quadri-critical-chips"></div>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Matriz Quantitativa e Qualitativa</h2>
+              <p>Todos os itens da ficha com peso, conceito e evidência explícita usada pela comissão.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="criteria-table">
+                <thead>
+                  <tr>
+                    <th>Quesito</th>
+                    <th>Item</th>
+                    <th>Peso</th>
+                    <th>Conceito</th>
+                    <th>Evidência destacada</th>
+                  </tr>
+                </thead>
+                <tbody id="quadri-items-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card chart-wide">
+            <div class="section-head">
+              <h2>Leitura Crítica</h2>
+              <p>Pontos que sustentaram o avanço e pontos que ainda expõem risco de regressão se não houver persistência de acompanhamento.</p>
+            </div>
+            <div class="quadri-columns">
+              <div class="quadri-column">
+                <h3>Forças Comprovadas</h3>
+                <div class="chips" id="quadri-strengths"></div>
+              </div>
+              <div class="quadri-column">
+                <h3>Fragilidades Ativas</h3>
+                <div class="chips" id="quadri-risks"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card chart-narrow">
+            <div class="section-head">
+              <h2>Persistência das Evidências</h2>
+              <p>Diagnóstico para evitar heranças perdidas no próximo ciclo avaliativo.</p>
+            </div>
+            <p class="quadri-critical-reading" id="quadri-data-quality"></p>
+          </div>
+
+          <div class="card table-card">
+            <div class="section-head">
+              <h2>Plano de Desenvolvimento</h2>
+              <p>Roteiro objetivo para defender a nota 4 e atacar os pontos que seguraram o quesito Formação em patamar inferior.</p>
+            </div>
+            <div class="quadri-plan-grid" id="quadri-plan-grid"></div>
+          </div>
+        </section>
+      </div>
+
       <div class="tab-panel" id="tab-lideranca">
         <section class="grid">
           <div class="card filters">
@@ -4870,6 +5068,7 @@
   <script src="./captacao-recursos-data.js?v=2026-06-16b"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-06-12g"></script>
+  <script src="./avaliacao-quadrienal-data.js?v=2026-06-18a"></script>
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
@@ -4927,6 +5126,7 @@
       vinculo_painel: disciplinasInternalDocentes.has(normalizeDisciplinasName(item.nome_responsavel)) ? "Interno" : "Externo",
     }));
     const dataSourceDocumentos = window.DOCUMENTOS_PPGEF || [];
+    const dataSourceAvaliacaoQuadrienal = window.AVALIACAO_QUADRIENAL_PPGEF || null;
     // Static guide content stays local to this page to avoid creating new datasets for institutional copy.
     const guideOverviewItems = [
       {
@@ -6886,6 +7086,146 @@
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#39;");
+    }
+
+    function getQuadrienalConceptScore(concept) {
+      if (concept === "Muito Bom") return 4;
+      if (concept === "Bom") return 3;
+      if (concept === "Regular") return 2;
+      if (concept === "Fraco") return 1;
+      if (concept === "Deficiente") return 0;
+      return 0;
+    }
+
+    function getQuadrienalStatusClass(concept) {
+      if (concept === "Muito Bom") return "ok";
+      if (concept === "Bom") return "warn";
+      return "alert";
+    }
+
+    function formatQuadrienalDate(value) {
+      if (!value) return "";
+      const date = new Date(`${value}T00:00:00`);
+      if (Number.isNaN(date.getTime())) return String(value);
+      return new Intl.DateTimeFormat("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      }).format(date);
+    }
+
+    function renderQuadrienalPanel() {
+      if (!dataSourceAvaliacaoQuadrienal) return;
+
+      const metadata = dataSourceAvaliacaoQuadrienal.metadata || {};
+      const quesitos = Array.isArray(dataSourceAvaliacaoQuadrienal.quesitos) ? dataSourceAvaliacaoQuadrienal.quesitos : [];
+      const plan = Array.isArray(dataSourceAvaliacaoQuadrienal.development_plan) ? dataSourceAvaliacaoQuadrienal.development_plan : [];
+      const qualitySummary = dataSourceAvaliacaoQuadrienal.quality_data_summary || {};
+      const mainGap = [...quesitos].sort((left, right) => getQuadrienalConceptScore(left.final_concept) - getQuadrienalConceptScore(right.final_concept))[0];
+
+      document.getElementById("quadri-commission-concept").textContent = metadata.commission_concept || "-";
+      document.getElementById("quadri-final-note").textContent = metadata.final_note ? String(metadata.final_note) : "-";
+      document.getElementById("quadri-data-quality-concept").textContent = metadata.quality_of_data || qualitySummary.concept || "-";
+      document.getElementById("quadri-main-gap").textContent = mainGap ? `${mainGap.label} (${mainGap.final_concept})` : "-";
+
+      document.getElementById("quadri-meta-chips").innerHTML = [
+        `<span class="chip">Programa: <strong>${escapeHtml(metadata.program || "-")}</strong></span>`,
+        `<span class="chip">Código CAPES: <strong>${escapeHtml(metadata.code || "-")}</strong></span>`,
+        `<span class="chip">Quadriênio avaliado: <strong>${escapeHtml(metadata.evaluated_quadrennium || "-")}</strong></span>`,
+        `<span class="chip">Publicação da ficha: <strong>${escapeHtml(formatQuadrienalDate(metadata.publication_date) || "-")}</strong></span>`,
+        `<span class="chip">Parecer consolidado em <strong>${escapeHtml(formatQuadrienalDate(metadata.commission_report_date) || "-")}</strong></span>`,
+        metadata.prior_note && metadata.final_note
+          ? `<span class="chip">Trajetória: <strong>nota ${escapeHtml(String(metadata.prior_note))} → ${escapeHtml(String(metadata.final_note))}</strong></span>`
+          : "",
+      ].filter(Boolean).join("");
+
+      document.getElementById("quadri-quesitos-overview").innerHTML = quesitos.map((quesito) => {
+        const weightedScore = (Array.isArray(quesito.items) ? quesito.items : []).reduce((acc, item) => (
+          acc + (Number(item.weight) || 0) * getQuadrienalConceptScore(item.evaluation)
+        ), 0) / 100;
+        const fillPercent = Math.max(0, Math.min(100, (weightedScore / 4) * 100));
+        return `
+          <div class="quadri-overview-row">
+            <div class="quadri-overview-label">${escapeHtml(quesito.label)}</div>
+            <div class="quadri-overview-track" aria-hidden="true">
+              <div class="quadri-overview-fill" style="width:${fillPercent}%;"></div>
+            </div>
+            <div class="quadri-overview-value">${escapeHtml(quesito.final_concept)} · ${weightedScore.toFixed(2).replace(".", ",")}/4,00</div>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("quadri-integrative-summary").innerHTML = [
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Resultado final</div>
+              <strong>Nota ${escapeHtml(String(metadata.final_note || "-"))}</strong>
+            </div>
+            <span class="criteria-status ok">Ratificada</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Eixo crítico</div>
+              <strong>${escapeHtml(mainGap ? mainGap.label : "-")}</strong>
+            </div>
+            <span class="criteria-status ${mainGap && mainGap.final_concept === "Muito Bom" ? "ok" : "risk"}">${escapeHtml(mainGap ? mainGap.final_concept : "-")}</span>
+          </div>
+        `,
+        `
+          <div class="criteria-score">
+            <div>
+              <div>Leitura integrativa</div>
+              <strong>${escapeHtml(metadata.prior_note ? `${metadata.prior_note} → ${metadata.final_note}` : String(metadata.final_note || "-"))}</strong>
+            </div>
+            <span class="criteria-status ok">Avanço</span>
+          </div>
+        `,
+      ].join("");
+
+      document.getElementById("quadri-critical-chips").innerHTML = [
+        `<span class="chip">${escapeHtml(metadata.integrative_result || "")}</span>`,
+        `<span class="chip">Quesito 2 concentrou a maior perda relativa, puxado por <strong>egressos</strong> em nível <strong>Regular</strong>.</span>`,
+        `<span class="chip">Programa e Impacto ficaram em <strong>Muito Bom</strong>, sustentando o avanço institucional.</span>`,
+        `<span class="chip">${escapeHtml(metadata.ctc_final_text || "")}</span>`,
+      ].join("");
+
+      const flatItems = quesitos.flatMap((quesito) => (Array.isArray(quesito.items) ? quesito.items : []).map((item) => ({
+        ...item,
+        quesito: quesito.label,
+      })));
+
+      document.getElementById("quadri-items-body").innerHTML = flatItems.map((item) => `
+        <tr>
+          <td>${escapeHtml(item.quesito)}</td>
+          <td><strong>${escapeHtml(item.code)}</strong><br><small>${escapeHtml(item.title)}</small></td>
+          <td>${escapeHtml(String(item.weight || "-"))}%</td>
+          <td><span class="status-pill ${getQuadrienalStatusClass(item.evaluation)}">${escapeHtml(item.evaluation)}</span></td>
+          <td>${escapeHtml(item.evidence)}</td>
+        </tr>
+      `).join("");
+
+      document.getElementById("quadri-strengths").innerHTML = quesitos.flatMap((quesito) => (quesito.highlights || []).map((item) => (
+        `<span class="chip"><strong>${escapeHtml(quesito.label)}:</strong> ${escapeHtml(item)}</span>`
+      ))).join("");
+
+      document.getElementById("quadri-risks").innerHTML = quesitos.flatMap((quesito) => (quesito.risks || []).map((item) => (
+        `<span class="chip"><strong>${escapeHtml(quesito.label)}:</strong> ${escapeHtml(item)}</span>`
+      ))).join("");
+
+      document.getElementById("quadri-data-quality").textContent = `${metadata.critical_reading || ""} ${qualitySummary.reading || ""}`.trim();
+
+      document.getElementById("quadri-plan-grid").innerHTML = plan.map((step) => `
+        <article class="quadri-plan-card">
+          <h3>${escapeHtml(step.horizon || "")}</h3>
+          <p>${escapeHtml(step.objective || "")}</p>
+          <ul class="quadri-plan-list">
+            ${(step.actions || []).map((action) => `<li>${escapeHtml(action)}</li>`).join("")}
+          </ul>
+        </article>
+      `).join("");
     }
 
     function truncateMiddle(value, start = 28, end = 16) {
@@ -9977,6 +10317,16 @@
       return `${(Number(value) * 100).toFixed(1).replace(".", ",")}%`;
     }
 
+    function formatDocentesShareWithN(value, numerator) {
+      if (value === null || value === undefined || value === "") {
+        return "—";
+      }
+      if (numerator === null || numerator === undefined || Number.isNaN(Number(numerator))) {
+        return formatDocentesShare(value);
+      }
+      return `${formatDocentesShare(value)} (n = ${formatDocentesCellValue(numerator)})`;
+    }
+
     function formatDocentesCellValue(value) {
       if (value === null || value === undefined || value === "") {
         return "—";
@@ -9987,6 +10337,94 @@
           : Number(value).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
       }
       return String(value);
+    }
+
+    function getDocentesShareNumerator(value, denominator) {
+      if (
+        value === null || value === undefined || value === "" ||
+        denominator === null || denominator === undefined || denominator === "" ||
+        Number.isNaN(Number(value)) || Number.isNaN(Number(denominator))
+      ) {
+        return null;
+      }
+      return Math.round(Number(value) * Number(denominator));
+    }
+
+    function getDocentesMetricDenominator(metricKey, yearSummary) {
+      if (!yearSummary) {
+        return null;
+      }
+      if (metricKey === "permanentes_no_corpo") {
+        return yearSummary.classified_count;
+      }
+      if (new Set([
+        "permanentes_internos",
+        "permanentes_exclusivos",
+        "permanentes_externos",
+        "permanentes_colaboradores_outros_ppgs",
+      ]).has(metricKey)) {
+        return yearSummary.permanent_count;
+      }
+      return null;
+    }
+
+    function getDocentesMetricValueDisplay(metricKey, metric, yearSummary) {
+      if (!metric) {
+        return "—";
+      }
+      if (metricKey === "total_permanentes") {
+        return String(metric.value);
+      }
+      const denominator = getDocentesMetricDenominator(metricKey, yearSummary);
+      return formatDocentesShareWithN(metric.value, getDocentesShareNumerator(metric.value, denominator));
+    }
+
+    function getDocentesQuadShareDisplay(rowKey, value, yearKey) {
+      if (value === null || value === undefined || value === "") {
+        return "—";
+      }
+      const yearSummary = dataSourceCorpoDocente.by_year?.[yearKey];
+      let denominator = null;
+      if (rowKey === "percent_permanentes" || rowKey === "percent_colaboradores") {
+        denominator = yearSummary?.classified_count;
+      } else if (rowKey === "percent_permanente_interno" || rowKey === "percent_permanente_externo") {
+        denominator = yearSummary?.permanent_count;
+      } else if (rowKey === "estabilidade_anual") {
+        const previousYear = String(Number(yearKey) - 1);
+        denominator = dataSourceCorpoDocente.by_year?.[previousYear]?.classified_count;
+      }
+      return formatDocentesShareWithN(value, getDocentesShareNumerator(value, denominator));
+    }
+
+    function getDocentesQuadAverageShareDisplay(row) {
+      if (!row) {
+        return "—";
+      }
+      const years = ["2025", "2026", "2027", "2028"];
+      let numerator = 0;
+      let denominator = 0;
+      for (const year of years) {
+        const yearSummary = dataSourceCorpoDocente.by_year?.[year];
+        if (!yearSummary) continue;
+        if (row.key === "percent_permanentes") {
+          numerator += yearSummary.status_counts?.Per || 0;
+          denominator += yearSummary.classified_count || 0;
+        } else if (row.key === "percent_colaboradores") {
+          numerator += yearSummary.status_counts?.Col || 0;
+          denominator += yearSummary.classified_count || 0;
+        } else if (row.key === "percent_permanente_interno") {
+          numerator += Math.round((row.values?.[year] || 0) * (yearSummary.permanent_count || 0));
+          denominator += yearSummary.permanent_count || 0;
+        } else if (row.key === "percent_permanente_externo") {
+          numerator += Math.round((row.values?.[year] || 0) * (yearSummary.permanent_count || 0));
+          denominator += yearSummary.permanent_count || 0;
+        } else if (row.key === "estabilidade_anual") {
+          numerator += yearSummary.classified_count || 0;
+          const previousYear = String(Number(year) - 1);
+          denominator += dataSourceCorpoDocente.by_year?.[previousYear]?.classified_count || 0;
+        }
+      }
+      return formatDocentesShareWithN(row.average, denominator ? numerator : null);
     }
 
     function getDocentesMetricStatus(metric) {
@@ -10000,15 +10438,6 @@
         return { text: "Justificar", className: "docentes-status-fail" };
       }
       return { text: "Crítico", className: "docentes-status-fail" };
-    }
-
-    function getDocentesMetricValue(metricKey, metric) {
-      if (!metric) {
-        return "—";
-      }
-      return metricKey === "total_permanentes"
-        ? String(metric.value)
-        : formatDocentesShare(metric.value);
     }
 
     function getDocentesMetricTarget(metricKey, metric) {
@@ -10098,7 +10527,7 @@
             <div class="docentes-metric-top">
               <div>
                 <div class="docentes-badge">${escapeHtml(docentesCriteriaLabels[metricKey])}</div>
-                <div class="docentes-metric-value">${escapeHtml(getDocentesMetricValue(metricKey, metric))}</div>
+                <div class="docentes-metric-value">${escapeHtml(getDocentesMetricValueDisplay(metricKey, metric, yearSummary))}</div>
               </div>
               <span class="docentes-status-pill ${status.className}">${status.text}</span>
             </div>
@@ -10129,8 +10558,8 @@
         </div>
       `).join("");
       document.getElementById("docentes-summary-meta").innerHTML = [
-        `<span class="docentes-mini-chip">AMS ${formatDocentesShare(lpSummary.ams_share)}</span>`,
-        `<span class="docentes-mini-chip">DFE ${formatDocentesShare(lpSummary.dfe_share)}</span>`,
+        `<span class="docentes-mini-chip">AMS ${formatDocentesShareWithN(lpSummary.ams_share, lpSummary.ams_count)}</span>`,
+        `<span class="docentes-mini-chip">DFE ${formatDocentesShareWithN(lpSummary.dfe_share, lpSummary.dfe_count)}</span>`,
         `<span class="docentes-mini-chip ${Number(lpSummary.balance_ratio || 0) >= 1 ? "ok" : "warn"}">Relação LP ${formatDocentesCellValue(lpSummary.balance_ratio)}</span>`,
         `<span class="docentes-mini-chip">Base científica ${formatDocentesCellValue(baseProducaoMedia)}</span>`,
       ].join("");
@@ -10148,7 +10577,7 @@
             <div class="docentes-timeline-track">
               <div class="docentes-timeline-fill" style="width:${Math.min(share * 100, 100)}%"></div>
             </div>
-            <div class="docentes-timeline-value">${formatDocentesShare(share)}</div>
+            <div class="docentes-timeline-value">${formatDocentesShareWithN(share, yearSummary?.permanent_count)}</div>
           </div>
         `;
       }).join("");
@@ -10178,15 +10607,16 @@
       document.getElementById("docentes-quad-body").innerHTML = rows.map((row) => `
         <tr>
           <td class="docentes-quad-label">${escapeHtml(row.label)}</td>
-          ${["2025", "2026", "2027", "2028"].map((year) => `<td>${escapeHtml(shareKeys.has(row.key) ? formatDocentesShare(row.values?.[year]) : formatDocentesCellValue(row.values?.[year]))}</td>`).join("")}
-          <td class="docentes-quad-average">${escapeHtml(shareKeys.has(row.key) ? formatDocentesShare(row.average) : formatDocentesCellValue(row.average))}</td>
+          ${["2025", "2026", "2027", "2028"].map((year) => `<td>${escapeHtml(shareKeys.has(row.key) ? getDocentesQuadShareDisplay(row.key, row.values?.[year], year) : formatDocentesCellValue(row.values?.[year]))}</td>`).join("")}
+          <td class="docentes-quad-average">${escapeHtml(shareKeys.has(row.key) ? getDocentesQuadAverageShareDisplay(row) : formatDocentesCellValue(row.average))}</td>
         </tr>
       `).join("");
       const estabilidadeQuadri = dataSourceCorpoDocente.quad_summary?.estabilidade_quadri;
       const ppgDistribution = dataSourceCorpoDocente.ppg_distribution_2026 || [];
+      const estabilidadeNumerator = ["2025", "2026", "2027", "2028"].reduce((total, year) => total + (dataSourceCorpoDocente.by_year?.[year]?.classified_count || 0), 0);
       document.getElementById("docentes-quad-note").innerHTML = [
-        `Estabilidade quadrienal consolidada: <strong>${formatDocentesShare(estabilidadeQuadri)}</strong>.`,
-        ...ppgDistribution.map((item) => `${item.docentes} docente(s) com ${item.ppgs} PPG(s) como permanente em 2026 (${formatDocentesShare(item.share)}).`),
+        `Estabilidade quadrienal consolidada: <strong>${formatDocentesShareWithN(estabilidadeQuadri, estabilidadeNumerator)}</strong>.`,
+        ...ppgDistribution.map((item) => `${item.docentes} docente(s) com ${item.ppgs} PPG(s) como permanente em 2026 (${formatDocentesShareWithN(item.share, item.docentes)}).`),
       ].join(" ");
     }
 
@@ -10649,6 +11079,7 @@
     renderCorpoDocenteCriticalCriteriaPanel();
     renderGuideDocentePanel();
     renderDocumentsPanel();
+    renderQuadrienalPanel();
   </script>
 </body>
 </html>
