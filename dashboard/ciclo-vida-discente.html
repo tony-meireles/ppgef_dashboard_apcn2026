@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPGEF - Ciclo de Vida Discente</title>
+  <style>
+    :root {
+      --ufpe-bordo: #8c1538;
+      --ufpe-bordo-2: #b82a52;
+      --ufpe-grafite: #262930;
+      --ufpe-cinza: #6d727c;
+      --ufpe-areia: #f4f1eb;
+      --ufpe-linha: #ddd4c7;
+      --ufpe-destaque: #d4a017;
+      --ufpe-sucesso: #4d7c68;
+      --risk-green: #4d7c68;
+      --risk-yellow: #a36b10;
+      --risk-red: #a13246;
+      --shadow: 0 18px 45px rgba(38, 41, 48, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ufpe-grafite);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 17px;
+      background:
+        linear-gradient(135deg, rgba(140, 21, 56, 0.08), transparent 26%),
+        radial-gradient(circle at top right, rgba(212, 160, 23, 0.14), transparent 22%),
+        linear-gradient(180deg, #f7f4ef 0%, var(--ufpe-areia) 100%);
+    }
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 28px 18px 42px; }
+    .hero {
+      display: grid; grid-template-columns: 1.6fr 0.9fr; gap: 22px; padding: 28px; border-radius: 28px;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 22%), linear-gradient(125deg, rgba(140,21,56,0.98) 0%, rgba(102,15,41,0.94) 62%, rgba(56,18,28,0.95) 100%);
+      box-shadow: var(--shadow); color: white;
+    }
+    .hero-kicker { margin: 0 0 8px; font-size: clamp(2.4rem, 4.4vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.94; text-transform: uppercase; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(1.14rem, 2vw, 1.72rem); line-height: 1.14; color: rgba(255,255,255,0.88); }
+    .hero p { margin: 0; max-width: 760px; font-size: 1.03rem; line-height: 1.58; color: rgba(255,255,255,0.88); }
+    .hero-side { display: grid; gap: 16px; align-content: start; }
+    .hero-note { padding: 18px 18px 16px; border-radius: 22px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.14); }
+    .hero-note strong { display: block; font-size: 2rem; letter-spacing: -0.04em; }
+    .hero-note span { display: block; margin-top: 8px; line-height: 1.42; color: rgba(255,255,255,0.8); font-size: 0.94rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .hero-link { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; font-size: 0.9rem; font-weight: 700; color: white; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); }
+    .section { margin-top: 22px; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    .section-head h2 { margin: 0; font-size: 1.08rem; letter-spacing: 0.02em; }
+    .section-head p { margin: 0; color: var(--ufpe-cinza); font-size: 0.92rem; line-height: 1.5; max-width: 840px; }
+    .tag { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: rgba(140,21,56,0.08); color: var(--ufpe-bordo); border: 1px solid rgba(140,21,56,0.14); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { background: rgba(255,253,249,0.95); border: 1px solid var(--ufpe-linha); border-radius: 24px; box-shadow: var(--shadow); padding: 20px; }
+    .filters-card, .full { grid-column: span 12; }
+    .metric { grid-column: span 2; }
+    .wide { grid-column: span 8; }
+    .narrow { grid-column: span 4; }
+    .half { grid-column: span 6; }
+    .filters-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 16px; }
+    label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--ufpe-cinza); font-weight: 600; }
+    select { width: 100%; min-height: 46px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--ufpe-linha); background: white; color: var(--ufpe-grafite); font-size: 1rem; }
+    .metric { padding: 22px; background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(249,246,241,0.96)); }
+    .metric .eyebrow { margin: 0 0 10px; color: var(--ufpe-cinza); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; }
+    .metric strong { display: block; font-size: clamp(2rem,4vw,3rem); line-height: 1; color: var(--ufpe-bordo); letter-spacing: -0.05em; }
+    .metric span { display: block; margin-top: 10px; color: var(--ufpe-cinza); font-size: 0.94rem; line-height: 1.45; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .chip { padding: 9px 12px; border-radius: 999px; background: #f2ebe1; color: var(--ufpe-grafite); font-size: 0.9rem; border: 1px solid #e1d5c3; }
+    .chart-note { margin-top: 12px; color: var(--ufpe-cinza); font-size: 0.9rem; line-height: 1.5; }
+    .status-pill { display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .green { color: var(--risk-green); background: rgba(77,124,104,0.14); }
+    .yellow { color: var(--risk-yellow); background: rgba(197,142,41,0.15); }
+    .red { color: var(--risk-red); background: rgba(161,50,70,0.11); }
+    .gray { color: var(--ufpe-cinza); background: rgba(109,114,124,0.08); }
+    .bar-stack { display: grid; gap: 12px; margin-top: 12px; }
+    .bar-row { display: grid; grid-template-columns: 150px 1fr 56px; gap: 10px; align-items: center; }
+    .bar-track { position: relative; height: 16px; border-radius: 999px; background: #eadfce; overflow: hidden; }
+    .bar-fill { position: absolute; inset: 0 auto 0 0; min-width: 12px; border-radius: inherit; }
+    .table-wrap { overflow: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--ufpe-linha); vertical-align: top; }
+    th { color: var(--ufpe-cinza); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; background: #f6efe3; }
+    .focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .focus-card { padding: 22px; border-radius: 22px; background: linear-gradient(180deg, #fffdf9, #f7f1e8); border: 1px solid #e4d8c9; }
+    .focus-card strong { display: block; font-size: 1.8rem; letter-spacing: -0.04em; color: var(--ufpe-bordo); margin-bottom: 8px; }
+    .focus-meta { display: grid; gap: 8px; margin-top: 14px; }
+    .focus-meta div { display: grid; grid-template-columns: 180px 1fr; gap: 12px; font-size: 0.92rem; }
+    .focus-meta span { color: var(--ufpe-cinza); }
+    .heatmap { display: grid; gap: 10px; }
+    .heatmap-row { display: grid; grid-template-columns: 220px repeat(6, minmax(0, 1fr)); gap: 10px; align-items: center; }
+    .heatmap-label { font-size: 0.9rem; font-weight: 600; overflow-wrap: anywhere; }
+    .heatmap-cell { min-height: 48px; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px; text-align: center; border: 1px solid rgba(0,0,0,0.05); font-size: 0.78rem; line-height: 1.3; font-weight: 700; }
+    .heatmap-cell small { display: block; font-size: 0.68rem; font-weight: 600; opacity: 0.85; }
+    .audit-list { display: grid; gap: 12px; }
+    .audit-item { padding: 14px 16px; border-radius: 16px; border: 1px solid #e5d8c8; background: linear-gradient(180deg, #fffdfa, #f7f1e8); }
+    .audit-item strong { color: var(--ufpe-bordo); }
+    @media (max-width: 1180px) {
+      .hero, .filters-grid, .focus-grid, .heatmap-row { grid-template-columns: 1fr; }
+      .metric, .wide, .narrow, .half { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">Ciclo de Vida</div>
+        <h1>Versão pública sanitizada com leituras agregadas por carteira, coorte, risco e componentes formativos.</h1>
+        <p>Esta publicação remove identificação nominal de discentes e preserva apenas indicadores consolidados do processo formativo. O objetivo é monitorar saúde do fluxo, retenção, atrasos e maturidade da formação sem expor dados pessoais.</p>
+        <div class="hero-actions"><a class="hero-link" href="./producao-cientifica.html">Voltar ao dashboard principal</a></div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-note"><strong id="hero-generated-at">—</strong><span>Data de referência operacional.</span></div>
+        <div class="hero-note"><strong id="hero-active-total">—</strong><span>Discentes ativos no recorte corrente.</span></div>
+        <div class="hero-note"><strong>Público</strong><span>Somente agregados, sem nomes de alunos.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Filtros Globais</h2><p>O painel responde ao mesmo contexto: carteira anonimizada, status, coorte e faixa de risco.</p></div><span class="tag">Controle Primário</span></div>
+      <div class="grid"><div class="card filters-card"><div class="filters-grid">
+        <div><label for="filter-advisor">Carteira</label><select id="filter-advisor"></select></div>
+        <div><label for="filter-status">Status</label><select id="filter-status"></select></div>
+        <div><label for="filter-cohort">Coorte</label><select id="filter-cohort"></select></div>
+        <div><label for="filter-risk">Risco</label><select id="filter-risk"></select></div>
+      </div></div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Visão Executiva</h2><p>Leitura consolidada do recorte filtrado, mantendo apenas métricas públicas e agregadas.</p></div><span class="tag">Saúde Atual</span></div>
+      <div class="grid">
+        <div class="card metric"><p class="eyebrow">Ativos</p><strong id="metric-active">0</strong><span>Carteira ativa no recorte filtrado.</span></div>
+        <div class="card metric"><p class="eyebrow">Titulados</p><strong id="metric-titulados">0</strong><span>Conclusões registradas no recorte.</span></div>
+        <div class="card metric"><p class="eyebrow">Evasões</p><strong id="metric-evasoes">0</strong><span>Saídas acumuladas no recorte.</span></div>
+        <div class="card metric"><p class="eyebrow">Atraso Qualif.</p><strong id="metric-qual-overdue">0</strong><span>Ativos com qualificação vencida.</span></div>
+        <div class="card metric"><p class="eyebrow">Atraso Defesa</p><strong id="metric-defense-overdue">0</strong><span>Ativos com defesa vencida.</span></div>
+        <div class="card metric"><p class="eyebrow">Check Médio</p><strong id="metric-check-avg">0%</strong><span>Média dos checks críticos dos ativos.</span></div>
+        <div class="card wide"><div class="section-head"><div><h2>Semáforo de Risco</h2><p>Distribuição dos ativos entre verde, amarelo e vermelho.</p></div></div><div id="risk-bars" class="bar-stack"></div></div>
+        <div class="card narrow"><div class="section-head"><div><h2>Leitura Rápida</h2><p>Resumo executivo textual do recorte.</p></div></div><div id="summary-chips" class="chips"></div><p id="summary-note" class="chart-note"></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Fluxo por Coorte de Ingresso</h2><p>Leitura anual do fluxo formativo por coorte, com ingresso, ativos, qualificação, defesa e evasão.</p></div><span class="tag">Série Anual</span></div>
+      <div class="grid">
+        <div class="card wide"><div id="flow-chart" class="bar-stack"></div><p class="chart-note" id="flow-note"></p></div>
+        <div class="card narrow"><div class="section-head"><div><h2>Leituras do Fluxo</h2><p>Resumo dos principais comportamentos das coortes.</p></div></div><div id="flow-insights" class="chips"></div></div>
+        <div class="card full"><div class="table-wrap"><table><thead><tr><th>Coorte</th><th>Ingressos</th><th>Ativos</th><th>Qualificações</th><th>Defesas</th><th>Evasões</th></tr></thead><tbody id="flow-table-body"></tbody></table></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Painel do Recorte Filtrado</h2><p>Substitui a leitura nominal por uma descrição consolidada da carteira ou da combinação carteira-coorte em foco.</p></div><span class="tag">Leitura Agregada</span></div>
+      <div class="grid">
+        <div class="card half"><div id="focus-card" class="focus-card"></div></div>
+        <div class="card half"><div class="section-head"><div><h2>Ranking de Carga Ativa</h2><p>Carteiras ordenadas por estoque atual de orientandos.</p></div></div><div id="advisor-ranking" class="bar-stack"></div></div>
+        <div class="card full"><div class="table-wrap"><table><thead><tr><th>Carteira</th><th>Coorte</th><th>Total</th><th>Ativos</th><th>Titulados</th><th>Evasões</th><th>Atraso Qualif.</th><th>Atraso Defesa</th><th>Check Médio</th><th>Risco Dominante</th></tr></thead><tbody id="breakdown-table-body"></tbody></table></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Retenção e Atrasos por Carteira</h2><p>Comparativo crítico das carteiras anonimizadas, mantendo só indicadores agregados.</p></div><span class="tag">Comparativo Crítico</span></div>
+      <div class="grid"><div class="card full"><div class="table-wrap"><table><thead><tr><th>Carteira</th><th>Ativos</th><th>% Qualif. em atraso</th><th>% Defesa em atraso</th><th>Evasões históricas</th><th>Check médio</th><th>Leitura</th></tr></thead><tbody id="retention-table-body"></tbody></table></div></div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Evolução Formativa</h2><p>Indicadores de maturidade da formação por componente, funil e matriz carteira-coorte.</p></div><span class="tag">Formação</span></div>
+      <div class="grid">
+        <div class="card half"><div class="section-head"><div><h2>Componentes Mais Cumpridos</h2><p>Componentes com maior presença positiva no CSV.</p></div></div><div id="component-bars" class="bar-stack"></div></div>
+        <div class="card half"><div class="section-head"><div><h2>Funil Formativo</h2><p>Entrada, ativos, qualificação e defesa no recorte atual.</p></div></div><div id="formation-funnel" class="bar-stack"></div></div>
+        <div class="card full"><div class="section-head"><div><h2>Heatmap de Progresso por Carteira e Coorte</h2><p>Progresso médio e check médio por combinação ativa.</p></div></div><div id="progress-heatmap" class="heatmap"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>Auditoria da Base</h2><p>Problemas de consistência mantidos em forma agregada para orientar a leitura pública.</p></div><span class="tag">Depuração</span></div>
+      <div class="grid"><div class="card half"><div id="quality-summary" class="audit-list"></div></div><div class="card half"><div id="quality-notes" class="audit-list"></div></div></div>
+    </section>
+  </div>
+
+  <script src="./ciclo-vida-discente-data.js?v=2026-07-02b"></script>
+  <script>
+    const dataSource = window.CICLO_VIDA_DISCENTE_PPGEF || {};
+    const filters = dataSource.filters || {};
+    const advisorSummaryBase = dataSource.advisor_summary || [];
+    const breakdownBase = dataSource.advisor_cohort_breakdown || [];
+    const flowBase = dataSource.flow_by_cohort || [];
+    const componentBase = dataSource.component_summary || [];
+    const state = { advisor: 'Todos', status: 'Todos', cohort: 'Todos', risk: 'Todos' };
+    const filterAdvisor = document.getElementById('filter-advisor');
+    const filterStatus = document.getElementById('filter-status');
+    const filterCohort = document.getElementById('filter-cohort');
+    const filterRisk = document.getElementById('filter-risk');
+
+    function escapeHtml(value) {
+      return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+    }
+    function formatDate(value) {
+      if (!value) return '—';
+      const [year, month, day] = value.split('-');
+      return `${day}/${month}/${year}`;
+    }
+    function formatPercent(value) {
+      if (value == null || Number.isNaN(Number(value))) return '—';
+      return `${Math.round(Number(value))}%`;
+    }
+    function ratio(numerator, denominator) { return denominator ? Math.round((numerator / denominator) * 100) : 0; }
+    function getRiskClass(level) { return level === 'vermelho' || level === 'red' ? 'red' : level === 'amarelo' || level === 'yellow' ? 'yellow' : level === 'verde' || level === 'green' ? 'green' : 'gray'; }
+    function getRiskLabel(level) { return level === 'vermelho' || level === 'red' ? 'Crítico' : level === 'amarelo' || level === 'yellow' ? 'Atenção' : level === 'verde' || level === 'green' ? 'Em dia' : 'Sem ativos'; }
+
+    function populateFilters() {
+      filterAdvisor.innerHTML = ['<option value="Todos">Todas as carteiras</option>'].concat((filters.advisors || []).map((advisor) => `<option value="${escapeHtml(advisor)}">${escapeHtml(advisor)}</option>`)).join('');
+      filterStatus.innerHTML = ['<option value="Todos">Todos os status</option>'].concat((filters.statuses || []).map((status) => `<option value="${escapeHtml(status)}">${escapeHtml(status)}</option>`)).join('');
+      filterCohort.innerHTML = ['<option value="Todos">Todas as coortes</option>'].concat((filters.cohort_years || []).map((year) => `<option value="${year}">${year}</option>`)).join('');
+      filterRisk.innerHTML = ['<option value="Todos">Todos os riscos</option>', '<option value="verde">Verde</option>', '<option value="amarelo">Amarelo</option>', '<option value="vermelho">Vermelho</option>'].join('');
+    }
+
+    function getFilteredAdvisorSummary() {
+      return advisorSummaryBase.filter((item) => state.advisor === 'Todos' || item.advisor === state.advisor);
+    }
+
+    function getFilteredBreakdown() {
+      return breakdownBase.filter((item) => {
+        if (state.advisor !== 'Todos' && item.advisor !== state.advisor) return false;
+        if (state.cohort !== 'Todos' && String(item.cohort_year) !== state.cohort) return false;
+        if (state.risk !== 'Todos' && item.dominant_risk !== state.risk) return false;
+        if (state.status === 'ATIVO' && item.active_students === 0) return false;
+        if (state.status === 'TITULADO' && item.titulados === 0) return false;
+        if ((state.status === 'ABANDONOU' || state.status === 'DESLIGADO' || state.status === 'REPROVADA') && item.evasoes === 0) return false;
+        return true;
+      });
+    }
+
+    function getFilteredFlow() {
+      return state.cohort === 'Todos' ? flowBase : flowBase.filter((item) => String(item.year) === state.cohort);
+    }
+
+    function computeExecutive(summaryRows, breakdownRows) {
+      const activeStudents = summaryRows.reduce((sum, item) => sum + item.active_students, 0);
+      const titulados = summaryRows.reduce((sum, item) => sum + item.titulados, 0);
+      const evasoes = summaryRows.reduce((sum, item) => sum + item.evasoes, 0);
+      const qualificationOverdue = summaryRows.reduce((sum, item) => sum + item.qualification_overdue, 0);
+      const defenseOverdue = summaryRows.reduce((sum, item) => sum + item.defense_overdue, 0);
+      const withoutAdvisor = summaryRows.reduce((sum, item) => sum + item.without_advisor, 0);
+      const totalStudents = summaryRows.reduce((sum, item) => sum + item.total_students, 0);
+      const withCheck = summaryRows.filter((item) => item.average_check_percent != null);
+      const averageCheckPercent = withCheck.length ? withCheck.reduce((sum, item) => sum + Number(item.average_check_percent), 0) / withCheck.length : null;
+      const riskCounts = {
+        verde: summaryRows.reduce((sum, item) => sum + (item.risk_counts.verde || 0), 0),
+        amarelo: summaryRows.reduce((sum, item) => sum + (item.risk_counts.amarelo || 0), 0),
+        vermelho: summaryRows.reduce((sum, item) => sum + (item.risk_counts.vermelho || 0), 0),
+      };
+      const scopedFlow = flowBase.filter((row) => state.cohort === 'Todos' || String(row.year) === state.cohort);
+      const qualificationsDone = scopedFlow.reduce((sum, row) => sum + row.qualificacoes, 0);
+      const defensesDone = scopedFlow.reduce((sum, row) => sum + row.defesas, 0);
+      return { activeStudents, titulados, evasoes, qualificationOverdue, defenseOverdue, withoutAdvisor, averageCheckPercent, riskCounts, breakdownRows: breakdownRows.length, qualificationsDone, defensesDone, totalStudents };
+    }
+
+    function renderHero(executive) {
+      document.getElementById('hero-generated-at').textContent = formatDate(dataSource.reference_date);
+      document.getElementById('hero-active-total').textContent = String(executive.activeStudents);
+    }
+
+    function renderExecutive(executive) {
+      document.getElementById('metric-active').textContent = String(executive.activeStudents);
+      document.getElementById('metric-titulados').textContent = String(executive.titulados);
+      document.getElementById('metric-evasoes').textContent = String(executive.evasoes);
+      document.getElementById('metric-qual-overdue').textContent = String(executive.qualificationOverdue);
+      document.getElementById('metric-defense-overdue').textContent = String(executive.defenseOverdue);
+      document.getElementById('metric-check-avg').textContent = formatPercent(executive.averageCheckPercent);
+      const maxRisk = Math.max(executive.riskCounts.verde, executive.riskCounts.amarelo, executive.riskCounts.vermelho, 1);
+      document.getElementById('risk-bars').innerHTML = [
+        ['Verde', executive.riskCounts.verde, 'var(--risk-green)'],
+        ['Amarelo', executive.riskCounts.amarelo, 'var(--risk-yellow)'],
+        ['Vermelho', executive.riskCounts.vermelho, 'var(--risk-red)'],
+      ].map(([label, value, color]) => `<div class="bar-row"><strong>${label}</strong><div class="bar-track"><div class="bar-fill" style="width:${(value / maxRisk) * 100}%; background:${color};"></div></div><div>${value}</div></div>`).join('');
+      document.getElementById('summary-chips').innerHTML = [`<span class="chip">Sem carteira definida: <strong>${executive.withoutAdvisor}</strong></span>`, `<span class="chip">Check médio ativo: <strong>${formatPercent(executive.averageCheckPercent)}</strong></span>`, `<span class="chip">Combinações carteira-coorte: <strong>${executive.breakdownRows}</strong></span>`].join('');
+      document.getElementById('summary-note').textContent = `O recorte atual reúne ${executive.activeStudents} ativos, ${executive.qualificationOverdue} atrasos de qualificação e ${executive.defenseOverdue} atrasos de defesa.`;
+    }
+
+    function renderFlow(flowRows) {
+      const maxValue = Math.max(...flowRows.map((row) => Math.max(row.ingressos, row.ativos, row.qualificacoes, row.defesas, row.evasoes)), 1);
+      document.getElementById('flow-chart').innerHTML = flowRows.map((row) => `<div class="bar-row"><strong>${row.year}</strong><div class="bar-track"><div class="bar-fill" style="width:${(row.ativos / maxValue) * 100}%; background:linear-gradient(90deg,var(--ufpe-destaque),var(--ufpe-bordo));"></div></div><div>${row.ativos}</div></div>`).join('');
+      document.getElementById('flow-table-body').innerHTML = flowRows.map((row) => `<tr><td>${row.year}</td><td>${row.ingressos}</td><td>${row.ativos}</td><td>${row.qualificacoes}</td><td>${row.defesas}</td><td>${row.evasoes}</td></tr>`).join('');
+      const topIngress = flowRows.slice().sort((a, b) => b.ingressos - a.ingressos)[0];
+      const topActive = flowRows.slice().sort((a, b) => b.ativos - a.ativos)[0];
+      document.getElementById('flow-insights').innerHTML = [topIngress ? `<span class="chip">Maior entrada: <strong>${topIngress.year}</strong> (${topIngress.ingressos})</span>` : '', topActive ? `<span class="chip">Maior estoque ativo: <strong>${topActive.year}</strong> (${topActive.ativos})</span>` : ''].filter(Boolean).join('');
+      document.getElementById('flow-note').textContent = 'A visão pública do fluxo mantém apenas coortes agregadas, sem rastreio individual.';
+    }
+
+    function renderFocus(summaryRows, breakdownRows) {
+      const focus = summaryRows[0];
+      document.getElementById('focus-card').innerHTML = focus ? `
+        <strong>${escapeHtml(focus.advisor)}</strong>
+        <div class="chips">
+          <span class="chip">Ativos <strong>${focus.active_students}</strong></span>
+          <span class="chip">Atraso qual. <strong>${focus.qualification_overdue}</strong></span>
+          <span class="chip">Atraso defesa <strong>${focus.defense_overdue}</strong></span>
+          <span class="chip">Check médio <strong>${formatPercent(focus.average_check_percent)}</strong></span>
+        </div>
+        <div class="focus-meta">
+          <div><span>Total no recorte</span><strong style="font-size:1rem;color:var(--ufpe-grafite);margin:0;">${focus.total_students}</strong></div>
+          <div><span>Titulados</span><strong style="font-size:1rem;color:var(--ufpe-grafite);margin:0;">${focus.titulados}</strong></div>
+          <div><span>Evasões</span><strong style="font-size:1rem;color:var(--ufpe-grafite);margin:0;">${focus.evasoes}</strong></div>
+          <div><span>Faixa dominante</span><strong style="font-size:1rem;color:var(--ufpe-grafite);margin:0;">${getRiskLabel(focus.risk_counts.vermelho ? 'vermelho' : focus.risk_counts.amarelo ? 'amarelo' : 'verde')}</strong></div>
+        </div>
+        <p class="chart-note">A leitura individual foi removida na versão pública. O foco mostra apenas agregados da carteira ou do recorte dominante.</p>` : '<p class="chart-note">Sem dados no recorte atual.</p>';
+      const maxActive = Math.max(...summaryRows.map((item) => item.active_students), 1);
+      document.getElementById('advisor-ranking').innerHTML = summaryRows.slice(0, 8).map((item) => `<div class="bar-row"><strong>${escapeHtml(item.advisor)}</strong><div class="bar-track"><div class="bar-fill" style="width:${(item.active_students / maxActive) * 100}%; background:linear-gradient(90deg,var(--ufpe-destaque),var(--ufpe-bordo));"></div></div><div>${item.active_students}</div></div>`).join('');
+      document.getElementById('breakdown-table-body').innerHTML = breakdownRows.map((item) => `<tr><td>${escapeHtml(item.advisor)}</td><td>${item.cohort_year}</td><td>${item.total_students}</td><td>${item.active_students}</td><td>${item.titulados}</td><td>${item.evasoes}</td><td>${item.qualification_overdue}</td><td>${item.defense_overdue}</td><td>${formatPercent(item.average_check_percent)}</td><td><span class="status-pill ${getRiskClass(item.dominant_risk)}">${getRiskLabel(item.dominant_risk)}</span></td></tr>`).join('');
+    }
+
+    function renderRetention(summaryRows) {
+      document.getElementById('retention-table-body').innerHTML = summaryRows.map((item) => {
+        const qualRate = ratio(item.qualification_overdue, item.active_students);
+        const defenseRate = ratio(item.defense_overdue, item.active_students);
+        const reading = qualRate >= 50 || defenseRate >= 20 ? 'Criticidade alta' : qualRate >= 25 || item.evasoes >= 2 ? 'Atenção' : 'Estável';
+        const readingClass = reading === 'Criticidade alta' ? 'red' : reading === 'Atenção' ? 'yellow' : 'green';
+        return `<tr><td>${escapeHtml(item.advisor)}</td><td>${item.active_students}</td><td>${qualRate}%</td><td>${defenseRate}%</td><td>${item.evasoes}</td><td>${formatPercent(item.average_check_percent)}</td><td><span class="status-pill ${readingClass}">${reading}</span></td></tr>`;
+      }).join('');
+    }
+
+    function renderFormation(summaryRows, breakdownRows) {
+      const componentMax = Math.max(...componentBase.map((component) => component.completed), 1);
+      document.getElementById('component-bars').innerHTML = componentBase.slice(0, 8).map((component) => `<div class="bar-row"><strong>${escapeHtml(component.label.replace(/^EDF\d+\s*-\s*/, '').slice(0, 22))}</strong><div class="bar-track"><div class="bar-fill" style="width:${(component.completed / componentMax) * 100}%; background:linear-gradient(90deg,var(--ufpe-destaque),var(--ufpe-bordo));"></div></div><div>${component.completed}</div></div>`).join('');
+      const executive = computeExecutive(summaryRows, breakdownRows);
+      const funnelMax = Math.max(executive.totalStudents, 1);
+      document.getElementById('formation-funnel').innerHTML = [['Ingressos', executive.totalStudents, 'var(--ufpe-bordo)'], ['Ativos', executive.activeStudents, 'var(--ufpe-destaque)'], ['Qualificações', executive.qualificationsDone, 'var(--ufpe-sucesso)'], ['Defesas', executive.defensesDone, 'var(--risk-red)']].map(([label, value, color]) => `<div class="bar-row"><strong>${label}</strong><div class="bar-track"><div class="bar-fill" style="width:${(value / funnelMax) * 100}%; background:${color};"></div></div><div>${value}</div></div>`).join('');
+      const heatmapRows = summaryRows.slice(0, 8).map((summaryItem) => ({ advisor: summaryItem.advisor, cells: (filters.cohort_years || []).map((year) => breakdownRows.find((item) => item.advisor === summaryItem.advisor && item.cohort_year === year) || null) }));
+      document.getElementById('progress-heatmap').innerHTML = heatmapRows.map((row) => `<div class="heatmap-row"><div class="heatmap-label">${escapeHtml(row.advisor)}</div>${row.cells.map((cell) => cell ? `<div class="heatmap-cell ${getRiskClass(cell.dominant_risk)}">${cell.average_progress == null ? '—' : `${Math.round(cell.average_progress)}%`}<small>${cell.average_check_percent == null ? 'sem check' : `check ${Math.round(cell.average_check_percent)}%`}</small></div>` : `<div class="heatmap-cell gray">—<small>sem ativos</small></div>`).join('')}</div>`).join('');
+    }
+
+    function renderQuality() {
+      const counts = dataSource.data_quality?.counts || {};
+      const notes = dataSource.data_quality?.notes || [];
+      const mapping = [['ano_defesa_sentinela', 'Ano da defesa sentinela 1900'], ['tmt_negativo', 'TMT negativo'], ['sem_orientador', 'Registros sem carteira definida'], ['ano_inicio_divergente', 'Ano de início divergente'], ['alias_orientador', 'Normalizações internas de carteira aplicadas']];
+      document.getElementById('quality-summary').innerHTML = mapping.map(([key, label]) => `<div class="audit-item"><strong>${counts[key] || 0}</strong> ocorrência(s) de ${label.toLowerCase()}.</div>`).join('');
+      document.getElementById('quality-notes').innerHTML = notes.map((note) => `<div class="audit-item">${escapeHtml(note)}</div>`).join('');
+    }
+
+    function applyFilters() {
+      state.advisor = filterAdvisor.value;
+      state.status = filterStatus.value;
+      state.cohort = filterCohort.value;
+      state.risk = filterRisk.value;
+      const summaryRows = getFilteredAdvisorSummary();
+      const breakdownRows = getFilteredBreakdown();
+      const flowRows = getFilteredFlow();
+      const executive = computeExecutive(summaryRows, breakdownRows);
+      renderHero(executive);
+      renderExecutive(executive);
+      renderFlow(flowRows);
+      renderFocus(summaryRows, breakdownRows);
+      renderRetention(summaryRows);
+      renderFormation(summaryRows, breakdownRows);
+      renderQuality();
+    }
+
+    [filterAdvisor, filterStatus, filterCohort, filterRisk].forEach((element) => element.addEventListener('change', applyFilters));
+    populateFilters();
+    applyFilters();
+  </script>
+</body>
+</html>
