@@ -4251,7 +4251,7 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JIF verificado (2025), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
+              <p>Exploração da qualidade dos produtos por JIF verificado (2025), média, somatório e faixas históricas dos periódicos utilizados na pontuação.</p>
             </div>
           </div>
 
@@ -4262,7 +4262,7 @@
               com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
             </p>
             <p>
-              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas APCN dos periódicos</strong>,
+              Em complemento, a aba expõe a distribuição dos artigos pelas <strong>faixas históricas dos periódicos</strong>,
               permitindo relacionar impacto bibliométrico, qualidade editorial e contribuição efetiva para a pontuação do programa.
             </p>
           </div>
@@ -4313,7 +4313,7 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Faixas do modelo histórico dos Periódicos</h2>
-              <p>Quantitativo de artigos por faixa de pontuação APCN dos periódicos utilizados na base.</p>
+              <p>Quantitativo de artigos por faixa de pontuação histórica dos periódicos utilizados na base.</p>
             </div>
             <div id="chart-lideranca-qualidade-apcn" class="chart"></div>
           </div>
@@ -4321,7 +4321,7 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JIF verificado (2025) e agrupar faixas APCN dos periódicos.</p>
+              <p>Critérios usados para somar JIF verificado (2025) e agrupar faixas históricas dos periódicos.</p>
             </div>
             <div class="chips" id="lideranca-qualidade-metodologia"></div>
           </div>
@@ -4329,7 +4329,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Qualidade por Docente</h2>
-              <p>Soma descritiva de JIF (2025), média JIF verificado (2025) e composição dos artigos por faixas APCN.</p>
+              <p>Soma descritiva de JIF (2025), média JIF verificado (2025) e composição dos artigos por faixas históricas.</p>
             </div>
             <div class="table-wrap">
               <table>
@@ -4379,15 +4379,15 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Perfil de Inserção Autoral</h2>
-              <p>Como cada docente se distribui entre lideranças absolutas, colaborações de destaque e participações de menor relevância nas obras do recorte.</p>
+              <p>Como cada docente se distribui entre primeiras/últimas autorias, segundas/penúltimas autorias e autorias intermediárias nas obras do recorte.</p>
             </div>
           </div>
 
           <div class="card table-card">
             <p>
               O <strong>Perfil de Inserção Autoral</strong> decompõe a presença do docente nas obras em três dimensões:
-              <strong>lideranças absolutas</strong> para 1ª ou última posição, <strong>colaborações de destaque</strong> para
-              2ª ou penúltima posição e <strong>participações de menor relevância</strong> para as demais posições.
+              <strong>primeiras/últimas autorias</strong> para 1ª ou última posição, <strong>segundas/penúltimas autorias</strong> para
+              2ª ou penúltima posição e <strong>autorias intermediárias</strong> para as demais posições.
             </p>
             <p>
               Em vez de resumir a liderança em um único índice, esta leitura mostra <strong>como</strong> o docente se insere
@@ -4399,7 +4399,7 @@
             <div class="section-head section-head-inline">
               <div class="section-head-grow">
                 <h2>Mapa Triangular de Perfis</h2>
-                <p>Posicionamento composicional entre liderança, destaque colaborativo e menor relevância, com alternância do tamanho da bolha.</p>
+                <p>Posicionamento composicional entre liderança, destaque colaborativo e posição intermediária, com alternância do tamanho da bolha.</p>
               </div>
               <div class="sort-toggle-group section-head-actions-right">
                 <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
@@ -4430,7 +4430,7 @@
                 <button type="button" class="sort-toggle active" data-lideranca-perfil-sort="alfabetico">ALfabético</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-sort="lideranca">Liderança</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-sort="destaque">Co de Destaque</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Co com menor relevância</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-sort="menor">Co com posição intermediária</button>
               </div>
             </div>
             <div id="chart-lideranca-perfil-barras" class="chart"></div>
@@ -4474,21 +4474,19 @@
               a capturar com mais fidelidade o protagonismo investigativo por docente e por ano.
             </p>
             <p>
-              Nesta base científica, a posição autoral é aplicada diretamente sobre os campos estruturados de
-              <strong> número de autores </strong> e <strong> posição do docente </strong>. Assim, a leitura de liderança
-              deixa de depender de inferência textual residual e passa a operar sobre um registro autoral explicitamente revisado.
+              A regra compartilhada reconhece nomes na sequência de autores e deriva número e posição. As listas editoriais localizadas foram conferidas; listas truncadas e identidades não resolvidas permanecem pendentes. O índice exclui esses casos da média. Posição autoral é uma aproximação exploratória, não prova de contribuição ou mérito.
             </p>
           </div>
 
           <div class="card metric">
             <p class="eyebrow">Registros</p>
             <strong id="lideranca-total-registros">0</strong>
-            <span>Quantidade de produtos considerados no cálculo do índice.</span>
+            <span>Participações no recorte; posições pendentes são excluídas da média.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Pontos do modelo histórico</p>
             <strong id="lideranca-pontos-apcn">0</strong>
-            <span>Soma da pontuação APCN produzida no recorte filtrado.</span>
+            <span>Soma da pontuação histórica produzida no recorte filtrado.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Docentes</p>
@@ -4524,7 +4522,7 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Produção em Pontos do modelo histórico corrigidos pelo Índice Mostarda</h2>
-              <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
+              <p>Índice invertido multiplicado pela pontuação histórica do docente no recorte.</p>
             </div>
             <div id="chart-lideranca-corrigido" class="chart"></div>
           </div>
@@ -4569,7 +4567,7 @@
                     <th>Registros</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
-                    <th>Demais</th>
+                    <th>Demais</th><th>Pendentes</th>
                   </tr>
                 </thead>
                 <tbody id="lideranca-docentes-body"></tbody>
@@ -4593,7 +4591,7 @@
                     <th>Registros</th>
                     <th>1ª / última</th>
                     <th>2ª / penúltima</th>
-                    <th>Demais</th>
+                    <th>Demais</th><th>Pendentes</th>
                   </tr>
                 </thead>
                 <tbody id="lideranca-anos-body"></tbody>
@@ -4850,7 +4848,7 @@
                   </tr>
                   <tr>
                     <td>Liderança e impacto</td>
-                    <td>Aba combina posição autoral, pontuação APCN e evidências de JIF verificado (2025) para estimar liderança e qualidade.</td>
+                    <td>Aba combina posição autoral, pontuação histórica e evidências de JIF verificado (2025) para estimar liderança e qualidade.</td>
                     <td>Não substitui avaliação qualitativa, mas ajuda a localizar fragilidade autoral e força bibliométrica.</td>
                   </tr>
                   <tr>
@@ -4966,7 +4964,7 @@
               <p>Régua sintética usada para leitura da produção intelectual de artigos, livros e capítulos.</p>
             </div>
             <p>
-              Para <strong>artigos</strong>, a pontuação APCN considera a base de indexação do periódico
+              Para <strong>artigos</strong>, a pontuação histórica considera a base de indexação do periódico
               como evidência principal. Para <strong>livros</strong>, o painel aplica a regra fixa de
               <strong>90 pontos</strong>. Para <strong>capítulos</strong>, aplica a regra fixa de
               <strong>45 pontos</strong>.
@@ -8498,9 +8496,9 @@
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
         <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
-          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Indesejado</strong>, a faixa amarela representa o perfil <strong>Esperado</strong> e a faixa verde representa o perfil <strong>Desejado</strong>.
-          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade APCN e inverso do Índice Mostarda.
-          Leitura: <strong>Indesejado</strong> ≤ p30,0; <strong>Esperado</strong> entre p30,0 e p55,0; <strong>Desejado</strong> &gt; p55,0.
+          <strong>Legenda:</strong> a faixa vermelha representa o perfil <strong>Faixa inferior</strong>, a faixa amarela representa o perfil <strong>Faixa intermediária</strong> e a faixa verde representa o perfil <strong>Faixa superior</strong>.
+          Os cortes usados neste recorte foram <strong>p30,0</strong> e <strong>p55,0</strong>, calculados sobre a combinação entre produtividade histórica e inverso do Índice Mostarda.
+          Faixas descritivas relativas ao filtro; não são padrões CAPES nem juízo de mérito. Leitura: <strong>Faixa inferior</strong> ≤ p30,0; <strong>Faixa intermediária</strong> entre p30,0 e p55,0; <strong>Faixa superior</strong> &gt; p55,0.
         </div>
       `;
     }
@@ -8545,7 +8543,7 @@
           <td>${item.total}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
-          <td>${item.demais}</td>
+          <td>${item.demais}</td><td>${item.pendentes}</td>
         </tr>
       `).join("");
     }
@@ -8560,7 +8558,7 @@
           <td>${item.total}</td>
           <td>${item.primeiraUltima}</td>
           <td>${item.segundaPenultima}</td>
-          <td>${item.demais}</td>
+          <td>${item.demais}</td><td>${item.pendentes}</td>
         </tr>
       `).join("");
     }
@@ -8681,11 +8679,11 @@
       liderancaPerfilInsights.innerHTML = [
         byLeadership ? `<span class="chip">Maior liderança absoluta: <strong>${escapeHtml(byLeadership.docente)}</strong> (${formatPercent(byLeadership.liderancaPct * 100)})</span>` : "",
         byDestaque ? `<span class="chip">Maior colaboração de destaque: <strong>${escapeHtml(byDestaque.docente)}</strong> (${formatPercent(byDestaque.destaquePct * 100)})</span>` : "",
-        byMenor ? `<span class="chip">Maior participação de menor relevância: <strong>${escapeHtml(byMenor.docente)}</strong> (${formatPercent(byMenor.menorPct * 100)})</span>` : "",
+        byMenor ? `<span class="chip">Maior participação de posição intermediária: <strong>${escapeHtml(byMenor.docente)}</strong> (${formatPercent(byMenor.menorPct * 100)})</span>` : "",
       ].filter(Boolean).join("");
       liderancaPerfilMetodologia.innerHTML = [
         `<span class="chip">Obras válidas na tríade: <strong>${totalWorks}</strong></span>`,
-        `<span class="chip">Distribuição geral: <strong>${formatPercent((totalLead / totalWorks) * 100)}</strong> liderança · <strong>${formatPercent((totalHighlight / totalWorks) * 100)}</strong> destaque · <strong>${formatPercent((totalMinor / totalWorks) * 100)}</strong> menor relevância</span>`,
+        `<span class="chip">Distribuição geral: <strong>${formatPercent((totalLead / totalWorks) * 100)}</strong> liderança · <strong>${formatPercent((totalHighlight / totalWorks) * 100)}</strong> destaque · <strong>${formatPercent((totalMinor / totalWorks) * 100)}</strong> posição intermediária</span>`,
         `<span class="chip">Tamanho da bolha atual: <strong>${getLeadershipAuthorshipBubbleLabel()}</strong></span>`,
       ].join("");
     }
@@ -8922,7 +8920,7 @@
         topJcr ? `<span class="chip">Maior soma de JIF verificado (2025): <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
         bestAvg ? `<span class="chip">Maior média JIF verificado (2025): <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
         `<span class="chip">Artigos em periódicos de 90 pontos: <strong>${totals.artigos90}</strong></span>`,
-        `<span class="chip">Artigos sem pontuação APCN de periódico: <strong>${totals.artigos0}</strong></span>`,
+        `<span class="chip">Artigos sem pontuação histórica de periódico: <strong>${totals.artigos0}</strong></span>`,
       ].filter(Boolean).join("");
 
       liderancaQualidadeMetodologia.innerHTML = [
