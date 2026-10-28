@@ -176,11 +176,8 @@ def find_prior_match(
         if not matched.empty:
             return matched.iloc[0].to_dict()
 
-    journal_key = fold_text(journal)
-    if journal_key:
-        matched = prior[prior["journal_key"] == journal_key]
-        if not matched.empty:
-            return matched.iloc[0].to_dict()
+    # Sharing a journal does not establish article identity. Journal-level ISSN
+    # hints are handled separately; DOI/authorship must never be inherited here.
     return None
 
 

@@ -279,10 +279,8 @@ def main() -> None:
             if note not in observacoes:
                 row["observacoes"] = f"{observacoes} | {note}".strip(" |")
 
-    fieldnames = list(rows[0].keys())
-    write_csv(rows, fieldnames)
-    write_json(rows)
-    write_js(rows)
+    from apply_scientific_audit import reconcile, write
+    write(reconcile(rows))
 
     report = {
         "source_classificacao": str(SOURCE_CLASSIFICACAO),

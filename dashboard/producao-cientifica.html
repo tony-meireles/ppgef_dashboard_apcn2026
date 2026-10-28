@@ -2537,6 +2537,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="wrap">
+
     <section class="hero">
       <div>
         <p class="hero-kicker">PPGEF</p>
@@ -2553,6 +2554,13 @@
           alt="Logo da Universidade Federal de Pernambuco"
         >
       </div>
+    </section>
+<section class="chart-card" id="auditoria-cienciometrica" style="margin:20px 0;padding:22px">
+      <h2>Auditoria cienciométrica - 28/10/2026</h2>
+      <p>Indexação é multidimensional: um periódico pode estar em várias bases. O rótulo antigo “Web of Science: 1” não media a cobertura real. Os números abaixo são artigos distintos em periódicos com evidência editorial localizada; constituem cobertura mínima verificada, não uma busca exaustiva dos artigos na WoS/Scopus. A cobertura no ano da publicação ainda requer registro individual da base.</p>
+      <div id="auditoria-indexacao" class="chips"></div>
+      <p>JIF, SJR e citações por documento são métricas diferentes. Valores antigos sem origem inequívoca foram preservados apenas no histórico, fora dos cálculos de JIF. Pontos por indexação são uma simulação histórica, não a nota exigida pela APCN 2026. Posição autoral não resolvida é ausência de dado, não baixa liderança.</p>
+      <p><a href="../data/cienciometria_auditoria_2026.json" target="_blank" rel="noopener">Consultar resultados e pendências</a> · <a href="../data/periodicos_evidencias_2026.json" target="_blank" rel="noopener">Consultar fontes editoriais e escopo da verificação</a></p>
     </section>
 
     <section class="tabs-shell">
@@ -2628,12 +2636,12 @@
           <div class="card metric">
             <p class="eyebrow">Registros</p>
             <strong id="total-registros">0</strong>
-            <span>Total de produtos visíveis após aplicação dos filtros.</span>
+            <span>Participações autorais cadastradas; um produto pode aparecer para mais de um docente.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Pontuação</p>
             <strong id="pontuacao-total">0</strong>
-            <span>Soma de pontos APCN considerando artigos, livros e capítulos visíveis.</span>
+            <span>Soma de pontos históricos por participação; não é pontuação qualitativa APCN 2026.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Docentes</p>
@@ -2659,7 +2667,7 @@
             </div>
             <div id="chart-docentes" class="chart"></div>
             <div class="inline-actions" style="margin-top: 14px; justify-content: flex-end;">
-              <button type="button" class="info-button" id="open-apcn-scoring-modal">Ver regra APCN</button>
+              <button type="button" class="info-button" id="open-apcn-scoring-modal">Ver modelo histórico</button>
             </div>
           </div>
 
@@ -2689,7 +2697,7 @@
             </div>
             <div class="chips" id="insight-chips"></div>
             <div class="legend">
-              <span><i style="background: var(--ufpe-bordo)"></i> Pontuação APCN</span>
+              <span><i style="background: var(--ufpe-bordo)"></i> Pontuação histórica</span>
               <span><i style="background: var(--ufpe-destaque)"></i> Livros</span>
               <span><i style="background: var(--ufpe-sucesso)"></i> Artigos</span>
             </div>
@@ -3648,8 +3656,8 @@
         <section class="grid">
           <div class="card group-card">
             <div class="section-head">
-              <h2>Produtividade</h2>
-              <p>Critérios baseados na produção intelectual da equipe docente.</p>
+              <h2>Produtividade: APCN 2026 e memória da simulação</h2>
+              <p><strong>APCN 2026:</strong> pelo menos 14 dos 15 DP com 55 pontos e 11 com 75 pontos, em até cinco produtos de 2021 a 2026 por docente. A avaliação qualitativa e a seleção ainda precisam ser concluídas. Os cartões abaixo preservam a simulação histórica de 330 pontos/75%; não certificam os requisitos vigentes.</p>
             </div>
           </div>
 
@@ -3659,17 +3667,17 @@
             <span>Docentes permanentes do corpo de 2026, inclusive os sem produção no recorte.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Linha de corte 75%</p>
+            <p class="eyebrow">Corte da simulação histórica: 75%</p>
             <strong id="criterios-docentes-minimo">0</strong>
-            <span>Mínimo absoluto de docentes necessários para atender cada critério.</span>
+            <span>Corte da simulação antiga; requisitos vigentes descritos acima.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Critério 1</p>
+            <p class="eyebrow">Simulação histórica 1</p>
             <strong id="criterios-crit1-percentual">0%</strong>
             <span id="criterios-crit1-resumo">0 de 0 docentes com pelo menos 330 pontos.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Critério 2</p>
+            <p class="eyebrow">Simulação histórica 2</p>
             <strong id="criterios-crit2-percentual">0%</strong>
             <span id="criterios-crit2-resumo">0 de 0 docentes com dois produtos indexados em WoS/Scopus.</span>
           </div>
@@ -3677,7 +3685,7 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Demonstrativo dos Critérios</h2>
-              <p>Simulação interna com o recorte 2022–2026 e até cinco produtos por docente.</p>
+              <p>Simulação histórica por indexação, janela 2021–2026; não corresponde aos requisitos de pontuação da APCN 2026.</p>
             </div>
             <div id="chart-criterios-prod" class="chart"></div>
           </div>
@@ -3727,7 +3735,7 @@
                 </button>
               </div>
             </div>
-            <p class="chart-note">Seleção automática dos cinco maiores valores de 2022–2026; o segundo indicador é uma aproximação por indexação, pendente de conferência da classificação oficial.</p>
+            <p class="chart-note">Seleção automática dos cinco maiores valores do modelo histórico em 2021–2026; o segundo indicador é uma aproximação por indexação, pendente de conferência da classificação oficial.</p>
             <div class="table-wrap">
               <table class="criteria-table">
                 <thead>
@@ -3879,10 +3887,10 @@
           <div class="card metric">
             <p class="eyebrow">Parceiros por produto</p>
             <strong id="lideranca-parceria-media">0</strong>
-            <span>Média de parceiros autores por produto na base científica sincronizada.</span>
+            <span>Média de coautores nos produtos com lista completa; a cobertura aparece na metodologia.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Parceiros distintos</p>
+            <p class="eyebrow">Grafias de coautores</p>
             <strong id="lideranca-parceria-distintos">0</strong>
             <span>Total de parceiros distintos identificados nas autorias da base.</span>
           </div>
@@ -4243,13 +4251,13 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Qualidade dos Produtos</h2>
-              <p>Exploração da qualidade dos produtos por JCR (SCimago | 2y cites per doc), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
+              <p>Exploração da qualidade dos produtos por JIF verificado (2025), média, somatório e faixas APCN dos periódicos utilizados na pontuação.</p>
             </div>
           </div>
 
           <div class="card table-card">
             <p>
-              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JCR (SCimago | 2y cites per doc)</strong>,
+              A dimensão de <strong>impacto</strong> observa a qualidade dos produtos a partir do <strong>JIF verificado (2025)</strong>,
               tanto no somatório acumulado quanto na média por produto qualificado. Isso permite distinguir docentes
               com grande massa de impacto daqueles com menor volume, porém com portfólio proporcionalmente mais forte.
             </p>
@@ -4260,33 +4268,33 @@
           </div>
 
           <div class="card metric">
-            <p class="eyebrow">Produtos com JCR (SCimago | 2y cites per doc)</p>
+            <p class="eyebrow">Produtos com JIF verificado (2025)</p>
             <strong id="lideranca-qualidade-produtos-jcr">0</strong>
-            <span>Quantidade de produtos com valor JCR (SCimago | 2y cites per doc) estruturado no recorte filtrado.</span>
+            <span>Registros com JIF 2025 e fonte editorial conferida. Cobertura parcial; não é impacto individual.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Soma JCR (SCimago | 2y cites per doc)</p>
+            <p class="eyebrow">Soma descritiva de JIF (2025)</p>
             <strong id="lideranca-qualidade-jcr-soma">0</strong>
-            <span>Somatório dos valores de JCR (SCimago | 2y cites per doc) atribuídos aos produtos do recorte.</span>
+            <span>Soma descritiva por registros, com repetições de periódico e de coautoria. Não mede citações recebidas nem impacto do programa.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Média JCR (SCimago | 2y cites per doc)</p>
+            <p class="eyebrow">Média JIF verificado (2025)</p>
             <strong id="lideranca-qualidade-jcr-media">0</strong>
-            <span>Valor médio de JCR (SCimago | 2y cites per doc) entre os produtos que possuem essa evidência.</span>
+            <span>Valor médio de JIF verificado (2025) entre os produtos que possuem essa evidência.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Docentes com JCR (SCimago | 2y cites per doc)</p>
+            <p class="eyebrow">Docentes com JIF verificado (2025)</p>
             <strong id="lideranca-qualidade-docentes-jcr">0</strong>
-            <span>Docentes que possuem ao menos um produto com JCR (SCimago | 2y cites per doc) no recorte atual.</span>
+            <span>Docentes que possuem ao menos um produto com JIF verificado (2025) no recorte atual.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head section-head-inline">
               <div>
-                <h2>Somatório de JCR (SCimago | 2y cites per doc) por Docente</h2>
+                <h2>Soma descritiva de JIF (2025) por Docente</h2>
                 <p>Ranking docente com leitura alternável entre impacto total e impacto médio por produto qualificado.</p>
               </div>
-              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JCR (SCimago | 2y cites per doc)">
+              <div class="sort-toggle-group" aria-label="Modo de leitura do gráfico de JIF verificado (2025)">
                 <button type="button" class="sort-toggle active" data-lideranca-qualidade-jcr-mode="total">Total de impacto</button>
                 <button type="button" class="sort-toggle" data-lideranca-qualidade-jcr-mode="media">Média de impacto</button>
               </div>
@@ -4304,7 +4312,7 @@
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Faixas APCN dos Periódicos</h2>
+              <h2>Faixas do modelo histórico dos Periódicos</h2>
               <p>Quantitativo de artigos por faixa de pontuação APCN dos periódicos utilizados na base.</p>
             </div>
             <div id="chart-lideranca-qualidade-apcn" class="chart"></div>
@@ -4313,7 +4321,7 @@
           <div class="card chart-narrow">
             <div class="section-head">
               <h2>Metodologia da Qualidade</h2>
-              <p>Critérios usados para somar JCR (SCimago | 2y cites per doc) e agrupar faixas APCN dos periódicos.</p>
+              <p>Critérios usados para somar JIF verificado (2025) e agrupar faixas APCN dos periódicos.</p>
             </div>
             <div class="chips" id="lideranca-qualidade-metodologia"></div>
           </div>
@@ -4321,16 +4329,16 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Qualidade por Docente</h2>
-              <p>Soma JCR (SCimago | 2y cites per doc), média JCR (SCimago | 2y cites per doc) e composição dos artigos por faixas APCN.</p>
+              <p>Soma descritiva de JIF (2025), média JIF verificado (2025) e composição dos artigos por faixas APCN.</p>
             </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Soma JCR (SCimago | 2y cites per doc)</th>
-                    <th>Média JCR (SCimago | 2y cites per doc)</th>
-                    <th>Produtos com JCR (SCimago | 2y cites per doc)</th>
+                    <th>Soma descritiva de JIF (2025)</th>
+                    <th>Média JIF verificado (2025)</th>
+                    <th>Produtos com JIF verificado (2025)</th>
                     <th>Artigos 90</th>
                     <th>Artigos 60</th>
                     <th>Artigos 30</th>
@@ -4395,7 +4403,7 @@
               </div>
               <div class="sort-toggle-group section-head-actions-right">
                 <button type="button" class="sort-toggle active" data-lideranca-perfil-size="produtos">Produtos</button>
-                <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos APCN</button>
+                <button type="button" class="sort-toggle" data-lideranca-perfil-size="pontos">Pontos do modelo histórico</button>
                 <button type="button" class="sort-toggle" data-lideranca-perfil-size="jcr">JCR médio</button>
               </div>
             </div>
@@ -4442,7 +4450,7 @@
                     <th>Lideranças absolutas</th>
                     <th>Colaborações de destaque</th>
                     <th>Menor relevância</th>
-                    <th>Pontos APCN</th>
+                    <th>Pontos do modelo histórico</th>
                     <th>JCR médio</th>
                   </tr>
                 </thead>
@@ -4454,7 +4462,7 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Índice Mostarda</h2>
-              <p>Leitura do índice invertido, do índice corrigido por pontos APCN e da dispersão entre fragilidade autoral e volume de produção.</p>
+              <p>Leitura do índice invertido, do índice corrigido por pontos históricos e da dispersão entre fragilidade autoral e volume de produção.</p>
             </div>
           </div>
 
@@ -4478,7 +4486,7 @@
             <span>Quantidade de produtos considerados no cálculo do índice.</span>
           </div>
           <div class="card metric">
-            <p class="eyebrow">Pontos APCN</p>
+            <p class="eyebrow">Pontos do modelo histórico</p>
             <strong id="lideranca-pontos-apcn">0</strong>
             <span>Soma da pontuação APCN produzida no recorte filtrado.</span>
           </div>
@@ -4515,7 +4523,7 @@
 
           <div class="card chart-wide">
             <div class="section-head">
-              <h2>Produção em Pontos APCN corrigidos pelo Índice Mostarda</h2>
+              <h2>Produção em Pontos do modelo histórico corrigidos pelo Índice Mostarda</h2>
               <p>Índice invertido multiplicado pela pontuação APCN do docente no recorte.</p>
             </div>
             <div id="chart-lideranca-corrigido" class="chart"></div>
@@ -4532,7 +4540,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Dispersão Índice x Pontos</h2>
-              <p>Eixo Y com o Índice Mostarda e eixo X com o total de pontos APCN por docente.</p>
+              <p>Eixo Y com o Índice Mostarda e eixo X com o total de pontos históricos por docente.</p>
             </div>
             <div id="chart-lideranca-dispersao" class="chart"></div>
           </div>
@@ -4556,7 +4564,7 @@
                   <tr>
                     <th>Docente</th>
                     <th>Índice Mostarda</th>
-                    <th>Pontos APCN</th>
+                    <th>Pontos do modelo histórico</th>
                     <th>Índice Corrigido</th>
                     <th>Registros</th>
                     <th>1ª / última</th>
@@ -4580,7 +4588,7 @@
                   <tr>
                     <th>Ano</th>
                     <th>Índice Mostarda</th>
-                    <th>Pontos APCN</th>
+                    <th>Pontos do modelo histórico</th>
                     <th>Índice Corrigido</th>
                     <th>Registros</th>
                     <th>1ª / última</th>
@@ -4836,13 +4844,13 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Pontuação APCN</td>
+                    <td>Pontuação histórica</td>
                     <td>Artigos recebem pontuação conforme indexação do periódico; livros seguem regra fixa; capítulos entram pela base estruturada.</td>
                     <td>Mede massa crítica de produção intelectual com foco comparativo entre docentes e anos.</td>
                   </tr>
                   <tr>
                     <td>Liderança e impacto</td>
-                    <td>Aba combina posição autoral, pontuação APCN e evidências de JCR (SCimago | 2y cites per doc) para estimar liderança e qualidade.</td>
+                    <td>Aba combina posição autoral, pontuação APCN e evidências de JIF verificado (2025) para estimar liderança e qualidade.</td>
                     <td>Não substitui avaliação qualitativa, mas ajuda a localizar fragilidade autoral e força bibliométrica.</td>
                   </tr>
                   <tr>
@@ -4976,9 +4984,9 @@
                 <tbody>
                   <tr>
                     <td>Artigo</td>
-                    <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
+                    <td>Web of Science (cobertura a conferir por artigo)</td>
                     <td>90</td>
-                    <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
+                    <td>Artigo em periódico indexado no Web of Science (verificação independente de JIF)</td>
                   </tr>
                   <tr>
                     <td>Artigo</td>
@@ -5006,9 +5014,9 @@
                   </tr>
                   <tr>
                     <td>Artigo</td>
-                    <td>Sem indexação válida ou revista predatória</td>
+                    <td>Indexação não comprovada na base</td>
                     <td>0</td>
-                    <td>Artigo sem indexação válida ou em revista predatória</td>
+                    <td>Artigo com indexação pendente de verificação</td>
                   </tr>
                   <tr>
                     <td>Livro</td>
@@ -5034,7 +5042,7 @@
             <p>
               O <strong>Índice Mostarda</strong> foi incorporado ao painel para qualificar um aspecto
               decisivo na análise de viabilidade do doutorado: a <strong>capacidade de liderança
-              científica</strong> do corpo docente. Não basta apenas acumular produtos e pontos APCN.
+              científica</strong> do corpo docente. Não basta apenas acumular produtos e pontos históricos.
               Para sustentar a proposta de doutorado, também importa demonstrar que o grupo ocupa,
               com frequência, posições de protagonismo intelectual nas publicações.
             </p>
@@ -5061,7 +5069,7 @@
             <p>
               Para ampliar essa leitura, o painel também calcula a <strong>produção em pontos
               corrigida pelo Índice Mostarda</strong>. A fórmula aplicada é
-              <strong>Índice Mostarda corrigido = índice Mostarda decimal x pontos APCN</strong>.
+              <strong>Índice Mostarda corrigido = índice Mostarda decimal x pontos históricos</strong>.
               Na prática, esse indicador mostra onde há simultaneamente <strong>muito ponto
               acumulado</strong> e <strong>menor protagonismo autoral médio</strong>. Assim, ele ajuda
               a distinguir dois cenários: produção volumosa com liderança consistente, que fortalece
@@ -5078,17 +5086,17 @@
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="apcn-scoring-title">
       <div class="modal-head">
         <div class="section-head">
-          <h2 id="apcn-scoring-title">Critério de Pontuação APCN</h2>
-          <p>Para artigos, a pontuação APCN considera a indexação do periódico como evidência principal de qualidade e inserção.</p>
+          <h2 id="apcn-scoring-title">Critério de Pontuação histórica</h2>
+          <p>Modelo histórico preservado para comparação. A APCN 2026 avalia até cinco produtos por DP por critérios qualitativos; essa nota não é calculada aqui.</p>
         </div>
         <button type="button" class="modal-close" id="close-apcn-scoring-modal" aria-label="Fechar modal">×</button>
       </div>
       <p class="chart-note">
-        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (JCR (SCimago | 2y cites per doc))</strong> ou
+        A régua adotada neste painel segue a seguinte lógica: artigos indexados em <strong>Web of Science (cobertura a conferir por artigo)</strong> ou
         <strong>Scopus (SJR)</strong> recebem <strong>90 pontos</strong>; artigos indexados em <strong>PubMed</strong> ou
         <strong>SciELO</strong> recebem <strong>60 pontos</strong>; artigos localizados <strong>apenas via Google Scholar</strong>
-        recebem <strong>30 pontos</strong>; e artigos <strong>sem indexação válida ou vinculados a revista predatória</strong>
-        recebem <strong>0 ponto</strong>. Essa régua é a base usada para a leitura da produção intelectual no estudo de viabilidade da APCN.
+        recebem <strong>30 pontos</strong>; e artigos <strong>com indexação ainda não comprovada no cadastro</strong>
+        recebem <strong>0 ponto</strong>. Esta régua histórica não certifica o atendimento à APCN 2026. Zero representa falta de classificação nesse modelo, não qualidade nula.
       </p>
       <div class="table-wrap">
         <table class="criteria-table">
@@ -5101,9 +5109,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>Web of Science (JCR (SCimago | 2y cites per doc))</td>
+              <td>Web of Science (cobertura a conferir por artigo)</td>
               <td>90</td>
-              <td>Artigo em periódico indexado no Web of Science com JCR (SCimago | 2y cites per doc)</td>
+              <td>Artigo em periódico indexado no Web of Science (verificação independente de JIF)</td>
             </tr>
             <tr>
               <td>Scopus (SJR)</td>
@@ -5126,9 +5134,9 @@
               <td>Artigo localizado apenas via Google Scholar</td>
             </tr>
             <tr>
-              <td>Sem indexação ou revista predatória</td>
+              <td>Indexação não comprovada na base</td>
               <td>0</td>
-              <td>Artigo sem indexação válida ou em revista predatória</td>
+              <td>Artigo com indexação pendente de verificação</td>
             </tr>
           </tbody>
         </table>
@@ -5153,9 +5161,10 @@
     </div>
   </div>
 
-  <script src="./producao-cientifica-data.js?v=2026-10-28b"></script>
+  <script src="./cienciometria-core.js?v=2026-10-28-audit"></script>
+  <script src="./producao-cientifica-data.js?v=2026-10-28-audit"></script>
   <script src="./producao-tecnica-data.js?v=2026-10-28a"></script>
-  <script src="./orientacoes-data.js?v=2026-06-16a"></script>
+  <script src="./orientacoes-data.js?v=2026-10-28-rafael"></script>
   <script src="./disciplinas-data.js?v=2026-06-15a"></script>
   <script src="./captacao-recursos-data.js?v=2026-10-28b"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
@@ -5243,15 +5252,15 @@
       },
       {
         criterio: "Producao Intelectual",
-        exigencia: "75% dos docentes com >= 330 pontos",
-        explicacao: "Esse corte resume a expectativa de produtividade consistente do nucleo docente.",
-        detalhe: "O documento de 2021 arquivado no projeto cita 320 pontos; o painel simula 330 como margem interna. A regra do orientador 2026 ainda precisa de conferencia.",
+        exigencia: "90% dos DP com >= 55 pontos; 70% com >= 75",
+        explicacao: "Para 15 permanentes, os mínimos são 14 e 11 docentes, respectivamente, na avaliação qualitativa de até cinco produtos.",
+        detalhe: "O documento de 2021 arquivado no projeto cita 320 pontos; o painel simula 330 como margem interna. APCN 2026: 90% dos DP >= 55 pontos e 70% >= 75; avaliação qualitativa de até cinco produtos (pp. 20–21).",
       },
       {
         criterio: "Producao Qualificada",
-        exigencia: "75% dos docentes com >= 2 produtos JCR/SJR ou Categoria A",
+        exigencia: "Até cinco produtos por DP; janela 2021-2026",
         explicacao: "Nao basta volume: a proposta precisa evidenciar qualidade editorial e aderencia dos produtos.",
-        detalhe: "O painel de criterios usa dois artigos WoS/Scopus entre cinco produtos como proxy. A classificacao formal de cada produto e a regra do orientador 2026 ainda precisam de conferencia.",
+        detalhe: "Abrangência, complexidade, inovação, aplicabilidade e responsabilidade autoral integram a avaliação. Um produto pode ser indicado por no máximo dois DP; indexação não substitui essas justificativas.",
       },
       {
         criterio: "Formacao de Recursos Humanos",
@@ -5426,24 +5435,24 @@
       },
       {
         criterio: "Producao intelectual",
-        exigencia: "75% com >= 330 pontos",
-        evidencia: "75% dos docentes permanentes devem somar pelo menos 320 pontos.",
-        interpretacao: "O documento de 2021 arquivado no projeto indica 320; o PPGEF simula 330 como margem interna.",
-        detalhe: "A simulacao usa cinco produtos por docente de 2022-2026. O orientador da Area 21 publicado em 2026 deve ser conferido antes de usar este resultado como prova formal.",
-        fonte: "Documento Norteador APCN de 2021, p. 10",
+        exigencia: "APCN 2026: 90% >= 55 e 70% >= 75",
+        evidencia: "Doutorado vinculado a mestrado ativo: 90% dos DP com ao menos 55 pontos e 70% com ao menos 75 pontos.",
+        interpretacao: "Para 15 DP, os cortes correspondem a 14 e 11 docentes. A simulação antiga de 330 pontos não calcula o requisito vigente.",
+        detalhe: "Modelo histórico distinto da APCN 2026: mínimo de 90% dos DP com 55 pontos e 70% com 75, por avaliação qualitativa; janela 2021–2026.",
+        fonte: "Documento Orientador APCN 2026, pp. 20-21",
       },
       {
         criterio: "Producao qualificada",
-        exigencia: "75% com >= 2 produtos qualificados",
-        evidencia: "75% dos docentes permanentes devem ter pelo menos 2 produtos qualificados.",
+        exigencia: "Seleção qualitativa de até cinco produtos por DP",
+        evidencia: "Abrangência, complexidade, inovação, aplicabilidade e responsabilidade autoral devem fundamentar os produtos selecionados.",
         interpretacao: "O PPGEF deve mapear quais produtos realmente sustentam essa exigencia por docente.",
         detalhe: "Na simulacao de 2026, dois artigos WoS/Scopus entre os cinco selecionados funcionam como proxy. A prova final depende da classificacao formal e da regra vigente da Area 21.",
-        fonte: "Documento Norteador APCN de 2021, p. 10",
+        fonte: "Documento Orientador APCN 2026, pp. 20-21",
       },
       {
         criterio: "Orientacoes concluidas",
         exigencia: "Experiencia previa em orientacao",
-        evidencia: "75% dos docentes permanentes devem ter experiencia na orientacao de mestrandos.",
+        evidencia: "Todos com orientação de graduação ou superior; nove docentes com mestrado ou superior e três com doutorado concluído.",
         interpretacao: "O programa precisa mostrar experiencia difusa no quadro, nao concentrada em poucos nomes.",
         detalhe: "Por isso o checklist separa orientacoes concluidas, mestrado e doutorado. O risco recorrente e ter experiencia real, mas registros incompletos ou mal classificados na base consolidada.",
         fonte: "Documento Norteador APCN, p. 9",
@@ -7659,56 +7668,9 @@
       };
     }
 
-    function authorMatchesDocente(authorName, docente) {
-      const rawAuthorName = String(authorName || "");
-      const authorNormalized = normalizePersonText(rawAuthorName);
-      if (!authorNormalized) return false;
-      const docenteProfile = buildDocenteNameProfile(docente);
-      if (!docenteProfile.full) return false;
-      if (authorNormalized.includes(docenteProfile.full)) return true;
+    function authorMatchesDocente(authorName, docente) { return Cienciometria.authorMatches(authorName, docente); }
 
-      const [surnamePartRaw, ...remainingPartsRaw] = rawAuthorName.split(",");
-      const surnamePart = normalizePersonText(surnamePartRaw || "");
-      const remainingText = normalizePersonText(remainingPartsRaw.join(" "));
-      const surnameMatches = surnamePart
-        ? (
-          surnamePart === docenteProfile.surname ||
-          surnamePart === docenteProfile.primarySurname ||
-          surnamePart === docenteProfile.shortSurname ||
-          surnamePart.startsWith(`${docenteProfile.primarySurname} `) ||
-          surnamePart.endsWith(` ${docenteProfile.shortSurname}`) ||
-          docenteProfile.surname.endsWith(` ${surnamePart}`) ||
-          docenteProfile.surname.startsWith(`${surnamePart} `)
-        )
-        : authorNormalized.includes(docenteProfile.shortSurname);
-      if (!surnameMatches) return false;
-
-      if (!remainingText) return true;
-      const authorInitials = remainingText
-        .split(/[^A-Z0-9]+/)
-        .filter(Boolean)
-        .map((token) => token[0])
-        .join("");
-      return (
-        !docenteProfile.initials ||
-        !authorInitials ||
-        docenteProfile.initials.startsWith(authorInitials) ||
-        authorInitials.startsWith(docenteProfile.initials) ||
-        docenteProfile.givenTokens.some((token) => remainingText.includes(token))
-      );
-    }
-
-    function inferScientificAuthors(item) {
-      const explicitAuthors = String(item.autores || "").trim();
-      if (explicitAuthors.includes(";")) {
-        return explicitAuthors.split(";").map((author) => author.trim()).filter(Boolean);
-      }
-      const titleCandidate = String(item.titulo || "").trim();
-      if (titleCandidate.includes(";") && !/[a-z]/.test(titleCandidate.replace(/[A-ZÀ-Ý]/g, ""))) {
-        return titleCandidate.split(";").map((author) => author.trim()).filter(Boolean);
-      }
-      return [];
-    }
+    function inferScientificAuthors(item) { return Cienciometria.authors(item); }
 
     function normalizeSeedText(value) {
       return normalizeText(value)
@@ -7735,22 +7697,7 @@
       return candidates.find((part) => !isLowSignalProductText(part)) || "";
     }
 
-    function getLeadershipProductKey(item) {
-      const titleKey = normalizeSeedText(item.titulo).replace(/\s+/g, " ").trim();
-      const referenceTitleKey = extractReferenceProductTitle(item.produto_referencia);
-      const referenceKey = normalizeSeedText(item.produto_referencia).replace(/\s+/g, " ").trim();
-      const venueKey = normalizeSeedText(item.revista_ou_veiculo).replace(/\s+/g, " ").trim();
-      const yearKey = normalizeSeedText(item.ano);
-      const typeKey = normalizeSeedText(item.tipo_producao);
-      const doiKey = normalizeSeedText(item.doi);
-      const primaryDescriptor = !isLowSignalProductText(titleKey)
-        ? titleKey
-        : referenceTitleKey || doiKey || referenceKey;
-      const baseKey = [primaryDescriptor, yearKey, typeKey].filter(Boolean).join("|");
-      if (baseKey) return baseKey;
-      const fallbackKey = [doiKey, referenceTitleKey, referenceKey, venueKey, yearKey, typeKey].filter(Boolean).join("|");
-      return fallbackKey || `ROW|${item.id || item.source_row || ""}`;
-    }
+    function getLeadershipProductKey(item) { return Cienciometria.productKey(item); }
 
     function getCoauthorNames(item) {
       const authors = inferScientificAuthors(item);
@@ -7759,44 +7706,19 @@
 
     function buildLeadershipProductGroups(data) {
       const grouped = new Map();
-      data.forEach((item) => {
-        const key = getLeadershipProductKey(item);
-        if (!grouped.has(key)) {
-          grouped.set(key, {
-            key,
-            ano: item.ano || "Sem ano",
-            items: [],
-            docentes: new Set(),
-            numeroAutores: Number(item.numero_autores) || 1,
-          });
-        }
-        const group = grouped.get(key);
-        group.items.push(item);
-        group.docentes.add(item.docente);
-        group.numeroAutores = Math.max(group.numeroAutores, Number(item.numero_autores) || 1);
+      data.forEach(item => {
+        const key=getLeadershipProductKey(item), count=Cienciometria.position(item).count;
+        if (!grouped.has(key)) grouped.set(key,{key,ano:item.ano || "Sem ano",items:[],docentes:new Set(),numeroAutores:null});
+        const group=grouped.get(key); group.items.push(item);
+        (item.docentes_internos || [item.docente]).forEach(n=>group.docentes.add(n));
+        if (count!==null) group.numeroAutores=Math.max(group.numeroAutores || 0,count);
       });
       return grouped;
     }
 
     function getMostardScore(item) {
-      const authors = inferScientificAuthors(item);
-      const matchedIndex = authors.findIndex((author) => authorMatchesDocente(author, item.docente));
-      if (matchedIndex >= 0) {
-        const lastIndex = authors.length - 1;
-        if (matchedIndex === 0 || matchedIndex === lastIndex) {
-          return { score: 1, label: "1ª ou última autoria", source: "lista_autores" };
-        }
-        if (matchedIndex === 1 || matchedIndex === lastIndex - 1) {
-          return { score: 0.5, label: "2ª ou penúltima autoria", source: "lista_autores" };
-        }
-        return { score: 0.1, label: "Demais posições", source: "lista_autores" };
-      }
-
-      if (authorMatchesDocente(item.autor_principal, item.docente)) {
-        return { score: 1, label: "1ª autoria", source: "autor_principal" };
-      }
-
-      return { score: 0.1, label: "Demais posições", source: "fallback_autor_principal" };
+      const p = Cienciometria.position(item);
+      return {score:p.score, label:p.score===1?"1ª ou última autoria":p.score===0.5?"2ª ou penúltima autoria":p.score===0.1?"Demais posições":"Posição não resolvida", source:p.score===null?"pendente":"lista_autores"};
     }
 
     function formatDecimal(value) {
@@ -8249,6 +8171,8 @@
           grouped.set(item.docente, {
             docente: item.docente,
             total: 0,
+            avaliados: 0,
+            pendentes: 0,
             pontosMostard: 0,
             pontosApcn: 0,
             primeiraUltima: 0,
@@ -8259,8 +8183,10 @@
         const row = grouped.get(item.docente);
         const score = getMostardScore(item);
         row.total += 1;
-        row.pontosMostard += score.score;
         row.pontosApcn += Number(item.pontuacao) || 0;
+        if (score.score === null) { row.pendentes += 1; continue; }
+        row.avaliados += 1;
+        row.pontosMostard += score.score;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -8272,10 +8198,10 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
-          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
-          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
+          liderancaMedia: item.avaliados ? item.pontosMostard / item.avaliados : 0,
+          liderancaPercentual: item.avaliados ? (item.pontosMostard / item.avaliados) * 100 : 0,
+          indiceMostarda: item.avaliados ? (1 - (item.pontosMostard / item.avaliados)) * 100 : null,
+          indiceMostardaCorrigido: item.avaliados ? (1 - (item.pontosMostard / item.avaliados)) * item.pontosApcn : null,
         }))
         .sort((a, b) =>
           b.indiceMostarda - a.indiceMostarda ||
@@ -8294,6 +8220,8 @@
           grouped.set(year, {
             ano: year,
             total: 0,
+            avaliados: 0,
+            pendentes: 0,
             pontosMostard: 0,
             pontosApcn: 0,
             primeiraUltima: 0,
@@ -8304,8 +8232,10 @@
         const row = grouped.get(year);
         const score = getMostardScore(item);
         row.total += 1;
-        row.pontosMostard += score.score;
         row.pontosApcn += Number(item.pontuacao) || 0;
+        if (score.score === null) { row.pendentes += 1; continue; }
+        row.avaliados += 1;
+        row.pontosMostard += score.score;
         if (score.score === 1) {
           row.primeiraUltima += 1;
         } else if (score.score === 0.5) {
@@ -8317,10 +8247,10 @@
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          liderancaMedia: item.total ? item.pontosMostard / item.total : 0,
-          liderancaPercentual: item.total ? (item.pontosMostard / item.total) * 100 : 0,
-          indiceMostarda: item.total ? (1 - (item.pontosMostard / item.total)) * 100 : 0,
-          indiceMostardaCorrigido: item.total ? (1 - (item.pontosMostard / item.total)) * item.pontosApcn : 0,
+          liderancaMedia: item.avaliados ? item.pontosMostard / item.avaliados : 0,
+          liderancaPercentual: item.avaliados ? (item.pontosMostard / item.avaliados) * 100 : 0,
+          indiceMostarda: item.avaliados ? (1 - (item.pontosMostard / item.avaliados)) * 100 : null,
+          indiceMostardaCorrigido: item.avaliados ? (1 - (item.pontosMostard / item.avaliados)) * item.pontosApcn : null,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -8347,7 +8277,7 @@
         }
         const score = getMostardScore(item);
         if (score.source === "autor_principal") summary.firstByAutorPrincipal += 1;
-        if (score.source === "fallback_autor_principal") summary.fallbackDemais += 1;
+        if (score.source === "pendente") summary.fallbackDemais += 1;
         if (score.label === "2ª ou penúltima autoria") summary.secondOrPenultimate += 1;
         if (score.label === "1ª ou última autoria") summary.explicitLastOrFirst += 1;
       });
@@ -8357,41 +8287,43 @@
     function renderLeadershipMetrics(data, docenteSummary, yearSummary) {
       const pontosMostard = data.reduce((acc, item) => acc + getMostardScore(item).score, 0);
       const pontosApcn = data.reduce((acc, item) => acc + (Number(item.pontuacao) || 0), 0);
-      const liderancaMedia = data.length ? pontosMostard / data.length : 0;
+      const avaliados = data.filter(item=>getMostardScore(item).score!==null).length;
+      const liderancaMedia = avaliados ? pontosMostard / avaliados : 0;
       const indiceGeral = (1 - liderancaMedia) * 100;
       const indiceGeralCorrigido = (indiceGeral / 100) * pontosApcn;
       const visibleDocentes = docenteSummary.length;
-      const worstDocente = docenteSummary[0];
-      const bestDocente = [...docenteSummary].sort((a, b) => a.indiceMostarda - b.indiceMostarda || b.pontosApcn - a.pontosApcn)[0];
-      const worstYear = [...yearSummary].sort((a, b) => b.indiceMostarda - a.indiceMostarda || b.total - a.total)[0];
+      const worstDocente = docenteSummary.find(item=>item.avaliados>0);
+      const bestDocente = docenteSummary.filter(item=>item.avaliados>0).sort((a, b) => a.indiceMostarda - b.indiceMostarda || b.pontosApcn - a.pontosApcn)[0];
+      const worstYear = yearSummary.filter(item=>item.avaliados>0).sort((a, b) => b.indiceMostarda - a.indiceMostarda || b.total - a.total)[0];
       const evidence = summarizeMostardEvidence(data);
 
       document.getElementById("lideranca-total-registros").textContent = String(data.length);
       document.getElementById("lideranca-pontos-apcn").textContent = formatDecimal(pontosApcn);
       document.getElementById("lideranca-docentes-visiveis").textContent = String(visibleDocentes);
-      document.getElementById("lideranca-indice-geral").textContent = formatPercent(indiceGeral);
+      document.getElementById("lideranca-indice-geral").textContent = avaliados ? formatPercent(indiceGeral) : "Pendente";
 
       liderancaInsightChips.innerHTML = [
         worstDocente ? `<span class="chip">Maior índice Mostarda: <strong>${worstDocente.docente}</strong> (${formatPercent(worstDocente.indiceMostarda)})</span>` : "",
         bestDocente ? `<span class="chip">Menor índice Mostarda: <strong>${bestDocente.docente}</strong> (${formatPercent(bestDocente.indiceMostarda)})</span>` : "",
         worstYear ? `<span class="chip">Ano mais crítico: <strong>${worstYear.ano}</strong> (${formatPercent(worstYear.indiceMostarda)})</span>` : "",
         `<span class="chip">Índice do recorte corrigido por pontos: <strong>${formatDecimal(indiceGeralCorrigido)}</strong></span>`,
-        `<span class="chip">Registros com sequência explícita de autores: <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
+        `<span class="chip">Registros com lista de autores (inclusive parcial): <strong>${evidence.parsedRecords}</strong> de ${data.length}</span>`,
         `<span class="chip">Com docente identificado nessa sequência: <strong>${evidence.parsedRecordsMatchingDocente}</strong></span>`,
       ].join("");
 
       liderancaMetodologiaChips.innerHTML = [
         `<span class="chip">Régua-alvo: 1,0 para primeira/última; 0,5 para segunda/penúltima; 0,1 para demais</span>`,
         `<span class="chip">Índice Mostarda exibido = <strong>1 - média de liderança</strong>; logo, valores maiores indicam menor liderança</span>`,
-        `<span class="chip">Índice corrigido = <strong>Índice Mostarda decimal x pontos APCN</strong> do docente ou do ano</span>`,
+        `<span class="chip">Índice corrigido = <strong>Índice Mostarda decimal x pontos históricos</strong> do docente ou do ano</span>`,
         `<span class="chip">Base atual com nomes em sequência: <strong>${evidence.parsedAuthorNames}</strong> nomes distribuídos em <strong>${evidence.parsedRecords}</strong> registros</span>`,
-        `<span class="chip">Registros operando como 1,0 por <strong>autor_principal</strong>: <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
-        `<span class="chip">Registros operando como 0,1 por falta de sequência autoral: <strong>${evidence.fallbackDemais}</strong></span>`,
+        `<span class="chip">Inferências apenas por autor principal (não utilizadas): <strong>${evidence.firstByAutorPrincipal}</strong></span>`,
+        `<span class="chip">Posições não resolvidas, excluídas do denominador: <strong>${evidence.fallbackDemais}</strong></span>`,
         `<span class="chip">Ocorrências reais de 0,5 na base atual: <strong>${evidence.secondOrPenultimate}</strong></span>`,
       ].join("");
     }
 
     function renderLeadershipDocenteChart(summary) {
+      summary = summary.filter(item=>item.avaliados>0);
       const items = summary.slice(0, 18);
       if (!items.length) {
         chartLiderancaDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
@@ -8440,7 +8372,7 @@
       const chartWidth = 720;
       const usableWidth = chartWidth - labelWidth - 70;
       chartLiderancaCorrigido.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda corrigido por pontos APCN">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="Índice Mostarda corrigido por pontos históricos">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
             const width = Math.max(8, (item.indiceMostardaCorrigido / maxMetric) * usableWidth);
@@ -8529,7 +8461,7 @@
       const amberPolygon = buildBandPolygon(p30Score, p55Score);
       const greenPolygon = buildBoundaryArea(p55Score, "bottom");
       chartLiderancaDispersao.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos APCN por docente">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Dispersão entre índice Mostarda e pontos históricos por docente">
           <rect x="${left}" y="${top}" width="${innerWidth}" height="${innerHeight}" rx="18" fill="#fbf7f1" stroke="#d7cdbc" stroke-width="1.5"></rect>
           <polygon points="${redPolygon}" fill="#b2344a" fill-opacity="0.12"></polygon>
           <polygon points="${amberPolygon}" fill="#e2b02b" fill-opacity="0.13"></polygon>
@@ -8562,7 +8494,7 @@
               <text x="${x + 8}" y="${y - 8}" fill="#262930" font-size="10.5">${item.docente}</text>
             `;
           }).join("")}
-          <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos APCN</text>
+          <text x="${width / 2}" y="${height - 18}" text-anchor="middle" fill="#262930" font-size="12">Pontos do modelo histórico</text>
           <text x="18" y="${height / 2}" transform="rotate(-90 18 ${height / 2})" text-anchor="middle" fill="#262930" font-size="12">Índice Mostarda</text>
         </svg>
         <div class="chart-note" style="margin-top: 12px; line-height: 1.5;">
@@ -8574,6 +8506,7 @@
     }
 
     function renderLeadershipYearChart(summary) {
+      summary = summary.filter(item=>item.avaliados>0);
       if (!summary.length) {
         chartLiderancaAnos.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
@@ -8606,7 +8539,7 @@
       liderancaDocentesBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.docente}</td>
-          <td>${formatPercent(item.indiceMostarda)}</td>
+          <td>${item.avaliados ? formatPercent(item.indiceMostarda) : "Pendente"}</td>
           <td>${formatDecimal(item.pontosApcn)}</td>
           <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
@@ -8621,7 +8554,7 @@
       liderancaAnosBody.innerHTML = summary.map((item) => `
         <tr>
           <td>${item.ano}</td>
-          <td>${formatPercent(item.indiceMostarda)}</td>
+          <td>${item.avaliados ? formatPercent(item.indiceMostarda) : "Pendente"}</td>
           <td>${formatDecimal(item.pontosApcn)}</td>
           <td>${formatDecimal(item.indiceMostardaCorrigido)}</td>
           <td>${item.total}</td>
@@ -8633,13 +8566,8 @@
     }
 
     function getLeadershipAuthorshipPosition(item) {
-      const numeroAutores = Number(item.numero_autores);
-      const posicaoDocente = Number(item.posicao_docente);
-      if (!Number.isFinite(numeroAutores) || !Number.isFinite(posicaoDocente)) return null;
-      if (numeroAutores < 1 || posicaoDocente < 1 || posicaoDocente > numeroAutores) return null;
-      if (posicaoDocente === 1 || posicaoDocente === numeroAutores) return "lideranca";
-      if (posicaoDocente === 2 || posicaoDocente === numeroAutores - 1) return "destaque";
-      return "menor";
+      const score = getMostardScore(item).score;
+      return score===1?"lideranca":score===0.5?"destaque":score===0.1?"menor":null;
     }
 
     function aggregateLeadershipAuthorshipProfile(data) {
@@ -8663,7 +8591,7 @@
         row.total += 1;
         row[position] += 1;
         row.pontosApcn += Number(item.pontuacao) || 0;
-        const jcr = Number(item.jif_jcr_2025) || 0;
+        const jcr = Number(item.jif_jcr_verificado) || 0;
         if (jcr > 0) {
           row.jcrSum += jcr;
           row.jcrCount += 1;
@@ -8709,7 +8637,7 @@
     }
 
     function getLeadershipAuthorshipBubbleLabel(mode = liderancaPerfilSizeMode) {
-      if (mode === "pontos") return "Pontos APCN";
+      if (mode === "pontos") return "Pontos do modelo histórico";
       if (mode === "jcr") return "JCR médio";
       return "Número de produtos";
     }
@@ -8822,7 +8750,7 @@
             const anchor = dx < 0 ? "end" : "start";
             return `
               <g>
-                <title>${item.docente} | Obras válidas: ${item.total} | Pontos APCN: ${formatDecimal(item.pontosApcn)} | JCR médio: ${formatDecimal(item.jcrAvg)} | Liderança: ${formatPercent(item.liderancaPct * 100)} | Destaque: ${formatPercent(item.destaquePct * 100)} | Menor relevância: ${formatPercent(item.menorPct * 100)}</title>
+                <title>${item.docente} | Obras válidas: ${item.total} | Pontos do modelo histórico: ${formatDecimal(item.pontosApcn)} | JCR médio: ${formatDecimal(item.jcrAvg)} | Liderança: ${formatPercent(item.liderancaPct * 100)} | Destaque: ${formatPercent(item.destaquePct * 100)} | Menor relevância: ${formatPercent(item.menorPct * 100)}</title>
                 <circle cx="${item.x.toFixed(1)}" cy="${item.y.toFixed(1)}" r="${item.radius.toFixed(1)}" fill="#8c1538" fill-opacity="0.88" stroke="#fffaf3" stroke-width="1.7"></circle>
                 <text x="${(item.x + dx).toFixed(1)}" y="${(item.y + dy).toFixed(1)}" text-anchor="${anchor}" fill="#262930" font-size="10.8">${abbreviateDocenteName(item.docente)}</text>
               </g>
@@ -8852,7 +8780,7 @@
       liderancaPerfilCaption.textContent = liderancaPerfilSizeMode === "produtos"
         ? "Modo padrão recomendado: o tamanho da bolha representa o número de obras válidas de cada docente."
         : liderancaPerfilSizeMode === "pontos"
-          ? "Modo analítico: o tamanho da bolha representa o total de pontos APCN do docente no recorte."
+          ? "Modo analítico: o tamanho da bolha representa o total de pontos históricos do docente no recorte."
           : "Modo exploratório: o tamanho da bolha representa o JCR médio do docente, podendo inflar casos com poucos produtos qualificados.";
     }
 
@@ -8931,7 +8859,7 @@
           });
         }
         const row = grouped.get(item.docente);
-        const jcr = Number(item.jif_jcr_2025) || 0;
+        const jcr = Number(item.jif_jcr_verificado) || 0;
         if (jcr > 0) {
           row.jcrSum += jcr;
           row.jcrCount += 1;
@@ -8957,7 +8885,7 @@
 
     function aggregateLeadershipQualityTotals(data) {
       return data.reduce((acc, item) => {
-        const jcr = Number(item.jif_jcr_2025) || 0;
+        const jcr = Number(item.jif_jcr_verificado) || 0;
         if (jcr > 0) {
           acc.jcrSum += jcr;
           acc.jcrCount += 1;
@@ -8987,20 +8915,20 @@
 
       document.getElementById("lideranca-qualidade-produtos-jcr").textContent = String(totals.jcrCount);
       document.getElementById("lideranca-qualidade-jcr-soma").textContent = formatDecimal(totals.jcrSum);
-      document.getElementById("lideranca-qualidade-jcr-media").textContent = formatDecimal(totals.jcrCount ? totals.jcrSum / totals.jcrCount : 0);
+      document.getElementById("lideranca-qualidade-jcr-media").textContent = totals.jcrCount ? formatDecimal(totals.jcrSum / totals.jcrCount) : "Pendente";
       document.getElementById("lideranca-qualidade-docentes-jcr").textContent = String(docentesComJcr.length);
 
       liderancaQualidadeInsights.innerHTML = [
-        topJcr ? `<span class="chip">Maior soma de JCR (SCimago | 2y cites per doc): <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
-        bestAvg ? `<span class="chip">Maior média JCR (SCimago | 2y cites per doc): <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
+        topJcr ? `<span class="chip">Maior soma de JIF verificado (2025): <strong>${topJcr.docente}</strong> (${formatDecimal(topJcr.jcrSum)})</span>` : "",
+        bestAvg ? `<span class="chip">Maior média JIF verificado (2025): <strong>${bestAvg.docente}</strong> (${formatDecimal(bestAvg.jcrAvg)})</span>` : "",
         `<span class="chip">Artigos em periódicos de 90 pontos: <strong>${totals.artigos90}</strong></span>`,
         `<span class="chip">Artigos sem pontuação APCN de periódico: <strong>${totals.artigos0}</strong></span>`,
       ].filter(Boolean).join("");
 
       liderancaQualidadeMetodologia.innerHTML = [
-        `<span class="chip">Somatório JCR (SCimago | 2y cites per doc): soma simples dos valores em <strong>jif_jcr_2025</strong> no recorte</span>`,
-        `<span class="chip">Média JCR (SCimago | 2y cites per doc): somatório dividido apenas pelos produtos com JCR informado</span>`,
-        `<span class="chip">Faixas APCN: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "60", "30", "0"].join(" / ")})</span>`,
+        `<span class="chip">Somatório JIF verificado (2025): soma simples dos valores em <strong>JIF com fonte e edição verificadas</strong> no recorte</span>`,
+        `<span class="chip">Média JIF verificado (2025): somatório dividido apenas pelos produtos com JCR informado</span>`,
+        `<span class="chip">Faixas do modelo histórico: agrupamento dos <strong>artigos</strong> por pontuação do periódico (${["90", "60", "30", "0"].join(" / ")})</span>`,
       ].join("");
     }
 
@@ -9031,7 +8959,7 @@
         )
         .slice(0, 16);
       if (!items.length) {
-        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JCR (SCimago | 2y cites per doc) para o gráfico.</p>`;
+        chartLiderancaQualidadeJcr.innerHTML = `<p class="chart-note">Sem dados de JIF verificado (2025) para o gráfico.</p>`;
         return;
       }
       const maxValue = Math.max(...items.map((item) => item[valueKey]), 1);
@@ -9041,7 +8969,7 @@
       const chartWidth = 760;
       const usableWidth = chartWidth - labelWidth - 84;
       chartLiderancaQualidadeJcr.innerHTML = `
-        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JCR (SCimago | 2y cites per doc) por docente" : "Somatório de JCR (SCimago | 2y cites per doc) por docente"}">
+        <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="${liderancaQualidadeJcrMode === "media" ? "Média de JIF verificado (2025) por docente" : "Soma descritiva de JIF (2025) por docente"}">
           ${items.map((item, index) => {
             const y = 24 + index * rowHeight;
             const primaryValue = item[valueKey];
@@ -9078,7 +9006,7 @@
       const barWidth = 116;
       const gap = 42;
       chartLiderancaQualidadeApcn.innerHTML = `
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Faixas APCN dos periódicos">
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Faixas do modelo histórico dos periódicos">
           <line x1="${left}" y1="${baseY}" x2="${width - 24}" y2="${baseY}" stroke="#cfc4b3" stroke-width="2"></line>
           ${items.map((item, index) => {
             const x = left + 24 + index * (barWidth + gap);
@@ -9111,51 +9039,15 @@
 
     function aggregateLeadershipPartnershipByDocente(data, productGroups) {
       const grouped = new Map();
-      data.forEach((item) => {
-        if (!grouped.has(item.docente)) {
-          grouped.set(item.docente, {
-            docente: item.docente,
-            totalProdutos: 0,
-            parceirosOcorrencias: 0,
-            parceirosDistintosMap: new Map(),
-            produtosInternos: 0,
-            docentesInternosSet: new Set(),
-            forcaInterna: 0,
-          });
-        }
-        const row = grouped.get(item.docente);
-        const key = getLeadershipProductKey(item);
-        const group = productGroups.get(key);
-        row.totalProdutos += 1;
-        row.parceirosOcorrencias += Math.max((Number(item.numero_autores) || 1) - 1, 0);
-        getCoauthorNames(item).forEach((author) => {
-          const normalized = normalizePersonText(author);
-          if (normalized) row.parceirosDistintosMap.set(normalized, author);
-        });
-        const internalDocentes = [...(group?.docentes || [])].filter((docente) => docente !== item.docente);
-        if (internalDocentes.length) {
-          row.produtosInternos += 1;
-          internalDocentes.forEach((docente) => row.docentesInternosSet.add(docente));
-          row.forcaInterna += internalDocentes.length;
-        }
-      });
-      return [...grouped.values()]
-        .map((item) => ({
-          docente: item.docente,
-          totalProdutos: item.totalProdutos,
-          parceirosOcorrencias: item.parceirosOcorrencias,
-          parceirosDistintos: item.parceirosDistintosMap.size,
-          parceirosMedios: item.totalProdutos ? item.parceirosOcorrencias / item.totalProdutos : 0,
-          produtosInternos: item.produtosInternos,
-          docentesInternos: item.docentesInternosSet.size,
-          forcaInterna: item.forcaInterna,
-        }))
-        .sort((a, b) =>
-          b.parceirosOcorrencias - a.parceirosOcorrencias ||
-          b.docentesInternos - a.docentesInternos ||
-          b.parceirosDistintos - a.parceirosDistintos ||
-          a.docente.localeCompare(b.docente, "pt-BR")
-        );
+      productGroups.forEach(group => group.docentes.forEach(docente => {
+        if (!grouped.has(docente)) grouped.set(docente,{docente,totalProdutos:0,parceirosOcorrencias:0,produtosComListaCompleta:0,parceirosDistintosMap:new Map(),produtosInternos:0,docentesInternosSet:new Set(),forcaInterna:0});
+        const row=grouped.get(docente); row.totalProdutos++;
+        if (group.numeroAutores!==null) {row.parceirosOcorrencias+=Math.max(group.numeroAutores-1,0); row.produtosComListaCompleta++;}
+        group.items.forEach(item=>inferScientificAuthors(item).filter(a=>!authorMatchesDocente(a,docente)).forEach(a=>row.parceirosDistintosMap.set(normalizePersonText(a),a)));
+        const internal=[...group.docentes].filter(n=>n!==docente);
+        if(internal.length){row.produtosInternos++;internal.forEach(n=>row.docentesInternosSet.add(n));row.forcaInterna+=internal.length;}
+      }));
+      return [...grouped.values()].map(row=>({docente:row.docente,totalProdutos:row.totalProdutos,parceirosOcorrencias:row.parceirosOcorrencias,produtosComListaCompleta:row.produtosComListaCompleta,parceirosDistintos:row.parceirosDistintosMap.size,parceirosMedios:row.produtosComListaCompleta?row.parceirosOcorrencias/row.produtosComListaCompleta:null,produtosInternos:row.produtosInternos,docentesInternos:row.docentesInternosSet.size,forcaInterna:row.forcaInterna})).sort((a,b)=>b.forcaInterna-a.forcaInterna || a.docente.localeCompare(b.docente,"pt-BR"));
     }
 
     function aggregateLeadershipPartnershipTotals(summary, productGroups, data) {
@@ -9168,7 +9060,8 @@
       });
       const groups = [...productGroups.values()];
       const totalProdutos = groups.length;
-      const totalParceiros = groups.reduce((acc, group) => acc + Math.max((group.numeroAutores || 1) - 1, 0), 0);
+      const completeGroups = groups.filter(g=>g.numeroAutores!==null);
+      const totalParceiros = completeGroups.reduce((acc, group) => acc + Math.max((group.numeroAutores || 1) - 1, 0), 0);
       const produtosInternos = groups.filter((group) => group.docentes.size > 1).length;
       const docentesIntegrados = summary.filter((item) => item.docentesInternos > 0).length;
       return {
@@ -9177,7 +9070,8 @@
         totalParceiros,
         produtosInternos,
         docentesIntegrados,
-        mediaParceiros: totalProdutos ? totalParceiros / totalProdutos : 0,
+        mediaParceiros: completeGroups.length ? totalParceiros / completeGroups.length : null,
+        produtosComListaCompleta: completeGroups.length,
       };
     }
 
@@ -9190,18 +9084,19 @@
             ano: year,
             totalProdutos: 0,
             parceirosTotal: 0,
+            produtosComListaCompleta: 0,
             produtosInternos: 0,
           });
         }
         const row = grouped.get(year);
         row.totalProdutos += 1;
-        row.parceirosTotal += Math.max((group.numeroAutores || 1) - 1, 0);
+        if (group.numeroAutores!==null) { row.parceirosTotal += Math.max(group.numeroAutores-1,0); row.produtosComListaCompleta++; }
         if (group.docentes.size > 1) row.produtosInternos += 1;
       });
       return [...grouped.values()]
         .map((item) => ({
           ...item,
-          parceirosMedios: item.totalProdutos ? Number(item.parceirosTotal || 0) / Number(item.totalProdutos || 1) : 0,
+          parceirosMedios: item.produtosComListaCompleta ? item.parceirosTotal / item.produtosComListaCompleta : null,
         }))
         .sort((a, b) => Number(a.ano) - Number(b.ano));
     }
@@ -9293,13 +9188,13 @@
         topPartners ? `<span class="chip">Maior volume relacional: <strong>${topPartners.docente}</strong> (${topPartners.parceirosOcorrencias} parceiros acumulados)</span>` : "",
         mostIntegrated ? `<span class="chip">Maior integração interna: <strong>${mostIntegrated.docente}</strong> (${mostIntegrated.docentesInternos} docentes conectados)</span>` : "",
         topYear ? `<span class="chip">Ano mais cooperativo: <strong>${topYear.ano}</strong> (média ${formatDecimal(topYear.parceirosMedios)} parceiros)</span>` : "",
-        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados na chave título + ano + tipo)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado na base atual.</span>`,
+        topEdge ? `<span class="chip">Vínculo interno mais forte: <strong>${topEdge.source}</strong> × <strong>${topEdge.target}</strong> (${topEdge.weight} produtos compartilhados pela identidade bibliográfica conciliada)</span>` : `<span class="chip">Nenhum vínculo interno entre docentes foi identificado na base atual.</span>`,
       ].filter(Boolean).join("");
 
       liderancaParceriaMetodologia.innerHTML = [
-        `<span class="chip">Parceiros por produto = <strong>numero_autores - 1</strong>, usando os campos estruturados do novo modelo</span>`,
-        `<span class="chip">Parceiros distintos usam os nomes explícitos do campo <strong>autores</strong> quando a lista está disponível</span>`,
-        `<span class="chip">Produtos internos são consolidados principalmente por <strong>título</strong>, com apoio de <strong>ano</strong> e <strong>tipo</strong></span>`,
+        `<span class="chip">Parceiros por produto = <strong>numero_autores - 1</strong>, apenas em listas completas; listas truncadas ficam fora da média</span>`,
+        `<span class="chip">Grafias distintas (não pessoas únicas) usam os nomes explícitos do campo <strong>autores</strong> quando a lista está disponível</span>`,
+        `<span class="chip">Produtos internos são consolidados por <strong>DOI conferido</strong> ou <strong>título/ano/tipo</strong>; a lista de autores também identifica docentes internos</span>`,
         `<span class="chip">Força do vínculo na rede = quantidade de produtos compartilhados entre o mesmo par de docentes</span>`,
       ].join("");
     }
@@ -9560,7 +9455,7 @@
             <td>${typeLabels[item.tipo_producao] || item.tipo_producao || ""}</td>
             <td><span class="lideranca-authors-text">${item.autores || item.autor_principal || ""}</span></td>
             <td>${score.label}</td>
-            <td>${formatDecimal(score.score)}</td>
+            <td>${score.score === null ? "Pendente" : formatDecimal(score.score)}</td>
             <td>${item.titulo || ""}</td>
           </tr>
         `;
@@ -9584,6 +9479,9 @@
     }
 
     function applyLeadershipFilters() {
+      const aud = Cienciometria.indexing(getFilteredScientificData());
+      document.getElementById("auditoria-indexacao").innerHTML = `<span class="chip">Artigos distintos no filtro: <strong>${aud.articles}</strong></span><span class="chip">Periódico WoS corroborado: <strong>${aud.wos}</strong></span><span class="chip">Periódico Scopus corroborado: <strong>${aud.scopus}</strong></span><span class="chip">Scopus apenas informado no cadastro: <strong>${aud.scopusDeclared}</strong></span><span class="chip">WoS por conferir: <strong>${aud.wosPending}</strong></span>`;
+
       const filtered = getFilteredScientificData();
       const docenteSummary = aggregateMostardByDocente(filtered);
       const yearSummary = aggregateMostardByYear(filtered);
@@ -9821,7 +9719,7 @@
       const grouped = new Map(permanentNames.map((docente) => [docente, []]));
       for (const item of data) {
         const year = Number(item.ano);
-        if (!grouped.has(item.docente) || year < 2022 || year > 2026) continue;
+        if (!grouped.has(item.docente) || year < 2021 || year > 2026) continue;
         if (!["artigo", "livro", "capitulo"].includes(item.tipo_producao)) continue;
         grouped.get(item.docente).push(item);
       }
@@ -9970,8 +9868,8 @@
 
     function aggregateOrientationCriticalCriteria(data) {
       const totalDocentes = data.length;
-      const graduacaoAtendidos = data.filter((item) => ((item.tcc_concluidas || 0) + (item.ic_concluidas || 0)) > 0).length;
-      const mestradoAtendidos = data.filter((item) => (item.mestrado_concluidas || 0) > 0).length;
+      const graduacaoAtendidos = data.filter((item) => ["tcc_concluidas","mestrado_concluidas","doutorado_concluidas_principal","doutorado_concluidas_co"].some(k=>Number(item[k])>0)).length;
+      const mestradoAtendidos = data.filter((item) => ["mestrado_concluidas","doutorado_concluidas_principal","doutorado_concluidas_co"].some(k=>Number(item[k])>0)).length;
       const doutoradoAtendidos = data.filter((item) => (item.doutorado_concluidas_principal || 0) > 0).length;
 
       return {
@@ -10097,7 +9995,7 @@
         `<span class="chip">Doutorado principal: <strong>${summary.doutoradoAtendidos}</strong> docentes frente ao mínimo de <strong>3</strong></span>`,
       ].join("");
 
-      document.getElementById("orient-crit-metodologia").textContent = "Metodologia: graduação concluída considera pelo menos uma orientação concluída em TCC ou IC. Mestrado considera apenas docentes com pelo menos uma orientação concluída em mestrado. Doutorado considera apenas docentes com orientação concluída em doutorado como principal.";
+      document.getElementById("orient-crit-metodologia").textContent = "Metodologia APCN 2026: graduação ou superior; mestrado ou superior. Para doutorado, o painel mostra conservadoramente o subconjunto com orientação principal concluída. O orientador exige experiência doutoral concluída, sem essa restrição explícita. Conclusão de Tércio com Rafael confirmada pela coordenação; estoque em andamento mantido até conciliação individual.";
 
       document.getElementById("orient-crit-resumo-body").innerHTML = [
         `
@@ -10735,7 +10633,7 @@
       ]);
       document.getElementById("docentes-quad-body").innerHTML = rows.map((row) => `
         <tr>
-          <td class="docentes-quad-label">${escapeHtml(row.label)}</td>
+          <td class="docentes-quad-label">${escapeHtml(row.key === "estabilidade_anual" ? "Razão do tamanho do quadro (ano/anterior)" : row.label)}</td>
           ${["2025", "2026", "2027", "2028"].map((year) => `<td>${escapeHtml(shareKeys.has(row.key) ? getDocentesQuadShareDisplay(row.key, row.values?.[year], year) : formatDocentesCellValue(row.values?.[year]))}</td>`).join("")}
           <td class="docentes-quad-average">${escapeHtml(shareKeys.has(row.key) ? getDocentesQuadAverageShareDisplay(row) : formatDocentesCellValue(row.average))}</td>
         </tr>
@@ -10744,7 +10642,7 @@
       const ppgDistribution = dataSourceCorpoDocente.ppg_distribution_2026 || [];
       const estabilidadeNumerator = ["2025", "2026", "2027", "2028"].reduce((total, year) => total + (dataSourceCorpoDocente.by_year?.[year]?.classified_count || 0), 0);
       document.getElementById("docentes-quad-note").innerHTML = [
-        `Estabilidade quadrienal consolidada: <strong>${formatDocentesShareWithN(estabilidadeQuadri, estabilidadeNumerator)}</strong>.`,
+        `Razão agregada de tamanhos do quadro: <strong>${formatDocentesShareWithN(estabilidadeQuadri, estabilidadeNumerator)}</strong>. Pode superar 100%; não mede retenção das mesmas pessoas.`,
         ...ppgDistribution.map((item) => `${item.docentes} docente(s) com ${item.ppgs} PPG(s) como permanente em 2026 (${formatDocentesShareWithN(item.share, item.docentes)}).`),
       ].join(" ");
     }
@@ -11054,50 +10952,48 @@
         `
           <div class="criteria-score">
             <div>
-              <div>Critério 1</div>
+              <div>Simulação histórica 1</div>
               <strong>${summary.criterio1Atendidos}/${summary.totalDocentes}</strong>
             </div>
-            <span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atende" : "Atenção"}</span>
+            <span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atinge simulação" : "Atenção"}</span>
           </div>
         `,
         `
           <div class="criteria-score">
             <div>
-              <div>Critério 2</div>
+              <div>Simulação histórica 2</div>
               <strong>${summary.criterio2Atendidos}/${summary.totalDocentes}</strong>
             </div>
-            <span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Atenção"}</span>
+            <span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atinge simulação" : "Atenção"}</span>
           </div>
         `,
       ].join("");
 
       document.getElementById("criterios-insights").innerHTML = [
         `<span class="chip">Linha de corte da simulação: <strong>${summary.minimo}</strong> permanentes</span>`,
-        summary.criterio1Pendentes[0] ? `<span class="chip">Fora do critério 1: <strong>${summary.criterio1Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 1 sem pendências individuais.</span>`,
-        summary.criterio2Pendentes[0] ? `<span class="chip">Fora do critério 2: <strong>${summary.criterio2Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 2 sem pendências individuais.</span>`,
-        `<span class="chip">Margem sobre a exigência: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
-        daniela ? `<span class="chip">Daniela: <strong>${daniela.pontuacao} pontos / ${daniela.total} produtos</strong>, ${daniela.qualificados} WoS/Scopus e ${daniela.qualisA4 ?? "?"} A4+ informado(s). A confirmação formal do segundo indicador permanece pendente.</span>` : "",
-        `<span class="chip">O capítulo de Daniela de 2022 permanece no histórico, sem pontuação editorial comprovada; não foi selecionado entre os cinco produtos desta simulação.</span>`,
+        summary.criterio1Pendentes[0] ? `<span class="chip">Fora do critério 1: <strong>${summary.criterio1Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Simulação histórica 1 sem pendências individuais.</span>`,
+        summary.criterio2Pendentes[0] ? `<span class="chip">Fora do critério 2: <strong>${summary.criterio2Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Simulação histórica 2 sem pendências individuais.</span>`,
+        `<span class="chip">Margem na simulação histórica: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
       ].join("");
 
-      document.getElementById("criterios-metodologia").textContent = "Simulação interna: considera os 15 docentes permanentes de 2026, inclusive os sem produção; para cada um, seleciona automaticamente até cinco produtos bibliográficos de 2022 a 2026 pelos maiores pontos da régua do painel. O segundo indicador usa dois artigos com indexação WoS/Scopus como proxy; não comprova sozinho a qualificação formal CAPES. O documento orientador da Área 21 publicado em 2026 e a seleção efetiva na Sucupira ainda exigem conferência.";
+      document.getElementById("criterios-metodologia").textContent = "SIMULAÇÃO HISTÓRICA: até cinco produtos de 2021 a 2026 por DP, segundo a antiga régua de indexação. Os resultados 330 pontos/75% e dois WoS/Scopus não comprovam a APCN 2026. REQUISITOS VIGENTES: 14 dos 15 DP com pelo menos 55 pontos e 11 com 75 pontos. Essa pontuação depende de abrangência, complexidade, inovação, aplicabilidade e responsabilidade autoral, com seleção na Sucupira; ainda não está calculada nesta base.";
 
       document.getElementById("criterios-resumo-body").innerHTML = [
         `
           <tr>
-            <td>Critério 1<br><small>75% com pelo menos 330 pontos nos cinco produtos</small></td>
+            <td>Simulação histórica 1<br><small>75% com pelo menos 330 pontos nos cinco produtos</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio1Atendidos}/${summary.totalDocentes} docentes (${summary.criterio1Percentual}%)</td>
-            <td><span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atende" : "Não atende"}</span></td>
+            <td><span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atinge simulação" : "Não atinge simulação"}</span></td>
             <td>${criterio1Ok ? `Supera a linha de corte em ${summary.criterio1Atendidos - summary.minimo} docente(s).` : `Faltam ${criterio1Faltantes} docente(s) para a linha de corte.`}</td>
           </tr>
         `,
         `
           <tr>
-            <td>Critério 2 (proxy)<br><small>75% com dois artigos WoS/Scopus entre os cinco produtos</small></td>
+            <td>Simulação histórica 2 (proxy)<br><small>75% com dois artigos WoS/Scopus entre os cinco produtos</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio2Atendidos}/${summary.totalDocentes} docentes (${summary.criterio2Percentual}%)</td>
-            <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Não atende"}</span></td>
+            <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atinge simulação" : "Não atinge simulação"}</span></td>
             <td>${criterio2Ok ? `Supera a linha de corte em ${summary.criterio2Atendidos - summary.minimo} docente(s).` : `Faltam ${criterio2Faltantes} docente(s) para a linha de corte.`}</td>
           </tr>
         `,
@@ -11115,8 +11011,8 @@
           <td>${item.titulo || ""}</td>
           <td>${item.revista_ou_veiculo || ""}</td>
           <td>${item.indexacao || ""}</td>
-          <td>${item.jif_jcr_2025 || ""}</td>
-          <td>${item.quartil_jcr_2025 || ""}</td>
+          <td>${item.jif_jcr_verificado || "Pendente"}</td>
+          <td>${item.quartil_jcr_verificado || "Pendente"}</td>
           <td>${item.pontuacao || ""}</td>
         </tr>
       `).join("");

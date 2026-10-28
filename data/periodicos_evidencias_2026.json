@@ -1,0 +1,27 @@
+{
+  "consulta": "2026-10-28",
+  "escopo": "Evidência editorial de cobertura do periódico na data da consulta. Não certifica a presença de cada artigo na base nem a cobertura histórica no ano da publicação. Ausência neste cadastro significa não verificado, nunca não indexado. JIF é a edição explicitamente indicada pela fonte; não equivale a SJR nem a citações por documento.",
+  "periodicos": [
+    {"nomes":["Research Quarterly for Exercise and Sport"],"wos":"SCIE; SSCI","scopus":true,"url":"https://www.tandfonline.com/action/journalInformation?journalCode=urqe20&show=aimsScope"},
+    {"nomes":["American Journal of Human Biology"],"wos":"SCIE; SSCI","url":"https://onlinelibrary.wiley.com/page/journal/15206300/homepage/productinformation.html"},
+    {"nomes":["European Journal of Sport Science"],"wos":"SCIE","scopus":true,"url":"https://www.tandfonline.com/action/journalInformation?journalCode=tejs20&show=aimsScope","nota":"Página do editor anterior; transferência para Wiley em 2024. Fonte sustenta a cobertura editorial informada, não certifica cobertura artigo a artigo."},
+    {"nomes":["Journal of Sports Sciences"],"wos":"JCR informado pelo editor; coleção específica a conferir","scopus":true,"jif":3.1,"jif_ano":2025,"url":"https://www.tandfonline.com/journals/rjsp20/about-this-journal"},
+    {"nomes":["Perceptual and Motor Skills"],"wos":"SSCI","url":"https://au.sagepub.com/en-gb/anz/perceptual-and-motor-skills/journal202548"},
+    {"nomes":["Human Movement"],"wos":"ESCI","cobertura_inicio_volume":"23(1)","url":"https://awf.wroc.pl/human-movement-zaakceptowane-do-web-of-science/","nota":"Anúncio institucional informa inclusão a partir do volume 23(1); não inferir cobertura de anos anteriores."},
+    {"nomes":["Sport Sciences for Health","SPORT SCIENCES FOR HEALTH (TESTO STAMPATO)"],"wos":"ESCI","scopus":true,"url":"https://link.springer.com/journal/11332"},
+    {"nomes":["Sleep and Breathing","SLEEP & BREATHING"],"wos":"SCIE","scopus":true,"jif":2.4,"jif_ano":2025,"url":"https://link.springer.com/journal/11325"},
+    {"nomes":["Applied Psychophysiology and Biofeedback"],"wos":"SSCI","scopus":true,"jif":3.0,"jif_ano":2025,"url":"https://link.springer.com/journal/10484"},
+    {"nomes":["Sports Medicine"],"wos":"SCIE","scopus":true,"url":"https://link.springer.com/journal/40279"},
+    {"nomes":["European Journal of Applied Physiology"],"wos":"SCIE","scopus":true,"url":"https://link.springer.com/journal/421"},
+    {"nomes":["Current Psychology"],"wos":"SSCI","scopus":true,"url":"https://link.springer.com/journal/12144"},
+    {"nomes":["Obesity Surgery"],"wos":"SCIE","scopus":true,"url":"https://link.springer.com/journal/11695"},
+    {"nomes":["Journal Of Public Health: Heidelberg","Journal of Public Health"],"wos":"ESCI","scopus":true,"url":"https://link.springer.com/journal/10389"},
+    {"nomes":["Current Pulmonology Reports"],"wos":"ESCI","url":"https://link.springer.com/journal/13665"},
+    {"nomes":["Frontiers in Immunology"],"wos":"SCIE","scopus":true,"url":"https://www.frontiersin.org/journals/immunology/about"},
+    {"nomes":["Frontiers in Physiology"],"wos":"SCIE","scopus":true,"url":"https://www.frontiersin.org/journals/physiology/about"},
+    {"nomes":["Frontiers in Psychology"],"wos":"SSCI","scopus":true,"url":"https://www.frontiersin.org/journals/psychology/about"},
+    {"nomes":["Frontiers in Medicine"],"wos":"SCIE","scopus":true,"url":"https://www.frontiersin.org/journals/medicine/about"},
+    {"nomes":["Frontiers In Sports And Active Living"],"wos":"ESCI","scopus":true,"url":"https://www.frontiersin.org/journals/sports-and-active-living/about"},
+    {"nomes":["Frontiers In Pain Research"],"wos":"ESCI","scopus":true,"url":"https://www.frontiersin.org/journals/pain-research/about"}
+  ]
+}

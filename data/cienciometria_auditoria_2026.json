@@ -1,0 +1,163 @@
+{
+  "data": "2026-10-28",
+  "escopo": "Retrospectiva do quadro atual; registros de autoria são diferentes de produtos distintos. Indexação corroborada refere-se ao periódico na data de consulta, não à presença individual do artigo nem à cobertura histórica. Os totais WoS e Scopus podem se sobrepor.",
+  "correcoes": {
+    "registros": 428,
+    "doi_preenchido_ou_corrigido": 287,
+    "doi_incompativel_retirado": 2,
+    "anos_de_fasciculo_conciliados": 26,
+    "listas_autorais_conferidas": 288
+  },
+  "recortes": {
+    "2026": {
+      "registros": 48,
+      "produtos": 40,
+      "indexacao": {
+        "articles": 28,
+        "wos": 5,
+        "scopus": 4,
+        "scopusDeclared": 23,
+        "wosPending": 23,
+        "doi": 26
+      },
+      "doi_conferido": 33,
+      "autoria_pendente": 1,
+      "jif_verificado": 1
+    },
+    "total": {
+      "registros": 428,
+      "produtos": 365,
+      "indexacao": {
+        "articles": 315,
+        "wos": 53,
+        "scopus": 37,
+        "scopusDeclared": 191,
+        "wosPending": 262,
+        "doi": 259
+      },
+      "doi_conferido": 313,
+      "autoria_pendente": 11,
+      "jif_verificado": 10
+    },
+    "2021_2025": {
+      "registros": 373,
+      "produtos": 318,
+      "indexacao": {
+        "articles": 280,
+        "wos": 47,
+        "scopus": 32,
+        "scopusDeclared": 164,
+        "wosPending": 233,
+        "doi": 226
+      },
+      "doi_conferido": 273,
+      "autoria_pendente": 10,
+      "jif_verificado": 9
+    },
+    "2021_2026": {
+      "registros": 421,
+      "produtos": 358,
+      "indexacao": {
+        "articles": 308,
+        "wos": 52,
+        "scopus": 36,
+        "scopusDeclared": 187,
+        "wosPending": 256,
+        "doi": 252
+      },
+      "doi_conferido": 306,
+      "autoria_pendente": 11,
+      "jif_verificado": 10
+    }
+  },
+  "orientacoes": {
+    "docentes_com_doutorado_principal_concluido": 4,
+    "docentes": [
+      "Paulo Roberto Cavalcanti Carvalho",
+      "Rafael dos Santos Henrique",
+      "Tony Meireles dos Santos",
+      "Vilde Gomes de Menezes"
+    ],
+    "rafael": "Conclusão de Tércio confirmada pela coordenação em 28/10/2026. Não se infere data de defesa nem baixa em orientações em andamento."
+  },
+  "pendencias": [
+    {
+      "id": "18",
+      "docente": "André dos Santos Costa",
+      "titulo": "Influence of the exercise intensity during EA Sport Active 2 on physiology and psychology variables",
+      "motivo": "nao_identificada"
+    },
+    {
+      "id": "96",
+      "docente": "Daniel da Rocha Queiroz",
+      "titulo": "Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019: a pooled analysis of 1201 population-representative studies with 104 million participants",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "100",
+      "docente": "Daniel da Rocha Queiroz",
+      "titulo": "Physical Activity Guidelines for the Brazilian Population: Development and Methods",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "101",
+      "docente": "Daniel da Rocha Queiroz",
+      "titulo": "Physical Activity Guidelines for the Brazilian Population: Recommendations Report",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "380",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Heterogeneous contributions of change in population distribution of body mass index to change in obesity and underweight",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "384",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019: a pooled analysis of 1201 population-representative studies with 104 million participants",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "394",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Global variation in diabetes diagnosis and prevalence based on fasting glucose and hemoglobin A1c",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "403",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "General and abdominal adiposity and hypertension in eight world regions: a pooled analysis of 837 population-based studies with 7·5 million participants",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "407",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Sex differences in 3¿ to 5¿year¿old children's motor competence: A pooled cross¿sectional analysis of 6241 children",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "409",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Worldwide trends in diabetes prevalence and treatment from 1990 to 2022: a pooled analysis of 1108 population-representative studies with 141 million participants",
+      "motivo": "lista_truncada"
+    },
+    {
+      "id": "429",
+      "docente": "Rafael dos Santos Henrique",
+      "titulo": "Obesity rise plateaus in developed nations and accelerates in developing nations",
+      "motivo": "lista_truncada"
+    }
+  ],
+  "limites": [
+    "Datas online e de fascículo não são intercambiáveis. Datas Crossref sem fascículo não substituem automaticamente o ano do cadastro.",
+    "JIF só calculado quando fonte e edição 2025 estão explícitas; SJR e métricas antigas permanecem fora desse cálculo.",
+    "Pontuação qualitativa APCN 2026 requer seleção e justificativas. A simulação antiga 330/75% não é o critério vigente.",
+    "Coautoria identifica vínculo bibliográfico no recorte; não comprova projeto ativo, instituição ou país.",
+    "Lista parcial não permite presumir última autoria. Posição desconhecida é excluída do Mostarda e contada como pendência."
+  ],
+  "fontes": [
+    "periodicos_evidencias_2026.json",
+    "cienciometria_correcoes_2026.json",
+    "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+  ]
+}

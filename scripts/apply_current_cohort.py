@@ -51,6 +51,8 @@ def write_js(path, variable, rows, compact=False):
 def apply_production():
     scientific = [r for r in read_json(DATA / "producao_cientifica.json") if r["docente"] not in EXCLUDED]
     technical = [r for r in read_json(DATA / "producao_tecnica.json") if r["docente"] not in EXCLUDED]
+    from apply_scientific_audit import reconcile
+    scientific = reconcile(scientific)
     write_json(DATA / "producao_cientifica.json", scientific)
     write_json(DATA / "producao_tecnica.json", technical)
     write_js(DASHBOARD / "producao-cientifica-data.js", "PRODUCAO_CIENTIFICA", scientific)
@@ -197,4 +199,6 @@ def apply_faculty():
 if __name__ == "__main__":
     scientific_count, technical_count = apply_production()
     faculty_count = apply_faculty()
+    from apply_scientific_audit import main as apply_scientific_audit
+    apply_scientific_audit()
     print(f"Published scope: {faculty_count} faculty, {scientific_count} scientific records, {technical_count} technical records")

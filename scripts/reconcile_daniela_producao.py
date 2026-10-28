@@ -39,8 +39,12 @@ def main():
     by_id = {row["id"]: row for row in rows}
     next_id = max(int(row["id"]) for row in rows) + 1
 
+    from apply_scientific_audit import reconcile, write
+    audit_path = DATA / "cienciometria_correcoes_2026.json"
+    historical_ids = {fold(p["titulo_original"]):p["id"] for p in json.loads(audit_path.read_text(encoding="utf-8")) if p["docente"] == DOCENTE} if audit_path.exists() else {}
+
     for source_index, item in enumerate(source):
-        match_id = EXISTING_IDS.get(source_index)
+        match_id = EXISTING_IDS.get(source_index) or historical_ids.get(fold(item["titulo"]))
         existing = by_id.get(match_id) if match_id else None
         if existing and existing["docente"] != DOCENTE:
             raise ValueError(f"Existing id {match_id} belongs to another docente")
@@ -94,36 +98,7 @@ def main():
         raise ValueError("Duplicate Daniela article title")
 
     rows.sort(key=lambda row: int(row["id"]))
-    (DATA / "producao_cientifica.json").write_text(
-        json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
-    (DASHBOARD / "producao-cientifica-data.js").write_text(
-        "window.PRODUCAO_CIENTIFICA = " + json.dumps(rows, ensure_ascii=False, indent=2) + ";\n",
-        encoding="utf-8",
-    )
-    with (DATA / "producao_cientifica.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
-        writer.writeheader()
-        writer.writerows(rows)
-
-    summary = []
-    by_teacher = {}
-    for row in rows:
-        by_teacher.setdefault(row["docente"], []).append(row)
-    for docente, teacher_rows in sorted(by_teacher.items()):
-        types = Counter(row["tipo_producao"] for row in teacher_rows)
-        summary.append({
-            "docente": docente,
-            "total": len(teacher_rows),
-            "artigo": types["artigo"],
-            "capitulo": types["capitulo"],
-            "livro": types["livro"],
-            "pontuacao_total": sum(float(row.get("pontuacao") or 0) for row in teacher_rows),
-        })
-    with (DATA / "producao_cientifica_resumo_docente.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(summary[0]))
-        writer.writeheader()
-        writer.writerows(summary)
+    write(reconcile(rows))
 
 
 if __name__ == "__main__":

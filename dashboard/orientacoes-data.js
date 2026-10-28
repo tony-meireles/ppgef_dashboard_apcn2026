@@ -339,6 +339,8 @@ window.ORIENTACOES_PPGEF = [
   },
   {
     docente: "Rafael dos Santos Henrique",
+    // Conclusão de Tércio confirmada pela coordenação em 28/10/2026.
+    // A confirmação não informa se Tércio integrava os estoques em andamento/previsão.
     tcc_andamento: 0,
     tcc_concluidas: 42,
     ic_andamento: 0,
@@ -351,14 +353,14 @@ window.ORIENTACOES_PPGEF = [
     doutorado_andamento: 5,
     doutorado_concluintes_2026: 2,
     doutorado_concluidas_co: 1,
-    doutorado_concluidas_principal: 0,
-    doutorado_concluidas: 1,
+    doutorado_concluidas_principal: 1,
+    doutorado_concluidas: 2,
     posdoc_andamento: 0,
     posdoc_concluintes_2026: 0,
     posdoc_concluidas: 0,
     total_andamento_apcn: 8,
     total_concluidas_apcn: 12,
-    total_concluidas_d: 11,
+    total_concluidas_d: 12,
     total_concluintes_2026_apcn: 2,
     total_geral_apcn: 14,
     total_mestrado_concluido: 11
