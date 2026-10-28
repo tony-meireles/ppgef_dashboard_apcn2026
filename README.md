@@ -85,3 +85,18 @@ no recorte temporal. A planilha atual nao contem os tres registros anteriores
 de Paulo Felipe; o historico deles permanece no Git.
 Os CSVs intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
 fontes de auditoria e nao alimentam diretamente as abas publicadas.
+
+## Producao cientifica de Daniela (atualizacao de 28/10/2026)
+
+`data/daniela_producao_2026.json` registra os 13 artigos informados pela docente,
+com DOI e indexacao confirmados onde havia fonte primaria acessivel. Execute
+`python scripts/reconcile_daniela_producao.py` depois de qualquer importacao
+cientifica e antes de `python scripts/apply_current_cohort.py`; a reconciliacao
+preserva o capitulo de livro de 2022 ja existente na base. O painel dos
+criterios de produtividade usa uma simulacao interna: 15 permanentes de 2026,
+ate cinco produtos de 2022-2026 por docente, selecionados pelos maiores pontos,
+e dois artigos WoS/Scopus como aproximacao do segundo indicador. Esse segundo
+indicador ainda exige conferencia da classificacao formal no Documento
+Orientador de APCN da Area 21 publicado em junho de 2026 e da selecao efetiva
+na Sucupira. Os artigos historicos de 2018-2021 permanecem consultaveis na
+producao cientifica, mas nao entram nessa janela de simulacao.

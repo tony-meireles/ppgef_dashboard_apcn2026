@@ -3656,7 +3656,7 @@
           <div class="card metric">
             <p class="eyebrow">Docentes considerados</p>
             <strong id="criterios-docentes-total">0</strong>
-            <span>Total de docentes com produção científica presente na base sincronizada.</span>
+            <span>Docentes permanentes do corpo de 2026, inclusive os sem produção no recorte.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Linha de corte 75%</p>
@@ -3666,18 +3666,18 @@
           <div class="card metric">
             <p class="eyebrow">Critério 1</p>
             <strong id="criterios-crit1-percentual">0%</strong>
-            <span id="criterios-crit1-resumo">0 de 0 docentes com mais de 330 pontos.</span>
+            <span id="criterios-crit1-resumo">0 de 0 docentes com pelo menos 330 pontos.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Critério 2</p>
             <strong id="criterios-crit2-percentual">0%</strong>
-            <span id="criterios-crit2-resumo">0 de 0 docentes com evidência JCR (SCimago | 2y cites per doc) ou Categoria A.</span>
+            <span id="criterios-crit2-resumo">0 de 0 docentes com dois produtos indexados em WoS/Scopus.</span>
           </div>
 
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Demonstrativo dos Critérios</h2>
-              <p>Comparação entre o mínimo exigido e o atendimento efetivo na base científica.</p>
+              <p>Simulação interna com o recorte 2022–2026 e até cinco produtos por docente.</p>
             </div>
             <div id="chart-criterios-prod" class="chart"></div>
           </div>
@@ -3695,7 +3695,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Síntese dos Indicadores</h2>
-              <p>Resumo formal do atendimento aos dois critérios de produtividade docente.</p>
+              <p>Resumo da simulação interna dos dois indicadores de produtividade docente.</p>
             </div>
             <div class="table-wrap">
               <table class="criteria-table">
@@ -3727,16 +3727,17 @@
                 </button>
               </div>
             </div>
-            <p class="chart-note">Pontuação agregada e evidência usada para demonstrar os critérios na base científica.</p>
+            <p class="chart-note">Seleção automática dos cinco maiores valores de 2022–2026; o segundo indicador é uma aproximação por indexação, pendente de conferência da classificação oficial.</p>
             <div class="table-wrap">
               <table class="criteria-table">
                 <thead>
                   <tr>
                     <th>Docente</th>
-                    <th>Pontuação agregada</th>
+                    <th>Pontos dos 5 produtos</th>
                     <th>Critério 1</th>
-                    <th>JCR (SCimago | 2y cites per doc)</th>
-                    <th>Q1/Q2</th>
+                    <th>Produtos WoS/Scopus</th>
+                    <th>Produtos selecionados</th>
+                    <th>Qualis A4+ informado</th>
                     <th>Critério 2</th>
                   </tr>
                 </thead>
@@ -5152,7 +5153,7 @@
     </div>
   </div>
 
-  <script src="./producao-cientifica-data.js?v=2026-10-28a"></script>
+  <script src="./producao-cientifica-data.js?v=2026-10-28b"></script>
   <script src="./producao-tecnica-data.js?v=2026-10-28a"></script>
   <script src="./orientacoes-data.js?v=2026-06-16a"></script>
   <script src="./disciplinas-data.js?v=2026-06-15a"></script>
@@ -5244,13 +5245,13 @@
         criterio: "Producao Intelectual",
         exigencia: "75% dos docentes com >= 330 pontos",
         explicacao: "Esse corte resume a expectativa de produtividade consistente do nucleo docente.",
-        detalhe: "O Norteador APCN localiza 320 pontos como referencia textual para doutorado academico; o painel atual trabalha com 330 como margem prudencial do PPGEF.",
+        detalhe: "O documento de 2021 arquivado no projeto cita 320 pontos; o painel simula 330 como margem interna. A regra do orientador 2026 ainda precisa de conferencia.",
       },
       {
         criterio: "Producao Qualificada",
         exigencia: "75% dos docentes com >= 2 produtos JCR/SJR ou Categoria A",
         explicacao: "Nao basta volume: a proposta precisa evidenciar qualidade editorial e aderencia dos produtos.",
-        detalhe: "No uso institucional, o dashboard trata JCR/SJR, estratos qualificados e proxies editoriais como evidencias complementares para a leitura do criterio.",
+        detalhe: "O painel de criterios usa dois artigos WoS/Scopus entre cinco produtos como proxy. A classificacao formal de cada produto e a regra do orientador 2026 ainda precisam de conferencia.",
       },
       {
         criterio: "Formacao de Recursos Humanos",
@@ -5427,17 +5428,17 @@
         criterio: "Producao intelectual",
         exigencia: "75% com >= 330 pontos",
         evidencia: "75% dos docentes permanentes devem somar pelo menos 320 pontos.",
-        interpretacao: "O texto CAPES local indica 320; o PPGEF monitora 330 como margem conservadora.",
-        detalhe: "A aba orientadora mantem 330 porque esse corte ja aparece na infraestrutura analitica atual. Isso evita afrouxar a leitura interna, mas deixa claro que o lastro textual encontrado no documento local aponta 320.",
-        fonte: "Documento Norteador APCN, p. 10",
+        interpretacao: "O documento de 2021 arquivado no projeto indica 320; o PPGEF simula 330 como margem interna.",
+        detalhe: "A simulacao usa cinco produtos por docente de 2022-2026. O orientador da Area 21 publicado em 2026 deve ser conferido antes de usar este resultado como prova formal.",
+        fonte: "Documento Norteador APCN de 2021, p. 10",
       },
       {
         criterio: "Producao qualificada",
         exigencia: "75% com >= 2 produtos qualificados",
         evidencia: "75% dos docentes permanentes devem ter pelo menos 2 produtos qualificados.",
         interpretacao: "O PPGEF deve mapear quais produtos realmente sustentam essa exigencia por docente.",
-        detalhe: "No dashboard, JCR/SJR e Categoria A funcionam como leitura operacional de qualidade. Isso ajuda a triagem interna, mas a prova final depende da aderencia do produto as regras documentais e editoriais.",
-        fonte: "Documento Norteador APCN, p. 10",
+        detalhe: "Na simulacao de 2026, dois artigos WoS/Scopus entre os cinco selecionados funcionam como proxy. A prova final depende da classificacao formal e da regra vigente da Area 21.",
+        fonte: "Documento Norteador APCN de 2021, p. 10",
       },
       {
         criterio: "Orientacoes concluidas",
@@ -9814,38 +9815,43 @@
     }
 
     function aggregateProductivityCriteria(data) {
-      const grouped = new Map();
+      const permanentNames = (dataSourceCorpoDocente.docentes || [])
+        .filter((item) => item.anos?.["2026"] === "Per")
+        .map((item) => item.docente);
+      const grouped = new Map(permanentNames.map((docente) => [docente, []]));
       for (const item of data) {
-        if (!item.docente) continue;
-        if (!grouped.has(item.docente)) {
-          grouped.set(item.docente, {
-            docente: item.docente,
-            pontuacao: 0,
-            total: 0,
-            hasJcr: false,
-            hasQ1Q2: false,
-          });
-        }
-        const row = grouped.get(item.docente);
-        row.pontuacao += Number(item.pontuacao) || 0;
-        row.total += 1;
-        const indexacao = String(item.indexacao || "");
-        const quartil = String(item.quartil_jcr_2025 || "").toUpperCase().trim();
-        const jif = String(item.jif_jcr_2025 || "").trim();
-        if (indexacao.includes("Web of Science (JCR)") || jif) {
-          row.hasJcr = true;
-        }
-        if (quartil === "Q1" || quartil === "Q2") {
-          row.hasQ1Q2 = true;
-        }
+        const year = Number(item.ano);
+        if (!grouped.has(item.docente) || year < 2022 || year > 2026) continue;
+        if (!["artigo", "livro", "capitulo"].includes(item.tipo_producao)) continue;
+        grouped.get(item.docente).push(item);
       }
 
-      const docentes = [...grouped.values()]
-        .map((item) => ({
-          ...item,
-          criterio1: item.pontuacao >= 330,
-          criterio2: item.hasJcr || item.hasQ1Q2,
-        }))
+      const docentes = [...grouped.entries()]
+        .map(([docente, items]) => {
+          const selected = items.slice().sort((a, b) =>
+            (Number(b.pontuacao) || 0) - (Number(a.pontuacao) || 0)
+            || Number(b.ano) - Number(a.ano)
+            || String(a.titulo || "").localeCompare(String(b.titulo || ""), "pt-BR")
+          ).slice(0, 5);
+          const pontuacao = selected.reduce((total, item) => total + (Number(item.pontuacao) || 0), 0);
+          const qualificados = selected.filter((item) =>
+            item.tipo_producao === "artigo"
+            && /Web of Science|Scopus/i.test(String(item.indexacao || ""))
+          ).length;
+          const qualisInformados = selected.map((item) =>
+            String(item.observacoes || "").match(/qualis_informado=([^|]+)/i)?.[1]?.trim() || ""
+          ).filter(Boolean);
+          const qualisA4 = qualisInformados.filter((qualis) => /^A[1-4]$/i.test(qualis)).length;
+          return {
+            docente,
+            pontuacao,
+            total: selected.length,
+            qualificados,
+            qualisA4: qualisInformados.length ? qualisA4 : null,
+            criterio1: pontuacao >= 330,
+            criterio2: qualificados >= 2,
+          };
+        })
         .sort((a, b) => b.pontuacao - a.pontuacao || a.docente.localeCompare(b.docente, "pt-BR"));
 
       const totalDocentes = docentes.length;
@@ -9870,14 +9876,14 @@
       const itens = [
         {
           criterio: "Critério 1",
-          label: "75% com mais de 330 pts",
+          label: "75% com pelo menos 330 pts",
           atual: summary.criterio1Atendidos,
           minimo: summary.minimo,
           color: "var(--orientation-principal-andamento)",
         },
         {
           criterio: "Critério 2",
-          label: "75% com JCR (SCimago | 2y cites per doc) ou Categoria A",
+          label: "75% com 2 produtos WoS/Scopus (proxy)",
           atual: summary.criterio2Atendidos,
           minimo: summary.minimo,
           color: "var(--orientation-co-andamento)",
@@ -9953,8 +9959,9 @@
           <td>${item.docente}</td>
           <td>${item.pontuacao}</td>
           <td><span class="criteria-status ${item.criterio1 ? "ok" : "risk"}">${item.criterio1 ? "Atende" : "Não atende"}</span></td>
-          <td>${item.hasJcr ? "Sim" : "Não"}</td>
-          <td>${item.hasQ1Q2 ? "Sim" : "Não"}</td>
+          <td>${item.qualificados}</td>
+          <td>${item.total}/5</td>
+          <td>${item.qualisA4 === null ? "—" : item.qualisA4}</td>
           <td><span class="criteria-status ${item.criterio2 ? "ok" : "risk"}">${item.criterio2 ? "Atende" : "Não atende"}</span></td>
         </tr>
       `).join("");
@@ -11032,8 +11039,8 @@
       document.getElementById("criterios-docentes-minimo").textContent = String(summary.minimo);
       document.getElementById("criterios-crit1-percentual").textContent = `${summary.criterio1Percentual}%`;
       document.getElementById("criterios-crit2-percentual").textContent = `${summary.criterio2Percentual}%`;
-      document.getElementById("criterios-crit1-resumo").textContent = `${summary.criterio1Atendidos} de ${summary.totalDocentes} docentes com mais de 330 pontos.`;
-      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} docentes com evidência estruturada de JCR (SCimago | 2y cites per doc) ou proxy Q1/Q2.`;
+      document.getElementById("criterios-crit1-resumo").textContent = `${summary.criterio1Atendidos} de ${summary.totalDocentes} permanentes com pelo menos 330 pontos nos cinco produtos selecionados.`;
+      document.getElementById("criterios-crit2-resumo").textContent = `${summary.criterio2Atendidos} de ${summary.totalDocentes} permanentes com pelo menos dois artigos WoS/Scopus entre os cinco selecionados.`;
 
       renderProductivityCriteriaChart(summary);
 
@@ -11041,6 +11048,7 @@
       const criterio2Ok = summary.criterio2Atendidos >= summary.minimo;
       const criterio1Faltantes = Math.max(0, summary.minimo - summary.criterio1Atendidos);
       const criterio2Faltantes = Math.max(0, summary.minimo - summary.criterio2Atendidos);
+      const daniela = summary.docentes.find((item) => item.docente === "Daniela Karina da Silva Ferreira");
 
       document.getElementById("criterios-summary-cards").innerHTML = [
         `
@@ -11064,18 +11072,20 @@
       ].join("");
 
       document.getElementById("criterios-insights").innerHTML = [
-        `<span class="chip">Linha de corte formal: <strong>${summary.minimo}</strong> docentes</span>`,
+        `<span class="chip">Linha de corte da simulação: <strong>${summary.minimo}</strong> permanentes</span>`,
         summary.criterio1Pendentes[0] ? `<span class="chip">Fora do critério 1: <strong>${summary.criterio1Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 1 sem pendências individuais.</span>`,
         summary.criterio2Pendentes[0] ? `<span class="chip">Fora do critério 2: <strong>${summary.criterio2Pendentes.map((item) => item.docente).join(", ")}</strong></span>` : `<span class="chip">Critério 2 sem pendências individuais.</span>`,
         `<span class="chip">Margem sobre a exigência: <strong>+${summary.criterio1Atendidos - summary.minimo}</strong> no critério 1 e <strong>+${summary.criterio2Atendidos - summary.minimo}</strong> no critério 2</span>`,
+        daniela ? `<span class="chip">Daniela: <strong>${daniela.pontuacao} pontos / ${daniela.total} produtos</strong>, ${daniela.qualificados} WoS/Scopus e ${daniela.qualisA4 ?? "?"} A4+ informado(s). A confirmação formal do segundo indicador permanece pendente.</span>` : "",
+        `<span class="chip">O capítulo de Daniela de 2022 permanece no histórico, sem pontuação editorial comprovada; não foi selecionado entre os cinco produtos desta simulação.</span>`,
       ].join("");
 
-      document.getElementById("criterios-metodologia").textContent = "Metodologia: o critério 1 soma a pontuação APCN agregada por docente. O critério 2 usa evidência estruturada de JCR (SCimago | 2y cites per doc) na base sincronizada; como não há coluna nativa de Categoria A, o painel também sinaliza Q1/Q2 quando presentes apenas como reforço visual. O resultado atual permanece 17/18 em ambos os critérios.";
+      document.getElementById("criterios-metodologia").textContent = "Simulação interna: considera os 15 docentes permanentes de 2026, inclusive os sem produção; para cada um, seleciona automaticamente até cinco produtos bibliográficos de 2022 a 2026 pelos maiores pontos da régua do painel. O segundo indicador usa dois artigos com indexação WoS/Scopus como proxy; não comprova sozinho a qualificação formal CAPES. O documento orientador da Área 21 publicado em 2026 e a seleção efetiva na Sucupira ainda exigem conferência.";
 
       document.getElementById("criterios-resumo-body").innerHTML = [
         `
           <tr>
-            <td>Critério 1<br><small>75% com mais de 330 pontos de produção intelectual</small></td>
+            <td>Critério 1<br><small>75% com pelo menos 330 pontos nos cinco produtos</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio1Atendidos}/${summary.totalDocentes} docentes (${summary.criterio1Percentual}%)</td>
             <td><span class="criteria-status ${criterio1Ok ? "ok" : "risk"}">${criterio1Ok ? "Atende" : "Não atende"}</span></td>
@@ -11084,7 +11094,7 @@
         `,
         `
           <tr>
-            <td>Critério 2<br><small>75% dos docentes com JCR (SCimago | 2y cites per doc) ou Categoria A</small></td>
+            <td>Critério 2 (proxy)<br><small>75% com dois artigos WoS/Scopus entre os cinco produtos</small></td>
             <td>${summary.minimo} docentes</td>
             <td>${summary.criterio2Atendidos}/${summary.totalDocentes} docentes (${summary.criterio2Percentual}%)</td>
             <td><span class="criteria-status ${criterio2Ok ? "ok" : "risk"}">${criterio2Ok ? "Atende" : "Não atende"}</span></td>
