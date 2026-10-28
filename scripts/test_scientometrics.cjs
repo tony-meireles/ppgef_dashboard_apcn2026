@@ -19,7 +19,7 @@ assert.equal(C.position({docente:'Tony Meireles dos Santos',autores:'Pessoa, A.;
 const q=rows.filter(r=>+r.ano>=2021&&+r.ano<=2025);assert.equal(q.length,373);assert.equal(new Set(q.map(C.productKey)).size,318);
 assert.equal(C.indexing(q).wos,47);assert.equal(C.indexing(rows).wos,53);
 function extract(name){const start=html.indexOf('    function '+name+'(');assert(start>=0,name);return html.slice(start,html.indexOf('\n    function ',start+10));}
-for(const n of ['normalizeText','normalizePersonText','authorMatchesDocente','getLeadershipProductKey','inferScientificAuthors','getCoauthorNames','buildLeadershipProductGroups','aggregateLeadershipPartnershipByDocente','buildLeadershipPartnershipNetwork','getMostardScore','aggregateMostardByYear','aggregateOrientationCriticalCriteria'])vm.runInContext(extract(n),ctx);
+for(const n of ['normalizeText','normalizePersonText','authorMatchesDocente','getLeadershipProductKey','inferScientificAuthors','getCoauthorNames','buildLeadershipProductGroups','aggregateLeadershipPartnershipByDocente','buildLeadershipPartnershipNetwork','getMostardScore','aggregateMostardByYear','getPermanentOrientationData','aggregateOrientationCriticalCriteria','renderOrientationCriticalCriteriaPanel'])vm.runInContext(extract(n),ctx);
 ctx.rows=rows;ctx.q=q;
 vm.runInContext(`const g=buildLeadershipProductGroups(q);const n=buildLeadershipPartnershipNetwork(aggregateLeadershipPartnershipByDocente(q,g),g);result={edges:n.edges.length,groups:g.size,years:aggregateMostardByYear(q)};`,ctx);
 assert.equal(ctx.result.edges,27);assert.equal(ctx.result.groups,318);assert.equal(ctx.result.years.reduce((s,r)=>s+r.pendentes,0),10);
@@ -28,8 +28,15 @@ const dan='Daniela Karina da Silva Ferreira',oz='Ozeas de Lima Lins Filho',tony=
 assert.equal(new Set(hasPair(dan,oz,2026,2026)).size,2);
 assert.equal(new Set(hasPair(oz,tony,2018,2020)).size,2);
 assert.equal(hasPair(oz,tony,2021,2026).length,0);
-const dp=new Set(ctx.window.CORPO_DOCENTE_PPGEF.docentes.filter(r=>r.anos['2026']==='Per').map(r=>r.docente));
-ctx.orient=ctx.window.ORIENTACOES_PPGEF.filter(r=>dp.has(r.docente === "Pedro Pinheiro Paes" ? "Pedro Pinheiro Paes Neto" : r.docente));vm.runInContext('orientation=aggregateOrientationCriticalCriteria(orient)',ctx);
+// Run the actual panel entrypoint with the same source normalization as the page.
+vm.runInContext(html.slice(html.indexOf('    const dataSource ='),html.indexOf('    const orientacoesHistoricas =')),ctx);
+const elements=new Map();ctx.document={getElementById(id){if(!elements.has(id))elements.set(id,{});return elements.get(id);}};
+ctx.renderOrientationCriteriaChart=()=>{};
+vm.runInContext('orient=getPermanentOrientationData(); orientation=aggregateOrientationCriticalCriteria(orient); renderOrientationCriticalCriteriaPanel();',ctx);
+assert.equal(ctx.orientation.totalDocentes,15);
 assert.equal(ctx.orientation.doutoradoAtendidos,4);assert.equal(ctx.orientation.mestradoAtendidos,13);assert.equal(ctx.orientation.graduacaoAtendidos,15);
+assert.equal(elements.get('orient-crit-docentes-total').textContent,'15');
+assert.equal(elements.get('orient-crit-mestrado-total').textContent,'13');
+assert.equal(elements.get('orient-crit-doutorado-total').textContent,'4');
 const rafael=ctx.orient.find(r=>r.docente.startsWith('Rafael'));assert.equal(rafael.doutorado_concluidas_principal,1);assert.equal(rafael.doutorado_andamento_principal,4);
 console.log('PASS: export parity, identity, DOI consistency, author ambiguity, missing-data semantics, temporal networks and four doctoral supervisors.');
