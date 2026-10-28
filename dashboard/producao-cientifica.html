@@ -2933,6 +2933,9 @@
 
       <div class="tab-panel" id="tab-orientacoes">
         <section class="grid">
+          <div class="card" style="grid-column:1/-1">
+            <p class="chart-note" id="orientacoes-recorte-nota"></p>
+          </div>
           <div class="card metric">
             <p class="eyebrow">Mestrado em andamento</p>
             <strong id="orientacoes-mestrado-andamento-total">0</strong>
@@ -3044,6 +3047,18 @@
                 <tbody id="orientacoes-posdoc-body"></tbody>
               </table>
             </div>
+          </div>
+          <div class="card table-card" style="grid-column:1/-1">
+            <details>
+              <summary>Histórico de orientações de docentes fora do corpo docente atual</summary>
+              <p class="chart-note">Estes registros documentam atividades anteriores e não entram nos indicadores do corpo docente atual.</p>
+              <div class="table-wrap">
+                <table class="orientation-grid-table">
+                  <thead><tr><th>Docente</th><th>Mestrado em andamento</th><th>Mestrado concluído</th><th>Doutorado em andamento</th><th>Doutorado concluído</th><th>Total geral APCN</th></tr></thead>
+                  <tbody id="orientacoes-historico-body"></tbody>
+                </table>
+              </div>
+            </details>
           </div>
         </section>
       </div>
@@ -5147,10 +5162,20 @@
   <script>
     const dataSource = window.PRODUCAO_CIENTIFICA || [];
     const dataSourceTecnica = window.PRODUCAO_TECNICA || [];
-    const dataSourceOrientacoes = window.ORIENTACOES_PPGEF || [];
+    const orientacoesOriginais = window.ORIENTACOES_PPGEF || [];
     const dataSourceCaptacaoPayload = window.CAPTACAO_RECURSOS_PPGEF || { updated_at: "", rows: [] };
     const dataSourceCaptacao = dataSourceCaptacaoPayload.rows || [];
     const dataSourceCorpoDocente = window.CORPO_DOCENTE_PPGEF || { default_year: "", by_year: {}, issue_counts: {}, docentes: [] };
+    const orientacoesNomeCanonico = new Map([
+      ["Pedro Pinheiro Paes", "Pedro Pinheiro Paes Neto"],
+    ]);
+    const nomesCorpoDocenteAtual = new Set((dataSourceCorpoDocente.docentes || []).map((item) => item.docente));
+    const orientacoesNormalizadas = orientacoesOriginais.map((item) => ({
+      ...item,
+      docente: orientacoesNomeCanonico.get(item.docente) || item.docente,
+    }));
+    const dataSourceOrientacoes = orientacoesNormalizadas.filter((item) => nomesCorpoDocenteAtual.has(item.docente));
+    const orientacoesHistoricas = orientacoesNormalizadas.filter((item) => !nomesCorpoDocenteAtual.has(item.docente));
     const captacaoReferenceYear = Number(dataSourceCaptacaoPayload.reference_year || 2026);
     const captacaoRecentWindowStart = Number(dataSourceCaptacaoPayload.recent_window_start || 2022);
     const normalizeDisciplinasName = (value) => String(value || "")
@@ -9658,8 +9683,7 @@
           ...getDoutoradoSeries(item),
         }))
         .filter((item) => item.total > 0)
-        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
-        .slice(0, 12);
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"));
       if (!items.length) {
         chartOrientacoesDocentes.innerHTML = `<p class="chart-note">Sem dados para o gráfico.</p>`;
         return;
@@ -9705,7 +9729,7 @@
     function renderOrientationStrictoTable(data) {
       orientacoesStrictoBody.innerHTML = data
         .slice()
-        .sort((a, b) => b.total_geral_apcn - a.total_geral_apcn || ((b.doutorado_andamento_co || 0) + (b.doutorado_andamento_principal || 0)) - ((a.doutorado_andamento_co || 0) + (a.doutorado_andamento_principal || 0)) || a.docente.localeCompare(b.docente, "pt-BR"))
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
         .map((item) => `
         <tr>
           <td>${item.docente}</td>
@@ -9728,11 +9752,7 @@
     function renderOrientationGraduationTable(data) {
       orientacoesGraduacaoBody.innerHTML = data
         .slice()
-        .sort((a, b) =>
-          ((b.tcc_concluidas || 0) + (b.ic_concluidas || 0)) -
-          ((a.tcc_concluidas || 0) + (a.ic_concluidas || 0)) ||
-          a.docente.localeCompare(b.docente, "pt-BR")
-        )
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
         .map((item) => {
           const totalBase = (item.tcc_concluidas || 0) + (item.ic_concluidas || 0);
           return `
@@ -9756,11 +9776,7 @@
           (item.posdoc_concluintes_2026 || 0) > 0 ||
           (item.posdoc_concluidas || 0) > 0
         )
-        .sort((a, b) =>
-          ((b.posdoc_andamento || 0) + (b.posdoc_concluidas || 0)) -
-          ((a.posdoc_andamento || 0) + (a.posdoc_concluidas || 0)) ||
-          a.docente.localeCompare(b.docente, "pt-BR")
-        )
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
         .map((item) => {
           const totalPosdoc = (item.posdoc_andamento || 0) + (item.posdoc_concluidas || 0);
           return `
@@ -9776,11 +9792,22 @@
     }
 
     function renderOrientationPanel() {
+      document.getElementById("orientacoes-recorte-nota").textContent = `Os indicadores e as tabelas desta aba consideram ${nomesCorpoDocenteAtual.size} docentes do corpo docente atual. Orientações de docentes que atuaram anteriormente no PPGEF estão preservadas no histórico ao final da aba.`;
       renderOrientationMetrics(dataSourceOrientacoes);
       renderOrientationChart(dataSourceOrientacoes);
       renderOrientationStrictoTable(dataSourceOrientacoes);
       renderOrientationGraduationTable(dataSourceOrientacoes);
       renderOrientationPosdocTable(dataSourceOrientacoes);
+      document.getElementById("orientacoes-historico-body").innerHTML = [...orientacoesHistoricas]
+        .sort((a, b) => a.docente.localeCompare(b.docente, "pt-BR"))
+        .map((item) => `<tr>
+          <td>${escapeHtml(item.docente)}</td>
+          <td>${formatOrientationValue(item.mestrado_andamento)}</td>
+          <td>${formatOrientationValue(item.mestrado_concluidas)}</td>
+          <td>${formatOrientationValue(item.doutorado_andamento)}</td>
+          <td>${formatOrientationValue(item.doutorado_concluidas)}</td>
+          <td>${formatOrientationValue(item.total_geral_apcn)}</td>
+        </tr>`).join("");
     }
 
     function aggregateProductivityCriteria(data) {

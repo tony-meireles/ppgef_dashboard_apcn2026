@@ -70,5 +70,8 @@ captacao e outros registros historicos de atividades permanecem no painel.
 Daniela Karina da Silva Ferreira e permanente a partir de 2026, inclusive na
 projecao de 2027-2028, e atua como permanente apenas no PPGEF. O historico
 de 2024-2025 continua como temporaria.
+Na aba Orientacoes, os indicadores e as tabelas principais usam apenas o corpo
+docente atual, com nomes em ordem alfabetica; orientacoes de ex-docentes ficam
+visiveis em uma secao historica separada.
 Os CSVs intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
 fontes de auditoria e nao alimentam diretamente as abas publicadas.
