@@ -3350,16 +3350,16 @@
 
           <div class="card captacao-executive-card">
             <div class="section-head">
-              <h2>Síntese Executiva APCN</h2>
-              <p>Leitura lateral para maturidade científica, cobertura do corpo permanente e sustentabilidade da carteira.</p>
+              <h2>Síntese da Carteira Informada</h2>
+              <p>Inclui as captações registradas na planilha; a elegibilidade para o item 4.2 aparece na base detalhada e nos critérios críticos.</p>
             </div>
             <div id="captacao-executive-summary" class="captacao-executive-summary"></div>
           </div>
 
           <div class="card metric captacao-metric-card captacao-metric-value">
-            <p class="eyebrow">Valor Total Captado</p>
+            <p class="eyebrow">Valor Total Aprovado</p>
             <strong id="captacao-valor-total">R$ 0</strong>
-            <span>Volume total aprovado no recorte analítico dos últimos 5 anos.</span>
+            <span>Volume total informado como aprovado no recorte analítico de 2022 a 2026, incluindo registros cuja implementação aguarda comprovação.</span>
           </div>
           <div class="card metric metric-compact captacao-metric-card">
             <p class="eyebrow">Registros</p>
@@ -3406,7 +3406,7 @@
             <div class="section-head section-head-inline">
               <div>
                 <h2>Distribuição Docente</h2>
-                <p id="captacao-docente-chart-caption">Leitura estratégica por valor total, concentração e status APCN do corpo permanente.</p>
+                <p id="captacao-docente-chart-caption">Leitura da carteira informada por valor total e concentração no corpo permanente.</p>
               </div>
               <div class="sort-toggle-group" aria-label="Ordenação da captação por docente">
                 <button type="button" class="sort-toggle active" data-captacao-docente-sort="valor">Por valor</button>
@@ -3428,7 +3428,7 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Diversidade de Agências</h2>
-              <p>Diferencia CNPq, CAPES, FACEPE, FINEP, UFPE, fontes internacionais e demais grupos para leitura APCN.</p>
+              <p>Diferencia CNPq, CAPES, FACEPE, FINEP, UFPE, fontes internacionais e demais grupos da carteira informada.</p>
             </div>
             <div id="captacao-agencias-stack" class="type-stack"></div>
             <div class="chips" id="captacao-agencias-chips"></div>
@@ -3445,8 +3445,8 @@
 
           <div class="card table-card">
             <div class="section-head">
-              <h2>Tabela APCN por Docente</h2>
-              <p>Inclui docentes com e sem captação para evidenciar cobertura do corpo permanente, vigência, PQ/DT e fragilidades.</p>
+              <h2>Carteira por Docente</h2>
+              <p>Inclui docentes com e sem captação para evidenciar cobertura do corpo permanente, vigência, PQ/DT e fragilidades. A leitura da carteira não equivale à elegibilidade para o item 4.2.</p>
             </div>
             <div class="table-wrap">
               <table class="captacao-summary-table captacao-docente-table">
@@ -3460,7 +3460,7 @@
                     <th>Internacional</th>
                     <th>Linhas de pesquisa</th>
                     <th>Agências</th>
-                    <th>Status APCN</th>
+                    <th>Leitura da carteira</th>
                   </tr>
                 </thead>
                 <tbody id="captacao-resumo-docentes-body"></tbody>
@@ -3471,7 +3471,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Base Detalhada</h2>
-              <p>Leitura operacional para auditoria de persistência, incluindo vigência, edital, bolsas e alerta de duplicidade.</p>
+              <p>Leitura operacional para auditoria de persistência, incluindo elegibilidade informada na planilha, vigência, edital, bolsas e alerta de duplicidade.</p>
             </div>
             <p class="captacao-table-meta">A tabela abaixo prioriza rastreabilidade. A chave de duplicidade foi abreviada visualmente para reduzir ruído, preservando o valor completo no tooltip.</p>
             <div class="table-wrap">
@@ -3482,6 +3482,7 @@
                     <th>Agência</th>
                     <th>Grupo</th>
                     <th>Situação</th>
+                    <th>Elegibilidade item 4.2</th>
                     <th>Status vigência</th>
                     <th>Vigência</th>
                     <th>Título / captação</th>
@@ -3947,7 +3948,7 @@
           <div class="card group-card">
             <div class="section-head">
               <h2>Captação de Recursos</h2>
-              <p>Leitura exploratória do quantitativo de docentes com captação registrada, preparando a definição posterior de uma linha de corte crítica.</p>
+              <p>Leitura exploratória dos registros classificados como elegíveis pelo objeto no item 4.2 da planilha, considerando docentes permanentes de 2026.</p>
             </div>
           </div>
 
@@ -3959,12 +3960,12 @@
           <div class="card metric">
             <p class="eyebrow">Docentes com captação</p>
             <strong id="captacao-crit-docentes-total">0</strong>
-            <span id="captacao-crit-docentes-resumo">0 docentes com pelo menos uma captação registrada.</span>
+            <span id="captacao-crit-docentes-resumo">0 docentes com pelo menos uma captação elegível.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">Cobertura da base</p>
             <strong id="captacao-crit-percentual">0%</strong>
-            <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação de recursos.</span>
+            <span id="captacao-crit-percentual-resumo">0 de 0 docentes com captação elegível.</span>
           </div>
           <div class="card metric">
             <p class="eyebrow">PQ / DT vigentes</p>
@@ -3975,7 +3976,7 @@
           <div class="card chart-wide">
             <div class="section-head">
               <h2>Captação por Docente</h2>
-              <p>Quantidade de registros por docente com apoio do valor total captado em cada carteira.</p>
+              <p>Quantidade de registros elegíveis por docente com apoio do valor total informado em cada carteira.</p>
             </div>
             <div id="chart-captacao-crit-docentes" class="chart"></div>
           </div>
@@ -3993,7 +3994,7 @@
           <div class="card table-card">
             <div class="section-head">
               <h2>Síntese de Captação</h2>
-              <p>Resumo do quantitativo atual de docentes com captação e da composição por situação da base.</p>
+              <p>Resumo do quantitativo atual de docentes com captação elegível e da composição por situação da base.</p>
             </div>
             <div class="table-wrap">
               <table class="criteria-table">
@@ -5155,7 +5156,7 @@
   <script src="./producao-tecnica-data.js?v=2026-10-28a"></script>
   <script src="./orientacoes-data.js?v=2026-06-16a"></script>
   <script src="./disciplinas-data.js?v=2026-06-15a"></script>
-  <script src="./captacao-recursos-data.js?v=2026-06-16b"></script>
+  <script src="./captacao-recursos-data.js?v=2026-10-28a"></script>
   <script src="./documentos-data.js?v=2026-06-12g"></script>
   <script src="./corpo-docente-data.js?v=2026-10-28b"></script>
   <script src="./avaliacao-quadrienal-data.js?v=2026-06-18a"></script>
@@ -6595,6 +6596,7 @@
       const lowLine = lineSummary[lineSummary.length - 1];
       const executiveSummary = [
         `A base registra ${docentesComCaptacao.length} docente(s) com captação nos últimos 5 anos, correspondendo a ${percentualDocentes}% do corpo permanente analisado.`,
+        `No item 4.2, ${relevantRows.filter((item) => item.elegibilidade_apcn === "Elegível pelo objeto").length} registro(s) estão classificados como elegíveis pelo objeto; ${relevantRows.filter((item) => item.elegibilidade_apcn === "Condicionado à comprovação").length} permanecem condicionados à comprovação e ${relevantRows.filter((item) => item.elegibilidade_apcn === "Não classificado").length} sem classificação.`,
         `Há ${docentesVigentes.length} docente(s) com captação vigente em ${captacaoReferenceYear} e ${docentesPqdt.length} com marcador estratégico PQ/DT ou equivalente.`,
         `A carteira envolve ${agencySummary.length} grupos de agências/fonte e ${docentesInternacionais.length} docente(s) com captação internacional identificada.`,
         `Foram identificados ${totalAlertas} alerta(s) de possível duplicidade que exigem revisão antes do uso final da base.`,
@@ -6660,8 +6662,8 @@
         return;
       }
       captacaoDocenteChartCaption.textContent = captacaoDocenteSortMode === "alfabetico"
-        ? "Ordem alfabética com leitura do valor, status APCN e concentração por docente."
-        : "Ordem por intensidade APCN e volume financeiro, priorizando docentes com maior tração estratégica.";
+        ? "Ordem alfabética com leitura do valor e concentração da carteira informada por docente."
+        : "Ordem por volume financeiro da carteira informada por docente.";
       const labelWidth = 250;
       const rowHeight = 36;
       const chartWidth = 860;
@@ -6798,7 +6800,7 @@
       `);
       captacaoTiposStack.innerHTML = [...financeRows, ...typeRows].join("");
       captacaoInsightChips.innerHTML = [
-        `<span class="chip">Base APCN: <strong>${captacaoRecentWindowStart}-${captacaoReferenceYear}</strong></span>`,
+        `<span class="chip">Recorte temporal: <strong>${captacaoRecentWindowStart}-${captacaoReferenceYear}</strong></span>`,
         dataSourceCaptacaoPayload.updated_at ? `<span class="chip">Base atualizada em <strong>${dataSourceCaptacaoPayload.updated_at}</strong></span>` : "",
       ].filter(Boolean).join("");
     }
@@ -6829,6 +6831,7 @@
             <td>${escapeHtml(item.agencia_normalizada || item.agencia || "-")}</td>
             <td>${escapeHtml(item.agencia_grupo || "-")}</td>
             <td>${escapeHtml(item.status || "-")}</td>
+            <td title="${escapeHtml([item.enquadramento_item_4_2, item.fundamento_classificacao, item.pendencia_tabela_capes].filter(Boolean).join(' · ') || 'Sem classificação registrada na planilha')}">${escapeHtml(item.elegibilidade_apcn || 'Não classificado')}</td>
             <td>${escapeHtml(item.status_vigencia || "-")}</td>
             <td>${escapeHtml((item.vigencia_anos || []).join(", ") || "-")}</td>
             <td>${escapeHtml(item.titulo || "-")}</td>
@@ -10183,7 +10186,7 @@
       const baseDocenteKeys = new Set(captacaoPermanentDocenteMeta.map((item) => item.key));
       const relevantRows = getCaptacaoRelevantRows(dataSourceCaptacao).filter((item) => {
         const key = normalizeDisciplinasName(item.docente);
-        return baseDocenteKeys.has(key);
+        return baseDocenteKeys.has(key) && item.elegibilidade_apcn === "Elegível pelo objeto";
       });
       const docenteMap = new Map();
       const statusMap = new Map();
@@ -10306,15 +10309,15 @@
       document.getElementById("captacao-crit-docentes-total").textContent = String(summary.totalDocentes);
       document.getElementById("captacao-crit-percentual").textContent = `${summary.percentual}%`;
       document.getElementById("captacao-crit-pq-total").textContent = String(summary.docentesPqdtVigentes.length);
-      document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação registrada.`;
-      document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação de recursos.`;
+      document.getElementById("captacao-crit-docentes-resumo").textContent = `${summary.totalDocentes} docentes com pelo menos uma captação elegível.`;
+      document.getElementById("captacao-crit-percentual-resumo").textContent = `${summary.totalDocentes} de ${summary.totalBase} docentes com captação elegível.`;
       document.getElementById("captacao-crit-pq-resumo").textContent = `${summary.docentesPqdtVigentes.length} docente(s) com PQ/DT estratégico vigente.`;
 
       captacaoCritSummaryCards.innerHTML = [
         `
           <div class="criteria-score">
             <div>
-              <div>Docentes com captação</div>
+            <div>Docentes com captação elegível</div>
               <strong>${summary.totalDocentes}/${summary.totalBase}</strong>
             </div>
             <span class="criteria-status ok">Exploratório</span>
@@ -10332,7 +10335,7 @@
       ].join("");
 
       captacaoCritInsights.innerHTML = [
-        `<span class="chip">Cobertura atual: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
+        `<span class="chip">Cobertura elegível: <strong>${summary.totalDocentes}/${summary.totalBase}</strong> docentes (${summary.percentual}%)</span>`,
         `<span class="chip">Captação vigente em 2026: <strong>${summary.docentesVigentes.length}</strong> docente(s)</span>`,
         `<span class="chip">PQ/DT estratégicos vigentes: <strong>${summary.docentesPqdtVigentes.length}</strong> docente(s)</span>`,
         `<span class="chip">PQ estratégico vigente: <strong>${summary.docentesPq.length}</strong> docente(s)</span>`,
@@ -10342,13 +10345,13 @@
         `<span class="chip">Valor total informado: <strong>${formatCurrency(summary.totalValor)}</strong></span>`,
       ].filter(Boolean).join("");
 
-      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa a base de docentes permanentes do ano de referência da aba de captação. Considera registros APCN 2022-2026, destaca vigência em 2026 e consolida bolsas estratégicas vigentes no agrupamento PQ/DT, preservando a separação entre PQ e DT para leitura fina. Bolsas ordinárias de mestrado e iniciação científica seguem excluídas para evitar falso positivo.";
+      document.getElementById("captacao-crit-metodologia").textContent = "Metodologia: a seção usa docentes permanentes de 2026 e apenas registros de 2022-2026 classificados na planilha como 'Elegível pelo objeto' para o item 4.2. Registros não elegíveis, condicionados à comprovação ou sem classificação permanecem visíveis na aba Captação de Recursos, mas não entram nestes indicadores APCN. PQ/DT estratégico vigente é identificado dentro da carteira elegível.";
 
       document.getElementById("captacao-crit-resumo-body").innerHTML = [
         `
           <tr>
             <td>Captação</td>
-            <td>Docentes com captação de recursos</td>
+            <td>Docentes com captação elegível no item 4.2</td>
             <td>${summary.totalBase} docentes permanentes na base</td>
             <td>${summary.totalDocentes} docentes (${summary.percentual}%)</td>
             <td>Indicador preparado para futura parametrização de corte.</td>

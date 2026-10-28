@@ -73,5 +73,15 @@ de 2024-2025 continua como temporaria.
 Na aba Orientacoes, os indicadores e as tabelas principais usam apenas o corpo
 docente atual, com nomes em ordem alfabetica; orientacoes de ex-docentes ficam
 visiveis em uma secao historica separada.
+Na aba Captacao de Recursos, `data/captacao_recursos.csv` espelha a aba
+`Respostas ao formulário 1` da planilha
+`https://docs.google.com/spreadsheets/d/19PhpY6GXENm0QvbOBRSZ4FyJf7doslUHGq13d8teC-I`.
+O script `python scripts/sync_captacao_recursos_from_csv.py` gera
+`dashboard/captacao-recursos-data.js`. A carteira geral mostra os registros
+informados no recorte 2022-2026; a secao de criterios criticos considera
+somente os classificados como `Elegível pelo objeto` no item 4.2. A versao
+sincronizada em 28/10/2026 tem 78 registros na planilha, dos quais 76 entram
+no recorte temporal. A planilha atual nao contem os tres registros anteriores
+de Paulo Felipe; o historico deles permanece no Git.
 Os CSVs intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
 fontes de auditoria e nao alimentam diretamente as abas publicadas.
