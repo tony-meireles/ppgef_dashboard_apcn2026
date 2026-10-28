@@ -80,9 +80,15 @@ O script `python scripts/sync_captacao_recursos_from_csv.py` gera
 `dashboard/captacao-recursos-data.js`. A carteira geral mostra os registros
 informados no recorte 2022-2026; a secao de criterios criticos considera
 somente os classificados como `Elegível pelo objeto` no item 4.2. A versao
-sincronizada em 28/10/2026 tem 78 registros na planilha, dos quais 76 entram
+sincronizada em 28/10/2026 tem 79 registros na planilha, dos quais 77 entram
 no recorte temporal. A planilha atual nao contem os tres registros anteriores
 de Paulo Felipe; o historico deles permanece no Git.
+O lancamento de Tony Meireles em 28/10/2026 registra R$ 223.000,00 aprovados
+para uma bolsa de pos-doutorado FACEPE (36 meses). O formulario informa
+R$ 223.200,00 como total destinado a bolsa. Ambos os valores foram preservados
+e a divergencia foi sinalizada. O registro permanece condicionado a comprovacao
+do beneficiario, da responsabilidade de Tony e do ato de concessao, fora dos
+indicadores de elegibilidade do item 4.2 ate essa verificacao.
 Os CSVs intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
 fontes de auditoria e nao alimentam diretamente as abas publicadas.
 
