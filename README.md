@@ -22,3 +22,13 @@ Ao abrir a raiz do site, `index.html` redireciona para `dashboard/producao-cient
 
 - A producao tecnica continua vinculada ao fluxo original em SQLite; os artefatos publicados podem ser atualizados a partir da nova base sem trocar o tipo de banco.
 - O dashboard publicado consome os dados embarcados em `dashboard/*.js` e mantem links para downloads em `data/`.
+
+## Recorte atual do corpo docente
+
+Antes de publicar uma nova importacao, execute `python scripts/apply_current_cohort.py`.
+O script retira Clarice Maria de Lucena Martins, Paulo Felipe Ribeiro Bandeira,
+Fabio Nakamura e Joao Carlos Bouzas Marins do corpo docente e das bases de
+producao exibidas, e recalcula todos os agregados do corpo docente. Registros
+historicos de atividades (orientacoes e disciplinas) permanecem no painel.
+Os arquivos intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
+fontes de auditoria; nao alimentam diretamente as abas publicadas.
