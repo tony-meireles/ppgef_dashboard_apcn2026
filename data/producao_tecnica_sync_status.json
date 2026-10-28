@@ -1,12 +1,11 @@
 {
   "source_sqlite": "[configurado_localmente_em_data/producao_tecnica_db_path.txt]",
   "synced_at": "2026-06-14T00:00:00",
-  "records": 60,
-  "docentes": 17,
+  "records": 58,
+  "docentes": 15,
   "totals_by_docente": {
     "André dos Santos Costa": 0,
     "Bruno Teixeira Barbosa": 10,
-    "Clarice Maria de Lucena Martins": 0,
     "Daniel da Rocha Queiroz": 5,
     "Daniela Karina da Silva Ferreira": 0,
     "Eduardo Zapaterra Campos": 0,
@@ -15,11 +14,11 @@
     "Lucas Eduardo Rodrigues dos Santos": 5,
     "Melissa Leandro Celestino": 0,
     "Ozeas de Lima Lins Filho": 5,
-    "Paulo Felipe Ribeiro Bandeira": 0,
     "Paulo Roberto Cavalcanti Carvalho": 0,
     "Pedro Pinheiro Paes": 13,
     "Saulo Fernandes Melo de Oliveira": 0,
     "Tony Meireles dos Santos": 11,
     "Vilde Gomes de Menezes": 0
-  }
+  },
+  "cohort_scope_applied": "2026-10-28"
 }
