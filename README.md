@@ -67,5 +67,8 @@ O script retira Clarice Maria de Lucena Martins, Paulo Felipe Ribeiro Bandeira,
 Fabio Nakamura e Joao Carlos Bouzas Marins do corpo docente e da producao
 exibida, e recalcula os agregados do corpo docente. Orientacoes, disciplinas,
 captacao e outros registros historicos de atividades permanecem no painel.
+Daniela Karina da Silva Ferreira e permanente a partir de 2026, inclusive na
+projecao de 2027-2028, e atua como permanente apenas no PPGEF. O historico
+de 2024-2025 continua como temporaria.
 Os CSVs intermediarios `data/producao_cientifica_v2026-06-10-*.csv` sao
 fontes de auditoria e nao alimentam diretamente as abas publicadas.

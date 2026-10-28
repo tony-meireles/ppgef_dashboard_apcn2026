@@ -110,6 +110,15 @@ def apply_faculty():
     faculty = json.loads(content.split("=", 1)[1].strip().rstrip(";"))
     faculty["docentes"] = [d for d in faculty["docentes"] if d["docente"] not in EXCLUDED]
     members = faculty["docentes"]
+    # Confirmed on 2026-10-28: Daniela joins the permanent PPGEF faculty in
+    # 2026 and remains in the 2027-2028 planning horizon. Earlier years are
+    # historical records. She is permanent in this PPG only.
+    for docente in members:
+        if docente["docente"] == "Daniela Karina da Silva Ferreira":
+            docente["anos"].update({"2026": "Per", "2027": "Per", "2028": "Per"})
+            docente["ppgs_como_permanente_2026"] = 1
+            docente["issues"] = [issue for issue in docente["issues"] if issue != "temporario_2026"]
+            break
     thresholds = faculty["thresholds"]
     for year in faculty["history_years"]:
         active = [d for d in members if d["anos"].get(year) not in (None, "---")]
@@ -175,9 +184,12 @@ def apply_faculty():
     permanent_2026 = [d for d in members if d["anos"].get("2026") == "Per"]
     distribution = Counter(d["ppgs_como_permanente_2026"] or 1 for d in permanent_2026)
     faculty["ppg_distribution_2026"] = [dict(ppgs=n, docentes=count, share=count / len(permanent_2026)) for n, count in sorted(distribution.items())]
-    faculty["issues"] = [issue for issue in faculty["issues"] if issue["docente"] not in EXCLUDED]
+    faculty["issues"] = [issue for issue in faculty["issues"]
+                         if issue["docente"] not in EXCLUDED
+                         and not (issue["docente"] == "Daniela Karina da Silva Ferreira"
+                                  and issue["issue"] == "temporario_2026")]
     faculty["issue_counts"] = dict(Counter(issue["issue"] for issue in faculty["issues"]))
-    faculty["scope_applied"] = "2026-10-28: current faculty only; activity history retained"
+    faculty["scope_applied"] = "2026-10-28: current faculty only; Daniela permanent from 2026; activity history retained"
     write_js(path, "CORPO_DOCENTE_PPGEF", faculty, compact=True)
     return len(members)
 
